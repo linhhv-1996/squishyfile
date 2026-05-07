@@ -495,27 +495,46 @@
 			</div>
 		</div>
 
-		<section class="faq-sec">
+		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
 			<h2>{t('faq.title')}</h2>
 			<div class="faq-list">
-				<details class="faq-item">
-					<summary class="faq-q">{t('faq.1.q')}</summary>
-					<div class="faq-a">{t('faq.1.a')}</div>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.1.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.1.a')}</span>
+					</div>
 				</details>
-				<details class="faq-item">
-					<summary class="faq-q">{t('faq.2.q')}</summary>
-					<div class="faq-a">{t('faq.2.a')}</div>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.2.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.2.a')}</span>
+					</div>
 				</details>
-				<details class="faq-item">
-					<summary class="faq-q">{t('faq.3.q')}</summary>
-					<div class="faq-a">{t('faq.3.a')}</div>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.3.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.3.a')}</span>
+					</div>
 				</details>
-				<details class="faq-item">
-					<summary class="faq-q">{t('faq.4.q')}</summary>
-					<div class="faq-a">{t('faq.4.a')}</div>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.4.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.4.a')}</span>
+					</div>
+				</details>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.5.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.5.a')}</span>
+					</div>
+				</details>
+				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+					<summary class="faq-q" itemprop="name">{t('faq.6.q')}</summary>
+					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+						<span itemprop="text">{t('faq.6.a')}</span>
+					</div>
 				</details>
 			</div>
 		</section>
 	</div>
 </main>
-
