@@ -1,38 +1,15 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
+	import { languages, type Language } from '$lib/i18n/languages';
+	import { translations } from '$lib/i18n/translations';
 	import {
-		Zap,
-		RefreshCw,
-		Folder,
-		Film,
-		X,
-		Feather,
-		Scale,
-		Gem,
-		CheckCircle2,
-		Download,
-		ShieldCheck,
-		AlertTriangle,
-		Home,
-		FileText,
-		Globe,
-		ChevronDown,
-		Cpu,
-		Target,
-		Infinity,
-		Check
+		Zap, RefreshCw, Folder, Film, X, Feather, Scale, Gem, CheckCircle2,
+		Download, ShieldCheck, AlertTriangle, Home, FileText, Globe, ChevronDown,
+		Cpu, Target, Infinity, Check
 	} from 'lucide-svelte';
 
 	type Mode = 'compress' | 'convert';
 	type Tab = Mode;
-
-	const languages = [
-		{ key: 'en', flag: '🇺🇸', code: 'EN', name: 'English' },
-		{ key: 'ja', flag: '🇯🇵', code: 'JA', name: '日本語' },
-		{ key: 'ko', flag: '🇰🇷', code: 'KO', name: '한국어' },
-		{ key: 'zh', flag: '🇨🇳', code: 'ZH', name: '中文' },
-		{ key: 'vi', flag: '🇻🇳', code: 'VI', name: 'Tiếng Việt' }
-	];
 
 	const sizeTags = [
 		{ mb: 10, label: 'LINE' },
@@ -43,11 +20,13 @@
 		{ mb: 16, label: 'Twitter/X' },
 		{ mb: 100, label: 'Email' }
 	];
-
 	const formats = ['mp4', 'webm', 'mov', 'avi', 'gif'];
 
+	let activeLang: Language = $state(languages[0]);
+	// Hàm dịch động theo ngôn ngữ hiện tại
+	let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
+
 	let activeTab: Tab = $state('compress');
-	let activeLang = $state(languages[0]);
 	let langOpen = $state(false);
 	let mobileOpen = $state(false);
 	let dragOver: Mode | null = $state(null);
@@ -57,27 +36,26 @@
 	let langWrap: HTMLDivElement;
 	let compressFile: File | null = $state(null);
 	let convertFile: File | null = $state(null);
-
 	let selectedPreset = $state('balanced');
 	let targetMb = $state('');
 	let selectedTag: number | null = $state(null);
 	let selectedFormat = $state('mp4');
-
 	let compressError = $state('');
 	let convertError = $state('');
-	let compressProgress = $state({ show: false, pct: 0, label: 'Compressing…' });
-	let convertProgress = $state({ show: false, pct: 0, label: 'Converting…' });
+	
+	// Khởi tạo label lúc đầu bằng t(...) nhưng do t là function reactive, 
+	// ta sẽ update label khi state thay đổi hoặc gọi thẳng từ UI
+	let compressProgress = $state({ show: false, pct: 0, labelKey: 'status.compressing' });
+	let convertProgress = $state({ show: false, pct: 0, labelKey: 'status.converting' });
+	
 	let compressBusy = $state(false);
 	let convertBusy = $state(false);
-
-	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null =
-		$state(null);
+	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null = $state(null);
 	let convertResult: { href: string; download: string } | null = $state(null);
 	let progressTimer: ReturnType<typeof setInterval> | null = null;
-
 	let hasTarget = $derived(targetMb.trim() !== '');
 
-	function setLanguage(lang: (typeof languages)[number]) {
+	function setLanguage(lang: Language) {
 		activeLang = lang;
 		langOpen = false;
 		closeMobileMenu();
@@ -111,12 +89,12 @@
 		if (mode === 'compress') {
 			compressFile = file;
 			compressError = '';
-			compressProgress = { show: false, pct: 0, label: 'Compressing…' };
+			compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
 			clearResult('compress');
 		} else {
 			convertFile = file;
 			convertError = '';
-			convertProgress = { show: false, pct: 0, label: 'Converting…' };
+			convertProgress = { show: false, pct: 0, labelKey: 'status.converting' };
 			clearResult('convert');
 		}
 	}
@@ -127,7 +105,7 @@
 			compressInput.value = '';
 			compressError = '';
 			compressBusy = false;
-			compressProgress = { show: false, pct: 0, label: 'Compressing…' };
+			compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
 			targetMb = '';
 			selectedTag = null;
 			selectedPreset = 'balanced';
@@ -137,7 +115,7 @@
 			convertInput.value = '';
 			convertError = '';
 			convertBusy = false;
-			convertProgress = { show: false, pct: 0, label: 'Converting…' };
+			convertProgress = { show: false, pct: 0, labelKey: 'status.converting' };
 			clearResult('convert');
 		}
 	}
@@ -190,11 +168,11 @@
 		return `${(bytes / 1_073_741_824).toFixed(2)} GB`;
 	}
 
-	function setProgress(mode: Mode, pct: number, label?: string) {
+	function setProgress(mode: Mode, pct: number, labelKey?: string) {
 		if (mode === 'compress') {
-			compressProgress = { ...compressProgress, pct, label: label ?? compressProgress.label };
+			compressProgress = { ...compressProgress, pct, labelKey: labelKey ?? compressProgress.labelKey };
 		} else {
-			convertProgress = { ...convertProgress, pct, label: label ?? convertProgress.label };
+			convertProgress = { ...convertProgress, pct, labelKey: labelKey ?? convertProgress.labelKey };
 		}
 	}
 
@@ -208,7 +186,7 @@
 				clearInterval(progressTimer);
 				progressTimer = null;
 				setTimeout(() => {
-					setProgress(mode, 100, 'Done!');
+					setProgress(mode, 100, 'status.done');
 					done();
 				}, 280);
 			}
@@ -217,14 +195,14 @@
 
 	function startCompress() {
 		if (!compressFile) {
-			compressError = 'Please select a video file.';
+			compressError = t('error.selectFile');
 			return;
 		}
 
 		compressError = '';
 		clearResult('compress');
 		compressBusy = true;
-		compressProgress = { show: true, pct: 0, label: 'Compressing…' };
+		compressProgress = { show: true, pct: 0, labelKey: 'status.compressing' };
 
 		const file = compressFile;
 		runProgress('compress', 2800, () => {
@@ -238,28 +216,28 @@
 				compressed: fmtBytes(Math.round(file.size * ratio)),
 				saved: `${Math.round((1 - ratio) * 100)}%`
 			};
-			compressProgress = { show: false, pct: 100, label: 'Done!' };
+			compressProgress = { show: false, pct: 100, labelKey: 'status.done' };
 			compressBusy = false;
 		});
 	}
 
 	function startConvert() {
 		if (!convertFile) {
-			convertError = 'Please select a video file.';
+			convertError = t('error.selectFile');
 			return;
 		}
 
 		convertError = '';
 		clearResult('convert');
 		convertBusy = true;
-		convertProgress = { show: true, pct: 0, label: 'Converting…' };
+		convertProgress = { show: true, pct: 0, labelKey: 'status.converting' };
 
 		const file = convertFile;
 		runProgress('convert', 3000, () => {
 			const href = URL.createObjectURL(file);
 			const base = file.name.replace(/\.[^.]+$/, '');
 			convertResult = { href, download: `${base}_converted.${selectedFormat}` };
-			convertProgress = { show: false, pct: 100, label: 'Done!' };
+			convertProgress = { show: false, pct: 100, labelKey: 'status.done' };
 			convertBusy = false;
 		});
 	}
@@ -275,12 +253,8 @@
 		const closeLangOnOutsideClick = (event: MouseEvent) => {
 			if (langWrap && !langWrap.contains(event.target as Node)) langOpen = false;
 		};
-
 		document.addEventListener('click', closeLangOnOutsideClick);
-
-		return () => {
-			document.removeEventListener('click', closeLangOnOutsideClick);
-		};
+		return () => document.removeEventListener('click', closeLangOnOutsideClick);
 	});
 
 	onDestroy(() => {
@@ -292,18 +266,12 @@
 </script>
 
 <svelte:head>
-	<title>NekoCompress – Free Video Compressor & Converter</title>
-	<meta
-		name="description"
-		content="Compress and convert videos for free, directly in your browser. No upload to server, no watermark, 100% private."
-	/>
+	<title>{t('meta.title')}</title>
+	<meta name="description" content={t('meta.desc')} />
 	<meta name="robots" content="index, follow" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
-		rel="stylesheet"
-	/>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <header>
@@ -316,8 +284,8 @@
 		</a>
 
 		<nav class="hnav">
-			<a href="/" class="active">Home</a>
-			<a href="/blog">Blog</a>
+			<a href="/" class="active">{t('nav.home')}</a>
+			<a href="/blog">{t('nav.blog')}</a>
 		</nav>
 
 		<div class="hright">
@@ -351,14 +319,13 @@
 
 <div class:open={mobileOpen} class="mobile-menu">
 	<a href="/" class="mm-link" onclick={closeMobileMenu}>
-		<span class="mm-ico"><Home size={18} /></span><span>Home</span>
+		<span class="mm-ico"><Home size={18} /></span><span>{t('nav.home')}</span>
 	</a>
 	<a href="/blog" class="mm-link" onclick={closeMobileMenu}>
-		<span class="mm-ico"><FileText size={18} /></span><span>Blog</span>
+		<span class="mm-ico"><FileText size={18} /></span><span>{t('nav.blog')}</span>
 	</a>
 
 	<div class="mm-divider"></div>
-	<div class="mm-label">Language</div>
 	<div class="mm-lang-grid">
 		{#each languages as lang}
 			<button class:on={activeLang.key === lang.key} class="mm-lang-opt" type="button" onclick={() => setLanguage(lang)}>
@@ -372,12 +339,12 @@
 <main>
 	<div class="wrap">
 		<section class="hero">
-			<h1>Compress & Convert Videos<br />in Your Browser</h1>
-			<p>No uploads, no accounts, no watermarks — runs entirely on your device.</p>
+			<h1>{@html t('hero.title')}</h1>
+			<p>{t('hero.sub')}</p>
 			<div class="pills">
-				<div class="pill"><span class="dot"></span><span>Local processing</span></div>
-				<div class="pill"><span class="dot"></span><span>No watermark</span></div>
-				<div class="pill"><span class="dot"></span><span>Unlimited files</span></div>
+				<div class="pill"><span class="dot"></span><span>{t('hero.pill1')}</span></div>
+				<div class="pill"><span class="dot"></span><span>{t('hero.pill2')}</span></div>
+				<div class="pill"><span class="dot"></span><span>{t('hero.pill3')}</span></div>
 			</div>
 		</section>
 
@@ -390,7 +357,7 @@
 				type="button"
 				onclick={() => switchTab('compress')}
 			>
-				<Zap size={15} strokeWidth={2.2} /> Compress Video
+				<Zap size={15} strokeWidth={2.2} /> {t('tab.compress')}
 			</button>
 			<button
 				class:active={activeTab === 'convert'}
@@ -400,11 +367,10 @@
 				type="button"
 				onclick={() => switchTab('convert')}
 			>
-				<RefreshCw size={15} strokeWidth={2.2} /> Convert Format
+				<RefreshCw size={15} strokeWidth={2.2} /> {t('tab.convert')}
 			</button>
 		</div>
 
-		<!-- COMPRESS PANEL -->
 		<div class:active={activeTab === 'compress'} class="panel">
 			{#if !compressFile}
 				<button
@@ -417,10 +383,10 @@
 					ondrop={(event) => onDrop(event, 'compress')}
 				>
 					<div class="dz-ico"><Film size={24} strokeWidth={1.5} /></div>
-					<h3>Drop your video here</h3>
-					<p class="sub">Drag &amp; drop or click to select a file</p>
-					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> Browse Files</span>
-					<p class="fmt-hint">MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; up to 2 GB</p>
+					<h3>{t('drop.video')}</h3>
+					<p class="sub">{t('drop.compress.sub')}</p>
+					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {t('btn.browse')}</span>
+					<p class="fmt-hint">{@html t('hint.compress')}</p>
 				</button>
 			{/if}
 			<input bind:this={compressInput} class="file-input" type="file" accept="video/*" onchange={(event) => handleFile(event, 'compress')} />
@@ -431,7 +397,7 @@
 						<div class="file-ico"><Film size={18} strokeWidth={1.8} /></div>
 						<div class="file-info">
 							<div class="file-name">{compressFile.name}</div>
-							<div class="file-sz">{fmtBytes(compressFile.size)} · {compressFile.type || 'video'}</div>
+							<div class="file-sz">{fmtBytes(compressFile.size)} · {compressFile.type || t('file.type.video')}</div>
 						</div>
 						<button class="btn-rm" type="button" onclick={() => clearFile('compress')} title="Remove">
 							<X size={15} strokeWidth={2.5} />
@@ -439,56 +405,31 @@
 					</div>
 
 					<div class="csec">
-						<span class="slabel">Quick Preset</span>
+						<span class="slabel">{t('sec.quickPreset')}</span>
 						<div class="preset-grid">
-							<button
-								class:on={selectedPreset === 'low' && !hasTarget}
-								class:disabled-opt={hasTarget}
-								class="pc"
-								type="button"
-								onclick={() => pickPreset('low')}
-							>
+							<button class:on={selectedPreset === 'low' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('low')}>
 								<div class="ico"><Feather size={18} strokeWidth={1.8} /></div>
-								<span class="lb">Low</span>
-								<span class="sb">Smallest file</span>
+								<span class="lb">{t('preset.low')}</span>
+								<span class="sb">{t('preset.low.sub')}</span>
 							</button>
-							<button
-								class:on={selectedPreset === 'balanced' && !hasTarget}
-								class:disabled-opt={hasTarget}
-								class="pc"
-								type="button"
-								onclick={() => pickPreset('balanced')}
-							>
+							<button class:on={selectedPreset === 'balanced' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('balanced')}>
 								<div class="ico"><Scale size={18} strokeWidth={1.8} /></div>
-								<span class="lb">Balanced</span>
-								<span class="sb">Recommended</span>
+								<span class="lb">{t('preset.balanced')}</span>
+								<span class="sb">{t('preset.balanced.sub')}</span>
 							</button>
-							<button
-								class:on={selectedPreset === 'high' && !hasTarget}
-								class:disabled-opt={hasTarget}
-								class="pc"
-								type="button"
-								onclick={() => pickPreset('high')}
-							>
+							<button class:on={selectedPreset === 'high' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('high')}>
 								<div class="ico"><Gem size={18} strokeWidth={1.8} /></div>
-								<span class="lb">High</span>
-								<span class="sb">Best quality</span>
+								<span class="lb">{t('preset.high')}</span>
+								<span class="sb">{t('preset.high.sub')}</span>
 							</button>
 						</div>
 					</div>
 
 					<div class="csec">
-						<span class="slabel">Target File Size</span>
+						<span class="slabel">{t('sec.targetSize')}</span>
 						<div class="target-wrap">
 							<div class="target-input-wrap">
-								<input
-									bind:value={targetMb}
-									type="number"
-									placeholder="Enter target size…"
-									min="1"
-									max="4000"
-									oninput={onTargetInput}
-								/>
+								<input bind:value={targetMb} type="number" placeholder={t('input.target.ph')} min="1" max="4000" oninput={onTargetInput} />
 								{#if hasTarget}
 									<button class="btn-clear-inline" type="button" onclick={clearTargetSize} title="Clear">
 										<X size={13} strokeWidth={2.5} />
@@ -508,7 +449,7 @@
 					</div>
 
 					<div class:show={compressProgress.show} class="prog">
-						<div class="ptop"><span>{compressProgress.label}</span><span class="pct">{compressProgress.pct}%</span></div>
+						<div class="ptop"><span>{t(compressProgress.labelKey)}</span><span class="pct">{compressProgress.pct}%</span></div>
 						<div class="pbar"><div class="pfill" style:width={`${compressProgress.pct}%`}></div></div>
 					</div>
 
@@ -519,7 +460,7 @@
 
 					<div class="action">
 						<button class="btn-go" type="button" disabled={compressBusy} onclick={startCompress}>
-							<Zap size={16} strokeWidth={2.2} /> Compress Now
+							<Zap size={16} strokeWidth={2.2} /> {t('btn.compressNow')}
 						</button>
 					</div>
 				</div>
@@ -528,20 +469,19 @@
 			<div class:show={Boolean(compressResult)} class="res">
 				<div class="res-head">
 					<div class="res-ico"><CheckCircle2 size={16} strokeWidth={2} /></div>
-					<div><div class="res-title">Compression complete!</div><div class="res-sub">Your file is ready to download</div></div>
+					<div><div class="res-title">{t('res.compress.title')}</div><div class="res-sub">{t('res.compress.sub')}</div></div>
 				</div>
 				<div class="stats">
-					<div class="stat"><div class="sv">{compressResult?.original ?? '—'}</div><div class="sl">Original</div></div>
-					<div class="stat"><div class="sv">{compressResult?.compressed ?? '—'}</div><div class="sl">Compressed</div></div>
-					<div class="stat"><div class="sv g">{compressResult?.saved ?? '—'}</div><div class="sl">Saved</div></div>
+					<div class="stat"><div class="sv">{compressResult?.original ?? '—'}</div><div class="sl">{t('stat.original')}</div></div>
+					<div class="stat"><div class="sv">{compressResult?.compressed ?? '—'}</div><div class="sl">{t('stat.compressed')}</div></div>
+					<div class="stat"><div class="sv g">{compressResult?.saved ?? '—'}</div><div class="sl">{t('stat.saved')}</div></div>
 				</div>
 				<a class="btn-dl" href={compressResult?.href ?? '#'} download={compressResult?.download}>
-					<Download size={15} strokeWidth={2.2} /> Download Compressed Video
+					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.compress')}
 				</a>
 			</div>
 		</div>
 
-		<!-- CONVERT PANEL -->
 		<div class:active={activeTab === 'convert'} class="panel">
 			{#if !convertFile}
 				<button
@@ -554,10 +494,10 @@
 					ondrop={(event) => onDrop(event, 'convert')}
 				>
 					<div class="dz-ico"><RefreshCw size={24} strokeWidth={1.5} /></div>
-					<h3>Drop your video here</h3>
-					<p class="sub">Select a video to convert its format</p>
-					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> Browse Files</span>
-					<p class="fmt-hint">Supports MP4, MOV, AVI, WebM, MKV and more</p>
+					<h3>{t('drop.video')}</h3>
+					<p class="sub">{t('drop.convert.sub')}</p>
+					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {t('btn.browse')}</span>
+					<p class="fmt-hint">{t('hint.convert')}</p>
 				</button>
 			{/if}
 			<input bind:this={convertInput} class="file-input" type="file" accept="video/*" onchange={(event) => handleFile(event, 'convert')} />
@@ -568,7 +508,7 @@
 						<div class="file-ico"><Film size={18} strokeWidth={1.8} /></div>
 						<div class="file-info">
 							<div class="file-name">{convertFile.name}</div>
-							<div class="file-sz">{fmtBytes(convertFile.size)} · {convertFile.type || 'video'}</div>
+							<div class="file-sz">{fmtBytes(convertFile.size)} · {convertFile.type || t('file.type.video')}</div>
 						</div>
 						<button class="btn-rm" type="button" onclick={() => clearFile('convert')} title="Remove">
 							<X size={15} strokeWidth={2.5} />
@@ -576,15 +516,10 @@
 					</div>
 
 					<div class="csec">
-						<span class="slabel">Convert To</span>
+						<span class="slabel">{t('sec.convertTo')}</span>
 						<div class="fmt-row">
 							{#each formats as format}
-								<button
-									class:on={selectedFormat === format}
-									class="fo"
-									type="button"
-									onclick={() => (selectedFormat = format)}
-								>
+								<button class:on={selectedFormat === format} class="fo" type="button" onclick={() => (selectedFormat = format)}>
 									{format.toUpperCase()}
 								</button>
 							{/each}
@@ -592,7 +527,7 @@
 					</div>
 
 					<div class:show={convertProgress.show} class="prog">
-						<div class="ptop"><span>{convertProgress.label}</span><span class="pct">{convertProgress.pct}%</span></div>
+						<div class="ptop"><span>{t(convertProgress.labelKey)}</span><span class="pct">{convertProgress.pct}%</span></div>
 						<div class="pbar"><div class="pfill" style:width={`${convertProgress.pct}%`}></div></div>
 					</div>
 
@@ -603,7 +538,7 @@
 
 					<div class="action">
 						<button class="btn-go" type="button" disabled={convertBusy} onclick={startConvert}>
-							<RefreshCw size={16} strokeWidth={2.2} /> Convert Now
+							<RefreshCw size={16} strokeWidth={2.2} /> {t('btn.convertNow')}
 						</button>
 					</div>
 				</div>
@@ -612,64 +547,61 @@
 			<div class:show={Boolean(convertResult)} class="res">
 				<div class="res-head">
 					<div class="res-ico"><CheckCircle2 size={16} strokeWidth={2} /></div>
-					<div><div class="res-title">Conversion complete!</div><div class="res-sub">Your converted video is ready</div></div>
+					<div><div class="res-title">{t('res.convert.title')}</div><div class="res-sub">{t('res.convert.sub')}</div></div>
 				</div>
 				<a class="btn-dl" href={convertResult?.href ?? '#'} download={convertResult?.download}>
-					<Download size={15} strokeWidth={2.2} /> Download Converted Video
+					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.convert')}
 				</a>
 			</div>
 		</div>
 
 		<div class="pnote">
 			<span class="ni"><ShieldCheck size={16} strokeWidth={2} /></span>
-			<p>
-				<strong>Your files never leave your device.</strong> NekoCompress processes everything locally using your browser's
-				built-in engine — no server uploads, no accounts needed. Files are cleared from memory after download.
-			</p>
+			<p>{@html t('note.privacy')}</p>
 		</div>
 
 		<div class="feats">
 			<div class="feat">
 				<div class="fi"><Cpu size={20} strokeWidth={1.8} /></div>
 				<div class="ftxt">
-					<div class="ft">Fast Processing</div>
-					<div class="fd">Hardware-accelerated encoding at near-native speed, entirely in your browser without waiting for server queues.</div>
+					<div class="ft">{t('feat.speed.title')}</div>
+					<div class="fd">{t('feat.speed.desc')}</div>
 				</div>
 			</div>
 			<div class="feat">
 				<div class="fi"><Target size={20} strokeWidth={1.8} /></div>
 				<div class="ftxt">
-					<div class="ft">Smart Size Targets</div>
-					<div class="fd">One-click presets explicitly tuned for popular platforms like LINE, Discord, Gmail, and Telegram limits.</div>
+					<div class="ft">{t('feat.target.title')}</div>
+					<div class="fd">{t('feat.target.desc')}</div>
 				</div>
 			</div>
 			<div class="feat">
 				<div class="fi"><Infinity size={20} strokeWidth={1.8} /></div>
 				<div class="ftxt">
-					<div class="ft">Always Free</div>
-					<div class="fd">No premium subscriptions, no daily file limits, and absolutely no watermarks added to your videos — ever.</div>
+					<div class="ft">{t('feat.free.title')}</div>
+					<div class="fd">{t('feat.free.desc')}</div>
 				</div>
 			</div>
 		</div>
 
 		<section class="faq-sec">
-			<h2>Frequently Asked Questions</h2>
+			<h2>{t('faq.title')}</h2>
 			<div class="faq-list">
 				<details class="faq-item">
-					<summary class="faq-q">Is it safe to compress my private videos here?</summary>
-					<div class="faq-a">Yes, absolutely! NekoCompress processes your videos locally directly inside your web browser. Your files are never uploaded to any cloud server, ensuring 100% privacy and security.</div>
+					<summary class="faq-q">{t('faq.1.q')}</summary>
+					<div class="faq-a">{t('faq.1.a')}</div>
 				</details>
 				<details class="faq-item">
-					<summary class="faq-q">Is there a file size limit for video compression?</summary>
-					<div class="faq-a">We do not enforce hard server limits since everything runs on your device. However, for stable performance within browser memory, we recommend keeping files under 2GB.</div>
+					<summary class="faq-q">{t('faq.2.q')}</summary>
+					<div class="faq-a">{t('faq.2.a')}</div>
 				</details>
 				<details class="faq-item">
-					<summary class="faq-q">Will there be a watermark on the exported video?</summary>
-					<div class="faq-a">No. NekoCompress is completely free to use and will never add a watermark to your compressed or converted videos.</div>
+					<summary class="faq-q">{t('faq.3.q')}</summary>
+					<div class="faq-a">{t('faq.3.a')}</div>
 				</details>
 				<details class="faq-item">
-					<summary class="faq-q">What video formats are supported?</summary>
-					<div class="faq-a">We support most modern formats including MP4, WebM, MOV, AVI, and MKV for both importing and exporting.</div>
+					<summary class="faq-q">{t('faq.4.q')}</summary>
+					<div class="faq-a">{t('faq.4.a')}</div>
 				</details>
 			</div>
 		</section>
@@ -678,6 +610,6 @@
 
 <footer>
 	<div class="wrap">
-		<p>© 2026 NekoCompress &nbsp;·&nbsp; Runs entirely in your browser &nbsp;·&nbsp; <a href="/">Privacy Policy</a> &nbsp;·&nbsp; <a href="/">Terms of Service</a></p>
+		<p>{@html t('footer.copy')} <a href="/">{t('footer.privacy')}</a> &nbsp;·&nbsp; <a href="/">{t('footer.terms')}</a></p>
 	</div>
 </footer>
