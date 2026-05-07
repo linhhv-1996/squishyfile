@@ -4,11 +4,11 @@
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
 	import {
-		Zap, RefreshCw, Folder, Film, X, Feather, Scale, Gem, CheckCircle2,
-		Download, ShieldCheck, AlertTriangle, Cpu, Target, Infinity
+		Zap, FileText, Folder, Film, X, Feather, Scale, Gem, CheckCircle2,
+		Download, ShieldCheck, AlertTriangle, Cpu, Target, Infinity, KeyRound
 	} from 'lucide-svelte';
 
-	type Mode = 'compress' | 'convert';
+	type Mode = 'compress' | 'pdf';
 	type Tab = Mode;
 
 	const sizeTags = [
@@ -21,8 +21,6 @@
 		{ mb: 100, label: 'Email' }
 	];
 
-	const formats = ['mp4', 'webm', 'mov', 'avi', 'gif'];
-
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
 	let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
@@ -31,24 +29,25 @@
 	let dragOver: Mode | null = $state(null);
 
 	let compressInput: HTMLInputElement;
-	let convertInput: HTMLInputElement;
+	let pdfInput: HTMLInputElement;
 	let compressFile: File | null = $state(null);
-	let convertFile: File | null = $state(null);
+	let pdfFile: File | null = $state(null);
 	let selectedPreset = $state('balanced');
 	let targetMb = $state('');
 	let selectedTag: number | null = $state(null);
-	let selectedFormat = $state('mp4');
+	let pdfPassword = $state('');
+	let removePdfPassword = $state(false);
 	let compressError = $state('');
-	let convertError = $state('');
+	let pdfError = $state('');
 
 	let compressProgress = $state({ show: false, pct: 0, labelKey: 'status.compressing' });
-	let convertProgress = $state({ show: false, pct: 0, labelKey: 'status.converting' });
-	
+	let pdfProgress = $state({ show: false, pct: 0, labelKey: 'status.removingPass' });
+
 	let compressBusy = $state(false);
-	let convertBusy = $state(false);
+	let pdfBusy = $state(false);
 
 	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null = $state(null);
-	let convertResult: { href: string; download: string } | null = $state(null);
+	let pdfResult: { href: string; download: string } | null = $state(null);
 	let progressTimer: ReturnType<typeof setInterval> | null = null;
 
 	let hasTarget = $derived(targetMb.trim() !== '');
@@ -58,7 +57,7 @@
 	}
 
 	function triggerInput(mode: Mode) {
-		(mode === 'compress' ? compressInput : convertInput).click();
+		(mode === 'compress' ? compressInput : pdfInput).click();
 	}
 
 	function handleFile(event: Event, mode: Mode) {
@@ -74,10 +73,10 @@
 			compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
 			clearResult('compress');
 		} else {
-			convertFile = file;
-			convertError = '';
-			convertProgress = { show: false, pct: 0, labelKey: 'status.converting' };
-			clearResult('convert');
+			pdfFile = file;
+			pdfError = '';
+			pdfProgress = { show: false, pct: 0, labelKey: 'status.removingPass' };
+			clearResult('pdf');
 		}
 	}
 
@@ -93,12 +92,14 @@
 			selectedPreset = 'balanced';
 			clearResult('compress');
 		} else {
-			convertFile = null;
-			convertInput.value = '';
-			convertError = '';
-			convertBusy = false;
-			convertProgress = { show: false, pct: 0, labelKey: 'status.converting' };
-			clearResult('convert');
+			pdfFile = null;
+			pdfInput.value = '';
+			pdfError = '';
+			pdfBusy = false;
+			pdfPassword = '';
+			removePdfPassword = false;
+			pdfProgress = { show: false, pct: 0, labelKey: 'status.removingPass' };
+			clearResult('pdf');
 		}
 	}
 
@@ -115,7 +116,9 @@
 		event.preventDefault();
 		dragOver = null;
 		const file = event.dataTransfer?.files?.[0];
-		if (file && file.type.startsWith('video/')) loadFile(file, mode);
+		if (!file) return;
+		if (mode === 'compress' && file.type.startsWith('video/')) loadFile(file, mode);
+		if (mode === 'pdf' && file.type === 'application/pdf') loadFile(file, mode);
 	}
 
 	function pickPreset(key: string) {
@@ -154,7 +157,7 @@
 		if (mode === 'compress') {
 			compressProgress = { ...compressProgress, pct, labelKey: labelKey ?? compressProgress.labelKey };
 		} else {
-			convertProgress = { ...convertProgress, pct, labelKey: labelKey ?? convertProgress.labelKey };
+			pdfProgress = { ...pdfProgress, pct, labelKey: labelKey ?? pdfProgress.labelKey };
 		}
 	}
 
@@ -203,38 +206,42 @@
 		});
 	}
 
-	function startConvert() {
-		if (!convertFile) {
-			convertError = t('error.selectFile');
+	function startPdfUnlock() {
+		if (!pdfFile) {
+			pdfError = t('error.selectPdf');
+			return;
+		}
+		if (removePdfPassword && !pdfPassword.trim()) {
+			pdfError = t('error.enterPassword');
 			return;
 		}
 
-		convertError = '';
-		clearResult('convert');
-		convertBusy = true;
-		convertProgress = { show: true, pct: 0, labelKey: 'status.converting' };
+		pdfError = '';
+		clearResult('pdf');
+		pdfBusy = true;
+		pdfProgress = { show: true, pct: 0, labelKey: 'status.removingPass' };
 
-		const file = convertFile;
-		runProgress('convert', 3000, () => {
+		const file = pdfFile;
+		runProgress('pdf', 2200, () => {
 			const href = URL.createObjectURL(file);
 			const base = file.name.replace(/\.[^.]+$/, '');
-			convertResult = { href, download: `${base}_converted.${selectedFormat}` };
-			convertProgress = { show: false, pct: 100, labelKey: 'status.done' };
-			convertBusy = false;
+			pdfResult = { href, download: `${base}_unlocked.pdf` };
+			pdfProgress = { show: false, pct: 100, labelKey: 'status.done' };
+			pdfBusy = false;
 		});
 	}
 
 	function clearResult(mode: Mode) {
 		if (mode === 'compress' && compressResult?.href) URL.revokeObjectURL(compressResult.href);
-		if (mode === 'convert' && convertResult?.href) URL.revokeObjectURL(convertResult.href);
+		if (mode === 'pdf' && pdfResult?.href) URL.revokeObjectURL(pdfResult.href);
 		if (mode === 'compress') compressResult = null;
-		if (mode === 'convert') convertResult = null;
+		if (mode === 'pdf') pdfResult = null;
 	}
 
 	onDestroy(() => {
 		if (progressTimer) clearInterval(progressTimer);
 		clearResult('compress');
-		clearResult('convert');
+		clearResult('pdf');
 	});
 </script>
 
@@ -271,14 +278,14 @@
 				<Zap size={15} strokeWidth={2.2} /> {t('tab.compress')}
 			</button>
 			<button
-				class:active={activeTab === 'convert'}
+				class:active={activeTab === 'pdf'}
 				class="tab-btn"
 				role="tab"
-				aria-selected={activeTab === 'convert'}
+				aria-selected={activeTab === 'pdf'}
 				type="button"
-				onclick={() => switchTab('convert')}
+				onclick={() => switchTab('pdf')}
 			>
-				<RefreshCw size={15} strokeWidth={2.2} /> {t('tab.convert')}
+				<FileText size={15} strokeWidth={2.2} /> {t('tab.pdf')}
 			</button>
 		</div>
 
@@ -393,75 +400,86 @@
 			</div>
 		</div>
 
-		<div class:active={activeTab === 'convert'} class="panel">
-			{#if !convertFile}
+		<!-- PDF Tab -->
+		<div class:active={activeTab === 'pdf'} class="panel">
+			{#if !pdfFile}
 				<button
-					class:over={dragOver === 'convert'}
+					class:over={dragOver === 'pdf'}
 					class="dz"
 					type="button"
-					onclick={() => triggerInput('convert')}
-					ondragover={(event) => onDragOver(event, 'convert')}
-					ondragleave={() => onDragLeave('convert')}
-					ondrop={(event) => onDrop(event, 'convert')}
+					onclick={() => triggerInput('pdf')}
+					ondragover={(event) => onDragOver(event, 'pdf')}
+					ondragleave={() => onDragLeave('pdf')}
+					ondrop={(event) => onDrop(event, 'pdf')}
 				>
-					<div class="dz-ico"><RefreshCw size={24} strokeWidth={1.5} /></div>
-					<h3>{t('drop.video')}</h3>
-					<p class="sub">{t('drop.convert.sub')}</p>
+					<div class="dz-ico"><FileText size={24} strokeWidth={1.5} /></div>
+					<h3>{t('drop.pdf')}</h3>
+					<p class="sub">{t('drop.pdf.sub')}</p>
 					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {t('btn.browse')}</span>
-					<p class="fmt-hint">{t('hint.convert')}</p>
+					<p class="fmt-hint">{t('hint.pdf')}</p>
 				</button>
 			{/if}
-			<input bind:this={convertInput} class="file-input" type="file" accept="video/*" onchange={(event) => handleFile(event, 'convert')} />
+			<input bind:this={pdfInput} class="file-input" type="file" accept="application/pdf" onchange={(event) => handleFile(event, 'pdf')} />
 
-			{#if convertFile}
+			{#if pdfFile}
 				<div class="card">
 					<div class="file-row">
-						<div class="file-ico"><Film size={18} strokeWidth={1.8} /></div>
+						<div class="file-ico"><FileText size={18} strokeWidth={1.8} /></div>
 						<div class="file-info">
-							<div class="file-name">{convertFile.name}</div>
-							<div class="file-sz">{fmtBytes(convertFile.size)} · {convertFile.type || t('file.type.video')}</div>
+							<div class="file-name">{pdfFile.name}</div>
+							<div class="file-sz">{fmtBytes(pdfFile.size)} · PDF</div>
 						</div>
-						<button class="btn-rm" type="button" onclick={() => clearFile('convert')} title="Remove">
+						<button class="btn-rm" type="button" onclick={() => clearFile('pdf')} title="Remove">
 							<X size={15} strokeWidth={2.5} />
 						</button>
 					</div>
 
 					<div class="csec">
-						<span class="slabel">{t('sec.convertTo')}</span>
-						<div class="fmt-row">
-							{#each formats as format}
-								<button class:on={selectedFormat === format} class="fo" type="button" onclick={() => (selectedFormat = format)}>
-									{format.toUpperCase()}
-								</button>
-							{/each}
-						</div>
+						<span class="slabel">
+							<label style="display: flex; align-items: center; gap: 6px; cursor: pointer; user-select: none;">
+								<input type="checkbox" bind:checked={removePdfPassword} style="cursor: pointer;" />
+								{t('sec.pdfPasswordOpt')}
+							</label>
+						</span>
+						{#if removePdfPassword}
+							<div class="target-input-wrap" style="margin-top: 10px;">
+								<KeyRound size={15} strokeWidth={2} class="pass-ico" />
+								<input
+									bind:value={pdfPassword}
+									type="password"
+									placeholder={t('input.password.ph')}
+									class="pass-input"
+								/>
+							</div>
+							<p class="pass-hint">{t('pdf.password.hint')}</p>
+						{/if}
 					</div>
 
-					<div class:show={convertProgress.show} class="prog">
-						<div class="ptop"><span>{t(convertProgress.labelKey)}</span><span class="pct">{convertProgress.pct}%</span></div>
-						<div class="pbar"><div class="pfill" style:width={`${convertProgress.pct}%`}></div></div>
+					<div class:show={pdfProgress.show} class="prog">
+						<div class="ptop"><span>{t(pdfProgress.labelKey)}</span><span class="pct">{pdfProgress.pct}%</span></div>
+						<div class="pbar"><div class="pfill" style:width={`${pdfProgress.pct}%`}></div></div>
 					</div>
 
-					<div class:show={Boolean(convertError)} class="errbar">
+					<div class:show={Boolean(pdfError)} class="errbar">
 						<AlertTriangle size={15} strokeWidth={2} />
-						<span>{convertError}</span>
+						<span>{pdfError}</span>
 					</div>
 
 					<div class="action">
-						<button class="btn-go" type="button" disabled={convertBusy} onclick={startConvert}>
-							<RefreshCw size={16} strokeWidth={2.2} /> {t('btn.convertNow')}
+						<button class="btn-go btn-go--pdf" type="button" disabled={pdfBusy} onclick={startPdfUnlock}>
+							<FileText size={16} strokeWidth={2.2} /> {t('btn.removePassword')}
 						</button>
 					</div>
 				</div>
 			{/if}
 
-			<div class:show={Boolean(convertResult)} class="res">
+			<div class:show={Boolean(pdfResult)} class="res">
 				<div class="res-head">
 					<div class="res-ico"><CheckCircle2 size={16} strokeWidth={2} /></div>
-					<div><div class="res-title">{t('res.convert.title')}</div><div class="res-sub">{t('res.convert.sub')}</div></div>
+					<div><div class="res-title">{t('res.pdf.title')}</div><div class="res-sub">{t('res.pdf.sub')}</div></div>
 				</div>
-				<a class="btn-dl" href={convertResult?.href ?? '#'} download={convertResult?.download}>
-					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.convert')}
+				<a class="btn-dl" href={pdfResult?.href ?? '#'} download={pdfResult?.download}>
+					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.pdf')}
 				</a>
 			</div>
 		</div>
@@ -538,3 +556,47 @@
 		</section>
 	</div>
 </main>
+
+<style>
+	.pass-input {
+		width: 100%;
+		padding: 10px 14px 10px 40px;
+		background: var(--surf2);
+		border: 1px solid var(--border);
+		border-radius: var(--rsm);
+		color: var(--text);
+		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+		font-size: 14px;
+		font-weight: 500;
+		outline: none;
+		transition: border-color .18s;
+	}
+
+	.pass-input:focus {
+		border-color: var(--accent);
+	}
+
+	.pass-input::placeholder {
+		color: var(--muted);
+	}
+
+	:global(.pass-ico) {
+		position: absolute;
+		left: 13px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--muted);
+		pointer-events: none;
+	}
+
+	.pass-hint {
+		margin-top: 8px;
+		font-size: 11.5px;
+		color: var(--muted);
+		line-height: 1.5;
+	}
+
+	.btn-go--pdf {
+		background: linear-gradient(135deg, #7c5cfc, #4f8cff);
+	}
+</style>
