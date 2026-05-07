@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
-	import { languages, type Language } from '$lib/i18n/languages';
+	import { onDestroy } from 'svelte';
+	import { page } from '$app/stores';
+	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
 	import {
 		Zap, RefreshCw, Folder, Film, X, Feather, Scale, Gem, CheckCircle2,
-		Download, ShieldCheck, AlertTriangle, Home, FileText, Globe, ChevronDown,
-		Cpu, Target, Infinity, Check
+		Download, ShieldCheck, AlertTriangle, Cpu, Target, Infinity
 	} from 'lucide-svelte';
 
 	type Mode = 'compress' | 'convert';
@@ -20,20 +20,18 @@
 		{ mb: 16, label: 'Twitter/X' },
 		{ mb: 100, label: 'Email' }
 	];
+
 	const formats = ['mp4', 'webm', 'mov', 'avi', 'gif'];
 
-	let activeLang: Language = $state(languages[0]);
-	// Hàm dịch động theo ngôn ngữ hiện tại
+	let currentLangKey = $derived($page.params.lang || 'en');
+	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
 	let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
 
 	let activeTab: Tab = $state('compress');
-	let langOpen = $state(false);
-	let mobileOpen = $state(false);
 	let dragOver: Mode | null = $state(null);
 
 	let compressInput: HTMLInputElement;
 	let convertInput: HTMLInputElement;
-	let langWrap: HTMLDivElement;
 	let compressFile: File | null = $state(null);
 	let convertFile: File | null = $state(null);
 	let selectedPreset = $state('balanced');
@@ -42,34 +40,18 @@
 	let selectedFormat = $state('mp4');
 	let compressError = $state('');
 	let convertError = $state('');
-	
-	// Khởi tạo label lúc đầu bằng t(...) nhưng do t là function reactive, 
-	// ta sẽ update label khi state thay đổi hoặc gọi thẳng từ UI
+
 	let compressProgress = $state({ show: false, pct: 0, labelKey: 'status.compressing' });
 	let convertProgress = $state({ show: false, pct: 0, labelKey: 'status.converting' });
 	
 	let compressBusy = $state(false);
 	let convertBusy = $state(false);
+
 	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null = $state(null);
 	let convertResult: { href: string; download: string } | null = $state(null);
 	let progressTimer: ReturnType<typeof setInterval> | null = null;
+
 	let hasTarget = $derived(targetMb.trim() !== '');
-
-	function setLanguage(lang: Language) {
-		activeLang = lang;
-		langOpen = false;
-		closeMobileMenu();
-	}
-
-	function toggleMobileMenu() {
-		mobileOpen = !mobileOpen;
-		document.body.style.overflow = mobileOpen ? 'hidden' : '';
-	}
-
-	function closeMobileMenu() {
-		mobileOpen = false;
-		document.body.style.overflow = '';
-	}
 
 	function switchTab(tab: Tab) {
 		activeTab = tab;
@@ -249,19 +231,10 @@
 		if (mode === 'convert') convertResult = null;
 	}
 
-	onMount(() => {
-		const closeLangOnOutsideClick = (event: MouseEvent) => {
-			if (langWrap && !langWrap.contains(event.target as Node)) langOpen = false;
-		};
-		document.addEventListener('click', closeLangOnOutsideClick);
-		return () => document.removeEventListener('click', closeLangOnOutsideClick);
-	});
-
 	onDestroy(() => {
 		if (progressTimer) clearInterval(progressTimer);
 		clearResult('compress');
 		clearResult('convert');
-		if (typeof document !== 'undefined') document.body.style.overflow = '';
 	});
 </script>
 
@@ -273,68 +246,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 </svelte:head>
-
-<header>
-	<div class="hinner">
-		<a href="/" class="logo">
-			<div class="logo-ico">
-				<Film size={15} strokeWidth={2.2} />
-			</div>
-			<span class="logo-name">Neko<span>Compress</span></span>
-		</a>
-
-		<nav class="hnav">
-			<a href="/" class="active">{t('nav.home')}</a>
-			<a href="/blog">{t('nav.blog')}</a>
-		</nav>
-
-		<div class="hright">
-			<div bind:this={langWrap} class:open={langOpen} class="lang-wrap">
-				<button class="lang-btn" type="button" onclick={(event) => {
-					event.stopPropagation();
-					langOpen = !langOpen;
-				}}>
-					<Globe size={13} strokeWidth={2} />
-					<span class="flag">{activeLang.flag}</span>
-					<span>{activeLang.code}</span>
-					<ChevronDown size={11} strokeWidth={2} class="chevron-icon" />
-				</button>
-				<div class="lang-menu">
-					{#each languages as lang}
-						<button class:on={activeLang.key === lang.key} class="lang-opt" type="button" onclick={() => setLanguage(lang)}>
-							<span class="lf">{lang.flag}</span>
-							<span class="ln">{lang.name}</span>
-							<span class="lc">{lang.code}</span>
-						</button>
-					{/each}
-				</div>
-			</div>
-
-			<button class:open={mobileOpen} class="ham-btn" type="button" onclick={toggleMobileMenu} aria-label="Menu">
-				<span></span><span></span><span></span>
-			</button>
-		</div>
-	</div>
-</header>
-
-<div class:open={mobileOpen} class="mobile-menu">
-	<a href="/" class="mm-link" onclick={closeMobileMenu}>
-		<span class="mm-ico"><Home size={18} /></span><span>{t('nav.home')}</span>
-	</a>
-	<a href="/blog" class="mm-link" onclick={closeMobileMenu}>
-		<span class="mm-ico"><FileText size={18} /></span><span>{t('nav.blog')}</span>
-	</a>
-
-	<div class="mm-divider"></div>
-	<div class="mm-lang-grid">
-		{#each languages as lang}
-			<button class:on={activeLang.key === lang.key} class="mm-lang-opt" type="button" onclick={() => setLanguage(lang)}>
-				<span class="mlf">{lang.flag}</span>
-				<span class="mln">{lang.name}</span>
-			</button>
-		{/each}
-	</div>
-</div>
 
 <main>
 	<div class="wrap">
@@ -608,8 +519,3 @@
 	</div>
 </main>
 
-<footer>
-	<div class="wrap">
-		<p>{@html t('footer.copy')} <a href="/">{t('footer.privacy')}</a> &nbsp;·&nbsp; <a href="/">{t('footer.terms')}</a></p>
-	</div>
-</footer>

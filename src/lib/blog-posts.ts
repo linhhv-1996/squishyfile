@@ -26,9 +26,9 @@ Discord's free tier caps uploaded files at **8 MB** to keep server costs managea
 
 The trick is to compress your video smartly — reducing file size without making the video look pixelated or washed out.
 
-## The Quick Way: Use NekoCompress
+## The Quick Way: Use SquishyFile
 
-NekoCompress runs entirely in your browser, which means:
+SquishyFile runs entirely in your browser, which means:
 
 - **No uploads to a server** — your video never leaves your device
 - **No watermarks** added to your clip
@@ -58,7 +58,7 @@ Key factors that affect quality:
 
 ## Checking the Result
 
-After compression, NekoCompress shows you the original size, compressed size, and how much you saved. Download the file and drag it directly into Discord to check it plays inline.
+After compression, SquishyFile shows you the original size, compressed size, and how much you saved. Download the file and drag it directly into Discord to check it plays inline.
 
 If the quality isn't acceptable, try a slightly higher target (10 MB) — Discord will still let you share it as a download link rather than an inline preview.
 `,
@@ -128,7 +128,7 @@ At the same perceived quality, WebM files are typically **20–40% smaller** tha
 
 ## Converting Between Formats
 
-NekoCompress lets you convert between MP4, WebM, MOV, AVI, and GIF directly in your browser — no software to install.
+SquishyFile lets you convert between MP4, WebM, MOV, AVI, and GIF directly in your browser — no software to install.
 `,
 	},
 	{
@@ -162,7 +162,7 @@ The right approach is to re-encode the video with a lower bitrate.
 
 ## Step-by-Step: Compress for Gmail (25 MB)
 
-1. Open [NekoCompress](/) and drop your video onto the upload zone
+1. Open [SquishyFile](/) and drop your video onto the upload zone
 2. Under **Target File Size**, click the **Gmail** preset button
 3. Click **Compress Now**
 4. Download the compressed video
@@ -220,7 +220,7 @@ Instagram re-encodes your video after upload, so don't obsess over file size —
 
 TikTok is strict about vertical video (9:16). The **287 MB** limit is generous for typical clips, but if you're exporting a long-form video, you may need to compress.
 
-TikTok also adds its own watermark if you export from the app — use NekoCompress to compress your original file before uploading.
+TikTok also adds its own watermark if you export from the app — use SquishyFile to compress your original file before uploading.
 
 ## Twitter/X
 
@@ -236,7 +236,7 @@ YouTube **Shorts** (under 60 seconds) should be 9:16 vertical, just like TikTok 
 
 ## Compressing for Social Media
 
-NekoCompress can convert your video to the right format and compress it to meet platform limits:
+SquishyFile can convert your video to the right format and compress it to meet platform limits:
 
 1. Drop your video into the converter
 2. Select your target format (MP4 for most platforms)
@@ -262,14 +262,14 @@ For platforms with generous limits (YouTube, Instagram, LinkedIn), just convert 
 
 **New way**: Open a browser tab, drop your file, click convert, done.
 
-Browser-based video tools have become genuinely powerful. WebAssembly (WASM) allows tools like NekoCompress to run near-native code (including FFmpeg) directly inside your browser tab, with no server involved.
+Browser-based video tools have become genuinely powerful. WebAssembly (WASM) allows tools like SquishyFile to run near-native code (including FFmpeg) directly inside your browser tab, with no server involved.
 
 ## Why In-Browser Conversion Matters
 
 ### Privacy
 Your video never leaves your device. Traditional online converters (like the many "free online converter" sites) upload your file to their server, process it there, then let you download the result. Your video passes through their infrastructure.
 
-With NekoCompress, the conversion happens inside your browser tab. Nothing is uploaded anywhere.
+With SquishyFile, the conversion happens inside your browser tab. Nothing is uploaded anywhere.
 
 ### Speed
 Since there's no upload/download round-trip, you're limited only by your CPU speed. Modern laptops convert 1080p video at several times realtime speed.
@@ -279,7 +279,7 @@ No accounts, no subscriptions, no watermarks. Open the page, use it, close it.
 
 ## Supported Conversions
 
-NekoCompress supports converting between:
+SquishyFile supports converting between:
 
 - **MP4** ↔ **WebM** (great for web usage)
 - **MP4** ↔ **MOV** (for Apple ecosystem compatibility)
