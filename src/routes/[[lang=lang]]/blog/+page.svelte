@@ -1,111 +1,176 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+    import { languages } from '$lib/i18n/languages';
+	import { translations } from '$lib/i18n/translations';
 
-	// Svelte 5 Runes
+    let currentLangKey = $derived($page.params.lang || 'en');
+    let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
+    let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
+
 	let { data }: { data: PageData } = $props();
-	
-	// Tính toán tiền tố ngôn ngữ cho URL
 	let langPrefix = $derived($page.params.lang ? `/${$page.params.lang}` : '');
 </script>
 
 <svelte:head>
-	<title>Blog - SquishyFile</title>
-	<meta name="description" content="Latest news and updates from SquishyFile blog." />
+	<title>{t('blog.meta.title')}</title>
+	<meta name="description" content={t('blog.meta.desc')} />
 </svelte:head>
 
 <main class="wrap">
-    <div class="blog-container">
-        <header class="blog-header">
-            <h1>Blog</h1>
-            <p>Latest articles and updates</p>
-        </header>
+	<div class="blog-container">
 
-        <div class="blog-list">
-            {#each data.posts as post}
-                <a href="{langPrefix}/blog/{post.slug}" class="post-card">
-                    <div class="post-meta">
-                        <span class="post-date">{post.date}</span>
-                    </div>
-                    <h2 class="post-title">{post.title}</h2>
-                    <p class="post-desc">{post.description}</p>
-                    <div class="post-footer">
-                        <span class="read-more">Read more →</span>
-                    </div>
-                </a>
-            {:else}
-                <div class="empty-state">
-                    <p>No posts available for this language yet.</p>
-                </div>
-            {/each}
-        </div>
-    </div>
+		<header class="blog-header">
+			<h1>{t('blog.header.title')}</h1>
+			<p>{t('blog.header.sub')}</p>
+		</header>
+
+		{#if data.posts.length > 0}
+			<ul class="post-list">
+				{#each data.posts as post}
+					<li class="post-item">
+						<a href="{langPrefix}/blog/{post.slug}" class="post-link">
+							<div class="post-main">
+								<h2 class="post-title">{post.title}</h2>
+								<p class="post-desc">{post.description}</p>
+							</div>
+							<div class="post-right">
+								<time class="post-date">{post.date}</time>
+								<svg class="post-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<p class="empty">{t('blog.empty')}</p>
+		{/if}
+
+	</div>
 </main>
 
 <style>
-    /* Container & Header */
-    .blog-container { padding: 40px 0 60px; animation: fadeUp .3s ease; }
-    .blog-header { margin-bottom: 40px; text-align: left; }
-    .blog-header h1 { 
-        font-family: 'Noto Sans JP', sans-serif; font-size: 36px; font-weight: 800; 
-        color: var(--text); margin-bottom: 8px; letter-spacing: -1px; 
-    }
-    .blog-header p { color: var(--muted); font-size: 15px; }
+	.blog-container {
+		padding: 48px 0 80px;
+		animation: fadeUp 0.3s ease;
+	}
 
-    /* List & Cards */
-    .blog-list { display: flex; flex-direction: column; gap: 20px; }
-    
-    .post-card {
-        display: block; text-decoration: none;
-        background: var(--surf); border: 1px solid var(--border);
-        border-radius: var(--r); padding: 24px;
-        transition: all 0.25s ease;
-    }
+	/* Header */
+	.blog-header {
+		margin-bottom: 40px;
+	}
 
-    .post-card:hover {
-        border-color: var(--accent);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
+	.blog-header h1 {
+		font-size: 28px;
+		font-weight: 800;
+		letter-spacing: -0.8px;
+		color: var(--text);
+		margin-bottom: 6px;
+	}
 
-    .post-meta { margin-bottom: 12px; }
-    .post-date { font-size: 12px; color: var(--muted); font-weight: 500; }
+	.blog-header p {
+		font-size: 13px;
+		color: var(--muted);
+	}
 
-    .post-title {
-        font-family: 'Noto Sans JP', sans-serif; font-size: 22px; font-weight: 700;
-        color: var(--text); margin-bottom: 10px; line-height: 1.3;
-        transition: color 0.2s;
-    }
-    .post-card:hover .post-title { color: var(--accent); }
+	/* List */
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		border-top: 1px solid var(--border);
+	}
 
-    .post-desc {
-        color: var(--muted); font-size: 14px; line-height: 1.6;
-        margin-bottom: 16px;
-        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-    }
+	.post-item {
+		border-bottom: 1px solid var(--border);
+	}
 
-    .read-more {
-        font-size: 13px; font-weight: 600; color: var(--accent);
-        opacity: 0.8; transition: opacity 0.2s;
-    }
-    .post-card:hover .read-more { opacity: 1; }
+	.post-link {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 22px 0;
+		text-decoration: none;
+	}
 
-    .empty-state {
-        text-align: center; padding: 60px 0;
-        border: 1.5px dashed var(--border); border-radius: var(--r);
-        color: var(--muted);
-    }
+	.post-link:hover .post-title {
+		color: var(--accent);
+	}
 
-    /* Animation y hệt trang Privacy */
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+	.post-link:hover .post-arrow {
+		color: var(--accent);
+		transform: translateX(3px);
+	}
 
-    /* Mobile tối ưu */
-    @media (max-width: 580px) {
-        .blog-header h1 { font-size: 28px; }
-        .post-card { padding: 20px; }
-        .post-title { font-size: 19px; }
-    }
+	/* Left */
+	.post-main {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.post-title {
+		font-size: 15px;
+		font-weight: 700;
+		color: var(--text);
+		letter-spacing: -0.2px;
+		line-height: 1.35;
+		margin-bottom: 5px;
+		transition: color 0.15s;
+	}
+
+	.post-desc {
+		font-size: 13px;
+		color: var(--muted);
+		line-height: 1.55;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	/* Right */
+	.post-right {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 10px;
+		flex-shrink: 0;
+		padding-top: 2px;
+	}
+
+	.post-date {
+		font-size: 11.5px;
+		color: var(--muted);
+		font-weight: 500;
+		white-space: nowrap;
+	}
+
+	.post-arrow {
+		color: var(--border);
+		transition: color 0.15s, transform 0.15s;
+	}
+
+	/* Empty */
+	.empty {
+		padding: 48px 0;
+		font-size: 13px;
+		color: var(--muted);
+		border-top: 1px solid var(--border);
+	}
+
+	@keyframes fadeUp {
+		from { opacity: 0; transform: translateY(8px); }
+		to   { opacity: 1; transform: translateY(0); }
+	}
+
+	@media (max-width: 580px) {
+		.blog-container { padding: 32px 0 60px; }
+		.blog-header h1 { font-size: 24px; }
+		.post-link { gap: 16px; padding: 18px 0; }
+		.post-title { font-size: 14px; }
+		.post-right { flex-direction: row; align-items: center; gap: 8px; padding-top: 0; }
+	}
 </style>

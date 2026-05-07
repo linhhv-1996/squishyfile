@@ -12,4 +12,8 @@ export const languages: Language[] = [
 	{ key: 'zh', flag: '🇹🇼', code: 'ZH', name: '繁體中文' },
 	{ key: 'de', flag: '🇩🇪', code: 'DE', name: 'Deutsch' },
 	{ key: 'th', flag: '🇹🇭', code: 'TH', name: 'ภาษาไทย' },
+	{ key: 'fr', flag: '🇫🇷', code: 'FR', name: 'Français' },
+	{ key: 'id', flag: '🇮🇩', code: 'ID', name: 'Indonesia' },
+	{ key: 'es', flag: '🇪🇸', code: 'ES', name: 'Español' },
+	{ key: 'pt', flag: '🇧🇷', code: 'PT', name: 'Português (BR)' },
 ];

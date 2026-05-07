@@ -69,7 +69,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header>
+<header class="main-header">
 	<div class="hinner">
 		<a href={homeHref} class="logo">
 			<span class="logo-name">Squishy<span>File</span></span>
