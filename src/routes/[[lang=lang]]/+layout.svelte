@@ -56,6 +56,9 @@
 	// Xử lý link thông minh dựa theo ngôn ngữ
 	let homeHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey : ''}`);
 	let blogHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/blog' : 'blog'}`);
+
+	let privacyHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/privacy' : 'privacy'}`);
+	let termsHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/terms' : 'terms'}`);
 	
 	// Active link
 	let isHome = $derived($page.url.pathname === '/' || $page.url.pathname === `/${currentLangKey}`);
@@ -82,7 +85,6 @@
 					event.stopPropagation();
 					langOpen = !langOpen;
 				}}>
-					<Globe size={13} strokeWidth={2} />
 					<span class="flag">{activeLang.flag}</span>
 					<span>{activeLang.code}</span>
 					<ChevronDown size={11} strokeWidth={2} class="chevron-icon" />
@@ -128,8 +130,9 @@
 
 <footer>
 	<div class="wrap">
-		<p>{@html t('footer.copy')} <a href={homeHref}>{t('footer.privacy') || 'Privacy Policy'}</a> &nbsp;·&nbsp;
-		<a href={homeHref}>{t('footer.terms') || 'Terms of Service'}</a></p>
+		<p>{@html t('footer.copy')} 
+			<a href={privacyHref}>{t('footer.privacy') || 'Privacy Policy'}</a> &nbsp;·&nbsp;
+			<a href={termsHref}>{t('footer.terms') || 'Terms of Service'}</a>
+		</p>
 	</div>
 </footer>
-

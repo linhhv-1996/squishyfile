@@ -59,7 +59,7 @@
     .hnav a:hover { color: var(--text); background: var(--surf2); }
     .hnav a.active { color: var(--text); }
 
-    .hright { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .hright { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto; }
 
     /* lang */
     .lang-wrap { position: relative; }
