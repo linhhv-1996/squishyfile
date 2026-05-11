@@ -1,248 +1,19 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import {
-		Zap, FileText, Folder, Film, X, Feather, Scale, Gem, CheckCircle2,
-		Download, ShieldCheck, AlertTriangle, Cpu, Target, Infinity, KeyRound
-	} from 'lucide-svelte';
-
-	type Mode = 'compress' | 'pdf';
-	type Tab = Mode;
-
-	const sizeTags = [
-		{ mb: 10, label: 'LINE' },
-		{ mb: 8, label: 'Discord' },
-		{ mb: 25, label: 'Gmail' },
-		{ mb: 20, label: 'Messenger' },
-		{ mb: 50, label: 'Telegram' },
-		{ mb: 16, label: 'Twitter/X' },
-		{ mb: 100, label: 'Email' }
-	];
+	import { Film, FileText, ArrowRight, Cpu, Target, Infinity, ShieldCheck } from 'lucide-svelte';
 
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
 	let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
 
-	let activeTab: Tab = $state('compress');
-	let dragOver: Mode | null = $state(null);
-
-	let compressInput: HTMLInputElement;
-	let pdfInput: HTMLInputElement;
-	let compressFile: File | null = $state(null);
-	let pdfFile: File | null = $state(null);
-	let selectedPreset = $state('balanced');
-	let targetMb = $state('');
-	let selectedTag: number | null = $state(null);
-	let pdfPassword = $state('');
-	let removePdfPassword = $state(false);
-	let compressError = $state('');
-	let pdfError = $state('');
-
-	let compressProgress = $state({ show: false, pct: 0, labelKey: 'status.compressing' });
-	let pdfProgress = $state({ show: false, pct: 0, labelKey: 'status.removingPass' });
-
-	let compressBusy = $state(false);
-	let pdfBusy = $state(false);
-
-	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null = $state(null);
-	let pdfResult: { href: string; download: string } | null = $state(null);
-	let progressTimer: ReturnType<typeof setInterval> | null = null;
-
-	let hasTarget = $derived(targetMb.trim() !== '');
-
-	function switchTab(tab: Tab) {
-		activeTab = tab;
-	}
-
-	function triggerInput(mode: Mode) {
-		(mode === 'compress' ? compressInput : pdfInput).click();
-	}
-
-	function handleFile(event: Event, mode: Mode) {
-		const input = event.currentTarget as HTMLInputElement;
-		const file = input.files?.[0];
-		if (file) loadFile(file, mode);
-	}
-
-	function loadFile(file: File, mode: Mode) {
-		if (mode === 'compress') {
-			compressFile = file;
-			compressError = '';
-			compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
-			clearResult('compress');
-		} else {
-			pdfFile = file;
-			pdfError = '';
-			pdfProgress = { show: false, pct: 0, labelKey: 'status.removingPass' };
-			clearResult('pdf');
-		}
-	}
-
-	function clearFile(mode: Mode) {
-		if (mode === 'compress') {
-			compressFile = null;
-			compressInput.value = '';
-			compressError = '';
-			compressBusy = false;
-			compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
-			targetMb = '';
-			selectedTag = null;
-			selectedPreset = 'balanced';
-			clearResult('compress');
-		} else {
-			pdfFile = null;
-			pdfInput.value = '';
-			pdfError = '';
-			pdfBusy = false;
-			pdfPassword = '';
-			removePdfPassword = false;
-			pdfProgress = { show: false, pct: 0, labelKey: 'status.removingPass' };
-			clearResult('pdf');
-		}
-	}
-
-	function onDragOver(event: DragEvent, mode: Mode) {
-		event.preventDefault();
-		dragOver = mode;
-	}
-
-	function onDragLeave(mode: Mode) {
-		if (dragOver === mode) dragOver = null;
-	}
-
-	function onDrop(event: DragEvent, mode: Mode) {
-		event.preventDefault();
-		dragOver = null;
-		const file = event.dataTransfer?.files?.[0];
-		if (!file) return;
-		if (mode === 'compress' && file.type.startsWith('video/')) loadFile(file, mode);
-		if (mode === 'pdf' && file.type === 'application/pdf') loadFile(file, mode);
-	}
-
-	function pickPreset(key: string) {
-		if (hasTarget) return;
-		selectedPreset = key;
-	}
-
-	function onTargetInput() {
-		selectedTag = null;
-		if (!targetMb.trim() && !selectedPreset) selectedPreset = 'balanced';
-	}
-
-	function fillTargetSize(mb: number) {
-		if (selectedTag === mb) {
-			clearTargetSize();
-			return;
-		}
-		targetMb = String(mb);
-		selectedTag = mb;
-		selectedPreset = '';
-	}
-
-	function clearTargetSize() {
-		targetMb = '';
-		selectedTag = null;
-		selectedPreset = 'balanced';
-	}
-
-	function fmtBytes(bytes: number) {
-		if (bytes < 1_048_576) return `${(bytes / 1024).toFixed(1)} KB`;
-		if (bytes < 1_073_741_824) return `${(bytes / 1_048_576).toFixed(1)} MB`;
-		return `${(bytes / 1_073_741_824).toFixed(2)} GB`;
-	}
-
-	function setProgress(mode: Mode, pct: number, labelKey?: string) {
-		if (mode === 'compress') {
-			compressProgress = { ...compressProgress, pct, labelKey: labelKey ?? compressProgress.labelKey };
-		} else {
-			pdfProgress = { ...pdfProgress, pct, labelKey: labelKey ?? pdfProgress.labelKey };
-		}
-	}
-
-	function runProgress(mode: Mode, ms: number, done: () => void) {
-		if (progressTimer) clearInterval(progressTimer);
-		let pct = 0;
-		progressTimer = setInterval(() => {
-			pct = Math.min(pct + Math.random() * 4 + 1, 94);
-			setProgress(mode, Math.round(pct));
-			if (pct >= 94 && progressTimer) {
-				clearInterval(progressTimer);
-				progressTimer = null;
-				setTimeout(() => {
-					setProgress(mode, 100, 'status.done');
-					done();
-				}, 280);
-			}
-		}, ms / 55);
-	}
-
-	function startCompress() {
-		if (!compressFile) {
-			compressError = t('error.selectFile');
-			return;
-		}
-
-		compressError = '';
-		clearResult('compress');
-		compressBusy = true;
-		compressProgress = { show: true, pct: 0, labelKey: 'status.compressing' };
-
-		const file = compressFile;
-		runProgress('compress', 2800, () => {
-			const ratio = 0.28 + Math.random() * 0.35;
-			const href = URL.createObjectURL(file);
-			const base = file.name.replace(/\.[^.]+$/, '');
-			compressResult = {
-				href,
-				download: `${base}_compressed.mp4`,
-				original: fmtBytes(file.size),
-				compressed: fmtBytes(Math.round(file.size * ratio)),
-				saved: `${Math.round((1 - ratio) * 100)}%`
-			};
-			compressProgress = { show: false, pct: 100, labelKey: 'status.done' };
-			compressBusy = false;
-		});
-	}
-
-	function startPdfUnlock() {
-		if (!pdfFile) {
-			pdfError = t('error.selectPdf');
-			return;
-		}
-		if (removePdfPassword && !pdfPassword.trim()) {
-			pdfError = t('error.enterPassword');
-			return;
-		}
-
-		pdfError = '';
-		clearResult('pdf');
-		pdfBusy = true;
-		pdfProgress = { show: true, pct: 0, labelKey: 'status.removingPass' };
-
-		const file = pdfFile;
-		runProgress('pdf', 2200, () => {
-			const href = URL.createObjectURL(file);
-			const base = file.name.replace(/\.[^.]+$/, '');
-			pdfResult = { href, download: `${base}_unlocked.pdf` };
-			pdfProgress = { show: false, pct: 100, labelKey: 'status.done' };
-			pdfBusy = false;
-		});
-	}
-
-	function clearResult(mode: Mode) {
-		if (mode === 'compress' && compressResult?.href) URL.revokeObjectURL(compressResult.href);
-		if (mode === 'pdf' && pdfResult?.href) URL.revokeObjectURL(pdfResult.href);
-		if (mode === 'compress') compressResult = null;
-		if (mode === 'pdf') pdfResult = null;
-	}
-
-	onDestroy(() => {
-		if (progressTimer) clearInterval(progressTimer);
-		clearResult('compress');
-		clearResult('pdf');
-	});
+	let compressHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/compress-video` : '/compress-video'
+	);
+	let pdfHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/compress-pdf` : '/compress-pdf'
+	);
 </script>
 
 <svelte:head>
@@ -266,222 +37,50 @@
 			</div>
 		</section>
 
-		<div class="tabs" role="tablist">
-			<button
-				class:active={activeTab === 'compress'}
-				class="tab-btn"
-				role="tab"
-				aria-selected={activeTab === 'compress'}
-				type="button"
-				onclick={() => switchTab('compress')}
-			>
-				<Zap size={15} strokeWidth={2.2} /> {t('tab.compress')}
-			</button>
-			<button
-				class:active={activeTab === 'pdf'}
-				class="tab-btn"
-				role="tab"
-				aria-selected={activeTab === 'pdf'}
-				type="button"
-				onclick={() => switchTab('pdf')}
-			>
-				<FileText size={15} strokeWidth={2.2} /> {t('tab.pdf')}
-			</button>
-		</div>
-
-		<div class:active={activeTab === 'compress'} class="panel">
-			{#if !compressFile}
-				<button
-					class:over={dragOver === 'compress'}
-					class="dz"
-					type="button"
-					onclick={() => triggerInput('compress')}
-					ondragover={(event) => onDragOver(event, 'compress')}
-					ondragleave={() => onDragLeave('compress')}
-					ondrop={(event) => onDrop(event, 'compress')}
-				>
-					<div class="dz-ico"><Film size={24} strokeWidth={1.5} /></div>
-					<h3>{t('drop.video')}</h3>
-					<p class="sub">{t('drop.compress.sub')}</p>
-					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {t('btn.browse')}</span>
-					<p class="fmt-hint">{@html t('hint.compress')}</p>
-				</button>
-			{/if}
-			<input bind:this={compressInput} class="file-input" type="file" accept="video/*" onchange={(event) => handleFile(event, 'compress')} />
-
-			{#if compressFile}
-				<div class="card">
-					<div class="file-row">
-						<div class="file-ico"><Film size={18} strokeWidth={1.8} /></div>
-						<div class="file-info">
-							<div class="file-name">{compressFile.name}</div>
-							<div class="file-sz">{fmtBytes(compressFile.size)} · {compressFile.type || t('file.type.video')}</div>
-						</div>
-						<button class="btn-rm" type="button" onclick={() => clearFile('compress')} title="Remove">
-							<X size={15} strokeWidth={2.5} />
-						</button>
+		<div class="tool-grid">
+			<a href={compressHref} class="tool-card tool-card--video">
+				<div class="tc-inner">
+					<div class="tc-ico tc-ico--video">
+						<Film size={28} strokeWidth={1.5} />
 					</div>
-
-					<div class="csec">
-						<span class="slabel">{t('sec.quickPreset')}</span>
-						<div class="preset-grid">
-							<button class:on={selectedPreset === 'low' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('low')}>
-								<div class="ico"><Feather size={18} strokeWidth={1.8} /></div>
-								<span class="lb">{t('preset.low')}</span>
-								<span class="sb">{t('preset.low.sub')}</span>
-							</button>
-							<button class:on={selectedPreset === 'balanced' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('balanced')}>
-								<div class="ico"><Scale size={18} strokeWidth={1.8} /></div>
-								<span class="lb">{t('preset.balanced')}</span>
-								<span class="sb">{t('preset.balanced.sub')}</span>
-							</button>
-							<button class:on={selectedPreset === 'high' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('high')}>
-								<div class="ico"><Gem size={18} strokeWidth={1.8} /></div>
-								<span class="lb">{t('preset.high')}</span>
-								<span class="sb">{t('preset.high.sub')}</span>
-							</button>
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.video.title')}</h2>
+						<p class="tc-desc">{t('home.card.video.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">MP4</span>
+							<span class="tc-tag">MOV</span>
+							<span class="tc-tag">AVI</span>
+							<span class="tc-tag">WebM</span>
+							<span class="tc-tag">MKV</span>
 						</div>
 					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta">{t('home.card.video.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
+			</a>
 
-					<div class="csec">
-						<span class="slabel">{t('sec.targetSize')}</span>
-						<div class="target-wrap">
-							<div class="target-input-wrap">
-								<input bind:value={targetMb} type="number" placeholder={t('input.target.ph')} min="1" max="4000" oninput={onTargetInput} />
-								{#if hasTarget}
-									<button class="btn-clear-inline" type="button" onclick={clearTargetSize} title="Clear">
-										<X size={13} strokeWidth={2.5} />
-									</button>
-								{:else}
-									<span class="target-unit">MB</span>
-								{/if}
-							</div>
-							<div class="size-tags">
-								{#each sizeTags as tag}
-									<button class:on={selectedTag === tag.mb} class="stag" type="button" onclick={() => fillTargetSize(tag.mb)}>
-										{tag.label} <span class="stag-size">{tag.mb} MB</span>
-									</button>
-								{/each}
-							</div>
+			<a href={pdfHref} class="tool-card tool-card--pdf">
+				<div class="tc-inner">
+					<div class="tc-ico tc-ico--pdf">
+						<FileText size={28} strokeWidth={1.5} />
+					</div>
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.pdf.title')}</h2>
+						<p class="tc-desc">{t('home.card.pdf.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">PDF</span>
+							<span class="tc-tag">{t('home.card.pdf.tag.password')}</span>
+							<span class="tc-tag">{t('home.card.pdf.tag.fast')}</span>
 						</div>
 					</div>
-
-					<div class:show={compressProgress.show} class="prog">
-						<div class="ptop"><span>{t(compressProgress.labelKey)}</span><span class="pct">{compressProgress.pct}%</span></div>
-						<div class="pbar"><div class="pfill" style:width={`${compressProgress.pct}%`}></div></div>
-					</div>
-
-					<div class:show={Boolean(compressError)} class="errbar">
-						<AlertTriangle size={15} strokeWidth={2} />
-						<span>{compressError}</span>
-					</div>
-
-					<div class="action">
-						<button class="btn-go" type="button" disabled={compressBusy} onclick={startCompress}>
-							<Zap size={16} strokeWidth={2.2} /> {t('btn.compressNow')}
-						</button>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
 					</div>
 				</div>
-			{/if}
-
-			<div class:show={Boolean(compressResult)} class="res">
-				<div class="res-head">
-					<div class="res-ico"><CheckCircle2 size={16} strokeWidth={2} /></div>
-					<div><div class="res-title">{t('res.compress.title')}</div><div class="res-sub">{t('res.compress.sub')}</div></div>
-				</div>
-				<div class="stats">
-					<div class="stat"><div class="sv">{compressResult?.original ?? '—'}</div><div class="sl">{t('stat.original')}</div></div>
-					<div class="stat"><div class="sv">{compressResult?.compressed ?? '—'}</div><div class="sl">{t('stat.compressed')}</div></div>
-					<div class="stat"><div class="sv g">{compressResult?.saved ?? '—'}</div><div class="sl">{t('stat.saved')}</div></div>
-				</div>
-				<a class="btn-dl" href={compressResult?.href ?? '#'} download={compressResult?.download}>
-					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.compress')}
-				</a>
-			</div>
-		</div>
-
-		<!-- PDF Tab -->
-		<div class:active={activeTab === 'pdf'} class="panel">
-			{#if !pdfFile}
-				<button
-					class:over={dragOver === 'pdf'}
-					class="dz"
-					type="button"
-					onclick={() => triggerInput('pdf')}
-					ondragover={(event) => onDragOver(event, 'pdf')}
-					ondragleave={() => onDragLeave('pdf')}
-					ondrop={(event) => onDrop(event, 'pdf')}
-				>
-					<div class="dz-ico"><FileText size={24} strokeWidth={1.5} /></div>
-					<h3>{t('drop.pdf')}</h3>
-					<p class="sub">{t('drop.pdf.sub')}</p>
-					<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {t('btn.browse')}</span>
-					<p class="fmt-hint">{t('hint.pdf')}</p>
-				</button>
-			{/if}
-			<input bind:this={pdfInput} class="file-input" type="file" accept="application/pdf" onchange={(event) => handleFile(event, 'pdf')} />
-
-			{#if pdfFile}
-				<div class="card">
-					<div class="file-row">
-						<div class="file-ico"><FileText size={18} strokeWidth={1.8} /></div>
-						<div class="file-info">
-							<div class="file-name">{pdfFile.name}</div>
-							<div class="file-sz">{fmtBytes(pdfFile.size)} · PDF</div>
-						</div>
-						<button class="btn-rm" type="button" onclick={() => clearFile('pdf')} title="Remove">
-							<X size={15} strokeWidth={2.5} />
-						</button>
-					</div>
-
-					<div class="csec">
-						<span class="slabel">
-							<label style="display: flex; align-items: center; gap: 6px; cursor: pointer; user-select: none;">
-								<input type="checkbox" bind:checked={removePdfPassword} style="cursor: pointer;" />
-								{t('sec.pdfPasswordOpt')}
-							</label>
-						</span>
-						{#if removePdfPassword}
-							<div class="target-input-wrap" style="margin-top: 10px;">
-								<KeyRound size={15} strokeWidth={2} class="pass-ico" />
-								<input
-									bind:value={pdfPassword}
-									type="password"
-									placeholder={t('input.password.ph')}
-									class="pass-input"
-								/>
-							</div>
-							<p class="pass-hint">{t('pdf.password.hint')}</p>
-						{/if}
-					</div>
-
-					<div class:show={pdfProgress.show} class="prog">
-						<div class="ptop"><span>{t(pdfProgress.labelKey)}</span><span class="pct">{pdfProgress.pct}%</span></div>
-						<div class="pbar"><div class="pfill" style:width={`${pdfProgress.pct}%`}></div></div>
-					</div>
-
-					<div class:show={Boolean(pdfError)} class="errbar">
-						<AlertTriangle size={15} strokeWidth={2} />
-						<span>{pdfError}</span>
-					</div>
-
-					<div class="action">
-						<button class="btn-go btn-go--pdf" type="button" disabled={pdfBusy} onclick={startPdfUnlock}>
-							<FileText size={16} strokeWidth={2.2} /> {t('btn.removePassword')}
-						</button>
-					</div>
-				</div>
-			{/if}
-
-			<div class:show={Boolean(pdfResult)} class="res">
-				<div class="res-head">
-					<div class="res-ico"><CheckCircle2 size={16} strokeWidth={2} /></div>
-					<div><div class="res-title">{t('res.pdf.title')}</div><div class="res-sub">{t('res.pdf.sub')}</div></div>
-				</div>
-				<a class="btn-dl" href={pdfResult?.href ?? '#'} download={pdfResult?.download}>
-					<Download size={15} strokeWidth={2.2} /> {t('btn.dl.pdf')}
-				</a>
-			</div>
+				<div class="tc-cta tc-cta--pdf">{t('home.card.pdf.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
+			</a>
 		</div>
 
 		<div class="pnote">
@@ -514,42 +113,42 @@
 		</div>
 
 		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-			<h2>{t('faq.title')}</h2>
+			<h2>{t('faq.home.title')}</h2>
 			<div class="faq-list">
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.1.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.1.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.1.a')}</span>
+						<span itemprop="text">{t('faq.home.1.a')}</span>
 					</div>
 				</details>
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.2.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.2.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.2.a')}</span>
+						<span itemprop="text">{t('faq.home.2.a')}</span>
 					</div>
 				</details>
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.3.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.3.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.3.a')}</span>
+						<span itemprop="text">{t('faq.home.3.a')}</span>
 					</div>
 				</details>
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.4.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.4.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.4.a')}</span>
+						<span itemprop="text">{t('faq.home.4.a')}</span>
 					</div>
 				</details>
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.5.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.5.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.5.a')}</span>
+						<span itemprop="text">{t('faq.home.5.a')}</span>
 					</div>
 				</details>
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-					<summary class="faq-q" itemprop="name">{t('faq.6.q')}</summary>
+					<summary class="faq-q" itemprop="name">{t('faq.home.6.q')}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{t('faq.6.a')}</span>
+						<span itemprop="text">{t('faq.home.6.a')}</span>
 					</div>
 				</details>
 			</div>
@@ -558,45 +157,177 @@
 </main>
 
 <style>
-	.pass-input {
-		width: 100%;
-		padding: 10px 14px 10px 40px;
-		background: var(--surf2);
-		border: 1px solid var(--border);
-		border-radius: var(--rsm);
-		color: var(--text);
-		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-		font-size: 14px;
-		font-weight: 500;
-		outline: none;
-		transition: border-color .18s;
+	.tool-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+		margin-bottom: 24px;
 	}
 
-	.pass-input:focus {
-		border-color: var(--accent);
+	.tool-card {
+		display: flex;
+		flex-direction: column;
+		background: var(--surf);
+		border: 1.5px solid var(--border);
+		border-radius: var(--r);
+		text-decoration: none;
+		overflow: hidden;
+		transition: all 0.22s ease;
+		position: relative;
 	}
 
-	.pass-input::placeholder {
-		color: var(--muted);
-	}
-
-	:global(.pass-ico) {
+	.tool-card::before {
+		content: '';
 		position: absolute;
-		left: 13px;
-		top: 50%;
-		transform: translateY(-50%);
-		color: var(--muted);
+		inset: 0;
+		opacity: 0;
+		transition: opacity 0.25s;
 		pointer-events: none;
 	}
 
-	.pass-hint {
-		margin-top: 8px;
-		font-size: 11.5px;
-		color: var(--muted);
-		line-height: 1.5;
+	.tool-card--video::before {
+		background: radial-gradient(ellipse at 30% 20%, rgba(79, 140, 255, 0.08) 0%, transparent 65%);
 	}
 
-	.btn-go--pdf {
-		background: linear-gradient(135deg, #7c5cfc, #4f8cff);
+	.tool-card--pdf::before {
+		background: radial-gradient(ellipse at 30% 20%, rgba(124, 92, 252, 0.08) 0%, transparent 65%);
+	}
+
+	.tool-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+	}
+
+	.tool-card--video:hover {
+		border-color: var(--accent);
+	}
+
+	.tool-card--pdf:hover {
+		border-color: var(--accent2);
+	}
+
+	.tool-card:hover::before {
+		opacity: 1;
+	}
+
+	.tc-inner {
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+		padding: 22px 20px 18px;
+		flex: 1;
+	}
+
+	.tc-ico {
+		width: 52px;
+		height: 52px;
+		flex-shrink: 0;
+		border-radius: 14px;
+		display: grid;
+		place-items: center;
+	}
+
+	.tc-ico--video {
+		background: linear-gradient(135deg, rgba(79, 140, 255, 0.15), rgba(79, 140, 255, 0.05));
+		border: 1px solid rgba(79, 140, 255, 0.2);
+		color: var(--accent);
+	}
+
+	.tc-ico--pdf {
+		background: linear-gradient(135deg, rgba(124, 92, 252, 0.15), rgba(124, 92, 252, 0.05));
+		border: 1px solid rgba(124, 92, 252, 0.2);
+		color: var(--accent2);
+	}
+
+	.tc-body {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.tc-title {
+		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+		font-size: 15px;
+		font-weight: 800;
+		color: var(--text);
+		margin-bottom: 6px;
+		line-height: 1.3;
+	}
+
+	.tc-desc {
+		font-size: 12.5px;
+		color: var(--muted);
+		line-height: 1.55;
+		margin-bottom: 12px;
+	}
+
+	.tc-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+
+	.tc-tag {
+		font-size: 10.5px;
+		font-weight: 600;
+		color: var(--muted);
+		background: var(--surf2);
+		border: 1px solid var(--border);
+		border-radius: 5px;
+		padding: 2px 7px;
+	}
+
+	.tc-arrow {
+		color: var(--muted);
+		flex-shrink: 0;
+		margin-top: 2px;
+		transition: transform 0.18s, color 0.18s;
+	}
+
+	.tool-card:hover .tc-arrow {
+		transform: translateX(3px);
+		color: var(--accent);
+	}
+
+	.tool-card--pdf:hover .tc-arrow {
+		color: var(--accent2);
+	}
+
+	.tc-cta {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 11px 20px;
+		background: linear-gradient(135deg, var(--accent), var(--accent2));
+		color: #fff;
+		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.1px;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+		transition: opacity 0.18s;
+	}
+
+	.tc-cta--pdf {
+		background: linear-gradient(135deg, var(--accent2), #4f8cff);
+	}
+
+	.tool-card:hover .tc-cta {
+		opacity: 0.9;
+	}
+
+	@media (max-width: 560px) {
+		.tool-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.tc-inner {
+			padding: 18px 16px 14px;
+		}
+
+		.tc-ico {
+			width: 44px;
+			height: 44px;
+		}
 	}
 </style>

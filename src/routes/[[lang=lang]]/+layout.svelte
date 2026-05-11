@@ -5,7 +5,7 @@
 	import { goto } from '$app/navigation';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { Film, Globe, ChevronDown, Home, FileText } from 'lucide-svelte';
+	import { Film, Globe, ChevronDown, Home, FileText, Zap } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -29,7 +29,7 @@
 		} else {
 			newPath = `/${newLang}${currentPath === '/' ? '' : currentPath}`;
 		}
-		
+
 		langOpen = false;
 		closeMobileMenu();
 		goto(`${newPath}${$page.url.search}`);
@@ -54,15 +54,21 @@
 	});
 
 	// Xử lý link thông minh dựa theo ngôn ngữ
-	let homeHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey : ''}`);
-	let blogHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/blog' : 'blog'}`);
+	let prefix = $derived(currentLangKey !== 'en' ? `/${currentLangKey}` : '');
+	let homeHref = $derived(prefix || '/');
+	let blogHref = $derived(`${prefix}/blog`);
+	let compressVideoHref = $derived(`${prefix}/compress-video`);
+	let compressPdfHref = $derived(`${prefix}/compress-pdf`);
+	let privacyHref = $derived(`${prefix}/privacy`);
+	let termsHref = $derived(`${prefix}/terms`);
 
-	let privacyHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/privacy' : 'privacy'}`);
-	let termsHref = $derived(`/${currentLangKey !== 'en' ? currentLangKey + '/terms' : 'terms'}`);
-	
-	// Active link
-	let isHome = $derived($page.url.pathname === '/' || $page.url.pathname === `/${currentLangKey}`);
+	// Active link detection
+	let isHome = $derived(
+		$page.url.pathname === '/' || $page.url.pathname === `/${currentLangKey}`
+	);
 	let isBlog = $derived($page.url.pathname.includes('/blog'));
+	let isCompressVideo = $derived($page.url.pathname.includes('/compress-video'));
+	let isCompressPdf = $derived($page.url.pathname.includes('/compress-pdf'));
 </script>
 
 <svelte:head>
@@ -76,6 +82,12 @@
 		</a>
 
 		<nav class="hnav">
+			<a href={compressVideoHref} class:active={isCompressVideo}>
+				<Zap size={13} strokeWidth={2.2} /> {t('tab.compress')}
+			</a>
+			<a href={compressPdfHref} class:active={isCompressPdf}>
+				<FileText size={13} strokeWidth={2.2} /> {t('tab.pdf')}
+			</a>
 			<a href={blogHref} class:active={isBlog}>{t('nav.blog') || 'Blog'}</a>
 		</nav>
 
@@ -111,6 +123,12 @@
 	<a href={homeHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><Home size={18} /></span><span>{t('nav.home') || 'Home'}</span>
 	</a>
+	<a href={compressVideoHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><Zap size={18} /></span><span>{t('tab.compress')}</span>
+	</a>
+	<a href={compressPdfHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><FileText size={18} /></span><span>{t('tab.pdf')}</span>
+	</a>
 	<a href={blogHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><FileText size={18} /></span><span>{t('nav.blog') || 'Blog'}</span>
 	</a>
@@ -136,3 +154,12 @@
 		</p>
 	</div>
 </footer>
+
+<style>
+	/* Nav links with icons */
+	.hnav a {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+	}
+</style>
