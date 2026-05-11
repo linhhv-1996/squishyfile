@@ -1,5 +1,6 @@
 export const translations: Record<string, Record<string, string>> = {
 	en: {
+		'status.warning.keepOpen': '⚠️ Please keep this tab open and active. Switching tabs may pause or slow down the process.',
 		'meta.title': 'Squishyfile – Free Video & PDF Compressor',
 		'meta.desc': 'Compress videos and PDFs for free, directly in your browser. No upload to server, no watermark, 100% private.',
 		'nav.home': 'Home',
@@ -166,6 +167,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: video komprimieren (14.8K), video umwandeln (480), video komprimieren für whatsapp (260),
 	// kostenlos, ohne anmeldung, handy speicher voll, hohe qualität, ohne registrierung
 	de: {
+		'status.warning.keepOpen': '⚠️ Bitte lass diesen Tab geöffnet und aktiv. Ein Wechsel des Tabs kann den Vorgang pausieren oder verlangsamen.',
 		'meta.title': 'Squishyfile – Video & PDF komprimieren – kostenlos',
 		'meta.desc': 'Video und PDF kostenlos komprimieren – direkt im Browser, ohne Anmeldung. Kein Upload auf Server, kein Wasserzeichen, 100% Datenschutz.',
 		'nav.home': 'Start',
@@ -321,6 +323,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 動画圧縮 (33.1K), mov mp4変換 (22.2K), mp4圧縮 (12.1K), line動画送れない (9.9K),
 	// 無料, アップロード不要, インストール不要, ログインなし, ギガ節約, プライバシー保護
 	ja: {
+		'status.warning.keepOpen': '⚠️ このタブを開いたままにしてください。別のタブに切り替えると、処理が一時停止または遅くなる場合があります。',
 		'blog.cta.video.title': '動画を無料で圧縮 — アップロード不要、透かしなし。',
 		'blog.cta.video.btn': '動画圧縮を試す →',
 		'blog.cta.pdf.title': 'PDFを無料で圧縮 — ブラウザだけで完結。',
@@ -476,6 +479,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 동영상 용량 줄이기 (12.1K), 동영상 압축 (3.6K), mp4 용량 줄이기 (1.9K),
 	// 개인정보 보호, 무료, 회원가입 없는, 카톡 동영상 용량 제한, 로그인 필요 없는
 	ko: {
+		'status.warning.keepOpen': '⚠️ 이 탭을 계속 열어두세요. 다른 탭으로 이동하면 작업이 일시 중지되거나 느려질 수 있습니다.',
 		'blog.cta.video.title': '동영상을 무료로 압축 — 업로드 없이, 워터마크 없이.',
 		'blog.cta.video.btn': '동영상 압축 사용해보기 →',
 		'blog.cta.pdf.title': 'PDF를 무료로 압축 — 브라우저에서 바로 실행.',
@@ -631,6 +635,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: ลดขนาดไฟล์วิดีโอ (6.6K), บีบอัดวิดีโอ (5.4K), แปลงไฟล์วิดีโอ (1.3K),
 	// ฟรี, ไม่ต้องสมัครสมาชิก, ไม่ต้อง login, ส่งวิดีโอในไลน์ไม่ได้, ป้องกันข้อมูลรั่วไหล
 	th: {
+		'status.warning.keepOpen': '⚠️ โปรดเปิดแท็บนี้ทิ้งไว้ การสลับไปแท็บอื่นอาจทำให้การประมวลผลหยุดชั่วคราวหรือช้าลง',
 		'blog.cta.video.title': 'บีบอัดวิดีโอฟรี — ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
 		'blog.cta.video.btn': 'ลองบีบอัดวิดีโอ →',
 		'blog.cta.pdf.title': 'บีบอัด PDF ฟรี — ทำงานในเบราว์เซอร์ทั้งหมด',
@@ -786,6 +791,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 影片壓縮 (14.8K), mov 轉 mp4 (9.9K), mp4 壓縮 (4.4K), 線上壓縮影片 (1K),
 	// 無廣告, 唔使上載, 唔使註冊, 無須登入, 隱私保障, 免費影片壓縮
 	zh: {
+		'status.warning.keepOpen': '⚠️ 請保持此分頁開啟及活動狀態。切換分頁可能會導致處理暫停或變慢。',
 		'blog.cta.video.title': '免費壓縮影片 — 無需上傳，無浮水印。',
 		'blog.cta.video.btn': '試用影片壓縮工具 →',
 		'blog.cta.pdf.title': '免費壓縮 PDF — 完全在瀏覽器中執行。',
@@ -942,6 +948,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// compresser mp4 en ligne (2.9K), compresser vidéo iphone (2.4K), redimensionner vidéo (1.6K),
 	// compresser fichier mov (1.6K), respect de la vie privée, sans inscription, sans filigrane
 	fr: {
+		'status.warning.keepOpen': '⚠️ Veuillez garder cet onglet ouvert et actif. Changer d\'onglet peut suspendre ou ralentir le processus.',
 		'blog.cta.video.title': 'Compressez votre vidéo gratuitement — sans upload, sans filigrane.',
 		'blog.cta.video.btn': 'Essayer la compression vidéo →',
 		'blog.cta.pdf.title': 'Compressez votre PDF gratuitement — tout dans le navigateur.',
@@ -1098,6 +1105,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// ubah mov ke mp4 (2.9K), kompres mp4 online (1.3K), kompres video untuk whatsapp (880),
 	// kurangi mb video, kurangi resolusi video, gratis tanpa daftar, privasi terjaga
 	id: {
+		'status.warning.keepOpen': '⚠️ Biarkan tab ini tetap terbuka dan aktif. Berpindah tab dapat menjeda atau memperlambat proses.',
 		'blog.cta.video.title': 'Kompres video gratis — tanpa upload, tanpa watermark.',
 		'blog.cta.video.btn': 'Coba Kompres Video →',
 		'blog.cta.pdf.title': 'Kompres PDF gratis — langsung di browser.',
@@ -1255,6 +1263,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// compresor de video gratis (2.9K), bajar resolución video (1.3K), comprimir mp4 online (880),
 	// sin marca de agua, sin registro, privacidad garantizada
 	es: {
+		'status.warning.keepOpen': '⚠️ Por favor, mantén esta pestaña abierta y activa. Cambiar de pestaña puede pausar o ralentizar el proceso.',
 		'blog.cta.video.title': 'Comprime tu vídeo gratis — sin subidas, sin marca de agua.',
 		'blog.cta.video.btn': 'Probar el compresor de vídeo →',
 		'blog.cta.pdf.title': 'Comprime tu PDF gratis — funciona en el navegador.',
@@ -1412,6 +1421,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// comprimir mp4 online (2.9K), compressor de vídeo gratuito (2.9K),
 	// sem marca d'água, sem cadastro, privacidade garantida
 	pt: {
+		'status.warning.keepOpen': '⚠️ Por favor, mantenha esta aba aberta e ativa. Mudar de aba pode pausar ou deixar o processo mais lento.',
 		'blog.cta.video.title': 'Comprima seu vídeo de graça — sem upload, sem marca d\'água.',
 		'blog.cta.video.btn': 'Testar o compressor de vídeo →',
 		'blog.cta.pdf.title': 'Comprima seu PDF de graça — tudo no navegador.',

@@ -7,6 +7,9 @@
 		Zap, Film, Folder, X, Feather, Scale, Gem,
 		CheckCircle2, Download, ShieldCheck, AlertTriangle, Cpu, Target, Infinity
 	} from 'lucide-svelte';
+	
+	// IMPORT CLASS XỬ LÝ LOGIC NÉN VIDEO
+	import { VideoCompressor } from '$lib/utils/videoCompressor';
 
 	const sizeTags = [
 		{ mb: 10, label: 'LINE' },
@@ -34,12 +37,14 @@
 	let compressProgress = $state({ show: false, pct: 0, labelKey: 'status.compressing' });
 	let compressBusy = $state(false);
 	let compressResult: { href: string; download: string; original: string; compressed: string; saved: string } | null = $state(null);
-	let progressTimer: ReturnType<typeof setInterval> | null = null;
+
+	// KHỞI TẠO COMPRESSOR
+	const compressor = new VideoCompressor();
 
 	let hasTarget = $derived(targetMb.trim() !== '');
 
 	function triggerInput() {
-		compressInput.click();
+		if (!compressBusy) compressInput.click();
 	}
 
 	function handleFile(event: Event) {
@@ -65,11 +70,12 @@
 		selectedTag = null;
 		selectedPreset = 'balanced';
 		clearResult();
+		compressor.cancel(); // Hủy tiến trình nén nếu user xóa file
 	}
 
 	function onDragOver(event: DragEvent) {
 		event.preventDefault();
-		dragOver = true;
+		if (!compressBusy) dragOver = true;
 	}
 
 	function onDragLeave() {
@@ -79,12 +85,13 @@
 	function onDrop(event: DragEvent) {
 		event.preventDefault();
 		dragOver = false;
+		if (compressBusy) return;
 		const file = event.dataTransfer?.files?.[0];
 		if (file && file.type.startsWith('video/')) loadFile(file);
 	}
 
 	function pickPreset(key: string) {
-		if (hasTarget) return;
+		if (hasTarget || compressBusy) return;
 		selectedPreset = key;
 	}
 
@@ -94,6 +101,7 @@
 	}
 
 	function fillTargetSize(mb: number) {
+		if (compressBusy) return;
 		if (selectedTag === mb) {
 			clearTargetSize();
 			return;
@@ -104,6 +112,7 @@
 	}
 
 	function clearTargetSize() {
+		if (compressBusy) return;
 		targetMb = '';
 		selectedTag = null;
 		selectedPreset = 'balanced';
@@ -119,23 +128,6 @@
 		compressProgress = { ...compressProgress, pct, labelKey: labelKey ?? compressProgress.labelKey };
 	}
 
-	function runProgress(ms: number, done: () => void) {
-		if (progressTimer) clearInterval(progressTimer);
-		let pct = 0;
-		progressTimer = setInterval(() => {
-			pct = Math.min(pct + Math.random() * 4 + 1, 94);
-			setProgress(Math.round(pct));
-			if (pct >= 94 && progressTimer) {
-				clearInterval(progressTimer);
-				progressTimer = null;
-				setTimeout(() => {
-					setProgress(100, 'status.done');
-					done();
-				}, 280);
-			}
-		}, ms / 55);
-	}
-
 	function startCompress() {
 		if (!compressFile) {
 			compressError = t('error.selectFile');
@@ -147,20 +139,37 @@
 		compressBusy = true;
 		compressProgress = { show: true, pct: 0, labelKey: 'status.compressing' };
 
-		const file = compressFile;
-		runProgress(2800, () => {
-			const ratio = 0.28 + Math.random() * 0.35;
-			const href = URL.createObjectURL(file);
-			const base = file.name.replace(/\.[^.]+$/, '');
-			compressResult = {
-				href,
-				download: `${base}_compressed.mp4`,
-				original: fmtBytes(file.size),
-				compressed: fmtBytes(Math.round(file.size * ratio)),
-				saved: `${Math.round((1 - ratio) * 100)}%`
-			};
-			compressProgress = { show: false, pct: 100, labelKey: 'status.done' };
-			compressBusy = false;
+		const currentFile = compressFile;
+
+		// GỌI LOGIC NÉN
+		compressor.compress({
+			file: currentFile,
+			preset: hasTarget ? undefined : selectedPreset,
+			targetMb: hasTarget ? Number(targetMb) : undefined,
+			onProgress: (pct) => {
+				setProgress(pct);
+			},
+			onSuccess: (resultBlob, finalSize) => {
+				const ratio = finalSize / currentFile.size;
+				const href = URL.createObjectURL(resultBlob);
+				const base = currentFile.name.replace(/\.[^.]+$/, '');
+				
+				compressResult = {
+					href,
+					download: `${base}_compressed.mp4`,
+					original: fmtBytes(currentFile.size),
+					compressed: fmtBytes(finalSize),
+					saved: `${Math.round((1 - ratio) * 100)}%`
+				};
+				
+				setProgress(100, 'status.done');
+				compressBusy = false;
+			},
+			onError: (err) => {
+				compressError = err;
+				compressBusy = false;
+				compressProgress = { show: false, pct: 0, labelKey: 'status.compressing' };
+			}
 		});
 	}
 
@@ -170,7 +179,7 @@
 	}
 
 	onDestroy(() => {
-		if (progressTimer) clearInterval(progressTimer);
+		compressor.cancel(); 
 		clearResult();
 	});
 </script>
@@ -179,9 +188,6 @@
 	<title>{t('compress.meta.title')}</title>
 	<meta name="description" content={t('compress.meta.desc')} />
 	<meta name="robots" content="index, follow" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <main>
@@ -205,6 +211,7 @@
 				ondragover={onDragOver}
 				ondragleave={onDragLeave}
 				ondrop={onDrop}
+				disabled={compressBusy}
 			>
 				<div class="dz-ico"><Film size={24} strokeWidth={1.5} /></div>
 				<h3>{t('drop.video')}</h3>
@@ -213,7 +220,7 @@
 				<p class="fmt-hint">{@html t('hint.compress')}</p>
 			</button>
 		{/if}
-		<input bind:this={compressInput} class="file-input" type="file" accept="video/*" onchange={handleFile} />
+		<input bind:this={compressInput} class="file-input" type="file" accept="video/*" onchange={handleFile} disabled={compressBusy} />
 
 		{#if compressFile}
 			<div class="card">
@@ -223,7 +230,7 @@
 						<div class="file-name">{compressFile.name}</div>
 						<div class="file-sz">{fmtBytes(compressFile.size)} · {compressFile.type || t('file.type.video')}</div>
 					</div>
-					<button class="btn-rm" type="button" onclick={clearFile} title="Remove">
+					<button class="btn-rm" type="button" disabled={compressBusy} onclick={clearFile} title="Remove">
 						<X size={15} strokeWidth={2.5} />
 					</button>
 				</div>
@@ -231,17 +238,17 @@
 				<div class="csec">
 					<span class="slabel">{t('sec.quickPreset')}</span>
 					<div class="preset-grid">
-						<button class:on={selectedPreset === 'low' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('low')}>
+						<button class:on={selectedPreset === 'low' && !hasTarget} class:disabled-opt={hasTarget || compressBusy} disabled={hasTarget || compressBusy} class="pc" type="button" onclick={() => pickPreset('low')}>
 							<div class="ico"><Feather size={18} strokeWidth={1.8} /></div>
 							<span class="lb">{t('preset.low')}</span>
 							<span class="sb">{t('preset.low.sub')}</span>
 						</button>
-						<button class:on={selectedPreset === 'balanced' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('balanced')}>
+						<button class:on={selectedPreset === 'balanced' && !hasTarget} class:disabled-opt={hasTarget || compressBusy} disabled={hasTarget || compressBusy} class="pc" type="button" onclick={() => pickPreset('balanced')}>
 							<div class="ico"><Scale size={18} strokeWidth={1.8} /></div>
 							<span class="lb">{t('preset.balanced')}</span>
 							<span class="sb">{t('preset.balanced.sub')}</span>
 						</button>
-						<button class:on={selectedPreset === 'high' && !hasTarget} class:disabled-opt={hasTarget} class="pc" type="button" onclick={() => pickPreset('high')}>
+						<button class:on={selectedPreset === 'high' && !hasTarget} class:disabled-opt={hasTarget || compressBusy} disabled={hasTarget || compressBusy} class="pc" type="button" onclick={() => pickPreset('high')}>
 							<div class="ico"><Gem size={18} strokeWidth={1.8} /></div>
 							<span class="lb">{t('preset.high')}</span>
 							<span class="sb">{t('preset.high.sub')}</span>
@@ -253,9 +260,9 @@
 					<span class="slabel">{t('sec.targetSize')}</span>
 					<div class="target-wrap">
 						<div class="target-input-wrap">
-							<input bind:value={targetMb} type="number" placeholder={t('input.target.ph')} min="1" max="4000" oninput={onTargetInput} />
+							<input bind:value={targetMb} type="number" placeholder={t('input.target.ph')} min="1" max="4000" oninput={onTargetInput} disabled={compressBusy} />
 							{#if hasTarget}
-								<button class="btn-clear-inline" type="button" onclick={clearTargetSize} title="Clear">
+								<button class="btn-clear-inline" type="button" disabled={compressBusy} onclick={clearTargetSize} title="Clear">
 									<X size={13} strokeWidth={2.5} />
 								</button>
 							{:else}
@@ -264,7 +271,7 @@
 						</div>
 						<div class="size-tags">
 							{#each sizeTags as tag}
-								<button class:on={selectedTag === tag.mb} class="stag" type="button" onclick={() => fillTargetSize(tag.mb)}>
+								<button class:on={selectedTag === tag.mb} disabled={compressBusy} class="stag" type="button" onclick={() => fillTargetSize(tag.mb)}>
 									{tag.label} <span class="stag-size">{tag.mb} MB</span>
 								</button>
 							{/each}
@@ -273,8 +280,15 @@
 				</div>
 
 				<div class:show={compressProgress.show} class="prog">
-					<div class="ptop"><span>{t(compressProgress.labelKey)}</span><span class="pct">{compressProgress.pct}%</span></div>
-					<div class="pbar"><div class="pfill" style:width={`${compressProgress.pct}%`}></div></div>
+					<div class="ptop">
+						<span>{t(compressProgress.labelKey)}</span>
+						<span class="pct">{compressProgress.pct}%</span>
+					</div>
+					<div class="pbar">
+						<div class="pfill" style:width={`${compressProgress.pct}%`}></div>
+					</div>
+					
+					<p class="keep-open-warning">{t('status.warning.keepOpen')}</p>
 				</div>
 
 				<div class:show={Boolean(compressError)} class="errbar">

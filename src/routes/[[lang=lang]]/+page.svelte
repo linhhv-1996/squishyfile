@@ -20,9 +20,6 @@
 	<title>{t('meta.title')}</title>
 	<meta name="description" content={t('meta.desc')} />
 	<meta name="robots" content="index, follow" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <main>

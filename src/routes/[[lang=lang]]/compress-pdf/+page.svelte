@@ -19,7 +19,6 @@
 	let pdfPassword = $state('');
 	let removePdfPassword = $state(false);
 	let pdfError = $state('');
-
 	let pdfProgress = $state({ show: false, pct: 0, labelKey: 'status.removingPass' });
 	let pdfBusy = $state(false);
 	let pdfResult: { href: string; download: string } | null = $state(null);
@@ -44,7 +43,7 @@
 
 	function clearFile() {
 		pdfFile = null;
-		pdfInput.value = '';
+		if(pdfInput) pdfInput.value = '';
 		pdfError = '';
 		pdfBusy = false;
 		pdfPassword = '';
@@ -79,24 +78,16 @@
 		pdfProgress = { ...pdfProgress, pct, labelKey: labelKey ?? pdfProgress.labelKey };
 	}
 
-	function runProgress(ms: number, done: () => void) {
+	function runProgress(ms: number) {
 		if (progressTimer) clearInterval(progressTimer);
 		let pct = 0;
 		progressTimer = setInterval(() => {
 			pct = Math.min(pct + Math.random() * 4 + 1, 94);
 			setProgress(Math.round(pct));
-			if (pct >= 94 && progressTimer) {
-				clearInterval(progressTimer);
-				progressTimer = null;
-				setTimeout(() => {
-					setProgress(100, 'status.done');
-					done();
-				}, 280);
-			}
 		}, ms / 55);
 	}
 
-	function startPdfUnlock() {
+	async function startPdfUnlock() {
 		if (!pdfFile) {
 			pdfError = t('error.selectPdf');
 			return;
@@ -111,14 +102,61 @@
 		pdfBusy = true;
 		pdfProgress = { show: true, pct: 0, labelKey: 'status.removingPass' };
 
-		const file = pdfFile;
-		runProgress(2200, () => {
-			const href = URL.createObjectURL(file);
-			const base = file.name.replace(/\.[^.]+$/, '');
-			pdfResult = { href, download: `${base}_compressed.pdf` };
-			pdfProgress = { show: false, pct: 100, labelKey: 'status.done' };
-			pdfBusy = false;
+		// Chạy progress bar
+		runProgress(2200);
+		
+		// 🚀 KHỞI TẠO WORKER THEO KIỂU MODULE Y HỆT REACT PROJECT
+		const worker = new Worker(
+			new URL('$lib/workers/pdf-worker.ts', import.meta.url), 
+			{ type: 'module' }
+		);
+		const fileUrl = URL.createObjectURL(pdfFile);
+
+		worker.postMessage({
+			fileUrl,
+			password: removePdfPassword ? pdfPassword.trim() : null
 		});
+
+		worker.onmessage = (e) => {
+			// ✅ Nhận dữ liệu thô (pdfData) thay vì url
+			const { success, pdfData, error } = e.data;
+			if (progressTimer) clearInterval(progressTimer);
+
+			if (success) {
+				setProgress(100, 'status.done');
+
+				// 🚀 TẠO BLOB VÀ URL NGAY TẠI MAIN THREAD NÀY!
+				// Giờ thì Worker chết cái URL này vẫn tồn tại.
+				const blob = new Blob([pdfData], { type: "application/pdf" });
+				const finalPdfUrl = URL.createObjectURL(blob);
+
+				const base = pdfFile!.name.replace(/\.[^.]+$/, '');
+				pdfResult = { 
+					href: finalPdfUrl, 
+					download: removePdfPassword ? `${base}_unlocked.pdf` : `${base}_compressed.pdf` 
+				};
+				pdfBusy = false;
+				setTimeout(() => pdfProgress.show = false, 500);
+			} else {
+				pdfBusy = false;
+				pdfProgress.show = false;
+				pdfError = error || t('error.generic');
+			}
+			
+			// Giờ thì "giết" worker thoải mái, không sợ lỗi tải file nữa!
+			worker.terminate();
+			URL.revokeObjectURL(fileUrl);
+		};
+
+		worker.onerror = (err) => {
+			console.error("❌ Worker Error Detail:", err);
+			if (progressTimer) clearInterval(progressTimer);
+			pdfBusy = false;
+			pdfProgress.show = false;
+			pdfError = "Lỗi luồng xử lý Worker";
+			worker.terminate();
+			URL.revokeObjectURL(fileUrl);
+		};
 	}
 
 	function clearResult() {
@@ -136,9 +174,6 @@
 	<title>{t('pdf.meta.title')}</title>
 	<meta name="description" content={t('pdf.meta.desc')} />
 	<meta name="robots" content="index, follow" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <main>
@@ -306,65 +341,3 @@
 		</section>
 	</div>
 </main>
-
-<style>
-	.dz--pdf:hover,
-	.dz--pdf.over {
-		border-color: var(--accent2);
-	}
-
-	.dz-ico--pdf {
-		background: linear-gradient(135deg, rgba(124, 92, 252, .12), rgba(124, 92, 252, .04));
-		color: var(--accent2);
-	}
-
-	.file-ico--pdf {
-		color: var(--accent2);
-	}
-
-	.pfill--pdf {
-		background: linear-gradient(90deg, var(--accent2), #4f8cff);
-	}
-
-	.pass-input {
-		width: 100%;
-		padding: 10px 14px 10px 40px;
-		background: var(--surf2);
-		border: 1px solid var(--border);
-		border-radius: var(--rsm);
-		color: var(--text);
-		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-		font-size: 14px;
-		font-weight: 500;
-		outline: none;
-		transition: border-color .18s;
-	}
-
-	.pass-input:focus {
-		border-color: var(--accent2);
-	}
-
-	.pass-input::placeholder {
-		color: var(--muted);
-	}
-
-	:global(.pass-ico) {
-		position: absolute;
-		left: 13px;
-		top: 50%;
-		transform: translateY(-50%);
-		color: var(--muted);
-		pointer-events: none;
-	}
-
-	.pass-hint {
-		margin-top: 8px;
-		font-size: 11.5px;
-		color: var(--muted);
-		line-height: 1.5;
-	}
-
-	.btn-go--pdf {
-		background: linear-gradient(135deg, #7c5cfc, #4f8cff);
-	}
-</style>

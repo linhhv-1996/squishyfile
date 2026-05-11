@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"lucide-svelte": "^1.0.1",
-		"marked": "^18.0.3"
+		"marked": "^18.0.3",
+		"mediabunny": "^1.44.2"
 	}
 }
