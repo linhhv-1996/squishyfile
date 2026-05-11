@@ -2,7 +2,7 @@
 title: Reducir tamaño de video online gratis | Sin registro, sin límites
 description: Reduce el tamaño de tus videos online gratis sin instalar nada. Elige entre compresión baja, equilibrada o alta, o define un tamaño personalizado. Rápido, privado y sin marca de agua.
 tool: video
-date: 2025-06-10
+date: 2026-03-09
 ---
 
 # Reducir tamaño de video online gratis | Sin registro, sin límites

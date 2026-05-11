@@ -1,7 +1,7 @@
 ---
 title: Kompres PDF Online Gratis Tanpa Daftar – Langsung Pakai, Tidak Perlu Akun
 description: Kompres PDF online gratis tanpa perlu daftar atau login. Kecilkan file PDF langsung di browser, aman, cepat, tanpa watermark, dan tidak ada batasan penggunaan harian.
-date: 2025-07-04
+date: 2026-04-06
 ---
 
 # Kompres PDF Online Gratis Tanpa Daftar – Langsung Pakai, Tidak Perlu Akun

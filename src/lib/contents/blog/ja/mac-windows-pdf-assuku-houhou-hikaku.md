@@ -1,7 +1,7 @@
 ---
 title: MacとWindowsでPDFを圧縮する方法｜標準機能とオンラインツールを徹底比較
 description: MacやWindowsでPDFを圧縮する方法をわかりやすく解説。Mac標準のプレビューアプリ、WindowsのPDF印刷機能、そして無料オンラインツールを比較。最も簡単で効果的な方法を紹介します。
-date: 2025-06-10
+date: 2026-02-23
 ---
 
 # MacとWindowsでPDFを圧縮する方法｜標準機能とオンラインツールを徹底比較

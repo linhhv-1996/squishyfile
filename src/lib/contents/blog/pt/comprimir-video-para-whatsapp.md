@@ -2,7 +2,7 @@
 title: Como Comprimir Vídeo para WhatsApp | Envie Sem Limite de Tamanho
 description: Vídeo grande demais para enviar pelo WhatsApp? Aprenda a comprimir vídeo para WhatsApp online, grátis e sem instalar nada. Funciona no celular e no computador.
 tool: video
-date: 2025-06-10
+date: 2026-05-08
 ---
 
 # Como Comprimir Vídeo para WhatsApp | Envie Sem Limite de Tamanho

@@ -2,7 +2,7 @@
 title: Comprimir Vídeo Online Grátis | Rápido e Sem Perder Qualidade
 description: Comprima vídeos online de graça, direto no navegador, sem instalar nada. Escolha entre os modos Baixo, Balanceado ou Alto e reduza o tamanho do arquivo em segundos.
 tool: video
-date: 2025-06-10
+date: 2026-04-28
 ---
 
 # Comprimir Vídeo Online Grátis | Rápido e Sem Perder Qualidade

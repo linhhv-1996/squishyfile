@@ -1,7 +1,7 @@
 ---
 title: Comprimir PDF para Currículo e E-mail — Resolva em Segundos
 description: Saiba como comprimir PDF para currículo (limite de 2 MB) e para envio por e-mail (limite de 10–25 MB) de forma rápida e gratuita, sem instalar nada.
-date: 2025-05-07
+date: 2026-03-09
 ---
 
 # Comprimir PDF para Currículo e E-mail — Resolva em Segundos

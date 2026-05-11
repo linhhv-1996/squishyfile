@@ -1,7 +1,7 @@
 ---
 title: Comprimir PDF Sem Perder Qualidade — Como Funciona e Quando é Possível
 description: Entenda como comprimir PDF sem perder qualidade, quais tipos de arquivo permitem maior redução sem degradação e como nossa ferramenta automática equilibra tamanho e nitidez.
-date: 2025-05-07
+date: 2026-04-06
 ---
 
 # Comprimir PDF Sem Perder Qualidade — Como Funciona e Quando é Possível

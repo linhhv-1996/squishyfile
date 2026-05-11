@@ -1,7 +1,7 @@
 ---
 title: Kompres PDF untuk Lamaran Kerja & Email – Ukuran Tepat, Upload Berhasil
 description: Cara kompres PDF untuk lamaran kerja, CPNS, dan kirim via email agar tidak ditolak sistem. Kecilkan CV, ijazah, dan dokumen pendukung dalam hitungan detik, gratis tanpa daftar.
-date: 2025-07-06
+date: 2026-03-09
 ---
 
 # Kompres PDF untuk Lamaran Kerja & Email – Ukuran Tepat, Upload Berhasil

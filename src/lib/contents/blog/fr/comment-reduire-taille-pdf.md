@@ -1,7 +1,7 @@
 ---
 title: Comment réduire la taille d'un PDF — 5 méthodes expliquées (et la plus rapide en 2025)
 description: Découvrez toutes les méthodes pour réduire la taille d'un PDF : en ligne, sur Mac, sur Windows, sans logiciel. Comparatif clair pour choisir la solution adaptée à votre situation.
-date: 2025-07-01
+date: 2026-03-09
 ---
 
 # Comment réduire la taille d'un PDF — 5 méthodes expliquées (et la plus rapide en 2025)

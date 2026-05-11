@@ -2,7 +2,7 @@
 title: Comprimir video para WhatsApp | Reduce el peso y envíalo sin problemas
 description: ¿Tu video pesa demasiado para WhatsApp? Comprímelo online gratis en segundos. Sin instalar apps, sin registro. Compatible con iPhone y Android.
 tool: video
-date: 2025-06-10
+date: 2026-05-04
 ---
 
 # Comprimir video para WhatsApp | Reduce el peso y envíalo sin problemas

@@ -2,7 +2,7 @@
 title: Video komprimieren für WhatsApp – so sendest du große Videos problemlos
 description: Video für WhatsApp komprimieren – kostenlos, ohne App, direkt im Browser. So verkleinerst du Videos unter das 16-MB-Limit von WhatsApp, schnell und ohne Qualitätsverlust.
 tool: video
-date: 2025-06-10
+date: 2026-02-10
 ---
 
 # Video komprimieren für WhatsApp – so sendest du große Videos problemlos

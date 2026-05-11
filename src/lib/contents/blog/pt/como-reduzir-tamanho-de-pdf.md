@@ -1,7 +1,7 @@
 ---
 title: Como Reduzir o Tamanho de um PDF — Guia Completo e Grátis
 description: Aprenda como reduzir o tamanho de um PDF online, sem programas e sem perder qualidade. Veja por que PDFs ficam pesados e qual a forma mais rápida de diminuí-los.
-date: 2025-05-07
+date: 2026-02-09
 ---
 
 # Como Reduzir o Tamanho de um PDF — Guia Completo e Grátis

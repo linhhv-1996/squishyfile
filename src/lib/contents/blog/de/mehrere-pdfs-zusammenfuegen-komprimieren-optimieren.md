@@ -1,7 +1,7 @@
 ---
 title: Mehrere PDFs zusammenfügen und komprimieren – PDF optimieren leicht gemacht
 description: Mehrere PDFs zusammenfügen und komprimieren – so geht's schnell und kostenlos. PDF optimieren für E-Mail-Versand, Bewerbung oder Archivierung. Alles im Browser, ohne Anmeldung.
-date: 2025-07-06
+date: 2026-02-06
 ---
 
 # Mehrere PDFs zusammenfügen und komprimieren – PDF optimieren leicht gemacht

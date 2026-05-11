@@ -2,7 +2,7 @@
 title: Kompres Video untuk WhatsApp — Perkecil di Bawah 16 MB Tanpa Ribet
 description: Video tidak bisa dikirim di WhatsApp? Kompres video untuk WhatsApp langsung dari browser tanpa install aplikasi. Perkecil ukuran video di bawah 16 MB, gratis dan tanpa watermark.
 tool: video
-date: 2025-06-10
+date: 2026-05-08
 ---
 
 # Kompres Video untuk WhatsApp — Perkecil di Bawah 16 MB Tanpa Ribet

@@ -1,7 +1,7 @@
 ---
 title: PDF komprimieren auf dem iPhone und Handy – so geht's ohne App
 description: PDF komprimieren auf dem iPhone oder Android-Handy – direkt im Browser, ohne App-Download, ohne Anmeldung. Die schnellste Methode für unterwegs.
-date: 2025-07-04
+date: 2026-04-04
 ---
 
 # PDF komprimieren auf dem iPhone und Handy – so geht's ohne App

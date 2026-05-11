@@ -1,7 +1,7 @@
 ---
 title: PDF verkleinern online – Dateigröße reduzieren ohne Installation
 description: PDF verkleinern online und kostenlos – Dateigröße reduzieren direkt im Browser, ohne Software-Installation. Schnell, sicher und ohne Qualitätsverlust für E-Mail, Bewerbung & Co.
-date: 2025-07-02
+date: 2026-01-02
 ---
 
 # PDF verkleinern online – Dateigröße reduzieren ohne Installation

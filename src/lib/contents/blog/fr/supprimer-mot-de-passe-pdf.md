@@ -1,7 +1,7 @@
 ---
 title: Supprimer le mot de passe d'un PDF — Comment déverrouiller et compresser en une étape
 description: Vous devez supprimer le mot de passe d'un PDF protégé ? Découvrez comment retirer la protection par mot de passe et alléger votre fichier simultanément, en ligne et gratuitement.
-date: 2025-07-01
+date: 2026-05-04
 ---
 
 # Supprimer le mot de passe d'un PDF — Comment déverrouiller et compresser en une étape

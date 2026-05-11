@@ -1,7 +1,7 @@
 ---
 title: Cara Kompres PDF Jadi 1MB atau 2MB – Tanpa Ribet, Langsung Jadi
 description: Perlu kompres PDF jadi 1MB atau 2MB untuk upload dokumen? Ikuti cara mudah ini — proses otomatis, gratis, tanpa instal aplikasi, hasilnya langsung bisa diunduh.
-date: 2025-07-02
+date: 2026-02-09
 ---
 
 # Cara Kompres PDF Jadi 1MB atau 2MB – Tanpa Ribet, Langsung Jadi

@@ -2,7 +2,7 @@
 title: Compresseur vidéo gratuit en ligne — sans inscription, sans filigrane
 description: Compresseur vidéo 100% gratuit, sans inscription, sans filigrane et sans pub. Fonctionne dans le navigateur, vos fichiers restent sur votre appareil. Essayez maintenant.
 tool: video
-date: 2025-06-10
+date: 2026-02-23
 ---
 
 # Compresseur vidéo gratuit en ligne — sans inscription, sans filigrane

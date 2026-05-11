@@ -2,7 +2,7 @@
 title: How to Compress Video for Instagram — Best Settings for Reels, Stories & Feed
 description: Compress video for Instagram before uploading to avoid blurry re-encoding artifacts. Use smart presets in your browser — no upload, no watermark, works on iPhone and Android.
 tool: video
-date: 2025-06-10
+date: 2026-02-23
 ---
 
 # How to Compress Video for Instagram — Best Settings for Reels, Stories & Feed

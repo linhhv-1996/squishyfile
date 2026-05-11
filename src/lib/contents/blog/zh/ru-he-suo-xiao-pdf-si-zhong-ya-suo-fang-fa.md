@@ -1,7 +1,7 @@
 ---
 title: 如何縮小PDF檔案？4種PDF壓縮方法完整教學｜Windows、Mac、手機通用
 description: 詳細說明4種縮小PDF檔案大小的方法：線上工具、Mac預覽程式、Windows內建功能與手機操作。圖解步驟，5分鐘學會PDF壓縮。
-date: 2025-07-03
+date: 2026-05-04
 ---
 
 # 如何縮小PDF檔案？4種PDF壓縮方法完整教學｜Windows、Mac、手機通用

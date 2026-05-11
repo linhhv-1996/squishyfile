@@ -2,7 +2,7 @@
 title: 影片 Bitrate 調整完整教學｜降低 Bitrate 縮小影片大小又保持畫質
 description: 想縮小影片大小又保持畫質？學會調整影片 bitrate 是關鍵。本文詳細說明什麼是 bitrate、如何設定最佳 bitrate，以及免費線上工具如何調整 bitrate 壓縮影片。
 tool: video
-date: 2025-06-10
+date: 2026-05-11
 ---
 
 # 影片 Bitrate 調整完整教學｜降低 Bitrate 縮小影片大小又保持畫質

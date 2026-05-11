@@ -2,7 +2,7 @@
 title: Compresser une vidéo iPhone en ligne — réduire le poids sans application
 description: Votre vidéo iPhone est trop lourde pour être envoyée ? Compressez-la directement depuis Safari sans installer d'app. Fonctionne aussi sur Android. Gratuit, rapide, privé.
 tool: video
-date: 2025-06-10
+date: 2026-01-26
 ---
 
 # Compresser une vidéo iPhone en ligne — réduire le poids sans application

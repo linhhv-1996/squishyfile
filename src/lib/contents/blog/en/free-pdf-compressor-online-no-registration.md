@@ -1,7 +1,7 @@
 ---
 title: Free PDF Compressor Online — No Registration, No Watermark, Instant Results
 description: Looking for a free PDF compressor online? Reduce PDF file size instantly in your browser — no sign-up, no watermark, no software download required. Works on all devices.
-date: 2025-05-07
+date: 2026-04-20
 ---
 
 # Free PDF Compressor Online — No Registration, No Watermark, Instant Results

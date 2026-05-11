@@ -1,7 +1,7 @@
 ---
 title: Remover Senha de PDF Online Grátis — Desbloqueie e Comprima ao Mesmo Tempo
 description: Remova a senha de proteção do seu PDF online, grátis e sem instalar programas. Desbloqueie e comprima o arquivo em um único passo usando nossa ferramenta simples.
-date: 2025-05-07
+date: 2026-01-12
 ---
 
 # Remover Senha de PDF Online Grátis — Desbloqueie e Comprima ao Mesmo Tempo

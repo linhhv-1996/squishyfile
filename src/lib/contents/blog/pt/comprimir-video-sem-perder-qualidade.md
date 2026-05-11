@@ -2,7 +2,7 @@
 title: Comprimir Vídeo Sem Perder Qualidade | Como Funciona e Como Fazer
 description: É possível comprimir vídeo sem perder qualidade? Entenda como funciona a compressão inteligente e use nossa ferramenta online para reduzir o tamanho do arquivo com qualidade preservada.
 tool: video
-date: 2025-06-10
+date: 2026-01-26
 ---
 
 # Comprimir Vídeo Sem Perder Qualidade | Como Funciona e Como Fazer

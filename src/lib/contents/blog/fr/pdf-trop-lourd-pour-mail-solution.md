@@ -1,7 +1,7 @@
 ---
 title: PDF trop lourd pour envoyer par mail — Solution rapide pour alléger votre fichier
 description: Votre PDF est trop lourd pour être envoyé par e-mail ? Découvrez comment réduire rapidement la taille de votre fichier pour passer sous les limites Gmail, Outlook ou Yahoo, sans perte de qualité.
-date: 2025-07-01
+date: 2026-04-06
 ---
 
 # PDF trop lourd pour envoyer par mail — Solution rapide pour alléger votre fichier

@@ -1,7 +1,7 @@
 ---
 title: PDF komprimieren – kostenlos, schnell und ohne Qualitätsverlust
 description: PDF komprimieren kostenlos und direkt im Browser – kein Upload, kein Abo, kein Datenverlust. Der schnellste PDF Kompressor für kleine Dateigrößen bei hoher Qualität.
-date: 2025-07-01
+date: 2026-01-01
 ---
 
 # PDF komprimieren – kostenlos, schnell und ohne Qualitätsverlust

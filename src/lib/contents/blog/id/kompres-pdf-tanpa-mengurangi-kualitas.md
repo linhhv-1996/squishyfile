@@ -1,7 +1,7 @@
 ---
 title: Kompres PDF Tanpa Mengurangi Kualitas – Mungkinkah? Ini Penjelasannya
 description: Bisakah kompres PDF tanpa mengurangi kualitas sama sekali? Pelajari bagaimana proses kompresi PDF bekerja, kapan kualitas terjaga penuh, dan cara mendapat hasil kompres PDF berkualitas tinggi.
-date: 2025-07-05
+date: 2026-04-20
 ---
 
 # Kompres PDF Tanpa Mengurangi Kualitas – Mungkinkah? Ini Penjelasannya

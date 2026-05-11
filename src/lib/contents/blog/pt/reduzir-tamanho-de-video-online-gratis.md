@@ -2,7 +2,7 @@
 title: Reduzir Tamanho de Vídeo Online Grátis | Comprima MP4 Sem Instalar Nada
 description: Reduza o tamanho de qualquer vídeo online, de graça e sem instalar programas. Compatível com MP4, MOV, AVI e mais. Funciona direto no navegador no celular ou computador.
 tool: video
-date: 2025-06-10
+date: 2026-02-09
 ---
 
 # Reduzir Tamanho de Vídeo Online Grátis | Comprima MP4 Sem Instalar Nada

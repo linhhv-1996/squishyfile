@@ -2,7 +2,7 @@
 title: Video verkleinern für E-Mail – so sendest du Videos als Anhang ohne Probleme
 description: Video für E-Mail verkleinern – kostenlos und ohne Software. So komprimierst du große Videos unter das 25-MB-Limit von Gmail, Outlook & Co., direkt im Browser.
 tool: video
-date: 2025-06-10
+date: 2026-03-14
 ---
 
 # Video verkleinern für E-Mail – so sendest du Videos als Anhang ohne Probleme

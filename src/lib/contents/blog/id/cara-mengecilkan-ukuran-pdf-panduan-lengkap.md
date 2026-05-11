@@ -1,7 +1,7 @@
 ---
 title: Cara Mengecilkan Ukuran PDF dengan Mudah – Panduan Lengkap 2025
 description: Pelajari cara mengecilkan ukuran PDF secara online tanpa aplikasi tambahan. Kurangi ukuran file PDF dengan cepat, gratis, dan hasilnya tetap berkualitas baik.
-date: 2025-07-03
+date: 2026-01-12
 ---
 
 # Cara Mengecilkan Ukuran PDF dengan Mudah – Panduan Lengkap 2025

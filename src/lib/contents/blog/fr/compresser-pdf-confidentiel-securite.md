@@ -1,7 +1,7 @@
 ---
 title: Compresser un PDF confidentiel en toute sécurité — Ce que vous devez savoir avant d'utiliser un outil en ligne
 description: Avant de compresser un PDF sensible en ligne, découvrez les risques réels et comment choisir un outil qui ne stocke pas vos fichiers. Comparatif des approches sécurisées.
-date: 2025-07-01
+date: 2026-04-20
 ---
 
 # Compresser un PDF confidentiel en toute sécurité — Ce que vous devez savoir avant d'utiliser un outil en ligne

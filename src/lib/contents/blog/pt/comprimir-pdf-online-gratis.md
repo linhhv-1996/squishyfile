@@ -1,7 +1,7 @@
 ---
 title: Comprimir PDF Online Grátis — Sem Cadastro, Sem Limite, Sem Enrolação
 description: Compressor de PDF online gratuito que funciona direto no navegador. Sem criar conta, sem instalar programa, sem marca d'água. Comprima quantos PDFs quiser, grátis.
-date: 2025-05-07
+date: 2026-02-23
 ---
 
 # Comprimir PDF Online Grátis — Sem Cadastro, Sem Limite, Sem Enrolação

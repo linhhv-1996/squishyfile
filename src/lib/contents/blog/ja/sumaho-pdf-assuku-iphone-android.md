@@ -1,7 +1,7 @@
 ---
 title: スマホでPDF圧縮する方法｜iPhone・Androidどちらでも使えるやり方
 description: iPhoneやAndroidスマホでPDFを圧縮する方法を解説。アプリ不要でブラウザからできるオンラインツールの使い方を紹介。スマホでも簡単にPDFファイルサイズを小さくできます。
-date: 2025-06-10
+date: 2026-05-10
 ---
 
 # スマホでPDF圧縮する方法｜iPhone・Androidどちらでも使えるやり方

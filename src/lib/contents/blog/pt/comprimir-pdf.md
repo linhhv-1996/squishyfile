@@ -1,7 +1,7 @@
 ---
 title: Comprimir PDF Online Grátis — Rápido, Fácil e Sem Instalar Nada
 description: Comprima seu PDF em segundos diretamente no navegador, sem instalar programas e sem criar conta. Reduza o tamanho do arquivo mantendo a qualidade. Grátis e ilimitado.
-date: 2025-05-07
+date: 2026-04-20
 ---
 
 # Comprimir PDF Online Grátis — Rápido, Fácil e Sem Instalar Nada

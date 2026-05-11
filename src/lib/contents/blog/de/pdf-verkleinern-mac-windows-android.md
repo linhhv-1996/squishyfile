@@ -1,7 +1,7 @@
 ---
 title: PDF verkleinern auf Mac, Windows und Android – alle Methoden im Vergleich
 description: PDF verkleinern auf Mac, Windows oder Android – wir zeigen die besten Methoden für jedes Gerät. Kein Download nötig: Unser Browser-Tool funktioniert auf allen Systemen.
-date: 2025-07-03
+date: 2026-03-03
 ---
 
 # PDF verkleinern auf Mac, Windows und Android – alle Methoden im Vergleich

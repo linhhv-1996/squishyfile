@@ -2,7 +2,7 @@
 title: Video komprimieren – kostenlos, schnell & ohne Qualitätsverlust im Browser
 description: Video komprimieren ohne Software und ohne Anmeldung – direkt im Browser, kostenlos und 100% datenschutzkonform. So verkleinerst du MP4, MOV und mehr in Sekunden.
 tool: video
-date: 2025-06-10
+date: 2026-05-10
 ---
 
 # Video komprimieren – kostenlos, schnell & ohne Qualitätsverlust im Browser

@@ -2,7 +2,7 @@
 title: Compresser une vidéo pour Discord, Gmail, WhatsApp et les réseaux sociaux
 description: Compressez vos vidéos aux bonnes dimensions pour Discord (8 Mo), Gmail (25 Mo), WhatsApp, Instagram ou TikTok. Presets automatiques disponibles — aucun réglage manuel nécessaire.
 tool: video
-date: 2025-06-10
+date: 2026-02-23
 ---
 
 # Compresser une vidéo pour Discord, Gmail, WhatsApp et les réseaux sociaux

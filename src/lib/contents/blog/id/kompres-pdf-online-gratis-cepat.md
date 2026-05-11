@@ -1,7 +1,7 @@
 ---
 title: Kompres PDF Online Gratis – Kecilkan Ukuran PDF Cepat & Mudah
 description: Kompres PDF online gratis tanpa daftar. Kecilkan ukuran file PDF dalam hitungan detik langsung di browser, tanpa instal aplikasi, aman dan kualitas terjaga.
-date: 2025-07-01
+date: 2026-03-23
 ---
 
 # Kompres PDF Online Gratis – Kecilkan Ukuran PDF Cepat & Mudah

@@ -2,7 +2,7 @@
 title: Android Video verkleinern – kostenlos & ohne App direkt im Browser
 description: Android-Videos verkleinern ohne App – so komprimierst du große Videos vom Samsung, Xiaomi oder anderen Android-Geräten kostenlos und sicher im Browser.
 tool: video
-date: 2025-06-11
+date: 2026-01-11
 ---
 
 # Android Video verkleinern – kostenlos & ohne App direkt im Browser

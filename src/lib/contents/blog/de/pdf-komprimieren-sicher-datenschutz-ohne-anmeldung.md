@@ -1,7 +1,7 @@
 ---
 title: PDF komprimieren sicher – Datenschutz und Datensicherheit beim PDF verkleinern
 description: PDF komprimieren sicher und ohne Datenweitergabe – wir erklären, welche Risiken bei Cloud-Tools bestehen und warum eine lokale Browser-Lösung ohne Anmeldung die sicherste Wahl ist.
-date: 2025-07-05
+date: 2026-05-05
 ---
 
 # PDF komprimieren sicher – Datenschutz und Datensicherheit beim PDF verkleinern

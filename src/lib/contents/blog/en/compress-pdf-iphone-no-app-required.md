@@ -2,7 +2,7 @@
 title: How to Compress a PDF on iPhone — No App Download Required
 description: Learn how to compress a large PDF on your iPhone for free. Works in Safari with no app required — reduce PDF file size in seconds and share directly from your phone.
 tool: pdf
-date: 2025-05-07
+date: 2026-01-12
 ---
 
 # How to Compress a PDF on iPhone — No App Download Required

@@ -1,7 +1,7 @@
 ---
 title: Compress PDF to 1MB or Less — Fast, Free, and No Quality Loss
 description: Need to compress a PDF to 1MB or 100KB for an upload or email? Learn how to shrink any PDF to a specific file size online for free — no software, no sign-up required.
-date: 2025-05-07
+date: 2026-02-09
 ---
 
 # Compress PDF to 1MB or Less — Fast, Free, and No Quality Loss

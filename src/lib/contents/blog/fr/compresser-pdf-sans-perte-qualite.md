@@ -1,7 +1,7 @@
 ---
 title: Compresser un PDF sans perte de qualité — Comment préserver le texte et les images
 description: Apprenez à compresser un PDF sans dégrader la qualité des images ni du texte. Comprendre les niveaux de compression, quand la qualité est préservée et quand elle ne l'est pas.
-date: 2025-07-01
+date: 2026-05-10
 ---
 
 # Compresser un PDF sans perte de qualité — Comment préserver le texte et les images

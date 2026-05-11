@@ -1,7 +1,7 @@
 ---
 title: Compresser un PDF en ligne gratuitement — Sans inscription, résultat immédiat
 description: Compressez vos fichiers PDF en ligne gratuitement en quelques secondes. Aucune inscription requise, aucun logiciel à installer. Réduction automatique du poids, qualité préservée.
-date: 2025-07-01
+date: 2026-05-08
 ---
 
 # Compresser un PDF en ligne gratuitement — Sans inscription, résultat immédiat
