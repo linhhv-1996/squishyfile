@@ -53,7 +53,7 @@
 
 <style>
 	.blog-container {
-		padding: 48px 0 80px;
+		padding: 30px 0 80px;
 		animation: fadeUp 0.3s ease;
 	}
 

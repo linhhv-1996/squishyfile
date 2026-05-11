@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
+	import BlogCta from '$lib/components/BlogCta.svelte';
 
     let currentLangKey = $derived($page.params.lang || 'en');
     let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
@@ -22,36 +23,46 @@
 <main class="wrap">
 	<div class="article-container">
 
-		<header class="article-header">
-			<a href="{langPrefix}/blog" class="back-link">
-				<svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-					<path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-				{t('blog.back')}
-			</a>
-			<h1 class="article-title">{data.meta.title}</h1>
-			<div class="article-meta">
-				<time class="meta-date">{data.meta.date}</time>
-				{#if data.meta.description}
-					<span class="meta-sep">·</span>
-					<span class="meta-desc">{data.meta.description}</span>
-				{/if}
-			</div>
-		</header>
+		<div class="article-inner">
+			<header class="article-header">
+				<a href="{langPrefix}/blog" class="back-link">
+					<svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+						<path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					{t('blog.back')}
+				</a>
+				<h1 class="article-title">{data.meta.title}</h1>
+				<div class="article-meta">
+					<time class="meta-date">{data.meta.date}</time>
+					{#if data.meta.description}
+						<span class="meta-sep">·</span>
+						<span class="meta-desc">{data.meta.description}</span>
+					{/if}
+				</div>
+			</header>
 
-		<hr class="article-divider" />
+			<hr class="article-divider" />
+		</div>
 
-		<article class="prose">
-			{@html data.content}
-		</article>
+		<BlogCta tool={data.meta.tool} {t} {langPrefix} />
+
+		<div class="article-inner">
+			<article class="prose">
+				{@html data.content}
+			</article>
+		</div>
 
 	</div>
 </main>
 
 <style>
 	.article-container {
-		padding: 48px 0 80px;
+		padding: 30px 0 80px;
 		max-width: 680px;
+		/* NO animation here — transform breaks position:sticky on children */
+	}
+
+	.article-inner {
 		animation: fadeUp 0.3s ease;
 	}
 
