@@ -90,7 +90,7 @@ Buat folder "Dokumen Lamaran – Sudah Kompres" di komputer atau HP kamu. Simpan
 Buka file hasil kompresi dan pastikan semua teks masih bisa dibaca, gambar atau foto masih jelas, dan tidak ada halaman yang hilang.
 
 ### ✅ Beri Nama File yang Jelas
-Namai file dengan format yang rapi, misalnya: `CV_NamaKamu_2025.pdf` atau `Ijazah_S1_NamaKamu.pdf`. Nama file yang profesional memberi kesan baik.
+Namai file dengan format yang rapi, misalnya: `CV_NamaKamu_2026.pdf` atau `Ijazah_S1_NamaKamu.pdf`. Nama file yang profesional memberi kesan baik.
 
 ---
 

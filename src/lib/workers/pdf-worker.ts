@@ -2,7 +2,11 @@
 /// <reference lib="webworker" />
 
 self.onmessage = async (e: MessageEvent) => {
-	const { fileUrl, password } = e.data;
+	const { fileUrl, password, quality } = e.data;
+
+	// balanced = /ebook (150dpi images, good quality)
+	// maximum  = /screen (72dpi images, smallest file)
+	const pdfSettings = quality === 'maximum' ? '/screen' : '/ebook';
 
 	try {
 		const response = await fetch(fileUrl);
@@ -11,7 +15,7 @@ self.onmessage = async (e: MessageEvent) => {
 		let gsArgs = [
 			"-sDEVICE=pdfwrite",
 			"-dCompatibilityLevel=1.4",
-			"-dPDFSETTINGS=/screen",
+			`-dPDFSETTINGS=${pdfSettings}`,
 			"-DNOPAUSE",
 			"-dQUIET",
 			"-dBATCH"
@@ -34,10 +38,7 @@ self.onmessage = async (e: MessageEvent) => {
 					try {
 						// @ts-ignore
 						const uarray = (self as any).Module.FS.readFile("output.pdf", { encoding: "binary" });
-						
-						// ✅ CHỈ GỬI DỮ LIỆU THÔ (uarray) VỀ MAIN THREAD
 						self.postMessage({ success: true, pdfData: uarray });
-						
 					} catch (err) {
 						self.postMessage({ success: false, error: "Sai mật khẩu hoặc file PDF bị hỏng cấu trúc." });
 					}
@@ -53,8 +54,6 @@ self.onmessage = async (e: MessageEvent) => {
 		if (!(self as any).Module) {
 			// @ts-ignore
 			(self as any).Module = ModuleConfig;
-			
-			// 🚀 CÁCH QUA MẶT VITE: Ghép chuỗi động với location.origin
 			const gsScriptUrl = self.location.origin + '/gs-worker.js';
 			import(/* @vite-ignore */ gsScriptUrl).catch(err => {
 				console.error("🔥 LỖI LOAD GS-WORKER:", err);

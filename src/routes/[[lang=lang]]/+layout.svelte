@@ -2,10 +2,9 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import '../../app.css';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { Film, Globe, ChevronDown, Home, FileText, Zap } from 'lucide-svelte';
+	import { ChevronDown, Home, FileText, Zap } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -64,8 +63,20 @@
 		$page.url.pathname === '/' || $page.url.pathname === `/${currentLangKey}`
 	);
 	let isBlog = $derived($page.url.pathname.includes('/blog'));
+
 	let isCompressVideo = $derived($page.url.pathname.includes('/compress-video'));
 	let isCompressPdf = $derived($page.url.pathname.includes('/compress-pdf'));
+
+	// Hreflang: lấy path hiện tại, bỏ prefix ngôn ngữ (dùng cho SEO alternate links)
+	let currentPath = $derived((() => {
+		const pathname = $page.url.pathname;
+		if (currentLangKey === 'en') return pathname;
+		const stripped = pathname.replace(new RegExp(`^/${currentLangKey}(?=/|$)`), '');
+		return stripped || '/';
+	})());
+
+	let isBlogPost = $derived(currentPath.startsWith('/blog/') && currentPath.length > '/blog/'.length);
+
 </script>
 
 <svelte:head>
@@ -73,6 +84,44 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+	<meta property="og:image" content={`${$page.url.origin}/og/${currentLangKey.toLowerCase()}.png`} />
+	<meta property="og:url" content={$page.url.href} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content={`${$page.url.origin}/og/${currentLangKey.toLowerCase()}.png`} />
+
+	<meta name="robots" content="index, follow" />
+
+	<!-- canonical: tránh duplicate content, trỏ về URL chính xác của trang hiện tại -->
+	<link
+		rel="canonical"
+		href={`${$page.url.origin}${currentLangKey === 'en' ? '' : `/${currentLangKey}`}${currentPath === '/' ? '' : currentPath}`}
+	/>
+
+	<!-- hreflang: dùng BCP 47 (zh-TW, pt-BR thay vì zh, pt) -->
+	 {#if !isBlogPost}
+	 	<meta property="og:type" content="website" />
+
+		{#each languages as lang}
+			<link
+				rel="alternate"
+				hreflang={lang.hreflang}
+				href={`${$page.url.origin}${lang.key === 'en' ? '' : `/${lang.key}`}${currentPath === '/' ? '' : currentPath}`}
+			/>
+		{/each}
+		<!-- x-default: trỏ về bản English khi không match ngôn ngữ nào -->
+		<link
+			rel="alternate"
+			hreflang="x-default"
+			href={`${$page.url.origin}${currentPath === '/' ? '' : currentPath}`}
+		/>
+	 {:else}
+	 	<meta property="og:type" content="article" />
+		<!-- Blog post: chỉ self-reference, không cross-language -->
+		<link rel="alternate" hreflang={activeLang.hreflang} href={$page.url.href} />
+	 {/if}
+
+
 </svelte:head>
 
 <header class="main-header">

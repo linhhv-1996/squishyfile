@@ -25,7 +25,7 @@ La mejor opción es comprimir el video tú mismo, eligiendo el nivel de calidad,
 
 ---
 
-## Límite de tamaño de video en WhatsApp (2025)
+## Límite de tamaño de video en WhatsApp (2026)
 
 | Plataforma | Límite de video |
 |------------|----------------|

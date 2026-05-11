@@ -18,8 +18,8 @@
 
 <svelte:head>
 	<title>{t('meta.title')}</title>
+	<meta property="og:title" content="{t('meta.title')}" />
 	<meta name="description" content={t('meta.desc')} />
-	<meta name="robots" content="index, follow" />
 </svelte:head>
 
 <main>

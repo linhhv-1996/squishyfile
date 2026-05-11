@@ -13,7 +13,7 @@ Por eso nuestro compresor incluye **presets específicos para cada plataforma**:
 
 ---
 
-## Límites de tamaño de video por plataforma (2025)
+## Límites de tamaño de video por plataforma (2026)
 
 | Plataforma | Límite de video | Notas |
 |------------|----------------|-------|

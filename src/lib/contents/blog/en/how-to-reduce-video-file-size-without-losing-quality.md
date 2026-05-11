@@ -1,11 +1,11 @@
 ---
-title: How to Reduce Video File Size Without Losing Quality (2025 Guide)
+title: How to Reduce Video File Size Without Losing Quality (2026 Guide)
 description: Learn how to reduce video file size on any device — no software required. Compress MP4, MOV, and AVI files in your browser using smart presets or a custom target size for email, WhatsApp, and social media.
 tool: video
 date: 2026-05-04
 ---
 
-# How to Reduce Video File Size Without Losing Quality (2025 Guide)
+# How to Reduce Video File Size Without Losing Quality (2026 Guide)
 
 A 3-minute video from your iPhone can easily hit 500MB. That same clip, properly compressed, can be under 30MB — and look virtually identical on any screen.
 

@@ -13,7 +13,7 @@ Every major email provider caps attachments at 25MB or less. A single minute of 
 
 ---
 
-## Email Attachment Limits (2025)
+## Email Attachment Limits (2026)
 
 | Provider | Attachment Limit |
 |---|---|

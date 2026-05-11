@@ -174,7 +174,7 @@ body {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  min-width: 200px;
+  min-width: 170px;
   background: var(--surf2);
   border: 1px solid var(--border);
   border-radius: var(--r);
@@ -1138,6 +1138,7 @@ body {
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 20px;
+  margin-top: 40px;
   text-align: center;
   color: var(--text);
 }
@@ -1397,5 +1398,10 @@ button {
 	0% { opacity: 1; }
 	50% { opacity: 0.7; }
 	100% { opacity: 1; }
+}
+
+.pass-hint {
+  font-size: 13px;
+  margin-top: 5px;
 }
 
