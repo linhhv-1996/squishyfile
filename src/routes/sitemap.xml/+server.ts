@@ -95,8 +95,8 @@ export const GET: RequestHandler = () => {
       
       // Tạo danh sách hreflang cho TẤT CẢ các ngôn ngữ của trang tĩnh này
       const alternateLinks: Hreflang[] = languages.map(l => ({
-        lang: l.key,
-        href: url(l.key, page)
+        lang: l.hreflang, // ĐÃ SỬA: Lấy thẳng hreflang cực xịn từ file của bạn!
+        href: url(l.key, page) // URL thì vẫn lấy key để nối đường dẫn (/zh, /pt)
       }));
 
       // (Tùy chọn tốt cho SEO) Thêm thẻ x-default trỏ về bản tiếng Anh
@@ -131,7 +131,6 @@ export const GET: RequestHandler = () => {
     }
   }
 
-  // Khai báo thêm namespace xhtml bắt buộc để dùng được thẻ <xhtml:link>
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${entries.join('\n')}
