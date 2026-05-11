@@ -1,6 +1,7 @@
 ---
 title: iPhone Video komprimieren – kostenlos & ohne App direkt im Browser
 description: iPhone-Videos komprimieren ohne App oder Software – so verkleinerst du große MOV- und MP4-Dateien vom iPhone schnell, kostenlos und sicher direkt im Browser.
+tool: video
 date: 2025-06-10
 ---
 

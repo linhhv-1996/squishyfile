@@ -2,10 +2,10 @@
 
 **Inkrafttretungsdatum:** 7. Mai 2026
 
-Bei **SquishyFile** hat Ihr Datenschutz oberste Priorität. Unser Tool ist so konzipiert, dass Dateien direkt in Ihrem Webbrowser (Client-seitig) verarbeitet werden. Dadurch behalten Sie stets die volle Kontrolle über Ihre Daten.
+Bei **Squishyfile** hat Ihr Datenschutz oberste Priorität. Unser Tool ist so konzipiert, dass Dateien direkt in Ihrem Webbrowser (Client-seitig) verarbeitet werden. Dadurch behalten Sie stets die volle Kontrolle über Ihre Daten.
 
 ## 1. Lokale Dateiverarbeitung (Kein Upload)
-SquishyFile basiert auf einer „Privacy-First“-Architektur:
+Squishyfile basiert auf einer „Privacy-First“-Architektur:
 * **Keine Server-Übertragung:** Ihre Dateien werden **NIEMALS** auf unsere Server hochgeladen, dort gespeichert oder verarbeitet.
 * **Lokale Ausführung:** Alle Komprimierungs- und Konvertierungsvorgänge finden ausschließlich auf Ihrem lokalen Gerät in Ihrem Browser statt.
 * **Sofortige Löschung:** Sobald Sie den Browser-Tab schließen oder die Datei aus der Benutzeroberfläche entfernen, werden alle zugehörigen Daten sofort und dauerhaft aus dem Speicher Ihres Browsers gelöscht.

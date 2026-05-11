@@ -1,6 +1,7 @@
 ---
 title: Comprimir Vídeo para Discord, Gmail e Outras Plataformas | Presets Automáticos
 description: Saiba como comprimir vídeo para Discord, Gmail, WhatsApp e Instagram com presets automáticos. Sem configuração manual — a ferramenta ajusta tudo para o limite de cada plataforma.
+tool: video
 date: 2025-06-10
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Kompres Video Online Gratis Tanpa Daftar — Cepat, Aman & Tanpa Watermark
 description: Cara kompres video online gratis tanpa install aplikasi. Pilih preset Low/Balance/High atau atur ukuran target sendiri. Proses lokal, privasi terjaga, tanpa watermark.
+tool: video
 date: 2025-06-10
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Handy-Speicher voll? Videos komprimieren und Speicherplatz freigeben
 description: Handy-Speicher voll wegen Videos? So komprimierst du große Videodateien kostenlos im Browser, sparst Speicherplatz und behältst trotzdem alle Erinnerungen.
+tool: video
 date: 2025-06-11
 ---
 

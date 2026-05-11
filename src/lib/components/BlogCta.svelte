@@ -27,10 +27,10 @@
 <style>
 	.cta-banner {
 		position: sticky;
-		top: 0;
+		top: 60px;
 		z-index: 20;
 		background: var(--surf);
-		border-bottom: 1px solid var(--border);
+		border: 1px solid var(--border);
 		padding: 10px;
 		margin-bottom: 28px;
 		border-radius: 8px;

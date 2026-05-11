@@ -1,6 +1,7 @@
 ---
 title: Compresser une vidéo en ligne gratuitement — rapide, sans inscription
 description: Compressez vos vidéos en ligne gratuitement sans installer de logiciel. Choisissez votre niveau de compression (léger, équilibré, maximum) ou définissez une taille cible. Résultat en quelques secondes.
+tool: video
 date: 2025-06-10
 ---
 

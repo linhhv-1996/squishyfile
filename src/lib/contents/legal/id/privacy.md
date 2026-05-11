@@ -2,10 +2,10 @@
 
 **Tanggal Berlaku:** 7 Mei 2026
 
-Di **SquishyFile**, privasi Anda adalah prioritas utama kami. Alat kami dirancang untuk memproses file secara langsung di browser web Anda (Client-side), memastikan data Anda tetap berada di bawah kendali Anda.
+Di **Squishyfile**, privasi Anda adalah prioritas utama kami. Alat kami dirancang untuk memproses file secara langsung di browser web Anda (Client-side), memastikan data Anda tetap berada di bawah kendali Anda.
 
 ## 1. Pemrosesan File Lokal (Tanpa Unggah)
-SquishyFile beroperasi pada arsitektur "Utamakan Privasi".
+Squishyfile beroperasi pada arsitektur "Utamakan Privasi".
 * **Tanpa Transfer Server:** File Anda **TIDAK PERNAH** diunggah, disimpan, atau diproses di server kami.
 * **Eksekusi Lokal:** Semua tugas kompresi dan konversi terjadi sepenuhnya di perangkat lokal Anda.
 * **Volatilitas Instan:** Setelah Anda menutup tab browser atau menghapus file, semua data segera dan secara permanen dihapus dari memori browser Anda.

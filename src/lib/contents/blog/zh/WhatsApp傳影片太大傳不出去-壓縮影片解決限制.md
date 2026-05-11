@@ -1,6 +1,7 @@
 ---
 title: WhatsApp 傳影片太大傳不出去？一招壓縮影片秒解決
 description: WhatsApp 傳影片有大小限制，影片太大就傳不出去。本文教你如何壓縮影片以符合 WhatsApp 限制，免費線上工具在瀏覽器就能完成，Android 和 iPhone 皆適用。
+tool: video
 date: 2025-06-10
 ---
 

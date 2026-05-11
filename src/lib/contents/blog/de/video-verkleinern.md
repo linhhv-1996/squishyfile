@@ -1,6 +1,7 @@
 ---
 title: Video verkleinern – kostenlos, ohne Software, direkt im Browser
 description: Video verkleinern ohne Programm – so reduzierst du die Dateigröße deiner Videos kostenlos, schnell und sicher im Browser. Für WhatsApp, E-Mail, Instagram & mehr.
+tool: video
 date: 2025-06-11
 ---
 

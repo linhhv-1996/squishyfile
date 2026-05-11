@@ -1,6 +1,7 @@
 ---
 title: How to Compress Video for WhatsApp — Under 16MB in Seconds
 description: Can't send a video on WhatsApp because the file is too large? Compress video for WhatsApp under 16MB instantly in your browser — just enter your target size and download. No app, no upload.
+tool: video
 date: 2025-06-10
 ---
 

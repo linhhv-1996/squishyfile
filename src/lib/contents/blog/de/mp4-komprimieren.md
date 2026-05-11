@@ -1,6 +1,7 @@
 ---
 title: MP4 komprimieren – kostenlos, schnell & ohne Qualitätsverlust im Browser
 description: MP4-Dateien komprimieren ohne Software – direkt im Browser, kostenlos, ohne Anmeldung. So verkleinerst du MP4-Videos schnell und sicher auf die gewünschte Größe.
+tool: video
 date: 2025-06-11
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Comprimir video para Discord, Gmail e Instagram | Presets listos para cada plataforma
 description: Comprime tu video al tamaño exacto que acepta Discord, Gmail, Instagram, TikTok o YouTube. Presets automáticos por plataforma. Online, gratis, sin registro.
+tool: video
 date: 2025-06-10
 ---
 

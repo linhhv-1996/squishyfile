@@ -1,6 +1,7 @@
 ---
 title: Cómo comprimir video en iPhone y Android | Sin apps, desde el navegador
 description: Comprime videos de iPhone y Android directamente desde el navegador. Sin instalar apps, sin registro. Reduce el peso de tus videos para WhatsApp, correo o redes sociales.
+tool: video
 date: 2025-06-10
 ---
 

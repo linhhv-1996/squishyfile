@@ -20,19 +20,16 @@
 	let langWrap: HTMLDivElement;
 
 	function switchLanguage(newLang: string) {
-		const currentPath = $page.url.pathname;
-		const currentLangPrefix = $page.params.lang ? `/${$page.params.lang}` : '';
-		let newPath = '';
-
-		if ($page.params.lang) {
-			newPath = currentPath.replace(currentLangPrefix, `/${newLang}`);
-		} else {
-			newPath = `/${newLang}${currentPath === '/' ? '' : currentPath}`;
-		}
+		// Xác định đường dẫn trang chủ của ngôn ngữ mới
+		// Nếu là 'en' thì về '/', các ngôn ngữ khác thì về '/[code]'
+		const newHomePath = newLang === 'en' ? '/' : `/${newLang}`;
 
 		langOpen = false;
 		closeMobileMenu();
-		goto(`${newPath}${$page.url.search}`);
+
+		// Dùng window.location.href để ép trình duyệt load lại trang (F5) 
+		// và đẩy người dùng về trang chủ của ngôn ngữ đó
+		window.location.href = newHomePath;
 	}
 
 	function toggleMobileMenu() {
@@ -78,7 +75,7 @@
 <header class="main-header">
 	<div class="hinner">
 		<a href={homeHref} class="logo">
-			<span class="logo-name">Squishy<span>File</span></span>
+			<span class="logo-name">Squishy<span>file</span></span>
 		</a>
 
 		<nav class="hnav">

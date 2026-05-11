@@ -1,6 +1,7 @@
 ---
 title: iPhone 影片壓縮教學｜縮小 iPhone 影片大小，輕鬆傳 LINE 和 Email
 description: iPhone 影片太大傳不出去？本文介紹 iPhone 影片壓縮的 3 種方法，包含免安裝 App 的瀏覽器工具，直接縮小影片大小，解決 LINE、Email、WhatsApp 傳送失敗的問題。
+tool: video
 date: 2025-06-10
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 縮小影片檔案大小教學｜Android、iPhone 通用，免費瀏覽器直接處理
 description: 教你如何縮小影片檔案大小，Android 和 iPhone 皆適用。免費線上工具直接在瀏覽器縮小影片，無需安裝 App、不上傳伺服器，輕鬆解決影片太大無法傳送的問題。
+tool: video
 date: 2025-06-10
 ---
 

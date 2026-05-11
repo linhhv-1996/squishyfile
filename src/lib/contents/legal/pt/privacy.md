@@ -2,10 +2,10 @@
 
 **Data de Vigência:** 7 de maio de 2026
 
-No **SquishyFile**, sua privacidade é nossa maior prioridade. Nossa ferramenta foi projetada para processar arquivos diretamente em seu navegador da web (Client-side), garantindo que seus dados permaneçam sob seu controle.
+No **Squishyfile**, sua privacidade é nossa maior prioridade. Nossa ferramenta foi projetada para processar arquivos diretamente em seu navegador da web (Client-side), garantindo que seus dados permaneçam sob seu controle.
 
 ## 1. Processamento de Arquivo Local (Zero-Upload)
-O SquishyFile opera em uma arquitetura "Privacy-First" (Privacidade em Primeiro Lugar).
+O Squishyfile opera em uma arquitetura "Privacy-First" (Privacidade em Primeiro Lugar).
 * **Sem Transferências de Servidor:** Seus arquivos **NUNCA** são carregados, armazenados ou processados ​​em nossos servidores.
 * **Execução Local:** Todas as tarefas de compressão e conversão ocorrem inteiramente em seu dispositivo local.
 * **Volatilidade Instantânea:** Depois de fechar a guia do navegador ou limpar o arquivo, todos os dados são removidos imediata e permanentemente da memória do seu navegador.

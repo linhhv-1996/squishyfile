@@ -1,6 +1,7 @@
 ---
 title: Cara Kirim Video Besar Lewat Email & Discord — Kompres Dulu Agar Tidak Ditolak
 description: Video terlalu besar untuk dikirim lewat Gmail, Outlook, atau Discord? Kompres videomu terlebih dahulu. Atur ukuran target sesuai batas platform, proses otomatis, tanpa watermark.
+tool: video
 date: 2025-06-10
 ---
 

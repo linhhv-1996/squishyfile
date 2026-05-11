@@ -2,10 +2,10 @@
 
 **Date d'entrée en vigueur :** 7 mai 2026
 
-Chez **SquishyFile**, votre vie privée est notre priorité absolue. Notre outil est conçu pour traiter les fichiers directement dans votre navigateur Web (côté client), garantissant que vos données restent sous votre contrôle.
+Chez **Squishyfile**, votre vie privée est notre priorité absolue. Notre outil est conçu pour traiter les fichiers directement dans votre navigateur Web (côté client), garantissant que vos données restent sous votre contrôle.
 
 ## 1. Traitement local des fichiers (Zéro téléchargement)
-SquishyFile fonctionne sur une architecture « Privacy-First ».
+Squishyfile fonctionne sur une architecture « Privacy-First ».
 * **Aucun transfert vers le serveur :** Vos fichiers ne sont **JAMAIS** téléchargés, stockés ou traités sur nos serveurs.
 * **Exécution locale :** Toutes les tâches de compression et de conversion se déroulent entièrement sur votre appareil local.
 * **Volatilité instantanée :** Une fois que vous fermez l'onglet du navigateur ou effacez le fichier, toutes les données sont immédiatement et définitivement supprimées de la mémoire de votre navigateur.

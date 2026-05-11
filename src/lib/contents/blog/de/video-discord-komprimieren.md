@@ -1,6 +1,7 @@
 ---
 title: Video für Discord komprimieren – unter 10 MB ohne Qualitätsverlust
 description: Video für Discord komprimieren – so sendest du Clips unter das 10-MB-Limit kostenlos und ohne Software. Direkt im Browser, ohne Upload, ohne Anmeldung.
+tool: video
 date: 2025-06-10
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Réduire la taille d'une vidéo sans perdre en qualité — guide complet
 description: Comment réduire la taille d'une vidéo sans perdre en qualité ? Découvrez la méthode la plus simple : un outil en ligne gratuit avec compression automatique, sans réglages techniques.
+tool: video
 date: 2025-06-10
 ---
 

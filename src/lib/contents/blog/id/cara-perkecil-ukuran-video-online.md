@@ -1,6 +1,7 @@
 ---
 title: Cara Perkecil Ukuran Video Tanpa Aplikasi — Langsung di Browser, Gratis
 description: Perkecil ukuran video dengan mudah langsung dari browser. Tidak perlu install software, tidak perlu daftar. Pilih preset atau atur ukuran target sendiri. Hasilnya bersih tanpa watermark.
+tool: video
 date: 2025-06-10
 ---
 

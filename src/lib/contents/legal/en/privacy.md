@@ -2,10 +2,10 @@
 
 **Effective Date:** May 7, 2026
 
-At **SquishyFile**, your privacy is our top priority. Our tool is designed to process files directly in your web browser (Client-side), ensuring your data stays under your control.
+At **Squishyfile**, your privacy is our top priority. Our tool is designed to process files directly in your web browser (Client-side), ensuring your data stays under your control.
 
 ## 1. Local File Processing (Zero-Upload)
-SquishyFile operates on a "Privacy-First" architecture. 
+Squishyfile operates on a "Privacy-First" architecture. 
 * **No Server Transfers:** Your files are **NEVER** uploaded, stored, or processed on our servers. 
 * **Local Execution:** All compression and conversion tasks happen entirely on your local device. 
 * **Instant Volatility:** Once you close the browser tab or clear the file, all data is immediately and permanently removed from your browser's memory.

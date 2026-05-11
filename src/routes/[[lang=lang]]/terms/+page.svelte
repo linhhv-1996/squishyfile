@@ -45,7 +45,7 @@
 </script>
 
 <svelte:head>
-    <title>Terms of Service - SquishyFile</title>
+    <title>Terms of Service - Squishyfile</title>
 </svelte:head>
 
 <main class="wrap">

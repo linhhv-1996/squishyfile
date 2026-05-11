@@ -1,6 +1,7 @@
 ---
 title: SNS・アプリ別｜動画サイズの上限と最適な圧縮設定まとめ【YouTube・Instagram・Twitter・Discord対応】
 description: YouTube・Instagram・Twitter(X)・Discord・LINEなどSNS・アプリ別の動画サイズ上限と推奨フォーマットを一覧で解説。4K動画・長い動画の圧縮方法もあわせて紹介します。
+tool: video
 date: 2025-07-01
 ---
 

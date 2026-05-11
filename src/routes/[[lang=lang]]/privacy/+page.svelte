@@ -45,7 +45,7 @@
 </script>
 
 <svelte:head>
-    <title>Privacy Policy - SquishyFile</title>
+    <title>Privacy Policy - Squishyfile</title>
 </svelte:head>
 
 <main class="wrap">

@@ -1,6 +1,7 @@
 ---
 title: Comprimir video sin perder calidad | Guía práctica 2025
 description: Aprende a comprimir video sin perder calidad visible. Elige el nivel de compresión adecuado y obtén el mejor equilibrio entre peso y nitidez. Online, gratis y sin instalar nada.
+tool: video
 date: 2025-06-10
 ---
 

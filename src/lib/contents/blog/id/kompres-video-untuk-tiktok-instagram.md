@@ -1,6 +1,7 @@
 ---
 title: Kompres Video untuk TikTok & Instagram — Upload Lancar Tanpa Ditolak Platform
 description: Cara kompres video untuk TikTok dan Instagram agar bisa diupload tanpa masalah. Perkecil ukuran video sesuai batas platform secara otomatis, tanpa install aplikasi dan tanpa watermark.
+tool: video
 date: 2025-06-10
 ---
 
