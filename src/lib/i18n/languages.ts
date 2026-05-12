@@ -17,4 +17,5 @@ export const languages: Language[] = [
 	{ key: 'id', flag: '🇮🇩', code: 'ID', name: 'Indonesia',      hreflang: 'id' },
 	{ key: 'es', flag: '🇪🇸', code: 'ES', name: 'Español',        hreflang: 'es' },
 	{ key: 'pt', flag: '🇧🇷', code: 'PT', name: 'Português (BR)', hreflang: 'pt-BR' },
+	{ key: 'ru', flag: '🇷🇺', code: 'RU', name: 'Русский', hreflang: 'ru' },
 ];

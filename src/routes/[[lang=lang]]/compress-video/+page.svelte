@@ -119,31 +119,7 @@
 	);
 
 	// --- How-to-use markdown content ---
-	const howToModules = import.meta.glob(
-		"$lib/contents/seo/video-compress/*.md",
-		{
-			query: "?raw",
-			import: "default",
-		},
-	);
-
-	async function loadHowTo(langKey: string): Promise<string> {
-		const path = `/src/lib/contents/seo/video-compress/${langKey}.md`;
-		const loader =
-			howToModules[path] ??
-			howToModules["/src/lib/contents/seo/video-compress/en.md"];
-		if (!loader) return "";
-		const raw = (await loader()) as string;
-		return marked.parse(raw) as string;
-	}
-
-	let howToHtml = $state("");
-
-	$effect(() => {
-		loadHowTo(currentLangKey).then((html) => {
-			howToHtml = html;
-		});
-	});
+	let { data } = $props();
 	// ------------------------------------
 
 	let dragOver = $state(false);
@@ -599,9 +575,9 @@
 		</div>
 
 		<!-- How to use — SEO content từ markdown -->
-		{#if howToHtml}
-			<section class="how-to-sec">
-				{@html howToHtml}
+		{#if data.howToHtml}
+			<section class="how-to-sec prose">
+				{@html data.howToHtml}
 			</section>
 		{/if}
 

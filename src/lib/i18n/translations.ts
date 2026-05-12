@@ -1,11 +1,11 @@
 export const translations: Record<string, Record<string, string>> = {
 	en: {
 		'feat.pdf.compress.title': 'Serious Compression',
-'feat.pdf.compress.desc': 'Shrinks PDFs by re-encoding embedded images and removing redundant data — without corrupting text, fonts, or structure.',
-'feat.pdf.privacy.title': 'Fully Private',
-'feat.pdf.privacy.desc': 'Everything runs in your browser. Your file never leaves your device, so no data ever touches a server.',
-'feat.pdf.quality.title': 'Two Quality Modes',
-'feat.pdf.quality.desc': 'Balanced mode cuts size for everyday sharing; Maximum mode pushes harder for the smallest possible file.',
+		'feat.pdf.compress.desc': 'Shrinks PDFs by re-encoding embedded images and removing redundant data — without corrupting text, fonts, or structure.',
+		'feat.pdf.privacy.title': 'Fully Private',
+		'feat.pdf.privacy.desc': 'Everything runs in your browser. Your file never leaves your device, so no data ever touches a server.',
+		'feat.pdf.quality.title': 'Two Quality Modes',
+		'feat.pdf.quality.desc': 'Balanced mode cuts size for everyday sharing; Maximum mode pushes harder for the smallest possible file.',
 
 		'sec.pdfQuality': 'Compression Level',
 		'pdf.preset.balanced': 'Balanced',
@@ -184,11 +184,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// kostenlos, ohne anmeldung, handy speicher voll, hohe qualität, ohne registrierung
 	de: {
 		'feat.pdf.compress.title': 'Echte Komprimierung',
-'feat.pdf.compress.desc': 'Reduziert PDFs durch Neukodierung eingebetteter Bilder und Entfernung redundanter Daten — Text, Schriften und Struktur bleiben erhalten.',
-'feat.pdf.privacy.title': 'Vollständig privat',
-'feat.pdf.privacy.desc': 'Alles läuft im Browser. Ihre Datei verlässt nie Ihr Gerät — keine Daten werden jemals an einen Server übertragen.',
-'feat.pdf.quality.title': 'Zwei Qualitätsmodi',
-'feat.pdf.quality.desc': 'Der ausgewogene Modus reduziert die Größe für den Alltag; der maximale Modus erzielt die kleinstmögliche Datei.',
+		'feat.pdf.compress.desc': 'Reduziert PDFs durch Neukodierung eingebetteter Bilder und Entfernung redundanter Daten — Text, Schriften und Struktur bleiben erhalten.',
+		'feat.pdf.privacy.title': 'Vollständig privat',
+		'feat.pdf.privacy.desc': 'Alles läuft im Browser. Ihre Datei verlässt nie Ihr Gerät — keine Daten werden jemals an einen Server übertragen.',
+		'feat.pdf.quality.title': 'Zwei Qualitätsmodi',
+		'feat.pdf.quality.desc': 'Der ausgewogene Modus reduziert die Größe für den Alltag; der maximale Modus erzielt die kleinstmögliche Datei.',
 
 		'sec.pdfQuality': 'Kompressionsstufe',
 		'pdf.preset.balanced': 'Ausgewogen',
@@ -356,11 +356,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// 無料, アップロード不要, インストール不要, ログインなし, ギガ節約, プライバシー保護
 	ja: {
 		'feat.pdf.compress.title': '強力な圧縮',
-'feat.pdf.compress.desc': '埋め込み画像を再エンコードし、冗長なデータを除去することでPDFを縮小します。テキスト・フォント・構造は維持されます。',
-'feat.pdf.privacy.title': '完全プライベート',
-'feat.pdf.privacy.desc': 'すべてブラウザ上で処理されます。ファイルがデバイスを離れることはなく、サーバーには何も送信されません。',
-'feat.pdf.quality.title': '2つの品質モード',
-'feat.pdf.quality.desc': 'バランスモードは日常的な共有向けにサイズを削減し、最大圧縮モードはできる限り小さいファイルを目指します。',
+		'feat.pdf.compress.desc': '埋め込み画像を再エンコードし、冗長なデータを除去することでPDFを縮小します。テキスト・フォント・構造は維持されます。',
+		'feat.pdf.privacy.title': '完全プライベート',
+		'feat.pdf.privacy.desc': 'すべてブラウザ上で処理されます。ファイルがデバイスを離れることはなく、サーバーには何も送信されません。',
+		'feat.pdf.quality.title': '2つの品質モード',
+		'feat.pdf.quality.desc': 'バランスモードは日常的な共有向けにサイズを削減し、最大圧縮モードはできる限り小さいファイルを目指します。',
 
 		'sec.pdfQuality': '圧縮レベル',
 		'pdf.preset.balanced': 'バランス',
@@ -529,11 +529,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// 개인정보 보호, 무료, 회원가입 없는, 카톡 동영상 용량 제한, 로그인 필요 없는
 	ko: {
 		'feat.pdf.compress.title': '강력한 압축',
-'feat.pdf.compress.desc': '내장 이미지를 재인코딩하고 불필요한 데이터를 제거해 PDF를 줄입니다. 텍스트, 폰트, 구조는 그대로 유지됩니다.',
-'feat.pdf.privacy.title': '완전한 개인정보 보호',
-'feat.pdf.privacy.desc': '모든 작업이 브라우저에서 처리됩니다. 파일이 기기를 벗어나지 않으며 서버로 전송되는 데이터는 없습니다.',
-'feat.pdf.quality.title': '두 가지 품질 모드',
-'feat.pdf.quality.desc': '균형 모드는 일상적인 공유를 위해 크기를 줄이고, 최대 압축 모드는 가능한 가장 작은 파일을 만듭니다.',
+		'feat.pdf.compress.desc': '내장 이미지를 재인코딩하고 불필요한 데이터를 제거해 PDF를 줄입니다. 텍스트, 폰트, 구조는 그대로 유지됩니다.',
+		'feat.pdf.privacy.title': '완전한 개인정보 보호',
+		'feat.pdf.privacy.desc': '모든 작업이 브라우저에서 처리됩니다. 파일이 기기를 벗어나지 않으며 서버로 전송되는 데이터는 없습니다.',
+		'feat.pdf.quality.title': '두 가지 품질 모드',
+		'feat.pdf.quality.desc': '균형 모드는 일상적인 공유를 위해 크기를 줄이고, 최대 압축 모드는 가능한 가장 작은 파일을 만듭니다.',
 
 		'sec.pdfQuality': '압축 수준',
 		'pdf.preset.balanced': '균형',
@@ -701,11 +701,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// ฟรี, ไม่ต้องสมัครสมาชิก, ไม่ต้อง login, ส่งวิดีโอในไลน์ไม่ได้, ป้องกันข้อมูลรั่วไหล
 	th: {
 		'feat.pdf.compress.title': 'บีบอัดอย่างจริงจัง',
-'feat.pdf.compress.desc': 'ลดขนาด PDF โดยเข้ารหัสรูปภาพใหม่และลบข้อมูลซ้ำซ้อน โดยไม่กระทบข้อความ ฟอนต์ หรือโครงสร้าง',
-'feat.pdf.privacy.title': 'ความเป็นส่วนตัวสมบูรณ์',
-'feat.pdf.privacy.desc': 'ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ไฟล์ไม่เคยออกจากอุปกรณ์ ไม่มีข้อมูลถูกส่งไปยังเซิร์ฟเวอร์',
-'feat.pdf.quality.title': 'สองโหมดคุณภาพ',
-'feat.pdf.quality.desc': 'โหมดสมดุลลดขนาดสำหรับการแชร์ทั่วไป โหมดสูงสุดบีบอัดให้ได้ไฟล์เล็กที่สุดเท่าที่เป็นไปได้',
+		'feat.pdf.compress.desc': 'ลดขนาด PDF โดยเข้ารหัสรูปภาพใหม่และลบข้อมูลซ้ำซ้อน โดยไม่กระทบข้อความ ฟอนต์ หรือโครงสร้าง',
+		'feat.pdf.privacy.title': 'ความเป็นส่วนตัวสมบูรณ์',
+		'feat.pdf.privacy.desc': 'ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ไฟล์ไม่เคยออกจากอุปกรณ์ ไม่มีข้อมูลถูกส่งไปยังเซิร์ฟเวอร์',
+		'feat.pdf.quality.title': 'สองโหมดคุณภาพ',
+		'feat.pdf.quality.desc': 'โหมดสมดุลลดขนาดสำหรับการแชร์ทั่วไป โหมดสูงสุดบีบอัดให้ได้ไฟล์เล็กที่สุดเท่าที่เป็นไปได้',
 
 		'sec.pdfQuality': 'ระดับการบีบอัด',
 		'pdf.preset.balanced': 'สมดุล',
@@ -874,11 +874,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// 無廣告, 唔使上載, 唔使註冊, 無須登入, 隱私保障, 免費影片壓縮
 	zh: {
 		'feat.pdf.compress.title': '強效壓縮',
-'feat.pdf.compress.desc': '透過重新編碼內嵌圖片並移除冗餘資料來縮小 PDF，文字、字型與結構完整保留。',
-'feat.pdf.privacy.title': '完全私密',
-'feat.pdf.privacy.desc': '所有處理均在瀏覽器中進行，檔案不會離開您的裝置，任何資料都不會傳送至伺服器。',
-'feat.pdf.quality.title': '兩種品質模式',
-'feat.pdf.quality.desc': '平衡模式適合日常分享；最大壓縮模式則追求最小檔案體積。',
+		'feat.pdf.compress.desc': '透過重新編碼內嵌圖片並移除冗餘資料來縮小 PDF，文字、字型與結構完整保留。',
+		'feat.pdf.privacy.title': '完全私密',
+		'feat.pdf.privacy.desc': '所有處理均在瀏覽器中進行，檔案不會離開您的裝置，任何資料都不會傳送至伺服器。',
+		'feat.pdf.quality.title': '兩種品質模式',
+		'feat.pdf.quality.desc': '平衡模式適合日常分享；最大壓縮模式則追求最小檔案體積。',
 
 		'sec.pdfQuality': '压缩级别',
 		'pdf.preset.balanced': '均衡',
@@ -1047,11 +1047,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// compresser fichier mov (1.6K), respect de la vie privée, sans inscription, sans filigrane
 	fr: {
 		'feat.pdf.compress.title': 'Compression sérieuse',
-'feat.pdf.compress.desc': 'Réduit les PDF en ré-encodant les images intégrées et en supprimant les données redondantes — textes, polices et structure intacts.',
-'feat.pdf.privacy.title': 'Entièrement privé',
-'feat.pdf.privacy.desc': 'Tout s\'exécute dans votre navigateur. Votre fichier ne quitte jamais votre appareil, aucune donnée ne transite par un serveur.',
-'feat.pdf.quality.title': 'Deux modes de qualité',
-'feat.pdf.quality.desc': 'Le mode équilibré réduit la taille pour un partage courant ; le mode maximum vise le fichier le plus léger possible.',
+		'feat.pdf.compress.desc': 'Réduit les PDF en ré-encodant les images intégrées et en supprimant les données redondantes — textes, polices et structure intacts.',
+		'feat.pdf.privacy.title': 'Entièrement privé',
+		'feat.pdf.privacy.desc': 'Tout s\'exécute dans votre navigateur. Votre fichier ne quitte jamais votre appareil, aucune donnée ne transite par un serveur.',
+		'feat.pdf.quality.title': 'Deux modes de qualité',
+		'feat.pdf.quality.desc': 'Le mode équilibré réduit la taille pour un partage courant ; le mode maximum vise le fichier le plus léger possible.',
 
 		'sec.pdfQuality': 'Niveau de compression',
 		'pdf.preset.balanced': 'Équilibré',
@@ -1220,11 +1220,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// kurangi mb video, kurangi resolusi video, gratis tanpa daftar, privasi terjaga
 	id: {
 		'feat.pdf.compress.title': 'Kompresi Serius',
-'feat.pdf.compress.desc': 'Mengecilkan PDF dengan meng-encode ulang gambar tertanam dan menghapus data redundan — tanpa merusak teks, font, atau struktur.',
-'feat.pdf.privacy.title': 'Sepenuhnya Privat',
-'feat.pdf.privacy.desc': 'Semua diproses di browser Anda. File tidak pernah meninggalkan perangkat, tidak ada data yang dikirim ke server.',
-'feat.pdf.quality.title': 'Dua Mode Kualitas',
-'feat.pdf.quality.desc': 'Mode seimbang memangkas ukuran untuk berbagi sehari-hari; mode maksimum menghasilkan file sekecil mungkin.',
+		'feat.pdf.compress.desc': 'Mengecilkan PDF dengan meng-encode ulang gambar tertanam dan menghapus data redundan — tanpa merusak teks, font, atau struktur.',
+		'feat.pdf.privacy.title': 'Sepenuhnya Privat',
+		'feat.pdf.privacy.desc': 'Semua diproses di browser Anda. File tidak pernah meninggalkan perangkat, tidak ada data yang dikirim ke server.',
+		'feat.pdf.quality.title': 'Dua Mode Kualitas',
+		'feat.pdf.quality.desc': 'Mode seimbang memangkas ukuran untuk berbagi sehari-hari; mode maksimum menghasilkan file sekecil mungkin.',
 
 		'sec.pdfQuality': 'Tingkat kompresi',
 		'pdf.preset.balanced': 'Seimbang',
@@ -1394,11 +1394,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// sin marca de agua, sin registro, privacidad garantizada
 	es: {
 		'feat.pdf.compress.title': 'Compresión real',
-'feat.pdf.compress.desc': 'Reduce los PDF recodificando imágenes incrustadas y eliminando datos redundantes, sin afectar texto, fuentes ni estructura.',
-'feat.pdf.privacy.title': 'Completamente privado',
-'feat.pdf.privacy.desc': 'Todo se procesa en tu navegador. El archivo nunca sale de tu dispositivo y ningún dato llega a un servidor.',
-'feat.pdf.quality.title': 'Dos modos de calidad',
-'feat.pdf.quality.desc': 'El modo equilibrado reduce el tamaño para compartir; el modo máximo busca el archivo más pequeño posible.',
+		'feat.pdf.compress.desc': 'Reduce los PDF recodificando imágenes incrustadas y eliminando datos redundantes, sin afectar texto, fuentes ni estructura.',
+		'feat.pdf.privacy.title': 'Completamente privado',
+		'feat.pdf.privacy.desc': 'Todo se procesa en tu navegador. El archivo nunca sale de tu dispositivo y ningún dato llega a un servidor.',
+		'feat.pdf.quality.title': 'Dos modos de calidad',
+		'feat.pdf.quality.desc': 'El modo equilibrado reduce el tamaño para compartir; el modo máximo busca el archivo más pequeño posible.',
 
 		'sec.pdfQuality': 'Nivel de compresión',
 		'pdf.preset.balanced': 'Equilibrado',
@@ -1569,11 +1569,11 @@ export const translations: Record<string, Record<string, string>> = {
 	// sem marca d'água, sem cadastro, privacidade garantida
 	pt: {
 		'feat.pdf.compress.title': 'Compressão de verdade',
-'feat.pdf.compress.desc': 'Reduz PDFs recodificando imagens incorporadas e removendo dados redundantes — sem corromper texto, fontes ou estrutura.',
-'feat.pdf.privacy.title': 'Totalmente privado',
-'feat.pdf.privacy.desc': 'Tudo roda no seu navegador. O arquivo nunca sai do seu dispositivo e nenhum dado é enviado a servidores.',
-'feat.pdf.quality.title': 'Dois modos de qualidade',
-'feat.pdf.quality.desc': 'O modo equilibrado reduz o tamanho para compartilhamento; o modo máximo busca o menor arquivo possível.',
+		'feat.pdf.compress.desc': 'Reduz PDFs recodificando imagens incorporadas e removendo dados redundantes — sem corromper texto, fontes ou estrutura.',
+		'feat.pdf.privacy.title': 'Totalmente privado',
+		'feat.pdf.privacy.desc': 'Tudo roda no seu navegador. O arquivo nunca sai do seu dispositivo e nenhum dado é enviado a servidores.',
+		'feat.pdf.quality.title': 'Dois modos de qualidade',
+		'feat.pdf.quality.desc': 'O modo equilibrado reduz o tamanho para compartilhamento; o modo máximo busca o menor arquivo possível.',
 		'sec.pdfQuality': 'Nível de compressão',
 		'pdf.preset.balanced': 'Equilibrado',
 		'pdf.preset.balanced.sub': 'Boa qualidade',
@@ -1734,6 +1734,235 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.pdf': 'Baixar PDF comprimido',
 		'file.type.pdf': 'PDF',
 		'sec.pdfPasswordOpt': 'Remover senha (Opcional)',
+	},
+
+	// ─────────────────────────────────────────────────────────────────────────────
+	// languages.ts  — добавить в массив languages
+	// ─────────────────────────────────────────────────────────────────────────────
+	// { key: 'ru', flag: '🇷🇺', code: 'RU', name: 'Русский', hreflang: 'ru' },
+
+
+	// ─────────────────────────────────────────────────────────────────────────────
+	// Russian translation object
+	// SEO keywords targeted:
+	//   Video — сжать видео (2 900), сжать видео онлайн (1 600),
+	//            сжать видео без потери качества (480), сжать видео онлайн бесплатно (320+)
+	//   PDF   — сжать пдф (60 500!), сжать пдф онлайн (4 400),
+	//            уменьшить размер пдф (3 600), сжать пдф бесплатно (880+)
+	// ─────────────────────────────────────────────────────────────────────────────
+
+	ru: {
+		// ── Features · PDF ──────────────────────────────────────────────────────
+		'feat.pdf.compress.title': 'Настоящее сжатие',
+		'feat.pdf.compress.desc': 'Уменьшает размер PDF, перекодируя встроенные изображения и удаляя лишние данные — текст, шрифты и структура остаются нетронутыми.',
+		'feat.pdf.privacy.title': 'Полная конфиденциальность',
+		'feat.pdf.privacy.desc': 'Всё работает в вашем браузере. Файл не покидает устройство, данные не передаются на серверы.',
+		'feat.pdf.quality.title': 'Два режима качества',
+		'feat.pdf.quality.desc': 'Сбалансированный режим — для удобного обмена; максимальный — для наименьшего размера файла.',
+		'sec.pdfQuality': 'Степень сжатия',
+		'pdf.preset.balanced': 'Сбалансированный',
+		'pdf.preset.balanced.sub': 'Хорошее качество',
+		'pdf.preset.maximum': 'Максимальный',
+		'pdf.preset.maximum.sub': 'Меньший файл',
+
+		// ── PDF status / errors ──────────────────────────────────────────────────
+		'status.processing': 'Сжимаем PDF…',
+		'status.warning.keepTab': '⚠️ Идёт сжатие PDF — не закрывайте эту вкладку.',
+		'error.workerFailed': 'Ошибка обработки. Пожалуйста, попробуйте снова.',
+		'btn.compressPdf': 'Сжать PDF',
+		'status.warning.keepOpen': '⚠️ Не закрывайте и не сворачивайте эту вкладку. Переключение может замедлить или приостановить обработку.',
+
+		// ── Blog CTA ─────────────────────────────────────────────────────────────
+		'blog.cta.video.title': 'Сжать видео бесплатно — без загрузки на сервер, без водяных знаков.',
+		'blog.cta.video.btn': 'Попробовать сжатие видео →',
+		'blog.cta.pdf.title': 'Сжать PDF бесплатно — всё происходит в браузере.',
+		'blog.cta.pdf.btn': 'Попробовать сжатие PDF →',
+
+		// ── Meta ─────────────────────────────────────────────────────────────────
+		'meta.title': 'Squishyfile – Сжать Видео и PDF Онлайн Бесплатно',
+		'meta.desc': 'Бесплатный онлайн-компрессор: сжать видео и PDF прямо в браузере. Без загрузки на сервер, без регистрации, без водяных знаков. Конфиденциальность 100%.',
+
+		// ── Nav ──────────────────────────────────────────────────────────────────
+		'nav.home': 'Главная',
+		'nav.blog': 'Блог',
+
+		// ── Hero (home) ──────────────────────────────────────────────────────────
+		'hero.title': 'Сжать Видео и PDF<br />прямо в Браузере',
+		'hero.sub': 'Без загрузок, без аккаунтов, без водяных знаков — всё работает на вашем устройстве.',
+		'hero.pill1': 'Локальная обработка',
+		'hero.pill2': 'Без водяных знаков',
+		'hero.pill3': 'Без ограничений',
+
+		// ── Home cards ───────────────────────────────────────────────────────────
+		'home.card.video.title': 'Сжать Видео',
+		'home.card.video.desc': 'Уменьшите MP4, MOV, AVI и другие форматы прямо в браузере — без загрузки, без потери качества.',
+		'home.card.video.cta': 'Сжать Видео',
+		'home.card.pdf.title': 'Сжать PDF',
+		'home.card.pdf.desc': 'Уменьшите размер PDF мгновенно. При необходимости снимите защиту паролем.',
+		'home.card.pdf.cta': 'Сжать PDF',
+		'home.card.pdf.tag.password': 'Снять пароль',
+		'home.card.pdf.tag.fast': 'Мгновенно',
+
+		// ── Compress page meta ───────────────────────────────────────────────────
+		'compress.meta.title': 'Сжать Видео Бесплатно Онлайн | Без Загрузки – Squishyfile',
+		'compress.meta.desc': 'Сжать видео MP4, MOV, AVI, WebM и MKV бесплатно в браузере. Без загрузки на сервер, без водяных знаков. Настройка целевого размера для WhatsApp, Discord, Gmail.',
+		'compress.hero.title': 'Сжать Видео Онлайн Бесплатно<br />прямо в Браузере',
+		'compress.hero.sub': 'Без загрузок, без аккаунтов, без водяных знаков — всё работает на вашем устройстве.',
+
+		// ── PDF page meta ────────────────────────────────────────────────────────
+		'pdf.meta.title': 'Сжать PDF Бесплатно Онлайн | Снять Пароль – Squishyfile',
+		'pdf.meta.desc': 'Сжать PDF файл бесплатно в браузере. Уменьшить размер ПДФ онлайн без загрузки на сервер. Снять пароль с PDF. 100% приватно.',
+		'pdf.hero.title': 'Сжать PDF Бесплатно<br />прямо в Браузере',
+		'pdf.hero.sub': 'Уменьшите размер и снимите пароль — всё на вашем устройстве.',
+
+		// ── FAQ · Home ───────────────────────────────────────────────────────────
+		'faq.home.title': 'Часто задаваемые вопросы',
+		'faq.home.1.q': 'Что такое Squishyfile и что он умеет?',
+		'faq.home.1.a': 'Squishyfile — бесплатный инструмент для сжатия видео (MP4, MOV, AVI, WebM, MKV) и PDF прямо в браузере. Без регистрации, без установки программ, без загрузки файлов на сервер.',
+		'faq.home.2.q': 'Мои файлы в безопасности? Они куда-то отправляются?',
+		'faq.home.2.a': 'Файлы никогда не покидают ваше устройство. Вся обработка выполняется локально в браузере — без загрузки на сервер, без облачного хранилища, конфиденциальность 100%.',
+		'faq.home.3.q': 'Сервис действительно бесплатный? Есть скрытые ограничения?',
+		'faq.home.3.a': 'Полностью бесплатно. Без подписок, без дневных лимитов, без водяных знаков, без регистрации. Сжимайте столько видео и PDF, сколько нужно.',
+		'faq.home.4.q': 'Когда использовать сжатие видео, а когда — сжатие PDF?',
+		'faq.home.4.a': 'Видео слишком большое для WhatsApp, Discord или email → Сжать Видео. PDF превышает лимит вложения или нужно снять пароль → Сжать PDF.',
+		'faq.home.5.q': 'Работает на телефоне?',
+		'faq.home.5.a': 'Да. Откройте сайт в браузере iPhone или Android — устанавливать приложение не нужно. Нажмите на карточку инструмента, выберите файл и скачайте результат.',
+		'faq.home.6.q': 'Какие браузеры поддерживаются?',
+		'faq.home.6.a': 'Chrome, Firefox, Safari, Edge и Brave — на компьютере и телефоне. Плагины не требуются.',
+
+		// ── FAQ · Video ──────────────────────────────────────────────────────────
+		'faq.video.title': 'Часто задаваемые вопросы',
+		'faq.video.1.q': 'Как сжать видео для WhatsApp, Discord или Gmail?',
+		'faq.video.1.a': 'Перетащите видео и нажмите на нужный тег размера (Discord 8 МБ, Gmail 25 МБ…) или введите свой целевой размер в МБ. Squishyfile автоматически рассчитает оптимальный битрейт.',
+		'faq.video.2.q': 'Ухудшится ли качество видео при сжатии?',
+		'faq.video.2.a': 'Пресет «Сбалансированный» значительно уменьшает размер при приемлемом качестве. При очень маленьких целевых размерах небольшие потери неизбежны — это справедливо для любого компрессора.',
+		'faq.video.3.q': 'Какие форматы видео поддерживаются?',
+		'faq.video.3.a': 'Squishyfile принимает MP4, MOV, AVI, WebM и MKV. Результат сохраняется в MP4, совместимом практически со всеми устройствами.',
+		'faq.video.4.q': 'Можно ли сжать видео 4K?',
+		'faq.video.4.a': 'Да. Сжатие 4K-видео работает полностью в браузере без серверных ограничений. Для стабильной работы рекомендуем файлы до 2 ГБ.',
+		'faq.video.5.q': 'Можно сжать видео на телефоне без установки приложений?',
+		'faq.video.5.a': 'Да. Откройте страницу в браузере iPhone или Android — без приложения, без регистрации. Выберите видео и скачайте сжатый результат.',
+		'faq.video.6.q': 'Почему сжатый файл почти не уменьшился?',
+		'faq.video.6.a': 'Видео, скачанные с YouTube или TikTok, уже сильно сжаты — повторное сжатие даёт минимальный эффект. Попробуйте пресет низкого качества или уменьшите целевой размер.',
+
+		// ── FAQ · PDF ────────────────────────────────────────────────────────────
+		'faq.pdf.title': 'Часто задаваемые вопросы',
+		'faq.pdf.1.q': 'Насколько можно сжать PDF?',
+		'faq.pdf.1.a': 'Зависит от содержимого. PDF с высококачественными изображениями уменьшаются на 40–70%. Текстовые документы — на 10–20%. Сканы обычно сжимаются хорошо.',
+		'faq.pdf.2.q': 'Можно ли снять пароль с PDF?',
+		'faq.pdf.2.a': 'Да. Включите «Снять пароль (необязательно)», введите текущий пароль и нажмите «Сжать PDF». Скачанный файл не будет защищён паролем.',
+		'faq.pdf.3.q': 'Есть ли ограничение размера файла?',
+		'faq.pdf.3.a': 'Серверных ограничений нет. Для комфортной работы рекомендуем файлы до 200 МБ.',
+		'faq.pdf.4.q': 'Ухудшится ли текст в PDF после сжатия?',
+		'faq.pdf.4.a': 'Текст и векторная графика не деградируют. Только встроенные изображения могут немного потерять в качестве. Текст остаётся выделяемым и доступным для поиска.',
+		'faq.pdf.5.q': 'Безопасно ли сжимать конфиденциальные PDF здесь?',
+		'faq.pdf.5.a': 'Да. Ваш PDF не покидает устройство. При закрытии или обновлении страницы файл удаляется из памяти.',
+		'faq.pdf.6.q': 'Хочу сжать PDF, чтобы отправить его как вложение в email.',
+		'faq.pdf.6.a': 'Идеальный сценарий. Большинство почтовых сервисов ограничивают вложения 10–25 МБ. Перетащите PDF, сожмите и скачайте — займёт меньше минуты.',
+
+		// ── Tabs ─────────────────────────────────────────────────────────────────
+		'tab.compress': 'Сжать Видео',
+		'tab.pdf': 'Сжать PDF',
+
+		// ── Drop zone ────────────────────────────────────────────────────────────
+		'drop.video': 'Перетащите видео сюда',
+		'drop.compress.sub': 'Перетащите или нажмите, чтобы выбрать файл',
+		'drop.convert.sub': 'Выберите видео для конвертации формата',
+		'btn.browse': 'Выбрать файл',
+		'hint.compress': 'MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; до 2 ГБ',
+		'hint.convert': 'Поддерживает MP4, MOV, AVI, WebM, MKV и другие',
+		'file.type.video': 'видео',
+
+		// ── Quality presets · Video ──────────────────────────────────────────────
+		'sec.quickPreset': 'Быстрый пресет',
+		'preset.low': 'Низкий',
+		'preset.low.sub': 'Наименьший файл',
+		'preset.balanced': 'Сбалансированный',
+		'preset.balanced.sub': 'Рекомендуется',
+		'preset.high': 'Высокий',
+		'preset.high.sub': 'Лучшее качество',
+
+		// ── Target size ──────────────────────────────────────────────────────────
+		'sec.targetSize': 'Целевой размер файла',
+		'input.target.ph': 'Введите целевой размер…',
+
+		// ── Convert ──────────────────────────────────────────────────────────────
+		'sec.convertTo': 'Конвертировать в',
+		'btn.compressNow': 'Сжать сейчас',
+		'btn.convertNow': 'Конвертировать сейчас',
+
+		// ── Status ───────────────────────────────────────────────────────────────
+		'status.compressing': 'Сжимаем…',
+		'status.converting': 'Конвертируем…',
+		'status.done': 'Готово!',
+		'error.selectFile': 'Пожалуйста, выберите видеофайл.',
+
+		// ── Results ──────────────────────────────────────────────────────────────
+		'res.compress.title': 'Сжатие завершено!',
+		'res.compress.sub': 'Ваш файл готов к скачиванию',
+		'res.convert.title': 'Конвертация завершена!',
+		'res.convert.sub': 'Ваше конвертированное видео готово',
+		'stat.original': 'Исходный',
+		'stat.compressed': 'Сжатый',
+		'stat.saved': 'Сэкономлено',
+		'btn.dl.compress': 'Скачать сжатое видео',
+		'btn.dl.convert': 'Скачать конвертированное видео',
+
+		// ── Privacy note ─────────────────────────────────────────────────────────
+		'note.privacy': '<strong>Ваши файлы никогда не покидают устройство.</strong> Squishyfile обрабатывает всё локально, используя встроенный движок браузера — без загрузки на сервер, без необходимости аккаунта. Файлы удаляются из памяти после скачивания.',
+
+		// ── Features · Video ─────────────────────────────────────────────────────
+		'feat.speed.title': 'Быстрая обработка',
+		'feat.speed.desc': 'Аппаратное ускорение кодирования на почти нативной скорости — полностью в вашем браузере, без ожидания серверных очередей.',
+		'feat.target.title': 'Умные целевые размеры',
+		'feat.target.desc': 'Пресеты в один клик, настроенные под лимиты WhatsApp, Discord, Gmail и Telegram. Сжать видео для WhatsApp без лишних настроек.',
+		'feat.free.title': 'Всегда бесплатно',
+		'feat.free.desc': 'Никаких платных подписок, никаких дневных лимитов и абсолютно никаких водяных знаков на ваших видео — никогда.',
+
+		// ── FAQ · Video (short keys, legacy) ─────────────────────────────────────
+		'faq.title': 'Часто задаваемые вопросы',
+		'faq.1.q': 'Безопасно ли сжимать личные видео здесь?',
+		'faq.1.a': 'Да, абсолютно! Squishyfile обрабатывает видео локально прямо в браузере. Файлы никогда не отправляются в облако — конфиденциальность и безопасность 100%.',
+		'faq.2.q': 'Есть ли ограничение размера файла для сжатия видео?',
+		'faq.2.a': 'Серверных ограничений нет — всё работает на вашем устройстве. Для стабильной работы в памяти браузера рекомендуем файлы до 2 ГБ.',
+		'faq.3.q': 'Как конвертировать MOV в MP4 бесплатно онлайн?',
+		'faq.3.a': 'Перейдите на вкладку «Конвертировать формат», перетащите файл MOV, выберите MP4 как формат вывода и нажмите «Конвертировать сейчас». Всё обрабатывается локально — без регистрации и установки ПО.',
+		'faq.4.q': 'Будет ли водяной знак на экспортированном видео?',
+		'faq.4.a': 'Нет. Squishyfile полностью бесплатен и никогда не добавляет водяные знаки на сжатые или конвертированные видео.',
+		'faq.5.q': 'Можно ли сжать видео для WhatsApp или email?',
+		'faq.5.a': 'Да. Используйте поле «Целевой размер файла» и введите лимит платформы — например 16 МБ для WhatsApp или 25 МБ для Gmail. Squishyfile автоматически рассчитает нужную степень сжатия.',
+		'faq.6.q': 'Поддерживается сжатие видео 4K?',
+		'faq.6.a': 'Да. Сжатие 4K работает полностью в браузере без серверных ограничений. Для стабильной работы рекомендуем файлы до 2 ГБ. Также поддерживаются MOV, AVI, MKV и WebM помимо MP4.',
+
+		// ── Footer ───────────────────────────────────────────────────────────────
+		'footer.copy': '© 2026 Squishyfile &nbsp;·&nbsp; Работает полностью в вашем браузере &nbsp;·&nbsp;',
+		'footer.privacy': 'Политика конфиденциальности',
+		'footer.terms': 'Условия использования',
+
+		// ── Blog ─────────────────────────────────────────────────────────────────
+		'blog.meta.title': 'Блог – Squishyfile',
+		'blog.meta.desc': 'Последние новости и обновления от команды Squishyfile.',
+		'blog.header.title': 'Блог',
+		'blog.header.sub': 'Советы, руководства и обновления от команды Squishyfile.',
+		'blog.empty': 'Статьи для этого языка пока недоступны.',
+		'blog.back': 'Блог',
+
+		// ── PDF drop / form ──────────────────────────────────────────────────────
+		'drop.pdf': 'Перетащите PDF сюда',
+		'drop.pdf.sub': 'Перетащите или нажмите, чтобы выбрать PDF',
+		'hint.pdf': 'Только PDF-файлы · PDF с защитой паролем',
+		'sec.pdfPassword': 'Текущий пароль',
+		'input.password.ph': 'Введите текущий пароль PDF…',
+		'pdf.password.hint': 'Введите существующий пароль, чтобы удалить его из PDF.',
+		'btn.removePassword': 'Сжать PDF',
+		'status.removingPass': 'Сжимаем PDF…',
+		'error.selectPdf': 'Пожалуйста, выберите PDF-файл.',
+		'error.enterPassword': 'Пожалуйста, введите текущий пароль PDF.',
+		'res.pdf.title': 'PDF сжат!',
+		'res.pdf.sub': 'Ваш сжатый PDF готов',
+		'btn.dl.pdf': 'Скачать сжатый PDF',
+		'file.type.pdf': 'PDF',
+		'sec.pdfPasswordOpt': 'Снять пароль (Необязательно)',
 	},
 };
 

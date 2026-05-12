@@ -7,7 +7,6 @@
 
 	let { tool = 'pdf', t, langPrefix }: Props = $props();
 
-	// Normalize: anything that's not 'video' falls back to 'pdf'
 	let resolvedTool = $derived(tool === 'video' ? 'video' : 'pdf');
 
 	let href = $derived(resolvedTool === 'video' ? `${langPrefix}/compress-video` : `${langPrefix}/compress-pdf`);
@@ -17,30 +16,26 @@
 </script>
 
 <div class="cta-banner">
-	<div class="cta-inner">
-		<span class="cta-icon">{icon}</span>
-		<span class="cta-title">{title}</span>
-		<a {href} class="cta-btn">{btn}</a>
-	</div>
+	<span class="cta-icon">{icon}</span>
+	<span class="cta-title">{title}</span>
+	<a {href} class="cta-btn">{btn}</a>
 </div>
 
 <style>
 	.cta-banner {
 		position: sticky;
-		top: 60px;
+		top: 70px;
 		z-index: 20;
 		background: var(--surf);
-		border: 1px solid var(--border);
-		padding: 10px;
+		border: 1px solid #3d414e;
+		border-left: 2px solid var(--accent);
+		padding: 8px 8px;
 		margin-bottom: 28px;
 		border-radius: 8px;
-	}
-
-	.cta-inner {
+		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		gap: 10px;
-		flex-wrap: wrap;
 	}
 
 	.cta-icon {
@@ -50,18 +45,18 @@
 	}
 
 	.cta-title {
+		flex: 1;
 		font-size: 13px;
 		font-weight: 600;
 		color: var(--text);
-		flex: 1;
-		min-width: 0;
+		line-height: 1.45;
 	}
 
 	.cta-btn {
 		flex-shrink: 0;
 		display: inline-flex;
 		align-items: center;
-		gap: 5px;
+		justify-content: center;
 		padding: 7px 14px;
 		border-radius: var(--rsm, 6px);
 		background: var(--accent);
@@ -83,16 +78,16 @@
 		opacity: 1;
 	}
 
-	@media (max-width: 580px) {
-		.cta-inner {
-			gap: 8px;
-		}
+	@media (max-width: 480px) {
+		.cta-icon,
 		.cta-title {
-			font-size: 12px;
+			display: none;
 		}
+
 		.cta-btn {
-			padding: 6px 12px;
-			font-size: 11px;
+			width: 100%;
+			padding: 11px 14px;
+			font-size: 13px;
 		}
 	}
 </style>
