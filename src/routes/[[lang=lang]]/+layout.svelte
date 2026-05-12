@@ -195,6 +195,12 @@
 
 {@render children()}
 
+<!-- START Ads -->
+<!-- Side Ad Banners — chỉ render trên desktop qua CSS -->
+<div class="banner-left" id="ad-left"></div>
+<div class="banner-right" id="ad-right"></div>
+<!-- END Ads -->
+
 <footer>
 	<div class="wrap">
 		<p>{@html t('footer.copy')} 
