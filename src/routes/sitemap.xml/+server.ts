@@ -112,7 +112,7 @@ export const GET: RequestHandler = () => {
         currentUrl,
         isHome ? 'weekly' : 'monthly',
         isHome ? '1.0' : '0.8',
-        alternateLinks // Chèn hreflang vào đây
+        // alternateLinks // Chèn hreflang vào đây
       ));
     }
   }
