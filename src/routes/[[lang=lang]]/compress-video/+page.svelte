@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
 	import { page } from "$app/stores";
-	import { marked } from "marked";
 	import { languages } from "$lib/i18n/languages";
 	import { translations } from "$lib/i18n/translations";
 	import {
@@ -9,9 +8,6 @@
 		Film,
 		Folder,
 		X,
-		Feather,
-		Scale,
-		Gem,
 		CheckCircle2,
 		Download,
 		ShieldCheck,
@@ -19,6 +15,7 @@
 		Cpu,
 		Target,
 		Infinity,
+        FileVideo2,
 	} from "lucide-svelte";
 
 	// IMPORT CLASS XỬ LÝ LOGIC NÉN VIDEO
@@ -543,6 +540,14 @@
 				<Download size={15} strokeWidth={2.2} />
 				{t("btn.dl.compress")}
 			</a>
+			<button
+				class="btn-new"
+				type="button"
+				onclick={clearFile}
+			>
+				<FileVideo2 size={15} strokeWidth={2.2} />
+				{t("btn.compressNew")}
+			</button>
 		</div>
 
 		<div class="pnote">

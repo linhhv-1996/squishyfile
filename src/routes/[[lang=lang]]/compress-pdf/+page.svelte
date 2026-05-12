@@ -461,6 +461,15 @@
 				<Download size={15} strokeWidth={2.2} />
 				{t("btn.dl.pdf")}
 			</a>
+			<button
+				class="btn-new"
+				type="button"
+				onclick={clearFile}
+			>
+				<FileText size={15} strokeWidth={2.2} />
+				{t("btn.compressNew")}
+			</button>
+
 		</div>
 
 		<div class="pnote">
