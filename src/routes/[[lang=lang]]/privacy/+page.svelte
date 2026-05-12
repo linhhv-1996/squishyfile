@@ -66,9 +66,9 @@
 </main>
 
 <style>
-    .legal-box { padding: 40px 0 60px; min-height: 60vh; animation: fadeUp .3s ease; }
+    .legal-box { padding: 30px 0 60px; min-height: 60vh; animation: fadeUp .3s ease; }
     .prose { color: var(--muted); line-height: 1.7; }
-    .prose :global(h1) { font-family: 'Noto Sans JP', sans-serif; font-size: 32px; font-weight: 800; color: var(--text); margin-bottom: 24px; letter-spacing: -0.5px; }
+    .prose :global(h1) { font-family: 'Noto Sans JP', sans-serif; font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 24px; letter-spacing: -0.5px; }
     .prose :global(h2) { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin: 32px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
     .prose :global(h3) { font-size: 16px; color: var(--text); margin: 20px 0 12px; }
     .prose :global(p) { margin-bottom: 16px; }

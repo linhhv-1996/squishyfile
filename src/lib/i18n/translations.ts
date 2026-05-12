@@ -1,5 +1,6 @@
 export const translations: Record<string, Record<string, string>> = {
 	en: {
+		'footer.contact': 'Contact',
 		'btn.compressNew': 'Compress New File',
 		'feat.pdf.compress.title': 'Serious Compression',
 		'feat.pdf.compress.desc': 'Shrinks PDFs by re-encoding embedded images and removing redundant data — without corrupting text, fonts, or structure.',
@@ -184,6 +185,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: video komprimieren (14.8K), video umwandeln (480), video komprimieren für whatsapp (260),
 	// kostenlos, ohne anmeldung, handy speicher voll, hohe qualität, ohne registrierung
 	de: {
+		'footer.contact': 'Kontakt',
 		'btn.compressNew': 'Neue Datei komprimieren',
 		'feat.pdf.compress.title': 'Echte Komprimierung',
 		'feat.pdf.compress.desc': 'Reduziert PDFs durch Neukodierung eingebetteter Bilder und Entfernung redundanter Daten — Text, Schriften und Struktur bleiben erhalten.',
@@ -357,6 +359,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 動画圧縮 (33.1K), mov mp4変換 (22.2K), mp4圧縮 (12.1K), line動画送れない (9.9K),
 	// 無料, アップロード不要, インストール不要, ログインなし, ギガ節約, プライバシー保護
 	ja: {
+		'footer.contact': 'お問い合わせ',
 		'btn.compressNew': '新しいファイルを圧縮',
 		'feat.pdf.compress.title': '強力な圧縮',
 		'feat.pdf.compress.desc': '埋め込み画像を再エンコードし、冗長なデータを除去することでPDFを縮小します。テキスト・フォント・構造は維持されます。',
@@ -531,6 +534,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 동영상 용량 줄이기 (12.1K), 동영상 압축 (3.6K), mp4 용량 줄이기 (1.9K),
 	// 개인정보 보호, 무료, 회원가입 없는, 카톡 동영상 용량 제한, 로그인 필요 없는
 	ko: {
+		'footer.contact': '문의하기',
 		'btn.compressNew': '새 파일 압축',
 		'feat.pdf.compress.title': '강력한 압축',
 		'feat.pdf.compress.desc': '내장 이미지를 재인코딩하고 불필요한 데이터를 제거해 PDF를 줄입니다. 텍스트, 폰트, 구조는 그대로 유지됩니다.',
@@ -704,6 +708,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: ลดขนาดไฟล์วิดีโอ (6.6K), บีบอัดวิดีโอ (5.4K), แปลงไฟล์วิดีโอ (1.3K),
 	// ฟรี, ไม่ต้องสมัครสมาชิก, ไม่ต้อง login, ส่งวิดีโอในไลน์ไม่ได้, ป้องกันข้อมูลรั่วไหล
 	th: {
+		'footer.contact': 'ติดต่อเรา',
 		'btn.compressNew': 'บีบอัดไฟล์ใหม่',
 		'feat.pdf.compress.title': 'บีบอัดอย่างจริงจัง',
 		'feat.pdf.compress.desc': 'ลดขนาด PDF โดยเข้ารหัสรูปภาพใหม่และลบข้อมูลซ้ำซ้อน โดยไม่กระทบข้อความ ฟอนต์ หรือโครงสร้าง',
@@ -878,6 +883,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// Top keywords: 影片壓縮 (14.8K), mov 轉 mp4 (9.9K), mp4 壓縮 (4.4K), 線上壓縮影片 (1K),
 	// 無廣告, 唔使上載, 唔使註冊, 無須登入, 隱私保障, 免費影片壓縮
 	zh: {
+		'footer.contact': '聯絡我們',
 		'btn.compressNew': '壓縮新檔案',
 		'feat.pdf.compress.title': '強效壓縮',
 		'feat.pdf.compress.desc': '透過重新編碼內嵌圖片並移除冗餘資料來縮小 PDF，文字、字型與結構完整保留。',
@@ -1052,6 +1058,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// compresser mp4 en ligne (2.9K), compresser vidéo iphone (2.4K), redimensionner vidéo (1.6K),
 	// compresser fichier mov (1.6K), respect de la vie privée, sans inscription, sans filigrane
 	fr: {
+		'footer.contact': 'Contact',
 		'btn.compressNew': 'Compresser un nouveau fichier',
 		'feat.pdf.compress.title': 'Compression sérieuse',
 		'feat.pdf.compress.desc': 'Réduit les PDF en ré-encodant les images intégrées et en supprimant les données redondantes — textes, polices et structure intacts.',
@@ -1226,6 +1233,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// ubah mov ke mp4 (2.9K), kompres mp4 online (1.3K), kompres video untuk whatsapp (880),
 	// kurangi mb video, kurangi resolusi video, gratis tanpa daftar, privasi terjaga
 	id: {
+		'footer.contact': 'Kontak',
 		'btn.compressNew': 'Kompres File Baru',
 		'feat.pdf.compress.title': 'Kompresi Serius',
 		'feat.pdf.compress.desc': 'Mengecilkan PDF dengan meng-encode ulang gambar tertanam dan menghapus data redundan — tanpa merusak teks, font, atau struktur.',
@@ -1401,6 +1409,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// compresor de video gratis (2.9K), bajar resolución video (1.3K), comprimir mp4 online (880),
 	// sin marca de agua, sin registro, privacidad garantizada
 	es: {
+		'footer.contact': 'Contacto',
 		'btn.compressNew': 'Comprimir nuevo archivo',
 		'feat.pdf.compress.title': 'Compresión real',
 		'feat.pdf.compress.desc': 'Reduce los PDF recodificando imágenes incrustadas y eliminando datos redundantes, sin afectar texto, fuentes ni estructura.',
@@ -1577,6 +1586,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// comprimir mp4 online (2.9K), compressor de vídeo gratuito (2.9K),
 	// sem marca d'água, sem cadastro, privacidade garantida
 	pt: {
+		'footer.contact': 'Contato',
 		'btn.compressNew': 'Comprimir novo arquivo',
 		'feat.pdf.compress.title': 'Compressão de verdade',
 		'feat.pdf.compress.desc': 'Reduz PDFs recodificando imagens incorporadas e removendo dados redundantes — sem corromper texto, fontes ou estrutura.',
@@ -1756,6 +1766,7 @@ export const translations: Record<string, Record<string, string>> = {
 	// ─────────────────────────────────────────────────────────────────────────────
 
 	ru: {
+		'footer.contact': 'Контакты',
 		'btn.compressNew': 'Сжать новый файл',
 		// ── Features · PDF ──────────────────────────────────────────────────────
 		'feat.pdf.compress.title': 'Настоящее сжатие',

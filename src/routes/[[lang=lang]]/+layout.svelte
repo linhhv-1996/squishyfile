@@ -57,6 +57,7 @@
 	let compressPdfHref = $derived(`${prefix}/compress-pdf`);
 	let privacyHref = $derived(`${prefix}/privacy`);
 	let termsHref = $derived(`${prefix}/terms`);
+	let contactHref = $derived(`${prefix}/contact`);
 
 	// Active link detection
 	let isHome = $derived(
@@ -204,9 +205,10 @@
 <footer>
 	<div class="wrap">
 		<p>{@html t('footer.copy')} 
-			<a href={privacyHref}>{t('footer.privacy') || 'Privacy Policy'}</a> &nbsp;·&nbsp;
-			<a href={termsHref}>{t('footer.terms') || 'Terms of Service'}</a>
-		</p>
+            <a href={privacyHref}>{t('footer.privacy') || 'Privacy Policy'}</a> &nbsp;·&nbsp;
+            <a href={termsHref}>{t('footer.terms') || 'Terms of Service'}</a> &nbsp;·&nbsp;
+            <a href={contactHref}>{t('footer.contact') || 'Contact'}</a>
+        </p>
 	</div>
 </footer>
 

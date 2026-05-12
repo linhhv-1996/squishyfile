@@ -2,8 +2,8 @@
     import { page } from '$app/stores';
     import { marked } from 'marked';
 
-    // Chỉ load các file terms.md
-    const termsModules = import.meta.glob('$lib/contents/legal/*/terms.md', { 
+    // Quét thẳng tất cả các file .md trong thư mục contact
+    const contactModules = import.meta.glob('$lib/contents/contact/*.md', { 
         query: '?raw', 
         import: 'default' 
     });
@@ -17,23 +17,24 @@
         const loadContent = async () => {
             isLoading = true;
             try {
-                const path = `/src/lib/contents/legal/${lang}/terms.md`;
+                // Trỏ thẳng đến file [lang].md (vd: en.md, ja.md)
+                const path = `/src/lib/contents/contact/${lang}.md`;
                 
-                if (termsModules[path]) {
-                    const mdText = await termsModules[path]() as string;
+                if (contactModules[path]) {
+                    const mdText = await contactModules[path]() as string;
                     htmlContent = await marked.parse(mdText);
                 } else {
-                    // Fallback cứng về tiếng Anh nếu không tìm thấy file ngôn ngữ hiện tại
-                    const fallbackPath = `/src/lib/contents/legal/en/terms.md`;
-                    if (termsModules[fallbackPath]) {
-                        const mdText = await termsModules[fallbackPath]() as string;
+                    // Fallback cứng về en.md
+                    const fallbackPath = `/src/lib/contents/contact/en.md`;
+                    if (contactModules[fallbackPath]) {
+                        const mdText = await contactModules[fallbackPath]() as string;
                         htmlContent = await marked.parse(mdText);
                     } else {
-                        htmlContent = '<h1>Terms of Service not found</h1>';
+                        htmlContent = '<h1>Contact information not found</h1>';
                     }
                 }
             } catch (error) {
-                console.error("Error loading Terms of Service:", error);
+                console.error("Error loading Contact page:", error);
                 htmlContent = '<h1>Error loading document</h1>';
             } finally {
                 isLoading = false;
@@ -45,7 +46,7 @@
 </script>
 
 <svelte:head>
-    <title>Terms of Service - Squishyfile</title>
+    <title>Contact Us - Squishyfile</title>
 </svelte:head>
 
 <main class="wrap">
@@ -66,6 +67,7 @@
 </main>
 
 <style>
+    /* Bê nguyên style đồng bộ với các trang Legal */
     .legal-box { padding: 30px 0 60px; min-height: 60vh; animation: fadeUp .3s ease; }
     .prose { color: var(--muted); line-height: 1.7; }
     .prose :global(h1) { font-family: 'Noto Sans JP', sans-serif; font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 24px; letter-spacing: -0.5px; }
@@ -81,6 +83,14 @@
     .skeleton .line { height: 16px; background: var(--surf2); border-radius: var(--rsm); margin-bottom: 12px; animation: pulse 1.5s infinite; }
     .skeleton .title { height: 32px; width: 60%; margin-bottom: 30px; }
     .skeleton .half { width: 40%; }
-    @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    @keyframes pulse { 
+        0% { opacity: 0.6; } 
+        50% { opacity: 1; } 
+        100% { opacity: 0.6; } 
+    }
+    @keyframes fadeUp { 
+        from { opacity: 0; transform: translateY(10px); } 
+        to { opacity: 1; transform: translateY(0); } 
+    }
 </style>
