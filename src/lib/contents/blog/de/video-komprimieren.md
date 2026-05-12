@@ -102,10 +102,3 @@ Die meisten Videos unter 500 MB sind in unter einer Minute fertig. Die genaue Da
 **Wird mein Video gespeichert oder gesehen?**  
 Nein. Dein Video verlässt deinen Browser nie. Wir sehen es nicht, speichern es nicht und haben keinen Zugriff darauf.
 
----
-
-## Jetzt Video kostenlos komprimieren
-
-Spare Speicherplatz, versende Videos ohne Probleme und halte deine Daten privat – alles mit einem kostenlosen Tool, das sofort funktioniert.
-
-👉 **[Jetzt Video komprimieren – kostenlos & ohne Anmeldung](#)**

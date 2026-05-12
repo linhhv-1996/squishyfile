@@ -122,10 +122,3 @@ Für ein typisches Handy-Video von 200 MB dauert es meist unter 1 Minute – abh
 **Verliere ich den Ton beim Komprimieren?**  
 Nein, der Ton bleibt vollständig erhalten.
 
----
-
-## Jetzt Video für die E-Mail verkleinern – kostenlos & ohne Anmeldung
-
-Lade dein Video hoch, stelle die Zielgröße ein und sende es direkt per E-Mail.
-
-👉 **[Video für E-Mail verkleinern – kostenlos im Browser](#)**

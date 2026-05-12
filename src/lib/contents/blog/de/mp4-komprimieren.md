@@ -120,8 +120,3 @@ Ja, standardmäßig bleibt das Format MP4. Du kannst das Format aber auch änder
 **Funktioniert das Tool auf dem Mac?**  
 Ja, vollständig – in Safari, Chrome und Firefox auf macOS.
 
----
-
-## Jetzt MP4 komprimieren – kostenlos & ohne Anmeldung
-
-👉 **[MP4 jetzt komprimieren – direkt im Browser starten](#)**

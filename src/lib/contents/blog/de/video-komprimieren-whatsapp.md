@@ -106,10 +106,3 @@ Ja, unser Tool unterstützt Stapelverarbeitung – lade mehrere Videos gleichzei
 **Bleibt der Ton erhalten?**  
 Ja, der Ton wird beim Komprimieren nicht verändert.
 
----
-
-## Jetzt Video für WhatsApp komprimieren – kostenlos & sofort
-
-Kein Download, keine Anmeldung, keine Wartezeit.
-
-👉 **[Video für WhatsApp komprimieren – direkt im Browser](#)**

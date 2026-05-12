@@ -143,10 +143,3 @@ Ja, ältere Videos in niedrigerer Auflösung lassen sich ebenfalls komprimieren,
 **Verliere ich Metadaten wie das Aufnahmedatum?**  
 Standardmäßig werden die wichtigsten Metadaten beibehalten.
 
----
-
-## Jetzt Handy-Speicher freigeben – Videos komprimieren
-
-Kein Video löschen, trotzdem wieder Platz schaffen.
-
-👉 **[Videos jetzt komprimieren – kostenlos im Browser](#)**

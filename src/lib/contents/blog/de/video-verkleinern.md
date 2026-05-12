@@ -129,8 +129,3 @@ Ja, Stapelverarbeitung ist möglich – einfach mehrere Dateien auf einmal ausw�
 **Muss ich etwas installieren?**  
 Nein. Alles läuft direkt im Browser – keine Installation, kein Download, keine App.
 
----
-
-## Jetzt Video verkleinern – kostenlos & sofort
-
-👉 **[Video jetzt verkleinern – kostenlos im Browser starten](#)**

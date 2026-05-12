@@ -113,11 +113,3 @@ Ja. Nach dem Komprimieren kannst du das Video direkt aus dem Browser über das i
 
 **Wie viel kleiner wird mein iPhone-Video?**  
 Typischerweise lässt sich ein iPhone-Video auf **20–50% der ursprünglichen Größe** reduzieren. Ein 400-MB-Video wird also zu ca. 80–200 MB – je nach gewählter Qualitätsstufe.
-
----
-
-## Jetzt iPhone-Video komprimieren – kostenlos & sicher
-
-Kein App-Download, keine Anmeldung, kein Datenschutzrisiko.
-
-👉 **[iPhone Video jetzt komprimieren – direkt im Browser](#)**

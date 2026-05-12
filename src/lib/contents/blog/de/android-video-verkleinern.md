@@ -129,8 +129,3 @@ Derzeit nicht in unserem Tool – dafür brauchst du einen separaten Video-Edito
 **Wird der Ton beim Verkleinern beeinträchtigt?**  
 Nein, der Ton bleibt vollständig erhalten und wird in guter Qualität beibehalten.
 
----
-
-## Jetzt Android-Video verkleinern – kostenlos & ohne App
-
-👉 **[Android-Video jetzt verkleinern – direkt im Browser starten](#)**

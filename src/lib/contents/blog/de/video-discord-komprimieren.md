@@ -125,10 +125,3 @@ Wer regelmäßig große Clips teilen möchte, kann überlegen, ob Discord Nitro 
 
 Für gelegentliche Clips lohnt sich das nicht. Unser kostenloses Tool erledigt den Job in wenigen Sekunden – ohne monatliche Kosten.
 
----
-
-## Jetzt Video für Discord komprimieren – kostenlos & sofort
-
-Unter 10 MB in Sekunden – ohne Software, ohne Anmeldung.
-
-👉 **[Video für Discord komprimieren – direkt im Browser starten](#)**
