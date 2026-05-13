@@ -1,7 +1,7 @@
 ---
 title: MacとWindowsでPDFを圧縮するには？標準機能とおすすめツール
 description: MacのプレビューとWindowsの標準機能を使ったPDF圧縮方法を解説。「pdf 圧縮 mac」や「pdf 圧縮 windows」でお困りの方に向け、画質を保ったままファイルサイズを減らせるブラウザツールも合わせて紹介します。
-date: 2026-05-13
+date: 2026-03-28
 ---
 
 # MacとWindowsでPDFを圧縮するには？標準機能とおすすめツール
