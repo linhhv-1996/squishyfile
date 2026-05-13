@@ -11,6 +11,18 @@
 
 	let { data }: { data: PageData } = $props();
 	let langPrefix = $derived($page.params.lang ? `/${$page.params.lang}` : '');
+
+	let jsonLd = $derived(JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		"headline": data.meta.title,
+		"description": data.meta.description,
+		"datePublished": data.meta.date,
+		"author": {
+			"@type": "Person",
+			"name": "J.Julian"
+		}
+	}));
 </script>
 
 <svelte:head>
@@ -18,6 +30,7 @@
 	<meta name="description" content="{data.meta.description}" />
 	<meta property="og:title" content="{data.meta.title}" />
 	<meta property="og:description" content="{data.meta.description}" />
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <main class="wrap">
@@ -34,6 +47,8 @@
 				<h1 class="article-title">{data.meta.title}</h1>
 				<div class="article-meta">
 					<time class="meta-date">{data.meta.date}</time>
+					<span class="meta-sep">·</span>
+					<span class="meta-author">J.Julian</span>
 					{#if data.meta.description}
 						<span class="meta-sep">·</span>
 						<span class="meta-desc">{data.meta.description}</span>
@@ -104,6 +119,12 @@
 	}
 
 	.meta-sep { color: var(--border); }
+
+	.meta-author {
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--muted);
+	}
 
 	.meta-desc {
 		font-size: 12px;
