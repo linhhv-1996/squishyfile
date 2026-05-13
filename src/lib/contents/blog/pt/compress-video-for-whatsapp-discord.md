@@ -1,7 +1,7 @@
 ---
 title: Como Comprimir Vídeo para WhatsApp, Discord e Facebook Sem Erros
 description: Aprenda a comprimir vídeo para WhatsApp, Discord e Facebook sem perder qualidade. Descubra os limites de cada plataforma e como reduzir arquivos grandes direto no navegador com total privacidade.
-date: 2026-05-11
+date: 2026-05-09
 ---
 
 # Como Comprimir Vídeo para WhatsApp, Discord e Facebook Sem Erros

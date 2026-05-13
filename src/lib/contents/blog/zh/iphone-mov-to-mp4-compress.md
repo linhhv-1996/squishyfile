@@ -1,7 +1,7 @@
 ---
 title: iPhone 影片壓縮與轉換：如何將 MOV 轉 MP4 並縮小容量？
 description: iPhone 錄影預設 MOV 檔案太大又難分享？了解為什麼需要影片轉換，以及如何不用安裝 App 就將 MOV 轉成 MP4 並完成 iphone 影片壓縮，讓傳檔給 Windows 用戶或上傳平台都不再卡關。
-date: 2026-03-23
+date: 2026-05-01
 ---
 
 # iPhone 影片壓縮與轉換：如何將 MOV 轉 MP4 並縮小容量？
