@@ -1,6 +1,7 @@
 ---
 title: Como Comprimir Vídeo Rápido e Seguro: Guia Completo
 description: Aprenda a comprimir vídeo sem perder qualidade. Entenda codecs, bitrate e descubra o melhor compressor de vídeo gratuito para PC, nuvem e navegador com tecnologia WASM.
+tool: video
 date: 2026-05-12
 ---
 

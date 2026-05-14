@@ -586,7 +586,7 @@
 			</section>
 		{/if}
 
-		<section
+		<!-- <section
 			class="faq-sec"
 			itemscope
 			itemtype="https://schema.org/FAQPage"
@@ -702,7 +702,7 @@
 					</div>
 				</details>
 			</div>
-		</section>
+		</section> -->
 	</div>
 </main>
 
@@ -712,6 +712,10 @@
 		margin-top: 0px;
 		padding-top: 20px;
 		border-top: 1px solid var(--border);
+	}
+
+	.how-to-sec :global(a) {
+		color: #4a8af1;
 	}
 
 	.how-to-sec :global(h1) {

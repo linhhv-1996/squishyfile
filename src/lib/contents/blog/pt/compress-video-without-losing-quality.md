@@ -1,6 +1,7 @@
 ---
 title: É Possível Comprimir Vídeo Sem Perder Qualidade? O Guia Definitivo
 description: Aprenda a comprimir vídeo sem perder qualidade. Técnicas para vídeos 4K, codecs H.265 e como converter MOV para MP4 mantendo a nitidez com o Squishyfile.
+tool: video
 date: 2026-05-10
 ---
 

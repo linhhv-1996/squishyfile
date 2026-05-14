@@ -1,6 +1,7 @@
 ---
 title: Comprimir MP4 Online com Segurança via WebAssembly
 description: Descubra os riscos de comprimir MP4 online e veja como ferramentas com WebAssembly processam vídeos no seu navegador com segurança, sem upload.
+tool: video
 date: 2026-05-13
 ---
 
