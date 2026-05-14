@@ -78,6 +78,22 @@
 
 	let isBlogPost = $derived(currentPath.startsWith('/blog/') && currentPath.length > '/blog/'.length);
 
+	let ogImagePath = $derived((() => {
+		const lang = currentLangKey.toLowerCase();
+
+		if (currentPath === '/compress-pdf' || currentPath.startsWith('/compress-pdf/')) {
+			return `/og/compress-pdf/${lang}.png`;
+		}
+
+		if (currentPath === '/compress-video' || currentPath.startsWith('/compress-video/')) {
+			return `/og/compress-video/${lang}.png`;
+		}
+
+		return `/og/${lang}.png`;
+	})());
+
+	let ogImageUrl = $derived(`${$page.url.origin}${ogImagePath}`);
+
 </script>
 
 <svelte:head>
@@ -86,10 +102,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
-	<meta property="og:image" content={`${$page.url.origin}/og/${currentLangKey.toLowerCase()}.png`} />
+	<meta property="og:image" content={ogImageUrl} />
 	<meta property="og:url" content={$page.url.href} />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content={`${$page.url.origin}/og/${currentLangKey.toLowerCase()}.png`} />
+	<meta name="twitter:image" content={ogImageUrl} />
 
 	<meta name="robots" content="index, follow" />
 
