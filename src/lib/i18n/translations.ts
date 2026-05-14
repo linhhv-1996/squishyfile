@@ -19,15 +19,26 @@ export const translations: Record<string, Record<string, string>> = {
 		'error.workerFailed': 'Processing error. Please try again.',
 		'btn.compressPdf': 'Compress PDF',
 		'status.warning.keepOpen': '⚠️ Please keep this tab open and active. Switching tabs may pause or slow down the process.',
-		'meta.title': 'Squishyfile – Free Video & PDF Compressor',
-		'meta.desc': 'Compress videos and PDFs for free, directly in your browser. No upload to server, no watermark, 100% private.',
+		
 		'nav.home': 'Home',
 		'nav.blog': 'Blog',
-		'hero.title': 'Compress Videos & PDFs<br />in Your Browser',
-		'hero.sub': 'No uploads, no accounts, no watermarks — runs entirely on your device.',
+		
+		'meta.title': 'Squishyfile – Free Browser-Based File Tools',
+		'meta.desc': 'Free file tools that run directly in your browser. Compress, convert, edit, and manage files privately — no uploads, no accounts, no watermarks.',
+		'hero.title': 'Free File Tools<br />That Run in Your Browser',
+		'hero.sub': 'Compress, convert, edit, and manage files locally on your device — no uploads, no accounts, no watermarks.',
 		'hero.pill1': 'Local processing',
 		'hero.pill2': 'No watermark',
-		'hero.pill3': 'Unlimited files',
+		'hero.pill3': 'No account needed',
+
+		'feat.speed.title': 'Made for Quick Tasks',
+		'feat.speed.desc': 'Choose a tool, drop your file, adjust what you need, and get results without installing software or creating an account.',
+
+		'feat.target.title': 'Simple Everyday File Tools',
+		'feat.target.desc': 'Compress, convert, edit, and manage files with focused tools built for common file tasks.',
+
+		'feat.free.title': 'Free & Clean',
+		'feat.free.desc': 'No forced sign-ups, no unnecessary paywalls, and no watermarks on your exported files.',
 
 		'blog.cta.video.title': 'Compress your video for free — no uploads, no watermark.',
 		'blog.cta.video.btn': 'Try Video Compressor →',
@@ -199,12 +210,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': 'Download Compressed Video',
 		'btn.dl.convert': 'Download Converted Video',
 		'note.privacy': '<strong>Your files never leave your device.</strong> Squishyfile processes everything locally using your browser\'s built-in engine — no server uploads, no accounts needed. Files are cleared from memory after download.',
-		'feat.speed.title': 'Fast Processing',
-		'feat.speed.desc': 'Hardware-accelerated encoding at near-native speed, entirely in your browser without waiting for server queues.',
-		'feat.target.title': 'Smart Size Targets',
-		'feat.target.desc': 'One-click presets explicitly tuned for popular platforms like LINE, Discord, Gmail, and Telegram limits.',
-		'feat.free.title': 'Always Free',
-		'feat.free.desc': 'No premium subscriptions, no daily file limits, and absolutely no watermarks added to your videos — ever.',
+		
 		'faq.title': 'Frequently Asked Questions',
 		'faq.1.q': 'Is it safe to compress my private videos here?',
 		'faq.1.a': 'Yes, absolutely! Squishyfile processes your videos locally directly inside your web browser. Your files are never uploaded to any cloud server, ensuring 100% privacy and security.',
@@ -450,11 +456,22 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': 'ブラウザで動画・PDFを無料圧縮。アップロード不要・インストール不要・ログインなし。プライバシー保護100%。',
 		'nav.home': 'ホーム',
 		'nav.blog': 'ブログ',
-		'hero.title': '動画・PDF圧縮を<br />ブラウザで無料で',
-		'hero.sub': 'アップロード不要・アカウント不要・透かしなし — すべてお使いのデバイスで処理されます。',
+		
+		'hero.title': '無料のファイルツールを<br />ブラウザで',
+		'hero.sub': '圧縮・変換・編集・管理を、お使いのデバイス上でかんたんに。アップロード不要・アカウント不要・透かしなし。',
 		'hero.pill1': 'ローカル処理',
 		'hero.pill2': '透かしなし',
-		'hero.pill3': 'ファイル数無制限',
+		'hero.pill3': 'アカウント不要',
+
+		'feat.speed.title': 'すばやく使えるツール',
+		'feat.speed.desc': 'ツールを選び、ファイルを追加して、必要な設定を調整するだけ。ソフトのインストールやアカウント作成なしで使えます。',
+
+		'feat.target.title': '日常向けのシンプルなファイルツール',
+		'feat.target.desc': '圧縮・変換・編集・管理など、よくあるファイル作業に合わせた使いやすいツールを用意しています。',
+
+		'feat.free.title': '無料でクリーン',
+		'feat.free.desc': '強制的な登録、不要な有料制限、出力ファイルへの透かしはありません。',
+		
 		'home.card.video.title': '動画圧縮',
 		'home.card.video.desc': 'MP4・MOV・AVIなどをブラウザで直接圧縮。アップロード不要・画質損失なし。',
 		'home.card.video.cta': '動画を圧縮する',
@@ -612,12 +629,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': '圧縮した動画をダウンロード',
 		'btn.dl.convert': '変換した動画をダウンロード',
 		'note.privacy': '<strong>ファイルがデバイスの外に出ることはありません。</strong> Squishyfileはブラウザ内蔵エンジンを使ってすべてローカルで処理します — サーバーへのアップロードなし・アカウント不要・サーバー保存なし。ダウンロード後はメモリからファイルが削除されます。',
-		'feat.speed.title': '最速・高速処理',
-		'feat.speed.desc': 'ハードウェアアクセラレーションで、サーバー待ちなしにブラウザ上でネイティブに近い速度で動画圧縮・変換を実現。ギガ節約にも最適。',
-		'feat.target.title': 'スマートなサイズ指定',
-		'feat.target.desc': 'LINE・Discord・Gmail・Telegramなど人気プラットフォームの制限サイズに合わせたワンクリックプリセット。LINEに動画が送れない問題も解決。',
-		'feat.free.title': '完全無料・登録不要',
-		'feat.free.desc': 'プレミアムプランなし・1日のファイル数制限なし・動画への透かし追加も一切なし。ログインなし・会員登録不要で今すぐ使える。',
+		
 		'faq.title': 'よくある質問',
 		'faq.1.q': 'LINEで動画が送れない時の解決方法は？',
 		'faq.1.a': 'LINEの動画送信制限（約300MB）に引っかかるケースがほとんどです。Squishyfileで動画圧縮をしてファイルサイズを小さくするだけで解決します。ブラウザを開いて動画をドロップ→「今すぐ圧縮」をタップするだけ。アップロード不要・登録なしで無料動画圧縮が完了します。',
@@ -1037,11 +1049,22 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': '免費線上影片與 PDF 壓縮，唔使上載到伺服器，無須登入註冊，無浮水印，隱私保障100%，直接在瀏覽器完成。',
 		'nav.home': '首頁',
 		'nav.blog': '部落格',
-		'hero.title': '影片 & PDF 壓縮<br />免費線上處理',
-		'hero.sub': '唔使上載、無須登入、無浮水印 — 完全在您的裝置上執行。',
+		
+		'hero.title': '免費檔案工具<br />直接在瀏覽器中使用',
+		'hero.sub': '壓縮、轉換、編輯與管理檔案，都可在您的裝置上輕鬆完成。無需上傳、無需帳號、無浮水印。',
 		'hero.pill1': '本機處理',
 		'hero.pill2': '無浮水印',
-		'hero.pill3': '無限制檔案',
+		'hero.pill3': '無需帳號',
+
+		'feat.speed.title': '快速完成日常任務',
+		'feat.speed.desc': '選擇工具、加入檔案、調整需要的設定，就能取得結果。無需安裝軟體，也不用建立帳號。',
+
+		'feat.target.title': '簡單實用的檔案工具',
+		'feat.target.desc': '提供壓縮、轉換、編輯與管理等工具，專為常見的日常檔案工作而設計。',
+
+		'feat.free.title': '免費且乾淨',
+		'feat.free.desc': '沒有強制註冊、沒有不必要的付費限制，也不會在輸出檔案加上浮水印。',
+		
 		'home.card.video.title': '壓縮影片',
 		'home.card.video.desc': '在瀏覽器中直接壓縮 MP4、MOV、AVI 等格式，無需上傳，不損失畫質。',
 		'home.card.video.cta': '立即壓縮影片',
@@ -1185,12 +1208,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': '下載壓縮後的影片',
 		'btn.dl.convert': '下載轉換後的影片',
 		'note.privacy': '<strong>您的檔案永遠唔會離開您的裝置。</strong> Squishyfile 使用瀏覽器內建引擎在本機處理所有內容 — 唔使上載、無須伺服器、唔會留底。下載後檔案將從記憶體中清除，隱私保障100%。',
-		'feat.speed.title': '極速影片壓縮',
-		'feat.speed.desc': '硬體加速編碼，在瀏覽器中以接近原生的速度處理影片壓縮及MOV轉MP4，無需等待伺服器佇列，慳數據慳容量。',
-		'feat.target.title': '智慧大小目標',
-		'feat.target.desc': '針對 WhatsApp、LINE、Discord、Gmail、Telegram 等熱門平台容量限制精心調校的一鍵預設，解決 WhatsApp 傳片限制問題。',
-		'feat.free.title': '永久免費 · 唔使註冊',
-		'feat.free.desc': '無需付費訂閱，無每日檔案數量限制，絕對不會添加浮水印。無須登入即開即用。',
+
 		'faq.title': '常見問題',
 		'faq.1.q': '怎麼壓縮影片傳 WhatsApp 或 Telegram？',
 		'faq.1.a': '用 Squishyfile 的「影片壓縮」功能，把影片拖進去選「均衡」模式，或自行輸入目標 MB 數，就能輕鬆解決 WhatsApp 傳片限制和 Telegram 影片壓縮問題。整個過程唔使上載到伺服器，下載後即可傳送。',
@@ -1790,11 +1808,22 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': `Compressor gratuito online: comprimir vídeo e PDF no navegador. Sem upload para servidor, sem cadastro, sem marca d'água.Privacidade 100% garantida.`,
 		'nav.home': 'Início',
 		'nav.blog': 'Blog',
-		'hero.title': 'Comprimir Vídeos & PDFs<br />no Seu Navegador',
-		'hero.sub': 'Sem uploads, sem contas, sem marca d\'água — funciona completamente no seu dispositivo.',
+		
+		'hero.title': 'Ferramentas de Arquivos Grátis<br />Direto no Navegador',
+		'hero.sub': 'Comprima, converta, edite e organize arquivos com facilidade no seu próprio dispositivo. Sem uploads, sem conta e sem marca d\'água.',
 		'hero.pill1': 'Processamento local',
 		'hero.pill2': 'Sem marca d\'água',
-		'hero.pill3': 'Arquivos ilimitados',
+		'hero.pill3': 'Sem conta',
+
+		'feat.speed.title': 'Feito para Tarefas Rápidas',
+		'feat.speed.desc': 'Escolha uma ferramenta, adicione seu arquivo, ajuste o que precisar e obtenha o resultado sem instalar programas ou criar uma conta.',
+
+		'feat.target.title': 'Ferramentas Simples para o Dia a Dia',
+		'feat.target.desc': 'Comprima, converta, edite e organize arquivos com ferramentas focadas nas tarefas mais comuns.',
+
+		'feat.free.title': 'Grátis e Sem Complicação',
+		'feat.free.desc': 'Sem cadastro obrigatório, sem paywalls desnecessários e sem marca d\'água nos arquivos exportados.',
+		
 		'home.card.video.title': 'Comprimir Vídeo',
 		'home.card.video.desc': 'Reduza MP4, MOV, AVI e outros diretamente no navegador — sem upload, sem perda de qualidade.',
 		'home.card.video.cta': 'Comprimir Vídeo',
@@ -1951,12 +1980,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': 'Baixar Vídeo Comprimido',
 		'btn.dl.convert': 'Baixar Vídeo Convertido',
 		'note.privacy': '<strong>Seus arquivos nunca saem do seu dispositivo.</strong> Squishyfile processa tudo localmente usando o mecanismo integrado do seu navegador — sem upload para servidor, sem necessidade de conta. Os arquivos são apagados da memória após o download.',
-		'feat.speed.title': 'Processamento rápido',
-		'feat.speed.desc': 'Codificação acelerada por hardware em velocidade quase nativa, totalmente no seu navegador sem esperar filas de servidor.',
-		'feat.target.title': 'Tamanhos alvo inteligentes',
-		'feat.target.desc': 'Predefinições de um clique calibradas para os limites do WhatsApp, Discord, Gmail e Telegram. Comprimir vídeo para WhatsApp sem complicação.',
-		'feat.free.title': 'Sempre gratuito',
-		'feat.free.desc': 'Sem assinaturas pagas, sem limite diário de arquivos, e absolutamente sem marcas d\'água nos seus vídeos — nunca.',
+		
 		'faq.title': 'Perguntas frequentes',
 		'faq.1.q': 'É seguro comprimir meus vídeos privados aqui?',
 		'faq.1.a': 'Sim, com toda a certeza! Squishyfile processa seus vídeos localmente diretamente no seu navegador. Seus arquivos nunca são enviados para nenhum servidor em nuvem, garantindo privacidade e segurança 100%.',
