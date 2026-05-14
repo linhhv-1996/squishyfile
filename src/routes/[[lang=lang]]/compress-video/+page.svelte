@@ -559,7 +559,7 @@
 			<p>{@html t("note.privacy")}</p>
 		</div>
 
-		<div class="feats">
+		<!-- <div class="feats">
 			<div class="feat">
 				<div class="fi"><Cpu size={20} strokeWidth={1.8} /></div>
 				<div class="ftxt">
@@ -581,7 +581,7 @@
 					<div class="fd">{t("feat.free.desc")}</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- How to use — SEO content từ markdown -->
 		{#if data.howToHtml}

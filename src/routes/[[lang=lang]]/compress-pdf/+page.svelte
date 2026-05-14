@@ -481,7 +481,7 @@
 			<p>{@html t("note.privacy")}</p>
 		</div>
 
-		<div class="feats">
+		<!-- <div class="feats">
 			<div class="feat">
 				<div class="fi"><Gauge size={20} strokeWidth={1.8} /></div>
 				<div class="ftxt">
@@ -505,7 +505,7 @@
 					<div class="fd">{t("feat.pdf.quality.desc")}</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- How to use — SEO content từ markdown -->
 		{#if data.howToHtml}
