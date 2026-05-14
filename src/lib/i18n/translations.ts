@@ -69,19 +69,24 @@ export const translations: Record<string, Record<string, string>> = {
 
 		// ── Home FAQ (brand, overview, privacy, comparison) ─────────────────────
 		'faq.home.title': 'Frequently Asked Questions',
-		'faq.home.1.q': 'Is this video compressor free?',
-		'faq.home.1.a': '',
-		'faq.home.2.q': 'Are my files safe? Do they get uploaded to a server?',
-		'faq.home.2.a': 'Your files never leave your device. Squishyfile processes everything locally using your browser\'s built-in engine. No server upload, no cloud storage, no one can see your files — not even us.',
-		'faq.home.3.q': 'Is Squishyfile really free? Are there hidden limits?',
-		'faq.home.3.a': 'Completely free. No premium tier, no daily file limits, no watermarks, no registration. You can compress as many videos and PDFs as you want, as large as your device can handle.',
-		'faq.home.4.q': 'Which tool should I use — Video Compress or PDF Compress?',
-		'faq.home.4.a': 'Use Video Compress for MP4, MOV, AVI, WebM and MKV files — ideal when a video is too large to send on LINE, Discord, Gmail or Telegram. Use PDF Compress to shrink PDF attachments for email or to remove an existing password from a PDF.',
-		'faq.home.5.q': 'Does it work on mobile?',
-		'faq.home.5.a': 'Yes. Open Squishyfile in any mobile browser — no app installation needed. Both tools work on iPhone and Android. Just tap the tool card, select a file, and download the result.',
-		'faq.home.6.q': 'What browsers are supported?',
-		'faq.home.6.a': 'Squishyfile works in all modern browsers: Chrome, Firefox, Safari, Edge, and Brave — on desktop and mobile. No plugins or extensions required.',
 
+		'faq.home.1.q': 'What is Squishyfile?',
+		'faq.home.1.a': 'Squishyfile is a collection of free browser-based file tools. You can use it to compress, convert, edit, and manage files directly from your browser without installing software.',
+
+		'faq.home.2.q': 'Are my files safe? Do they get uploaded to a server?',
+		'faq.home.2.a': 'Squishyfile is designed to process files locally in your browser whenever possible. That means your files can stay on your device instead of being uploaded to a server.',
+
+		'faq.home.3.q': 'Is Squishyfile really free? Are there hidden limits?',
+		'faq.home.3.a': 'Yes. Squishyfile is free to use, with no forced sign-up and no watermarks on exported files. Some tasks may depend on what your browser and device can handle.',
+
+		'faq.home.4.q': 'Which tool should I use?',
+		'faq.home.4.a': 'Choose the tool based on what you want to do: compress a large file, convert it to another format, edit it, or prepare it for sharing. Each tool page explains what file types it supports and when to use it.',
+
+		'faq.home.5.q': 'Does it work on mobile?',
+		'faq.home.5.a': 'Yes. Squishyfile works in modern mobile browsers on iPhone and Android. Some larger files may process better on a laptop or desktop, depending on your device performance.',
+
+		'faq.home.6.q': 'What browsers are supported?',
+		'faq.home.6.a': 'Squishyfile works in modern browsers such as Chrome, Safari, Firefox, Edge, and Brave. No plugins or extensions are required.',
 		
 		// ── Video FAQ ─────────────────────────────────────────────────────────────
 		'faq.video.title': 'Frequently Asked Questions',
@@ -224,6 +229,8 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.5.a': 'Yes. Use the "Target File Size" field and enter the platform limit — for example 25 MB for Discord or 20 MB for Gmail. Squishyfile automatically calculates the right compression rate to hit that target without guesswork.',
 		'faq.6.q': 'Does it support 4K video compression?',
 		'faq.6.a': 'Yes. 4K video compression runs entirely in your browser with no server-side file limits. For stable performance we recommend keeping files under 2 GB. The tool also supports MOV, AVI, MKV and WebM — not just MP4.',
+		
+		
 		'footer.copy': '© 2026 Squishyfile &nbsp;·&nbsp; Runs entirely in your browser &nbsp;·&nbsp;',
 		'footer.privacy': 'Privacy Policy',
 		'footer.terms': 'Terms of Service',
@@ -490,18 +497,24 @@ export const translations: Record<string, Record<string, string>> = {
 		'pdf.hero.sub': 'PDFサイズ削減＆パスワード解除 — すべてお使いのデバイスで処理。',
 
 		'faq.home.title': 'よくある質問',
+
 		'faq.home.1.q': 'Squishyfileとは何ですか？',
-		'faq.home.1.a': 'Squishyfileは動画（MP4・MOV・AVI・WebM・MKV）とPDFをブラウザで無料圧縮できるオンラインツールです。登録不要・インストール不要・アップロード不要で今すぐ使えます。',
-		'faq.home.2.q': 'ファイルは安全ですか？サーバーに送られませんか？',
-		'faq.home.2.a': 'ファイルがデバイスの外に出ることはありません。Squishyfileはブラウザ内蔵エンジンを使ってすべてローカルで処理します。サーバーへのアップロードなし・クラウド保存なし・プライバシー保護100%です。',
+		'faq.home.1.a': 'Squishyfileは、ブラウザで使える無料のファイルツール集です。ソフトをインストールせずに、ファイルの圧縮・変換・編集・管理などを手軽に行えます。',
+
+		'faq.home.2.q': 'ファイルは安全ですか？サーバーにアップロードされますか？',
+		'faq.home.2.a': 'Squishyfileは、可能な限りブラウザ上でローカル処理するように設計されています。そのため、多くの作業ではファイルをサーバーにアップロードせず、お使いのデバイス上で処理できます。',
+
 		'faq.home.3.q': '本当に無料ですか？隠れた制限はありますか？',
-		'faq.home.3.a': '完全無料です。有料プランなし・1日のファイル数制限なし・透かしなし・会員登録不要。動画もPDFも何ファイルでも無制限に圧縮できます。',
-		'faq.home.4.q': '動画圧縮とPDF圧縮、どちらを使えばいいですか？',
-		'faq.home.4.a': 'LINEやDiscord・Gmail・Telegramで送れない動画にはVideo Compressを。メールの容量制限を超えたPDFの縮小や、パスワード付きPDFの解除にはPDF Compressをお使いください。',
+		'faq.home.3.a': 'はい。Squishyfileは無料で使えます。強制的な会員登録や、出力ファイルへの透かしはありません。一部の処理は、お使いのブラウザやデバイスの性能に左右される場合があります。',
+
+		'faq.home.4.q': 'どのツールを使えばいいですか？',
+		'faq.home.4.a': 'ファイルを小さくしたい、別の形式に変換したい、編集したい、共有しやすくしたいなど、目的に合わせてツールを選んでください。各ツールページでは、対応ファイル形式や使いどころを説明しています。',
+
 		'faq.home.5.q': 'スマートフォンでも使えますか？',
-		'faq.home.5.a': 'はい。iPhoneでもAndroidでもブラウザを開くだけで使えます。アプリのインストール不要。ツールカードをタップしてファイルを選べばすぐに圧縮できます。',
+		'faq.home.5.a': 'はい。SquishyfileはiPhoneやAndroidのモダンブラウザで使えます。大きなファイルの場合は、デバイスの性能によってパソコンの方が快適に処理できることがあります。',
+
 		'faq.home.6.q': '対応ブラウザを教えてください。',
-		'faq.home.6.a': 'Chrome・Firefox・Safari・Edge・Braveなど主要ブラウザすべてに対応。パソコンでもスマホでも動作します。プラグイン不要です。',
+		'faq.home.6.a': 'SquishyfileはChrome、Safari、Firefox、Edge、Braveなどのモダンブラウザで動作します。プラグインや拡張機能は必要ありません。',
 
 
 		'faq.video.title': 'よくある質問',
@@ -1083,18 +1096,24 @@ export const translations: Record<string, Record<string, string>> = {
 		'pdf.hero.sub': '縮小 PDF 大小並可移除密碼 — 完全在您的裝置上處理。',
 
 		'faq.home.title': '常見問題',
-		'faq.home.1.q': 'Squishyfile 是什麼工具？',
-		'faq.home.1.a': 'Squishyfile 是免費的線上工具，可直接在瀏覽器中壓縮影片（MP4·MOV·AVI·WebM·MKV）和 PDF。唔使登入、唔使安裝、唔使上載，即開即用。',
+
+		'faq.home.1.q': 'Squishyfile 是什麼？',
+		'faq.home.1.a': 'Squishyfile 是一套可在瀏覽器中使用的免費檔案工具。無需安裝軟體，就能輕鬆進行檔案壓縮、轉換、編輯與管理。',
+
 		'faq.home.2.q': '我的檔案安全嗎？會上傳到伺服器嗎？',
-		'faq.home.2.a': '您的檔案永遠唔會離開您的裝置。所有處理在瀏覽器內完成，不上傳伺服器、不存入雲端，隱私保障 100%。',
-		'faq.home.3.q': '真的完全免費嗎？有隱藏限制嗎？',
-		'faq.home.3.a': '完全免費。無付費方案、無每日檔案數限制、無浮水印、唔使註冊。影片和 PDF 壓縮都無限制使用。',
-		'faq.home.4.q': '影片壓縮和 PDF 壓縮，我該用哪個？',
-		'faq.home.4.a': 'WhatsApp、LINE、Discord、Telegram 傳不出去的影片用影片壓縮；超過電郵附件上限的 PDF 縮小，或需要移除 PDF 密碼，用 PDF 壓縮。',
-		'faq.home.5.q': '手機也可以用嗎？',
-		'faq.home.5.a': '可以。iPhone 或 Android 瀏覽器開啟即可，唔需裝 App。點擊工具卡片、選擇檔案，壓縮完成後直接下載。',
+		'faq.home.2.a': 'Squishyfile 的設計會盡可能在瀏覽器中進行本機處理。因此，許多操作都可以讓檔案留在您的裝置上，而不需要上傳到伺服器。',
+
+		'faq.home.3.q': '真的免費嗎？有隱藏限制嗎？',
+		'faq.home.3.a': '是的，Squishyfile 可以免費使用。沒有強制註冊，也不會在輸出檔案加上浮水印。部分處理可能會受到瀏覽器與裝置效能影響。',
+
+		'faq.home.4.q': '我該使用哪個工具？',
+		'faq.home.4.a': '請依照您的目的選擇工具：縮小檔案、轉換格式、編輯內容，或讓檔案更方便分享。每個工具頁面都會說明支援的檔案格式與適合的使用情境。',
+
+		'faq.home.5.q': '手機也可以使用嗎？',
+		'faq.home.5.a': '可以。Squishyfile 可在 iPhone 與 Android 的現代瀏覽器中使用。若處理較大的檔案，依裝置效能不同，使用筆電或桌機可能會更順暢。',
+
 		'faq.home.6.q': '支援哪些瀏覽器？',
-		'faq.home.6.a': '支援 Chrome、Firefox、Safari、Edge、Brave 等所有主流瀏覽器，桌機和手機皆可。無需任何外掛。',
+		'faq.home.6.a': 'Squishyfile 支援 Chrome、Safari、Firefox、Edge、Brave 等現代瀏覽器。不需要安裝外掛或擴充功能。',
 
 
 		'faq.video.title': '常見問題',
@@ -1842,18 +1861,24 @@ export const translations: Record<string, Record<string, string>> = {
 		'pdf.hero.sub': 'Reduza o tamanho e remova a senha — completamente no seu dispositivo.',
 
 		'faq.home.title': 'Perguntas frequentes',
-		'faq.home.1.q': 'O que é o Squishyfile e o que ele faz?',
-		'faq.home.1.a': 'Squishyfile é uma ferramenta gratuita para comprimir vídeos (MP4, MOV, AVI, WebM, MKV) e PDFs diretamente no navegador — sem cadastro, sem instalação e sem upload para servidor.',
-		'faq.home.2.q': 'Meus arquivos estão seguros? São enviados a algum servidor?',
-		'faq.home.2.a': 'Seus arquivos nunca saem do seu dispositivo. Tudo é processado localmente no navegador — sem upload, sem armazenamento em nuvem, privacidade 100% garantida.',
-		'faq.home.3.q': 'É realmente gratuito? Há limites ocultos?',
-		'faq.home.3.a': 'Completamente grátis. Sem assinatura, sem limite diário de arquivos, sem marca d\'água, sem cadastro. Comprima quantos vídeos e PDFs quiser.',
-		'faq.home.4.q': 'Quando usar comprimir vídeo e quando usar comprimir PDF?',
-		'faq.home.4.a': 'Para vídeos grandes demais para enviar no WhatsApp, Discord ou email → Comprimir Vídeo. Para PDFs que excedem o limite de anexo de email ou para remover senha de PDF → Comprimir PDF.',
+
+		'faq.home.1.q': 'O que é o Squishyfile?',
+		'faq.home.1.a': 'O Squishyfile é uma coleção de ferramentas gratuitas para arquivos que funcionam direto no navegador. Você pode comprimir, converter, editar e organizar arquivos sem instalar programas.',
+
+		'faq.home.2.q': 'Meus arquivos estão seguros? Eles são enviados para algum servidor?',
+		'faq.home.2.a': 'O Squishyfile foi criado para processar arquivos localmente no navegador sempre que possível. Isso significa que, em muitas tarefas, seus arquivos podem permanecer no seu próprio dispositivo, sem precisar ser enviados para um servidor.',
+
+		'faq.home.3.q': 'É realmente gratuito? Existem limites ocultos?',
+		'faq.home.3.a': 'Sim. O Squishyfile é gratuito, sem cadastro obrigatório e sem marca d\'água nos arquivos exportados. Algumas tarefas podem depender do que o seu navegador e dispositivo conseguem processar.',
+
+		'faq.home.4.q': 'Qual ferramenta devo usar?',
+		'faq.home.4.a': 'Escolha a ferramenta de acordo com o que você quer fazer: reduzir o tamanho de um arquivo, converter para outro formato, editar ou preparar para compartilhar. Cada página de ferramenta explica os formatos compatíveis e quando usá-la.',
+
 		'faq.home.5.q': 'Funciona no celular?',
-		'faq.home.5.a': 'Sim. Abra no navegador do iPhone ou Android — sem instalar aplicativo. Toque no card da ferramenta, selecione o arquivo e baixe o resultado.',
-		'faq.home.6.q': 'Quais navegadores são suportados?',
-		'faq.home.6.a': 'Chrome, Firefox, Safari, Edge e Brave — no desktop e no celular. Sem necessidade de plugins.',
+		'faq.home.5.a': 'Sim. O Squishyfile funciona em navegadores modernos no iPhone e no Android. Arquivos maiores podem ser processados melhor em um notebook ou desktop, dependendo do desempenho do dispositivo.',
+
+		'faq.home.6.q': 'Quais navegadores são compatíveis?',
+		'faq.home.6.a': 'O Squishyfile funciona em navegadores modernos como Chrome, Safari, Firefox, Edge e Brave. Não é necessário instalar plugins ou extensões.',
 
 		'faq.video.title': 'Perguntas frequentes',
 
