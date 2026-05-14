@@ -2,7 +2,7 @@
 title: Browser Memory Management: Processar Arquivos no Navegador
 description: Entenda como File API e Streams API permitem processar arquivos enormes no navegador sem travar, mesmo com pouca RAM. Tudo sobre browser memory management.
 tool: video
-date: 2026-05-30
+date: 2026-05-02
 ---
 
 # Processamento de Arquivos Enormes no Navegador: A Combinação entre File API e Streams API
