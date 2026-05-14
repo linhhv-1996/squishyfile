@@ -233,63 +233,6 @@ Squishyfile supports common input formats such as:
 
 The compressed output is saved as MP4 because MP4 works well across email clients, browsers, phones, computers, social media platforms, and messaging apps.
 
-## Frequently Asked Questions
-
-### Is this video compressor free?
-
-Yes. You can compress videos for free without creating an account or installing software.
-
-### Does Squishyfile upload my video?
-
-No. Video compression runs inside your browser using WebAssembly and FFmpeg. Your video is processed locally on your device instead of being uploaded to a server.
-
-### Will there be a watermark?
-
-No. The compressed video is downloaded as a clean MP4 file with no watermark added by Squishyfile.
-
-### Can I compress MP4 files?
-
-Yes. You can compress MP4 files and download a smaller MP4 output.
-
-### Can I compress MOV files from iPhone?
-
-Yes. You can select MOV videos recorded on iPhone and compress them into smaller MP4 files that are easier to share.
-
-### Can I reduce video file size without losing quality?
-
-Compression always changes the file in some way, but the **Balanced** and **High** presets are designed to reduce size while keeping the video looking good for normal viewing. For many everyday videos, the difference is hard to notice on a phone or laptop screen.
-
-### Can I compress a video to a specific size?
-
-Yes. Use the **Target File Size** option and enter the desired size in MB. The tool will try to create a compressed video close to that size while preserving as much quality as possible.
-
-### Can I compress video for WhatsApp under 16MB?
-
-Yes. Enter **15MB** as the target size to leave a small buffer under the common WhatsApp video message limit. Very long or fast-moving videos may need trimming or stronger compression.
-
-### Can I compress video for Gmail under 25MB?
-
-Yes. Enter **24MB** as the target size for Gmail. If you want a safer size for more email providers, use **19MB** instead.
-
-### Can I compress video for Discord under 8MB?
-
-Yes. Enter **8MB** as the target file size. For long clips, you may need to trim the video or accept lower quality to fit under that limit.
-
-### Does it work on mobile?
-
-Yes. You can use the compressor in Safari on iPhone and Chrome on Android. Large videos may process more smoothly on a desktop or laptop.
-
-### Why is compression slow?
-
-Video compression is CPU-intensive. Speed depends on video length, resolution, codec, browser, and device performance. A large 4K file will take longer than a short 720p clip.
-
-### What happens if I close the tab?
-
-If you close the tab while compression is running, the process stops. Keep the tab open until the compressed video is ready to download.
-
-### Where is the compressed video saved?
-
-After compression finishes, click **Download**. The file will be saved to your browser's default download location, which depends on your device and browser settings.
 
 ## Related Articles
 

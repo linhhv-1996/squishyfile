@@ -127,55 +127,6 @@ No celular, basta abrir a página no navegador, selecionar o PDF nos arquivos do
 
 Essa abordagem é útil para quem alterna entre dispositivos diferentes ou precisa resolver rapidamente um problema de arquivo grande sem procurar um aplicativo específico para cada sistema. Para mais detalhes, veja o artigo [como comprimir PDF no iPhone, Android, Mac ou Windows sem apps](/pt/blog/compress-pdf-any-device).
 
-## Perguntas frequentes
-
-### O compressor de PDF é gratuito?
-
-Sim. O Squishyfile pode ser usado gratuitamente para comprimir PDF no navegador. Não é necessário criar conta para reduzir o tamanho do arquivo.
-
-### Preciso instalar algum programa?
-
-Não. A ferramenta funciona diretamente no navegador. Você não precisa instalar software, aplicativo, plugin ou extensão.
-
-### Meu PDF é enviado para a nuvem?
-
-Não. O processamento acontece localmente no seu dispositivo usando WebAssembly. O arquivo não é enviado para servidores externos para ser comprimido.
-
-### Quanto um PDF pode ser comprimido?
-
-A redução depende do conteúdo do arquivo. PDFs escaneados, documentos com fotos e apresentações com imagens costumam reduzir mais. PDFs de texto puro ou já otimizados podem reduzir pouco.
-
-### Dá para comprimir PDF sem perder qualidade?
-
-É possível reduzir o tamanho mantendo boa legibilidade, especialmente usando o modo Equilibrado. Porém, quando imagens são otimizadas, o arquivo final pode não ser idêntico ao original. Sempre confira o PDF comprimido antes de enviar.
-
-### Posso comprimir PDF escaneado?
-
-Sim. PDFs escaneados geralmente comprimem bem porque cada página costuma ser armazenada como imagem. A redução final depende da resolução, das cores e da quantidade de páginas.
-
-### Posso reduzir PDF para 1MB?
-
-Depende do arquivo. PDFs com imagens podem chegar a tamanhos bem menores, mas nem todo documento consegue ficar abaixo de 1MB sem perda de qualidade significativa ou remoção de páginas.
-
-### Posso comprimir PDF para 10MB?
-
-Em muitos casos, sim. Use primeiro o modo Equilibrado. Se o arquivo ainda ficar acima de 10MB, tente o modo Máximo e verifique se o conteúdo continua legível.
-
-### Posso comprimir PDF protegido por senha?
-
-Sim, desde que você saiba a senha atual. A ferramenta pode remover a proteção antes da compressão, mas não quebra senhas desconhecidas.
-
-### O arquivo comprimido fica salvo onde?
-
-Depois do processamento, você baixa o PDF comprimido diretamente para o seu dispositivo. O local exato depende das configurações de download do navegador.
-
-### Funciona no iPhone e no Android?
-
-Sim. Você pode usar o Squishyfile no navegador do iPhone ou do Android, sem instalar aplicativo.
-
-### Por que meu PDF ficou quase do mesmo tamanho?
-
-Provavelmente o arquivo já estava otimizado, tinha poucas imagens ou era composto principalmente por texto e elementos vetoriais. Nesse caso, há menos espaço para reduzir sem alterar o conteúdo.
 
 ## Artigos relacionados
 
@@ -185,3 +136,4 @@ Provavelmente o arquivo já estava otimizado, tinha poucas imagens ou era compos
 - [Como comprimir PDF escaneado para enviar por e-mail ou currículo](/pt/blog/compress-scanned-pdf-for-email)
 - [Como comprimir PDF no iPhone, Android, Mac ou Windows sem apps](/pt/blog/compress-pdf-any-device)
 - [Como comprimir PDF offline e 100% seguro](/pt/blog/secure-offline-pdf-compression)
+

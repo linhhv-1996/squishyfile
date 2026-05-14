@@ -249,6 +249,10 @@
 	onDestroy(() => {
 		clearResult();
 	});
+
+	function markdownToHtml(text: string) {
+		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+	}
 </script>
 
 <svelte:head>
@@ -510,125 +514,40 @@
 			</section>
 		{/if}
 
-		<br>
-
-		<!-- <section
+		<section
 			class="faq-sec"
 			itemscope
 			itemtype="https://schema.org/FAQPage"
 		>
 			<h2>{t("faq.pdf.title")}</h2>
+
 			<div class="faq-list">
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.1.q")}</summary
-					>
-					<div
-						class="faq-a"
+				{#each Array.from({ length: 14 }, (_, i) => i + 1) as n}
+					<details
+						class="faq-item"
 						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
+						itemprop="mainEntity"
+						itemtype="https://schema.org/Question"
 					>
-						<span itemprop="text">{t("faq.pdf.1.a")}</span>
-					</div>
-				</details>
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.2.q")}</summary
-					>
-					<div
-						class="faq-a"
-						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
-					>
-						<span itemprop="text">{t("faq.pdf.2.a")}</span>
-					</div>
-				</details>
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.3.q")}</summary
-					>
-					<div
-						class="faq-a"
-						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
-					>
-						<span itemprop="text">{t("faq.pdf.3.a")}</span>
-					</div>
-				</details>
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.4.q")}</summary
-					>
-					<div
-						class="faq-a"
-						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
-					>
-						<span itemprop="text">{t("faq.pdf.4.a")}</span>
-					</div>
-				</details>
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.5.q")}</summary
-					>
-					<div
-						class="faq-a"
-						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
-					>
-						<span itemprop="text">{t("faq.pdf.5.a")}</span>
-					</div>
-				</details>
-				<details
-					class="faq-item"
-					itemscope
-					itemprop="mainEntity"
-					itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name"
-						>{t("faq.pdf.6.q")}</summary
-					>
-					<div
-						class="faq-a"
-						itemscope
-						itemprop="acceptedAnswer"
-						itemtype="https://schema.org/Answer"
-					>
-						<span itemprop="text">{t("faq.pdf.6.a")}</span>
-					</div>
-				</details>
+						<summary class="faq-q" itemprop="name">
+							{t(`faq.pdf.${n}.q`)}
+						</summary>
+
+						<div
+							class="faq-a"
+							itemscope
+							itemprop="acceptedAnswer"
+							itemtype="https://schema.org/Answer"
+						>
+							<span itemprop="text">
+								{@html markdownToHtml(t(`faq.pdf.${n}.a`))}
+							</span>
+						</div>
+					</details>
+				{/each}
 			</div>
-		</section> -->
+		</section>
+
 	</div>
 </main>
 

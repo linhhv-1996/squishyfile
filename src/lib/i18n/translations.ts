@@ -58,8 +58,8 @@ export const translations: Record<string, Record<string, string>> = {
 
 		// ── Home FAQ (brand, overview, privacy, comparison) ─────────────────────
 		'faq.home.title': 'Frequently Asked Questions',
-		'faq.home.1.q': 'What is Squishyfile and what can it do?',
-		'faq.home.1.a': 'Squishyfile is a free online tool that lets you compress videos (MP4, MOV, AVI, WebM, MKV) and compress PDF files directly in your browser — no sign-up, no installs, and no server uploads needed.',
+		'faq.home.1.q': 'Is this video compressor free?',
+		'faq.home.1.a': '',
 		'faq.home.2.q': 'Are my files safe? Do they get uploaded to a server?',
 		'faq.home.2.a': 'Your files never leave your device. Squishyfile processes everything locally using your browser\'s built-in engine. No server upload, no cloud storage, no one can see your files — not even us.',
 		'faq.home.3.q': 'Is Squishyfile really free? Are there hidden limits?',
@@ -71,35 +71,98 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.home.6.q': 'What browsers are supported?',
 		'faq.home.6.a': 'Squishyfile works in all modern browsers: Chrome, Firefox, Safari, Edge, and Brave — on desktop and mobile. No plugins or extensions required.',
 
-		// ── Video FAQ (format, quality, platform limits, 4K, mobile) ───────────
+		
+		// ── Video FAQ ─────────────────────────────────────────────────────────────
 		'faq.video.title': 'Frequently Asked Questions',
-		'faq.video.1.q': 'How do I compress a video for LINE, Discord or Telegram?',
-		'faq.video.1.a': 'Drop your video into Squishyfile, then click one of the quick-pick size tags (LINE 10 MB, Discord 8 MB, Gmail 25 MB, Telegram 50 MB…) or type your own target in MB. The compressor automatically calculates the bitrate needed to hit that size.',
-		'faq.video.2.q': 'Will compression reduce video quality?',
-		'faq.video.2.a': 'It depends on how much you compress. The "Balanced" preset keeps visually acceptable quality while cutting file size significantly. "High Quality" preserves more detail. If you set a very tight target size on a long video, some quality loss is unavoidable — that\'s true of any compressor.',
-		'faq.video.3.q': 'What video formats are supported?',
-		'faq.video.3.a': 'Squishyfile supports MP4, MOV, AVI, WebM and MKV for input. The compressed output is delivered as MP4, which is compatible with virtually all devices and platforms.',
-		'faq.video.4.q': 'Can I compress 4K videos?',
-		'faq.video.4.a': '4K compression runs entirely in your browser with no server-side limits. For stable performance we recommend keeping files under 2 GB. Large 4K files may take a couple of minutes depending on your device.',
-		'faq.video.5.q': 'Can I compress a video on my phone without installing an app?',
-		'faq.video.5.a': 'Yes. Open this page in your iPhone or Android browser — no app needed. Select your video, choose a preset or target size, and download the compressed file in seconds.',
-		'faq.video.6.q': 'Why is my compressed file the same size as the original?',
-		'faq.video.6.a': 'This can happen if the source video is already heavily compressed (e.g. a video downloaded from YouTube or TikTok). Re-compressing an already-compressed file yields little to no size reduction. In that case, try a lower quality preset or a smaller target size.',
+
+		'faq.video.1.q': 'Is this video compressor free?',
+		'faq.video.1.a': 'Yes. You can compress videos for free without creating an account or installing software.',
+
+		'faq.video.2.q': 'Does Squishyfile upload my video?',
+		'faq.video.2.a': 'No. Video compression runs inside your browser using WebAssembly and FFmpeg. Your video is processed locally on your device instead of being uploaded to a server.',
+
+		'faq.video.3.q': 'Will there be a watermark?',
+		'faq.video.3.a': 'No. The compressed video is downloaded as a clean MP4 file with no watermark added by Squishyfile.',
+
+		'faq.video.4.q': 'Can I compress MP4 files?',
+		'faq.video.4.a': 'Yes. You can compress MP4 files and download a smaller MP4 output.',
+
+		'faq.video.5.q': 'Can I compress MOV files from iPhone?',
+		'faq.video.5.a': 'Yes. You can select MOV videos recorded on iPhone and compress them into smaller MP4 files that are easier to share.',
+
+		'faq.video.6.q': 'Can I reduce video file size without losing quality?',
+		'faq.video.6.a': 'Compression always changes the file in some way, but the **Balanced** and **High** presets are designed to reduce size while keeping the video looking good for normal viewing. For many everyday videos, the difference is hard to notice on a phone or laptop screen.',
+
+		'faq.video.7.q': 'Can I compress a video to a specific size?',
+		'faq.video.7.a': 'Yes. Use the **Target File Size** option and enter the desired size in MB. The tool will try to create a compressed video close to that size while preserving as much quality as possible.',
+
+		'faq.video.8.q': 'Can I compress video for WhatsApp under 16MB?',
+		'faq.video.8.a': 'Yes. Enter **15MB** as the target size to leave a small buffer under the common WhatsApp video message limit. Very long or fast-moving videos may need trimming or stronger compression.',
+
+		'faq.video.9.q': 'Can I compress video for Gmail under 25MB?',
+		'faq.video.9.a': 'Yes. Enter **24MB** as the target size for Gmail. If you want a safer size for more email providers, use **19MB** instead.',
+
+		'faq.video.10.q': 'Can I compress video for Discord under 8MB?',
+		'faq.video.10.a': 'Yes. Enter **8MB** as the target file size. For long clips, you may need to trim the video or accept lower quality to fit under that limit.',
+
+		'faq.video.11.q': 'Does it work on mobile?',
+		'faq.video.11.a': 'Yes. You can use the compressor in Safari on iPhone and Chrome on Android. Large videos may process more smoothly on a desktop or laptop.',
+
+		'faq.video.12.q': 'Why is compression slow?',
+		'faq.video.12.a': 'Video compression is CPU-intensive. Speed depends on video length, resolution, codec, browser, and device performance. A large 4K file will take longer than a short 720p clip.',
+
+		'faq.video.13.q': 'What happens if I close the tab?',
+		'faq.video.13.a': 'If you close the tab while compression is running, the process stops. Keep the tab open until the compressed video is ready to download.',
+
+		'faq.video.14.q': 'Where is the compressed video saved?',
+		'faq.video.14.a': 'After compression finishes, click **Download**. The file will be saved to your browser\'s default download location, which depends on your device and browser settings.',
+
 
 		// ── PDF FAQ (size reduction, password, scanned, email) ──────────────────
 		'faq.pdf.title': 'Frequently Asked Questions',
-		'faq.pdf.1.q': 'How much can a PDF be compressed?',
-		'faq.pdf.1.a': 'It depends on the content. PDFs with many high-resolution images typically shrink by 40–70%. Text-heavy PDFs may only see a 10–20% reduction since text is already compact. Scanned document PDFs with embedded images usually compress well.',
-		'faq.pdf.2.q': 'Can I remove the password from a PDF?',
-		'faq.pdf.2.a': 'Yes. Check the "Remove password (Optional)" box, type in the current password, and click Compress PDF. The downloaded file will have no password protection. This only works if you already know the correct password.',
-		'faq.pdf.3.q': 'Is there a file size limit for PDF compression?',
-		'faq.pdf.3.a': 'There is no server-enforced limit since everything runs in your browser. For smooth performance we recommend files under 200 MB. Very large PDFs (300 MB+) may take longer depending on your device.',
-		'faq.pdf.4.q': 'Will the compressed PDF look different or lose text quality?',
-		'faq.pdf.4.a': 'Text and vector graphics are not degraded during compression. Only embedded images may see a slight quality reduction. The resulting PDF remains fully selectable and searchable.',
-		'faq.pdf.5.q': 'Is it safe to compress confidential PDFs here?',
-		'faq.pdf.5.a': 'Yes. Your PDF never leaves your device. Squishyfile processes everything locally in your browser — no server upload, no cloud storage. Your document is cleared from memory as soon as you close or refresh the page.',
-		'faq.pdf.6.q': 'Can I compress a PDF to send as an email attachment?',
-		'faq.pdf.6.a': 'Absolutely. Most email providers cap attachments at 10–25 MB. Drop your PDF into Squishyfile, compress it, and download the smaller version ready to attach — all in under a minute.',
+
+		'faq.pdf.1.q': 'Is this PDF compressor free?',
+		'faq.pdf.1.a': 'Yes. Squishyfile\'s PDF compression tool is free to use and does not require an account.',
+
+		'faq.pdf.2.q': 'Do I need to install software?',
+		'faq.pdf.2.a': 'No. The tool runs in your browser. You do not need Adobe Acrobat, a desktop app, or a mobile app.',
+
+		'faq.pdf.3.q': 'Is my PDF uploaded anywhere?',
+		'faq.pdf.3.a': 'No. Compression happens inside your browser using WebAssembly. Your PDF is not uploaded to a server for processing.',
+
+		'faq.pdf.4.q': 'How much smaller can my PDF become?',
+		'faq.pdf.4.a': 'It depends on the content. Scanned documents and image-heavy PDFs can often shrink a lot. Text-only PDFs or already-optimized files may only become slightly smaller.',
+
+		'faq.pdf.5.q': 'Will compressing a PDF reduce quality?',
+		'faq.pdf.5.a': 'PDF compression can optimize image data, so the output is not always identical to the original. In Balanced mode, the goal is to keep text and images readable while reducing file size. Maximum mode may reduce image sharpness more noticeably, but it can create a smaller file.',
+
+		'faq.pdf.6.q': 'Can I compress a password-protected PDF?',
+		'faq.pdf.6.a': 'Yes, if you know the current password. Enable the password removal option, enter the password, and the tool can remove protection before compressing the PDF.',
+
+		'faq.pdf.7.q': 'Can I compress a PDF for email?',
+		'faq.pdf.7.a': 'Yes. PDF compression is useful when a file is too large to attach to an email or when you want the attachment to upload and send faster. Start with Balanced mode, then try Maximum mode if the file is still too large.',
+
+		'faq.pdf.8.q': 'Can I compress a PDF to 1 MB?',
+		'faq.pdf.8.a': 'Sometimes. It depends on the number of pages, images, scan quality, and whether the PDF has already been optimized. Scanned documents usually compress better than photo-heavy portfolios or files that were already compressed.',
+
+		'faq.pdf.9.q': 'Does it work on iPhone or Android?',
+		'faq.pdf.9.a': 'Yes. Use a modern mobile browser, select the PDF from your device, compress it, and download the result. No app installation is required.',
+
+		'faq.pdf.10.q': 'Where is the compressed PDF saved?',
+		'faq.pdf.10.a': 'After processing, click Download. Your browser will save the compressed PDF to your default download location, such as Downloads, Files, or another folder chosen by your device.',
+
+		'faq.pdf.11.q': 'What types of PDFs compress best?',
+		'faq.pdf.11.a': 'PDFs with scanned pages, photos, screenshots, presentation slides, charts, or other large embedded images usually compress best because they contain image data that can often be optimized.',
+
+		'faq.pdf.12.q': 'Why did my PDF file size not decrease much?',
+		'faq.pdf.12.a': 'This can happen when the PDF was already compressed, contains mostly text or vector graphics, has very few images, or includes fonts, forms, or metadata that cannot be reduced much.',
+
+		'faq.pdf.13.q': 'Which compression mode should I choose?',
+		'faq.pdf.13.a': 'Balanced mode is best for most PDFs because it reduces file size while keeping text and images easy to read. Maximum mode is better when you need the smallest possible file size and can accept lower image sharpness.',
+
+		'faq.pdf.14.q': 'Can I use this PDF compressor on Mac or Windows?',
+		'faq.pdf.14.a': 'Yes. Squishyfile works in modern browsers on Mac, Windows, Linux, iPhone, Android, and other common devices without installing dedicated software.',
+
 
 		'tab.compress': 'Compress Video',
 		'tab.pdf': 'Compress PDF',
@@ -423,33 +486,97 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.home.6.q': '対応ブラウザを教えてください。',
 		'faq.home.6.a': 'Chrome・Firefox・Safari・Edge・Braveなど主要ブラウザすべてに対応。パソコンでもスマホでも動作します。プラグイン不要です。',
 
+
 		'faq.video.title': 'よくある質問',
-		'faq.video.1.q': 'LINEで送れない動画のサイズを小さくするには？',
-		'faq.video.1.a': '動画をドロップして「LINE 10MB」タグをクリックするだけです。Squishyfileが自動的に最適なビットレートを計算して指定サイズに圧縮します。Discord・Gmail・Telegramのサイズタグも用意しています。',
-		'faq.video.2.q': '圧縮すると画質は落ちますか？',
-		'faq.video.2.a': '「バランス」プリセットで圧縮すれば、見た目の劣化を最小限に抑えながらファイルサイズを大幅に削減できます。非常に厳しいサイズ目標を設定すると画質低下は避けられませんが、これはどの圧縮ツールでも同様です。',
-		'faq.video.3.q': '対応している動画フォーマットを教えてください。',
-		'faq.video.3.a': 'MP4・MOV・AVI・WebM・MKVの入力に対応しています。出力はほぼすべてのデバイスで再生できるMP4形式です。',
-		'faq.video.4.q': '4K動画の圧縮にも対応していますか？',
-		'faq.video.4.a': '対応しています。4K動画の処理はすべてブラウザ内で行われ、サーバー側の制限はありません。安定した動作のため2GB未満のファイルを推奨します。',
-		'faq.video.5.q': 'アプリなしでスマホから動画を圧縮できますか？',
-		'faq.video.5.a': 'できます。iPhoneでもAndroidでもブラウザでこのページを開くだけ。アプリ不要・会員登録不要で、その場で動画を圧縮してダウンロードできます。',
-		'faq.video.6.q': '圧縮後のファイルがほとんど小さくなりません。なぜですか？',
-		'faq.video.6.a': 'YouTubeやTikTokからダウンロードした動画など、すでに高圧縮されたファイルを再圧縮しても効果は限られます。その場合はより低画質のプリセットか、より小さい目標サイズを試してみてください。',
+
+		'faq.video.1.q': '無料で使えますか？',
+		'faq.video.1.a': 'はい。Squishyfileの動画圧縮ツールは無料で利用できます。アカウント登録やソフトのインストールも不要です。',
+
+		'faq.video.2.q': '動画はサーバーにアップロードされますか？',
+		'faq.video.2.a': 'いいえ。動画はブラウザ内で処理され、サーバーにアップロードされません。圧縮処理はお使いの端末上で行われます。',
+
+		'faq.video.3.q': 'MP4以外の動画も圧縮できますか？',
+		'faq.video.3.a': 'はい。MP4、MOV、MKV、AVI、WebMなど、主要な動画形式に対応しています。出力は扱いやすいMP4形式になります。',
+
+		'faq.video.4.q': 'iPhoneのMOV動画も圧縮できますか？',
+		'faq.video.4.a': 'はい。iPhoneで撮影したMOV動画も圧縮できます。圧縮後はMP4として保存できるため、LINE、Discord、メール、SNSで共有しやすくなります。',
+
+		'faq.video.5.q': 'LINEで送れるサイズにできますか？',
+		'faq.video.5.a': 'はい。目標ファイルサイズを指定することで、LINEで送りやすいサイズに調整できます。動画の長さや内容によって結果は変わるため、必要に応じて再圧縮してください。',
+
+		'faq.video.6.q': 'Discord用に8MB以下にできますか？',
+		'faq.video.6.a': '動画の長さや内容によりますが、ターゲットファイルサイズを8MBに指定して圧縮できます。長い動画や動きの激しい動画では、画質を大きく下げる必要がある場合があります。',
+
+		'faq.video.7.q': 'Gmailやメール添付用に25MB以下にできますか？',
+		'faq.video.7.a': 'はい。メール添付用に25MB以下を目標に圧縮できます。安全に送信したい場合は、25MBぴったりではなく、少し小さめのサイズを指定するのがおすすめです。',
+
+		'faq.video.8.q': '圧縮すると画質は悪くなりますか？',
+		'faq.video.8.a': '圧縮の仕組み上、元ファイルと完全に同じ品質ではありません。ただし、「バランス」や「高画質」を選ぶことで、見た目をできるだけ保ちながら容量を小さくできます。',
+
+		'faq.video.9.q': '長い動画や4K動画も圧縮できますか？',
+		'faq.video.9.a': 'はい。ただし、処理できるかどうかは端末の性能、メモリ、ブラウザ環境によって変わります。大きな動画では処理に時間がかかるため、PCでの利用がおすすめです。',
+
+		'faq.video.10.q': 'スマホでも動画を圧縮できますか？',
+		'faq.video.10.a': 'はい。iPhoneやAndroidのブラウザからも利用できます。専用アプリをインストールする必要はありません。',
+
+		'faq.video.11.q': '圧縮中にタブを閉じるとどうなりますか？',
+		'faq.video.11.a': '圧縮中にタブを閉じると、処理が中断されます。圧縮が完了するまで、できるだけタブを開いたままにしてください。',
+
+		'faq.video.12.q': '圧縮後の動画はどこに保存されますか？',
+		'faq.video.12.a': '処理完了後に「ダウンロード」ボタンから、お使いの端末に保存できます。保存先はブラウザや端末の設定によって異なります。',
+
+		'faq.video.13.q': 'MacやWindowsでも使えますか？',
+		'faq.video.13.a': 'はい。Squishyfileはブラウザ上で動作するため、Mac、Windows、iPhone、Androidなど主要な環境で利用できます。Chrome、Edge、Safariなどのブラウザから動画を圧縮できます。',
+
+		'faq.video.14.q': '圧縮後のファイルがほとんど小さくなりません。なぜですか？',
+		'faq.video.14.a': '元の動画がすでに強く圧縮されている場合や、動きが激しい動画、ノイズが多い動画、高解像度・高フレームレートの動画では、容量があまり減らないことがあります。その場合は「低画質（最小サイズ）」や目標ファイルサイズ指定を試してください。',
+
 
 		'faq.pdf.title': 'よくある質問',
-		'faq.pdf.1.q': 'PDFはどのくらい圧縮できますか？',
-		'faq.pdf.1.a': '内容によって異なります。高解像度画像を多く含むPDFは40〜70%ほど削減できます。テキスト主体のPDFは10〜20%程度です。スキャンした文書PDFは画像が多いため圧縮効果が高い傾向にあります。',
-		'faq.pdf.2.q': 'PDFのパスワードを削除できますか？',
-		'faq.pdf.2.a': '「パスワードを削除（任意）」にチェックを入れ、現在のパスワードを入力して「PDFを圧縮」をクリックするだけです。ダウンロードされたファイルはパスワードなしで開けます。',
-		'faq.pdf.3.q': 'PDF圧縮のファイルサイズ制限はありますか？',
-		'faq.pdf.3.a': 'サーバー制限はありません。快適な動作のため200MB未満を推奨します。非常に大きなPDF（300MB超）は端末スペックによって処理に時間がかかる場合があります。',
-		'faq.pdf.4.q': '圧縮後にテキストの品質は下がりますか？',
-		'faq.pdf.4.a': 'テキストやベクターグラフィックの品質は低下しません。埋め込み画像のみ若干の品質低下が発生する場合があります。圧縮後もテキストは選択・検索可能です。',
-		'faq.pdf.5.q': '機密PDFを圧縮しても安全ですか？',
-		'faq.pdf.5.a': '安全です。PDFがデバイスの外に出ることはありません。ページを閉じるか更新するとメモリからもファイルが削除されます。',
-		'faq.pdf.6.q': 'メール添付用にPDFを圧縮したいのですが。',
-		'faq.pdf.6.a': 'ぴったりです。多くのメールサービスの添付ファイル上限は10〜25MBです。PDFをドロップして圧縮し、そのままダウンロードしてメールに添付できます。',
+
+		'faq.pdf.1.q': '無料で使えますか？',
+		'faq.pdf.1.a': 'はい。SquishyfileのPDF圧縮ツールは無料で利用できます。アカウント登録も不要です。',
+
+		'faq.pdf.2.q': 'PDFはどのくらい圧縮できますか？',
+		'faq.pdf.2.a': '圧縮率はPDFの内容によって異なります。画像やスキャンデータが多いPDFは容量を大きく減らせる場合があります。一方で、すでに最適化済みのPDFやテキスト中心のPDFでは、サイズがあまり変わらないこともあります。',
+
+		'faq.pdf.3.q': 'PDFはサーバーに送信されますか？',
+		'faq.pdf.3.a': 'いいえ。PDFはブラウザ内で処理され、サーバーにアップロードされません。',
+
+		'faq.pdf.4.q': 'パスワード付きPDFも圧縮できますか？',
+		'faq.pdf.4.a': '現在のパスワードが分かっている場合は、パスワードを入力して保護を解除してから圧縮できます。',
+
+		'faq.pdf.5.q': 'PDF圧縮のファイルサイズ制限はありますか？',
+		'faq.pdf.5.a': 'Squishyfileはブラウザ内で処理を行うため、処理できるファイルサイズはお使いの端末のメモリやブラウザ環境によって変わります。非常に大きなPDFでは、処理に時間がかかったり、ブラウザが重くなったりする場合があります。',
+
+		'faq.pdf.6.q': '圧縮すると画質は悪くなりますか？',
+		'faq.pdf.6.a': '圧縮の仕組み上、画像データは最適化されるため、元ファイルと完全に同じ品質ではありません。ただし、「バランス」モードでは、文字や画像の見やすさを保ちながらファイルサイズを小さくすることを目指します。',
+
+		'faq.pdf.7.q': 'メール添付用にPDFを圧縮できますか？',
+		'faq.pdf.7.a': 'はい。メールに添付しやすいサイズまでPDFの容量を小さくしたい場合に利用できます。まずは「バランス」モードで圧縮し、まだ容量が大きい場合は「最大圧縮」を試してください。',
+
+		'faq.pdf.8.q': 'PDFを2MB以下にできますか？',
+		'faq.pdf.8.a': 'PDFの内容によります。画像が多いPDFやスキャンPDFは大きく圧縮できることがありますが、すでに最適化済みのPDFでは2MB以下にならない場合もあります。',
+
+		'faq.pdf.9.q': 'スマホでもPDFを圧縮できますか？',
+		'faq.pdf.9.a': 'はい。iPhoneやAndroidのブラウザからも利用できます。専用アプリをインストールする必要はありません。',
+
+		'faq.pdf.10.q': '圧縮後のPDFはどこに保存されますか？',
+		'faq.pdf.10.a': '処理完了後に「ダウンロード」ボタンから、お使いの端末に保存できます。',
+
+		'faq.pdf.11.q': 'どんなPDFに向いていますか？',
+		'faq.pdf.11.a': 'メールに添付したいPDF、Webフォームに提出する履歴書や申請書、スキャンした書類、画像や写真が多いPDF、プレゼン資料をPDF化したファイルなどに向いています。',
+
+		'faq.pdf.12.q': 'PDFの容量があまり減らないのはなぜですか？',
+		'faq.pdf.12.a': '元のPDFがすでに最適化されている、画像が少ない、フォントやベクターデータが容量の大半を占めている場合は、圧縮してもサイズがあまり変わらないことがあります。',
+
+		'faq.pdf.13.q': 'どの圧縮モードを選べばよいですか？',
+		'faq.pdf.13.a': '通常は「バランス」モードがおすすめです。文字や画像の見やすさを保ちながら容量を減らせます。できるだけ小さいPDFにしたい場合は「最大圧縮」を選んでください。',
+
+		'faq.pdf.14.q': 'MacやWindowsでも使えますか？',
+		'faq.pdf.14.a': 'はい。Squishyfileはブラウザ上で動作するため、Mac、Windows、iPhone、Androidなど主要な環境で利用できます。専用ソフトのインストールは不要です。',
+		
+		
 		'tab.compress': '動画を圧縮',
 		'tab.pdf': 'PDFを圧縮',
 		'drop.video': 'ここに動画をドロップ',
@@ -946,6 +1073,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.home.6.q': '支援哪些瀏覽器？',
 		'faq.home.6.a': '支援 Chrome、Firefox、Safari、Edge、Brave 等所有主流瀏覽器，桌機和手機皆可。無需任何外掛。',
 
+
 		'faq.video.title': '常見問題',
 		'faq.video.1.q': '怎麼壓縮影片傳 LINE / WhatsApp / Discord？',
 		'faq.video.1.a': '把影片拖進來，點一下大小標籤（LINE 10MB、Discord 8MB、Gmail 25MB 等），或自行輸入目標 MB 數。Squishyfile 自動計算最佳壓縮比例。',
@@ -956,23 +1084,72 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.video.4.q': '4K 影片也可以壓縮嗎？',
 		'faq.video.4.a': '可以。4K 影片壓縮完全在瀏覽器內處理，沒有伺服器端限制。為確保穩定，建議單檔在 2GB 以下。',
 		'faq.video.5.q': '可以在手機上不裝 App 就壓縮影片嗎？',
-		'faq.video.5.a': '可以。iPhone 或 Android 瀏覽器直接開啟本頁，唔需安裝任何 App，選擇影片後即可下載壓縮結果。',
+		'faq.video.5.a': '可以。iPhone 或 Android 瀏覽器直接開啟本頁，不需安裝任何 App，選擇影片後即可下載壓縮結果。',
 		'faq.video.6.q': '為什麼壓縮後檔案大小幾乎沒變？',
 		'faq.video.6.a': '從 YouTube 或 TikTok 下載的影片通常已高度壓縮，再次壓縮效果有限。請嘗試更低品質的預設或更小的目標大小。',
+		'faq.video.7.q': 'Squishyfile 可以免費使用嗎？',
+		'faq.video.7.a': '可以。Squishyfile 的影片壓縮工具可以免費使用，不需要註冊帳號，也不需要安裝軟體。',
+		'faq.video.8.q': '影片會上傳到伺服器嗎？',
+		'faq.video.8.a': '不會。影片會在您的瀏覽器中透過 WebAssembly 與 FFmpeg 進行壓縮，檔案不會上傳到伺服器。',
+		'faq.video.9.q': '可以壓縮 iPhone 的 MOV 影片嗎？',
+		'faq.video.9.a': '可以。iPhone 拍攝的 MOV 影片可以在瀏覽器中壓縮，並輸出成更容易傳送、上傳與播放的 MP4。',
+		'faq.video.10.q': '可以把影片壓到 LINE 可以傳送的大小嗎？',
+		'faq.video.10.a': '可以嘗試透過目標檔案大小功能，把影片壓縮到較適合 LINE 傳送的大小。實際結果會受到影片長度、畫面複雜度與原始畫質影響。',
+		'faq.video.11.q': '可以把 Discord 影片壓到 8 MB 以下嗎？',
+		'faq.video.11.a': '可以設定目標檔案大小為 8 MB。不過，如果影片很長或畫面動作很多，可能需要大幅降低畫質才能接近這個大小。',
+		'faq.video.12.q': 'Gmail 或電子郵件附件可以壓到 25 MB 以下嗎？',
+		'faq.video.12.a': '可以。您可以將目標檔案大小設定為 25 MB 以下。為了提高傳送成功率，建議設定成比平台上限略低一些。',
+		'faq.video.13.q': '壓縮中關閉分頁會怎樣？',
+		'faq.video.13.a': '如果在壓縮過程中關閉分頁，處理會中斷。請等到壓縮完成並下載檔案後，再關閉頁面。',
+		'faq.video.14.q': '壓縮後的影片會存在哪裡？',
+		'faq.video.14.a': '壓縮完成後，您可以點擊「下載」將影片儲存到自己的裝置。實際存放位置會依瀏覽器與裝置設定而不同。',
+
 
 		'faq.pdf.title': '常見問題',
-		'faq.pdf.1.q': 'PDF 可以壓縮多少？',
-		'faq.pdf.1.a': '視內容而定。含大量高解析度圖片的 PDF 通常可縮小 40〜70%；以文字為主的 PDF 約 10〜20%。掃描文件 PDF 因含圖像，壓縮效果通常較好。',
-		'faq.pdf.2.q': '可以移除 PDF 的密碼嗎？',
-		'faq.pdf.2.a': '可以。勾選「移除密碼（選填）」，輸入目前的密碼後點擊「壓縮 PDF」，下載的檔案即不含密碼保護。',
-		'faq.pdf.3.q': 'PDF 壓縮有檔案大小限制嗎？',
-		'faq.pdf.3.a': '無伺服器限制。為流暢操作建議 200MB 以下。超大 PDF（300MB 以上）依裝置效能可能需要較長處理時間。',
-		'faq.pdf.4.q': '壓縮後文字品質會下降嗎？',
-		'faq.pdf.4.a': '文字和向量圖形不受壓縮影響。嵌入圖片可能有輕微品質降低。壓縮後 PDF 仍可完整選取和搜尋文字。',
-		'faq.pdf.5.q': '壓縮機密 PDF 在這裡安全嗎？',
-		'faq.pdf.5.a': '安全。您的 PDF 不會離開裝置。關閉或重新整理頁面後，檔案即從記憶體中清除。',
-		'faq.pdf.6.q': '我想把 PDF 壓縮後用於電郵附件。',
-		'faq.pdf.6.a': '非常適合。多數電郵服務附件上限為 10〜25MB。把 PDF 拖進來壓縮後直接下載，不到一分鐘就能完成。',
+
+		'faq.pdf.1.q': '可以免費使用嗎？',
+		'faq.pdf.1.a': '可以。Squishyfile 的 PDF 壓縮工具可以免費使用，不需要註冊帳號，也不需要安裝軟體。',
+
+		'faq.pdf.2.q': 'PDF 可以壓縮多少？',
+		'faq.pdf.2.a': '壓縮率取決於 PDF 內容。圖片、照片、掃描頁面較多的 PDF 通常能減少更多容量；已經最佳化過或以文字為主的 PDF，大小可能不會有明顯變化。',
+
+		'faq.pdf.3.q': 'PDF 會傳送到伺服器嗎？',
+		'faq.pdf.3.a': '不會。PDF 會在瀏覽器內處理，不會上傳到伺服器。',
+
+		'faq.pdf.4.q': '可以壓縮有密碼的 PDF 嗎？',
+		'faq.pdf.4.a': '如果您知道目前密碼，可以輸入密碼解除保護後再壓縮。請只處理您有權限修改的文件。',
+
+		'faq.pdf.5.q': 'PDF 壓縮有檔案大小限制嗎？',
+		'faq.pdf.5.a': 'Squishyfile 在瀏覽器內處理 PDF，因此實際可處理的檔案大小會受到裝置記憶體、瀏覽器環境與 PDF 複雜度影響。非常大的 PDF 可能需要較長時間，或讓瀏覽器變慢。',
+
+		'faq.pdf.6.q': '壓縮後畫質會變差嗎？',
+		'faq.pdf.6.a': '壓縮會對圖片資料進行最佳化，因此不一定能與原始檔案完全相同。不過，「平衡」模式會盡量保留文字與圖片的清晰度，同時縮小檔案大小。如果您處理的是掃描文件、簽名或設計圖，建議壓縮後放大檢查重要區域。',
+
+		'faq.pdf.7.q': '可以壓縮掃描 PDF 嗎？',
+		'faq.pdf.7.a': '可以。掃描 PDF 通常包含大量圖片，因此壓縮效果可能比較明顯。',
+
+		'faq.pdf.8.q': '可以用來壓縮 Email 附件嗎？',
+		'faq.pdf.8.a': '可以。如果 PDF 太大無法寄出，可以先使用「平衡」模式壓縮；如果仍然超過附件限制，再使用「最大壓縮」。',
+
+		'faq.pdf.9.q': '可以把 PDF 壓縮到 10MB 以下嗎？',
+		'faq.pdf.9.a': '要看 PDF 的原始內容。圖片多、掃描頁面多的 PDF 通常比較容易大幅壓縮；如果檔案已經最佳化過，就不一定能壓到指定大小。',
+
+		'faq.pdf.10.q': '手機也可以壓縮 PDF 嗎？',
+		'faq.pdf.10.a': '可以。iPhone 和 Android 的瀏覽器都可以使用，不需要安裝 App。不過，大型 PDF 會消耗較多記憶體，建議用電腦處理更穩定。',
+
+		'faq.pdf.11.q': '壓縮後的 PDF 會存在哪裡？',
+		'faq.pdf.11.a': '處理完成後，您可以點擊「下載」按鈕，將壓縮後的 PDF 儲存到目前使用的裝置。',
+
+		'faq.pdf.12.q': '適合壓縮哪些 PDF？',
+		'faq.pdf.12.a': 'Squishyfile 適合壓縮 Email 附件、履歷、申請書、證明文件、掃描合約、發票、證件、含大量圖片的 PDF，以及從 PowerPoint、Keynote 或設計稿匯出的簡報 PDF。',
+
+		'faq.pdf.13.q': 'PDF 容量沒有明顯變小怎麼辦？',
+		'faq.pdf.13.a': '可以先刪除不需要的頁面、降低掃描解析度，或在圖片很多時改用「最大壓縮」。重要文件提交前，請確認壓縮後的文字與圖片仍可閱讀。',
+
+		'faq.pdf.14.q': 'Mac、Windows、手機都可以使用嗎？',
+		'faq.pdf.14.a': '可以。Squishyfile 在瀏覽器中運作，因此 Mac、Windows、iPhone、Android、Chromebook 等主要環境都可以使用，不需要安裝專用軟體。',
+		
+		
 		'tab.compress': '壓縮影片',
 		'tab.pdf': '壓縮 PDF',
 		'drop.video': '將影片拖放至此處',
@@ -1650,32 +1827,95 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.home.6.a': 'Chrome, Firefox, Safari, Edge e Brave — no desktop e no celular. Sem necessidade de plugins.',
 
 		'faq.video.title': 'Perguntas frequentes',
-		'faq.video.1.q': 'Como comprimir um vídeo para WhatsApp, Discord ou Gmail?',
-		'faq.video.1.a': 'Arraste o vídeo e clique em uma tag de tamanho (Discord 8 MB, Gmail 25 MB…) ou digite seu próprio tamanho alvo em MB. O Squishyfile calcula automaticamente o bitrate ideal.',
-		'faq.video.2.q': 'A qualidade do vídeo cai ao comprimir?',
-		'faq.video.2.a': 'O preset "Equilibrado" reduz significativamente o tamanho com qualidade visual aceitável. Para metas muito pequenas, alguma perda é inevitável — isso vale para qualquer compressor.',
-		'faq.video.3.q': 'Quais formatos de vídeo são suportados?',
-		'faq.video.3.a': 'Squishyfile aceita MP4, MOV, AVI, WebM e MKV como entrada. A saída é em MP4, compatível com praticamente todos os dispositivos.',
-		'faq.video.4.q': 'Consigo comprimir vídeos em 4K?',
-		'faq.video.4.a': 'Sim. A compressão 4K roda inteiramente no navegador sem limites de servidor. Para desempenho estável, recomendamos arquivos abaixo de 2 GB.',
-		'faq.video.5.q': 'Posso comprimir vídeo no celular sem instalar nada?',
-		'faq.video.5.a': 'Sim. Abra esta página no navegador do iPhone ou Android — sem app, sem cadastro. Selecione o vídeo e baixe o resultado comprimido.',
-		'faq.video.6.q': 'Por que o arquivo comprimido ficou quase do mesmo tamanho?',
-		'faq.video.6.a': 'Vídeos baixados do YouTube ou TikTok já estão muito comprimidos — recomprimir dá pouco resultado. Tente um preset de qualidade menor ou um tamanho alvo menor.',
+
+		'faq.video.1.q': 'O compressor de vídeo é gratuito?',
+		'faq.video.1.a': 'Sim. O Squishyfile permite comprimir vídeo online gratuitamente, sem criar conta e sem instalar software.',
+
+		'faq.video.2.q': 'Meu vídeo é enviado para algum servidor?',
+		'faq.video.2.a': 'Não. A compressão é feita no navegador com WebAssembly e FFmpeg. O arquivo é processado no seu próprio dispositivo e não precisa ser enviado para servidores externos.',
+
+		'faq.video.3.q': 'Posso comprimir MP4 online?',
+		'faq.video.3.a': 'Sim. Você pode comprimir arquivos MP4 diretamente no navegador. O resultado também é salvo em MP4 para facilitar o envio, a reprodução e o compartilhamento.',
+
+		'faq.video.4.q': 'Posso comprimir MOV do iPhone?',
+		'faq.video.4.a': 'Sim. Vídeos MOV gravados no iPhone podem ser selecionados e comprimidos. O arquivo final em MP4 costuma ser mais fácil de enviar por WhatsApp, Discord, Gmail e redes sociais.',
+
+		'faq.video.5.q': 'MP4, MOV, MKV, AVI e WebM são suportados?',
+		'faq.video.5.a': 'Sim. A ferramenta aceita os principais formatos de vídeo, incluindo MP4, MOV, MKV, AVI e WebM. A compatibilidade pode variar conforme o navegador e o codec original do arquivo.',
+
+		'faq.video.6.q': 'Comprimir vídeo reduz a qualidade?',
+		'faq.video.6.a': 'Pode reduzir, porque diminuir bastante o tamanho normalmente exige descartar dados. Porém, os modos "Equilibrado" e "Alto" buscam preservar a aparência visual sempre que possível. Quanto menor for o tamanho alvo, maior tende a ser a perda de qualidade.',
+
+		'faq.video.7.q': 'Como deixar um vídeo abaixo de 25 MB para Gmail?',
+		'faq.video.7.a': 'Use o modo de tamanho alvo e defina um valor um pouco abaixo de 25 MB, como 23 MB ou 24 MB. Assim você mantém margem para evitar erro no anexo.',
+
+		'faq.video.8.q': 'Como deixar um vídeo abaixo de 8 MB para Discord?',
+		'faq.video.8.a': 'Use o tamanho alvo de 8 MB ou um pouco menos. Se o vídeo for longo ou tiver muito movimento, talvez seja necessário aceitar uma qualidade menor ou cortar o vídeo antes de comprimir.',
+
+		'faq.video.9.q': 'Dá para comprimir vídeo para WhatsApp?',
+		'faq.video.9.a': 'Sim. Para envio comum, uma meta próxima de 15 MB costuma ser útil. Se o vídeo for longo, talvez seja melhor cortar partes desnecessárias ou aceitar uma compressão mais forte.',
+
+		'faq.video.10.q': 'Posso comprimir vídeos grandes ou 4K?',
+		'faq.video.10.a': 'Sim, mas o resultado depende do dispositivo, da memória disponível e do navegador. Para vídeos muito grandes, longos ou em 4K, um computador costuma ser mais estável que um celular.',
+
+		'faq.video.11.q': 'Por que o tamanho final não ficou exatamente igual ao valor escolhido?',
+		'faq.video.11.a': 'O tamanho alvo é uma estimativa. A variação pode acontecer por causa do codec, do áudio, dos metadados e da complexidade do vídeo. Normalmente, é melhor escolher uma meta um pouco abaixo do limite real da plataforma.',
+
+		'faq.video.12.q': 'O que fazer se o navegador travar?',
+		'faq.video.12.a': 'Tente fechar outros aplicativos, usar um vídeo menor, reduzir a resolução ou processar o arquivo em um computador. Em celulares antigos, vídeos muito pesados podem ultrapassar a memória disponível para o navegador.',
+
+		'faq.video.13.q': 'Posso usar sem instalar aplicativo?',
+		'faq.video.13.a': 'Sim. A ferramenta funciona no navegador. Você não precisa instalar app, extensão ou programa de edição de vídeo.',
+
+		'faq.video.14.q': 'Onde o vídeo comprimido é salvo?',
+		'faq.video.14.a': 'Depois da compressão, clique em "Baixar". O arquivo será salvo na pasta de downloads ou no local definido pelo navegador e pelo sistema do seu dispositivo.',
+
 
 		'faq.pdf.title': 'Perguntas frequentes',
-		'faq.pdf.1.q': 'Quanto um PDF pode ser comprimido?',
-		'faq.pdf.1.a': 'Depende do conteúdo. PDFs com muitas imagens em alta resolução podem reduzir 40–70%. PDFs predominantemente de texto, apenas 10–20%. Documentos digitalizados costumam comprimir bem.',
-		'faq.pdf.2.q': 'Posso remover a senha de um PDF?',
-		'faq.pdf.2.a': 'Sim. Marque "Remover senha (Opcional)", insira a senha atual e clique em Comprimir PDF. O arquivo baixado não terá proteção por senha.',
-		'faq.pdf.3.q': 'Há limite de tamanho para comprimir PDFs?',
-		'faq.pdf.3.a': 'Sem limite de servidor. Para desempenho fluido, recomendamos arquivos abaixo de 200 MB.',
-		'faq.pdf.4.q': 'O texto do PDF vai piorar após a compressão?',
-		'faq.pdf.4.a': 'Texto e gráficos vetoriais não são degradados. Apenas imagens incorporadas podem perder um pouco de qualidade. O texto continua selecionável e pesquisável.',
-		'faq.pdf.5.q': 'É seguro comprimir PDFs confidenciais aqui?',
-		'faq.pdf.5.a': 'Sim. Seu PDF não sai do dispositivo. Ao fechar ou atualizar a página, o arquivo é apagado da memória.',
-		'faq.pdf.6.q': 'Quero comprimir um PDF para enviar como anexo de email.',
-		'faq.pdf.6.a': 'Caso de uso perfeito. A maioria dos serviços de email limita anexos a 10–25 MB. Arraste o PDF, comprima e baixe pronto para anexar — em menos de um minuto.',
+
+		'faq.pdf.1.q': 'O compressor de PDF é gratuito?',
+		'faq.pdf.1.a': 'Sim. O Squishyfile pode ser usado gratuitamente para comprimir PDF no navegador. Não é necessário criar conta para reduzir o tamanho do arquivo.',
+
+		'faq.pdf.2.q': 'Preciso instalar algum programa?',
+		'faq.pdf.2.a': 'Não. A ferramenta funciona diretamente no navegador. Você não precisa instalar software, aplicativo, plugin ou extensão.',
+
+		'faq.pdf.3.q': 'Meu PDF é enviado para a nuvem?',
+		'faq.pdf.3.a': 'Não. O processamento acontece localmente no seu dispositivo usando WebAssembly. O arquivo não é enviado para servidores externos para ser comprimido.',
+
+		'faq.pdf.4.q': 'Quanto um PDF pode ser comprimido?',
+		'faq.pdf.4.a': 'A redução depende do conteúdo do arquivo. PDFs escaneados, documentos com fotos e apresentações com imagens costumam reduzir mais. PDFs de texto puro ou já otimizados podem reduzir pouco.',
+
+		'faq.pdf.5.q': 'Dá para comprimir PDF sem perder qualidade?',
+		'faq.pdf.5.a': 'É possível reduzir o tamanho mantendo boa legibilidade, especialmente usando o modo Equilibrado. Porém, quando imagens são otimizadas, o arquivo final pode não ser idêntico ao original. Sempre confira o PDF comprimido antes de enviar.',
+
+		'faq.pdf.6.q': 'Posso comprimir PDF escaneado?',
+		'faq.pdf.6.a': 'Sim. PDFs escaneados geralmente comprimem bem porque cada página costuma ser armazenada como imagem. A redução final depende da resolução, das cores e da quantidade de páginas.',
+
+		'faq.pdf.7.q': 'Posso reduzir PDF para 1MB?',
+		'faq.pdf.7.a': 'Depende do arquivo. PDFs com imagens podem chegar a tamanhos bem menores, mas nem todo documento consegue ficar abaixo de 1MB sem perda de qualidade significativa ou remoção de páginas.',
+
+		'faq.pdf.8.q': 'Posso comprimir PDF para 10MB?',
+		'faq.pdf.8.a': 'Em muitos casos, sim. Use primeiro o modo Equilibrado. Se o arquivo ainda ficar acima de 10MB, tente o modo Máximo e verifique se o conteúdo continua legível.',
+
+		'faq.pdf.9.q': 'Posso comprimir PDF protegido por senha?',
+		'faq.pdf.9.a': 'Sim, desde que você saiba a senha atual. A ferramenta pode remover a proteção antes da compressão, mas não quebra senhas desconhecidas.',
+
+		'faq.pdf.10.q': 'O arquivo comprimido fica salvo onde?',
+		'faq.pdf.10.a': 'Depois do processamento, você baixa o PDF comprimido diretamente para o seu dispositivo. O local exato depende das configurações de download do navegador.',
+
+		'faq.pdf.11.q': 'Funciona no iPhone e no Android?',
+		'faq.pdf.11.a': 'Sim. Você pode usar o Squishyfile no navegador do iPhone ou do Android, sem instalar aplicativo.',
+
+		'faq.pdf.12.q': 'Por que meu PDF ficou quase do mesmo tamanho?',
+		'faq.pdf.12.a': 'Provavelmente o arquivo já estava otimizado, tinha poucas imagens ou era composto principalmente por texto e elementos vetoriais. Nesse caso, há menos espaço para reduzir sem alterar o conteúdo.',
+
+		'faq.pdf.13.q': 'Quando devo usar o modo Equilibrado ou Máximo?',
+		'faq.pdf.13.a': 'Use o modo Equilibrado quando o PDF precisa continuar agradável de ler, como currículos, contratos, relatórios e documentos profissionais. Use o modo Máximo quando você precisa alcançar um limite específico de tamanho e pode aceitar uma redução maior na qualidade visual.',
+
+		'faq.pdf.14.q': 'Funciona no Mac e no Windows?',
+		'faq.pdf.14.a': 'Sim. Como o Squishyfile roda no navegador, você pode usar a ferramenta em Windows, Mac, Linux, Chromebook, iPhone e Android sem instalar aplicativo, extensão ou programa pesado.',
+		
+		
 		'tab.compress': 'Comprimir Vídeo',
 		'tab.pdf': 'Comprimir PDF',
 		'drop.video': 'Solte seu vídeo aqui',

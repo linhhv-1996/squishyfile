@@ -108,47 +108,6 @@ On Mac, you may have tried Preview's built-in “Reduce File Size” option. It 
 
 On iPhone, you can use Safari to select a PDF from the Files app, compress it in the browser, and download the smaller version back to your device. For a phone-specific walkthrough, read [how to compress a PDF on iPhone with no app required](/blog/compress-pdf-iphone-no-app-required).
 
-## Frequently Asked Questions
-
-### Is this PDF compressor free?
-
-Yes. Squishyfile's PDF compression tool is free to use and does not require an account.
-
-### Do I need to install software?
-
-No. The tool runs in your browser. You do not need Adobe Acrobat, a desktop app, or a mobile app.
-
-### Is my PDF uploaded anywhere?
-
-No. Compression happens inside your browser using WebAssembly. Your PDF is not uploaded to a server for processing.
-
-### How much smaller can my PDF become?
-
-It depends on the content. Scanned documents and image-heavy PDFs can often shrink a lot. Text-only PDFs or already-optimized files may only become slightly smaller.
-
-### Will compressing a PDF reduce quality?
-
-PDF compression can optimize image data, so the output is not always identical to the original. In **Balanced** mode, the goal is to keep text and images readable while reducing file size. **Maximum** mode may reduce image sharpness more noticeably, but it can create a smaller file.
-
-### Can I compress a password-protected PDF?
-
-Yes, if you know the current password. Enable the password removal option, enter the password, and the tool can remove protection before compressing the PDF.
-
-### Can I compress a PDF for email?
-
-Yes. PDF compression is useful when a file is too large to attach to an email or when you want the attachment to upload and send faster. Start with **Balanced** mode, then try **Maximum** mode if the file is still too large.
-
-### Can I compress a PDF to 1 MB?
-
-Sometimes. It depends on the number of pages, images, scan quality, and whether the PDF has already been optimized. Scanned documents usually compress better than photo-heavy portfolios or files that were already compressed.
-
-### Does it work on iPhone or Android?
-
-Yes. Use a modern mobile browser, select the PDF from your device, compress it, and download the result. No app installation is required.
-
-### Where is the compressed PDF saved?
-
-After processing, click **Download**. Your browser will save the compressed PDF to your default download location, such as Downloads, Files, or another folder chosen by your device.
 
 ## Related Guides
 

@@ -188,63 +188,6 @@ No computador, Chrome, Edge, Safari e outros navegadores atuais tendem a oferece
 
 Como a compressão de vídeo usa CPU e memória, arquivos grandes podem levar mais tempo. A velocidade não depende apenas da internet, porque o processamento ocorre localmente. Em muitos casos, isso economiza o tempo que seria gasto enviando e baixando um vídeo grande de um servidor externo.
 
-## Perguntas frequentes
-
-### O compressor de vídeo é gratuito?
-
-Sim. O Squishyfile permite comprimir vídeo online gratuitamente, sem criar conta e sem instalar software.
-
-### Meu vídeo é enviado para algum servidor?
-
-Não. A compressão é feita no navegador com WebAssembly e FFmpeg. O arquivo é processado no seu próprio dispositivo e não precisa ser enviado para servidores externos.
-
-### Posso comprimir MP4 online?
-
-Sim. Você pode comprimir arquivos MP4 diretamente no navegador. O resultado também é salvo em MP4 para facilitar o envio, a reprodução e o compartilhamento.
-
-### Posso comprimir MOV do iPhone?
-
-Sim. Vídeos MOV gravados no iPhone podem ser selecionados e comprimidos. O arquivo final em MP4 costuma ser mais fácil de enviar por WhatsApp, Discord, Gmail e redes sociais.
-
-### MP4, MOV, MKV, AVI e WebM são suportados?
-
-Sim. A ferramenta aceita os principais formatos de vídeo, incluindo MP4, MOV, MKV, AVI e WebM. A compatibilidade pode variar conforme o navegador e o codec original do arquivo.
-
-### Comprimir vídeo reduz a qualidade?
-
-Pode reduzir, porque diminuir bastante o tamanho normalmente exige descartar dados. Porém, os modos **Equilibrado** e **Alto** buscam preservar a aparência visual sempre que possível. Quanto menor for o tamanho alvo, maior tende a ser a perda de qualidade.
-
-### Como deixar um vídeo abaixo de 25 MB para Gmail?
-
-Use o modo de tamanho alvo e defina um valor um pouco abaixo de 25 MB, como 23 MB ou 24 MB. Assim você mantém margem para evitar erro no anexo.
-
-### Como deixar um vídeo abaixo de 8 MB para Discord?
-
-Use o tamanho alvo de 8 MB ou um pouco menos. Se o vídeo for longo ou tiver muito movimento, talvez seja necessário aceitar uma qualidade menor ou cortar o vídeo antes de comprimir.
-
-### Dá para comprimir vídeo para WhatsApp?
-
-Sim. Para envio comum, uma meta próxima de 15 MB costuma ser útil. Se o vídeo for longo, talvez seja melhor cortar partes desnecessárias ou aceitar uma compressão mais forte.
-
-### Posso comprimir vídeos grandes ou 4K?
-
-Sim, mas o resultado depende do dispositivo, da memória disponível e do navegador. Para vídeos muito grandes, longos ou em 4K, um computador costuma ser mais estável que um celular.
-
-### Por que o tamanho final não ficou exatamente igual ao valor escolhido?
-
-O tamanho alvo é uma estimativa. A variação pode acontecer por causa do codec, do áudio, dos metadados e da complexidade do vídeo. Normalmente, é melhor escolher uma meta um pouco abaixo do limite real da plataforma.
-
-### O que fazer se o navegador travar?
-
-Tente fechar outros aplicativos, usar um vídeo menor, reduzir a resolução ou processar o arquivo em um computador. Em celulares antigos, vídeos muito pesados podem ultrapassar a memória disponível para o navegador.
-
-### Posso usar sem instalar aplicativo?
-
-Sim. A ferramenta funciona no navegador. Você não precisa instalar app, extensão ou programa de edição de vídeo.
-
-### Onde o vídeo comprimido é salvo?
-
-Depois da compressão, clique em **Baixar**. O arquivo será salvo na pasta de downloads ou no local definido pelo navegador e pelo sistema do seu dispositivo.
 
 ## Artigos relacionados
 
@@ -253,4 +196,3 @@ Depois da compressão, clique em **Baixar**. O arquivo será salvo na pasta de d
 - [Comprimir Vídeo no iPhone e Android: Sem Apps](/pt/blog/compress-video-iphone-android)
 - [É Possível Comprimir Vídeo Sem Perder Qualidade? O Guia Definitivo](/pt/blog/compress-video-without-losing-quality)
 - [Como Reduzir Tamanho de Vídeo para um Arquivo Exato](/pt/blog/reduce-video-size-custom)
-
