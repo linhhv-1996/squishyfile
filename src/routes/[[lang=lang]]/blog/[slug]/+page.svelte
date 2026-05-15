@@ -195,7 +195,7 @@
 	}
 
 	.prose :global(a:hover) {
-		color: #fff;
+		/* color: #fff; */
 		border-bottom-color: var(--accent);
 	}
 
@@ -255,7 +255,7 @@
 		font-size: 12.5px;
 		background: var(--surf2);
 		border: 1px solid var(--border);
-		color: #a8c4ff;
+		color: #355fb7;
 		padding: 2px 6px;
 		border-radius: 4px;
 	}
