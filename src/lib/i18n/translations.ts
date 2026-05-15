@@ -19,10 +19,10 @@ export const translations: Record<string, Record<string, string>> = {
 		'error.workerFailed': 'Processing error. Please try again.',
 		'btn.compressPdf': 'Compress PDF',
 		'status.warning.keepOpen': '⚠️ Please keep this tab open and active. Switching tabs may pause or slow down the process.',
-		
+
 		'nav.home': 'Home',
 		'nav.blog': 'Blog',
-		
+
 		'meta.title': 'Squishyfile – Free Browser-Based File Tools',
 		'meta.desc': 'Free file tools that run directly in your browser. Compress, convert, edit, and manage files privately — no uploads, no accounts, no watermarks.',
 		'hero.title': 'Free File Tools<br />That Run in Your Browser',
@@ -89,7 +89,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.home.6.q': 'What browsers are supported?',
 		'faq.home.6.a': 'Squishyfile works in modern browsers such as Chrome, Safari, Firefox, Edge, and Brave. No plugins or extensions are required.',
-		
+
 		// ── Video FAQ ─────────────────────────────────────────────────────────────
 		'faq.video.title': 'Frequently Asked Questions',
 
@@ -109,19 +109,19 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.video.5.a': 'Yes. You can select MOV videos recorded on iPhone and compress them into smaller MP4 files that are easier to share.',
 
 		'faq.video.6.q': 'Can I reduce video file size without losing quality?',
-		'faq.video.6.a': 'Compression always changes the file in some way, but the **Balanced** and **High** presets are designed to reduce size while keeping the video looking good for normal viewing. For many everyday videos, the difference is hard to notice on a phone or laptop screen.',
+		'faq.video.6.a': 'Compression always changes the file in some way, but the Balanced and High presets are designed to reduce size while keeping the video looking good for normal viewing. For many everyday videos, the difference is hard to notice on a phone or laptop screen.',
 
 		'faq.video.7.q': 'Can I compress a video to a specific size?',
-		'faq.video.7.a': 'Yes. Use the **Target File Size** option and enter the desired size in MB. The tool will try to create a compressed video close to that size while preserving as much quality as possible.',
+		'faq.video.7.a': 'Yes. Use the Target File Size option and enter the desired size in MB. The tool will try to create a compressed video close to that size while preserving as much quality as possible.',
 
 		'faq.video.8.q': 'Can I compress video for WhatsApp under 16MB?',
-		'faq.video.8.a': 'Yes. Enter **15MB** as the target size to leave a small buffer under the common WhatsApp video message limit. Very long or fast-moving videos may need trimming or stronger compression.',
+		'faq.video.8.a': 'Yes. Enter 15MB as the target size to leave a small buffer under the common WhatsApp video message limit. Very long or fast-moving videos may need trimming or stronger compression.',
 
 		'faq.video.9.q': 'Can I compress video for Gmail under 25MB?',
-		'faq.video.9.a': 'Yes. Enter **24MB** as the target size for Gmail. If you want a safer size for more email providers, use **19MB** instead.',
+		'faq.video.9.a': 'Yes. Enter 24MB as the target size for Gmail. If you want a safer size for more email providers, use 19MB instead.',
 
 		'faq.video.10.q': 'Can I compress video for Discord under 8MB?',
-		'faq.video.10.a': 'Yes. Enter **8MB** as the target file size. For long clips, you may need to trim the video or accept lower quality to fit under that limit.',
+		'faq.video.10.a': 'Yes. Enter 8MB as the target file size. For long clips, you may need to trim the video or accept lower quality to fit under that limit.',
 
 		'faq.video.11.q': 'Does it work on mobile?',
 		'faq.video.11.a': 'Yes. You can use the compressor in Safari on iPhone and Chrome on Android. Large videos may process more smoothly on a desktop or laptop.',
@@ -133,7 +133,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.video.13.a': 'If you close the tab while compression is running, the process stops. Keep the tab open until the compressed video is ready to download.',
 
 		'faq.video.14.q': 'Where is the compressed video saved?',
-		'faq.video.14.a': 'After compression finishes, click **Download**. The file will be saved to your browser\'s default download location, which depends on your device and browser settings.',
+		'faq.video.14.a': 'After compression finishes, click Download. The file will be saved to your browser\'s default download location, which depends on your device and browser settings.',
 
 
 		// ── PDF FAQ (size reduction, password, scanned, email) ──────────────────
@@ -217,7 +217,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': 'Download Compressed Video',
 		'btn.dl.convert': 'Download Converted Video',
 		'note.privacy': '<strong>Your files never leave your device.</strong> Squishyfile processes everything locally using your browser\'s built-in engine — no server uploads, no accounts needed. Files are cleared from memory after download.',
-		
+
 		'faq.title': 'Frequently Asked Questions',
 		'faq.1.q': 'Is it safe to compress my private videos here?',
 		'faq.1.a': 'Yes, absolutely! Squishyfile processes your videos locally directly inside your web browser. Your files are never uploaded to any cloud server, ensuring 100% privacy and security.',
@@ -231,8 +231,8 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.5.a': 'Yes. Use the "Target File Size" field and enter the platform limit — for example 25 MB for Discord or 20 MB for Gmail. Squishyfile automatically calculates the right compression rate to hit that target without guesswork.',
 		'faq.6.q': 'Does it support 4K video compression?',
 		'faq.6.a': 'Yes. 4K video compression runs entirely in your browser with no server-side file limits. For stable performance we recommend keeping files under 2 GB. The tool also supports MOV, AVI, MKV and WebM — not just MP4.',
-		
-		
+
+
 		'footer.copy': '© 2026 Squishyfile &nbsp;·&nbsp; Runs entirely in your browser &nbsp;·&nbsp;',
 		'footer.privacy': 'Privacy Policy',
 		'footer.terms': 'Terms of Service',
@@ -299,7 +299,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.4.q': 'Can I convert iPhone MOV videos to MP3?',
 		'faq.mp3.4.a': 'Yes. You can select a MOV video recorded on iPhone and extract its audio as an MP3 file.',
 		'faq.mp3.5.q': 'What MP3 quality should I choose?',
-		'faq.mp3.5.a': '**192 kbps** is recommended for most videos. Choose **128 kbps** for smaller files or **320 kbps** for higher audio quality.',
+		'faq.mp3.5.a': '192 kbps is recommended for most videos. Choose 128 kbps for smaller files or 320 kbps for higher audio quality.',
 		'faq.mp3.6.q': 'Will the exported MP3 have a watermark?',
 		'faq.mp3.6.a': 'No. The downloaded MP3 is a clean audio file with no watermark.',
 		'faq.mp3.7.q': 'Does it work on mobile?',
@@ -342,7 +342,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': 'ブラウザで動画・PDFを無料圧縮。アップロード不要・インストール不要・ログインなし。プライバシー保護100%。',
 		'nav.home': 'ホーム',
 		'nav.blog': 'ブログ',
-		
+
 		'hero.title': '無料のファイルツールを<br />ブラウザで',
 		'hero.sub': '圧縮・変換・編集・管理を、お使いのデバイス上でかんたんに。アップロード不要・アカウント不要・透かしなし。',
 		'hero.pill1': 'ローカル処理',
@@ -357,7 +357,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'feat.free.title': '無料でクリーン',
 		'feat.free.desc': '強制的な登録、不要な有料制限、出力ファイルへの透かしはありません。',
-		
+
 		'home.card.video.title': '動画圧縮',
 		'home.card.video.desc': 'MP4・MOV・AVIなどをブラウザで直接圧縮。アップロード不要・画質損失なし。',
 		'home.card.video.cta': '動画を圧縮する',
@@ -484,8 +484,8 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.pdf.14.q': 'MacやWindowsでも使えますか？',
 		'faq.pdf.14.a': 'はい。Squishyfileはブラウザ上で動作するため、Mac、Windows、iPhone、Androidなど主要な環境で利用できます。専用ソフトのインストールは不要です。',
-		
-		
+
+
 		'tab.compress': '動画を圧縮',
 		'tab.pdf': 'PDFを圧縮',
 		'drop.video': 'ここに動画をドロップ',
@@ -521,7 +521,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': '圧縮した動画をダウンロード',
 		'btn.dl.convert': '変換した動画をダウンロード',
 		'note.privacy': '<strong>ファイルがデバイスの外に出ることはありません。</strong> Squishyfileはブラウザ内蔵エンジンを使ってすべてローカルで処理します — サーバーへのアップロードなし・アカウント不要・サーバー保存なし。ダウンロード後はメモリからファイルが削除されます。',
-		
+
 		'faq.title': 'よくある質問',
 		'faq.1.q': 'LINEで動画が送れない時の解決方法は？',
 		'faq.1.a': 'LINEの動画送信制限（約300MB）に引っかかるケースがほとんどです。Squishyfileで動画圧縮をしてファイルサイズを小さくするだけで解決します。ブラウザを開いて動画をドロップ→「今すぐ圧縮」をタップするだけ。アップロード不要・登録なしで無料動画圧縮が完了します。',
@@ -616,7 +616,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.5.a': 'はい。動画の映像部分を除き、音声のみをMP3として抽出できます。BGM、ナレーション、録音音声の保存にも使えます。',
 
 		'faq.mp3.6.q': 'MP3の音質はどれを選べばいいですか？',
-		'faq.mp3.6.a': '通常は**192 kbps**がおすすめです。ファイルサイズを小さくしたい場合は**128 kbps**、高音質で保存したい場合は**320 kbps**を選んでください。',
+		'faq.mp3.6.a': '通常は192 kbpsがおすすめです。ファイルサイズを小さくしたい場合は128 kbps、高音質で保存したい場合は320 kbpsを選んでください。',
 
 		'faq.mp3.7.q': '変換後のMP3にウォーターマークは入りますか？',
 		'faq.mp3.7.a': 'いいえ。ダウンロードされるMP3ファイルにウォーターマークは入りません。',
@@ -629,7 +629,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.mp3.10.q': '変換中にタブを閉じるとどうなりますか？',
 		'faq.mp3.10.a': '変換中にタブを閉じると処理は停止します。MP3ファイルの準備が完了するまで、タブを開いたままにしてください。',
-	
+
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -665,7 +665,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': '免費線上影片與 PDF 壓縮，唔使上載到伺服器，無須登入註冊，無浮水印，隱私保障100%，直接在瀏覽器完成。',
 		'nav.home': '首頁',
 		'nav.blog': '部落格',
-		
+
 		'hero.title': '免費檔案工具<br />直接在瀏覽器中使用',
 		'hero.sub': '壓縮、轉換、編輯與管理檔案，都可在您的裝置上輕鬆完成。無需上傳、無需帳號、無浮水印。',
 		'hero.pill1': '本機處理',
@@ -680,7 +680,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'feat.free.title': '免費且乾淨',
 		'feat.free.desc': '沒有強制註冊、沒有不必要的付費限制，也不會在輸出檔案加上浮水印。',
-		
+
 		'home.card.video.title': '壓縮影片',
 		'home.card.video.desc': '在瀏覽器中直接壓縮 MP4、MOV、AVI 等格式，無需上傳，不損失畫質。',
 		'home.card.video.cta': '立即壓縮影片',
@@ -793,8 +793,8 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.pdf.14.q': 'Mac、Windows、手機都可以使用嗎？',
 		'faq.pdf.14.a': '可以。Squishyfile 在瀏覽器中運作，因此 Mac、Windows、iPhone、Android、Chromebook 等主要環境都可以使用，不需要安裝專用軟體。',
-		
-		
+
+
 		'tab.compress': '壓縮影片',
 		'tab.pdf': '壓縮 PDF',
 		'drop.video': '將影片拖放至此處',
@@ -891,7 +891,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.4.q': '我可以將 iPhone 的 MOV 影片轉成 MP3 嗎？',
 		'faq.mp3.4.a': '可以。你可以選擇 iPhone 錄製的 MOV 影片，並將其中的音訊擷取成 MP3 檔案。',
 		'faq.mp3.5.q': '我應該選擇什麼 MP3 品質？',
-		'faq.mp3.5.a': '大多數影片建議使用 **192 kbps**。選擇 **128 kbps** 可讓檔案更小，或選擇 **320 kbps** 以獲得更高音質。',
+		'faq.mp3.5.a': '大多數影片建議使用 192 kbps。選擇 128 kbps 可讓檔案更小，或選擇 320 kbps 以獲得更高音質。',
 		'faq.mp3.6.q': '匯出的 MP3 會有浮水印嗎？',
 		'faq.mp3.6.a': '不會。下載的 MP3 是乾淨的音訊檔，沒有浮水印。',
 		'faq.mp3.7.q': '它可以在手機上使用嗎？',
@@ -954,7 +954,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'meta.desc': `Compressor gratuito online: comprimir vídeo e PDF no navegador. Sem upload para servidor, sem cadastro, sem marca d'água.Privacidade 100% garantida.`,
 		'nav.home': 'Início',
 		'nav.blog': 'Blog',
-		
+
 		'hero.title': 'Ferramentas de Arquivos Grátis<br />Direto no Navegador',
 		'hero.sub': 'Comprima, converta, edite e organize arquivos com facilidade no seu próprio dispositivo. Sem uploads, sem conta e sem marca d\'água.',
 		'hero.pill1': 'Processamento local',
@@ -969,7 +969,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'feat.free.title': 'Grátis e Sem Complicação',
 		'feat.free.desc': 'Sem cadastro obrigatório, sem paywalls desnecessários e sem marca d\'água nos arquivos exportados.',
-		
+
 		'home.card.video.title': 'Comprimir Vídeo',
 		'home.card.video.desc': 'Reduza MP4, MOV, AVI e outros diretamente no navegador — sem upload, sem perda de qualidade.',
 		'home.card.video.cta': 'Comprimir Vídeo',
@@ -1095,8 +1095,8 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.pdf.14.q': 'Funciona no Mac e no Windows?',
 		'faq.pdf.14.a': 'Sim. Como o Squishyfile roda no navegador, você pode usar a ferramenta em Windows, Mac, Linux, Chromebook, iPhone e Android sem instalar aplicativo, extensão ou programa pesado.',
-		
-		
+
+
 		'tab.compress': 'Comprimir Vídeo',
 		'tab.pdf': 'Comprimir PDF',
 		'drop.video': 'Solte seu vídeo aqui',
@@ -1132,7 +1132,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'btn.dl.compress': 'Baixar Vídeo Comprimido',
 		'btn.dl.convert': 'Baixar Vídeo Convertido',
 		'note.privacy': '<strong>Seus arquivos nunca saem do seu dispositivo.</strong> Squishyfile processa tudo localmente usando o mecanismo integrado do seu navegador — sem upload para servidor, sem necessidade de conta. Os arquivos são apagados da memória após o download.',
-		
+
 		'faq.title': 'Perguntas frequentes',
 		'faq.1.q': 'É seguro comprimir meus vídeos privados aqui?',
 		'faq.1.a': 'Sim, com toda a certeza! Squishyfile processa seus vídeos localmente diretamente no seu navegador. Seus arquivos nunca são enviados para nenhum servidor em nuvem, garantindo privacidade e segurança 100%.',
@@ -1226,7 +1226,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.5.a': 'Sim. O Squishyfile funciona como um extrator de áudio online: ele remove a parte visual do vídeo e salva somente o som em MP3.',
 
 		'faq.mp3.6.q': 'Qual qualidade de MP3 devo escolher?',
-		'faq.mp3.6.a': 'Para uso geral, **192 kbps** é uma boa escolha. Use **128 kbps** para arquivos menores ou **320 kbps** se quiser áudio em qualidade mais alta.',
+		'faq.mp3.6.a': 'Para uso geral, 192 kbps é uma boa escolha. Use 128 kbps para arquivos menores ou 320 kbps se quiser áudio em qualidade mais alta.',
 
 		'faq.mp3.7.q': 'O MP3 convertido tem marca d’água?',
 		'faq.mp3.7.a': 'Não. O arquivo MP3 baixado não recebe marca d’água, assinatura ou qualquer identificação do Squishyfile.',
@@ -1246,4 +1246,260 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.12.q': 'O que acontece se eu fechar a aba durante a conversão?',
 		'faq.mp3.12.a': 'Se você fechar a aba antes do fim da conversão, o processo será interrompido. Mantenha a página aberta até o MP3 ficar pronto para download.',
 	},
+
+	th: {
+		'footer.contact': 'ติดต่อเรา',
+		'btn.compressNew': 'บีบอัดไฟล์ใหม่',
+		'feat.pdf.compress.title': 'บีบอัดได้จริงจัง',
+		'feat.pdf.compress.desc': 'ลดขนาดไฟล์ PDF ด้วยการบีบอัดรูปภาพที่ฝังอยู่และลบข้อมูลที่ไม่จำเป็น โดยไม่ทำให้ข้อความ ฟอนต์ หรือโครงสร้างไฟล์เสียหาย',
+		'feat.pdf.privacy.title': 'เป็นส่วนตัวเต็มที่',
+		'feat.pdf.privacy.desc': 'ทุกอย่างทำงานในเบราว์เซอร์ ไฟล์ของคุณไม่ออกจากอุปกรณ์ จึงไม่มีข้อมูลถูกส่งไปยังเซิร์ฟเวอร์',
+		'feat.pdf.quality.title': 'มี 2 ระดับคุณภาพ',
+		'feat.pdf.quality.desc': 'โหมดสมดุลช่วยลดขนาดสำหรับการแชร์ทั่วไป ส่วนโหมดสูงสุดจะบีบอัดให้ไฟล์เล็กที่สุดเท่าที่ทำได้',
+
+		'sec.pdfQuality': 'ระดับการบีบอัด',
+		'pdf.preset.balanced': 'สมดุล',
+		'pdf.preset.balanced.sub': 'คุณภาพดี',
+		'pdf.preset.maximum': 'สูงสุด',
+		'pdf.preset.maximum.sub': 'ไฟล์เล็กที่สุด',
+		'status.processing': 'กำลังประมวลผล PDF…',
+		'status.warning.keepTab': '⚠️ กำลังบีบอัด PDF — กรุณาเปิดแท็บนี้ค้างไว้เพื่อให้ประมวลผลเร็วขึ้น',
+		'error.workerFailed': 'เกิดข้อผิดพลาดในการประมวลผล กรุณาลองอีกครั้ง',
+		'btn.compressPdf': 'บีบอัด PDF',
+		'status.warning.keepOpen': '⚠️ กรุณาเปิดแท็บนี้ค้างไว้และใช้งานอยู่ การสลับแท็บอาจทำให้กระบวนการช้าลงหรือหยุดชั่วคราว',
+
+		'nav.home': 'หน้าแรก',
+		'nav.blog': 'บล็อก',
+
+		'meta.title': 'Squishyfile – เครื่องมือไฟล์ฟรี ทำงานในเบราว์เซอร์',
+		'meta.desc': 'เครื่องมือไฟล์ฟรีที่ทำงานในเบราว์เซอร์โดยตรง บีบอัด แปลง แก้ไข และจัดการไฟล์แบบส่วนตัว — ไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ',
+		'hero.title': 'เครื่องมือไฟล์ฟรี<br />ที่ทำงานในเบราว์เซอร์',
+		'hero.sub': 'บีบอัด แปลง แก้ไข และจัดการไฟล์บนอุปกรณ์ของคุณ — ไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ',
+		'hero.pill1': 'ประมวลผลในเครื่อง',
+		'hero.pill2': 'ไม่มีลายน้ำ',
+		'hero.pill3': 'ไม่ต้องมีบัญชี',
+
+		'feat.speed.title': 'ทำงานเร็วสำหรับงานไฟล์ทั่วไป',
+		'feat.speed.desc': 'เลือกเครื่องมือ วางไฟล์ ปรับค่าที่ต้องการ แล้วดาวน์โหลดผลลัพธ์ได้เลย โดยไม่ต้องติดตั้งโปรแกรมหรือสมัครบัญชี',
+
+		'feat.target.title': 'เครื่องมือไฟล์ที่ใช้ง่ายทุกวัน',
+		'feat.target.desc': 'บีบอัด แปลง แก้ไข และจัดการไฟล์ด้วยเครื่องมือเฉพาะทางที่ออกแบบมาสำหรับงานไฟล์ยอดนิยม',
+
+		'feat.free.title': 'ฟรีและใช้งานสบาย',
+		'feat.free.desc': 'ไม่มีการบังคับสมัคร ไม่มีเพย์วอลล์ที่ไม่จำเป็น และไม่มีลายน้ำบนไฟล์ที่ส่งออก',
+
+		'blog.cta.video.title': 'ลดขนาดไฟล์วิดีโอฟรี — ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
+		'blog.cta.video.btn': 'ลองบีบอัดวิดีโอ →',
+		'blog.cta.pdf.title': 'บีบอัดไฟล์ PDF ฟรี — ทำงานทั้งหมดในเบราว์เซอร์',
+		'blog.cta.pdf.btn': 'ลองบีบอัด PDF →',
+		'blog.cta.video-to-mp3.title': 'แปลงวิดีโอเป็น MP3 ฟรี — ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
+		'blog.cta.video-to-mp3.btn': 'ลองแปลงวิดีโอเป็น MP3 →',
+
+		// ── Home cards ──────────────────────────────────────────────────────────
+		'home.card.video.title': 'บีบอัดวิดีโอ',
+		'home.card.video.desc': 'ลดขนาดไฟล์วิดีโอ MP4, MOV, AVI และไฟล์อื่น ๆ ได้ในเบราว์เซอร์ — ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
+		'home.card.video.cta': 'ลดขนาดวิดีโอ',
+		'home.card.pdf.title': 'บีบอัด PDF',
+		'home.card.pdf.desc': 'ลดขนาดไฟล์ PDF ออนไลน์ได้ทันที พร้อมตัวเลือกสำหรับลบรหัสผ่าน PDF หากคุณรู้รหัสเดิม',
+		'home.card.pdf.cta': 'ลดขนาด PDF',
+		'home.card.pdf.tag.password': 'ลบรหัสผ่าน',
+		'home.card.pdf.tag.fast': 'ทำได้ทันที',
+
+		// ── Video page meta / hero ──────────────────────────────────────────────
+		'compress.meta.title': 'ลดขนาดไฟล์วิดีโอฟรี ออนไลน์ – ไม่ต้องอัปโหลด | Squishyfile',
+		'compress.meta.desc': 'บีบอัดวิดีโอ MP4, MOV, AVI, WebM, MKV ฟรีในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่มีลายน้ำ ไม่ต้องสมัคร ตั้งขนาดไฟล์เป้าหมายสำหรับ LINE, Discord, Gmail, Telegram ได้',
+		'compress.hero.title': 'ลดขนาดไฟล์วิดีโอฟรี<br />ในเบราว์เซอร์ของคุณ',
+		'compress.hero.sub': 'บีบอัดวิดีโอออนไลน์แบบไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ — ทำงานทั้งหมดบนอุปกรณ์ของคุณ',
+
+		// ── PDF page meta / hero ────────────────────────────────────────────────
+		'pdf.meta.title': 'บีบอัดไฟล์ PDF ฟรี ออนไลน์ – ลดขนาด PDF | Squishyfile',
+		'pdf.meta.desc': 'บีบอัดไฟล์ PDF และลดขนาดไฟล์ PDF ฟรีในเบราว์เซอร์ ย่อไฟล์ PDF พร้อมตัวเลือกลบรหัสผ่าน ไม่ต้องอัปโหลดขึ้นเซิร์ฟเวอร์ เป็นส่วนตัว 100%',
+		'pdf.hero.title': 'บีบอัดไฟล์ PDF ฟรี<br />ในเบราว์เซอร์ของคุณ',
+		'pdf.hero.sub': 'ลดขนาดไฟล์ PDF และลบรหัสผ่าน PDF ได้บนอุปกรณ์ของคุณ — ไม่ต้องอัปโหลดไฟล์',
+
+		// ── Home FAQ (brand, overview, privacy, comparison) ─────────────────────
+		'faq.home.title': 'คำถามที่พบบ่อย',
+
+		'faq.home.1.q': 'Squishyfile คืออะไร?',
+		'faq.home.1.a': 'Squishyfile คือชุดเครื่องมือไฟล์ฟรีบนเบราว์เซอร์ คุณสามารถใช้เพื่อบีบอัด แปลง แก้ไข และจัดการไฟล์ได้โดยไม่ต้องติดตั้งโปรแกรม',
+
+		'faq.home.2.q': 'ไฟล์ของฉันปลอดภัยไหม? ถูกอัปโหลดไปเซิร์ฟเวอร์หรือเปล่า?',
+		'faq.home.2.a': 'Squishyfile ออกแบบมาให้ประมวลผลไฟล์ภายในเบราว์เซอร์เมื่อทำได้ ไฟล์ของคุณจึงสามารถอยู่บนอุปกรณ์ของคุณแทนที่จะถูกอัปโหลดไปยังเซิร์ฟเวอร์',
+
+		'faq.home.3.q': 'Squishyfile ฟรีจริงไหม? มีข้อจำกัดแอบแฝงหรือเปล่า?',
+		'faq.home.3.a': 'ใช่ Squishyfile ใช้งานฟรี ไม่มีการบังคับสมัครบัญชี และไม่มีลายน้ำบนไฟล์ที่ดาวน์โหลด งานบางอย่างอาจขึ้นอยู่กับความสามารถของเบราว์เซอร์และอุปกรณ์ของคุณ',
+
+		'faq.home.4.q': 'ควรเลือกใช้เครื่องมือไหน?',
+		'faq.home.4.a': 'เลือกเครื่องมือตามสิ่งที่ต้องการทำ เช่น ลดขนาดไฟล์ใหญ่ แปลงไฟล์เป็นรูปแบบอื่น แก้ไขไฟล์ หรือเตรียมไฟล์สำหรับแชร์ แต่ละหน้าจะอธิบายชนิดไฟล์ที่รองรับและวิธีใช้งาน',
+
+		'faq.home.5.q': 'ใช้งานบนมือถือได้ไหม?',
+		'faq.home.5.a': 'ได้ Squishyfile ใช้งานได้บนเบราว์เซอร์มือถือสมัยใหม่ทั้ง iPhone และ Android ไฟล์ขนาดใหญ่มากอาจประมวลผลได้ดีกว่าบนแล็ปท็อปหรือคอมพิวเตอร์',
+
+		'faq.home.6.q': 'รองรับเบราว์เซอร์อะไรบ้าง?',
+		'faq.home.6.a': 'Squishyfile ใช้งานได้บนเบราว์เซอร์สมัยใหม่ เช่น Chrome, Safari, Firefox, Edge และ Brave โดยไม่ต้องติดตั้งปลั๊กอินหรือส่วนขยาย',
+
+		// ── Video FAQ ─────────────────────────────────────────────────────────────
+		'faq.video.title': 'คำถามที่พบบ่อย',
+		'faq.video.1.q': 'เครื่องมือลดขนาดไฟล์วิดีโอนี้ใช้ฟรีไหม?',
+		'faq.video.1.a': 'ใช่ คุณสามารถลดขนาดไฟล์วิดีโอและบีบอัดวิดีโอออนไลน์ได้ฟรี โดยไม่ต้องสมัครสมาชิก ไม่ต้องสร้างบัญชี และไม่ต้องติดตั้งโปรแกรม',
+		'faq.video.2.q': 'Squishyfile อัปโหลดวิดีโอของฉันขึ้นเซิร์ฟเวอร์หรือไม่?',
+		'faq.video.2.a': 'ไม่ วิดีโอถูกประมวลผลในเบราว์เซอร์ด้วย WebAssembly และ FFmpeg ไฟล์ของคุณจึงไม่จำเป็นต้องถูกอัปโหลดขึ้นเซิร์ฟเวอร์เพื่อบีบอัด',
+		'faq.video.3.q': 'บีบอัดวิดีโอ MP4 ได้ไหม?',
+		'faq.video.3.a': 'ได้ คุณสามารถบีบอัดวิดีโอ MP4 ให้มีขนาดเล็กลง และดาวน์โหลดไฟล์ที่เหมาะสำหรับส่งแชต แนบอีเมล อัปโหลดโซเชียล หรือเก็บไว้ประหยัดพื้นที่',
+		'faq.video.4.q': 'บีบอัดไฟล์ MOV จาก iPhone ได้ไหม?',
+		'faq.video.4.a': 'ได้ คุณสามารถเลือกวิดีโอ MOV ที่ถ่ายจาก iPhone แล้วบีบอัดให้เล็กลงได้ เหมาะสำหรับวิดีโอจากมือถือที่ไฟล์ใหญ่ ส่งยาก หรือกินพื้นที่เครื่องมากเกินไป',
+		'faq.video.5.q': 'ลดขนาดวิดีโอสำหรับส่งใน LINE ได้ไหม?',
+		'faq.video.5.a': 'ได้ หากส่งวิดีโอใน LINE ไม่ได้เพราะไฟล์ใหญ่เกินไป คุณสามารถบีบอัดวิดีโอให้มีขนาดเล็กลงก่อนส่ง เพื่อให้อัปโหลดง่ายขึ้น ใช้เน็ตน้อยลง และลดโอกาสส่งล้มเหลว',
+		'faq.video.6.q': 'บีบอัดวิดีโอให้ได้ขนาดไฟล์ที่ต้องการได้ไหม?',
+		'faq.video.6.a': 'ได้ คุณสามารถใช้ตัวเลือกขนาดไฟล์เป้าหมาย แล้วใส่ขนาดที่ต้องการเป็น MB เครื่องมือจะพยายามสร้างวิดีโอที่มีขนาดใกล้เคียงกับที่ตั้งไว้ พร้อมรักษาคุณภาพให้ดีที่สุดเท่าที่ทำได้',
+		'faq.video.7.q': 'ลดขนาดไฟล์วิดีโอโดยไม่เสียคุณภาพได้ไหม?',
+		'faq.video.7.a': 'การบีบอัดวิดีโอจะมีผลต่อไฟล์บางส่วนเสมอ แต่โหมดสมดุลและโหมดคุณภาพสูงออกแบบมาเพื่อลดขนาดไฟล์วิดีโอโดยยังคงคุณภาพให้ดูดีสำหรับการรับชมทั่วไป',
+		'faq.video.8.q': 'ใช้งานบน iPhone, Android, Mac และ Windows ได้ไหม?',
+		'faq.video.8.a': 'ได้ Squishyfile ทำงานผ่านเบราว์เซอร์ จึงสามารถใช้ได้บน iPhone, Android, Mac และ Windows โดยไฟล์ขนาดใหญ่มากหรือวิดีโอ 4K อาจประมวลผลได้เสถียรกว่าบนคอมพิวเตอร์',
+
+		// ── PDF FAQ (free, browser-based, privacy, quality, password, email) ──────────────────
+		'faq.pdf.title': 'คำถามที่พบบ่อย',
+		'faq.pdf.1.q': 'เครื่องมือบีบอัดไฟล์ PDF นี้ใช้ฟรีไหม?',
+		'faq.pdf.1.a': 'ใช่ เครื่องมือลดขนาดไฟล์ PDF ของ Squishyfile ใช้งานฟรี ไม่ต้องสมัครสมาชิก และไม่เพิ่มลายน้ำลงในไฟล์ PDF ที่บีบอัดแล้ว',
+		'faq.pdf.2.q': 'ต้องติดตั้งโปรแกรมบีบอัด PDF หรือไม่?',
+		'faq.pdf.2.a': 'ไม่ต้อง เครื่องมือนี้ทำงานบนเบราว์เซอร์ คุณสามารถบีบอัด PDF ได้โดยไม่ต้องติดตั้ง Adobe Acrobat แอปเดสก์ท็อป หรือแอปมือถือเพิ่มเติม',
+		'faq.pdf.3.q': 'ไฟล์ PDF ของฉันจะถูกอัปโหลดขึ้นเซิร์ฟเวอร์ไหม?',
+		'faq.pdf.3.a': 'ไม่ การบีบอัดเกิดขึ้นภายในเบราว์เซอร์ด้วย WebAssembly ไฟล์ PDF ของคุณจะไม่ถูกอัปโหลดขึ้นเซิร์ฟเวอร์เพื่อประมวลผล จึงเหมาะกับเอกสารส่วนตัว เรซูเม่ สัญญา และใบแจ้งหนี้',
+		'faq.pdf.4.q': 'ลดขนาดไฟล์ PDF ได้มากแค่ไหน?',
+		'faq.pdf.4.a': 'ขึ้นอยู่กับเนื้อหาในไฟล์ PDF เอกสารสแกน ไฟล์ที่มีรูปภาพจำนวนมาก หรือสไลด์ที่แปลงเป็น PDF มักลดขนาดได้มาก ส่วน PDF ที่เป็นข้อความล้วนหรือถูกบีบอัดมาแล้วอาจลดขนาดได้ไม่มาก',
+		'faq.pdf.5.q': 'การบีบอัด PDF จะทำให้คุณภาพลดลงไหม?',
+		'faq.pdf.5.a': 'การบีบอัดอาจปรับข้อมูลรูปภาพภายใน PDF ดังนั้นไฟล์ผลลัพธ์อาจไม่เหมือนต้นฉบับ 100% โหมดสมดุลจะช่วยลดขนาดไฟล์โดยยังรักษาข้อความและรูปภาพให้อ่านง่าย ส่วนโหมดบีบอัดสูงสุดจะทำให้ไฟล์เล็กกว่าแต่อาจลดความคมชัดของรูปภาพบางส่วน',
+		'faq.pdf.6.q': 'บีบอัด PDF ที่มีรหัสผ่านได้ไหม?',
+		'faq.pdf.6.a': 'ได้ หากคุณรู้รหัสผ่านปัจจุบัน ให้เลือกตัวเลือกปลดล็อกหรือลบรหัสผ่านก่อนบีบอัด ใส่รหัสผ่าน แล้วเครื่องมือจะช่วยปลดล็อกไฟล์ก่อนลดขนาด PDF',
+		'faq.pdf.7.q': 'บีบอัด PDF สำหรับส่งอีเมลหรืออัปโหลดสมัครงานได้ไหม?',
+		'faq.pdf.7.a': 'ได้ การลดขนาด PDF เหมาะสำหรับไฟล์แนบอีเมล เรซูเม่ เอกสารสมัครงาน และแบบฟอร์มออนไลน์ หากต้องการไฟล์ไม่เกิน 1MB หรือ 2MB ให้เริ่มจากโหมดสมดุลก่อน แล้วใช้โหมดบีบอัดสูงสุดหากไฟล์ยังใหญ่เกินไป',
+		'faq.pdf.8.q': 'ใช้เครื่องมือบีบอัด PDF นี้บน iPhone, Android, Mac หรือ Windows ได้ไหม?',
+		'faq.pdf.8.a': 'ได้ Squishyfile ใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone, Android, Mac, Windows, Linux และแท็บเล็ต เพียงเลือกไฟล์ PDF บีบอัด แล้วดาวน์โหลดไฟล์ที่ลดขนาดแล้วได้ทันที',
+
+		'tab.compress': 'บีบอัดวิดีโอ',
+		'tab.pdf': 'บีบอัด PDF',
+		'drop.video': 'วางวิดีโอของคุณที่นี่',
+		'drop.compress.sub': 'ลากและวาง หรือคลิกเพื่อเลือกไฟล์',
+		'drop.convert.sub': 'เลือกวิดีโอเพื่อแปลงรูปแบบไฟล์',
+		'btn.browse': 'เลือกไฟล์',
+		'hint.compress': 'MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; สูงสุด 2 GB',
+		'hint.convert': 'รองรับ MP4, MOV, AVI, WebM, MKV และอื่น ๆ',
+		'file.type.video': 'วิดีโอ',
+		'sec.quickPreset': 'พรีเซ็ตด่วน',
+		'preset.low': 'ต่ำ',
+		'preset.low.sub': 'ไฟล์เล็กที่สุด',
+		'preset.balanced': 'สมดุล',
+		'preset.balanced.sub': 'แนะนำ',
+		'preset.high': 'สูง',
+		'preset.high.sub': 'คุณภาพดีที่สุด',
+		'sec.targetSize': 'ขนาดไฟล์เป้าหมาย',
+		'input.target.ph': 'ใส่ขนาดที่ต้องการ…',
+		'sec.convertTo': 'แปลงเป็น',
+		'btn.compressNow': 'บีบอัดตอนนี้',
+		'btn.convertNow': 'แปลงตอนนี้',
+		'status.compressing': 'กำลังบีบอัด…',
+		'status.converting': 'กำลังแปลง…',
+		'status.done': 'เสร็จแล้ว!',
+		'error.selectFile': 'กรุณาเลือกไฟล์วิดีโอ',
+		'res.compress.title': 'บีบอัดเสร็จแล้ว!',
+		'res.compress.sub': 'ไฟล์ของคุณพร้อมดาวน์โหลดแล้ว',
+		'res.convert.title': 'แปลงไฟล์เสร็จแล้ว!',
+		'res.convert.sub': 'วิดีโอที่แปลงแล้วพร้อมดาวน์โหลด',
+		'stat.original': 'ต้นฉบับ',
+		'stat.compressed': 'หลังบีบอัด',
+		'stat.saved': 'ประหยัดพื้นที่',
+		'btn.dl.compress': 'ดาวน์โหลดวิดีโอที่บีบอัดแล้ว',
+		'btn.dl.convert': 'ดาวน์โหลดวิดีโอที่แปลงแล้ว',
+		'note.privacy': '<strong>ไฟล์ของคุณไม่ออกจากอุปกรณ์</strong> Squishyfile ประมวลผลทุกอย่างในเครื่องด้วยระบบของเบราว์เซอร์ — ไม่อัปโหลดไปเซิร์ฟเวอร์ ไม่ต้องมีบัญชี ไฟล์จะถูกล้างจากหน่วยความจำหลังดาวน์โหลด',
+
+		'faq.title': 'คำถามที่พบบ่อย',
+		'faq.1.q': 'การบีบอัดวิดีโอส่วนตัวที่นี่ปลอดภัยไหม?',
+		'faq.1.a': 'ปลอดภัย Squishyfile ประมวลผลวิดีโอภายในเว็บเบราว์เซอร์ของคุณโดยตรง ไฟล์จะไม่ถูกอัปโหลดไปยังคลาวด์เซิร์ฟเวอร์ จึงช่วยรักษาความเป็นส่วนตัวและความปลอดภัย',
+		'faq.2.q': 'มีขนาดไฟล์จำกัดสำหรับการบีบอัดวิดีโอไหม?',
+		'faq.2.a': 'เราไม่ได้กำหนดขีดจำกัดจากเซิร์ฟเวอร์ เพราะทุกอย่างทำงานบนอุปกรณ์ของคุณ อย่างไรก็ตาม เพื่อความเสถียรของหน่วยความจำในเบราว์เซอร์ เราแนะนำให้ใช้ไฟล์ไม่เกิน 2GB',
+		'faq.3.q': 'วิดีโอที่ส่งออกจะมีลายน้ำไหม?',
+		'faq.3.a': 'ไม่มี Squishyfile ใช้งานฟรีและจะไม่เพิ่มลายน้ำลงในวิดีโอที่บีบอัดหรือแปลงแล้ว',
+		'faq.4.q': 'รองรับไฟล์วิดีโอรูปแบบใดบ้าง?',
+		'faq.4.a': 'รองรับรูปแบบวิดีโอยอดนิยม เช่น MP4, WebM, MOV, AVI และ MKV ทั้งสำหรับนำเข้าและส่งออก',
+		'faq.5.q': 'บีบอัดวิดีโอสำหรับ Discord, Gmail หรือแนบอีเมลได้ไหม?',
+		'faq.5.a': 'ได้ ใช้ช่อง ขนาดไฟล์เป้าหมาย แล้วใส่ขนาดตามแพลตฟอร์ม เช่น 8 MB สำหรับ Discord หรือ 24 MB สำหรับ Gmail Squishyfile จะคำนวณอัตราการบีบอัดให้ใกล้เคียงเป้าหมายโดยไม่ต้องเดาเอง',
+		'faq.6.q': 'รองรับการบีบอัดวิดีโอ 4K ไหม?',
+		'faq.6.a': 'รองรับ การบีบอัดวิดีโอ 4K ทำงานทั้งหมดในเบราว์เซอร์และไม่มีขีดจำกัดจากฝั่งเซิร์ฟเวอร์ เพื่อความเสถียรเราแนะนำไฟล์ไม่เกิน 2 GB เครื่องมือยังรองรับ MOV, AVI, MKV และ WebM ไม่ใช่แค่ MP4',
+
+
+		'footer.copy': '© 2026 Squishyfile &nbsp;·&nbsp; ทำงานทั้งหมดในเบราว์เซอร์ &nbsp;·&nbsp;',
+		'footer.privacy': 'นโยบายความเป็นส่วนตัว',
+		'footer.terms': 'ข้อกำหนดการใช้บริการ',
+		'blog.meta.title': 'บล็อก – Squishyfile',
+		'blog.meta.desc': 'ข่าวสาร เคล็ดลับ และอัปเดตล่าสุดจากบล็อก Squishyfile',
+		'blog.header.title': 'บล็อก',
+		'blog.header.sub': 'เคล็ดลับ คู่มือ และอัปเดตจากทีม Squishyfile',
+		'blog.empty': 'ยังไม่มีบทความสำหรับภาษานี้',
+		'blog.back': 'บล็อก',
+		'drop.pdf': 'วาง PDF ของคุณที่นี่',
+		'drop.pdf.sub': 'ลากและวาง หรือคลิกเพื่อเลือกไฟล์ PDF',
+		'hint.pdf': 'ไฟล์ PDF เท่านั้น · รองรับ PDF ที่มีรหัสผ่าน',
+		'sec.pdfPassword': 'รหัสผ่านปัจจุบัน',
+		'input.password.ph': 'ใส่รหัสผ่าน PDF ปัจจุบัน…',
+		'pdf.password.hint': 'ใส่รหัสผ่านเดิมเพื่อลบรหัสผ่านออกจาก PDF',
+		'btn.removePassword': 'บีบอัด PDF',
+		'status.removingPass': 'กำลังบีบอัด PDF…',
+		'error.selectPdf': 'กรุณาเลือกไฟล์ PDF',
+		'error.enterPassword': 'กรุณาใส่รหัสผ่าน PDF ปัจจุบัน',
+		'res.pdf.title': 'บีบอัด PDF สำเร็จ!',
+		'res.pdf.sub': 'ไฟล์ PDF ที่บีบอัดแล้วพร้อมดาวน์โหลด',
+		'btn.dl.pdf': 'ดาวน์โหลด PDF ที่บีบอัดแล้ว',
+		'file.type.pdf': 'PDF',
+		'sec.pdfPasswordOpt': 'ลบรหัสผ่าน (ไม่บังคับ)',
+
+		// ── Video to MP3 page ───────────────────────────────────────────────────
+		'tab.mp3': 'วิดีโอเป็น MP3',
+		'home.card.mp3.title': 'แปลงวิดีโอเป็น MP3',
+		'home.card.mp3.desc': 'แยกเสียงจากวิดีโอ MP4, MOV, AVI, WebM และ MKV เป็นไฟล์ MP3 แบบส่วนตัวในเบราว์เซอร์',
+		'home.card.mp3.cta': 'แปลงวิดีโอเป็น MP3',
+
+		'mp3.bitrate.128.label': '128 kbps',
+		'mp3.bitrate.128.sub': 'ไฟล์เล็ก',
+		'mp3.bitrate.192.label': '192 kbps',
+		'mp3.bitrate.192.sub': 'แนะนำ',
+		'mp3.bitrate.320.label': '320 kbps',
+		'mp3.bitrate.320.sub': 'เสียงดีที่สุด',
+
+		'mp3.meta.title': 'แปลงไฟล์ MP4 เป็น MP3 ฟรี ออนไลน์ – ไม่ต้องอัปโหลด | Squishyfile',
+		'mp3.meta.desc': 'แปลงวิดีโอเป็น MP3 และแปลงไฟล์ MP4 เป็น MP3 ได้ฟรีในเบราว์เซอร์ รองรับ MP4, MOV, AVI, WebM, MKV ไม่ต้องอัปโหลด ไม่มีลายน้ำ ไม่ต้องสมัคร',
+		'mp3.hero.title': 'แปลงวิดีโอเป็น MP3<br />ในเบราว์เซอร์ของคุณ',
+		'mp3.hero.sub': 'แยกเสียงออกจากวิดีโอเป็นไฟล์ MP3 แบบส่วนตัว — ไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ',
+		'mp3.drop.title': 'วางวิดีโอของคุณที่นี่',
+		'mp3.hint': 'MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; ส่งออกเป็น MP3',
+		'mp3.sec.quality': 'คุณภาพ MP3',
+		'mp3.status.converting': 'กำลังแปลงเป็น MP3…',
+		'mp3.error.selectVideo': 'กรุณาเลือกไฟล์วิดีโอ',
+		'mp3.btn.convert': 'แปลงเป็น MP3',
+		'mp3.btn.download': 'ดาวน์โหลด MP3',
+		'mp3.btn.new': 'แปลงไฟล์ใหม่',
+		'mp3.res.title': 'แปลง MP3 สำเร็จแล้ว!',
+		'mp3.res.sub': 'ไฟล์เสียงของคุณพร้อมดาวน์โหลดแล้ว',
+		'mp3.stat.converted': 'ขนาด MP3',
+		'mp3.stat.format': 'รูปแบบไฟล์',
+		'mp3.note.privacy': '<strong>ไฟล์ของคุณไม่ออกจากอุปกรณ์</strong> Squishyfile แปลงวิดีโอเป็น MP3 ภายในเบราว์เซอร์ — ไม่อัปโหลดไปเซิร์ฟเวอร์ ไม่ต้องมีบัญชี ไฟล์จะถูกล้างจากหน่วยความจำหลังดาวน์โหลด',
+
+		'faq.mp3.title': 'คำถามที่พบบ่อย',
+		'faq.mp3.1.q': 'เครื่องมือแปลงวิดีโอเป็น MP3 นี้ใช้ฟรีไหม?',
+		'faq.mp3.1.a': 'ใช่ คุณสามารถแปลงวิดีโอเป็น MP3 ได้ฟรี โดยไม่ต้องสร้างบัญชีหรือติดตั้งโปรแกรม',
+		'faq.mp3.2.q': 'Squishyfile อัปโหลดวิดีโอของฉันหรือไม่?',
+		'faq.mp3.2.a': 'ไม่ การแปลงทำงานภายในเบราว์เซอร์ วิดีโอของคุณอยู่บนอุปกรณ์และไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์',
+		'faq.mp3.3.q': 'รองรับวิดีโอรูปแบบใดบ้าง?',
+		'faq.mp3.3.a': 'คุณสามารถเลือกไฟล์วิดีโอยอดนิยม เช่น MP4, MOV, AVI, WebM และ MKV แล้วส่งออกเป็นไฟล์เสียง MP3',
+		'faq.mp3.4.q': 'แปลงวิดีโอ MOV จาก iPhone เป็น MP3 ได้ไหม?',
+		'faq.mp3.4.a': 'ได้ คุณสามารถเลือกวิดีโอ MOV ที่ถ่ายจาก iPhone แล้วแยกเสียงออกมาเป็นไฟล์ MP3',
+		'faq.mp3.5.q': 'ควรเลือกคุณภาพ MP3 แบบไหน?',
+		'faq.mp3.5.a': '192 kbps เหมาะสำหรับวิดีโอส่วนใหญ่ เลือก 128 kbps หากต้องการไฟล์เล็กลง หรือ 320 kbps หากต้องการคุณภาพเสียงสูงกว่า',
+		'faq.mp3.6.q': 'ไฟล์ MP3 ที่ดาวน์โหลดจะมีลายน้ำไหม?',
+		'faq.mp3.6.a': 'ไม่มี ไฟล์ MP3 ที่ดาวน์โหลดเป็นไฟล์เสียงสะอาด ไม่มีลายน้ำ',
+		'faq.mp3.7.q': 'ใช้งานบนมือถือได้ไหม?',
+		'faq.mp3.7.a': 'ได้ ใช้งานได้บนเบราว์เซอร์มือถือสมัยใหม่ทั้ง iPhone และ Android แต่ไฟล์ขนาดใหญ่อาจประมวลผลได้ดีกว่าบนเดสก์ท็อปหรือแล็ปท็อป',
+		'faq.mp3.8.q': 'ถ้าปิดแท็บระหว่างแปลงไฟล์จะเกิดอะไรขึ้น?',
+		'faq.mp3.8.a': 'หากปิดแท็บระหว่างการแปลง กระบวนการจะหยุด กรุณาเปิดแท็บไว้จนกว่าไฟล์ MP3 จะพร้อมดาวน์โหลด',
+	},
+
 };

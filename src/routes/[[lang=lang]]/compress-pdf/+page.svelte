@@ -525,7 +525,7 @@
 			<h2>{t("faq.pdf.title")}</h2>
 
 			<div class="faq-list">
-				{#each Array.from({ length: 14 }, (_, i) => i + 1) as n}
+				{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
 					<details
 						class="faq-item"
 						itemscope

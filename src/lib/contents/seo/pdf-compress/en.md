@@ -4,6 +4,8 @@ Squishyfile is a free PDF compressor that helps you reduce PDF file size directl
 
 Unlike many online PDF compression tools, Squishyfile processes your PDF in the browser using WebAssembly. Your PDF is not uploaded to a server for compression. The file is handled on your own device, which makes the tool useful for everyday documents that may contain personal information, such as resumes, invoices, contracts, forms, applications, and scanned paperwork.
 
+---
+
 ## What This PDF Compressor Can Do
 
 - Reduce PDF file size online for free
@@ -14,6 +16,8 @@ Unlike many online PDF compression tools, Squishyfile processes your PDF in the 
 - Work from a browser on Mac, Windows, iPhone, Android, and other common devices
 
 PDF compression works best when the file contains large images, scanned pages, or presentation slides. These files often include more image data than is needed for normal screen reading, so they can usually be made much smaller. If your PDF is already optimized or mostly plain text, the file size may only decrease a little. That is normal and does not mean the tool failed.
+
+---
 
 ## How to Compress a PDF
 
@@ -51,6 +55,8 @@ After compression is complete, you will see the original file size, the compress
 
 Before sending an important file, open the compressed PDF and quickly check that every page looks correct. Text should remain readable, images should still be clear enough for your purpose, and the page order should stay the same.
 
+---
+
 ## What Types of PDFs Are Best for Compression?
 
 Squishyfile is especially useful for PDFs that are too large to email, upload, or share. Common examples include:
@@ -63,6 +69,8 @@ Squishyfile is especially useful for PDFs that are too large to email, upload, o
 - Documents that need to fit under a file size limit
 
 Scanned PDFs and image-heavy documents usually compress the most because they contain large image data. Text-heavy PDFs are already efficient, so the reduction may be smaller. If you want a deeper explanation of compression quality and file size trade-offs, see [how to reduce PDF file size without losing quality](/blog/how-to-reduce-pdf-file-size-without-losing-quality).
+
+---
 
 ## When the PDF File Size Does Not Decrease Much
 
@@ -84,6 +92,8 @@ If the compressed file is still too large, try these steps:
 
 For a broader comparison of free options and what to expect from online tools, read [free PDF compressor online: no registration, no watermark](/blog/free-pdf-compressor-online-no-registration).
 
+---
+
 ## Compress PDF to 1 MB or Another Size Limit
 
 Many upload portals reject PDFs that are larger than a fixed limit. Job applications, school forms, government portals, email systems, and internal company tools may require a PDF under 1 MB, 2 MB, 5 MB, or 10 MB.
@@ -91,6 +101,8 @@ Many upload portals reject PDFs that are larger than a fixed limit. Job applicat
 To target a specific size, start with **Balanced** mode. If the result is still too large, try **Maximum** mode. If the file remains above the limit, the PDF may contain too much content to fit under that size without removing pages or reducing image quality further.
 
 For example, a scanned document with only a few pages may compress below 1 MB easily. A long photo-heavy portfolio may need more aggressive optimization or fewer pages. For more practical tips, see [compress PDF to 1 MB or less](/blog/compress-pdf-to-1mb-online-free).
+
+---
 
 ## Are PDFs Uploaded to a Server?
 
@@ -100,6 +112,8 @@ This is different from many online PDF tools that send your file to a remote ser
 
 This matters when working with sensitive documents such as contracts, tax forms, financial statements, medical records, identity documents, and private business files. You should still store the downloaded PDF carefully, especially if you removed password protection from the original file.
 
+---
+
 ## Can I Use It on Mac, Windows, iPhone, and Android?
 
 Yes. Squishyfile works in modern browsers, so you can compress PDFs on Mac, Windows, iPhone, Android, Linux, and many other devices without installing dedicated software.
@@ -108,6 +122,7 @@ On Mac, you may have tried Preview's built-in “Reduce File Size” option. It 
 
 On iPhone, you can use Safari to select a PDF from the Files app, compress it in the browser, and download the smaller version back to your device. For a phone-specific walkthrough, read [how to compress a PDF on iPhone with no app required](/blog/compress-pdf-iphone-no-app-required).
 
+---
 
 ## Related Guides
 

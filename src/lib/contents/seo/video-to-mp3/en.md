@@ -6,6 +6,8 @@ Use this tool when you want to turn a video into an audio file, save the sound f
 
 Unlike many online video converters, Squishyfile processes your file locally in your browser using WebAssembly and FFmpeg. Your video is not uploaded to a server. This makes it a practical choice for personal videos, work recordings, private materials, unpublished content, and files that may contain sensitive information.
 
+---
+
 ## What You Can Do with This Video to MP3 Converter
 
 With Squishyfile, you can:
@@ -23,6 +25,8 @@ With Squishyfile, you can:
 * Use the tool on Mac, Windows, iPhone, Android, and other modern devices
 
 If you only need the sound from a video, converting it to MP3 can make the file easier to store, play, organize, and share. MP3 files are usually smaller than video files because they do not include the visual part of the video.
+
+---
 
 ## How to Convert Video to MP3
 
@@ -61,6 +65,8 @@ Converting MP4 to MP3 allows you to remove the visual part and keep only the sou
 
 MP3 is widely supported, lightweight, and easy to play on most devices. For many audio-only use cases, MP3 is more convenient than keeping a large MP4 video file.
 
+---
+
 ## Extract Audio from Video
 
 A video to MP3 converter is also useful when you want to extract audio from a video file. This means saving the sound, voice, narration, music, or recorded audio from the video as a separate MP3 file.
@@ -79,6 +85,8 @@ You can extract audio from:
 
 This tool extracts the audio track that already exists inside the video file. It does not separate vocals, background music, sound effects, or different speakers using AI. The full audio track from the video is saved as an MP3 file.
 
+---
+
 ## Convert MOV, WebM, MKV, and AVI to MP3
 
 Squishyfile supports more than MP4. You can also convert MOV, WebM, MKV, AVI, and other common video formats to MP3.
@@ -88,6 +96,8 @@ MOV files are often created by iPhone, iPad, and Mac devices. If you record a vi
 WebM files are often used for browser recordings, web-based tools, and online video assets. If you have a WebM screen recording and only need the voice or sound, you can convert it to MP3.
 
 MKV and AVI files are also common in older video collections, downloaded media, and desktop recordings. Some files may contain special codecs or unusual file structures, so conversion can depend on the audio format inside the video. In many cases, you can simply select the file and try converting it in the browser.
+
+---
 
 ## Convert Video to MP3 on iPhone or Android
 
@@ -106,6 +116,8 @@ For mobile conversion, keep these tips in mind:
 
 Browser-based conversion is convenient for quick files, short recordings, voice notes, and simple audio extraction tasks.
 
+---
+
 ## Does Converting Video to MP3 Reduce File Size?
 
 In many cases, yes. A video file contains both video and audio data. An MP3 file contains only audio. Because the visual data is removed, the converted MP3 is often much smaller than the original video.
@@ -120,6 +132,8 @@ This is especially useful for:
 * Videos where the visuals are not important
 
 However, the final file size depends on the length of the video, the quality of the original audio, the conversion settings, and the audio content itself. A very long video can still produce a large MP3 file.
+
+---
 
 ## Tips for Better Audio Quality
 
@@ -136,6 +150,8 @@ For better results:
 * Listen to the final MP3 after downloading it
 
 MP3 is a compressed audio format, so it is not completely lossless. However, it is widely supported and practical for everyday listening, note-taking, learning, storage, and sharing.
+
+---
 
 ## Why Use a Browser-Based Video to MP3 Converter?
 
@@ -154,6 +170,8 @@ This approach is helpful when working with:
 * Videos that may contain sensitive information
 
 Because the conversion happens on your own device, the process can also avoid the upload time required by many server-based converters.
+
+---
 
 ## Common Reasons Video to MP3 Conversion May Fail
 
@@ -175,6 +193,8 @@ A video file extension does not always tell the full story. For example, a file 
 
 If your browser is outdated, your device has low memory, or too many apps are open, conversion may fail. Try updating your browser, closing other apps, freeing storage space, or converting the file on a more powerful device.
 
+---
+
 ## Is the Video Uploaded to a Server?
 
 No. Squishyfile converts your video to MP3 inside your browser. The file is processed locally on your device instead of being uploaded to a server.
@@ -182,6 +202,8 @@ No. Squishyfile converts your video to MP3 inside your browser. The file is proc
 Many online converters require your file to be uploaded before conversion. That can take extra time and may not be ideal for private or sensitive videos.
 
 Squishyfile uses browser-based processing with WebAssembly and FFmpeg, allowing the audio extraction process to run on your device. This makes it suitable for personal recordings, work files, private videos, and content you do not want to send to an external server.
+
+---
 
 ## Can I Convert YouTube Videos to MP3?
 
@@ -200,6 +222,8 @@ It is suitable for videos such as:
 * Personal video files
 
 It is not a URL-based YouTube to MP3 downloader.
+
+---
 
 ## Best Uses for a Video to MP3 Converter
 
@@ -221,6 +245,8 @@ Squishyfile is useful when the sound matters more than the visuals. It works wel
 
 If you still need the visuals, subtitles, slides, charts, or screen content, keep the original video file. MP3 only saves the audio, so it is best for videos that can be understood by listening.
 
+---
+
 ## Works on Mac, Windows, iPhone, and Android
 
 Squishyfile works in the browser, so you can use it on major platforms without installing dedicated software.
@@ -238,6 +264,8 @@ You can convert video to MP3 on:
 On desktop, you can use modern browsers such as Chrome, Edge, Safari, or Firefox. On mobile, you can use Safari on iPhone and Chrome on Android.
 
 Because video conversion uses your device’s CPU and memory, large files may work better on a computer than on a phone. For short videos and simple audio extraction, mobile browsers are often enough.
+
+---
 
 ## Final Thoughts
 

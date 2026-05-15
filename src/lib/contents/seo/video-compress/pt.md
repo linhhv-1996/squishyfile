@@ -6,6 +6,8 @@ Diferente de muitos sites de compressão de vídeo online, o Squishyfile usa Web
 
 Se você precisa comprimir vídeo para WhatsApp, Discord, Gmail, Telegram, Messenger, redes sociais ou apenas liberar espaço no celular e no computador, esta ferramenta ajuda a encontrar um equilíbrio entre qualidade visual e tamanho final do arquivo.
 
+---
+
 ## O que este compressor de vídeo faz
 
 - Reduz o tamanho de vídeos grandes diretamente no navegador
@@ -20,6 +22,8 @@ Se você precisa comprimir vídeo para WhatsApp, Discord, Gmail, Telegram, Messe
 - Ajuda a reduzir vídeos para e-mail, redes sociais, armazenamento em nuvem e compartilhamento rápido
 
 A compressão costuma funcionar muito bem em gravações de tela, aulas, apresentações, vídeos com câmera parada, animações, tutoriais e clipes com pouca movimentação. Em vídeos 4K muito longos, cenas com muito movimento, ruído em baixa luz ou arquivos que já foram comprimidos várias vezes, a redução pode ser menor ou exigir uma perda de qualidade mais perceptível.
+
+---
 
 ## Como comprimir um vídeo online
 
@@ -71,6 +75,8 @@ Quando a compressão terminar, você verá o tamanho original, o tamanho final e
 
 Depois disso, você pode enviar o arquivo por WhatsApp, Discord, Gmail, Telegram, Messenger, publicar em redes sociais, subir para a nuvem ou guardar uma versão mais leve no computador ou celular.
 
+---
+
 ## Quando usar um compressor de vídeo online
 
 Squishyfile é útil quando você quer reduzir o tamanho de um vídeo sem abrir um editor pesado e sem enviar o arquivo para um serviço de nuvem. Ele foi pensado para situações comuns do dia a dia:
@@ -88,6 +94,8 @@ Squishyfile é útil quando você quer reduzir o tamanho de um vídeo sem abrir 
 
 Se você quer uma comparação mais ampla entre ferramentas, leia também o guia sobre [melhores compressores de vídeo gratuitos](/pt/blog/best-free-video-compressors).
 
+---
+
 ## Comprimir vídeo para WhatsApp, Discord e redes sociais
 
 Aplicativos de mensagem e redes sociais frequentemente rejeitam vídeos grandes ou aplicam uma compressão automática que deixa a imagem pior do que o necessário. Por isso, é melhor reduzir o arquivo antes do envio, escolhendo um tamanho adequado para cada plataforma.
@@ -100,6 +108,8 @@ Para Facebook, Messenger, Telegram, X e outras plataformas, o ideal é equilibra
 
 Para um passo a passo específico, consulte o guia sobre [como comprimir vídeo para WhatsApp, Discord e Facebook](/pt/blog/compress-video-for-whatsapp-discord).
 
+---
+
 ## Reduzir tamanho de vídeo para um valor exato em MB
 
 Muitas pessoas tentam diminuir o tamanho do vídeo alterando bitrate manualmente. O problema é que calcular o bitrate correto exige duração do vídeo, tamanho desejado, áudio, codec e margem de erro. Na prática, isso vira tentativa e erro: exportar, conferir o tamanho, ajustar e repetir.
@@ -108,6 +118,8 @@ O modo de tamanho alvo simplifica esse processo. Você informa o tamanho final d
 
 Use esse modo quando o requisito principal for algo como “preciso que este vídeo fique abaixo de 25 MB” ou “quero reduzir este arquivo para cerca de 50 MB”. Para entender melhor essa abordagem, veja o guia completo sobre [como reduzir tamanho de vídeo para um arquivo exato](/pt/blog/reduce-video-size-custom).
 
+---
+
 ## Comprimir vídeo no iPhone e Android sem instalar aplicativo
 
 Muitos aplicativos de compressão de vídeo para celular exibem anúncios excessivos, adicionam marca d'água ou pedem permissões que não parecem necessárias. Como o Squishyfile roda no navegador, você pode comprimir vídeos no iPhone pelo Safari ou no Android pelo Chrome sem instalar um app separado.
@@ -115,6 +127,8 @@ Muitos aplicativos de compressão de vídeo para celular exibem anúncios excess
 No celular, a principal limitação é a memória disponível para o navegador. Vídeos curtos e médios costumam ser mais fáceis de processar. Arquivos muito grandes, vídeos 4K longos ou gravações de vários GB podem travar em aparelhos mais antigos. Nesses casos, usar um computador geralmente é mais estável.
 
 Para vídeos pessoais, familiares ou profissionais, o processamento local é uma vantagem importante. O arquivo permanece no dispositivo durante a compressão, evitando o envio para servidores externos. Veja mais detalhes no guia sobre [como comprimir vídeo no iPhone e Android sem instalar apps](/pt/blog/compress-video-iphone-android).
+
+---
 
 ## Comprimir vídeo sem perder qualidade: o que esperar
 
@@ -134,6 +148,8 @@ Algumas dicas ajudam a manter a nitidez:
 
 Para uma explicação mais técnica sobre bitrate, H.264, H.265, VBR e MOV para MP4, leia o guia sobre [como comprimir vídeo sem perder qualidade](/pt/blog/compress-video-without-losing-quality).
 
+---
+
 ## Por que comprimir vídeo no navegador é mais privado
 
 Compressores de vídeo online tradicionais geralmente funcionam assim: você envia o arquivo para um servidor, o servidor processa o vídeo e depois você baixa o resultado. Esse modelo é conveniente, mas exige confiar que o serviço vai proteger, excluir e não acessar o conteúdo enviado.
@@ -152,6 +168,8 @@ Esse modelo é especialmente útil para:
 
 Mesmo assim, é sempre uma boa prática manter o navegador atualizado, usar dispositivos confiáveis e guardar uma cópia original do arquivo quando o vídeo for importante.
 
+---
+
 ## Por que meu vídeo não ficou tão pequeno?
 
 Às vezes, a compressão reduz pouco o tamanho do arquivo. Isso não significa necessariamente que a ferramenta falhou. Alguns vídeos simplesmente têm menos espaço para otimização sem uma perda visível de qualidade.
@@ -167,6 +185,8 @@ As causas mais comuns são:
 
 Se isso acontecer, tente usar uma meta de tamanho mais realista, reduzir a resolução, cortar partes desnecessárias ou escolher o modo **Baixo** quando a prioridade for apenas enviar o arquivo. Para vídeos importantes, compare o resultado antes de substituir o arquivo original.
 
+---
+
 ## Dicas para melhores resultados
 
 - Use **Equilibrado** como primeira tentativa para a maioria dos vídeos.
@@ -180,6 +200,8 @@ Se isso acontecer, tente usar uma meta de tamanho mais realista, reduzir a resol
 - Reproduza o vídeo final para conferir imagem e áudio antes de enviar.
 - Evite comprimir repetidamente o mesmo arquivo se quiser preservar qualidade.
 
+---
+
 ## Funciona em Mac, Windows, iPhone e Android?
 
 Sim. O Squishyfile funciona diretamente no navegador, sem instalação de software. Você pode usar em Mac, Windows, Linux, Chromebook, iPhone e Android, desde que o navegador seja moderno e tenha memória suficiente para processar o vídeo.
@@ -188,6 +210,7 @@ No computador, Chrome, Edge, Safari e outros navegadores atuais tendem a oferece
 
 Como a compressão de vídeo usa CPU e memória, arquivos grandes podem levar mais tempo. A velocidade não depende apenas da internet, porque o processamento ocorre localmente. Em muitos casos, isso economiza o tempo que seria gasto enviando e baixando um vídeo grande de um servidor externo.
 
+---
 
 ## Artigos relacionados
 
