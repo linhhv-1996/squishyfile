@@ -636,12 +636,12 @@
 	}
 
 	.how-to-sec :global(a) {
-		color: #4a8af1;
+		color: #1550ae;
 	}
 
 	.how-to-sec :global(h1) {
 		font-size: 1.35rem;
-		font-weight: 700;
+		font-weight: 650;
 		color: var(--fg);
 		margin: 0 0 20px;
 		line-height: 1.3;

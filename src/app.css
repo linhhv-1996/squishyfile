@@ -1,3 +1,6 @@
+/* app.css — professional utility/WASM tool theme
+   Reduced gradients, glow, playful shadows, and oversized radii. */
+
 *,
 *::before,
 *::after {
@@ -8,35 +11,37 @@
 
 :root {
   color-scheme: light;
-  --bg: #f6f8fb;
+  --bg: #f7f8fa;
   --surf: #ffffff;
-  --surf2: #f1f4f9;
-  --border: #dbe3ef;
-  --accent: #2563eb;
-  --accent2: #6366f1;
-  --green: #16a34a;
-  --red: #dc2626;
-  --text: #172033;
-  --muted: #667085;
-  --r: 9px;
-  --rsm: 9px;
+  --surf2: #f5f6f8;
+  --border: #e0e4ea;
+  --border-hover: #cfd6df;
+  --accent: #3b6ea8;
+  --accent2: #3b6ea8;
+  --green: #15803d;
+  --red: #b91c1c;
+  --text: #273142;
+  --muted: #7a8493;
+  --r: 6px;
+  --rsm: 5px;
 }
 
 /* Optional dark mode: add data-theme="dark" on html/body to enable */
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0b0d12;
-  --surf: #13161e;
-  --surf2: #1a1e2a;
-  --border: #232737;
-  --accent: #4f8cff;
-  --accent2: #7c5cfc;
-  --green: #22d07a;
-  --red: #ff5c6a;
-  --text: #dde1f0;
-  --muted: #8a90aa;
-  --r: 12px;
-  --rsm: 9px;
+  --bg: #0f1115;
+  --surf: #151922;
+  --surf2: #1d2330;
+  --border: #2a303b;
+  --border-hover: #3a4352;
+  --accent: #8ab4f8;
+  --accent2: #8ab4f8;
+  --green: #34d399;
+  --red: #f87171;
+  --text: #d8dee8;
+  --muted: #9aa4b2;
+  --r: 6px;
+  --rsm: 5px;
 }
 body {
   background: var(--bg);
@@ -60,9 +65,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 1px 10px rgba(15, 23, 42, .04);
-  backdrop-filter: blur(16px);
+  background: var(--surf);
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .hinner {
@@ -86,8 +91,8 @@ body {
 .logo-ico {
   width: 30px;
   height: 30px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: 8px;
+  background: var(--accent);
+  border-radius: 6px;
   display: grid;
   place-items: center;
   font-size: 15px;
@@ -95,7 +100,7 @@ body {
 
 .logo-name {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  font-weight: 800;
+  font-weight: 760;
   font-size: 17px;
   color: var(--text);
   letter-spacing: -.3px;
@@ -119,7 +124,7 @@ body {
   color: var(--muted);
   text-decoration: none;
   border-radius: var(--rsm);
-  transition: all .15s;
+  transition: background .15s, border-color .15s, color .15s;
   white-space: nowrap;
 }
 
@@ -162,7 +167,7 @@ body {
 }
 
 .lang-btn:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .lang-btn .flag {
@@ -181,7 +186,7 @@ body {
 }
 
 .lang-wrap.open .lang-btn {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .lang-wrap.open .lang-btn :global(.chevron-icon) {
@@ -197,11 +202,11 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--r);
   padding: 5px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, .12);
+  box-shadow: 0 8px 20px rgba(39, 49, 66, .06);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
   z-index: 200;
 }
 
@@ -226,7 +231,7 @@ body {
 }
 
 .lang-opt.on {
-  background: rgba(37, 99, 235, .08);
+  background: rgba(31, 79, 143, .08);
 }
 
 .lang-opt .lf {
@@ -253,7 +258,7 @@ body {
 .ham-btn {
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 4.5px;
   width: 34px;
   height: 34px;
@@ -270,7 +275,7 @@ body {
   height: 1.5px;
   background: var(--text);
   border-radius: 2px;
-  transition: all .22s;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .ham-btn.open span:nth-child(1) {
@@ -291,24 +296,24 @@ body {
   position: fixed;
   inset: 54px 0 0 0;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
+  background: var(--surf);
+  backdrop-filter: none;
   padding: 16px 20px;
   flex-direction: column;
   gap: 4px;
-  animation: fadeUp .18s ease;
+  animation: none;
   overflow-y: auto;
 }
 
 
 
 [data-theme="dark"] .main-header {
-  background: rgba(11, 13, 18, 0.92);
+  background: var(--surf);
   box-shadow: none;
 }
 
 [data-theme="dark"] .mobile-menu {
-  background: rgba(11, 13, 18, 0.97);
+  background: var(--surf);
 }
 .mobile-menu.open {
   display: flex;
@@ -321,7 +326,7 @@ body {
   padding: 10px 0px;
   border-radius: var(--r);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 550;
   color: var(--text);
   text-decoration: none;
   transition: background .15s;
@@ -346,7 +351,7 @@ body {
 
 .mm-label {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 650;
   letter-spacing: .8px;
   text-transform: uppercase;
   color: var(--muted);
@@ -369,16 +374,16 @@ body {
   cursor: pointer;
   border: 1.5px solid var(--border);
   background: var(--surf2);
-  transition: all .15s;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .mm-lang-opt:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .mm-lang-opt.on {
   border-color: var(--accent);
-  background: rgba(37, 99, 235, .09);
+  background: rgba(31, 79, 143, .08);
 }
 
 .mm-lang-opt .mlf {
@@ -387,7 +392,7 @@ body {
 
 .mm-lang-opt .mln {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 550;
   color: var(--text);
 }
 
@@ -404,15 +409,16 @@ body {
 .hero h1 {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 34px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.22;
   letter-spacing: -.8px;
   margin-bottom: 8px;
   padding-bottom: 4px;
-  background: linear-gradient(130deg, var(--text) 35%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  color: var(--text);
 }
 
 .hero p {
@@ -436,7 +442,7 @@ body {
   color: var(--muted);
   background: var(--surf);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--rsm);
   padding: 3px 11px;
 }
 
@@ -466,10 +472,10 @@ body {
   color: var(--muted);
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 550;
   border-radius: var(--rsm);
   cursor: pointer;
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -482,15 +488,20 @@ body {
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: #fff;
-  box-shadow: 0 2px 16px rgba(37, 99, 235, .28);
+  background: #e9eef6;
+  color: #2f5f92;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .tab-btn.active {
+  background: #243043;
+  color: var(--text);
 }
 
 /* ── PANELS ── */
 .panel {
   display: none;
-  animation: fadeUp .22s ease;
+  animation: none;
 }
 
 .panel.active {
@@ -517,7 +528,7 @@ body {
   padding: 22px 16px;
   text-align: center;
   cursor: pointer;
-  transition: all .22s;
+  transition: background .15s, border-color .15s, color .15s;
   background: var(--surf);
   position: relative;
   overflow: hidden;
@@ -529,7 +540,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, .1) 0%, transparent 65%);
+  background: none;
   opacity: 0;
   transition: opacity .25s;
   pointer-events: none;
@@ -537,21 +548,21 @@ body {
 
 .dz:hover,
 .dz.over {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .dz:hover::before,
 .dz.over::before {
-  opacity: 1;
+  opacity: 0;
 }
 
 .dz-ico {
   width: 48px;
   height: 48px;
   margin: 0 auto 12px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, .12), rgba(99, 102, 241, .12));
+  background: var(--surf2);
   border: 1px solid var(--border);
-  border-radius: 13px;
+  border-radius: var(--r);
   display: grid;
   place-items: center;
   color: var(--accent);
@@ -560,7 +571,7 @@ body {
 .dz h3 {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 650;
   margin-bottom: 3px;
   color: var(--text);
 }
@@ -584,12 +595,12 @@ body {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .btn-browse:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--border-hover);
+  color: var(--text);
 }
 
 .fmt-hint {
@@ -620,7 +631,7 @@ body {
   height: 40px;
   flex-shrink: 0;
   background: var(--surf2);
-  border-radius: 10px;
+  border-radius: var(--r);
   display: grid;
   place-items: center;
   color: var(--accent);
@@ -633,7 +644,7 @@ body {
 
 .file-name {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 550;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -673,7 +684,7 @@ body {
 
 .slabel {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 550;
   letter-spacing: .75px;
   color: var(--muted);
   margin-bottom: 11px;
@@ -693,17 +704,17 @@ body {
   padding: 6px 8px 6px;
   text-align: center;
   cursor: pointer;
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
   position: relative;
 }
 
 .pc:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .pc.on {
   border-color: var(--accent);
-  background: rgba(37, 99, 235, .09);
+  background: rgba(31, 79, 143, .08);
 }
 
 .pc.disabled-opt {
@@ -722,7 +733,7 @@ body {
 .pc .lb {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 650;
   color: var(--text);
   display: block;
   margin-bottom: 2px;
@@ -768,7 +779,7 @@ body {
 }
 
 .target-input-wrap input:focus {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
 }
 
 .target-input-wrap input::placeholder {
@@ -786,7 +797,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 550;
   color: var(--muted);
   pointer-events: none;
 }
@@ -823,24 +834,24 @@ body {
   gap: 5px;
   padding: 5px 11px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 550;
   background: var(--surf2);
   border: 1px solid var(--border);
   border-radius: 20px;
   cursor: pointer;
   color: var(--muted);
-  transition: all .15s;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .stag:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
   color: var(--text);
 }
 
 .stag.on {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(37, 99, 235, .09);
+  background: rgba(31, 79, 143, .08);
 }
 
 .stag.disabled-opt {
@@ -871,20 +882,20 @@ body {
   border-radius: var(--rsm);
   text-align: center;
   cursor: pointer;
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
   font-size: 13px;
   font-weight: 500;
   color: var(--muted);
 }
 
 .fo:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
   color: var(--text);
 }
 
 .fo.on {
   border-color: var(--accent);
-  background: rgba(37, 99, 235, .09);
+  background: rgba(31, 79, 143, .08);
   color: var(--accent);
 }
 
@@ -908,7 +919,7 @@ body {
 
 .ptop .pct {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .pbar {
@@ -920,7 +931,7 @@ body {
 
 .pfill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  background: var(--accent);
   border-radius: 3px;
   width: 0%;
   transition: width .25s ease;
@@ -951,26 +962,27 @@ body {
 .btn-go {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: #3b6ea8;
   border: none;
   border-radius: var(--rsm);
   color: #fff;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 650;
   letter-spacing: .1px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 7px;
-  box-shadow: 0 3px 18px rgba(37, 99, 235, .2);
-  transition: all .18s;
+  box-shadow: none;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .btn-go:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 24px rgba(37, 99, 235, .32);
+  transform: none;
+  box-shadow: none;
+  background: #345f90;
 }
 
 .btn-go:disabled {
@@ -982,11 +994,11 @@ body {
 .res {
   display: none;
   background: var(--surf);
-  border: 1px solid rgba(34, 208, 122, .26);
+  border: 1px solid rgba(21, 128, 61, .24);
   border-radius: var(--r);
   padding: 16px;
   margin-bottom: 14px;
-  animation: fadeUp .28s ease;
+  animation: none;
 }
 
 .res.show {
@@ -1003,7 +1015,7 @@ body {
 .res-ico {
   width: 34px;
   height: 34px;
-  background: rgba(34, 208, 122, .1);
+  background: rgba(21, 128, 61, .08);
   border-radius: 9px;
   display: grid;
   place-items: center;
@@ -1013,7 +1025,7 @@ body {
 .res-title {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .res-sub {
@@ -1039,7 +1051,7 @@ body {
 .sv {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .sv.g {
@@ -1059,20 +1071,20 @@ body {
   gap: 6px;
   width: 100%;
   padding: 11px;
-  background: rgba(34, 208, 122, .07);
-  border: 1px solid rgba(34, 208, 122, .28);
+  background: rgba(21, 128, 61, .06);
+  border: 1px solid rgba(21, 128, 61, .24);
   border-radius: var(--rsm);
   color: var(--green);
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 650;
   cursor: pointer;
   text-decoration: none;
-  transition: all .18s;
+  transition: background .15s, border-color .15s, color .15s;
 }
 
 .btn-dl:hover {
-  background: rgba(34, 208, 122, .13);
+  background: rgba(21, 128, 61, .10);
 }
 
 .pnote {
@@ -1101,7 +1113,7 @@ body {
 
 .pnote strong {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* ── IMPROVED FEATURES ── */
@@ -1117,7 +1129,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--r);
   padding: 16px;
-  transition: all 0.3s ease;
+  transition: border-color .15s, background .15s;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1125,18 +1137,18 @@ body {
 }
 
 .feat:hover {
-  border-color: rgba(37, 99, 235, .5);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-color: var(--border);
+  transform: none;
+  box-shadow: none;
 }
 
 .feat .fi {
   width: 44px;
   height: 44px;
   margin: 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(99, 102, 241, 0.1));
-  border: 1px solid rgba(37, 99, 235, 0.15);
-  border-radius: 12px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
   display: grid;
   place-items: center;
   color: var(--accent);
@@ -1145,7 +1157,7 @@ body {
 .feat .ft {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 650;
   margin-bottom: 4px;
   color: var(--text);
 }
@@ -1164,7 +1176,7 @@ body {
 .faq-sec h2 {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 20px;
   margin-top: 30px;
   text-align: center;
@@ -1181,18 +1193,18 @@ details.faq-item {
   background: var(--surf);
   border: 1px solid var(--border);
   border-radius: var(--r);
-  transition: all 0.2s;
+  transition: border-color .15s, background .15s;
 }
 
 details.faq-item[open] {
   border-color: var(--accent);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 summary.faq-q {
   padding: 10px 20px;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 450;
   font-size: 14px;
   cursor: pointer;
   color: var(--text);
@@ -1507,7 +1519,7 @@ button {
     width: 100%;
     padding: 10px 16px;
     margin-top: 8px;
-    border-radius: 8px;
+    border-radius: var(--rsm);
     border: 1px solid var(--border);
     background: transparent;
     color: var(--muted);
@@ -1518,13 +1530,13 @@ button {
 }
 
 .btn-new:hover {
-    border-color: var(--accent);
+    border-color: var(--border-hover);
     color: var(--text);
 }
 
 /* Small polish for ad containers */
 .banner-left,
 .banner-right {
-  border-radius: 12px;
+  border-radius: var(--r);
   overflow: hidden;
 }

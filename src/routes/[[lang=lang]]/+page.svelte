@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { Film, FileText, ArrowRight, Cpu, Target, Infinity, ShieldCheck } from 'lucide-svelte';
+	import { Film, FileText, Music, ArrowRight, Cpu, Target, Infinity, ShieldCheck } from 'lucide-svelte';
 
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
@@ -85,30 +85,6 @@
 			<p>{@html t('note.privacy')}</p>
 		</div>
 
-		<!-- <div class="feats">
-			<div class="feat">
-				<div class="fi"><Cpu size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t('feat.speed.title')}</div>
-					<div class="fd">{t('feat.speed.desc')}</div>
-				</div>
-			</div>
-			<div class="feat">
-				<div class="fi"><Target size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t('feat.target.title')}</div>
-					<div class="fd">{t('feat.target.desc')}</div>
-				</div>
-			</div>
-			<div class="feat">
-				<div class="fi"><Infinity size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t('feat.free.title')}</div>
-					<div class="fd">{t('feat.free.desc')}</div>
-				</div>
-			</div>
-		</div> -->
-
 		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
 			<h2>{t('faq.home.title')}</h2>
 			<div class="faq-list">
@@ -156,7 +132,7 @@
 <style>
 	.tool-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 16px;
 		margin-bottom: 24px;
 	}
@@ -190,6 +166,14 @@
 		background: radial-gradient(ellipse at 30% 20%, rgba(124, 92, 252, 0.08) 0%, transparent 65%);
 	}
 
+	.tool-card--mp3 {
+		grid-column: 1 / -1;
+	}
+
+	.tool-card--mp3::before {
+		background: radial-gradient(ellipse at 18% 30%, rgba(22, 163, 74, 0.08) 0%, transparent 62%);
+	}
+
 	.tool-card:hover {
 		transform: translateY(-3px);
 		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
@@ -203,6 +187,10 @@
 		border-color: var(--accent2);
 	}
 
+	.tool-card--mp3:hover {
+		border-color: var(--green);
+	}
+
 	.tool-card:hover::before {
 		opacity: 1;
 	}
@@ -211,13 +199,18 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 16px;
-		padding: 22px 20px 18px;
+		padding: 20px 22px 16px;
 		flex: 1;
 	}
 
+	.tool-card--mp3 .tc-inner {
+		align-items: center;
+		padding: 18px 22px 16px;
+	}
+
 	.tc-ico {
-		width: 52px;
-		height: 52px;
+		width: 50px;
+		height: 50px;
 		flex-shrink: 0;
 		border-radius: 14px;
 		display: grid;
@@ -236,6 +229,12 @@
 		color: var(--accent2);
 	}
 
+	.tc-ico--mp3 {
+		background: linear-gradient(135deg, rgba(22, 163, 74, 0.14), rgba(22, 163, 74, 0.05));
+		border: 1px solid rgba(22, 163, 74, 0.2);
+		color: var(--green);
+	}
+
 	.tc-body {
 		flex: 1;
 		min-width: 0;
@@ -244,7 +243,7 @@
 	.tc-title {
 		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
 		font-size: 15px;
-		font-weight: 800;
+		font-weight: 700;
 		color: var(--text);
 		margin-bottom: 6px;
 		line-height: 1.3;
@@ -255,6 +254,10 @@
 		color: var(--muted);
 		line-height: 1.55;
 		margin-bottom: 12px;
+	}
+
+	.tool-card--mp3 .tc-desc {
+		max-width: 560px;
 	}
 
 	.tc-tags {
@@ -289,6 +292,10 @@
 		color: var(--accent2);
 	}
 
+	.tool-card--mp3:hover .tc-arrow {
+		color: var(--green);
+	}
+
 	.tc-cta {
 		display: flex;
 		align-items: center;
@@ -309,8 +316,26 @@
 		background: linear-gradient(135deg, var(--accent2), #4f8cff);
 	}
 
+	.tc-cta--mp3 {
+		background: linear-gradient(135deg, #16a34a, #2563eb);
+	}
+
 	.tool-card:hover .tc-cta {
 		opacity: 0.9;
+	}
+
+	@media (max-width: 760px) {
+		.tool-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.tool-card--mp3 {
+			grid-column: auto;
+		}
+
+		.tool-card--mp3 .tc-inner {
+			align-items: flex-start;
+		}
 	}
 
 	@media (max-width: 560px) {
