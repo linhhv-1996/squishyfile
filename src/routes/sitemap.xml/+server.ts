@@ -7,7 +7,7 @@ import type { RequestHandler } from './$types';
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const SITE_URL = 'https://squishyfile.com';
-const STATIC_PAGES = ['', 'compress-video', 'compress-pdf', 'blog'] as const;
+const STATIC_PAGES = ['', 'compress-video', 'compress-pdf', 'video-to-mp3', 'blog'] as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
