@@ -12,10 +12,7 @@
 		Download,
 		ShieldCheck,
 		AlertTriangle,
-		Cpu,
-		Target,
-		Infinity,
-        FileVideo2,
+		FileVideo2,
 	} from "lucide-svelte";
 
 	// IMPORT CLASS XỬ LÝ LOGIC NÉN VIDEO
@@ -558,30 +555,6 @@
 			<span class="ni"><ShieldCheck size={16} strokeWidth={2} /></span>
 			<p>{@html t("note.privacy")}</p>
 		</div>
-
-		<!-- <div class="feats">
-			<div class="feat">
-				<div class="fi"><Cpu size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t("feat.speed.title")}</div>
-					<div class="fd">{t("feat.speed.desc")}</div>
-				</div>
-			</div>
-			<div class="feat">
-				<div class="fi"><Target size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t("feat.target.title")}</div>
-					<div class="fd">{t("feat.target.desc")}</div>
-				</div>
-			</div>
-			<div class="feat">
-				<div class="fi"><Infinity size={20} strokeWidth={1.8} /></div>
-				<div class="ftxt">
-					<div class="ft">{t("feat.free.title")}</div>
-					<div class="fd">{t("feat.free.desc")}</div>
-				</div>
-			</div>
-		</div> -->
 
 		<!-- How to use — SEO content từ markdown -->
 		{#if data.howToHtml}

@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { ChevronDown, Home, FileText, Zap } from 'lucide-svelte';
+	import { ChevronDown, Home, FileText, Zap, Music } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -55,6 +55,7 @@
 	let blogHref = $derived(`${prefix}/blog`);
 	let compressVideoHref = $derived(`${prefix}/compress-video`);
 	let compressPdfHref = $derived(`${prefix}/compress-pdf`);
+	let videoToMp3Href = $derived(`${prefix}/video-to-mp3`);
 	let privacyHref = $derived(`${prefix}/privacy`);
 	let termsHref = $derived(`${prefix}/terms`);
 	let contactHref = $derived(`${prefix}/contact`);
@@ -67,6 +68,7 @@
 
 	let isCompressVideo = $derived($page.url.pathname.includes('/compress-video'));
 	let isCompressPdf = $derived($page.url.pathname.includes('/compress-pdf'));
+	let isVideoToMp3 = $derived($page.url.pathname.includes('/video-to-mp3'));
 
 	// Hreflang: lấy path hiện tại, bỏ prefix ngôn ngữ (dùng cho SEO alternate links)
 	let currentPath = $derived((() => {
@@ -87,6 +89,10 @@
 
 		if (currentPath === '/compress-video' || currentPath.startsWith('/compress-video/')) {
 			return `/og/compress-video/${lang}.png`;
+		}
+
+		if (currentPath === '/video-to-mp3' || currentPath.startsWith('/video-to-mp3/')) {
+			return `/og/video-to-mp3/${lang}.png`;
 		}
 
 		return `/og/${lang}.png`;
@@ -154,6 +160,10 @@
 			<a href={compressPdfHref} class:active={isCompressPdf}>
 				<FileText size={13} strokeWidth={2.2} /> {t('tab.pdf')}
 			</a>
+			<a href={videoToMp3Href} class:active={isVideoToMp3}>
+				<Music size={13} strokeWidth={2.2} /> {t('tab.mp3')}
+			</a>
+			
 			<a href={blogHref} class:active={isBlog}>{t('nav.blog') || 'Blog'}</a>
 		</nav>
 
@@ -194,6 +204,9 @@
 	</a>
 	<a href={compressPdfHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><FileText size={18} /></span><span>{t('tab.pdf')}</span>
+	</a>
+	<a href={videoToMp3Href} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><Music size={18} /></span><span>{t('tab.mp3')}</span>
 	</a>
 	<a href={blogHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><FileText size={18} /></span><span>{t('nav.blog') || 'Blog'}</span>

@@ -7,12 +7,22 @@
 
 	let { tool = 'pdf', t, langPrefix }: Props = $props();
 
-	let resolvedTool = $derived(tool === 'video' ? 'video' : 'pdf');
+	let resolvedTool = $derived(
+		tool === 'video' || tool === 'video-to-mp3' ? tool : 'pdf'
+	);
 
-	let href = $derived(resolvedTool === 'video' ? `${langPrefix}/compress-video` : `${langPrefix}/compress-pdf`);
+	let href = $derived(
+		resolvedTool === 'video'
+			? `${langPrefix}/compress-video`
+			: resolvedTool === 'video-to-mp3'
+				? `${langPrefix}/video-to-mp3`
+				: `${langPrefix}/compress-pdf`
+	);
 	let title = $derived(t(`blog.cta.${resolvedTool}.title`));
 	let btn = $derived(t(`blog.cta.${resolvedTool}.btn`));
-	let icon = $derived(resolvedTool === 'video' ? '▶' : '📄');
+	let icon = $derived(
+		resolvedTool === 'video' ? '▶' : resolvedTool === 'video-to-mp3' ? '🎵' : '📄'
+	);
 </script>
 
 <div class="cta-banner">

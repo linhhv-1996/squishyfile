@@ -14,6 +14,9 @@
 	let pdfHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/compress-pdf` : '/compress-pdf'
 	);
+	let mp3Href = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/video-to-mp3` : '/video-to-mp3'
+	);
 </script>
 
 <svelte:head>
@@ -77,6 +80,29 @@
 					</div>
 				</div>
 				<div class="tc-cta tc-cta--pdf">{t('home.card.pdf.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
+			</a>
+
+			<a href={mp3Href} class="tool-card tool-card--mp3">
+				<div class="tc-inner">
+					<div class="tc-ico tc-ico--mp3">
+						<Music size={28} strokeWidth={1.5} />
+					</div>
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.mp3.title')}</h2>
+						<p class="tc-desc">{t('home.card.mp3.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">MP4</span>
+							<span class="tc-tag">MOV</span>
+							<span class="tc-tag">AVI</span>
+							<span class="tc-tag">WebM</span>
+							<span class="tc-tag">MP3</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--mp3">{t('home.card.mp3.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
 			</a>
 		</div>
 
@@ -199,13 +225,13 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 16px;
-		padding: 20px 22px 16px;
+		padding: 12px 22px 12px;
 		flex: 1;
 	}
 
 	.tool-card--mp3 .tc-inner {
 		align-items: center;
-		padding: 18px 22px 16px;
+		padding: 12px 22px 12px;
 	}
 
 	.tc-ico {

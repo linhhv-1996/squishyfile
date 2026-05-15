@@ -113,7 +113,7 @@
 
 	.post-title {
 		font-size: 15px;
-		font-weight: 700;
+		font-weight: 500;
 		color: var(--text);
 		letter-spacing: -0.2px;
 		line-height: 1.35;

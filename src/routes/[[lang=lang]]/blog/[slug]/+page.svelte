@@ -183,9 +183,9 @@
 
 	.prose :global(p) { margin-bottom: 16px; }
 
-	.prose :global(strong) { color: var(--text); font-weight: 700; }
+	.prose :global(strong) { color: var(--text); font-weight: 500; }
 
-	.prose :global(em) { color: #8a93b8; }
+	.prose :global(em) { color: #475bb1; }
 
 	.prose :global(a) {
 		color: var(--accent);
