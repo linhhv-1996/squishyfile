@@ -309,7 +309,7 @@
 	.prose :global(hr) {
 		border: none;
 		border-top: 1px solid var(--border);
-		margin: 32px 0;
+		margin: 20px 0;
 		opacity: 0.5;
 	}
 

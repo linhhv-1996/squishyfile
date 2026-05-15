@@ -481,6 +481,9 @@
 			<p>{@html t("note.privacy")}</p>
 		</div>
 
+		<!-- Optional ad slot: desktop side banners dùng .banner-left/.banner-right ở layout ngoài; slot này dành cho mobile/tablet hoặc in-content ads. Để trống thì CSS sẽ tự ẩn. -->
+		<div class="ad-slot ad-slot--after-tool" aria-label="Advertisement"></div>
+
 		<!-- <div class="feats">
 			<div class="feat">
 				<div class="fi"><Gauge size={20} strokeWidth={1.8} /></div>
@@ -595,9 +598,27 @@
 	}
 
 	/* ── How-to-use section ── */
+	.ad-slot {
+		margin: 14px 0 18px;
+		min-height: 90px;
+		border-radius: var(--r);
+		overflow: hidden;
+		background: var(--surf);
+	}
+
+	.ad-slot:empty {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.ad-slot--after-tool {
+			display: none;
+		}
+	}
+
 	.how-to-sec {
 		margin-top: 0px;
-		padding-top: 20px;
+		padding-top: 18px;
 		border-top: 1px solid var(--border);
 	}
 
@@ -609,7 +630,7 @@
 	.how-to-sec :global(h1) {
 		font-size: 1.35rem;
 		font-weight: 700;
-		color: var(--fg);
+		color: var(--text);
 		margin: 0 0 20px;
 		line-height: 1.3;
 	}
@@ -617,14 +638,14 @@
 	.how-to-sec :global(h2) {
 		font-size: 1.05rem;
 		font-weight: 600;
-		color: var(--fg);
+		color: var(--text);
 		margin: 15px 0 10px;
 	}
 
 	.how-to-sec :global(h3) {
 		font-size: 0.95rem;
 		font-weight: 600;
-		color: var(--fg);
+		color: var(--text);
 		margin: 20px 0 8px;
 	}
 
@@ -649,7 +670,7 @@
 	}
 
 	.how-to-sec :global(li strong) {
-		color: var(--fg);
+		color: var(--text);
 		font-weight: 600;
 	}
 
@@ -660,7 +681,7 @@
 	}
 
 	.how-to-sec :global(strong) {
-		color: var(--fg);
+		color: var(--text);
 		font-weight: 600;
 	}
 </style>
