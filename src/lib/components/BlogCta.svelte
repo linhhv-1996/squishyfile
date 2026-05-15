@@ -27,7 +27,7 @@
 		top: 70px;
 		z-index: 20;
 		background: var(--surf);
-		border: 1px solid #3d414e;
+		border: 1px solid #cdcdcd;
 		border-left: 2px solid var(--accent);
 		padding: 8px 8px;
 		margin-bottom: 28px;

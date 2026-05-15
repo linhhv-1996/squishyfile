@@ -98,7 +98,7 @@
 
 	.article-title {
 		font-size: 32px;
-		font-weight: 800;
+		font-weight: 700;
 		letter-spacing: -1px;
 		line-height: 1.2;
 		color: var(--text);
@@ -127,7 +127,7 @@
 	}
 
 	.meta-desc {
-		font-size: 12px;
+		font-size: 13px;
 		color: var(--muted);
 		font-style: italic;
 	}
@@ -148,7 +148,7 @@
 
 	.prose :global(h1) {
 		font-size: 26px;
-		font-weight: 800;
+		font-weight: 700;
 		color: var(--text);
 		letter-spacing: -0.6px;
 		line-height: 1.2;
