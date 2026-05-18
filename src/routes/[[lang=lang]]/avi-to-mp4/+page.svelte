@@ -275,7 +275,6 @@
 
 	.faq-sec {
 		margin-top: 28px;
-		/* padding-top: 24px; */
 	}
 
 	.faq-sec h2 {
