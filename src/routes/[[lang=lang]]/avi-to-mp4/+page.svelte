@@ -33,7 +33,7 @@
 		privacyNote: string;
 		fileTypeFallback: string;
 		remove: string;
-		outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
+		// outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
 	};
 
 	let { data } = $props();
@@ -71,14 +71,7 @@
 		format: t("convert.stat.format"),
 		privacyNote: t("aviToMp4.note.privacy"),
 		fileTypeFallback: t("aviToMp4.fileTypeFallback"),
-		remove: t("convert.btn.remove"),
-		outputOptions: [
-			{
-				value: "mp4",
-				label: t("convert.output.mp4.label"),
-				sub: t("aviToMp4.output.mp4.sub"),
-			},
-		],
+		remove: t("convert.btn.remove")
 	});
 
 	let jsonLd = $derived(

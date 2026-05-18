@@ -33,7 +33,7 @@
 		privacyNote: string;
 		fileTypeFallback: string;
 		remove: string;
-		outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
+		// outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
 	};
 
 	let { data } = $props();
@@ -72,13 +72,13 @@
 		privacyNote: t("movToMp4.note.privacy"),
 		fileTypeFallback: t("movToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
-		outputOptions: [
-			{
-				value: "mp4",
-				label: t("convert.output.mp4.label"),
-				sub: t("movToMp4.output.mp4.sub"),
-			},
-		],
+		// outputOptions: [
+		// 	{
+		// 		value: "mp4",
+		// 		label: t("convert.output.mp4.label"),
+		// 		sub: t("movToMp4.output.mp4.sub"),
+		// 	},
+		// ],
 	});
 
 	let jsonLd = $derived(
