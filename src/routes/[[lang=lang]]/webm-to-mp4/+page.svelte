@@ -273,8 +273,8 @@
 
 	.faq-sec {
 		margin-top: 28px;
-		padding-top: 24px;
-		border-top: 1px solid var(--border);
+		/* padding-top: 24px;
+		border-top: 1px solid var(--border); */
 	}
 
 	.faq-sec h2 {
