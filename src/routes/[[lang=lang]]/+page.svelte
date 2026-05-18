@@ -253,33 +253,6 @@
 		padding: 12px 22px 12px;
 	}
 
-	.tc-ico {
-		width: 50px;
-		height: 50px;
-		flex-shrink: 0;
-		border-radius: 14px;
-		display: grid;
-		place-items: center;
-	}
-
-	.tc-ico--video {
-		background: linear-gradient(135deg, rgba(79, 140, 255, 0.15), rgba(79, 140, 255, 0.05));
-		border: 1px solid rgba(79, 140, 255, 0.2);
-		color: var(--accent);
-	}
-
-	.tc-ico--pdf {
-		background: linear-gradient(135deg, rgba(124, 92, 252, 0.15), rgba(124, 92, 252, 0.05));
-		border: 1px solid rgba(124, 92, 252, 0.2);
-		color: var(--accent2);
-	}
-
-	.tc-ico--mp3 {
-		background: linear-gradient(135deg, rgba(22, 163, 74, 0.14), rgba(22, 163, 74, 0.05));
-		border: 1px solid rgba(22, 163, 74, 0.2);
-		color: var(--green);
-	}
-
 	.tc-body {
 		flex: 1;
 		min-width: 0;
@@ -391,11 +364,6 @@
 
 		.tc-inner {
 			padding: 18px 16px 14px;
-		}
-
-		.tc-ico {
-			width: 44px;
-			height: 44px;
 		}
 	}
 </style>
