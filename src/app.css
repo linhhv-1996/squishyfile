@@ -1490,8 +1490,8 @@ button {
   top: calc(54px + (100vh - 54px) / 2);   /* căn giữa phần dưới header */
   transform: translateY(-50%);
   width: 160px;
-  min-height: 600px;                        /* standard skyscraper IAB */
-  z-index: 10;                              /* dưới header (100) và dropdown (200) */
+  min-height: 600px;
+  z-index: 10;
 }
 
 /* Căn ra khỏi content 840px — thêm 12px gap */
