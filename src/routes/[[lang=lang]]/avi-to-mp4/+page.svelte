@@ -75,7 +75,7 @@
 	});
 
 	let jsonLd = $derived(
-		JSON.stringify([
+		JSON.stringify(
 			{
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
@@ -89,24 +89,8 @@
 					price: "0",
 					priceCurrency: "USD",
 				},
-			},
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				mainEntity: Array.from({ length: 6 }, (_, index) => {
-					const n = index + 1;
-
-					return {
-						"@type": "Question",
-						name: t(`faq.aviToMp4.${n}.q`),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t(`faq.aviToMp4.${n}.a`),
-						},
-					};
-				}),
-			},
-		]),
+			}
+		),
 	);
 
 	function markdownToHtml(text: string) {

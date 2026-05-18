@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { Film, FileText, Music, ArrowRight, Cpu, Target, Infinity, ShieldCheck, RefreshCw } from 'lucide-svelte';
+	import { ArrowRight, ShieldCheck } from 'lucide-svelte';
 
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);

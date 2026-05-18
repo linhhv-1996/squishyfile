@@ -40,7 +40,7 @@
 	);
 
 	let jsonLd = $derived(
-		JSON.stringify([
+		JSON.stringify(
 			{
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
@@ -55,61 +55,7 @@
 					priceCurrency: "USD",
 				},
 			},
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				mainEntity: [
-					{
-						"@type": "Question",
-						name: t("faq.video.1.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.1.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.video.2.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.2.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.video.3.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.3.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.video.4.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.4.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.video.5.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.5.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.video.6.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.video.6.a"),
-						},
-					},
-				],
-			},
-		]),
+		),
 	);
 
 	// --- How-to-use markdown content ---

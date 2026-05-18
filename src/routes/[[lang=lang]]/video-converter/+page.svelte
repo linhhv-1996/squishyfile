@@ -93,7 +93,7 @@
 	}
 
 	let jsonLd = $derived(
-		JSON.stringify([
+		JSON.stringify(
 			{
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
@@ -108,27 +108,7 @@
 					priceCurrency: "USD",
 				},
 			},
-			...(hasConvertFaq
-				? [
-					{
-						"@context": "https://schema.org",
-						"@type": "FAQPage",
-						mainEntity: Array.from({ length: 8 }, (_, index) => {
-							const n = index + 1;
-
-							return {
-								"@type": "Question",
-								name: t(`faq.convert.${n}.q`),
-								acceptedAnswer: {
-									"@type": "Answer",
-									text: t(`faq.convert.${n}.a`),
-								},
-							};
-						}),
-					},
-				]
-				: []),
-		]),
+		),
 	);
 </script>
 

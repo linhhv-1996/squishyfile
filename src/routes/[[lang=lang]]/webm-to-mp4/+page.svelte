@@ -70,17 +70,10 @@
 		privacyNote: t("webmToMp4.note.privacy"),
 		fileTypeFallback: t("webmToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
-		// outputOptions: [
-		// 	{
-		// 		value: "mp4",
-		// 		label: t("convert.output.mp4.label"),
-		// 		sub: t("webmToMp4.output.mp4.sub"),
-		// 	},
-		// ],
 	});
 
 	let jsonLd = $derived(
-		JSON.stringify([
+		JSON.stringify(
 			{
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
@@ -95,23 +88,7 @@
 					priceCurrency: "USD",
 				},
 			},
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				mainEntity: Array.from({ length: 6 }, (_, index) => {
-					const n = index + 1;
-
-					return {
-						"@type": "Question",
-						name: t(`faq.webmToMp4.${n}.q`),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t(`faq.webmToMp4.${n}.a`),
-						},
-					};
-				}),
-			},
-		]),
+		),
 	);
 
 	function markdownToHtml(text: string) {

@@ -28,7 +28,7 @@
 	);
 
 	let jsonLd = $derived(
-		JSON.stringify([
+		JSON.stringify(
 			{
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
@@ -43,61 +43,7 @@
 					priceCurrency: "USD",
 				},
 			},
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				mainEntity: [
-					{
-						"@type": "Question",
-						name: t("faq.pdf.1.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.1.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.pdf.2.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.2.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.pdf.3.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.3.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.pdf.4.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.4.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.pdf.5.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.5.a"),
-						},
-					},
-					{
-						"@type": "Question",
-						name: t("faq.pdf.6.q"),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t("faq.pdf.6.a"),
-						},
-					},
-				],
-			},
-		]),
+		),
 	);
 
 	// --- How-to-use markdown content ---

@@ -72,48 +72,23 @@
 		privacyNote: t("movToMp4.note.privacy"),
 		fileTypeFallback: t("movToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
-		// outputOptions: [
-		// 	{
-		// 		value: "mp4",
-		// 		label: t("convert.output.mp4.label"),
-		// 		sub: t("movToMp4.output.mp4.sub"),
-		// 	},
-		// ],
 	});
 
 	let jsonLd = $derived(
-		JSON.stringify([
-			{
-				"@context": "https://schema.org",
-				"@type": "WebApplication",
-				name: copy.metaTitle,
-				description: copy.metaDesc,
-				applicationCategory: "MultimediaApplication",
-				operatingSystem: "All",
-				browserRequirements: "Requires JavaScript and WebAssembly",
-				offers: {
-					"@type": "Offer",
-					price: "0",
-					priceCurrency: "USD",
-				},
+		JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			name: copy.metaTitle,
+			description: copy.metaDesc,
+			applicationCategory: "MultimediaApplication",
+			operatingSystem: "All",
+			browserRequirements: "Requires JavaScript and WebAssembly",
+			offers: {
+				"@type": "Offer",
+				price: "0",
+				priceCurrency: "USD",
 			},
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				mainEntity: Array.from({ length: 6 }, (_, index) => {
-					const n = index + 1;
-
-					return {
-						"@type": "Question",
-						name: t(`faq.movToMp4.${n}.q`),
-						acceptedAnswer: {
-							"@type": "Answer",
-							text: t(`faq.movToMp4.${n}.a`),
-						},
-					};
-				}),
-			},
-		]),
+		}),
 	);
 
 	function markdownToHtml(text: string) {
