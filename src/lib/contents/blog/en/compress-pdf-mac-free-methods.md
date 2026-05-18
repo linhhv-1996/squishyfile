@@ -2,6 +2,11 @@
 title: Compress PDF on Mac — 3 Free Methods (Including One That Actually Works)
 description: Learn how to compress PDF files on Mac for free. Compare Preview, online tools, and other options — and find out which method gives the best quality without paying for Acrobat.
 date: 2026-01-26
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Compress your PDF now
+  btn: Compress PDF
 ---
 
 # Compress PDF on Mac — 3 Free Methods (Including One That Actually Works)

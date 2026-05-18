@@ -2,6 +2,11 @@
 title: How to Remove Password From a PDF — Free, Instant, No Software Needed
 description: Need to remove a password from a PDF? Learn how to unlock a password-protected PDF online for free in seconds — no software download, no sign-up, works on any device.
 date: 2026-05-10
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Compress your PDF now
+  btn: Compress PDF
 ---
 
 # How to Remove Password From a PDF — Free, Instant, No Software Needed

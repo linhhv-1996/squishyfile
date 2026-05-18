@@ -2,6 +2,11 @@
 title: Como Comprimir PDF no iPhone, Android, Mac ou Windows (Sem Apps)
 description: Aprenda a comprimir PDF diretamente no iPhone, Android, Mac ou Windows sem instalar aplicativos. Solução web rápida, segura e multiplataforma com tecnologia WASM.
 date: 2026-05-13
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Como Comprimir PDF no iPhone, Android, Mac ou Windows (Sem Apps)

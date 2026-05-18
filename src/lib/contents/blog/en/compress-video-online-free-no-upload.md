@@ -1,8 +1,12 @@
 ---
 title: Compress Video Online Free — No Upload, No Watermark, Instant Results
 description: Compress video online for free without uploading to any server. Reduce video file size right in your browser — private, fast, and no watermark. Works on Chrome, Safari, and Edge.
-tool: video
 date: 2026-03-23
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Compress your video now
+  btn: Compress video
 ---
 
 # Compress Video Online Free — No Upload, No Watermark, Instant Results

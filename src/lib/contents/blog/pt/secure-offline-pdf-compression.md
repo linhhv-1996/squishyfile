@@ -2,6 +2,11 @@
 title: Como Comprimir PDF Offline e 100% Seguro (Sem Programas)
 description: Aprenda a comprimir PDF offline sem instalar programas. Descubra como reduzir arquivos PDF com segurança, sem enviar documentos confidenciais para servidores desconhecidos.
 date: 2026-04-30
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Como Comprimir PDF Offline e 100% Seguro (Sem Programas)

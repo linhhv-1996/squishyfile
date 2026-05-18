@@ -1,8 +1,12 @@
 ---
 title: Compressão Espacial e Temporal: A Teoria Central dos Codecs de Vídeo
 description: Entenda os algoritmos de compressão de vídeo, I-frames, P-frames, B-frames e DCT. Guia técnico escrito por engenheiro de software sobre como codecs funcionam.
-tool: video
 date: 2026-05-14
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Comprima seu vídeo agora
+  btn: Comprimir vídeo
 ---
 
 # Compressão Espacial e Temporal: A Teoria Central dos Codecs de Vídeo

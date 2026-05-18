@@ -59,7 +59,7 @@
 			<hr class="article-divider" />
 		</div>
 
-		<BlogCta tool={data.meta.tool} {t} {langPrefix} />
+		<BlogCta cta={data.meta.cta} {t} {langPrefix} />
 
 		<div class="article-inner">
 			<article class="prose">

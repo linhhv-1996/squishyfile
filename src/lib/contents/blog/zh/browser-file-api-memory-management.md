@@ -2,6 +2,11 @@
 title: 瀏覽器處理大型檔案的記憶體管理技術：File API 與 Streams API 的深度解析
 description: 探討現代瀏覽器如何透過 File API 與 Streams API 突破 JavaScript 記憶體限制，實現本地端處理數十 GB 影片檔案的技術原理、效能優化與安全性架構。
 date: 2026-05-13
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 立即壓縮你的影片
+  btn: 壓縮影片
 ---
 
 # 瀏覽器處理大型檔案的記憶體管理技術：File API 與 Streams API 的深度解析

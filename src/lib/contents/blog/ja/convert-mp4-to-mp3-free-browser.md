@@ -1,8 +1,12 @@
 ---
 title: MP4をMP3に無料変換する方法｜インストール不要で音声だけ保存
 description: MP4動画から音声だけを取り出してMP3に変換する方法を解説。無料・登録なし・インストール不要で、ブラウザからMP4をMP3化できます。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 動画をMP3に今すぐ変換しましょう
+  btn: MP3に変換する
 ---
 
 # MP4をMP3に無料変換する方法

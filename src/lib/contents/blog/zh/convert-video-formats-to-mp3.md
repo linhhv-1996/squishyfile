@@ -1,8 +1,12 @@
 ---
 title: MOV、WebM、MKV、AVI轉MP3｜常見影片格式轉音訊教學
 description: 想把 MOV、WebM、MKV 或 AVI 影片轉成 MP3？本文整理常見影片格式轉音訊的方法，免安裝軟體，直接在瀏覽器中提取 MP3。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 立即將影片轉換為 MP3
+  btn: 轉換為 MP3
 ---
 
 # MOV、WebM、MKV、AVI轉MP3教學

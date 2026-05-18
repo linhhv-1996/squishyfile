@@ -697,6 +697,10 @@ body {
   gap: 8px;
 }
 
+.video-format-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
 .pc {
   background: var(--surf2);
   border: 1.5px solid var(--border);

@@ -1,7 +1,12 @@
 ---
 title: Comprimir PDF Sem Perder Qualidade: Guia para Designers
 description: Aprenda a comprimir PDF sem perder a qualidade. Fuja das ferramentas que destroem a resolução e saiba como preservar a nitidez dos seus documentos.
-date: 2026-05-10
+date: 2026-05-11
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Comprimir PDF Sem Perder Qualidade: Guia para Designers

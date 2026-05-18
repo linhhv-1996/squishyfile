@@ -2,6 +2,11 @@
 title: How to Reduce PDF File Size Without Losing Quality — 5 Methods That Actually Work
 description: Learn how to reduce PDF file size without losing quality. Compare the best methods for shrinking PDFs on Windows, Mac, iPhone, and online — fast, free, and no quality loss.
 date: 2026-04-28
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Compress your PDF now
+  btn: Compress PDF
 ---
 
 # How to Reduce PDF File Size Without Losing Quality — 5 Methods That Actually Work

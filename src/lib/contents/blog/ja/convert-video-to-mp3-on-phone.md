@@ -1,8 +1,12 @@
 ---
 title: iPhone・Androidで動画をMP3に変換する方法｜アプリ不要
 description: iPhoneやAndroidのスマホだけで動画をMP3に変換する方法を解説。アプリ不要・パソコン不要で、撮影した動画や保存済み動画から音声だけを取り出せます。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 動画をMP3に今すぐ変換しましょう
+  btn: MP3に変換する
 ---
 
 # iPhone・Androidで動画をMP3に変換する方法

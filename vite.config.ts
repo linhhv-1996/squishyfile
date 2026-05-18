@@ -12,4 +12,7 @@ export default defineConfig({
 			allow: ['static']
 		}
 	},
+	optimizeDeps: {
+		exclude: ["@ffmpeg/ffmpeg", "@ffmpeg/util"],
+	},
 });

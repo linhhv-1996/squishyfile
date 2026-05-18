@@ -1,8 +1,12 @@
 ---
 title: แปลงวิดีโอเป็น MP3 บนมือถือ iPhone และ Android
 description: วิธีแปลงวิดีโอเป็น MP3 บนมือถือ iPhone และ Android ผ่านเบราว์เซอร์ ไม่ต้องติดตั้งแอป เหมาะกับไฟล์ MP4 และ MOV ที่อยู่ในเครื่อง
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: แปลงวิดีโอเป็น MP3 ตอนนี้
+  btn: แปลงเป็น MP3
 ---
 
 # แปลงวิดีโอเป็น MP3 บนมือถือ iPhone และ Android

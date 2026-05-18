@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { Film, FileText, Music, ArrowRight, Cpu, Target, Infinity, ShieldCheck } from 'lucide-svelte';
+	import { Film, FileText, Music, ArrowRight, Cpu, Target, Infinity, ShieldCheck, RefreshCw } from 'lucide-svelte';
 
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
@@ -16,6 +16,9 @@
 	);
 	let mp3Href = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/video-to-mp3` : '/video-to-mp3'
+	);
+	let convertHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/video-converter` : '/video-converter'
 	);
 </script>
 
@@ -40,9 +43,6 @@
 		<div class="tool-grid">
 			<a href={compressHref} class="tool-card tool-card--video">
 				<div class="tc-inner">
-					<div class="tc-ico tc-ico--video">
-						<Film size={28} strokeWidth={1.5} />
-					</div>
 					<div class="tc-body">
 						<h2 class="tc-title">{t('home.card.video.title')}</h2>
 						<p class="tc-desc">{t('home.card.video.desc')}</p>
@@ -63,9 +63,6 @@
 
 			<a href={pdfHref} class="tool-card tool-card--pdf">
 				<div class="tc-inner">
-					<div class="tc-ico tc-ico--pdf">
-						<FileText size={28} strokeWidth={1.5} />
-					</div>
 					<div class="tc-body">
 						<h2 class="tc-title">{t('home.card.pdf.title')}</h2>
 						<p class="tc-desc">{t('home.card.pdf.desc')}</p>
@@ -84,9 +81,6 @@
 
 			<a href={mp3Href} class="tool-card tool-card--mp3">
 				<div class="tc-inner">
-					<div class="tc-ico tc-ico--mp3">
-						<Music size={28} strokeWidth={1.5} />
-					</div>
 					<div class="tc-body">
 						<h2 class="tc-title">{t('home.card.mp3.title')}</h2>
 						<p class="tc-desc">{t('home.card.mp3.desc')}</p>
@@ -104,6 +98,29 @@
 				</div>
 				<div class="tc-cta tc-cta--mp3">{t('home.card.mp3.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
 			</a>
+
+			<a href={convertHref} class="tool-card tool-card--convert">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.convert.title')}</h2>
+						<p class="tc-desc">{t('home.card.convert.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">MOV</span>
+							<span class="tc-tag">MKV</span>
+							<span class="tc-tag">AVI</span>
+							<span class="tc-tag">WebM</span>
+							<span class="tc-tag">MP4</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--convert">
+					{t('home.card.convert.cta')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
 		</div>
 
 		<div class="pnote">
@@ -192,6 +209,7 @@
 		background: radial-gradient(ellipse at 30% 20%, rgba(124, 92, 252, 0.08) 0%, transparent 65%);
 	}
 
+	.tool-card--convert,
 	.tool-card--mp3 {
 		grid-column: 1 / -1;
 	}
@@ -229,6 +247,7 @@
 		flex: 1;
 	}
 
+	.tool-card--convert .tc-inner,
 	.tool-card--mp3 .tc-inner {
 		align-items: center;
 		padding: 12px 22px 12px;
@@ -359,6 +378,7 @@
 			grid-column: auto;
 		}
 
+		.tool-card--convert .tc-inner,
 		.tool-card--mp3 .tc-inner {
 			align-items: flex-start;
 		}

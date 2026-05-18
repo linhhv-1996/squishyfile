@@ -2,6 +2,11 @@
 title: PDF内部構造の最適化アルゴリズムを解説｜ファイルサイズ削減の論理と技術
 description: pdf optimization algorithmとreduce pdf size logicの技術的背景をエンジニア視点で解説。PDFの物理構造からFont Subsetting等の圧縮技術、SquishyfileのWASM処理の設計思想まで徹底分析します。
 date: 2026-05-12
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: PDFを今すぐ圧縮しましょう
+  btn: PDFを圧縮する
 ---
 
 # PDF内部構造の解剖と最適化アルゴリズム：ファイルサイズ削減の計算論的アプローチ

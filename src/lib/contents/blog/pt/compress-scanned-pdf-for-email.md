@@ -1,7 +1,12 @@
 ---
 title: Como Comprimir PDF Escaneado para Enviar por E-mail ou Currículo
 description: Descubra como comprimir PDF escaneado para enviar por e-mail e reduzir PDF para e-mail sem perder a legibilidade. Veja também como comprimir PDF para currículo de forma rápida, prática e segura.
-date: 2026-05-12
+date: 2026-05-14
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Como Comprimir PDF Escaneado para Enviar por E-mail ou Currículo

@@ -1,8 +1,12 @@
 ---
 title: Free Online Video Compressor — No Watermark, No Upload, No Account Required
 description: The best free online video compressor with no watermark and no file uploads. Pick a quality preset or enter a target file size — your video is compressed privately in your browser and never leaves your device.
-tool: video
 date: 2026-04-06
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Compress your video now
+  btn: Compress video
 ---
 
 # Free Online Video Compressor — No Watermark, No Upload, No Account Required

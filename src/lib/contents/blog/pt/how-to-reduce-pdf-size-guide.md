@@ -1,7 +1,12 @@
 ---
 title: Como Diminuir o Tamanho de um PDF: Guia Completo e Gratuito
 description: Aprenda como diminuir o tamanho de um PDF sem perder qualidade. Guia completo com métodos gratuitos para comprimir PDF no Mac, Windows e online.
-date: 2026-05-09
+date: 2026-05-10
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Como Diminuir o Tamanho de um PDF: Guia Completo e Gratuito

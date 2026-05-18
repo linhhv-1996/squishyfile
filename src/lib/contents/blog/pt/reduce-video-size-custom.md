@@ -1,8 +1,12 @@
 ---
 title: Como Reduzir Tamanho de Vídeo para um Arquivo Exato — Guia 2026
 description: Aprenda a reduzir tamanho de vídeo para um valor exato em MB sem adivinhar bitrate. Descubra como diminuir tamanho do vídeo online com segurança usando ferramentas com compressão por tamanho personalizado.
-tool: video
 date: 2026-05-13
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Comprima seu vídeo agora
+  btn: Comprimir vídeo
 ---
 
 # Como Reduzir Tamanho de Vídeo para um Arquivo Exato — Guia 2026

@@ -1,8 +1,12 @@
 ---
 title: 手機影片轉MP3教學｜iPhone與Android免安裝轉音訊
 description: 教你如何在 iPhone 或 Android 手機上將影片轉 MP3。免安裝 App、免註冊，直接用瀏覽器選擇手機影片並提取音訊。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 立即將影片轉換為 MP3
+  btn: 轉換為 MP3
 ---
 
 # 手機影片轉MP3教學：iPhone與Android都可以用

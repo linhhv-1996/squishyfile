@@ -2,6 +2,11 @@
 title: PDF 檔案太大部分怎麼辦？輕鬆破解 PDF 壓縮限制，順利寄出電子郵件
 description: PDF 檔案太大無法寄出電子郵件？本文詳解 Gmail、Outlook 附件限制，並推薦無檔案大小限制的 PDF 壓縮大檔案解決方案，讓你輕鬆將 PDF 壓縮到 10MB 以下。
 date: 2026-05-13
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: 立即壓縮你的 PDF
+  btn: 壓縮 PDF
 ---
 
 # PDF 檔案太大部分怎麼辦？輕鬆破解 PDF 壓縮限制，順利寄出電子郵件

@@ -2,6 +2,11 @@
 title: Otimização da Estrutura Interna do PDF: Algoritmos e Lógica de Redução de Tamanho
 description: Análise técnica da anatomia do arquivo PDF e dos algoritmos de otimização. Entenda FlateDecode, subsetting de fontes e downsampling de imagens sob a ótica da ciência da computação.
 date: 2026-05-14
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # Otimização da Estrutura Interna do PDF: Algoritmos e Lógica de Redução de Tamanho

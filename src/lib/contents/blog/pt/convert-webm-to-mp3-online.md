@@ -1,8 +1,12 @@
 ---
 title: Como Converter WebM para MP3 Online
 description: Converta WebM para MP3 online sem instalar programas. Escolha um arquivo WebM do seu dispositivo, extraia o áudio no navegador e baixe em MP3.
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: Converta vídeo para MP3 agora
+  btn: Converter para MP3
 ---
 
 # Como Converter WebM para MP3 Online

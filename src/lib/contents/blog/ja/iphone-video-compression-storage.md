@@ -1,8 +1,12 @@
 ---
 title: iPhoneのストレージ不足を解消！動画の容量を圧縮・削減する方法
 description: iPhoneで撮影した4K動画がストレージを圧迫している悩みを解決。アプリ不要で動画を圧縮し、容量を削減する方法を徹底解説。簡単操作でiPhoneのストレージ不足を解消します。
-tool: video
 date: 2026-05-05
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 動画を今すぐ圧縮しましょう
+  btn: 動画を圧縮する
 ---
 
 # iPhoneのストレージ不足を解消！動画の容量を圧縮・削減する方法

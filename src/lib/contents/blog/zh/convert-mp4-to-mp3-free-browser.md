@@ -1,8 +1,12 @@
 ---
 title: MP4轉MP3免費教學｜免安裝在瀏覽器提取音訊
 description: 想把 MP4 影片轉成 MP3？本文教你如何免費將 MP4 轉 MP3，免安裝、免註冊，直接在瀏覽器中從 MP4 影片提取音訊。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 立即將影片轉換為 MP3
+  btn: 轉換為 MP3
 ---
 
 # MP4轉MP3免費教學

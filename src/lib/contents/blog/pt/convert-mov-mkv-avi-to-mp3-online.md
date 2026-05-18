@@ -1,8 +1,12 @@
 ---
 title: Como Converter MOV, MKV e AVI para MP3 Online
 description: Veja como converter MOV, MKV e AVI para MP3 online. Extraia o áudio de vídeos do iPhone, arquivos antigos ou gravações no navegador, sem instalar programas.
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: Converta vídeo para MP3 agora
+  btn: Converter para MP3
 ---
 
 # Como Converter MOV, MKV e AVI para MP3 Online

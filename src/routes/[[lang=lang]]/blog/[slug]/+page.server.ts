@@ -8,9 +8,12 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	try {
 		// Import raw file cụ thể dựa vào lang và slug
-		const modules = import.meta.glob('/src/lib/contents/blog/**/*.md', { query: '?raw', import: 'default' });
+		const modules = import.meta.glob('/src/lib/contents/blog/**/*.md', {
+			query: '?raw',
+			import: 'default'
+		});
 		const filePath = `/src/lib/contents/blog/${lang}/${slug}.md`;
-		
+
 		if (!modules[filePath]) {
 			throw new Error('Not found');
 		}
@@ -20,17 +23,42 @@ export const load: PageServerLoad = async ({ params }) => {
 
 		// Bóc tách Frontmatter và Nội dung Markdown
 		const match = /---\r?\n([\s\S]+?)\r?\n---/.exec(rawContent);
-		let metadata: Record<string, string> = {};
+		let metadata: Record<string, any> = {};
 		let markdownContent = rawContent;
 
 		if (match) {
 			const fmText = match[1];
+
 			// Cắt bỏ phần Frontmatter để lấy lõi content
 			markdownContent = rawContent.slice(match[0].length);
-			
-			fmText.split('\n').forEach(line => {
-				const [key, ...value] = line.split(':');
-				if (key && value.length) metadata[key.trim()] = value.join(':').trim();
+
+			let currentObjectKey: string | null = null;
+
+			fmText.split('\n').forEach((line) => {
+				if (!line.trim()) return;
+
+				const isNestedLine = /^\s+/.test(line);
+				const [rawKey, ...rawValue] = line.split(':');
+
+				const key = rawKey.trim();
+				const value = rawValue.join(':').trim();
+
+				if (!key) return;
+
+				if (isNestedLine && currentObjectKey) {
+					metadata[currentObjectKey] = metadata[currentObjectKey] || {};
+					metadata[currentObjectKey][key] = value;
+					return;
+				}
+
+				if (!value) {
+					metadata[key] = {};
+					currentObjectKey = key;
+					return;
+				}
+
+				metadata[key] = value;
+				currentObjectKey = null;
 			});
 		}
 

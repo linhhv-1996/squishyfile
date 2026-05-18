@@ -1,8 +1,12 @@
 ---
 title: แปลง MOV, WebM, MKV, AVI, WMV, FLV เป็น MP3 ได้อย่างไร
 description: วิธีแปลง MOV, WebM, MKV, AVI, WMV และ FLV เป็น MP3 จากไฟล์วิดีโอในเครื่อง พร้อมข้อควรรู้เรื่อง codec ไฟล์ใหญ่ และปัญหาแปลงไม่ได้
-tool: video-to-mp3
 date: 2026-05-10
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: แปลงวิดีโอเป็น MP3 ตอนนี้
+  btn: แปลงเป็น MP3
 ---
 
 # แปลง MOV, WebM, MKV, AVI, WMV, FLV เป็น MP3 ได้อย่างไร

@@ -1,7 +1,12 @@
 ---
 title: ブラウザで巨大ファイルを処理する：File APIとStreams APIの融合とメモリ管理の最適化
 description: WebAssembly、File API、Streams APIを組み合わせることで、ブラウザは数十GBのファイルをローカルで安全に処理できるようになった。従来のJavaScriptのメモリ制限を打破する最新アーキテクチャを、エンジニアの視点から解説する。
-date: 2026-05-12
+date: 2026-05-11
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 動画を今すぐ圧縮しましょう
+  btn: 動画を圧縮する
 ---
 
 # ブラウザで巨大ファイルを処理する：File APIとStreams APIの融合とメモリ管理の最適化

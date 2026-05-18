@@ -2,6 +2,11 @@
 title: WebAssemblyとFFmpegが変える動画処理の未来：ブラウザネイティブエンコーディングの技術解剖
 description: WebAssembly（WASM）とFFmpegを組み合わせたブラウザ動画処理の仕組みを、エンジニア視点で深く解説。クライアントサイドエンコーディングの技術的利点、メモリ管理、マルチスレッド処理、サーバーコスト削減の実現方法を紹介します。
 date: 2026-05-14
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 動画を今すぐ圧縮しましょう
+  btn: 動画を圧縮する
 ---
 
 # WebAssemblyとFFmpegが変える動画処理の未来：ブラウザネイティブエンコーディングの技術解剖

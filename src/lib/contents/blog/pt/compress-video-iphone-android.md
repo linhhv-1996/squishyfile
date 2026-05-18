@@ -1,8 +1,12 @@
 ---
 title: Comprimir Vídeo no iPhone e Android: Sem Apps
 description: Descubra como comprimir vídeo iPhone e Android sem instalar apps. Solução online com WASM, sem upload e 100% segura direto no navegador.
-tool: video
 date: 2026-05-12
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Comprima seu vídeo agora
+  btn: Comprimir vídeo
 ---
 
 # Como Comprimir Vídeo no iPhone e Android Sem Instalar Aplicativos Lixo

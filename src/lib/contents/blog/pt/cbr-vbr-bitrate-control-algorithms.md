@@ -1,8 +1,12 @@
 ---
 title: Algoritmos de Controle de Bitrate: Comparando CBR e VBR no Encoding de Vídeo
 description: Entenda a diferença entre CBR vs VBR no controle de bitrate de vídeo. Guia técnico completo sobre constant bitrate, variable bitrate e como atingir o target file size sem perder qualidade.
-tool: video
 date: 2026-05-14
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Comprima seu vídeo agora
+  btn: Comprimir vídeo
 ---
 
 # Algoritmos de Controle de Bitrate: Comparando CBR e VBR no Encoding de Vídeo

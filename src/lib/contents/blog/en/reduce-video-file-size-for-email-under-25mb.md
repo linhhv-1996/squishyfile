@@ -1,8 +1,12 @@
 ---
 title: How to Reduce Video File Size for Email — Under 25MB Without Quality Loss
 description: Email won't send your video because it's too large? Reduce video file size for email attachments under 25MB using a simple target size feature — no software, no upload, works on any device.
-tool: video
 date: 2026-05-08
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Compress your video now
+  btn: Compress video
 ---
 
 # How to Reduce Video File Size for Email — Under 25MB Without Quality Loss

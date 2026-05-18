@@ -1,8 +1,12 @@
 ---
 title: How to Reduce Video File Size Without Losing Quality (2026 Guide)
 description: Learn how to reduce video file size on any device — no software required. Compress MP4, MOV, and AVI files in your browser using smart presets or a custom target size for email, WhatsApp, and social media.
-tool: video
 date: 2026-05-04
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: Compress your video now
+  btn: Compress video
 ---
 
 # How to Reduce Video File Size Without Losing Quality (2026 Guide)

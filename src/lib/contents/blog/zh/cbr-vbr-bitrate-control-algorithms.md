@@ -1,8 +1,12 @@
 ---
 title: CBR vs VBR 深度解析：影片編碼的位元速率控制演算法｜Squishyfile 技術白皮書
 description: 深入對比 CBR 與 VBR 影片位元速率演算法！解析 Rate Control 機制與 2-Pass VBR 原理，揭密編碼器如何精準分配資料量，完美平衡檔案大小與畫質。
-tool: video
 date: 2026-05-12
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 立即壓縮你的影片
+  btn: 壓縮影片
 ---
 
 # CBR vs VBR 深度解析：影片編碼的位元速率控制演算法

@@ -1,8 +1,12 @@
 ---
 title: MOV・WebM・MKV・AVIをMP3に変換する方法
 description: MOV、WebM、MKV、AVIなどの動画ファイルから音声を抽出してMP3に変換する方法を解説。形式ごとの違いや、変換できない場合の確認ポイントも紹介します。
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: 動画をMP3に今すぐ変換しましょう
+  btn: MP3に変換する
 ---
 
 # MOV・WebM・MKV・AVIをMP3に変換する方法

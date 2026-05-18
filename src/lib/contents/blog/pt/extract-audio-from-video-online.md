@@ -1,8 +1,12 @@
 ---
 title: Como Extrair Áudio de Vídeo Online Grátis
 description: Veja como extrair áudio de vídeo online e salvar em MP3. Escolha um vídeo do seu dispositivo, tire o som do vídeo no navegador e baixe o arquivo de áudio.
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: Converta vídeo para MP3 agora
+  btn: Converter para MP3
 ---
 
 # Como Extrair Áudio de Vídeo Online Grátis

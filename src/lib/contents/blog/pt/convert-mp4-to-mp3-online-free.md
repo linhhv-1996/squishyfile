@@ -1,8 +1,12 @@
 ---
 title: Como Converter MP4 para MP3 Online Grátis
 description: Aprenda como converter MP4 para MP3 online grátis, sem instalar programas. Selecione um arquivo MP4 do seu dispositivo, extraia o áudio no navegador e baixe o MP3.
-tool: video-to-mp3
 date: 2026-05-15
+cta:
+  href: /video-to-mp3
+  icon: 🎵
+  title: Converta vídeo para MP3 agora
+  btn: Converter para MP3
 ---
 
 # Como Converter MP4 para MP3 Online Grátis

@@ -2,6 +2,11 @@
 title: PDF Muito Pesado? Como Fazer uma Compressão Extrema de PDF
 description: Descubra por que seu PDF muito pesado trava em sites online e como fazer compressão extrema de PDF para 1MB ou 10MB sem travamentos. Solução offline com Squishyfile.
 date: 2026-05-13
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: Comprima seu PDF agora
+  btn: Comprimir PDF
 ---
 
 # PDF Muito Pesado? Como Fazer uma Compressão Extrema de PDF

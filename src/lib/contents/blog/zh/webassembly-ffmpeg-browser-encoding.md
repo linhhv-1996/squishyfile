@@ -1,8 +1,12 @@
 ---
 title: WebAssembly 影片壓縮：瀏覽器端 FFmpeg 編碼技術解析
 description: 解析 WebAssembly video compression 架構，說明 FFmpeg 如何透過 WASM 在瀏覽器 V8 Engine 執行，並評估 client-side encoding 的安全性與成本優勢。
-tool: video
 date: 2026-05-09
+cta:
+  href: /compress-video
+  icon: 🎬
+  title: 立即壓縮你的影片
+  btn: 壓縮影片
 ---
 
 # WebAssembly 影片壓縮：瀏覽器端 FFmpeg 編碼技術解析

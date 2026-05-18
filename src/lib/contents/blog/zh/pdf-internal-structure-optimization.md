@@ -2,6 +2,11 @@
 title: PDF 內部結構解剖與最佳化演算法：從底層邏輯理解檔案瘦身原理
 description: 深入解析 PDF 檔案內部結構（Header、Body、XREF、Trailer），探討 FlateDecode、Font Subsetting、Image Downsampling 等核心演算法，從電腦科學角度理解 PDF 壓縮與最佳化的底層邏輯。
 date: 2026-05-08
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: 立即壓縮你的 PDF
+  btn: 壓縮 PDF
 ---
 
 # PDF 內部結構解剖與最佳化演算法：從底層邏輯理解檔案瘦身原理

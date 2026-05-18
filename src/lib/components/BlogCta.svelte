@@ -1,35 +1,63 @@
 <script lang="ts">
+	type BlogCtaData = {
+		href?: string;
+		key?: string;
+		icon?: string;
+		title?: string;
+		btn?: string;
+		external?: boolean;
+	};
+
 	interface Props {
-		tool?: string;
+		cta?: BlogCtaData;
 		t: (key: string) => string;
-		langPrefix: string;
+		langPrefix?: string;
 	}
 
-	let { tool = 'pdf', t, langPrefix }: Props = $props();
+	let { cta, t, langPrefix = '' }: Props = $props();
 
-	let resolvedTool = $derived(
-		tool === 'video' || tool === 'video-to-mp3' ? tool : 'pdf'
-	);
+	function isExternalUrl(url: string) {
+		return /^https?:\/\//i.test(url);
+	}
 
-	let href = $derived(
-		resolvedTool === 'video'
-			? `${langPrefix}/compress-video`
-			: resolvedTool === 'video-to-mp3'
-				? `${langPrefix}/video-to-mp3`
-				: `${langPrefix}/compress-pdf`
-	);
-	let title = $derived(t(`blog.cta.${resolvedTool}.title`));
-	let btn = $derived(t(`blog.cta.${resolvedTool}.btn`));
-	let icon = $derived(
-		resolvedTool === 'video' ? '▶' : resolvedTool === 'video-to-mp3' ? '🎵' : '📄'
-	);
+	function normalizePath(url: string) {
+		if (!url) return '';
+		if (isExternalUrl(url)) return url;
+
+		const path = url.startsWith('/') ? url : `/${url}`;
+		const prefix = langPrefix && langPrefix !== '/' ? langPrefix : '';
+
+		return `${prefix}${path}`;
+	}
+
+	let rawHref = $derived(cta?.href ?? '');
+	let href = $derived(normalizePath(rawHref));
+
+	let external = $derived(cta?.external ?? isExternalUrl(rawHref));
+
+	let ctaKey = $derived(cta?.key ?? 'pdf');
+	let icon = $derived(cta?.icon ?? '✨');
+
+	let title = $derived(cta?.title ?? t(`blog.cta.${ctaKey}.title`));
+	let btn = $derived(cta?.btn ?? t(`blog.cta.${ctaKey}.btn`));
+
+	let target = $derived(external ? '_blank' : undefined);
+	let rel = $derived(external ? 'noopener noreferrer' : undefined);
 </script>
 
-<div class="cta-banner">
-	<span class="cta-icon">{icon}</span>
-	<span class="cta-title">{title}</span>
-	<a {href} class="cta-btn">{btn}</a>
-</div>
+{#if href}
+	<div class="cta-banner">
+		<span class="cta-icon">{icon}</span>
+
+		<span class="cta-title">
+			{title}
+		</span>
+
+		<a class="cta-btn" {href} {target} {rel}>
+			{btn}
+		</a>
+	</div>
+{/if}
 
 <style>
 	.cta-banner {
@@ -39,7 +67,7 @@
 		background: var(--surf);
 		border: 1px solid #cdcdcd;
 		border-left: 2px solid var(--accent);
-		padding: 8px 8px;
+		padding: 8px;
 		margin-bottom: 28px;
 		border-radius: 8px;
 		box-sizing: border-box;
@@ -75,7 +103,9 @@
 		font-weight: 700;
 		text-decoration: none;
 		white-space: nowrap;
-		transition: opacity 0.15s, transform 0.1s;
+		transition:
+			opacity 0.15s,
+			transform 0.1s;
 	}
 
 	.cta-btn:hover {
