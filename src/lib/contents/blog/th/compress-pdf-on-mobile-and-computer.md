@@ -2,6 +2,11 @@
 title: บีบอัด PDF บนมือถือและคอมพิวเตอร์ iPhone, Android, Mac, Windows
 description: วิธีบีบอัด PDF บนมือถือและคอมพิวเตอร์ ทั้ง iPhone, Android, Mac และ Windows ผ่านเบราว์เซอร์ ไม่ต้องติดตั้งโปรแกรม
 date: 2026-05-13
+cta:
+  href: /compress-pdf
+  icon: 📄
+  title: บีบอัด PDF ของคุณตอนนี้
+  btn: บีบอัด PDF
 ---
 
 # บีบอัด PDF บนมือถือและคอมพิวเตอร์ ทำได้ง่ายๆ ผ่านเบราว์เซอร์
