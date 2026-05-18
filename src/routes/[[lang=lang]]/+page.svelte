@@ -176,81 +176,51 @@
 	.tool-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 16px;
-		margin-bottom: 24px;
+		gap: 12px;
+		margin-bottom: 18px;
 	}
 
 	.tool-card {
 		display: flex;
+		min-height: 188px;
 		flex-direction: column;
+		justify-content: space-between;
 		background: var(--surf);
-		border: 1.5px solid var(--border);
+		border: 1px solid var(--border);
 		border-radius: var(--r);
 		text-decoration: none;
 		overflow: hidden;
-		transition: all 0.22s ease;
+		transition: border-color .15s ease, background .15s ease;
 		position: relative;
 	}
 
-	.tool-card::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		opacity: 0;
-		transition: opacity 0.25s;
-		pointer-events: none;
+	.tool-card:hover {
+		background: var(--surf);
+		border-color: var(--border-hover);
 	}
 
-	.tool-card--video::before {
-		background: radial-gradient(ellipse at 30% 20%, rgba(79, 140, 255, 0.08) 0%, transparent 65%);
-	}
-
-	.tool-card--pdf::before {
-		background: radial-gradient(ellipse at 30% 20%, rgba(124, 92, 252, 0.08) 0%, transparent 65%);
+	.tool-card:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
 	}
 
 	.tool-card--convert,
 	.tool-card--mp3 {
-		grid-column: 1 / -1;
-	}
-
-	.tool-card--mp3::before {
-		background: radial-gradient(ellipse at 18% 30%, rgba(22, 163, 74, 0.08) 0%, transparent 62%);
-	}
-
-	.tool-card:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
-	}
-
-	.tool-card--video:hover {
-		border-color: var(--accent);
-	}
-
-	.tool-card--pdf:hover {
-		border-color: var(--accent2);
-	}
-
-	.tool-card--mp3:hover {
-		border-color: var(--green);
-	}
-
-	.tool-card:hover::before {
-		opacity: 1;
+		grid-column: auto;
 	}
 
 	.tc-inner {
 		display: flex;
 		align-items: flex-start;
-		gap: 16px;
-		padding: 12px 22px 12px;
+		gap: 14px;
+		padding: 18px 18px 14px;
 		flex: 1;
 	}
 
 	.tool-card--convert .tc-inner,
 	.tool-card--mp3 .tc-inner {
-		align-items: center;
-		padding: 12px 22px 12px;
+		align-items: flex-start;
+		padding: 18px 18px 14px;
 	}
 
 	.tc-body {
@@ -261,21 +231,22 @@
 	.tc-title {
 		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
 		font-size: 15px;
-		font-weight: 700;
+		font-weight: 680;
 		color: var(--text);
-		margin-bottom: 6px;
-		line-height: 1.3;
+		margin-bottom: 7px;
+		line-height: 1.35;
+		letter-spacing: -.1px;
 	}
 
 	.tc-desc {
 		font-size: 12.5px;
 		color: var(--muted);
 		line-height: 1.55;
-		margin-bottom: 12px;
+		margin-bottom: 13px;
 	}
 
 	.tool-card--mp3 .tc-desc {
-		max-width: 560px;
+		max-width: none;
 	}
 
 	.tc-tags {
@@ -285,61 +256,64 @@
 	}
 
 	.tc-tag {
+		display: inline-flex;
+		align-items: center;
+		min-height: 22px;
 		font-size: 10.5px;
 		font-weight: 600;
 		color: var(--muted);
 		background: var(--surf2);
 		border: 1px solid var(--border);
-		border-radius: 5px;
+		border-radius: 4px;
 		padding: 2px 7px;
+		line-height: 1;
 	}
 
 	.tc-arrow {
+		width: 28px;
+		height: 28px;
+		display: grid;
+		place-items: center;
 		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: var(--rsm);
+		background: var(--surf2);
 		flex-shrink: 0;
-		margin-top: 2px;
-		transition: transform 0.18s, color 0.18s;
+		transition: color .15s ease, border-color .15s ease, background .15s ease;
 	}
 
 	.tool-card:hover .tc-arrow {
-		transform: translateX(3px);
 		color: var(--accent);
-	}
-
-	.tool-card--pdf:hover .tc-arrow {
-		color: var(--accent2);
-	}
-
-	.tool-card--mp3:hover .tc-arrow {
-		color: var(--green);
+		border-color: var(--border-hover);
+		background: var(--surf);
 	}
 
 	.tc-cta {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: 6px;
-		padding: 11px 20px;
-		background: linear-gradient(135deg, var(--accent), var(--accent2));
-		color: #fff;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 11px 18px;
+		background: transparent;
+		color: var(--accent);
 		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-		font-size: 13px;
-		font-weight: 700;
-		letter-spacing: 0.1px;
-		border-top: 1px solid rgba(255, 255, 255, 0.06);
-		transition: opacity 0.18s;
+		font-size: 12.5px;
+		font-weight: 650;
+		letter-spacing: 0;
+		border-top: 1px solid var(--border);
+		transition: background .15s ease, color .15s ease;
 	}
 
-	.tc-cta--pdf {
-		background: linear-gradient(135deg, var(--accent2), #4f8cff);
-	}
-
-	.tc-cta--mp3 {
-		background: linear-gradient(135deg, #16a34a, #2563eb);
+	.tc-cta--pdf,
+	.tc-cta--mp3,
+	.tc-cta--convert {
+		background: transparent;
+		color: var(--accent);
 	}
 
 	.tool-card:hover .tc-cta {
-		opacity: 0.9;
+		background: var(--surf2);
+		color: var(--text);
 	}
 
 	@media (max-width: 760px) {
@@ -347,23 +321,34 @@
 			grid-template-columns: 1fr;
 		}
 
-		.tool-card--mp3 {
-			grid-column: auto;
+		.tool-card {
+			min-height: auto;
 		}
 
-		.tool-card--convert .tc-inner,
-		.tool-card--mp3 .tc-inner {
-			align-items: flex-start;
+		.tool-card--mp3,
+		.tool-card--convert {
+			grid-column: auto;
 		}
 	}
 
 	@media (max-width: 560px) {
 		.tool-grid {
-			grid-template-columns: 1fr;
+			gap: 10px;
 		}
 
-		.tc-inner {
-			padding: 18px 16px 14px;
+		.tc-inner,
+		.tool-card--convert .tc-inner,
+		.tool-card--mp3 .tc-inner {
+			padding: 15px 14px 12px;
+			gap: 10px;
+		}
+
+		.tc-title {
+			font-size: 14px;
+		}
+
+		.tc-cta {
+			padding: 10px 14px;
 		}
 	}
 </style>
