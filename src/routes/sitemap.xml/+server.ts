@@ -7,7 +7,17 @@ import type { RequestHandler } from './$types';
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const SITE_URL = 'https://squishyfile.com';
-const STATIC_PAGES = ['', 'compress-video', 'compress-pdf', 'video-to-mp3', 'blog'] as const;
+const STATIC_PAGES = ['', 
+	'compress-video', 
+	'compress-pdf', 
+	'video-to-mp3',
+	'video-converter', 
+	'mov-to-mp4',
+	'avi-to-mp4',
+	'mkv-to-mp4',
+	'webm-to-mp4',
+	'blog'
+	] as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
