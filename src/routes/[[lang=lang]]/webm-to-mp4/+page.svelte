@@ -3,7 +3,6 @@
 	import VideoConverter from "$lib/components/tools/VideoConverter.svelte";
 	import { translations } from "$lib/i18n/translations";
 
-	type VideoOutputFormat = "mp4" | "webm" | "mov" | "mkv";
 	type PageCopy = {
 		metaTitle: string;
 		metaDesc: string;
@@ -33,7 +32,6 @@
 		privacyNote: string;
 		fileTypeFallback: string;
 		remove: string;
-		// outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
 	};
 
 	let { data } = $props();
