@@ -124,3 +124,4 @@ Squishyfile ยังต่างจากบริการออนไลน�
 - [วิธีแปลงไฟล์ MOV จาก iPhone เป็น MP4 บนเบราว์เซอร์](/th/blog/convert-iphone-mov-to-mp4-browser)
 - [AVI, MKV และ WebM ต่างกันอย่างไร เมื่อจะแปลงเป็น MP4](/th/blog/video-formats-to-mp4-differences)
 - [ทำไมการแปลงวิดีโอแบบไม่อัปโหลดไฟล์จึงช่วยปกป้องความเป็นส่วนตัว](/th/blog/no-upload-video-converter-privacy)
+
