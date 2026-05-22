@@ -513,9 +513,218 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.webmToMp4.7.q': 'Why convert WebM to MP4?',
 		'faq.webmToMp4.7.a': 'WebM is useful for the web, but MP4 is often easier to play, upload, edit and share across phones, apps and social platforms.',
 		'faq.webmToMp4.8.q': 'What happens if I close the tab during conversion?',
-		'faq.webmToMp4.8.a': 'The conversion will stop. Keep the tab open until your MP4 file is ready to download.'
+		'faq.webmToMp4.8.a': 'The conversion will stop. Keep the tab open until your MP4 file is ready to download.',
 
-		
+		// ── Image Compressor hub — US English ─────────────────────────────────────
+		// URL: /image-compressor
+		// Primary intent: "image compressor"
+		// Secondary variants: "photo compressor", "picture compressor", "free image compressor", "online image compressor", "compress image online"
+		// SEO role: Hub page. Targets generic image/photo/picture compression and routes format/goal intents to:
+		// /jpg-compressor, /png-compressor, /reduce-image-size.
+		// CSV note: generic cluster has the biggest demand, so keep this page broad and avoid over-optimizing for JPG/PNG-only or "reduce image size" intent.
+
+		'imageCompressor.meta.title': 'Image Compressor Online Free｜JPG, PNG, WebP - Squishyfile',
+		'imageCompressor.meta.desc': 'Free online image compressor for JPG, PNG, WebP and AVIF. Compress photos and pictures in your browser with no upload, no signup and no watermark.',
+		'imageCompressor.hero.title': 'Free online<br />image compressor',
+		'imageCompressor.hero.sub': 'Compress JPG, PNG, WebP and AVIF images right in your browser. Reduce photo and picture file size for websites, email attachments, forms, documents and social media',
+
+		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
+
+		'imageCompressor.drop.title': 'Drag your images here',
+		'imageCompressor.drop.sub': 'Add one or multiple images to compress them in bulk',
+		'imageCompressor.hint': 'Supports JPG, JPEG, PNG, WebP and AVIF images',
+
+		'imageCompressor.quality.label': 'Quality',
+		'imageCompressor.maxWidth.label': 'Width',
+
+		'imageCompressor.btn.compress': 'Compress image',
+		'imageCompressor.status.compressing': 'Compressing image',
+		'imageCompressor.error.selectImage': 'Please select an image file first',
+
+		'imageCompressor.res.title': 'Image compressed successfully',
+		'imageCompressor.res.sub': 'You can download your compressed image files',
+		'imageCompressor.btn.download': 'Download',
+		'imageCompressor.btn.downloadAll': 'Download all',
+		'imageCompressor.btn.new': 'Start over',
+
+		'imageCompressor.stat.compressed': 'After compression',
+		'imageCompressor.stat.saved': 'Saved',
+
+		'imageCompressor.note.privacy': '<strong>Privacy first.</strong> Your images are processed directly in your browser and are not uploaded to any server',
+		'imageCompressor.fileTypeFallback': 'image file',
+
+		'imageCompressor.btn.addLabel': 'Add images',
+
+		// ── FAQ: Image compressor hub — US English ────────────────────────────────
+		'faq.imageCompressor.title': 'FAQ',
+
+		'faq.imageCompressor.1.q': 'Is this online image compressor free?',
+		'faq.imageCompressor.1.a': 'Yes. You can compress images, photos and pictures online for free without creating an account, installing software or adding a watermark',
+
+		'faq.imageCompressor.2.q': 'Are my images uploaded to a server?',
+		'faq.imageCompressor.2.a': 'No. Your images are processed directly in your browser. Files are not uploaded to any server, which makes the tool safer for personal photos, work images, documents, product photos and design assets',
+
+		'faq.imageCompressor.3.q': 'Which image formats are supported?',
+		'faq.imageCompressor.3.a': 'The compressor supports common formats including JPG, JPEG, PNG, WebP and AVIF. If you only need to compress JPG or JPEG files, use the JPG compressor page. If you only need PNG files, use the PNG compressor page',
+
+		'faq.imageCompressor.4.q': 'Does image compression reduce quality?',
+		'faq.imageCompressor.4.a': 'Depending on the quality and width settings, there may be a small visual difference. The tool is designed to reduce file size while keeping images clear for websites, emails, online forms, documents and social media',
+
+		'faq.imageCompressor.5.q': 'Can I compress multiple images at once?',
+		'faq.imageCompressor.5.a': 'Yes. You can add multiple images and compress them in bulk, which is useful for photos, product images, blog images, website assets and social media content',
+
+		'faq.imageCompressor.6.q': 'What is the difference between compressing and resizing an image?',
+		'faq.imageCompressor.6.a': 'Compressing an image mainly reduces the file size. Resizing changes dimensions such as width, height or resolution. To make a file smaller, you can combine compression with a width adjustment',
+
+		'home.card.image.title': 'Image compressor',
+		'home.card.image.desc': 'Compress JPG, PNG, WebP and AVIF images directly in your browser. No upload, no signup and no watermark. Reduce image file size for free',
+		'home.card.image.cta': 'Compress image',
+
+
+		// ── JPG Compressor page — US English ──────────────────────────────────────
+		// URL: /jpg-compressor
+		// Primary intent: "compress jpg"
+		// Secondary variants: "compress jpeg", "jpg size reducer", "reduce jpg file size", "jpg compressor"
+		// SEO role: Format LP. Focuses on JPG/JPEG photo compression. Do not pull the broad "image compressor" intent too aggressively.
+
+		'jpgCompressor.meta.title': 'Compress JPG Online Free｜Reduce JPEG File Size',
+		'jpgCompressor.meta.desc': 'Free online JPG compressor to reduce JPG and JPEG file size. Compress photos in your browser with no upload, no signup and no watermark.',
+		'jpgCompressor.hero.title': 'Compress JPG online for free',
+		'jpgCompressor.hero.sub': 'Compress JPG and JPEG images directly in your browser and quickly reduce photo, product image and upload file size',
+		'jpgCompressor.pill.jpg': 'JPG・JPEG',
+		'jpgCompressor.drop.title': 'Drag JPG files here',
+		'jpgCompressor.drop.sub': 'Add one or multiple JPG/JPEG images to compress them in bulk',
+		'jpgCompressor.hint': 'Best for photos, product images, website images and JPG files before upload',
+		'jpgCompressor.quality.label': 'JPG quality',
+		'jpgCompressor.btn.compress': 'Compress JPG',
+		'jpgCompressor.status.compressing': 'Compressing JPG',
+		'jpgCompressor.error.selectImage': 'Please select a JPG or JPEG image',
+		'jpgCompressor.res.title': 'JPG compressed successfully',
+		'jpgCompressor.res.sub': 'You can download your compressed JPG files',
+		'jpgCompressor.btn.download': 'Download',
+		'jpgCompressor.btn.downloadAll': 'Download all',
+		'jpgCompressor.btn.new': 'Start over',
+		'jpgCompressor.stat.compressed': 'Compressed JPG',
+		'jpgCompressor.note.privacy': '<strong>Privacy first.</strong> Your JPG files are compressed directly in your browser and are not uploaded to any server',
+		'jpgCompressor.fileTypeFallback': 'JPG file',
+
+		'faq.jpgCompressor.title': 'JPG compression FAQ',
+
+		'faq.jpgCompressor.1.q': 'Is this JPG compressor free?',
+		'faq.jpgCompressor.1.a': 'Yes. You can compress JPG and JPEG files online for free without installing software, creating an account or adding a watermark',
+
+		'faq.jpgCompressor.2.q': 'Are my JPG files uploaded to a server?',
+		'faq.jpgCompressor.2.a': 'No. Your JPG files are processed directly in your browser. Images are not uploaded to any server, which helps protect personal photos, work images and product photos',
+
+		'faq.jpgCompressor.3.q': 'What is the difference between JPG and JPEG?',
+		'faq.jpgCompressor.3.a': 'JPG and JPEG are basically the same image format. The main difference is the file extension. This tool accepts both .jpg and .jpeg files',
+
+		'faq.jpgCompressor.4.q': 'What quality should I use when compressing JPG?',
+		'faq.jpgCompressor.4.a': 'For common photos and website images, a quality value between 70 and 85 usually gives a good balance between smaller file size and clear visual quality. You can adjust it based on the result you need',
+
+		'faq.jpgCompressor.5.q': 'Can I compress multiple JPG images at once?',
+		'faq.jpgCompressor.5.a': 'Yes. You can add multiple JPG/JPEG images and compress them in bulk, which is useful for many photos, product images, blog images and website files',
+
+		'faq.jpgCompressor.6.q': 'Will JPG compression make my image look worse?',
+		'faq.jpgCompressor.6.a': 'JPG compression can create small visual losses depending on the quality setting. Adjust the quality to find the best balance between a lightweight file and a sharp-looking image',
+
+
+		// ── PNG Compressor page — US English ──────────────────────────────────────
+		// URL: /png-compressor
+		// Primary intent: "compress png"
+		// Secondary variants: "png size reducer", "png compressor", "reduce png file size", "compress png image"
+		// SEO role: Format LP. Focuses on PNG, transparency, logos, icons, screenshots and UI graphics.
+
+		'pngCompressor.meta.title': 'Compress PNG Online Free｜Reduce PNG File Size',
+		'pngCompressor.meta.desc': 'Free online PNG compressor to reduce PNG image file size for logos, icons, screenshots and transparent images. No upload, no signup and no install.',
+		'pngCompressor.hero.title': 'Compress PNG online for free',
+		'pngCompressor.hero.sub': 'Compress PNG images directly in your browser. Ideal for logos, icons, screenshots, UI graphics and images with transparent backgrounds',
+		'pngCompressor.pill.png': 'PNG file',
+		'pngCompressor.drop.title': 'Drag PNG files here',
+		'pngCompressor.drop.sub': 'Add one or multiple PNG images to reduce file size in bulk',
+		'pngCompressor.hint': 'Best for logos, icons, screenshots, UI graphics and PNG images with transparent backgrounds',
+		'pngCompressor.quality.label': 'PNG quality',
+		'pngCompressor.btn.compress': 'Compress PNG',
+		'pngCompressor.status.compressing': 'Compressing PNG',
+		'pngCompressor.error.selectImage': 'Please select a PNG image',
+		'pngCompressor.res.title': 'PNG compressed successfully',
+		'pngCompressor.res.sub': 'You can download your compressed PNG files',
+		'pngCompressor.btn.download': 'Download',
+		'pngCompressor.btn.downloadAll': 'Download all',
+		'pngCompressor.btn.new': 'Start over',
+		'pngCompressor.stat.compressed': 'Compressed PNG',
+		'pngCompressor.note.privacy': '<strong>Privacy first.</strong> Your PNG files are compressed directly in your browser and are not uploaded to any server',
+		'pngCompressor.fileTypeFallback': 'PNG file',
+
+		'faq.pngCompressor.title': 'PNG compression FAQ',
+
+		'faq.pngCompressor.1.q': 'Is this PNG compressor free?',
+		'faq.pngCompressor.1.a': 'Yes. You can compress PNG files online for free without installing software, creating an account or adding a watermark',
+
+		'faq.pngCompressor.2.q': 'Are my PNG files uploaded to a server?',
+		'faq.pngCompressor.2.a': 'No. Your PNG files are processed directly in your browser. Images are not uploaded to any server, which helps protect logos, design assets and work files',
+
+		'faq.pngCompressor.3.q': 'Will transparent backgrounds stay transparent after PNG compression?',
+		'faq.pngCompressor.3.a': 'In most cases, yes. PNG images with transparency keep their transparent background after compression, which is useful for logos, icons, watermarks and visual assets',
+
+		'faq.pngCompressor.4.q': 'What types of images are best for PNG?',
+		'faq.pngCompressor.4.a': 'PNG is best for logos, icons, screenshots, images with text, interface graphics and visuals that need transparent backgrounds or sharp edges',
+
+		'faq.pngCompressor.5.q': 'Can I compress multiple PNG images at once?',
+		'faq.pngCompressor.5.a': 'Yes. You can add multiple PNG files and compress them in bulk, which is useful for design files, website assets, ecommerce images and interface elements',
+
+		'faq.pngCompressor.6.q': 'When should I use PNG instead of JPG?',
+		'faq.pngCompressor.6.a': 'Use PNG when an image needs transparency, sharp text or clean edges. For photos, JPG usually creates smaller files while keeping good visual quality',
+
+
+		// ── Reduce Image Size page — US English ───────────────────────────────────
+		// URL: /reduce-image-size
+		// Primary intent: "reduce image size"
+		// Secondary variants: "image size reducer", "reduce image file size", "shrink image size", "reduce photo size", "photo size reducer"
+		// SEO role: Goal/intent LP. Focuses on the outcome: make image/photo files smaller for upload, email, forms, documents, websites and social media.
+		// Note: Avoid overusing "image compressor" because the hub page owns that generic keyword.
+
+		'reduceImageSize.meta.title': 'Reduce Image Size Online Free｜Image Size Reducer',
+		'reduceImageSize.meta.desc': 'Reduce image size online for free. Make photos and image files smaller for upload, email, forms, documents, websites and social media directly in your browser.',
+		'reduceImageSize.hero.title': 'Reduce image size online',
+		'reduceImageSize.hero.sub': 'Make images and photos smaller quickly for uploads, email attachments, online forms, documents, websites and social media',
+		'reduceImageSize.pill.reduce': 'Reduce image size',
+		'reduceImageSize.drop.title': 'Drag your images here',
+		'reduceImageSize.drop.sub': 'Add one or multiple images to reduce file size in bulk',
+		'reduceImageSize.hint': 'Ideal for reducing images before sending by email, attaching to forms, publishing on websites or sharing online',
+		'reduceImageSize.quality.label': 'Image quality',
+		'reduceImageSize.btn.compress': 'Reduce image',
+		'reduceImageSize.status.compressing': 'Reducing image',
+		'reduceImageSize.error.selectImage': 'Please select an image file',
+		'reduceImageSize.res.title': 'Image size reduced successfully',
+		'reduceImageSize.res.sub': 'You can download your images with reduced file size',
+		'reduceImageSize.btn.download': 'Download',
+		'reduceImageSize.btn.downloadAll': 'Download all',
+		'reduceImageSize.btn.new': 'Start over',
+		'reduceImageSize.stat.compressed': 'Reduced file',
+		'reduceImageSize.note.privacy': '<strong>Privacy first.</strong> Your images are processed directly in your browser and are not uploaded to any server',
+		'reduceImageSize.fileTypeFallback': 'image file',
+
+		'faq.reduceImageSize.title': 'Reduce image size FAQ',
+
+		'faq.reduceImageSize.1.q': 'Can this tool reduce image size for free?',
+		'faq.reduceImageSize.1.a': 'Yes. You can reduce image size, shrink photos and make image files smaller online for free without installing software or creating an account',
+
+		'faq.reduceImageSize.2.q': 'Are my images uploaded to a server?',
+		'faq.reduceImageSize.2.a': 'No. Your images are processed directly in your browser. Files are not uploaded to any server, which helps protect personal photos, documents, work images and private materials',
+
+		'faq.reduceImageSize.3.q': 'Does reducing image size affect quality?',
+		'faq.reduceImageSize.3.a': 'Depending on the quality and width settings, there may be a small visual difference. You can reduce file size and check whether the image still looks clear for your use case',
+
+		'faq.reduceImageSize.4.q': 'Can I use this for forms, documents or website uploads?',
+		'faq.reduceImageSize.4.a': 'Yes. When a website, online form, document system or email attachment has a file size limit, this tool helps you make images smaller before uploading',
+
+		'faq.reduceImageSize.5.q': 'Can I reduce multiple images at once?',
+		'faq.reduceImageSize.5.a': 'Yes. You can add multiple images and reduce their file size in bulk, which is useful for many photos, product images, website files and social media content',
+
+		'faq.reduceImageSize.6.q': 'Is it better to lower quality or reduce image width?',
+		'faq.reduceImageSize.6.a': 'To reduce file size significantly, you can adjust both quality and width. To preserve appearance, start by lowering quality slightly and then reduce width only if needed',
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -1027,7 +1236,188 @@ export const translations: Record<string, Record<string, string>> = {
 		"faq.webmToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
 		"faq.webmToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
 
+		// ── Image compressor hub / page — Japanese ───────────────────────────────
+		'imageCompressor.meta.title': '画像圧縮オンライン無料｜JPG・PNG・WebP対応 - Squishyfile',
+		'imageCompressor.meta.desc': '画像圧縮をオンラインで無料実行。JPG、PNG、WebP、AVIFの画像ファイルをブラウザ上で軽量化できます。アップロード不要、インストール不要、透かしなし。',
+		'imageCompressor.hero.title': '画像圧縮を<br />オンラインで無料',
+		'imageCompressor.hero.sub': 'JPG、PNG、WebP、AVIFの画像サイズをブラウザ上でかんたんに縮小。高速・安全・無料で使えます',
 
+		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
+
+		'imageCompressor.drop.title': '画像をここにドロップ',
+		'imageCompressor.drop.sub': '複数の画像ファイルを追加して、まとめて圧縮できます',
+		'imageCompressor.hint': 'JPG、PNG、WebP、AVIFに対応',
+
+		'imageCompressor.quality.label': '品質',
+		'imageCompressor.maxWidth.label': '幅',
+
+		'imageCompressor.btn.compress': '画像を圧縮',
+		'imageCompressor.status.compressing': '圧縮中',
+		'imageCompressor.error.selectImage': '先に画像ファイルを選択してください',
+
+		'imageCompressor.res.title': '画像の圧縮が完了しました',
+		'imageCompressor.res.sub': '軽量化された画像ファイルをダウンロードできます',
+		'imageCompressor.btn.download': 'ダウンロード',
+		'imageCompressor.btn.downloadAll': 'すべてダウンロード',
+		'imageCompressor.btn.new': '新しく始める',
+
+		'imageCompressor.stat.compressed': '圧縮後',
+		'imageCompressor.stat.saved': '削減率',
+
+		'imageCompressor.note.privacy': '<strong>プライバシー重視の設計です。</strong> 画像はブラウザ内で直接処理され、サーバーへアップロードされません',
+		'imageCompressor.fileTypeFallback': '画像ファイル',
+
+		'imageCompressor.btn.addLabel': '画像を追加',
+
+		// ── FAQ: Image compressor hub — Japanese ─────────────────────────────────
+		'faq.imageCompressor.title': '画像圧縮に関するよくある質問',
+
+		'faq.imageCompressor.1.q': 'この画像圧縮ツールは無料で使えますか？',
+		'faq.imageCompressor.1.a': '無料で使えます。画像圧縮、写真圧縮、画像ファイルの軽量化をオンラインで行えます。アカウント登録、ソフトのインストール、透かしは不要です',
+
+		'faq.imageCompressor.2.q': '画像はサーバーにアップロードされますか？',
+		'faq.imageCompressor.2.a': 'いいえ。画像はお使いのブラウザ内で処理されます。ファイルが端末上に残るため、個人写真、証明写真、商品画像、仕事用ファイルの圧縮にも安心して使えます',
+
+		'faq.imageCompressor.3.q': 'どの画像形式に対応していますか？',
+		'faq.imageCompressor.3.a': 'JPG、JPEG、PNG、WebP、AVIFなどの主要な画像形式に対応しています。JPGだけを圧縮したい場合はJPG圧縮ページ、PNGだけを圧縮したい場合はPNG圧縮ページも利用できます',
+
+		'faq.imageCompressor.4.q': '画像を圧縮すると画質は落ちますか？',
+		'faq.imageCompressor.4.a': '圧縮設定によっては画質が少し変化する場合があります。ただし、このツールは画像ファイルサイズを小さくしながら、Web掲載、メール添付、フォーム送信、チャット共有に適した見た目を保つように設計されています',
+
+		'faq.imageCompressor.5.q': '複数の画像を一括で圧縮できますか？',
+		'faq.imageCompressor.5.a': 'はい。複数の画像ファイルを追加して、まとめて圧縮できます。大量の写真、商品画像、ブログ画像、サイト用画像を軽量化したいときに便利です',
+
+		'faq.imageCompressor.6.q': '画像圧縮と画像リサイズの違いは何ですか？',
+		'faq.imageCompressor.6.a': '画像圧縮はファイル容量を小さくする処理です。画像リサイズは画像の幅や高さなどのピクセルサイズを変更する処理です。ファイル容量を減らしたい場合は画像圧縮、表示サイズを変えたい場合は画像リサイズが適しています',
+
+		'home.card.image.title': '画像圧縮',
+		'home.card.image.desc': 'JPG、PNG、WebP、AVIFの画像をブラウザ上で圧縮。アップロード不要、透かしなしで無料利用できます',
+		'home.card.image.cta': '画像を圧縮',
+
+
+		// ── JPG Compressor page — Japanese ───────────────────────────────────────
+		// Primary intent: "jpg圧縮"
+		// Secondary variants: "jpeg圧縮", "jpgサイズ縮小", "jpg画像圧縮"
+		// Intent note: focus on JPG/JPEG photo compression, file size reduction, upload/email/web use.
+
+		'jpgCompressor.meta.title': 'JPG圧縮オンライン無料｜JPEG画像を軽量化',
+		'jpgCompressor.meta.desc': 'JPG・JPEG画像をオンラインで無料圧縮。写真や商品画像のファイルサイズをブラウザ上で小さくできます。アップロード不要、インストール不要。',
+		'jpgCompressor.hero.title': 'JPG圧縮をオンラインで無料',
+		'jpgCompressor.hero.sub': 'JPG/JPEG画像のファイルサイズをブラウザ上で軽量化。写真、商品画像、アップロード用ファイルに最適です',
+		'jpgCompressor.pill.jpg': 'JPG・JPEG',
+		'jpgCompressor.drop.title': 'JPGファイルをここにドロップ',
+		'jpgCompressor.drop.sub': 'JPG/JPEG画像を1枚または複数枚追加して、まとめて圧縮できます',
+		'jpgCompressor.hint': '写真、商品画像、アップロード前のJPGサイズ縮小におすすめ',
+		'jpgCompressor.quality.label': 'JPG品質',
+		'jpgCompressor.btn.compress': 'JPGを圧縮',
+		'jpgCompressor.status.compressing': 'JPGを圧縮中',
+		'jpgCompressor.error.selectImage': 'JPGまたはJPEG画像ファイルを選択してください',
+		'jpgCompressor.res.title': 'JPGの圧縮が完了しました',
+		'jpgCompressor.res.sub': '軽量化されたJPGファイルをダウンロードできます',
+		'jpgCompressor.btn.download': 'ダウンロード',
+		'jpgCompressor.btn.downloadAll': 'すべてダウンロード',
+		'jpgCompressor.btn.new': '新しく始める',
+		'jpgCompressor.stat.compressed': '圧縮後のJPG',
+		'jpgCompressor.note.privacy': '<strong>プライバシー重視の設計です。</strong> JPGファイルはブラウザ内で圧縮され、サーバーへアップロードされません',
+		'jpgCompressor.fileTypeFallback': 'JPGファイル',
+
+		'faq.jpgCompressor.title': 'JPG圧縮に関するよくある質問',
+		'faq.jpgCompressor.1.q': 'このJPG圧縮ツールは無料で使えますか？',
+		'faq.jpgCompressor.1.a': '無料で使えます。JPGやJPEG画像をオンラインで圧縮でき、ソフトのインストールやアカウント登録は不要です',
+		'faq.jpgCompressor.2.q': 'JPGファイルはサーバーにアップロードされますか？',
+		'faq.jpgCompressor.2.a': 'いいえ。JPGファイルはお使いのブラウザ内で処理されます。画像をアップロードせずに圧縮できるため、個人写真や仕事用画像にも使いやすい設計です',
+		'faq.jpgCompressor.3.q': 'JPGとJPEGは違いますか？',
+		'faq.jpgCompressor.3.a': '基本的にJPGとJPEGは同じ画像形式です。拡張子の表記が違うだけで、このツールはどちらのファイルにも対応しています',
+		'faq.jpgCompressor.4.q': 'JPG品質はどのくらいに設定すればよいですか？',
+		'faq.jpgCompressor.4.a': '一般的な写真やWeb用画像では、70〜85程度が使いやすい目安です。ファイルサイズを小さくしながら、見た目のバランスを保ちやすくなります',
+		'faq.jpgCompressor.5.q': '複数のJPG画像を一括で圧縮できますか？',
+		'faq.jpgCompressor.5.a': 'はい。複数のJPG/JPEG画像を追加して、まとめて圧縮できます。写真や商品画像を一度に軽量化したいときに便利です',
+		'faq.jpgCompressor.6.q': 'JPGを圧縮すると画質は劣化しますか？',
+		'faq.jpgCompressor.6.a': 'JPG圧縮では画質が少し変化する場合があります。品質設定を調整することで、ファイルサイズと見た目のバランスを選べます',
+
+
+		// ── PNG Compressor page — Japanese ───────────────────────────────────────
+		// Primary intent: "png圧縮"
+		// Secondary variants: "pngサイズ縮小", "png画像圧縮"
+		// Intent note: keep focus on PNG, transparency, logos, icons, screenshots, UI graphics.
+
+		'pngCompressor.meta.title': 'PNG圧縮オンライン無料｜PNG画像を軽量化',
+		'pngCompressor.meta.desc': 'PNG画像をオンラインで無料圧縮。ロゴ、アイコン、スクリーンショット、透過PNGのファイルサイズをブラウザ上で小さくできます。',
+		'pngCompressor.hero.title': 'PNG圧縮をオンラインで無料',
+		'pngCompressor.hero.sub': 'PNG画像のファイルサイズをブラウザ上で軽量化。ロゴ、アイコン、スクリーンショット、透過画像に最適です',
+		'pngCompressor.pill.png': 'PNGファイル',
+		'pngCompressor.drop.title': 'PNGファイルをここにドロップ',
+		'pngCompressor.drop.sub': 'PNG画像を1枚または複数枚追加して、まとめて圧縮できます',
+		'pngCompressor.hint': 'ロゴ、アイコン、スクリーンショット、UI画像、透過PNGのサイズ縮小におすすめ',
+		'pngCompressor.quality.label': 'PNG品質',
+		'pngCompressor.btn.compress': 'PNGを圧縮',
+		'pngCompressor.status.compressing': 'PNGを圧縮中',
+		'pngCompressor.error.selectImage': 'PNG画像ファイルを選択してください',
+		'pngCompressor.res.title': 'PNGの圧縮が完了しました',
+		'pngCompressor.res.sub': '軽量化されたPNGファイルをダウンロードできます',
+		'pngCompressor.btn.download': 'ダウンロード',
+		'pngCompressor.btn.downloadAll': 'すべてダウンロード',
+		'pngCompressor.btn.new': '新しく始める',
+		'pngCompressor.stat.compressed': '圧縮後のPNG',
+		'pngCompressor.note.privacy': '<strong>プライバシー重視の設計です。</strong> PNGファイルはブラウザ内で圧縮され、サーバーへアップロードされません',
+		'pngCompressor.fileTypeFallback': 'PNGファイル',
+
+		'faq.pngCompressor.title': 'PNG圧縮に関するよくある質問',
+		'faq.pngCompressor.1.q': 'このPNG圧縮ツールは無料で使えますか？',
+		'faq.pngCompressor.1.a': '無料で使えます。PNG画像をオンラインで圧縮でき、ソフトのインストールやアカウント登録は不要です',
+		'faq.pngCompressor.2.q': 'PNGファイルはサーバーにアップロードされますか？',
+		'faq.pngCompressor.2.a': 'いいえ。PNGファイルはお使いのブラウザ内で処理されます。アップロードせずに圧縮できるため、ロゴや業務用画像にも使いやすい設計です',
+		'faq.pngCompressor.3.q': 'PNGを圧縮しても透明背景は残りますか？',
+		'faq.pngCompressor.3.a': '通常、透明背景を持つPNG画像は、圧縮後も透過情報を保持できます。ロゴ、アイコン、透過素材の軽量化に適しています',
+		'faq.pngCompressor.4.q': 'PNGはどのような画像に向いていますか？',
+		'faq.pngCompressor.4.a': 'PNGはロゴ、アイコン、スクリーンショット、文字を含む画像、UIグラフィック、透明背景が必要な画像に向いています',
+		'faq.pngCompressor.5.q': '複数のPNG画像を一括で圧縮できますか？',
+		'faq.pngCompressor.5.a': 'はい。複数のPNG画像を追加して、まとめて圧縮できます。サイト用画像やデザイン素材を一度に軽量化したいときに便利です',
+		'faq.pngCompressor.6.q': 'PNGとJPGはどちらを使うべきですか？',
+		'faq.pngCompressor.6.a': '透明背景や文字のくっきりした画像にはPNGが向いています。写真のような画像では、JPGのほうがファイルサイズを小さくしやすい場合があります',
+
+
+		// ── Reduce Image Size page — Japanese ────────────────────────────────────
+		// Primary intent: "画像サイズ縮小"
+		// Secondary variants: "画像サイズを小さくする", "写真サイズを小さくする", "画像容量縮小", "写真容量縮小", "画像容量を減らす"
+		// Intent note: focus on practical goal: making image files smaller for upload, email, forms, documents, websites.
+		// Avoid overusing generic "画像圧縮" because that belongs mainly to the hub page.
+
+		'reduceImageSize.meta.title': '画像サイズ縮小オンライン無料｜画像容量を小さくする',
+		'reduceImageSize.meta.desc': '画像サイズをオンラインで無料縮小。写真や画像ファイルの容量をブラウザ上で小さくできます。アップロード、メール添付、書類提出、Web掲載に便利。',
+		'reduceImageSize.hero.title': '画像サイズをオンラインで縮小',
+		'reduceImageSize.hero.sub': '画像や写真のファイル容量をかんたんに小さくできます。アップロード、メール添付、書類提出、Webサイト用画像に最適です',
+		'reduceImageSize.pill.reduce': '画像容量を縮小',
+		'reduceImageSize.drop.title': '画像をここにドロップ',
+		'reduceImageSize.drop.sub': '画像を1枚または複数枚追加して、まとめてサイズ縮小できます',
+		'reduceImageSize.hint': 'アップロード前、メール送信前、フォーム提出前、Web掲載前の画像サイズ縮小におすすめ',
+		'reduceImageSize.quality.label': '画像品質',
+		'reduceImageSize.btn.compress': '画像サイズを縮小',
+		'reduceImageSize.status.compressing': '画像サイズを縮小中',
+		'reduceImageSize.error.selectImage': '画像ファイルを選択してください',
+		'reduceImageSize.res.title': '画像サイズの縮小が完了しました',
+		'reduceImageSize.res.sub': 'ファイル容量を小さくした画像をダウンロードできます',
+		'reduceImageSize.btn.download': 'ダウンロード',
+		'reduceImageSize.btn.downloadAll': 'すべてダウンロード',
+		'reduceImageSize.btn.new': '新しく始める',
+		'reduceImageSize.stat.compressed': '縮小後のファイル',
+		'reduceImageSize.note.privacy': '<strong>プライバシー重視の設計です。</strong> 画像はブラウザ内で処理され、サーバーへアップロードされません',
+		'reduceImageSize.fileTypeFallback': '画像ファイル',
+
+		'faq.reduceImageSize.title': '画像サイズ縮小に関するよくある質問',
+		'faq.reduceImageSize.1.q': 'このツールで画像サイズを無料で縮小できますか？',
+		'faq.reduceImageSize.1.a': '無料で使えます。画像や写真のファイル容量をオンラインで小さくでき、ソフトのインストールやアカウント登録は不要です',
+		'faq.reduceImageSize.2.q': '画像ファイルはサーバーにアップロードされますか？',
+		'faq.reduceImageSize.2.a': 'いいえ。画像はお使いのブラウザ内で処理されます。ファイルをアップロードせずにサイズ縮小できるため、個人写真や書類用画像にも使いやすい設計です',
+		'faq.reduceImageSize.3.q': '画像サイズを小さくすると画質は落ちますか？',
+		'faq.reduceImageSize.3.a': '品質設定や幅の設定によって、画質が少し変化する場合があります。ファイル容量と見た目のバランスを確認しながら調整できます',
+		'faq.reduceImageSize.4.q': '書類提出やフォームアップロード用の画像にも使えますか？',
+		'faq.reduceImageSize.4.a': 'はい。画像容量を小さくしたいときに便利です。オンラインフォーム、メール添付、書類提出、課題提出、Webサイト掲載前の画像サイズ縮小に使えます',
+		'faq.reduceImageSize.5.q': '複数の画像をまとめてサイズ縮小できますか？',
+		'faq.reduceImageSize.5.a': 'はい。複数の画像を追加して、まとめてファイル容量を小さくできます。写真やサイト用画像を一括で軽量化したいときに便利です',
+		'faq.reduceImageSize.6.q': '品質を下げるのと幅を小さくするのはどちらがよいですか？',
+		'faq.reduceImageSize.6.a': '大きく容量を減らしたい場合は、品質調整と幅の縮小を組み合わせるのがおすすめです。画質をなるべく保ちたい場合は、品質を少しずつ下げて結果を確認してください',
+	
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -1522,6 +1912,198 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.webmToMp4.7.a': 'WebM 適合網頁使用，但在部分手機、剪輯軟體、聊天軟體或社群平台上支援度可能不如 MP4。轉成 MP4 後通常更容易播放、上傳與分享。',
 		'faq.webmToMp4.8.q': '轉檔時關掉分頁會怎樣？',
 		'faq.webmToMp4.8.a': '轉檔中關掉分頁會中斷處理。請保持頁面開啟，直到 MP4 檔案準備好下載。',
+
+		
+		// ── Image compressor hub / page — Traditional Chinese Taiwan ─────────────
+		// URL: /image-compressor
+		// Primary intent: "圖片壓縮", "照片壓縮", "線上圖片壓縮"
+		// Secondary variants: "圖片檔案壓縮", "圖片壓縮工具", "免費圖片壓縮", "批次圖片壓縮"
+		// SEO role: Hub page. Đánh generic image/photo compression, gom format JPG/PNG/WebP/AVIF,
+		// rồi internal link sang /jpg-compressor, /png-compressor, /reduce-image-size.
+
+		'imageCompressor.meta.title': '線上圖片壓縮免費｜壓縮照片、JPG、PNG、WebP - Squishyfile',
+		'imageCompressor.meta.desc': '免費線上圖片壓縮工具，支援 JPG、PNG、WebP、AVIF。可在瀏覽器中縮小照片與圖片檔案容量，免上傳、免安裝、無浮水印。',
+		'imageCompressor.hero.title': '線上圖片壓縮<br />免費又快速',
+		'imageCompressor.hero.sub': '在瀏覽器中壓縮 JPG、PNG、WebP、AVIF 圖片，輕鬆縮小照片與圖片檔案容量，適合上傳、寄信、網站與社群分享',
+
+		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
+
+		'imageCompressor.drop.title': '將圖片拖曳到這裡',
+		'imageCompressor.drop.sub': '可一次加入多張圖片，批次壓縮照片與圖片檔案',
+		'imageCompressor.hint': '支援 JPG、JPEG、PNG、WebP、AVIF 圖片格式',
+
+		'imageCompressor.quality.label': '品質',
+		'imageCompressor.maxWidth.label': '寬度',
+
+		'imageCompressor.btn.compress': '壓縮圖片',
+		'imageCompressor.status.compressing': '圖片壓縮中',
+		'imageCompressor.error.selectImage': '請先選擇圖片檔案',
+
+		'imageCompressor.res.title': '圖片壓縮完成',
+		'imageCompressor.res.sub': '你可以下載已縮小容量的圖片檔案',
+		'imageCompressor.btn.download': '下載',
+		'imageCompressor.btn.downloadAll': '全部下載',
+		'imageCompressor.btn.new': '重新開始',
+
+		'imageCompressor.stat.compressed': '壓縮後',
+		'imageCompressor.stat.saved': '節省比例',
+
+		'imageCompressor.note.privacy': '<strong>重視隱私的設計。</strong> 圖片會直接在你的瀏覽器中處理，不會上傳到伺服器',
+		'imageCompressor.fileTypeFallback': '圖片檔案',
+
+		'imageCompressor.btn.addLabel': '新增圖片',
+
+		// ── FAQ: Image compressor hub — Traditional Chinese Taiwan ────────────────
+		'faq.imageCompressor.title': '圖片壓縮常見問題',
+
+		'faq.imageCompressor.1.q': '這個線上圖片壓縮工具可以免費使用嗎？',
+		'faq.imageCompressor.1.a': '可以免費使用。你可以線上壓縮圖片、壓縮照片、縮小圖片檔案容量，不需要註冊帳號、安裝軟體，也不會加入浮水印',
+
+		'faq.imageCompressor.2.q': '圖片會上傳到伺服器嗎？',
+		'faq.imageCompressor.2.a': '不會。圖片會在你的瀏覽器中直接處理，檔案不會上傳到伺服器。個人照片、證件照、商品圖片、工作用圖片都可以更安心地壓縮',
+
+		'faq.imageCompressor.3.q': '支援哪些圖片格式？',
+		'faq.imageCompressor.3.a': '支援 JPG、JPEG、PNG、WebP、AVIF 等常見圖片格式。如果你只想壓縮 JPG 或 JPEG，可以使用 JPG 壓縮頁面；如果只想壓縮 PNG，可以使用 PNG 壓縮頁面',
+
+		'faq.imageCompressor.4.q': '壓縮圖片會影響畫質嗎？',
+		'faq.imageCompressor.4.a': '依照品質與寬度設定不同，畫質可能會有些微變化。這個工具會盡量在縮小圖片容量的同時，保留適合網站、信件附件、表單上傳與社群分享的清晰度',
+
+		'faq.imageCompressor.5.q': '可以一次壓縮多張圖片嗎？',
+		'faq.imageCompressor.5.a': '可以。你可以一次加入多張圖片並批次壓縮，適合大量照片、商品圖片、部落格圖片、網站圖片與社群圖片的容量縮小',
+
+		'faq.imageCompressor.6.q': '圖片壓縮和圖片尺寸調整有什麼不同？',
+		'faq.imageCompressor.6.a': '圖片壓縮主要是減少檔案容量，圖片尺寸調整則是改變寬度、高度或解析度。如果你想讓檔案變小，可以使用圖片壓縮；如果你想讓畫面尺寸變小，可以搭配寬度設定一起使用',
+
+		'home.card.image.title': '圖片壓縮',
+		'home.card.image.desc': '在瀏覽器中壓縮 JPG、PNG、WebP、AVIF 圖片。免上傳、免安裝、無浮水印，免費縮小圖片容量',
+		'home.card.image.cta': '壓縮圖片',
+
+
+		// ── JPG Compressor page — Traditional Chinese Taiwan ─────────────────────
+		// URL: /jpg-compressor
+		// Primary intent: "jpg壓縮"
+		// Secondary variants: "jpeg壓縮", "jpg圖片壓縮", "jpg檔案壓縮", "jpg尺寸縮小"
+		// SEO role: Format LP. Tập trung JPG/JPEG photo compression, tránh kéo generic "圖片壓縮" quá mạnh.
+
+		'jpgCompressor.meta.title': 'JPG壓縮線上免費｜JPEG照片檔案容量縮小',
+		'jpgCompressor.meta.desc': '免費線上 JPG 壓縮工具，支援 JPG、JPEG 照片與圖片檔案。可在瀏覽器中縮小 JPG 檔案容量，免上傳、免安裝。',
+		'jpgCompressor.hero.title': 'JPG壓縮線上免費',
+		'jpgCompressor.hero.sub': '在瀏覽器中壓縮 JPG/JPEG 圖片，快速縮小照片、商品圖與上傳用檔案容量',
+		'jpgCompressor.pill.jpg': 'JPG・JPEG',
+		'jpgCompressor.drop.title': '將 JPG 檔案拖曳到這裡',
+		'jpgCompressor.drop.sub': '可加入一張或多張 JPG/JPEG 圖片，批次壓縮檔案容量',
+		'jpgCompressor.hint': '適合照片、商品圖片、網站圖片、上傳前的 JPG 檔案縮小',
+		'jpgCompressor.quality.label': 'JPG 品質',
+		'jpgCompressor.btn.compress': '壓縮 JPG',
+		'jpgCompressor.status.compressing': 'JPG 壓縮中',
+		'jpgCompressor.error.selectImage': '請選擇 JPG 或 JPEG 圖片檔案',
+		'jpgCompressor.res.title': 'JPG 壓縮完成',
+		'jpgCompressor.res.sub': '你可以下載已縮小容量的 JPG 檔案',
+		'jpgCompressor.btn.download': '下載',
+		'jpgCompressor.btn.downloadAll': '全部下載',
+		'jpgCompressor.btn.new': '重新開始',
+		'jpgCompressor.stat.compressed': '壓縮後的 JPG',
+		'jpgCompressor.note.privacy': '<strong>重視隱私的設計。</strong> JPG 檔案會直接在你的瀏覽器中壓縮，不會上傳到伺服器',
+		'jpgCompressor.fileTypeFallback': 'JPG 檔案',
+
+		'faq.jpgCompressor.title': 'JPG 壓縮常見問題',
+		'faq.jpgCompressor.1.q': '這個 JPG 壓縮工具可以免費使用嗎？',
+		'faq.jpgCompressor.1.a': '可以免費使用。你可以在線上壓縮 JPG 與 JPEG 圖片，不需要安裝軟體、註冊帳號，也不會加入浮水印',
+		'faq.jpgCompressor.2.q': 'JPG 檔案會上傳到伺服器嗎？',
+		'faq.jpgCompressor.2.a': '不會。JPG 檔案會在你的瀏覽器中處理，圖片不會上傳到伺服器。個人照片、工作圖片、商品圖片都可以更安心地壓縮',
+		'faq.jpgCompressor.3.q': 'JPG 和 JPEG 有什麼不同？',
+		'faq.jpgCompressor.3.a': 'JPG 和 JPEG 基本上是同一種圖片格式，只是副檔名寫法不同。這個工具同時支援 .jpg 和 .jpeg 檔案',
+		'faq.jpgCompressor.4.q': 'JPG 品質應該設定多少比較好？',
+		'faq.jpgCompressor.4.a': '一般照片或網站圖片可以從 70 到 85 左右開始嘗試。這個範圍通常能在檔案容量與畫質之間取得不錯的平衡',
+		'faq.jpgCompressor.5.q': '可以一次壓縮多張 JPG 圖片嗎？',
+		'faq.jpgCompressor.5.a': '可以。你可以一次加入多張 JPG/JPEG 圖片並批次壓縮，適合大量照片、商品圖與網站圖片的容量縮小',
+		'faq.jpgCompressor.6.q': 'JPG 壓縮後畫質會變差嗎？',
+		'faq.jpgCompressor.6.a': 'JPG 壓縮可能會讓畫質有些微變化。你可以調整品質設定，在檔案容量和視覺清晰度之間選擇最適合的結果',
+
+
+		// ── PNG Compressor page — Traditional Chinese Taiwan ─────────────────────
+		// URL: /png-compressor
+		// Primary intent: "png壓縮"
+		// Secondary variants: "png圖片壓縮", "png檔案壓縮", "png容量縮小", "png尺寸縮小"
+		// SEO role: Format LP. Tập trung PNG, transparency, logo, icon, screenshot, UI graphics.
+
+		'pngCompressor.meta.title': 'PNG壓縮線上免費｜縮小PNG圖片檔案容量',
+		'pngCompressor.meta.desc': '免費線上 PNG 壓縮工具，可縮小 PNG 圖片、Logo、Icon、螢幕截圖與透明背景圖片的檔案容量。免上傳、免安裝。',
+		'pngCompressor.hero.title': 'PNG壓縮線上免費',
+		'pngCompressor.hero.sub': '在瀏覽器中壓縮 PNG 圖片，適合 Logo、Icon、螢幕截圖、UI 圖片與透明背景素材',
+		'pngCompressor.pill.png': 'PNG 檔案',
+		'pngCompressor.drop.title': '將 PNG 檔案拖曳到這裡',
+		'pngCompressor.drop.sub': '可加入一張或多張 PNG 圖片，批次縮小檔案容量',
+		'pngCompressor.hint': '適合 Logo、Icon、螢幕截圖、UI 圖片、透明 PNG 的容量縮小',
+		'pngCompressor.quality.label': 'PNG 品質',
+		'pngCompressor.btn.compress': '壓縮 PNG',
+		'pngCompressor.status.compressing': 'PNG 壓縮中',
+		'pngCompressor.error.selectImage': '請選擇 PNG 圖片檔案',
+		'pngCompressor.res.title': 'PNG 壓縮完成',
+		'pngCompressor.res.sub': '你可以下載已縮小容量的 PNG 檔案',
+		'pngCompressor.btn.download': '下載',
+		'pngCompressor.btn.downloadAll': '全部下載',
+		'pngCompressor.btn.new': '重新開始',
+		'pngCompressor.stat.compressed': '壓縮後的 PNG',
+		'pngCompressor.note.privacy': '<strong>重視隱私的設計。</strong> PNG 檔案會直接在你的瀏覽器中壓縮，不會上傳到伺服器',
+		'pngCompressor.fileTypeFallback': 'PNG 檔案',
+
+		'faq.pngCompressor.title': 'PNG 壓縮常見問題',
+		'faq.pngCompressor.1.q': '這個 PNG 壓縮工具可以免費使用嗎？',
+		'faq.pngCompressor.1.a': '可以免費使用。你可以在線上壓縮 PNG 圖片，不需要安裝軟體、註冊帳號，也不會加入浮水印',
+		'faq.pngCompressor.2.q': 'PNG 檔案會上傳到伺服器嗎？',
+		'faq.pngCompressor.2.a': '不會。PNG 檔案會在你的瀏覽器中處理，圖片不會上傳到伺服器。Logo、設計素材、工作用圖片都可以更安心地壓縮',
+		'faq.pngCompressor.3.q': '壓縮 PNG 後透明背景會保留嗎？',
+		'faq.pngCompressor.3.a': '通常會保留。帶有透明背景的 PNG 圖片在壓縮後仍可保留透明資訊，適合 Logo、Icon、浮水印素材與透明圖片',
+		'faq.pngCompressor.4.q': 'PNG 適合哪些圖片？',
+		'faq.pngCompressor.4.a': 'PNG 適合 Logo、Icon、螢幕截圖、含文字的圖片、UI 圖形，以及需要透明背景的圖片',
+		'faq.pngCompressor.5.q': '可以一次壓縮多張 PNG 圖片嗎？',
+		'faq.pngCompressor.5.a': '可以。你可以一次加入多張 PNG 圖片並批次壓縮，適合網站素材、設計檔案、電商圖片與 UI 圖片的容量縮小',
+		'faq.pngCompressor.6.q': 'PNG 和 JPG 應該怎麼選？',
+		'faq.pngCompressor.6.a': '如果圖片需要透明背景、文字清楚或邊緣銳利，通常適合使用 PNG。如果是照片類圖片，JPG 通常更容易壓出較小的檔案容量',
+
+
+		// ── Reduce Image Size page — Traditional Chinese Taiwan ──────────────────
+		// URL: /reduce-image-size
+		// Primary intent: "圖片縮小"
+		// Secondary variants: "圖片容量縮小", "縮小圖片大小", "降低圖片大小", "減少圖片容量", "照片容量壓縮"
+		// SEO role: Goal/intent LP. Tập trung practical outcome: giảm dung lượng/kích thước file để upload/email/form/web.
+		// Note: Không overuse generic "圖片壓縮" vì hub page đã ăn keyword đó.
+
+		'reduceImageSize.meta.title': '圖片縮小線上免費｜縮小圖片容量與檔案大小',
+		'reduceImageSize.meta.desc': '免費線上圖片縮小工具，可縮小照片與圖片檔案容量，適合上傳表單、寄 Email、文件提交、網站與社群分享。免上傳、免安裝。',
+		'reduceImageSize.hero.title': '線上縮小圖片容量',
+		'reduceImageSize.hero.sub': '快速縮小圖片與照片檔案大小，適合上傳、寄信、表單提交、文件附檔與網站圖片使用',
+		'reduceImageSize.pill.reduce': '縮小圖片容量',
+		'reduceImageSize.drop.title': '將圖片拖曳到這裡',
+		'reduceImageSize.drop.sub': '可加入一張或多張圖片，批次縮小檔案大小',
+		'reduceImageSize.hint': '適合上傳前、寄信前、表單提交前、網站發布前的圖片縮小',
+		'reduceImageSize.quality.label': '圖片品質',
+		'reduceImageSize.btn.compress': '縮小圖片',
+		'reduceImageSize.status.compressing': '圖片縮小中',
+		'reduceImageSize.error.selectImage': '請選擇圖片檔案',
+		'reduceImageSize.res.title': '圖片縮小完成',
+		'reduceImageSize.res.sub': '你可以下載已縮小檔案大小的圖片',
+		'reduceImageSize.btn.download': '下載',
+		'reduceImageSize.btn.downloadAll': '全部下載',
+		'reduceImageSize.btn.new': '重新開始',
+		'reduceImageSize.stat.compressed': '縮小後的檔案',
+		'reduceImageSize.note.privacy': '<strong>重視隱私的設計。</strong> 圖片會直接在你的瀏覽器中處理，不會上傳到伺服器',
+		'reduceImageSize.fileTypeFallback': '圖片檔案',
+
+		'faq.reduceImageSize.title': '圖片縮小常見問題',
+		'faq.reduceImageSize.1.q': '這個工具可以免費縮小圖片容量嗎？',
+		'faq.reduceImageSize.1.a': '可以免費使用。你可以在線上縮小圖片、壓縮照片容量、減少圖片檔案大小，不需要安裝軟體或註冊帳號',
+		'faq.reduceImageSize.2.q': '圖片檔案會上傳到伺服器嗎？',
+		'faq.reduceImageSize.2.a': '不會。圖片會在你的瀏覽器中直接處理，檔案不會上傳到伺服器。個人照片、證件照、文件用圖片與工作圖片都可以更安心地使用',
+		'faq.reduceImageSize.3.q': '縮小圖片容量會影響畫質嗎？',
+		'faq.reduceImageSize.3.a': '依照品質與寬度設定不同，畫質可能會有些微變化。你可以一邊縮小檔案容量，一邊確認圖片看起來是否仍然清楚',
+		'faq.reduceImageSize.4.q': '可以用在表單上傳或文件提交嗎？',
+		'faq.reduceImageSize.4.a': '可以。當網站、線上表單、Email 附件、作業提交或文件系統限制圖片檔案大小時，這個工具可以幫你快速縮小圖片容量',
+		'faq.reduceImageSize.5.q': '可以一次縮小多張圖片嗎？',
+		'faq.reduceImageSize.5.a': '可以。你可以一次加入多張圖片並批次縮小檔案大小，適合大量照片、網站圖片、商品圖片與社群圖片',
+		'faq.reduceImageSize.6.q': '調低品質和縮小寬度，哪一個比較有效？',
+		'faq.reduceImageSize.6.a': '如果想大幅減少圖片容量，可以同時調整品質與寬度。如果想盡量保留畫質，建議先小幅降低品質，再依需求調整圖片寬度',
 
 	},
 
@@ -2058,8 +2640,217 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.webmToMp4.7.q': 'Por que converter WebM para MP4?',
 		'faq.webmToMp4.7.a': 'WebM é ótimo para a web, mas pode não ser aceito por alguns celulares, redes sociais, aplicativos de mensagem ou editores. MP4 costuma ser mais compatível.',
 		'faq.webmToMp4.8.q': 'Posso converter WebM para MP4 online sem upload?',
-		'faq.webmToMp4.8.a': 'Sim. A conversão é feita localmente no navegador, sem enviar o arquivo WebM para servidores.'
+		'faq.webmToMp4.8.a': 'Sim. A conversão é feita localmente no navegador, sem enviar o arquivo WebM para servidores.',
 
+
+		// URL: /image-compressor
+		// Primary intent: "comprimir imagem", "compactar imagem", "comprimir imagem online"
+		// Secondary variants: "comprimir imagens", "compactar imagens", "compressor de imagem", "comprimir imagem sem perder qualidade"
+		// SEO role: Hub page. Đánh generic image/photo compression, gom format JPG/PNG/WebP/AVIF,
+		// rồi internal link sang /jpg-compressor, /png-compressor, /reduce-image-size.
+
+		'imageCompressor.meta.title': 'Comprimir Imagem Online Grátis｜JPG, PNG, WebP - Squishyfile',
+		'imageCompressor.meta.desc': 'Compressor de imagem online grátis para JPG, PNG, WebP e AVIF. Reduza o tamanho de fotos e imagens direto no navegador, sem upload, sem instalar e sem marca d’água.',
+		'imageCompressor.hero.title': 'Comprimir imagem<br />online grátis',
+		'imageCompressor.hero.sub': 'Comprima JPG, PNG, WebP e AVIF direto no navegador. Reduza o tamanho de fotos e arquivos de imagem para enviar, publicar em sites, anexar em e-mails ou compartilhar nas redes sociais',
+
+		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
+
+		'imageCompressor.drop.title': 'Arraste suas imagens aqui',
+		'imageCompressor.drop.sub': 'Adicione uma ou várias imagens para comprimir em lote',
+		'imageCompressor.hint': 'Compatível com imagens JPG, JPEG, PNG, WebP e AVIF',
+
+		'imageCompressor.quality.label': 'Qualidade',
+		'imageCompressor.maxWidth.label': 'Largura',
+
+		'imageCompressor.btn.compress': 'Comprimir imagem',
+		'imageCompressor.status.compressing': 'Comprimindo imagem',
+		'imageCompressor.error.selectImage': 'Selecione um arquivo de imagem primeiro',
+
+		'imageCompressor.res.title': 'Imagem comprimida com sucesso',
+		'imageCompressor.res.sub': 'Você pode baixar os arquivos de imagem com tamanho reduzido',
+		'imageCompressor.btn.download': 'Baixar',
+		'imageCompressor.btn.downloadAll': 'Baixar tudo',
+		'imageCompressor.btn.new': 'Começar de novo',
+
+		'imageCompressor.stat.compressed': 'Após compressão',
+		'imageCompressor.stat.saved': 'Economia',
+
+		'imageCompressor.note.privacy': '<strong>Privacidade em primeiro lugar.</strong> Suas imagens são processadas diretamente no navegador e não são enviadas para nenhum servidor',
+		'imageCompressor.fileTypeFallback': 'arquivo de imagem',
+
+		'imageCompressor.btn.addLabel': 'Adicionar imagens',
+
+		// ── FAQ: Image compressor hub — Portuguese Brazil ────────────────────────
+		'faq.imageCompressor.title': 'Perguntas frequentes sobre compressão de imagem',
+
+		'faq.imageCompressor.1.q': 'Este compressor de imagem online é grátis?',
+		'faq.imageCompressor.1.a': 'Sim. Você pode comprimir imagens, compactar fotos e reduzir o tamanho de arquivos de imagem online grátis, sem criar conta, sem instalar programas e sem marca d’água',
+
+		'faq.imageCompressor.2.q': 'Minhas imagens são enviadas para o servidor?',
+		'faq.imageCompressor.2.a': 'Não. As imagens são processadas diretamente no seu navegador. Os arquivos não são enviados para nenhum servidor, o que torna o uso mais seguro para fotos pessoais, imagens de trabalho, documentos, produtos e materiais de design',
+
+		'faq.imageCompressor.3.q': 'Quais formatos de imagem são compatíveis?',
+		'faq.imageCompressor.3.a': 'O compressor aceita formatos comuns como JPG, JPEG, PNG, WebP e AVIF. Se você quer comprimir apenas JPG ou JPEG, use a página de compressor JPG. Se quer comprimir apenas PNG, use a página de compressor PNG',
+
+		'faq.imageCompressor.4.q': 'Comprimir imagem reduz a qualidade?',
+		'faq.imageCompressor.4.a': 'Dependendo da qualidade e da largura escolhidas, pode haver uma pequena diferença visual. A ferramenta busca reduzir o tamanho do arquivo mantendo uma boa nitidez para sites, e-mails, formulários, documentos e redes sociais',
+
+		'faq.imageCompressor.5.q': 'Posso comprimir várias imagens ao mesmo tempo?',
+		'faq.imageCompressor.5.a': 'Sim. Você pode adicionar várias imagens e comprimir em lote, ideal para fotos, imagens de produtos, posts de blog, imagens de site e conteúdos para redes sociais',
+
+		'faq.imageCompressor.6.q': 'Qual é a diferença entre comprimir imagem e redimensionar imagem?',
+		'faq.imageCompressor.6.a': 'Comprimir imagem reduz principalmente o tamanho do arquivo. Redimensionar imagem altera dimensões como largura, altura ou resolução. Para deixar o arquivo menor, você pode combinar compressão com ajuste de largura',
+
+		'home.card.image.title': 'Comprimir imagem',
+		'home.card.image.desc': 'Comprima imagens JPG, PNG, WebP e AVIF direto no navegador. Sem upload, sem instalar e sem marca d’água. Reduza o tamanho dos arquivos grátis',
+		'home.card.image.cta': 'Comprimir imagem',
+
+
+		// ── JPG Compressor page — Portuguese Brazil ──────────────────────────────
+		// URL: /jpg-compressor
+		// Primary intent: "comprimir jpg"
+		// Secondary variants: "comprimir jpeg", "compactar jpg", "compactar jpeg", "reduzir jpg", "diminuir jpg"
+		// SEO role: Format LP. Tập trung JPG/JPEG photo compression, tránh kéo generic "comprimir imagem" quá mạnh.
+
+		'jpgCompressor.meta.title': 'Comprimir JPG Online Grátis｜Reduzir JPEG e Fotos',
+		'jpgCompressor.meta.desc': 'Compressor JPG online grátis para reduzir o tamanho de arquivos JPG e JPEG. Comprima fotos direto no navegador, sem upload, sem instalar e sem marca d’água.',
+		'jpgCompressor.hero.title': 'Comprimir JPG online grátis',
+		'jpgCompressor.hero.sub': 'Comprima imagens JPG/JPEG direto no navegador e reduza rapidamente o tamanho de fotos, imagens de produtos e arquivos para upload',
+		'jpgCompressor.pill.jpg': 'JPG・JPEG',
+		'jpgCompressor.drop.title': 'Arraste arquivos JPG aqui',
+		'jpgCompressor.drop.sub': 'Adicione uma ou várias imagens JPG/JPEG para comprimir em lote',
+		'jpgCompressor.hint': 'Ideal para fotos, imagens de produtos, imagens de site e arquivos JPG antes do upload',
+		'jpgCompressor.quality.label': 'Qualidade JPG',
+		'jpgCompressor.btn.compress': 'Comprimir JPG',
+		'jpgCompressor.status.compressing': 'Comprimindo JPG',
+		'jpgCompressor.error.selectImage': 'Selecione uma imagem JPG ou JPEG',
+		'jpgCompressor.res.title': 'JPG comprimido com sucesso',
+		'jpgCompressor.res.sub': 'Você pode baixar os arquivos JPG com tamanho reduzido',
+		'jpgCompressor.btn.download': 'Baixar',
+		'jpgCompressor.btn.downloadAll': 'Baixar tudo',
+		'jpgCompressor.btn.new': 'Começar de novo',
+		'jpgCompressor.stat.compressed': 'JPG comprimido',
+		'jpgCompressor.note.privacy': '<strong>Privacidade em primeiro lugar.</strong> Seus arquivos JPG são comprimidos diretamente no navegador e não são enviados para nenhum servidor',
+		'jpgCompressor.fileTypeFallback': 'arquivo JPG',
+
+		'faq.jpgCompressor.title': 'Perguntas frequentes sobre compressão de JPG',
+
+		'faq.jpgCompressor.1.q': 'Este compressor JPG é grátis?',
+		'faq.jpgCompressor.1.a': 'Sim. Você pode comprimir JPG e JPEG online grátis, sem instalar programas, sem criar conta e sem marca d’água',
+
+		'faq.jpgCompressor.2.q': 'Meus arquivos JPG são enviados para o servidor?',
+		'faq.jpgCompressor.2.a': 'Não. Os arquivos JPG são processados diretamente no seu navegador. As imagens não são enviadas para nenhum servidor, o que ajuda a proteger fotos pessoais, imagens de trabalho e fotos de produtos',
+
+		'faq.jpgCompressor.3.q': 'Qual é a diferença entre JPG e JPEG?',
+		'faq.jpgCompressor.3.a': 'JPG e JPEG são basicamente o mesmo formato de imagem. A diferença está principalmente na extensão do arquivo. Esta ferramenta aceita tanto .jpg quanto .jpeg',
+
+		'faq.jpgCompressor.4.q': 'Qual qualidade devo usar para comprimir JPG?',
+		'faq.jpgCompressor.4.a': 'Para fotos comuns e imagens de site, um valor entre 70 e 85 costuma oferecer um bom equilíbrio entre tamanho menor e qualidade visual. Você pode ajustar conforme o resultado desejado',
+
+		'faq.jpgCompressor.5.q': 'Posso comprimir várias imagens JPG ao mesmo tempo?',
+		'faq.jpgCompressor.5.a': 'Sim. Você pode adicionar várias imagens JPG/JPEG e comprimir em lote, ideal para muitas fotos, imagens de produtos, imagens de blog e arquivos de site',
+
+		'faq.jpgCompressor.6.q': 'A qualidade da imagem piora depois de comprimir JPG?',
+		'faq.jpgCompressor.6.a': 'A compressão JPG pode causar pequenas perdas visuais, dependendo da qualidade escolhida. Ajuste a qualidade para encontrar o melhor equilíbrio entre arquivo leve e imagem nítida',
+
+
+		// ── PNG Compressor page — Portuguese Brazil ──────────────────────────────
+		// URL: /png-compressor
+		// Primary intent: "comprimir png"
+		// Secondary variants: "compactar png", "reduzir png", "diminuir png", "comprimir imagem png"
+		// SEO role: Format LP. Tập trung PNG, transparência, logo, ícone, screenshot, UI graphics.
+
+		'pngCompressor.meta.title': 'Comprimir PNG Online Grátis｜Reduzir Arquivo PNG',
+		'pngCompressor.meta.desc': 'Compressor PNG online grátis para reduzir o tamanho de imagens PNG, logos, ícones, capturas de tela e imagens com fundo transparente. Sem upload e sem instalar.',
+		'pngCompressor.hero.title': 'Comprimir PNG online grátis',
+		'pngCompressor.hero.sub': 'Comprima imagens PNG direto no navegador. Ideal para logos, ícones, capturas de tela, imagens de interface e arquivos com fundo transparente',
+		'pngCompressor.pill.png': 'Arquivo PNG',
+		'pngCompressor.drop.title': 'Arraste arquivos PNG aqui',
+		'pngCompressor.drop.sub': 'Adicione uma ou várias imagens PNG para reduzir o tamanho em lote',
+		'pngCompressor.hint': 'Ideal para logos, ícones, capturas de tela, imagens de UI e PNG com fundo transparente',
+		'pngCompressor.quality.label': 'Qualidade PNG',
+		'pngCompressor.btn.compress': 'Comprimir PNG',
+		'pngCompressor.status.compressing': 'Comprimindo PNG',
+		'pngCompressor.error.selectImage': 'Selecione uma imagem PNG',
+		'pngCompressor.res.title': 'PNG comprimido com sucesso',
+		'pngCompressor.res.sub': 'Você pode baixar os arquivos PNG com tamanho reduzido',
+		'pngCompressor.btn.download': 'Baixar',
+		'pngCompressor.btn.downloadAll': 'Baixar tudo',
+		'pngCompressor.btn.new': 'Começar de novo',
+		'pngCompressor.stat.compressed': 'PNG comprimido',
+		'pngCompressor.note.privacy': '<strong>Privacidade em primeiro lugar.</strong> Seus arquivos PNG são comprimidos diretamente no navegador e não são enviados para nenhum servidor',
+		'pngCompressor.fileTypeFallback': 'arquivo PNG',
+
+		'faq.pngCompressor.title': 'Perguntas frequentes sobre compressão de PNG',
+
+		'faq.pngCompressor.1.q': 'Este compressor PNG é grátis?',
+		'faq.pngCompressor.1.a': 'Sim. Você pode comprimir PNG online grátis, sem instalar programas, sem criar conta e sem marca d’água',
+
+		'faq.pngCompressor.2.q': 'Meus arquivos PNG são enviados para o servidor?',
+		'faq.pngCompressor.2.a': 'Não. Os arquivos PNG são processados diretamente no seu navegador. As imagens não são enviadas para nenhum servidor, o que ajuda a proteger logos, materiais de design e imagens de trabalho',
+
+		'faq.pngCompressor.3.q': 'O fundo transparente é mantido depois de comprimir PNG?',
+		'faq.pngCompressor.3.a': 'Na maioria dos casos, sim. Imagens PNG com transparência continuam preservando o fundo transparente após a compressão, o que é ideal para logos, ícones, marcas d’água e materiais visuais',
+
+		'faq.pngCompressor.4.q': 'Para quais imagens o formato PNG é indicado?',
+		'faq.pngCompressor.4.a': 'PNG é indicado para logos, ícones, capturas de tela, imagens com texto, gráficos de interface e imagens que precisam manter fundo transparente ou bordas nítidas',
+
+		'faq.pngCompressor.5.q': 'Posso comprimir várias imagens PNG ao mesmo tempo?',
+		'faq.pngCompressor.5.a': 'Sim. Você pode adicionar várias imagens PNG e comprimir em lote, ideal para arquivos de design, materiais de site, imagens de e-commerce e elementos de interface',
+
+		'faq.pngCompressor.6.q': 'Quando devo usar PNG em vez de JPG?',
+		'faq.pngCompressor.6.a': 'Use PNG quando a imagem precisa de fundo transparente, texto nítido ou bordas bem definidas. Para fotos, JPG geralmente consegue gerar arquivos menores com boa qualidade visual',
+
+
+		// ── Reduce Image Size page — Portuguese Brazil ───────────────────────────
+		// URL: /reduce-image-size
+		// Primary intent: "reduzir tamanho da imagem"
+		// Secondary variants: "diminuir tamanho de foto", "reduzir tamanho de foto", "reduzir imagem", "diminuir imagem", "reduzir imagem online"
+		// SEO role: Goal/intent LP. Tập trung outcome: giảm dung lượng/kích thước file để upload/email/form/web.
+		// Note: Không overuse generic "comprimir imagem" vì hub page đã ăn keyword đó.
+
+		'reduceImageSize.meta.title': 'Reduzir Tamanho da Imagem Online Grátis',
+		'reduceImageSize.meta.desc': 'Reduza o tamanho de imagens e fotos online grátis. Diminua arquivos para upload, e-mail, formulários, documentos, sites e redes sociais direto no navegador.',
+		'reduceImageSize.hero.title': 'Reduzir tamanho da imagem online',
+		'reduceImageSize.hero.sub': 'Diminua o tamanho de imagens e fotos rapidamente para upload, e-mail, formulários, documentos, anexos, sites e redes sociais',
+		'reduceImageSize.pill.reduce': 'Reduzir tamanho da imagem',
+		'reduceImageSize.drop.title': 'Arraste suas imagens aqui',
+		'reduceImageSize.drop.sub': 'Adicione uma ou várias imagens para reduzir o tamanho dos arquivos em lote',
+		'reduceImageSize.hint': 'Ideal para reduzir imagens antes de enviar por e-mail, anexar em formulários, publicar em sites ou compartilhar online',
+		'reduceImageSize.quality.label': 'Qualidade da imagem',
+		'reduceImageSize.btn.compress': 'Reduzir imagem',
+		'reduceImageSize.status.compressing': 'Reduzindo imagem',
+		'reduceImageSize.error.selectImage': 'Selecione um arquivo de imagem',
+		'reduceImageSize.res.title': 'Imagem reduzida com sucesso',
+		'reduceImageSize.res.sub': 'Você pode baixar as imagens com tamanho de arquivo reduzido',
+		'reduceImageSize.btn.download': 'Baixar',
+		'reduceImageSize.btn.downloadAll': 'Baixar tudo',
+		'reduceImageSize.btn.new': 'Começar de novo',
+		'reduceImageSize.stat.compressed': 'Arquivo reduzido',
+		'reduceImageSize.note.privacy': '<strong>Privacidade em primeiro lugar.</strong> Suas imagens são processadas diretamente no navegador e não são enviadas para nenhum servidor',
+		'reduceImageSize.fileTypeFallback': 'arquivo de imagem',
+
+		'faq.reduceImageSize.title': 'Perguntas frequentes sobre reduzir tamanho de imagem',
+
+		'faq.reduceImageSize.1.q': 'Esta ferramenta reduz o tamanho de imagens grátis?',
+		'faq.reduceImageSize.1.a': 'Sim. Você pode reduzir imagens, diminuir o tamanho de fotos e deixar arquivos de imagem menores online grátis, sem instalar programas e sem criar conta',
+
+		'faq.reduceImageSize.2.q': 'Minhas imagens são enviadas para o servidor?',
+		'faq.reduceImageSize.2.a': 'Não. As imagens são processadas diretamente no seu navegador. Os arquivos não são enviados para nenhum servidor, o que ajuda a proteger fotos pessoais, documentos, imagens de trabalho e materiais privados',
+
+		'faq.reduceImageSize.3.q': 'Reduzir o tamanho da imagem afeta a qualidade?',
+		'faq.reduceImageSize.3.a': 'Dependendo da qualidade e da largura escolhidas, pode haver uma pequena diferença visual. Você pode reduzir o tamanho do arquivo e conferir se a imagem continua nítida para o seu uso',
+
+		'faq.reduceImageSize.4.q': 'Posso usar para formulários, documentos ou upload em sites?',
+		'faq.reduceImageSize.4.a': 'Sim. Quando um site, formulário online, sistema de documentos ou anexo de e-mail tem limite de tamanho, esta ferramenta ajuda a reduzir imagens rapidamente antes do envio',
+
+		'faq.reduceImageSize.5.q': 'Posso reduzir várias imagens ao mesmo tempo?',
+		'faq.reduceImageSize.5.a': 'Sim. Você pode adicionar várias imagens e reduzir o tamanho em lote, ideal para muitas fotos, imagens de produtos, arquivos de site e conteúdos para redes sociais',
+
+		'faq.reduceImageSize.6.q': 'É melhor diminuir a qualidade ou reduzir a largura da imagem?',
+		'faq.reduceImageSize.6.a': 'Para reduzir bastante o tamanho do arquivo, você pode ajustar qualidade e largura ao mesmo tempo. Para preservar melhor a aparência, comece reduzindo levemente a qualidade e depois ajuste a largura se necessário',
+		
 	},
 
 	th: {
@@ -2523,6 +3314,189 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.webmToMp4.7.a': 'WebM เหมาะกับการใช้งานบนเว็บ แต่ในบางมือถือ โปรแกรมตัดต่อ แอปแชท หรือแพลตฟอร์มโซเชียลอาจรองรับไม่ดีเท่า MP4 หลังแปลงเป็น MP4 แล้วมักเล่น อัปโหลด และแชร์ได้ง่ายกว่า',
 		'faq.webmToMp4.8.q': 'ถ้าปิดแท็บระหว่างแปลงไฟล์จะเกิดอะไรขึ้น?',
 		'faq.webmToMp4.8.a': 'การแปลงไฟล์จะหยุดลง กรุณาเปิดแท็บไว้จนกว่าไฟล์ MP4 จะพร้อมให้ดาวน์โหลด',
-	},
 
+
+		// ── Image compressor hub / page ─────────────────────────────────────────
+		'imageCompressor.meta.title': 'บีบอัดไฟล์รูปภาพออนไลน์ฟรี｜ลดขนาดรูป JPG PNG WebP AVIF - Squishyfile',
+		'imageCompressor.meta.desc': 'บีบอัดไฟล์รูปภาพและลดขนาดรูปออนไลน์ฟรี รองรับ JPG, PNG, WebP และ AVIF ทำงานในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง และไม่มีลายน้ำ',
+		'imageCompressor.hero.title': 'บีบอัดไฟล์รูปภาพ<br />ออนไลน์ฟรี',
+		'imageCompressor.hero.sub': 'ลดขนาดรูป JPG, PNG, WebP และ AVIF ได้โดยตรงในเบราว์เซอร์ รวดเร็ว เป็นส่วนตัว และใช้งานฟรี',
+
+		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
+
+		'imageCompressor.drop.title': 'วางรูปภาพที่นี่',
+		'imageCompressor.drop.sub': 'เพิ่มรูปภาพหลายไฟล์และบีบอัดพร้อมกันได้',
+		'imageCompressor.hint': 'รองรับ JPG, PNG, WebP และ AVIF',
+
+		'imageCompressor.quality.label': 'คุณภาพ',
+		'imageCompressor.maxWidth.label': 'ความกว้าง',
+
+		'imageCompressor.btn.compress': 'บีบอัดรูปภาพ',
+		'imageCompressor.status.compressing': 'กำลังบีบอัด',
+		'imageCompressor.error.selectImage': 'กรุณาเลือกไฟล์รูปภาพก่อน',
+
+		'imageCompressor.res.title': 'บีบอัดรูปภาพเสร็จแล้ว',
+		'imageCompressor.res.sub': 'รูปภาพที่ปรับขนาดไฟล์แล้วพร้อมดาวน์โหลด',
+		'imageCompressor.btn.download': 'ดาวน์โหลด',
+		'imageCompressor.btn.downloadAll': 'ดาวน์โหลดทั้งหมด',
+		'imageCompressor.btn.new': 'เริ่มใหม่',
+
+
+		'imageCompressor.stat.compressed': 'หลังบีบอัด',
+		'imageCompressor.stat.saved': 'ประหยัดได้',
+
+
+		'imageCompressor.note.privacy': '<strong>ออกแบบมาเพื่อความเป็นส่วนตัว</strong> รูปภาพจะถูกประมวลผลในเบราว์เซอร์ของคุณโดยตรง และจะไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์',
+		'imageCompressor.fileTypeFallback': 'ไฟล์รูปภาพ',
+
+		'imageCompressor.btn.addLabel': 'เพิ่มรูปภาพ',
+
+		// ── FAQ: Image compressor hub ───────────────────────────────────────────
+		'faq.imageCompressor.title': 'คำถามที่พบบ่อยเกี่ยวกับการบีบอัดรูปภาพ',
+
+		'faq.imageCompressor.1.q': 'เครื่องมือบีบอัดไฟล์รูปภาพนี้ใช้ฟรีไหม?',
+		'faq.imageCompressor.1.a': 'ใช้ฟรี คุณสามารถบีบอัดไฟล์รูปภาพ ลดขนาดรูป และย่อไฟล์รูปออนไลน์ได้โดยไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำบนไฟล์ที่ดาวน์โหลด',
+
+		'faq.imageCompressor.2.q': 'รูปภาพของฉันจะถูกอัปโหลดไปยังเซิร์ฟเวอร์ไหม?',
+		'faq.imageCompressor.2.a': 'ไม่ รูปภาพจะถูกประมวลผลในเบราว์เซอร์ของคุณโดยตรง ไฟล์จึงอยู่บนอุปกรณ์ของคุณ เหมาะสำหรับการบีบอัดรูปส่วนตัว รูปสมัครงาน รูปติดบัตร รูปสินค้า และไฟล์งานที่ไม่อยากอัปโหลด',
+
+		'faq.imageCompressor.3.q': 'รองรับไฟล์รูปภาพประเภทไหนบ้าง?',
+		'faq.imageCompressor.3.a': 'รองรับไฟล์รูปภาพยอดนิยม เช่น JPG, JPEG, PNG, WebP และ AVIF หากต้องการงานเฉพาะ คุณสามารถใช้หน้าเฉพาะอย่าง บีบอัด JPG, บีบอัด PNG, บีบอัด WebP หรือปรับขนาดรูปภาพได้',
+
+		'faq.imageCompressor.4.q': 'บีบอัดรูปแล้วคุณภาพจะเสียไหม?',
+		'faq.imageCompressor.4.a': 'การบีบอัดรูปอาจทำให้ข้อมูลภาพบางส่วนเปลี่ยนไป แต่เครื่องมือนี้ออกแบบมาเพื่อลดขนาดไฟล์รูปภาพให้เล็กลงโดยยังคงคุณภาพที่เหมาะสำหรับการใช้งานทั่วไป เช่น อัปโหลดเว็บไซต์ ส่งงาน แนบอีเมล หรือแชร์ในแชต',
+
+		'faq.imageCompressor.5.q': 'บีบอัดรูปหลายไฟล์พร้อมกันได้ไหม?',
+		'faq.imageCompressor.5.a': 'ได้ คุณสามารถเพิ่มรูปภาพหลายไฟล์และบีบอัดพร้อมกันได้ เหมาะสำหรับลดขนาดรูปจำนวนมากก่อนอัปโหลด ส่งงาน หรือเตรียมรูปสำหรับเว็บไซต์ ทั้งนี้ความเร็วขึ้นอยู่กับขนาดไฟล์ จำนวนรูป และประสิทธิภาพของอุปกรณ์',
+
+		'faq.imageCompressor.6.q': 'บีบอัดรูปกับปรับขนาดรูปต่างกันอย่างไร?',
+		'faq.imageCompressor.6.a': 'การบีบอัดรูปคือการลดขนาดไฟล์ให้เล็กลง ส่วนการปรับขนาดรูปคือการเปลี่ยนความกว้างหรือความสูงของภาพ หากต้องการลดไฟล์ให้เล็กลงให้ใช้บีบอัดรูปภาพ แต่ถ้าต้องการย่อขนาดพิกเซล เช่น รูปสมัครงาน รูปติดบัตร หรือรูปอัปโหลดฟอร์ม ให้ใช้เครื่องมือปรับขนาดรูปภาพ',
+
+		'home.card.image.title': 'บีบอัดรูปภาพ',
+		'home.card.image.desc': 'บีบอัดรูปภาพ JPG, PNG, WebP และ GIF ได้ในเบราว์เซอร์ — ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
+		'home.card.image.cta': 'บีบอัดรูปภาพ',
+
+
+		// JPG Compressor page — Thai
+		// Primary intent: "ย่อไฟล์ jpg"
+		// Secondary variants: "ย่อรูป jpg", "บีบอัด jpg", "ลดขนาด jpg", "บีบอัด jpeg"
+
+		'jpgCompressor.meta.title': 'ย่อไฟล์ JPG ออนไลน์ – บีบอัด JPG/JPEG ฟรี',
+		'jpgCompressor.meta.desc': 'ย่อไฟล์ JPG และ JPEG ออนไลน์ฟรี ลดขนาดรูปภาพในเบราว์เซอร์ รวดเร็ว เป็นส่วนตัว และยังคงคุณภาพคมชัดสำหรับการใช้งานจริง',
+		'jpgCompressor.hero.title': 'ย่อไฟล์ JPG ออนไลน์',
+		'jpgCompressor.hero.sub': 'บีบอัด JPG/JPEG ให้ไฟล์เล็กลงในเบราว์เซอร์ของคุณ เหมาะสำหรับรูปถ่าย รูปสินค้า และไฟล์ที่ต้องอัปโหลด',
+		'jpgCompressor.pill.jpg': 'JPG และ JPEG',
+		'jpgCompressor.drop.title': 'วางไฟล์ JPG ที่นี่',
+		'jpgCompressor.drop.sub': 'เพิ่มรูป JPG/JPEG หนึ่งไฟล์หรือหลายไฟล์ แล้วบีบอัดพร้อมกันได้ทันที',
+		'jpgCompressor.hint': 'เหมาะสำหรับรูปถ่าย รูปสินค้า และไฟล์ JPG ที่ต้องการลดขนาดก่อนอัปโหลด',
+		'jpgCompressor.quality.label': 'คุณภาพ JPG',
+		'jpgCompressor.btn.compress': 'บีบอัด JPG',
+		'jpgCompressor.status.compressing': 'กำลังบีบอัด JPG',
+		'jpgCompressor.error.selectImage': 'กรุณาเลือกไฟล์รูปภาพ JPG หรือ JPEG',
+		'jpgCompressor.res.title': 'บีบอัด JPG เสร็จแล้ว',
+		'jpgCompressor.res.sub': 'ไฟล์ JPG ที่ลดขนาดแล้วพร้อมดาวน์โหลด',
+		'jpgCompressor.btn.download': 'ดาวน์โหลด',
+		'jpgCompressor.btn.downloadAll': 'ดาวน์โหลดทั้งหมด',
+		'jpgCompressor.btn.new': 'เริ่มใหม่',
+		'jpgCompressor.stat.compressed': 'ไฟล์ JPG หลังบีบอัด',
+		'jpgCompressor.note.privacy': '<strong>เป็นส่วนตัวตั้งแต่ต้น.</strong> ไฟล์ JPG จะถูกบีบอัดในเบราว์เซอร์ของคุณและไม่ถูกอัปโหลด',
+		'jpgCompressor.fileTypeFallback': 'ไฟล์ JPG',
+
+		'faq.jpgCompressor.title': 'คำถามที่พบบ่อยเกี่ยวกับการย่อไฟล์ JPG',
+		'faq.jpgCompressor.1.q': 'เครื่องมือนี้ย่อไฟล์ JPG ได้ฟรีไหม?',
+		'faq.jpgCompressor.1.a': 'ใช้ฟรี และทำงานในเบราว์เซอร์โดยไม่ต้องติดตั้งโปรแกรม',
+		'faq.jpgCompressor.2.q': 'ไฟล์ JPG ของฉันจะถูกอัปโหลดหรือไม่?',
+		'faq.jpgCompressor.2.a': 'ไม่ ไฟล์จะถูกประมวลผลในเบราว์เซอร์ของคุณ เพื่อช่วยรักษาความเป็นส่วนตัว',
+		'faq.jpgCompressor.3.q': 'JPG กับ JPEG ต่างกันไหม?',
+		'faq.jpgCompressor.3.a': 'โดยทั่วไป JPG และ JPEG คือรูปแบบเดียวกัน ต่างกันแค่นามสกุลไฟล์ เครื่องมือนี้รองรับทั้งสองแบบ',
+		'faq.jpgCompressor.4.q': 'ควรตั้งค่าคุณภาพ JPG เท่าไหร่?',
+		'faq.jpgCompressor.4.a': 'ค่า 70–85 มักเหมาะกับรูปทั่วไป เพราะช่วยลดขนาดไฟล์ได้ดีโดยยังคงความคมชัด',
+		'faq.jpgCompressor.5.q': 'บีบอัด JPG หลายไฟล์พร้อมกันได้ไหม?',
+		'faq.jpgCompressor.5.a': 'ได้ คุณสามารถเพิ่มหลายรูปแล้วบีบอัดพร้อมกัน เพื่อประหยัดเวลา',
+		'faq.jpgCompressor.6.q': 'การลดขนาด JPG ทำให้รูปเสียคุณภาพไหม?',
+		'faq.jpgCompressor.6.a': 'การบีบอัด JPG อาจลดรายละเอียดบางส่วน แต่คุณสามารถปรับระดับคุณภาพให้เหมาะกับขนาดไฟล์และความคมชัดที่ต้องการ',
+
+
+		// PNG Compressor page — Thai
+		// Primary intent: "ย่อไฟล์ png"
+		// Secondary variants: "บีบอัด png", "ลดขนาด png"
+		// Intent note: keep this page focused on PNG files, transparency, logos, screenshots, icons, and UI graphics.
+
+		'pngCompressor.meta.title': 'ย่อไฟล์ PNG ออนไลน์ – บีบอัด PNG ฟรี',
+		'pngCompressor.meta.desc': 'ย่อไฟล์ PNG ออนไลน์ฟรี ลดขนาด PNG ในเบราว์เซอร์ เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ และรูปพื้นหลังโปร่งใส ใช้งานง่ายและเป็นส่วนตัว',
+		'pngCompressor.hero.title': 'ย่อไฟล์ PNG ออนไลน์',
+		'pngCompressor.hero.sub': 'บีบอัด PNG ให้ไฟล์เล็กลงในเบราว์เซอร์ของคุณ เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ และรูปที่ต้องการพื้นหลังโปร่งใส',
+		'pngCompressor.pill.png': 'ไฟล์ PNG',
+		'pngCompressor.drop.title': 'วางไฟล์ PNG ที่นี่',
+		'pngCompressor.drop.sub': 'เพิ่มรูป PNG หนึ่งไฟล์หรือหลายไฟล์ แล้วบีบอัดพร้อมกันได้ทันที',
+		'pngCompressor.hint': 'เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ กราฟิก UI และรูป PNG ที่ต้องการลดขนาด',
+		'pngCompressor.quality.label': 'คุณภาพ PNG',
+		'pngCompressor.btn.compress': 'บีบอัด PNG',
+		'pngCompressor.status.compressing': 'กำลังบีบอัด PNG',
+		'pngCompressor.error.selectImage': 'กรุณาเลือกไฟล์รูปภาพ PNG',
+		'pngCompressor.res.title': 'บีบอัด PNG เสร็จแล้ว',
+		'pngCompressor.res.sub': 'ไฟล์ PNG ที่ลดขนาดแล้วพร้อมดาวน์โหลด',
+		'pngCompressor.btn.download': 'ดาวน์โหลด',
+		'pngCompressor.btn.downloadAll': 'ดาวน์โหลดทั้งหมด',
+		'pngCompressor.btn.new': 'เริ่มใหม่',
+		'pngCompressor.stat.compressed': 'ไฟล์ PNG หลังบีบอัด',
+		'pngCompressor.note.privacy': '<strong>เป็นส่วนตัวตั้งแต่ต้น.</strong> ไฟล์ PNG จะถูกบีบอัดในเบราว์เซอร์ของคุณและไม่ถูกอัปโหลด',
+		'pngCompressor.fileTypeFallback': 'ไฟล์ PNG',
+
+		'faq.pngCompressor.title': 'คำถามที่พบบ่อยเกี่ยวกับการย่อไฟล์ PNG',
+		'faq.pngCompressor.1.q': 'เครื่องมือนี้ย่อไฟล์ PNG ได้ฟรีไหม?',
+		'faq.pngCompressor.1.a': 'ใช้ฟรี และทำงานในเบราว์เซอร์โดยไม่ต้องติดตั้งโปรแกรม',
+		'faq.pngCompressor.2.q': 'ไฟล์ PNG ของฉันจะถูกอัปโหลดหรือไม่?',
+		'faq.pngCompressor.2.a': 'ไม่ ไฟล์จะถูกประมวลผลในเบราว์เซอร์ของคุณ เพื่อช่วยรักษาความเป็นส่วนตัว',
+		'faq.pngCompressor.3.q': 'ลดขนาด PNG แล้วพื้นหลังโปร่งใสยังอยู่ไหม?',
+		'faq.pngCompressor.3.a': 'โดยทั่วไปไฟล์ PNG ที่มีพื้นหลังโปร่งใสจะยังคงความโปร่งใสไว้หลังการบีบอัด',
+		'faq.pngCompressor.4.q': 'PNG เหมาะกับรูปแบบใด?',
+		'faq.pngCompressor.4.a': 'PNG เหมาะกับโลโก้ ไอคอน ภาพหน้าจอ รูปที่มีตัวอักษร และภาพที่ต้องการพื้นหลังโปร่งใส',
+		'faq.pngCompressor.5.q': 'บีบอัด PNG หลายไฟล์พร้อมกันได้ไหม?',
+		'faq.pngCompressor.5.a': 'ได้ คุณสามารถเพิ่มหลายรูปแล้วบีบอัดพร้อมกัน เพื่อประหยัดเวลา',
+		'faq.pngCompressor.6.q': 'ควรใช้ PNG หรือ JPG ดีกว่า?',
+		'faq.pngCompressor.6.a': 'ใช้ PNG เมื่ออยากรักษาความคมชัดหรือพื้นหลังโปร่งใส แต่ถ้าเป็นภาพถ่ายทั่วไป JPG มักให้ขนาดไฟล์เล็กกว่า',
+
+
+		// Reduce Image Size page — Thai
+		// Primary intent: "ลดขนาดรูปภาพ"
+		// Secondary variants: "ลดขนาดรูป", "ลดขนาดไฟล์รูปภาพ", "ลดขนาดไฟล์รูป", "ลดขนาดภาพ"
+		// Intent note: focus on the practical goal of making image files smaller for upload, email, forms, documents, and websites. Avoid overusing generic "บีบอัดรูปภาพ" because that belongs more to the hub page.
+
+		'reduceImageSize.meta.title': 'ลดขนาดรูปภาพออนไลน์ – ลดขนาดไฟล์รูปฟรี',
+		'reduceImageSize.meta.desc': 'ลดขนาดรูปภาพออนไลน์ฟรี ทำให้ไฟล์รูปเล็กลงในเบราว์เซอร์ เหมาะสำหรับอัปโหลด ส่งอีเมล แนบเอกสาร และใช้บนเว็บไซต์ รวดเร็วและเป็นส่วนตัว',
+		'reduceImageSize.hero.title': 'ลดขนาดรูปภาพออนไลน์',
+		'reduceImageSize.hero.sub': 'ทำให้ไฟล์รูปภาพเล็กลงได้ง่ายในเบราว์เซอร์ของคุณ เหมาะสำหรับอัปโหลด ส่งต่อ แนบเอกสาร หรือปรับรูปให้เว็บโหลดเร็วขึ้น',
+		'reduceImageSize.pill.reduce': 'ลดขนาดไฟล์รูป',
+		'reduceImageSize.drop.title': 'วางรูปภาพที่นี่',
+		'reduceImageSize.drop.sub': 'เพิ่มรูปภาพหนึ่งไฟล์หรือหลายไฟล์ แล้วลดขนาดพร้อมกันได้ทันที',
+		'reduceImageSize.hint': 'เหมาะสำหรับลดขนาดรูปก่อนอัปโหลด ส่งอีเมล แนบเอกสาร ส่งงาน หรือใช้บนเว็บไซต์',
+		'reduceImageSize.quality.label': 'คุณภาพรูปภาพ',
+		'reduceImageSize.btn.compress': 'ลดขนาดรูปภาพ',
+		'reduceImageSize.status.compressing': 'กำลังลดขนาดรูปภาพ',
+		'reduceImageSize.error.selectImage': 'กรุณาเลือกไฟล์รูปภาพ',
+		'reduceImageSize.res.title': 'ลดขนาดรูปภาพเสร็จแล้ว',
+		'reduceImageSize.res.sub': 'รูปภาพที่ลดขนาดไฟล์แล้วพร้อมดาวน์โหลด',
+		'reduceImageSize.btn.download': 'ดาวน์โหลด',
+		'reduceImageSize.btn.downloadAll': 'ดาวน์โหลดทั้งหมด',
+		'reduceImageSize.btn.new': 'เริ่มใหม่',
+		'reduceImageSize.stat.compressed': 'ไฟล์หลังลดขนาด',
+		'reduceImageSize.note.privacy': '<strong>เป็นส่วนตัวตั้งแต่ต้น.</strong> รูปภาพจะถูกประมวลผลในเบราว์เซอร์ของคุณและไม่ถูกอัปโหลด',
+		'reduceImageSize.fileTypeFallback': 'ไฟล์รูปภาพ',
+
+		'faq.reduceImageSize.title': 'คำถามที่พบบ่อยเกี่ยวกับการลดขนาดรูปภาพ',
+		'faq.reduceImageSize.1.q': 'เครื่องมือนี้ลดขนาดรูปภาพได้ฟรีไหม?',
+		'faq.reduceImageSize.1.a': 'ใช้ฟรี และทำงานในเบราว์เซอร์โดยไม่ต้องติดตั้งโปรแกรม',
+		'faq.reduceImageSize.2.q': 'ไฟล์รูปภาพของฉันจะถูกอัปโหลดหรือไม่?',
+		'faq.reduceImageSize.2.a': 'ไม่ รูปภาพจะถูกประมวลผลในเบราว์เซอร์ของคุณ เพื่อช่วยรักษาความเป็นส่วนตัว',
+		'faq.reduceImageSize.3.q': 'ลดขนาดรูปภาพแล้วคุณภาพจะลดลงไหม?',
+		'faq.reduceImageSize.3.a': 'อาจลดลงเล็กน้อยตามค่าคุณภาพที่เลือก แต่คุณสามารถปรับให้สมดุลระหว่างขนาดไฟล์และความคมชัดได้',
+		'faq.reduceImageSize.4.q': 'ใช้ลดขนาดรูปสำหรับอัปโหลดเอกสารได้ไหม?',
+		'faq.reduceImageSize.4.a': 'ได้ เหมาะสำหรับการทำให้ไฟล์รูปเล็กลงก่อนอัปโหลดลงแบบฟอร์ม แนบเอกสาร ส่งงาน หรือส่งอีเมล',
+		'faq.reduceImageSize.5.q': 'ลดขนาดรูปหลายไฟล์พร้อมกันได้ไหม?',
+		'faq.reduceImageSize.5.a': 'ได้ คุณสามารถเพิ่มหลายรูปแล้วลดขนาดพร้อมกัน เพื่อประหยัดเวลา',
+		'faq.reduceImageSize.6.q': 'ควรลดคุณภาพหรือปรับความกว้างของรูป?',
+		'faq.reduceImageSize.6.a': 'ถ้าต้องการให้ไฟล์เล็กลงมาก ให้ใช้ทั้งสองวิธีร่วมกัน แต่ถ้าต้องการรักษารายละเอียด ให้ลดคุณภาพทีละน้อยและตรวจดูผลลัพธ์ก่อนดาวน์โหลด',
+
+	},
 };

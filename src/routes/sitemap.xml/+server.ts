@@ -16,6 +16,10 @@ const STATIC_PAGES = ['',
 	'avi-to-mp4',
 	'mkv-to-mp4',
 	'webm-to-mp4',
+	'image-compressor',
+	'jpg-compressor',
+	'png-compressor',
+	'reduce-image-size',
 	'blog'
 	] as const;
 

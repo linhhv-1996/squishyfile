@@ -14,6 +14,9 @@
 	let pdfHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/compress-pdf` : '/compress-pdf'
 	);
+	let imageHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/image-compressor` : '/image-compressor'
+	);
 	let mp3Href = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/video-to-mp3` : '/video-to-mp3'
 	);
@@ -77,6 +80,27 @@
 					</div>
 				</div>
 				<div class="tc-cta tc-cta--pdf">{t('home.card.pdf.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
+			</a>
+
+			<a href={imageHref} class="tool-card tool-card--image">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.image.title')}</h2>
+						<p class="tc-desc">{t('home.card.image.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">JPG</span>
+							<span class="tc-tag">PNG</span>
+							<span class="tc-tag">WebP</span>
+							<span class="tc-tag">GIF</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--image">
+					{t('home.card.image.cta')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
 			</a>
 
 			<a href={mp3Href} class="tool-card tool-card--mp3">
@@ -205,7 +229,8 @@
 	}
 
 	.tool-card--convert,
-	.tool-card--mp3 {
+	.tool-card--mp3,
+	.tool-card--image {
 		grid-column: auto;
 	}
 
@@ -218,7 +243,8 @@
 	}
 
 	.tool-card--convert .tc-inner,
-	.tool-card--mp3 .tc-inner {
+	.tool-card--mp3 .tc-inner,
+	.tool-card--image .tc-inner {
 		align-items: flex-start;
 		padding: 18px 18px 14px;
 	}
@@ -306,7 +332,8 @@
 
 	.tc-cta--pdf,
 	.tc-cta--mp3,
-	.tc-cta--convert {
+	.tc-cta--convert,
+	.tc-cta--image {
 		background: transparent;
 		color: var(--accent);
 	}
@@ -326,7 +353,8 @@
 		}
 
 		.tool-card--mp3,
-		.tool-card--convert {
+		.tool-card--convert,
+		.tool-card--image {
 			grid-column: auto;
 		}
 	}
@@ -338,7 +366,8 @@
 
 		.tc-inner,
 		.tool-card--convert .tc-inner,
-		.tool-card--mp3 .tc-inner {
+		.tool-card--mp3 .tc-inner,
+		.tool-card--image .tc-inner {
 			padding: 15px 14px 12px;
 			gap: 10px;
 		}

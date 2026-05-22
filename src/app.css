@@ -1,5 +1,5 @@
-/* app.css — professional utility/WASM tool theme
-   Reduced gradients, glow, playful shadows, and oversized radii. */
+/* app.css — flat GitHub-style light utility/WASM tool theme
+   Clean surfaces, 1px borders, compact spacing, no gradients/glow. */
 
 *,
 *::before,
@@ -11,44 +11,47 @@
 
 :root {
   color-scheme: light;
-  --bg: #f7f8fa;
+  --bg: #fbfcfe;
   --surf: #ffffff;
-  --surf2: #f5f6f8;
-  --border: #e0e4ea;
-  --border-hover: #cfd6df;
-  --accent: #3b6ea8;
-  --accent2: #3b6ea8;
-  --green: #15803d;
-  --red: #b91c1c;
-  --text: #273142;
-  --muted: #7a8493;
+  --surf2: #f6f8fb;
+  --border: #e3e8ef;
+  --border-hover: #c8d1dc;
+  --accent: #315f9f;
+  --accent2: #244f86;
+  --cta: #10233f;
+  --cta-hover: #18365f;
+  --green: #16803c;
+  --red: #b42318;
+  --text: #172033;
+  --muted: #667085;
   --r: 6px;
-  --rsm: 5px;
+  --rsm: 6px;
 }
 
 /* Optional dark mode: add data-theme="dark" on html/body to enable */
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0f1115;
-  --surf: #151922;
-  --surf2: #1d2330;
-  --border: #2a303b;
-  --border-hover: #3a4352;
-  --accent: #8ab4f8;
-  --accent2: #8ab4f8;
-  --green: #34d399;
-  --red: #f87171;
-  --text: #d8dee8;
-  --muted: #9aa4b2;
+  --bg: #0d1117;
+  --surf: #161b22;
+  --surf2: #21262d;
+  --border: #30363d;
+  --border-hover: #8b949e;
+  --accent: #58a6ff;
+  --accent2: #58a6ff;
+  --green: #3fb950;
+  --red: #f85149;
+  --text: #e6edf3;
+  --muted: #8b949e;
   --r: 6px;
   --rsm: 5px;
 }
 body {
-  background: var(--bg);
+  /* background: var(--bg); */
+    background: white;
   color: var(--text);
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
 }
 
@@ -231,7 +234,7 @@ body {
 }
 
 .lang-opt.on {
-  background: rgba(31, 79, 143, .08);
+  background: rgba(49, 95, 159, .08);
 }
 
 .lang-opt .lf {
@@ -383,7 +386,7 @@ body {
 
 .mm-lang-opt.on {
   border-color: var(--accent);
-  background: rgba(31, 79, 143, .08);
+  background: rgba(49, 95, 159, .08);
 }
 
 .mm-lang-opt .mlf {
@@ -402,14 +405,14 @@ body {
 
 /* ── HERO ── */
 .hero {
-  padding: 26px 0 18px;
+  padding: 22px 0 16px;
   text-align: center;
 }
 
 .hero h1 {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 650;
   line-height: 1.22;
   letter-spacing: -.8px;
   margin-bottom: 8px;
@@ -488,8 +491,8 @@ body {
 }
 
 .tab-btn.active {
-  background: #e9eef6;
-  color: #2f5f92;
+  background: #eef5ff;
+  color: var(--accent);
   box-shadow: none;
 }
 
@@ -718,7 +721,7 @@ body {
 
 .pc.on {
   border-color: var(--accent);
-  background: rgba(31, 79, 143, .08);
+  background: rgba(49, 95, 159, .08);
 }
 
 .pc.disabled-opt {
@@ -855,7 +858,7 @@ body {
 .stag.on {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(31, 79, 143, .08);
+  background: rgba(49, 95, 159, .08);
 }
 
 .stag.disabled-opt {
@@ -899,7 +902,7 @@ body {
 
 .fo.on {
   border-color: var(--accent);
-  background: rgba(31, 79, 143, .08);
+  background: rgba(49, 95, 159, .08);
   color: var(--accent);
 }
 
@@ -966,8 +969,8 @@ body {
 .btn-go {
   width: 100%;
   padding: 12px;
-  background: #3b6ea8;
-  border: none;
+  background: var(--cta);
+  border: 1px solid rgba(16, 35, 63, .95);
   border-radius: var(--rsm);
   color: #fff;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
@@ -986,7 +989,8 @@ body {
 .btn-go:hover:not(:disabled) {
   transform: none;
   box-shadow: none;
-  background: #345f90;
+  background: var(--cta-hover);
+  border-color: var(--cta-hover);
 }
 
 .btn-go:disabled {
@@ -1463,7 +1467,7 @@ button {
   margin: 14px 0 18px;
   border-radius: var(--r);
   overflow: hidden;
-  background: var(--surf);
+  background: transparent;
 }
 
 .ad-slot:empty {
@@ -1543,4 +1547,6 @@ button {
 .banner-right {
   border-radius: var(--r);
   overflow: hidden;
+  background: transparent;
+  border: 0;
 }

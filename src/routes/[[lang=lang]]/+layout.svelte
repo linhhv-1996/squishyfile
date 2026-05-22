@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw } from 'lucide-svelte';
+	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw, FileImage } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -63,6 +63,7 @@
 	let blogHref = $derived(`${prefix}/blog`);
 	let compressVideoHref = $derived(`${prefix}/compress-video`);
 	let compressPdfHref = $derived(`${prefix}/compress-pdf`);
+	let imageCompressorHref = $derived(`${prefix}/image-compressor`);
 	let videoToMp3Href = $derived(`${prefix}/video-to-mp3`);
 	let videoConverterHref = $derived(`${prefix}/video-converter`);
 	let privacyHref = $derived(`${prefix}/privacy`);
@@ -77,6 +78,12 @@
 
 	let isCompressVideo = $derived($page.url.pathname.includes('/compress-video'));
 	let isCompressPdf = $derived($page.url.pathname.includes('/compress-pdf'));
+	let isImageCompressor = $derived(
+		$page.url.pathname.includes('/image-compressor') ||
+			$page.url.pathname.includes('/jpg-compressor') ||
+			$page.url.pathname.includes('/png-compressor') ||
+			$page.url.pathname.includes('/reduce-image-size')
+	);
 	let isVideoToMp3 = $derived($page.url.pathname.includes('/video-to-mp3'));
 
 	let isVideoConverter = $derived(
@@ -88,11 +95,18 @@
 	);
 
 	let isToolPage = $derived(
-		isCompressVideo || isCompressPdf || isVideoToMp3 || isVideoConverter
+		isCompressVideo || isCompressPdf || isImageCompressor || isVideoToMp3 || isVideoConverter
 	);
 
 	let toolsLabel = $derived(t('nav.tools') !== 'nav.tools' ? t('nav.tools') : 'Tools');
 	let convertLabel = $derived(t('tab.convert') !== 'tab.convert' ? t('tab.convert') : 'Convert');
+	let imageLabel = $derived(
+		t('tab.image') !== 'tab.image'
+			? t('tab.image')
+			: t('home.card.image.title') !== 'home.card.image.title'
+				? t('home.card.image.title')
+				: 'Compress Image'
+	);
 
 	// Hreflang: lấy path hiện tại, bỏ prefix ngôn ngữ (dùng cho SEO alternate links)
 	let currentPath = $derived((() => {
@@ -127,6 +141,15 @@
 			currentPath === '/webm-to-mp4' || currentPath.startsWith('/webm-to-mp4/')
 		) {
 			return `/og/video-converter/${lang}.png`;
+		}
+
+		if (
+			currentPath === '/image-compressor' || currentPath.startsWith('/image-compressor/') ||
+			currentPath === '/jpg-compressor' || currentPath.startsWith('/jpg-compressor/') ||
+			currentPath === '/png-compressor' || currentPath.startsWith('/png-compressor/') ||
+			currentPath === '/reduce-image-size' || currentPath.startsWith('/reduce-image-size/')
+		) {
+			return `/og/image-compressor/${lang}.png`;
 		}
 
 		return `/og/${lang}.png`;
@@ -217,6 +240,11 @@
 						<span>{t('tab.pdf')}</span>
 					</a>
 
+					<a href={imageCompressorHref} class:active={isImageCompressor} onclick={() => (toolsOpen = false)}>
+						<FileImage size={13} strokeWidth={2.2} />
+						<span>{imageLabel}</span>
+					</a>
+
 					<a href={videoToMp3Href} class:active={isVideoToMp3} onclick={() => (toolsOpen = false)}>
 						<Music size={13} strokeWidth={2.2} />
 						<span>{t('tab.mp3')}</span>
@@ -281,6 +309,10 @@
 
 	<a href={compressPdfHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><FileText size={18} /></span><span>{t('tab.pdf')}</span>
+	</a>
+
+	<a href={imageCompressorHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><FileImage size={18} /></span><span>{imageLabel}</span>
 	</a>
 
 	<a href={videoToMp3Href} class="mm-link" onclick={closeMobileMenu}>
