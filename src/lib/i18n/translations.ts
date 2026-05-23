@@ -725,6 +725,28 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.6.q': 'Is it better to lower quality or reduce image width?',
 		'faq.reduceImageSize.6.a': 'To reduce file size significantly, you can adjust both quality and width. To preserve appearance, start by lowering quality slightly and then reduce width only if needed',
 
+		"common.image": "image",
+		"common.images": "images",
+		"common.selected": "selected",
+		"common.selectedImages": "Selected images",
+		"common.compressionSettings": "Compression settings",
+		"common.browserOnlyError": "Image compression only runs in the browser.",
+		"common.workerFailedError": "Image compression worker failed.",
+
+		"error.videoMetadataReadFailed": "Could not read video information. The file may be corrupted.",
+		"error.videoUnsupportedForCompression": "This video format is not supported for compression.",
+		"error.videoCompressionFailed": "Video compression failed.",
+
+		"error.videoConverterBrowserOnly": "Video converter only runs in the browser.",
+		"error.videoConverterNoInput": "No input file was provided.",
+		"error.videoConverterVideoEncoderUnsupported": "Your browser does not support WebCodecs VideoEncoder, so video force-transcode is unavailable.",
+		"error.videoConverterAudioEncoderUnsupported": "Your browser does not support WebCodecs AudioEncoder, so audio force-transcode is unavailable.",
+		"error.videoConverterUnsupportedOutputFormat": "Unsupported output format.",
+		"error.videoConverterInvalidConversion": "This file could not be converted.",
+		"error.videoConverterEmptyOutput": "The converted output is empty.",
+		"error.videoConverterFailed": "Video conversion failed.",
+
+		"convert.error.failed": "Video conversion failed. Please try another file or format.",
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -1417,7 +1439,30 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.5.a': 'はい。複数の画像を追加して、まとめてファイル容量を小さくできます。写真やサイト用画像を一括で軽量化したいときに便利です',
 		'faq.reduceImageSize.6.q': '品質を下げるのと幅を小さくするのはどちらがよいですか？',
 		'faq.reduceImageSize.6.a': '大きく容量を減らしたい場合は、品質調整と幅の縮小を組み合わせるのがおすすめです。画質をなるべく保ちたい場合は、品質を少しずつ下げて結果を確認してください',
-	
+		
+
+		"common.image": "画像",
+		"common.images": "画像",
+		"common.selected": "選択済み",
+		"common.selectedImages": "選択された画像",
+		"common.compressionSettings": "圧縮設定",
+		"common.browserOnlyError": "画像圧縮はブラウザでのみ実行できます。",
+		"common.workerFailedError": "画像圧縮ワーカーに失敗しました。",
+
+		"error.videoMetadataReadFailed": "動画情報を読み取れませんでした。ファイルが破損している可能性があります。",
+		"error.videoUnsupportedForCompression": "この動画形式は圧縮に対応していません。",
+		"error.videoCompressionFailed": "動画の圧縮に失敗しました。",
+
+		"error.videoConverterBrowserOnly": "動画変換はブラウザでのみ実行できます。",
+		"error.videoConverterNoInput": "入力ファイルがありません。",
+		"error.videoConverterVideoEncoderUnsupported": "お使いのブラウザは WebCodecs VideoEncoder に対応していないため、動画の強制トランスコードは利用できません。",
+		"error.videoConverterAudioEncoderUnsupported": "お使いのブラウザは WebCodecs AudioEncoder に対応していないため、音声の強制トランスコードは利用できません。",
+		"error.videoConverterUnsupportedOutputFormat": "対応していない出力形式です。",
+		"error.videoConverterInvalidConversion": "このファイルは変換できませんでした。",
+		"error.videoConverterEmptyOutput": "変換後の出力が空です。",
+		"error.videoConverterFailed": "動画の変換に失敗しました。",
+
+		"convert.error.failed": "動画の変換に失敗しました。別のファイルまたは形式をお試しください。",
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -2105,6 +2150,28 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.6.q': '調低品質和縮小寬度，哪一個比較有效？',
 		'faq.reduceImageSize.6.a': '如果想大幅減少圖片容量，可以同時調整品質與寬度。如果想盡量保留畫質，建議先小幅降低品質，再依需求調整圖片寬度',
 
+		"common.image": "張圖片",
+		"common.images": "張圖片",
+		"common.selected": "已選取",
+		"common.selectedImages": "已選取的圖片",
+		"common.compressionSettings": "壓縮設定",
+		"common.browserOnlyError": "圖片壓縮只能在瀏覽器中執行。",
+		"common.workerFailedError": "圖片壓縮處理失敗。",
+
+		"error.videoMetadataReadFailed": "無法讀取影片資訊。檔案可能已損毀。",
+		"error.videoUnsupportedForCompression": "此影片格式不支援壓縮。",
+		"error.videoCompressionFailed": "影片壓縮失敗。",
+
+		"error.videoConverterBrowserOnly": "影片轉換只能在瀏覽器中執行。",
+		"error.videoConverterNoInput": "未提供輸入檔案。",
+		"error.videoConverterVideoEncoderUnsupported": "你的瀏覽器不支援 WebCodecs VideoEncoder，因此無法強制轉碼影片。",
+		"error.videoConverterAudioEncoderUnsupported": "你的瀏覽器不支援 WebCodecs AudioEncoder，因此無法強制轉碼音訊。",
+		"error.videoConverterUnsupportedOutputFormat": "不支援的輸出格式。",
+		"error.videoConverterInvalidConversion": "無法轉換此檔案。",
+		"error.videoConverterEmptyOutput": "轉換後的輸出是空的。",
+		"error.videoConverterFailed": "影片轉換失敗。",
+
+		"convert.error.failed": "影片轉換失敗。請嘗試其他檔案或格式。",
 	},
 
 	// ─── PORTUGUESE BRAZIL (PT) ──────────────────────────────────────────────────
@@ -2851,6 +2918,28 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.6.q': 'É melhor diminuir a qualidade ou reduzir a largura da imagem?',
 		'faq.reduceImageSize.6.a': 'Para reduzir bastante o tamanho do arquivo, você pode ajustar qualidade e largura ao mesmo tempo. Para preservar melhor a aparência, comece reduzindo levemente a qualidade e depois ajuste a largura se necessário',
 		
+		"common.image": "imagem",
+		"common.images": "imagens",
+		"common.selected": "selecionado",
+		"common.selectedImages": "Imagens selecionadas",
+		"common.compressionSettings": "Configurações de compressão",
+		"common.browserOnlyError": "A compressão de imagens só roda no navegador.",
+		"common.workerFailedError": "Falha no worker de compressão de imagens.",
+
+		"error.videoMetadataReadFailed": "Não foi possível ler as informações do vídeo. O arquivo pode estar corrompido.",
+		"error.videoUnsupportedForCompression": "Este formato de vídeo não é compatível com compressão.",
+		"error.videoCompressionFailed": "Falha ao comprimir o vídeo.",
+
+		"error.videoConverterBrowserOnly": "O conversor de vídeo só roda no navegador.",
+		"error.videoConverterNoInput": "Nenhum arquivo de entrada foi fornecido.",
+		"error.videoConverterVideoEncoderUnsupported": "Seu navegador não oferece suporte ao WebCodecs VideoEncoder, então a transcodificação forçada de vídeo não está disponível.",
+		"error.videoConverterAudioEncoderUnsupported": "Seu navegador não oferece suporte ao WebCodecs AudioEncoder, então a transcodificação forçada de áudio não está disponível.",
+		"error.videoConverterUnsupportedOutputFormat": "Formato de saída não compatível.",
+		"error.videoConverterInvalidConversion": "Não foi possível converter este arquivo.",
+		"error.videoConverterEmptyOutput": "O arquivo convertido está vazio.",
+		"error.videoConverterFailed": "Falha ao converter o vídeo.",
+
+		"convert.error.failed": "Falha ao converter o vídeo. Tente outro arquivo ou formato.",
 	},
 
 	th: {
@@ -3497,6 +3586,27 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.6.q': 'ควรลดคุณภาพหรือปรับความกว้างของรูป?',
 		'faq.reduceImageSize.6.a': 'ถ้าต้องการให้ไฟล์เล็กลงมาก ให้ใช้ทั้งสองวิธีร่วมกัน แต่ถ้าต้องการรักษารายละเอียด ให้ลดคุณภาพทีละน้อยและตรวจดูผลลัพธ์ก่อนดาวน์โหลด',
 
+		"common.image": "รูป",
+		"common.images": "รูป",
+		"common.selected": "ที่เลือก",
+		"common.selectedImages": "รูปภาพที่เลือก",
+		"common.compressionSettings": "การตั้งค่าการบีบอัด",
+		"common.browserOnlyError": "การบีบอัดรูปภาพทำงานได้เฉพาะในเบราว์เซอร์เท่านั้น",
+		"common.workerFailedError": "ตัวประมวลผลการบีบอัดรูปภาพล้มเหลว",
+
+		"error.videoMetadataReadFailed": "ไม่สามารถอ่านข้อมูลวิดีโอได้ ไฟล์อาจเสียหาย",
+		"error.videoUnsupportedForCompression": "รูปแบบวิดีโอนี้ไม่รองรับการบีบอัด",
+		"error.videoCompressionFailed": "การบีบอัดวิดีโอล้มเหลว",
+
+		"error.videoConverterBrowserOnly": "ตัวแปลงวิดีโอทำงานได้เฉพาะในเบราว์เซอร์เท่านั้น",
+		"error.videoConverterNoInput": "ไม่ได้ระบุไฟล์ต้นฉบับ",
+		"error.videoConverterVideoEncoderUnsupported": "เบราว์เซอร์ของคุณไม่รองรับ WebCodecs VideoEncoder จึงไม่สามารถบังคับแปลงรหัสวิดีโอได้",
+		"error.videoConverterAudioEncoderUnsupported": "เบราว์เซอร์ของคุณไม่รองรับ WebCodecs AudioEncoder จึงไม่สามารถบังคับแปลงรหัสเสียงได้",
+		"error.videoConverterUnsupportedOutputFormat": "ไม่รองรับรูปแบบไฟล์ปลายทางนี้",
+		"error.videoConverterInvalidConversion": "ไม่สามารถแปลงไฟล์นี้ได้",
+		"error.videoConverterEmptyOutput": "ไฟล์ผลลัพธ์หลังแปลงว่างเปล่า",
+		"error.videoConverterFailed": "การแปลงวิดีโอล้มเหลว",
+
+		"convert.error.failed": "การแปลงวิดีโอล้มเหลว โปรดลองใช้ไฟล์หรือรูปแบบอื่น",
 	},
 };
-

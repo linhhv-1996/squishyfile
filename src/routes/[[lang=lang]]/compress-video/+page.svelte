@@ -229,7 +229,7 @@
 				compressBusy = false;
 			},
 			onError: (err) => {
-				compressError = err;
+				compressError = t(err);
 				compressBusy = false;
 				compressProgress = {
 					show: false,

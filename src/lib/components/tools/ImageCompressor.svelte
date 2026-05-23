@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { onDestroy } from "svelte";
 	import { zipSync } from "fflate";
     import { ImagePlus, ShieldCheck } from "lucide-svelte";
+
+	import { translations } from "$lib/i18n/translations";
+	import { languages } from "$lib/i18n/languages";
 
 	type OutputFormat = "jpeg" | "png" | "webp" | "avif";
 
@@ -52,6 +56,19 @@
 		outputSize: number;
 		error: string;
 	};
+
+	let currentLangKey = $derived($page.params.lang || "en");
+
+	let activeLang = $derived(
+		languages.find((l) => l.key === currentLangKey) || languages[0],
+	);
+
+	let t = $derived(
+		(key: string) =>
+			translations[activeLang.key]?.[key] ||
+			translations["en"][key] ||
+			key,
+	);
 
 	let { copy }: { copy: Copy } = $props();
 
@@ -219,7 +236,7 @@
 	>();
 
 	function getWorker() {
-		if (typeof window === "undefined") throw new Error("Image compression only runs in the browser.");
+		if (typeof window === "undefined") throw new Error(t("common.browserOnlyError"));
 
 		if (worker) return worker;
 
@@ -243,7 +260,7 @@
 		};
 
 		worker.onerror = (event) => {
-			const err = new Error(event.message || "Image compression worker failed.");
+			const err = new Error(event.message || t("common.workerFailedError"));
 
 			for (const pending of pendingWorkerJobs.values()) pending.reject(err);
 			pendingWorkerJobs.clear();
@@ -414,12 +431,14 @@
 				</button>
 
 				<div class="summary">
-					<strong>{jobs.length} image{jobs.length > 1 ? "s" : ""}</strong>
+					<strong>
+						{jobs.length} {jobs.length === 1 ? t("common.image") : t("common.images")}
+					</strong>
 					<small>
 						{#if doneCount}
 							{doneCount}/{jobs.length} {copy.doneLabel} · {formatBytes(totalOriginalSize)} → {formatBytes(totalOutputSize)}
 						{:else}
-							{formatBytes(totalOriginalSize)} selected
+							 {formatBytes(totalOriginalSize)} {t("common.selected")}
 						{/if}
 					</small>
 				</div>
@@ -430,7 +449,7 @@
 
 		<div class:show={Boolean(error)} class="errbar"><span>!</span><span>{error}</span></div>
 
-		<section class="queue" aria-label="Selected images">
+		<section class="queue" aria-label={t("common.selectedImages")}>
 			<div class="gallery">
 				{#each jobs as job (job.id)}
 					<article class:done={job.status === "done"} class:error={job.status === "error"} class:busy={job.status === "compressing"} class="tile">
@@ -472,7 +491,7 @@
 			</div>
 		</section>
 
-		<aside class="settings-panel" aria-label="Compression settings">
+		<aside class="settings-panel" aria-label={t("common.compressionSettings")}>
 			<div class="dock-row format-row">
 				<span class="dock-label">{copy.formatLabel}</span>
 				<div class="format-tags" role="group" aria-label={copy.formatLabel}>
@@ -609,7 +628,7 @@
 		display: block;
 		color: var(--text);
 		font-size: 14px;
-		font-weight: 750;
+		font-weight: 650;
 		line-height: 1.25;
 		white-space: nowrap;
 		overflow: hidden;

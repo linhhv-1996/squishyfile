@@ -32,6 +32,7 @@
 		privacyNote: string;
 		fileTypeFallback: string;
 		remove: string;
+		convertFailedError: string;
 	};
 
 	let { data } = $props();
@@ -70,6 +71,7 @@
 		privacyNote: t("webmToMp4.note.privacy"),
 		fileTypeFallback: t("webmToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
+		convertFailedError: t("convert.error.failed"),
 	});
 
 	let jsonLd = $derived(

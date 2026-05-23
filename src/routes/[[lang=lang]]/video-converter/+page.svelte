@@ -34,6 +34,7 @@
 		fileTypeFallback: string;
 		remove: string;
 		outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
+		convertFailedError: string;
 	};
 
 	let { data } = $props();
@@ -78,6 +79,7 @@
 			{ value: "mov", label: t("convert.output.mov.label"), sub: t("convert.output.mov.sub") },
 			{ value: "mkv", label: t("convert.output.mkv.label"), sub: t("convert.output.mkv.sub") },
 		],
+		convertFailedError: t("convert.error.failed"),
 	});
 
 	let hasConvertFaq = $derived(

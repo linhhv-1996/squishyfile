@@ -42,6 +42,7 @@
 		fileTypeFallback: string;
 		remove: string;
 		outputOptions?: OutputOption[];
+		convertFailedError: string;
 	};
 
 	let {
@@ -191,7 +192,7 @@
 				busy = false;
 			},
 			onError: (message) => {
-				error = message;
+				error = copy.convertFailedError;
 				busy = false;
 				progress = { show: false, pct: 0, label: copy.convertingLabel };
 			},

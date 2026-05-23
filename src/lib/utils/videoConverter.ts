@@ -81,8 +81,12 @@ function debugError(...args: unknown[]) {
 	console.error(LABEL, ...args);
 }
 
-function messageFromError(error: unknown) {
-	return error instanceof Error ? error.message : String(error || "Unknown error");
+function errorKeyFromError(error: unknown) {
+	if (error instanceof Error && error.message.startsWith("error.")) {
+		return error.message;
+	}
+
+	return "error.videoConverterFailed";
 }
 
 function formatBytes(bytes: number) {
@@ -118,7 +122,7 @@ function createOutputFormat(format: VideoOutputFormat) {
 
 		default: {
 			const exhaustive: never = format;
-			throw new Error(`Unsupported output format: ${exhaustive}`);
+			throw new Error("error.videoConverterUnsupportedOutputFormat");
 		}
 	}
 }
@@ -192,7 +196,7 @@ export class VideoConverter {
 
 		try {
 			if (typeof window === "undefined") {
-				throw new Error("VideoConverter chỉ chạy trong browser.");
+				throw new Error("error.videoConverterBrowserOnly");
 			}
 
 			if (!file) {
@@ -201,15 +205,11 @@ export class VideoConverter {
 
 			if (mode === "force-transcode") {
 				if (!("VideoEncoder" in window)) {
-					throw new Error(
-						"Browser không hỗ trợ WebCodecs VideoEncoder, không thể force transcode video.",
-					);
+					throw new Error("error.videoConverterVideoEncoderUnsupported");
 				}
 
 				if (!("AudioEncoder" in window)) {
-					throw new Error(
-						"Browser không hỗ trợ WebCodecs AudioEncoder, không thể force transcode audio.",
-					);
+					throw new Error("error.videoConverterAudioEncoderUnsupported");
 				}
 			}
 
@@ -284,12 +284,11 @@ export class VideoConverter {
 			this.conversion = conversion;
 
 			if (!conversion.isValid) {
-				const detail =
-					conversion.discardedTracks.length > 0
-						? stringifyForDebug(conversion.discardedTracks)
-						: "Không có detail từ Mediabunny.";
+				if (conversion.discardedTracks.length > 0) {
+					debug("Invalid conversion discarded tracks:", conversion.discardedTracks);
+				}
 
-				throw new Error(`Mediabunny không convert được file này.\n${detail}`);
+				throw new Error("error.videoConverterInvalidConversion");
 			}
 
 			if (conversion.discardedTracks.length > 0) {
@@ -308,7 +307,7 @@ export class VideoConverter {
 			const buffer = target.buffer;
 
 			if (!buffer || buffer.byteLength === 0) {
-				throw new Error("Output rỗng sau khi convert.");
+				throw new Error("error.videoConverterEmptyOutput");
 			}
 
 			const blob = new Blob([buffer], {
@@ -322,10 +321,10 @@ export class VideoConverter {
 
 			return blob;
 		} catch (error) {
-			const message = messageFromError(error);
+			const errorKey = errorKeyFromError(error);
 
 			debugError("Failed:", error);
-			onError?.(message);
+			onError?.(errorKey);
 
 			throw error;
 		} finally {

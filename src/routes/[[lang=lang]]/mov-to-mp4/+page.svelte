@@ -33,7 +33,7 @@
 		privacyNote: string;
 		fileTypeFallback: string;
 		remove: string;
-		// outputOptions: { value: VideoOutputFormat; label: string; sub: string }[];
+		convertFailedError: string;
 	};
 
 	let { data } = $props();
@@ -72,6 +72,7 @@
 		privacyNote: t("movToMp4.note.privacy"),
 		fileTypeFallback: t("movToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
+		convertFailedError: t("convert.error.failed"),
 	});
 
 	let jsonLd = $derived(

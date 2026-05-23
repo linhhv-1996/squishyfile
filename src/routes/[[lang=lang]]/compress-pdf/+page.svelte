@@ -168,7 +168,8 @@
 					saved: `${Math.max(0, Math.round((1 - ratio) * 100))}%`,
 				};
 			} else {
-				pdfError = error || t("error.generic");
+				console.error("PDF worker failed:", error);
+				pdfError = t("error.workerFailed");
 			}
 
 			pdfBusy = false;

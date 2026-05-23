@@ -192,7 +192,7 @@ export class VideoCompressor {
 				URL.revokeObjectURL(video.src);
 				resolve({ duration: video.duration, width: video.videoWidth, height: video.videoHeight });
 			};
-			video.onerror = () => reject(new Error('Không thể đọc thông tin video. File có thể bị hỏng.'));
+			video.onerror = () => reject(new Error('error.videoMetadataReadFailed'));
 			video.src = URL.createObjectURL(file);
 		});
 	}
@@ -291,7 +291,7 @@ export class VideoCompressor {
 			});
 
 			if (!this.currentConversion.isValid) {
-				throw new Error('Định dạng video không được hỗ trợ để nén.');
+				throw new Error('error.videoUnsupportedForCompression');
 			}
 
 			let progress = 0;
@@ -322,7 +322,12 @@ export class VideoCompressor {
 				this.currentConversion = null;
 				try { await conv.cancel(); } catch { /* bỏ qua */ }
 			}
-			onError?.(error instanceof Error ? error.message : String(error));
+			const errorKey =
+				error instanceof Error && error.message.startsWith("error.")
+					? error.message
+					: "error.videoCompressionFailed";
+
+			onError?.(errorKey);
 		}
 	}
 }
