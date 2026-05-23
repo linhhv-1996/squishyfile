@@ -747,6 +747,30 @@ export const translations: Record<string, Record<string, string>> = {
 		"error.videoConverterFailed": "Video conversion failed.",
 
 		"convert.error.failed": "Video conversion failed. Please try another file or format.",
+
+		// Related tools
+		'relatedTools.label': 'Also try',
+
+		'related.movToMp4.title': 'MOV to MP4',
+		'related.movToMp4.desc': 'Convert iPhone, Mac and QuickTime MOV videos to MP4 in your browser.',
+
+		'related.aviToMp4.title': 'AVI to MP4',
+		'related.aviToMp4.desc': 'Convert AVI videos to MP4 for easier playback and sharing.',
+
+		'related.mkvToMp4.title': 'MKV to MP4',
+		'related.mkvToMp4.desc': 'Convert MKV videos to MP4 for better compatibility across devices.',
+
+		'related.webmToMp4.title': 'WebM to MP4',
+		'related.webmToMp4.desc': 'Convert WebM recordings and web videos to MP4.',
+
+		'related.jpgCompressor.title': 'Compress JPG',
+		'related.jpgCompressor.desc': 'Reduce JPG and JPEG file size directly in your browser.',
+
+		'related.pngCompressor.title': 'Compress PNG',
+		'related.pngCompressor.desc': 'Compress PNG images for logos, icons, screenshots and transparent graphics.',
+
+		'related.reduceImageSize.title': 'Reduce Image Size',
+		'related.reduceImageSize.desc': 'Make images smaller for uploads, email, forms and websites.',
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -1463,6 +1487,29 @@ export const translations: Record<string, Record<string, string>> = {
 		"error.videoConverterFailed": "動画の変換に失敗しました。",
 
 		"convert.error.failed": "動画の変換に失敗しました。別のファイルまたは形式をお試しください。",
+		// Related tools
+		'relatedTools.label': 'こちらもおすすめ',
+
+		'related.movToMp4.title': 'MOVをMP4に変換',
+		'related.movToMp4.desc': 'iPhone、Mac、QuickTimeのMOV動画をブラウザでMP4に変換できます。',
+
+		'related.aviToMp4.title': 'AVIをMP4に変換',
+		'related.aviToMp4.desc': 'AVI動画をMP4に変換して、再生や共有をしやすくします。',
+
+		'related.mkvToMp4.title': 'MKVをMP4に変換',
+		'related.mkvToMp4.desc': 'MKV動画をMP4に変換して、さまざまなデバイスで使いやすくします。',
+
+		'related.webmToMp4.title': 'WebMをMP4に変換',
+		'related.webmToMp4.desc': 'WebM録画やWeb動画をMP4に変換できます。',
+
+		'related.jpgCompressor.title': 'JPGを圧縮',
+		'related.jpgCompressor.desc': 'JPG・JPEG画像のファイルサイズをブラウザで直接小さくできます。',
+
+		'related.pngCompressor.title': 'PNGを圧縮',
+		'related.pngCompressor.desc': 'ロゴ、アイコン、スクリーンショット、透過画像向けにPNGを圧縮できます。',
+
+		'related.reduceImageSize.title': '画像サイズを縮小',
+		'related.reduceImageSize.desc': 'アップロード、メール、フォーム、Webサイト用に画像を小さくできます。',
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -2172,6 +2219,29 @@ export const translations: Record<string, Record<string, string>> = {
 		"error.videoConverterFailed": "影片轉換失敗。",
 
 		"convert.error.failed": "影片轉換失敗。請嘗試其他檔案或格式。",
+		// Related tools
+		'relatedTools.label': '也可以試試',
+
+		'related.movToMp4.title': 'MOV 轉 MP4',
+		'related.movToMp4.desc': '直接在瀏覽器中將 iPhone、Mac 和 QuickTime 的 MOV 影片轉成 MP4。',
+
+		'related.aviToMp4.title': 'AVI 轉 MP4',
+		'related.aviToMp4.desc': '將 AVI 影片轉成 MP4，方便播放與分享。',
+
+		'related.mkvToMp4.title': 'MKV 轉 MP4',
+		'related.mkvToMp4.desc': '將 MKV 影片轉成 MP4，提升在不同裝置上的相容性。',
+
+		'related.webmToMp4.title': 'WebM 轉 MP4',
+		'related.webmToMp4.desc': '將 WebM 錄影和網頁影片轉成 MP4。',
+
+		'related.jpgCompressor.title': '壓縮 JPG',
+		'related.jpgCompressor.desc': '直接在瀏覽器中縮小 JPG 和 JPEG 圖片檔案大小。',
+
+		'related.pngCompressor.title': '壓縮 PNG',
+		'related.pngCompressor.desc': '壓縮適合標誌、圖示、截圖和透明圖片使用的 PNG 圖片。',
+
+		'related.reduceImageSize.title': '縮小圖片大小',
+		'related.reduceImageSize.desc': '將圖片縮小，方便上傳、寄信、填表單或用於網站。',
 	},
 
 	// ─── PORTUGUESE BRAZIL (PT) ──────────────────────────────────────────────────
@@ -2940,6 +3010,29 @@ export const translations: Record<string, Record<string, string>> = {
 		"error.videoConverterFailed": "Falha ao converter o vídeo.",
 
 		"convert.error.failed": "Falha ao converter o vídeo. Tente outro arquivo ou formato.",
+		// Related tools
+		'relatedTools.label': 'Também experimente',
+
+		'related.movToMp4.title': 'MOV para MP4',
+		'related.movToMp4.desc': 'Converta vídeos MOV do iPhone, Mac e QuickTime para MP4 diretamente no navegador.',
+
+		'related.aviToMp4.title': 'AVI para MP4',
+		'related.aviToMp4.desc': 'Converta vídeos AVI para MP4 para facilitar a reprodução e o compartilhamento.',
+
+		'related.mkvToMp4.title': 'MKV para MP4',
+		'related.mkvToMp4.desc': 'Converta vídeos MKV para MP4 para melhor compatibilidade entre dispositivos.',
+
+		'related.webmToMp4.title': 'WebM para MP4',
+		'related.webmToMp4.desc': 'Converta gravações WebM e vídeos da web para MP4.',
+
+		'related.jpgCompressor.title': 'Comprimir JPG',
+		'related.jpgCompressor.desc': 'Reduza o tamanho de arquivos JPG e JPEG diretamente no navegador.',
+
+		'related.pngCompressor.title': 'Comprimir PNG',
+		'related.pngCompressor.desc': 'Comprima imagens PNG para logos, ícones, capturas de tela e gráficos com transparência.',
+
+		'related.reduceImageSize.title': 'Reduzir tamanho da imagem',
+		'related.reduceImageSize.desc': 'Deixe imagens menores para uploads, emails, formulários e sites.',
 	},
 
 	th: {
@@ -3608,5 +3701,29 @@ export const translations: Record<string, Record<string, string>> = {
 		"error.videoConverterFailed": "การแปลงวิดีโอล้มเหลว",
 
 		"convert.error.failed": "การแปลงวิดีโอล้มเหลว โปรดลองใช้ไฟล์หรือรูปแบบอื่น",
+		// Related tools
+		'relatedTools.label': 'ลองใช้เครื่องมืออื่น',
+
+		'related.movToMp4.title': 'แปลง MOV เป็น MP4',
+		'related.movToMp4.desc': 'แปลงวิดีโอ MOV จาก iPhone, Mac และ QuickTime เป็น MP4 ได้ในเบราว์เซอร์ของคุณ',
+
+		'related.aviToMp4.title': 'แปลง AVI เป็น MP4',
+		'related.aviToMp4.desc': 'แปลงวิดีโอ AVI เป็น MP4 เพื่อให้เปิดดูและแชร์ได้ง่ายขึ้น',
+
+		'related.mkvToMp4.title': 'แปลง MKV เป็น MP4',
+		'related.mkvToMp4.desc': 'แปลงวิดีโอ MKV เป็น MP4 เพื่อให้รองรับอุปกรณ์ต่าง ๆ ได้ดียิ่งขึ้น',
+
+		'related.webmToMp4.title': 'แปลง WebM เป็น MP4',
+		'related.webmToMp4.desc': 'แปลงไฟล์บันทึก WebM และวิดีโอบนเว็บเป็น MP4',
+
+		'related.jpgCompressor.title': 'บีบอัด JPG',
+		'related.jpgCompressor.desc': 'ลดขนาดไฟล์ JPG และ JPEG ได้โดยตรงในเบราว์เซอร์ของคุณ',
+
+		'related.pngCompressor.title': 'บีบอัด PNG',
+		'related.pngCompressor.desc': 'บีบอัดรูปภาพ PNG สำหรับโลโก้ ไอคอน ภาพหน้าจอ และกราฟิกพื้นหลังโปร่งใส',
+
+		'related.reduceImageSize.title': 'ลดขนาดรูปภาพ',
+		'related.reduceImageSize.desc': 'ทำให้รูปภาพเล็กลงสำหรับอัปโหลด อีเมล แบบฟอร์ม และเว็บไซต์',
+		
 	},
 };
