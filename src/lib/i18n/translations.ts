@@ -3348,7 +3348,6 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'imageCompressor.note.privacy': '<strong>ออกแบบมาเพื่อความเป็นส่วนตัว</strong> รูปภาพจะถูกประมวลผลในเบราว์เซอร์ของคุณโดยตรง และจะไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์',
 		'imageCompressor.fileTypeFallback': 'ไฟล์รูปภาพ',
-
 		'imageCompressor.btn.addLabel': 'เพิ่มรูปภาพ',
 
 		// ── FAQ: Image compressor hub ───────────────────────────────────────────
