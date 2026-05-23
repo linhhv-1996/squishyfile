@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import VideoConverter from "$lib/components/tools/VideoConverter.svelte";
+    import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import { translations } from "$lib/i18n/translations";
 
 	type VideoOutputFormat = "mp4" | "webm" | "mov" | "mkv";
@@ -112,6 +113,9 @@
 			},
 		),
 	);
+
+	let relatedTools = $derived(getRelatedTools('video-converter', currentLangKey, t));
+	
 </script>
 
 <svelte:head>
@@ -141,7 +145,10 @@
 			</div>
 		</section>
 
-		<VideoConverter {copy} />
+		<VideoConverter
+			{copy}
+			{relatedTools}
+		/>
 
 		{#if data.contentHtml}
 			<section class="how-to-sec prose">

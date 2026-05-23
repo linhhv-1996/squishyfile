@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import VideoConverter from "$lib/components/tools/VideoConverter.svelte";
+    import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import { translations } from "$lib/i18n/translations";
 
 	type PageCopy = {
@@ -72,6 +73,12 @@
 		fileTypeFallback: t("webmToMp4.fileTypeFallback"),
 		remove: t("convert.btn.remove"),
 		convertFailedError: t("convert.error.failed"),
+		outputOptions: [
+			{ value: "mp4", label: t("convert.output.mp4.label"), sub: t("convert.output.mp4.sub") },
+			{ value: "webm", label: t("convert.output.webm.label"), sub: t("convert.output.webm.sub") },
+			{ value: "mov", label: t("convert.output.mov.label"), sub: t("convert.output.mov.sub") },
+			{ value: "mkv", label: t("convert.output.mkv.label"), sub: t("convert.output.mkv.sub") },
+		],
 	});
 
 	let jsonLd = $derived(
@@ -96,6 +103,8 @@
 	function markdownToHtml(text: string) {
 		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 	}
+
+	let relatedTools = $derived(getRelatedTools('mov-to-mp4', currentLangKey, t));
 </script>
 
 <svelte:head>
@@ -127,7 +136,7 @@
 			</div>
 		</section>
 
-		<VideoConverter {copy} />
+		<VideoConverter {copy} {relatedTools}/>
 
 		{#if data.contentHtml}
 			<section class="how-to-sec prose">

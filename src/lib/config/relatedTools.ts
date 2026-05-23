@@ -136,7 +136,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 };
 
 export function getToolHref(lang: string, slug: ToolSlug) {
-	return `/${lang}/${slug}`;
+	return lang === 'en' ? `/${slug}` : `/${lang}/${slug}`;
 }
 
 export function getRelatedTools(
