@@ -591,6 +591,7 @@
 		padding-top: 18px;
 		border-top: 1px solid var(--border);
 	}
+	
 	.how-to-sec :global(a) { color: #1550ae; }
 	.how-to-sec :global(h1) { font-size: 1.35rem; font-weight: 650; color: var(--text); margin: 0 0 20px; line-height: 1.3; }
 	.how-to-sec :global(h2) { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 15px 0 10px; }
