@@ -257,7 +257,7 @@
 	.tc-title {
 		font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
 		font-size: 15px;
-		font-weight: 680;
+		font-weight: 550;
 		color: var(--text);
 		margin-bottom: 7px;
 		line-height: 1.35;
