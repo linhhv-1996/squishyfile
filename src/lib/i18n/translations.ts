@@ -60,13 +60,13 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── Video page meta / hero ──────────────────────────────────────────────
 		'compress.meta.title': 'Compress Video Free Online – No Upload | Squishyfile',
 		'compress.meta.desc': 'Compress MP4, MOV, AVI, WebM, MKV videos free in your browser. No upload, no watermark, no account. Set a target size for LINE, Discord, Gmail, Telegram.',
-		'compress.hero.title': 'Compress Video Free<br />in Your Browser',
+		'compress.hero.title': 'Compress Video Free in Your Browser',
 		'compress.hero.sub': 'No uploads, no accounts, no watermarks — runs entirely on your device.',
 
 		// ── PDF page meta / hero ────────────────────────────────────────────────
 		'pdf.meta.title': 'Compress PDF Free Online – Remove Password | Squishyfile',
 		'pdf.meta.desc': 'Compress PDF files free directly in your browser. Reduce PDF size and optionally remove password protection. No server upload, 100% private.',
-		'pdf.hero.title': 'Compress PDF Free<br />in Your Browser',
+		'pdf.hero.title': 'Compress PDF Free in Your Browser',
 		'pdf.hero.sub': 'Reduce PDF size and remove password protection — entirely on your device.',
 
 		// ── Home FAQ (brand, overview, privacy, comparison) ─────────────────────
@@ -273,7 +273,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'mp3.meta.title': 'Convert Video to MP3 Free Online – No Upload | Squishyfile',
 		'mp3.meta.desc': 'Convert MP4, MOV, AVI, WebM and MKV videos to MP3 directly in your browser. No upload, no watermark, no account.',
-		'mp3.hero.title': 'Convert Video to MP3<br />in Your Browser',
+		'mp3.hero.title': 'Convert Video to MP3 in Your Browser',
 		'mp3.hero.sub': 'Extract audio from videos privately — no uploads, no accounts, no watermarks.',
 		'mp3.drop.title': 'Drop your video here',
 		'mp3.hint': 'MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; output MP3',
@@ -370,7 +370,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mov-to-mp4
 		'movToMp4.meta.title': 'MOV to MP4 Converter｜Convert MOV to MP4 Free - Squishyfile',
 		'movToMp4.meta.desc': 'Convert MOV to MP4 online for free. Turn iPhone, Mac and QuickTime MOV videos into MP4 in your browser with no upload, no install and no watermark.',
-		'movToMp4.hero.title': 'MOV to MP4 Converter<br />Free Online Tool',
+		'movToMp4.hero.title': 'MOV to MP4 Converter Free Online Tool',
 		'movToMp4.hero.sub': 'Convert MOV videos from iPhone, Mac or QuickTime to MP4. No upload, no install and no account required.',
 		'movToMp4.pill.mov': 'MOV to MP4',
 		'movToMp4.drop.title': 'Choose a MOV video',
@@ -407,7 +407,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// avi-to-mp4
 		'aviToMp4.meta.title': 'AVI to MP4 Converter｜Convert AVI to MP4 Free - Squishyfile',
 		'aviToMp4.meta.desc': 'Convert AVI to MP4 online for free. Turn old Windows, camera or recording videos into MP4 in your browser with no upload, no install and no watermark.',
-		'aviToMp4.hero.title': 'AVI to MP4 Converter<br />Free Online Tool',
+		'aviToMp4.hero.title': 'AVI to MP4 ConverterFree Online Tool',
 		'aviToMp4.hero.sub': 'Convert AVI videos to MP4 for better compatibility. Great for old Windows videos, camera files and screen recordings.',
 		'aviToMp4.pill.avi': 'AVI to MP4',
 		'aviToMp4.drop.title': 'Choose an AVI video',
@@ -444,7 +444,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mkv-to-mp4
 		'mkvToMp4.meta.title': 'MKV to MP4 Converter｜Convert MKV to MP4 Free - Squishyfile',
 		'mkvToMp4.meta.desc': 'Convert MKV to MP4 online for free. Turn large, high-quality or subtitle MKV videos into MP4 in your browser with no upload and no watermark.',
-		'mkvToMp4.hero.title': 'MKV to MP4 Converter<br />Free Online Tool',
+		'mkvToMp4.hero.title': 'MKV to MP4 Converter Free Online Tool',
 		'mkvToMp4.hero.sub': 'Convert MKV videos to MP4 for easier playback and sharing. Works well for high-quality videos, subtitle files and videos that are hard to play.',
 		'mkvToMp4.pill.mkv': 'MKV to MP4',
 		'mkvToMp4.drop.title': 'Choose an MKV video',
@@ -481,7 +481,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// webm-to-mp4
 		'webmToMp4.meta.title': 'WebM to MP4 Converter｜Convert WebM to MP4 Free - Squishyfile',
 		'webmToMp4.meta.desc': 'Convert WebM to MP4 online for free. Turn browser recordings, screen recordings and web videos into MP4 with no upload, no install and no watermark.',
-		'webmToMp4.hero.title': 'WebM to MP4 Converter<br />Free Online Tool',
+		'webmToMp4.hero.title': 'WebM to MP4 Converter Free Online Tool',
 		'webmToMp4.hero.sub': 'Convert WebM videos, browser recordings and screen recordings to MP4. Free, browser-based and no account required.',
 		'webmToMp4.pill.webm': 'WebM to MP4',
 		'webmToMp4.drop.title': 'Choose a WebM video',
@@ -525,7 +525,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'imageCompressor.meta.title': 'Image Compressor Online Free｜JPG, PNG, WebP - Squishyfile',
 		'imageCompressor.meta.desc': 'Free online image compressor for JPG, PNG, WebP and AVIF. Compress photos and pictures in your browser with no upload, no signup and no watermark.',
-		'imageCompressor.hero.title': 'Free online<br />image compressor',
+		'imageCompressor.hero.title': 'Free online image compressor',
 		'imageCompressor.hero.sub': 'Compress JPG, PNG, WebP and AVIF images right in your browser. Reduce photo and picture file size for websites, email attachments, forms, documents and social media',
 
 		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
@@ -833,11 +833,11 @@ export const translations: Record<string, Record<string, string>> = {
 		'home.card.pdf.tag.fast': '即時処理',
 		'compress.meta.title': '動画圧縮 無料オンライン｜アップロード不要 – Squishyfile',
 		'compress.meta.desc': 'MP4・MOV・AVI・WebM・MKV動画をブラウザで無料圧縮。アップロード不要・透かしなし。LINE・Discord・Gmail用サイズ指定対応。',
-		'compress.hero.title': '動画圧縮を<br />ブラウザで無料で',
+		'compress.hero.title': '動画圧縮をブラウザで無料で',
 		'compress.hero.sub': 'アップロード不要・アカウント不要・透かしなし — すべてお使いのデバイスで処理。',
 		'pdf.meta.title': 'PDF圧縮 無料オンライン｜パスワード解除も対応 – Squishyfile',
 		'pdf.meta.desc': 'PDFをブラウザで無料圧縮。パスワード削除も可能。サーバーアップロードなし・プライバシー完全保護。',
-		'pdf.hero.title': 'PDF圧縮を<br />ブラウザで無料で',
+		'pdf.hero.title': 'PDF圧縮をブラウザで無料で',
 		'pdf.hero.sub': 'PDFサイズ削減＆パスワード解除 — すべてお使いのデバイスで処理。',
 
 		'faq.home.title': 'よくある質問',
@@ -1042,7 +1042,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.meta.title': 'MP4をMP3に変換 無料オンライン｜アップロード不要 | Squishyfile',
 		'mp3.meta.desc': 'MP4、MOV、AVI、WebM、MKV動画をブラウザ上でMP3に変換。動画から音声を抽出して保存できます。アップロード不要・無料・ウォーターマークなし。',
 
-		'mp3.hero.title': '動画をMP3に変換<br />ブラウザだけで完了',
+		'mp3.hero.title': '動画をMP3に変換ブラウザだけで完了',
 		'mp3.hero.sub': 'MP4などの動画から音声を抽出してMP3保存。ファイルはアップロードされず、端末内で安全に変換できます。',
 
 		'mp3.drop.title': '動画ファイルをここにドロップ',
@@ -1157,7 +1157,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mov-to-mp4
 		"movToMp4.meta.title": "MOV MP4変換｜MOVをMP4に無料変換 - Squishyfile",
 		"movToMp4.meta.desc": "MOVをMP4に無料変換。iPhone・Mac・QuickTimeのMOV動画をブラウザでMP4化。インストール不要・アップロード不要・透かしなし。",
-		"movToMp4.hero.title": "MOVをMP4に変換<br />ブラウザで無料",
+		"movToMp4.hero.title": "MOVをMP4に変換ブラウザで無料",
 		"movToMp4.hero.sub": "iPhoneやMacのMOV動画をMP4に変換。アップロード不要・インストール不要・透かしなしで使えます。",
 		"movToMp4.pill.mov": "MOV MP4変換",
 		"movToMp4.drop.title": "MOV動画を選択",
@@ -1189,7 +1189,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// avi-to-mp4
 		"aviToMp4.meta.title": "AVI MP4変換｜AVIをMP4に無料変換 - Squishyfile",
 		"aviToMp4.meta.desc": "AVIをMP4に無料変換。古いPC動画やカメラ動画をブラウザでMP4化。インストール不要・アップロード不要・透かしなし。",
-		"aviToMp4.hero.title": "AVIをMP4に変換<br />ブラウザで無料",
+		"aviToMp4.hero.title": "AVIをMP4に変換ブラウザで無料",
 		"aviToMp4.hero.sub": "古いPC動画やカメラ動画のAVIをMP4に変換。アップロード不要・インストール不要・透かしなしで使えます。",
 		"aviToMp4.pill.avi": "AVI MP4変換",
 		"aviToMp4.drop.title": "AVI動画を選択",
@@ -1221,7 +1221,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mkv-to-mp4
 		"mkvToMp4.meta.title": "MKV MP4変換｜MKVをMP4に無料変換 - Squishyfile",
 		"mkvToMp4.meta.desc": "MKVをMP4に無料変換。再生しにくいMKV動画をブラウザでMP4化。インストール不要・アップロード不要・透かしなし。",
-		"mkvToMp4.hero.title": "MKVをMP4に変換<br />ブラウザで無料",
+		"mkvToMp4.hero.title": "MKVをMP4に変換ブラウザで無料",
 		"mkvToMp4.hero.sub": "再生しにくいMKV動画をMP4に変換。アップロード不要・インストール不要・透かしなしで使えます。",
 		"mkvToMp4.pill.mkv": "MKV MP4変換",
 		"mkvToMp4.drop.title": "MKV動画を選択",
@@ -1253,7 +1253,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// webm-to-mp4
 		"webmToMp4.meta.title": "WebM MP4変換｜WebMをMP4に無料変換 - Squishyfile",
 		"webmToMp4.meta.desc": "WebMをMP4に無料変換。ブラウザ録画や画面録画のWebM動画をMP4化。インストール不要・アップロード不要・透かしなし。",
-		"webmToMp4.hero.title": "WebMをMP4に変換<br />ブラウザで無料",
+		"webmToMp4.hero.title": "WebMをMP4に変換ブラウザで無料",
 		"webmToMp4.hero.sub": "ブラウザ録画や画面録画のWebMをMP4に変換。アップロード不要・インストール不要・透かしなしで使えます。",
 		"webmToMp4.pill.webm": "WebM MP4変換",
 		"webmToMp4.drop.title": "WebM動画を選択",
@@ -1285,7 +1285,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── Image compressor hub / page — Japanese ───────────────────────────────
 		'imageCompressor.meta.title': '画像圧縮オンライン無料｜JPG・PNG・WebP対応 - Squishyfile',
 		'imageCompressor.meta.desc': '画像圧縮をオンラインで無料実行。JPG、PNG、WebP、AVIFの画像ファイルをブラウザ上で軽量化できます。アップロード不要、インストール不要、透かしなし。',
-		'imageCompressor.hero.title': '画像圧縮を<br />オンラインで無料',
+		'imageCompressor.hero.title': '画像圧縮をオンラインで無料',
 		'imageCompressor.hero.sub': 'JPG、PNG、WebP、AVIFの画像サイズをブラウザ上でかんたんに縮小。高速・安全・無料で使えます',
 
 		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
@@ -1571,11 +1571,11 @@ export const translations: Record<string, Record<string, string>> = {
 		'home.card.pdf.tag.fast': '即時處理',
 		'compress.meta.title': '免費線上壓縮影片｜唔使上載 – Squishyfile',
 		'compress.meta.desc': '在瀏覽器中免費壓縮 MP4、MOV、AVI、WebM、MKV。無需上傳、無浮水印。支援 LINE、Discord、Gmail 等平台容量限制設定。',
-		'compress.hero.title': '在瀏覽器中<br />免費壓縮影片',
+		'compress.hero.title': '在瀏覽器中免費壓縮影片',
 		'compress.hero.sub': '無需上傳、無需帳號、無浮水印 — 完全在您的裝置上處理。',
 		'pdf.meta.title': '免費線上壓縮 PDF｜可移除密碼 – Squishyfile',
 		'pdf.meta.desc': '在瀏覽器中免費壓縮 PDF，可選擇移除密碼。無伺服器上傳，隱私 100% 保障。',
-		'pdf.hero.title': '在瀏覽器中<br />免費壓縮 PDF',
+		'pdf.hero.title': '在瀏覽器中免費壓縮 PDF',
 		'pdf.hero.sub': '縮小 PDF 大小並可移除密碼 — 完全在您的裝置上處理。',
 
 		'faq.home.title': '常見問題',
@@ -1781,7 +1781,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'mp3.meta.title': '免費線上將 MP4 轉換為 MP3｜無需上傳 | Squishyfile',
 		'mp3.meta.desc': '在瀏覽器中將 MP4、MOV、AVI、WebM、MKV 影片轉換為 MP3。你可以從影片中擷取音訊並儲存。無需上傳、免費、無浮水印。',
-		'mp3.hero.title': '將影片轉換為 MP3<br />只用瀏覽器即可完成',
+		'mp3.hero.title': '將影片轉換為 MP3只用瀏覽器即可完成',
 		'mp3.hero.sub': '從 MP4 等影片中擷取音訊並儲存為 MP3。檔案不會被上傳，可在你的裝置內安全轉換。',
 		'mp3.drop.title': '將影片檔案拖放到這裡',
 		'mp3.hint': '支援 MP4、MOV、AVI、WebM、MKV &nbsp;·&nbsp; 以 MP3 輸出',
@@ -1860,7 +1860,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mov-to-mp4
 		'movToMp4.meta.title': 'MOV轉MP4｜線上免費 MOV 轉 MP4 - Squishyfile',
 		'movToMp4.meta.desc': 'MOV轉MP4線上免費工具。將 iPhone、Mac、QuickTime 的 MOV 影片轉成 MP4，免安裝、免上傳、無浮水印，直接在瀏覽器內完成。',
-		'movToMp4.hero.title': 'MOV轉MP4<br />線上免費轉檔',
+		'movToMp4.hero.title': 'MOV轉MP4線上免費轉檔',
 		'movToMp4.hero.sub': '將 iPhone、Mac 或 QuickTime 的 MOV 影片轉成 MP4。免上傳、免安裝、免註冊，直接在瀏覽器內處理。',
 		'movToMp4.pill.mov': 'MOV轉MP4',
 		'movToMp4.drop.title': '選擇 MOV 影片',
@@ -1897,7 +1897,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// avi-to-mp4
 		'aviToMp4.meta.title': 'AVI轉MP4｜線上免費 AVI 轉 MP4 - Squishyfile',
 		'aviToMp4.meta.desc': 'AVI轉MP4線上免費工具。將舊電腦、相機或錄影軟體產生的 AVI 影片轉成 MP4，免安裝、免上傳、無浮水印。',
-		'aviToMp4.hero.title': 'AVI轉MP4<br />線上免費轉檔',
+		'aviToMp4.hero.title': 'AVI轉MP4線上免費轉檔',
 		'aviToMp4.hero.sub': '將 AVI 影片轉成相容性更高的 MP4。適合舊 Windows 影片、相機影片與錄影檔，免上傳、免安裝。',
 		'aviToMp4.pill.avi': 'AVI轉MP4',
 		'aviToMp4.drop.title': '選擇 AVI 影片',
@@ -1934,7 +1934,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mkv-to-mp4
 		'mkvToMp4.meta.title': 'MKV轉MP4｜線上免費 MKV 轉 MP4 - Squishyfile',
 		'mkvToMp4.meta.desc': 'MKV轉MP4線上免費工具。將高畫質、字幕影片或不易播放的 MKV 檔轉成 MP4，免安裝、免上傳、無浮水印。',
-		'mkvToMp4.hero.title': 'MKV轉MP4<br />線上免費轉檔',
+		'mkvToMp4.hero.title': 'MKV轉MP4線上免費轉檔',
 		'mkvToMp4.hero.sub': '將 MKV 影片轉成相容性更高的 MP4。適合高畫質影片、字幕影片與不易播放的影片檔，免上傳、免安裝。',
 		'mkvToMp4.pill.mkv': 'MKV轉MP4',
 		'mkvToMp4.drop.title': '選擇 MKV 影片',
@@ -1971,7 +1971,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// webm-to-mp4
 		'webmToMp4.meta.title': 'WebM轉MP4｜線上免費 WebM 轉 MP4 - Squishyfile',
 		'webmToMp4.meta.desc': 'WebM轉MP4線上免費工具。將瀏覽器錄影、螢幕錄影或網頁下載的 WebM 影片轉成 MP4，免安裝、免上傳、無浮水印。',
-		'webmToMp4.hero.title': 'WebM轉MP4<br />線上免費轉檔',
+		'webmToMp4.hero.title': 'WebM轉MP4線上免費轉檔',
 		'webmToMp4.hero.sub': '將 WebM 影片、瀏覽器錄影與螢幕錄影轉成 MP4。免上傳、免安裝、免註冊，直接在瀏覽器內完成。',
 		'webmToMp4.pill.webm': 'WebM轉MP4',
 		'webmToMp4.drop.title': '選擇 WebM 影片',
@@ -2015,7 +2015,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'imageCompressor.meta.title': '線上圖片壓縮免費｜壓縮照片、JPG、PNG、WebP - Squishyfile',
 		'imageCompressor.meta.desc': '免費線上圖片壓縮工具，支援 JPG、PNG、WebP、AVIF。可在瀏覽器中縮小照片與圖片檔案容量，免上傳、免安裝、無浮水印。',
-		'imageCompressor.hero.title': '線上圖片壓縮<br />免費又快速',
+		'imageCompressor.hero.title': '線上圖片壓縮免費又快速',
 		'imageCompressor.hero.sub': '在瀏覽器中壓縮 JPG、PNG、WebP、AVIF 圖片，輕鬆縮小照片與圖片檔案容量，適合上傳、寄信、網站與社群分享',
 
 		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
@@ -2305,11 +2305,11 @@ export const translations: Record<string, Record<string, string>> = {
 		'home.card.pdf.tag.fast': 'Instantâneo',
 		'compress.meta.title': 'Comprimir Vídeo Grátis | Sem Upload – Squishyfile',
 		'compress.meta.desc': 'Comprima vídeos MP4, MOV, AVI, WebM e MKV grátis no navegador. Sem upload, sem marca d\'água. Tamanho alvo para WhatsApp, Discord, Gmail configurável.',
-		'compress.hero.title': 'Comprimir Vídeo Grátis<br />no Seu Navegador',
+		'compress.hero.title': 'Comprimir Vídeo Grátis no Seu Navegador',
 		'compress.hero.sub': 'Sem uploads, sem contas, sem marca d\'água — funciona completamente no seu dispositivo.',
 		'pdf.meta.title': 'Comprimir PDF Grátis | Remover Senha – Squishyfile',
 		'pdf.meta.desc': 'Comprima arquivos PDF grátis no navegador. Remova senha opcionalmente. Sem upload para servidor, 100% privado.',
-		'pdf.hero.title': 'Comprimir PDF Grátis<br />no Seu Navegador',
+		'pdf.hero.title': 'Comprimir PDF Grátis no Seu Navegador',
 		'pdf.hero.sub': 'Reduza o tamanho e remova a senha — completamente no seu dispositivo.',
 
 		'faq.home.title': 'Perguntas frequentes',
@@ -2512,7 +2512,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.meta.title': 'Converter MP4 para MP3 Online Grátis | Squishyfile',
 		'mp3.meta.desc': 'Converta MP4, MOV, AVI, WebM e MKV para MP3 direto no navegador. Extraia áudio de vídeo grátis, sem upload, sem cadastro e sem marca d’água.',
 
-		'mp3.hero.title': 'Converter vídeo para MP3<br />direto no navegador',
+		'mp3.hero.title': 'Converter vídeo para MP3 direto no navegador',
 		'mp3.hero.sub': 'Extraia áudio de vídeos MP4, MOV, AVI, WebM e MKV e salve em MP3. Seus arquivos não são enviados para o servidor: tudo acontece no seu dispositivo.',
 
 		'mp3.drop.title': 'Solte o vídeo aqui',
@@ -2634,7 +2634,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── MOV to MP4 ─────────────────────────────────────────────
 		'movToMp4.meta.title': 'Converter MOV para MP4｜MOV para MP4 Online Grátis - Squishyfile',
 		'movToMp4.meta.desc': 'Converta MOV para MP4 online grátis. Transforme vídeos MOV do iPhone, Mac ou QuickTime em MP4. Sem instalação, sem upload e sem marca d’água.',
-		'movToMp4.hero.title': 'Converter MOV para MP4<br />online grátis',
+		'movToMp4.hero.title': 'Converter MOV para MP4 online grátis',
 		'movToMp4.hero.sub': 'Transforme vídeos MOV do iPhone, Mac ou QuickTime em MP4 com alta compatibilidade. Sem upload, sem instalação e sem cadastro.',
 		'movToMp4.pill.mov': 'MOV para MP4',
 		'movToMp4.drop.title': 'Escolha um vídeo MOV',
@@ -2671,7 +2671,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── MKV to MP4 ─────────────────────────────────────────────
 		'mkvToMp4.meta.title': 'Converter MKV para MP4｜MKV para MP4 Online Grátis - Squishyfile',
 		'mkvToMp4.meta.desc': 'Converta MKV para MP4 online grátis. Transforme vídeos MKV em MP4 compatível com celular, navegador e redes sociais. Sem instalação, sem upload e sem marca d’água.',
-		'mkvToMp4.hero.title': 'Converter MKV para MP4<br />online grátis',
+		'mkvToMp4.hero.title': 'Converter MKV para MP4 online grátis',
 		'mkvToMp4.hero.sub': 'Converta vídeos MKV em MP4 para facilitar a reprodução, o envio e o compartilhamento. Ideal para vídeos em alta qualidade, arquivos com legenda e vídeos que não abrem em alguns dispositivos.',
 		'mkvToMp4.pill.mkv': 'MKV para MP4',
 		'mkvToMp4.drop.title': 'Escolha um vídeo MKV',
@@ -2708,7 +2708,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── AVI to MP4 ─────────────────────────────────────────────
 		'aviToMp4.meta.title': 'Converter AVI para MP4｜AVI para MP4 Online Grátis - Squishyfile',
 		'aviToMp4.meta.desc': 'Converta AVI para MP4 online grátis. Transforme vídeos AVI antigos em MP4 compatível com celular, computador e redes sociais. Sem instalação, sem upload e sem marca d’água.',
-		'aviToMp4.hero.title': 'Converter AVI para MP4<br />online grátis',
+		'aviToMp4.hero.title': 'Converter AVI para MP4 online grátis',
 		'aviToMp4.hero.sub': 'Transforme vídeos AVI em MP4 para melhorar a compatibilidade com celulares, computadores, navegadores e plataformas online. Ideal para vídeos antigos, câmeras e gravações de tela.',
 		'aviToMp4.pill.avi': 'AVI para MP4',
 		'aviToMp4.drop.title': 'Escolha um vídeo AVI',
@@ -2745,7 +2745,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── WebM to MP4 ─────────────────────────────────────────────
 		'webmToMp4.meta.title': 'Converter WebM para MP4｜WebM para MP4 Online Grátis - Squishyfile',
 		'webmToMp4.meta.desc': 'Converta WebM para MP4 online grátis. Transforme gravações do navegador, vídeos da web e arquivos WebM em MP4. Sem instalação, sem upload e sem marca d’água.',
-		'webmToMp4.hero.title': 'Converter WebM para MP4<br />online grátis',
+		'webmToMp4.hero.title': 'Converter WebM para MP4 online grátis',
 		'webmToMp4.hero.sub': 'Converta vídeos WebM, gravações do navegador e gravações de tela para MP4. Ideal para enviar, editar ou compartilhar arquivos em plataformas que não aceitam WebM.',
 		'webmToMp4.pill.webm': 'WebM para MP4',
 		'webmToMp4.drop.title': 'Escolha um vídeo WebM',
@@ -2788,7 +2788,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'imageCompressor.meta.title': 'Comprimir Imagem Online Grátis｜JPG, PNG, WebP - Squishyfile',
 		'imageCompressor.meta.desc': 'Compressor de imagem online grátis para JPG, PNG, WebP e AVIF. Reduza o tamanho de fotos e imagens direto no navegador, sem upload, sem instalar e sem marca d’água.',
-		'imageCompressor.hero.title': 'Comprimir imagem<br />online grátis',
+		'imageCompressor.hero.title': 'Comprimir imagem online grátis',
 		'imageCompressor.hero.sub': 'Comprima JPG, PNG, WebP e AVIF direto no navegador. Reduza o tamanho de fotos e arquivos de imagem para enviar, publicar em sites, anexar em e-mails ou compartilhar nas redes sociais',
 
 		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',
@@ -3096,13 +3096,13 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── Video page meta / hero ──────────────────────────────────────────────
 		'compress.meta.title': 'ลดขนาดไฟล์วิดีโอฟรี ออนไลน์ – ไม่ต้องอัปโหลด | Squishyfile',
 		'compress.meta.desc': 'บีบอัดวิดีโอ MP4, MOV, AVI, WebM, MKV ฟรีในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่มีลายน้ำ ไม่ต้องสมัคร ตั้งขนาดไฟล์เป้าหมายสำหรับ LINE, Discord, Gmail, Telegram ได้',
-		'compress.hero.title': 'ลดขนาดไฟล์วิดีโอฟรี<br />ในเบราว์เซอร์ของคุณ',
+		'compress.hero.title': 'ลดขนาดไฟล์วิดีโอฟรีในเบราว์เซอร์ของคุณ',
 		'compress.hero.sub': 'บีบอัดวิดีโอออนไลน์แบบไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ — ทำงานทั้งหมดบนอุปกรณ์ของคุณ',
 
 		// ── PDF page meta / hero ────────────────────────────────────────────────
 		'pdf.meta.title': 'บีบอัดไฟล์ PDF ฟรี ออนไลน์ – ลดขนาด PDF | Squishyfile',
 		'pdf.meta.desc': 'บีบอัดไฟล์ PDF และลดขนาดไฟล์ PDF ฟรีในเบราว์เซอร์ ย่อไฟล์ PDF พร้อมตัวเลือกลบรหัสผ่าน ไม่ต้องอัปโหลดขึ้นเซิร์ฟเวอร์ เป็นส่วนตัว 100%',
-		'pdf.hero.title': 'บีบอัดไฟล์ PDF ฟรี<br />ในเบราว์เซอร์ของคุณ',
+		'pdf.hero.title': 'บีบอัดไฟล์ PDF ฟรี ในเบราว์เซอร์ของคุณ',
 		'pdf.hero.sub': 'ลดขนาดไฟล์ PDF และลบรหัสผ่าน PDF ได้บนอุปกรณ์ของคุณ — ไม่ต้องอัปโหลดไฟล์',
 
 		// ── Home FAQ (brand, overview, privacy, comparison) ─────────────────────
@@ -3255,7 +3255,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'mp3.meta.title': 'แปลงไฟล์ MP4 เป็น MP3 ฟรี ออนไลน์ – ไม่ต้องอัปโหลด | Squishyfile',
 		'mp3.meta.desc': 'แปลงวิดีโอเป็น MP3 และแปลงไฟล์ MP4 เป็น MP3 ได้ฟรีในเบราว์เซอร์ รองรับ MP4, MOV, AVI, WebM, MKV ไม่ต้องอัปโหลด ไม่มีลายน้ำ ไม่ต้องสมัคร',
-		'mp3.hero.title': 'แปลงวิดีโอเป็น MP3<br />ในเบราว์เซอร์ของคุณ',
+		'mp3.hero.title': 'แปลงวิดีโอเป็น MP3ในเบราว์เซอร์ของคุณ',
 		'mp3.hero.sub': 'แยกเสียงออกจากวิดีโอเป็นไฟล์ MP3 แบบส่วนตัว — ไม่ต้องอัปโหลด ไม่ต้องสมัคร ไม่มีลายน้ำ',
 		'mp3.drop.title': 'วางวิดีโอของคุณที่นี่',
 		'mp3.hint': 'MP4, MOV, AVI, WebM, MKV &nbsp;·&nbsp; ส่งออกเป็น MP3',
@@ -3352,7 +3352,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mov-to-mp4
 		'movToMp4.meta.title': 'แปลง MOV เป็น MP4｜แปลงไฟล์ MOV เป็น MP4 ออนไลน์ฟรี - Squishyfile',
 		'movToMp4.meta.desc': 'แปลงไฟล์ MOV เป็น MP4 ออนไลน์ฟรี แปลงวิดีโอ MOV จาก iPhone, Mac หรือ QuickTime เป็น MP4 ไม่ต้องติดตั้ง ไม่ต้องอัปโหลด ไม่มีลายน้ำ ทำงานในเบราว์เซอร์',
-		'movToMp4.hero.title': 'แปลง MOV เป็น MP4<br />ออนไลน์ฟรี',
+		'movToMp4.hero.title': 'แปลง MOV เป็น MP4 ออนไลน์ฟรี',
 		'movToMp4.hero.sub': 'แปลงไฟล์ MOV จาก iPhone, Mac หรือ QuickTime เป็น MP4 ฟรี ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง ไม่ต้องสมัครบัญชี และประมวลผลโดยตรงในเบราว์เซอร์',
 		'movToMp4.pill.mov': 'MOV เป็น MP4',
 		'movToMp4.drop.title': 'เลือกวิดีโอ MOV',
@@ -3389,7 +3389,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// avi-to-mp4
 		'aviToMp4.meta.title': 'แปลง AVI เป็น MP4｜แปลงไฟล์ AVI เป็น MP4 ออนไลน์ฟรี - Squishyfile',
 		'aviToMp4.meta.desc': 'แปลงไฟล์ AVI เป็น MP4 ออนไลน์ฟรี แปลงวิดีโอ AVI จากคอมพิวเตอร์เก่า กล้อง หรือโปรแกรมบันทึกวิดีโอเป็น MP4 ไม่ต้องติดตั้ง ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
-		'aviToMp4.hero.title': 'แปลง AVI เป็น MP4<br />ออนไลน์ฟรี',
+		'aviToMp4.hero.title': 'แปลง AVI เป็น MP4 ออนไลน์ฟรี',
 		'aviToMp4.hero.sub': 'แปลงวิดีโอ AVI เป็น MP4 ที่เข้ากันได้ดีกว่า เหมาะสำหรับวิดีโอจาก Windows รุ่นเก่า กล้อง และไฟล์บันทึกหน้าจอ ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง',
 		'aviToMp4.pill.avi': 'AVI เป็น MP4',
 		'aviToMp4.drop.title': 'เลือกวิดีโอ AVI',
@@ -3426,7 +3426,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// mkv-to-mp4
 		'mkvToMp4.meta.title': 'แปลง MKV เป็น MP4｜แปลงไฟล์ MKV เป็น MP4 ออนไลน์ฟรี - Squishyfile',
 		'mkvToMp4.meta.desc': 'แปลงไฟล์ MKV เป็น MP4 ออนไลน์ฟรี แปลงวิดีโอ MKV คุณภาพสูง วิดีโอมีซับ หรือไฟล์ที่เล่นยากเป็น MP4 ไม่ต้องติดตั้ง ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
-		'mkvToMp4.hero.title': 'แปลง MKV เป็น MP4<br />ออนไลน์ฟรี',
+		'mkvToMp4.hero.title': 'แปลง MKV เป็น MP4 ออนไลน์ฟรี',
 		'mkvToMp4.hero.sub': 'แปลงวิดีโอ MKV เป็น MP4 ที่เข้ากันได้ดีกว่า เหมาะสำหรับวิดีโอคุณภาพสูง วิดีโอมีซับ และไฟล์ที่เปิดเล่นยาก ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง',
 		'mkvToMp4.pill.mkv': 'MKV เป็น MP4',
 		'mkvToMp4.drop.title': 'เลือกวิดีโอ MKV',
@@ -3463,7 +3463,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// webm-to-mp4
 		'webmToMp4.meta.title': 'แปลง WebM เป็น MP4｜แปลงไฟล์ WebM เป็น MP4 ออนไลน์ฟรี - Squishyfile',
 		'webmToMp4.meta.desc': 'แปลงไฟล์ WebM เป็น MP4 ออนไลน์ฟรี แปลงวิดีโอ WebM จากเบราว์เซอร์ การบันทึกหน้าจอ หรือเว็บเป็น MP4 ไม่ต้องติดตั้ง ไม่ต้องอัปโหลด ไม่มีลายน้ำ',
-		'webmToMp4.hero.title': 'แปลง WebM เป็น MP4<br />ออนไลน์ฟรี',
+		'webmToMp4.hero.title': 'แปลง WebM เป็น MP4 ออนไลน์ฟรี',
 		'webmToMp4.hero.sub': 'แปลงวิดีโอ WebM วิดีโอจากเบราว์เซอร์ และไฟล์บันทึกหน้าจอเป็น MP4 ฟรี ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง ไม่ต้องสมัครบัญชี และทำงานในเบราว์เซอร์',
 		'webmToMp4.pill.webm': 'WebM เป็น MP4',
 		'webmToMp4.drop.title': 'เลือกวิดีโอ WebM',
@@ -3501,7 +3501,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// ── Image compressor hub / page ─────────────────────────────────────────
 		'imageCompressor.meta.title': 'บีบอัดไฟล์รูปภาพออนไลน์ฟรี｜ลดขนาดรูป JPG PNG WebP AVIF - Squishyfile',
 		'imageCompressor.meta.desc': 'บีบอัดไฟล์รูปภาพและลดขนาดรูปออนไลน์ฟรี รองรับ JPG, PNG, WebP และ AVIF ทำงานในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่ต้องติดตั้ง และไม่มีลายน้ำ',
-		'imageCompressor.hero.title': 'บีบอัดไฟล์รูปภาพ<br />ออนไลน์ฟรี',
+		'imageCompressor.hero.title': 'บีบอัดไฟล์รูปภาพออนไลน์ฟรี',
 		'imageCompressor.hero.sub': 'ลดขนาดรูป JPG, PNG, WebP และ AVIF ได้โดยตรงในเบราว์เซอร์ รวดเร็ว เป็นส่วนตัว และใช้งานฟรี',
 
 		'imageCompressor.pill.images': 'JPG, PNG, WebP, AVIF',

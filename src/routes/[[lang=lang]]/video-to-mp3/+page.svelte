@@ -194,6 +194,15 @@
 
 	<!-- Hero -->
 	<section class="hero">
+			<h1>{@html t("mp3.hero.title")}</h1>
+			<p class="hero-sub">{t("mp3.hero.sub")}</p>
+			<div class="hero-pills">
+				<div class="pill"><span class="pill-ico">🔒</span>{t("hero.pill1")}</div>
+				<div class="pill"><span class="pill-ico">✨</span>{t("hero.pill2")}</div>
+				<div class="pill"><span class="pill-ico">⚡</span>{t("hero.pill3")}</div>
+			</div>
+	</section>
+	<!-- <section class="hero">
 		<h1>{@html t("mp3.hero.title")}</h1>
 		<p>{t("mp3.hero.sub")}</p>
 		<div class="pills">
@@ -201,7 +210,7 @@
 			<div class="pill"><span class="dot"></span><span>{t("hero.pill2")}</span></div>
 			<div class="pill"><span class="dot"></span><span>{t("hero.pill3")}</span></div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- Drop zone -->
 	{#if !file}

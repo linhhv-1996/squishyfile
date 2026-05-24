@@ -148,18 +148,11 @@
 	<div class="wrap">
 		<section class="hero">
 			<h1>{@html copy.heroTitle}</h1>
-			<p>{copy.heroSub}</p>
-
-			<div class="pills">
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill1}</span>
-				</div>
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill2}</span>
-				</div>
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill3}</span>
-				</div>
+			<p class="hero-sub">{copy.heroSub}</p>
+			<div class="hero-pills">
+				<div class="pill"><span class="pill-ico">🔒</span>{copy.pill1}</div>
+				<div class="pill"><span class="pill-ico">✨</span>{copy.pill2}</div>
+				<div class="pill"><span class="pill-ico">⚡</span>{copy.pill3}</div>
 			</div>
 		</section>
 

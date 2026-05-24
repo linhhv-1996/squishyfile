@@ -133,11 +133,11 @@
 	<!-- Hero — uses global .hero styles -->
 	<section class="hero">
 		<h1>{@html t("pdf.hero.title")}</h1>
-		<p>{t("pdf.hero.sub")}</p>
-		<div class="pills">
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill1")}</span></div>
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill2")}</span></div>
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill3")}</span></div>
+		<p class="hero-sub">{t("pdf.hero.sub")}</p>
+		<div class="hero-pills">
+			<div class="pill"><span class="pill-ico">🔒</span>{t("hero.pill1")}</div>
+			<div class="pill"><span class="pill-ico">✨</span>{t("hero.pill2")}</div>
+			<div class="pill"><span class="pill-ico">⚡</span>{t("hero.pill3")}</div>
 		</div>
 	</section>
 

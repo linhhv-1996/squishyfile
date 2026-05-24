@@ -380,4 +380,7 @@
 			padding: 10px 14px;
 		}
 	}
+	.pills{
+		justify-content: flex-start;
+	}
 </style>
