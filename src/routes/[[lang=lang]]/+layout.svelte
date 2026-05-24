@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw, FileImage } from 'lucide-svelte';
+	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw, FileImage, ScanBarcode } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -66,6 +66,7 @@
 	let imageCompressorHref = $derived(`${prefix}/image-compressor`);
 	let videoToMp3Href = $derived(`${prefix}/video-to-mp3`);
 	let videoConverterHref = $derived(`${prefix}/video-converter`);
+	let barcodeGeneratorHref = $derived(`${prefix}/barcode-generator`);
 	let privacyHref = $derived(`${prefix}/privacy`);
 	let termsHref = $derived(`${prefix}/terms`);
 	let contactHref = $derived(`${prefix}/contact`);
@@ -94,8 +95,13 @@
 			$page.url.pathname.includes('/webm-to-mp4')
 	);
 
+	let isBarcodeGenerator = $derived(
+		$page.url.pathname.includes('/barcode-generator') || 
+		$page.url.pathname.includes('/jan-code-generator')
+	);
+
 	let isToolPage = $derived(
-		isCompressVideo || isCompressPdf || isImageCompressor || isVideoToMp3 || isVideoConverter
+		isCompressVideo || isCompressPdf || isImageCompressor || isVideoToMp3 || isVideoConverter || isBarcodeGenerator
 	);
 
 	let toolsLabel = $derived(t('nav.tools') !== 'nav.tools' ? t('nav.tools') : 'Tools');
@@ -150,6 +156,13 @@
 			currentPath === '/reduce-image-size' || currentPath.startsWith('/reduce-image-size/')
 		) {
 			return `/og/image-compressor/${lang}.png`;
+		}
+
+		if (
+			currentPath === '/barcode-generator' || currentPath.startsWith('/barcode-generator/') || 
+			currentPath === '/jan-code-generator' || currentPath.startsWith('/jan-code-generator/')
+		){
+			return `/og/barcode-generator/${lang}.png`;
 		}
 
 		return `/og/${lang}.png`;
@@ -249,6 +262,11 @@
 						<Music size={13} strokeWidth={2.2} />
 						<span>{t('tab.mp3')}</span>
 					</a>
+
+					<a href={barcodeGeneratorHref} class:active={isBarcodeGenerator} onclick={() => (toolsOpen = false)}>
+						<ScanBarcode size={13} strokeWidth={2.2} />
+						<span>{t('tab.barcode') || 'Barcode Generator'}</span>
+					</a>
 				</div>
 			</div>
 
@@ -317,6 +335,10 @@
 
 	<a href={videoToMp3Href} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><Music size={18} /></span><span>{t('tab.mp3')}</span>
+	</a>
+
+	<a href={barcodeGeneratorHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><ScanBarcode size={18} /></span><span>{t('tab.barcode') || 'Barcode Generator'}</span>
 	</a>
 
 	<a href={blogHref} class="mm-link" onclick={closeMobileMenu}>

@@ -23,6 +23,9 @@
 	let convertHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/video-converter` : '/video-converter'
 	);
+	let barcodeHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/barcode-generator` : '/barcode-generator'
+	);
 </script>
 
 <svelte:head>
@@ -142,6 +145,28 @@
 				</div>
 				<div class="tc-cta tc-cta--convert">
 					{t('home.card.convert.cta')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
+			<a href={barcodeHref} class="tool-card tool-card--barcode">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{t('home.card.barcode.title')}</h2>
+						<p class="tc-desc">{t('home.card.barcode.desc')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">CODE 128</span>
+							<span class="tc-tag">EAN-13</span>
+							<span class="tc-tag">UPC-A</span>
+							<span class="tc-tag">PNG</span>
+							<span class="tc-tag">SVG</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--barcode">
+					{t('home.card.barcode.cta')} <ArrowRight size={14} strokeWidth={2.2} />
 				</div>
 			</a>
 
@@ -333,7 +358,8 @@
 	.tc-cta--pdf,
 	.tc-cta--mp3,
 	.tc-cta--convert,
-	.tc-cta--image {
+	.tc-cta--image,
+	.tc-cta--barcode {
 		background: transparent;
 		color: var(--accent);
 	}

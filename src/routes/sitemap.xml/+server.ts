@@ -20,6 +20,8 @@ const STATIC_PAGES = ['',
 	'jpg-compressor',
 	'png-compressor',
 	'reduce-image-size',
+	'barcode-generator',
+	'jan-code-generator',
 	'blog'
 	] as const;
 

@@ -1,4 +1,5 @@
 import {
+	Barcode,
 	FileText,
 	Image,
 	Music,
@@ -19,7 +20,8 @@ export type ToolSlug =
 	| 'image-compressor'
 	| 'jpg-compressor'
 	| 'png-compressor'
-	| 'reduce-image-size';
+	| 'reduce-image-size'
+	| 'barcode-generator';
 
 export type ToolConfig = {
 	slug: ToolSlug;
@@ -107,7 +109,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'home.card.image.title',
 		descKey: 'home.card.image.desc',
-		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'compress-pdf']
+		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'barcode-generator']
 	},
 
 	'jpg-compressor': {
@@ -115,7 +117,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.jpgCompressor.title',
 		descKey: 'related.jpgCompressor.desc',
-		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'compress-pdf']
+		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'barcode-generator']
 	},
 
 	'png-compressor': {
@@ -131,7 +133,15 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.reduceImageSize.title',
 		descKey: 'related.reduceImageSize.desc',
-		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'compress-pdf']
+		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'barcode-generator']
+	},
+
+	'barcode-generator': {
+		slug: 'barcode-generator',
+		icon: Barcode,
+		titleKey: 'home.card.barcode.title',
+		descKey: 'home.card.barcode.desc',
+		related: ['image-compressor', 'jpg-compressor', 'reduce-image-size', 'compress-pdf']
 	}
 };
 

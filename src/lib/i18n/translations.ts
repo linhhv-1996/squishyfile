@@ -306,7 +306,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.mp3.7.a': 'Yes. It works in modern mobile browsers on iPhone and Android, although large files may process better on a desktop or laptop.',
 		'faq.mp3.8.q': 'What happens if I close the tab?',
 		'faq.mp3.8.a': 'If you close the tab during conversion, the process stops. Keep the tab open until the MP3 file is ready.',
-	
+
 		'nav.tools': 'Tools',
 		'tab.convert': 'Convert',
 		// Convert Video
@@ -771,6 +771,135 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'related.reduceImageSize.title': 'Reduce Image Size',
 		'related.reduceImageSize.desc': 'Make images smaller for uploads, email, forms and websites.',
+
+
+		// ─── BARCODE GENERATOR — Translation keys for all 5 languages ────────────────
+		"home.card.barcode.title": "Barcode Generator",
+		"home.card.barcode.desc": "Create single or bulk barcodes online. Supports CODE 128, CODE 39, EAN-13, UPC-A, ITF-14 and more. Free, private, no upload.",
+		"home.card.barcode.cta": "Generate Barcode",
+
+		"related.barcodeGenerator.title": "Barcode Generator",
+		"related.barcodeGenerator.desc": "Create single or bulk barcodes in your browser and download them as PNG or SVG.",
+
+		"barcode.meta.title": "Free Barcode Generator Online｜Create Single or Bulk Barcodes",
+		"barcode.meta.desc": "Create barcodes online for free. Generate one barcode or bulk barcodes with CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN and ITF-14. Download as PNG or SVG. No upload, no account.",
+		"barcode.hero.title": "Free Online Barcode Generator",
+		"barcode.hero.sub": "Create one barcode or generate barcodes in bulk directly in your browser. Supports CODE 128, CODE 39, EAN, UPC, JAN and ITF-14.",
+		"barcode.pill.free": "Free, no account",
+		"barcode.pill.noUpload": "No server upload",
+		"barcode.pill.bulk": "Single & bulk",
+
+		"barcode.mode.label": "Mode",
+		"barcode.mode.single": "Single barcode",
+		"barcode.mode.bulk": "Bulk barcodes",
+
+		"barcode.value.label": "Value",
+		"barcode.value.placeholder": "Enter text or number…",
+		"barcode.file.label": "Filename",
+		"barcode.format.label": "Barcode format",
+		"barcode.height.label": "Height",
+		"barcode.lineWidth.label": "Line width",
+		"barcode.showText.label": "Show text",
+		"barcode.showText.on": "Show",
+		"barcode.showText.off": "Hide",
+		"barcode.customText.label": "Display text",
+		"barcode.customText.placeholder": "Leave empty to show encoded value",
+		"barcode.output.label": "File format",
+
+		"barcode.format.code128.sub": "Best default",
+		"barcode.format.code39.sub": "Letters & numbers",
+		"barcode.format.ean13.sub": "Retail products",
+		"barcode.format.jan.sub": "Japan retail",
+		"barcode.format.ean8.sub": "Short retail",
+		"barcode.format.upca.sub": "US retail",
+		"barcode.format.itf14.sub": "Cartons & shipping",
+
+		"barcode.btn.generate": "Generate Barcode",
+		"barcode.btn.generateAll": "Generate All Barcodes",
+		"barcode.btn.addRow": "Add row",
+		"barcode.btn.download": "Download Barcode",
+		"barcode.btn.downloadAll": "Download All (ZIP)",
+		"barcode.btn.new": "Generate new barcode",
+		"barcode.btn.remove": "Remove",
+
+		"barcode.res.title": "Barcode generated",
+		"barcode.res.bulkDone": "{n} barcode(s) ready to download",
+
+		"barcode.note.privacy": "<strong>Your data never leaves your device.</strong> Barcodes are generated entirely in your browser — no values are sent to a server.",
+
+		"barcode.error.empty": "Please enter a value.",
+		"barcode.error.invalid": "Invalid value for this barcode format. Check the required length and allowed characters.",
+		"barcode.error.generate": "Could not generate barcode. Try a different value or format.",
+
+		"faq.barcode.title": "Barcode Generator FAQ",
+		"faq.barcode.1.q": "Is this barcode generator free?",
+		"faq.barcode.1.a": "Yes. You can create barcodes online for free without creating an account, installing software or adding a watermark.",
+		"faq.barcode.2.q": "Can I create one barcode or many barcodes at once?",
+		"faq.barcode.2.a": "Yes. Use Single barcode mode for one code, or Bulk barcodes mode to enter multiple values and generate them together.",
+		"faq.barcode.3.q": "Are my barcode values uploaded to a server?",
+		"faq.barcode.3.a": "No. Barcode generation runs inside your browser. The values you enter stay on your device and are not uploaded to a server.",
+		"faq.barcode.4.q": "Which barcode formats are supported?",
+		"faq.barcode.4.a": "The tool supports CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN and ITF-14. CODE 128 is a good default for most text, SKU, inventory and internal tracking codes.",
+		"faq.barcode.5.q": "What is the best barcode format to use?",
+		"faq.barcode.5.a": "Use CODE 128 for general text, numbers, SKUs and inventory labels. Use EAN-13, JAN or UPC-A for retail product codes, and ITF-14 for cartons or shipping units.",
+		"faq.barcode.6.q": "Can I download the barcode as PNG or SVG?",
+		"faq.barcode.6.a": "Yes. You can download barcodes as PNG for quick use and printing, or SVG for scalable vector graphics that stay sharp at any size.",
+		"faq.barcode.7.q": "Why is EAN-13, JAN or UPC-A rejecting my value?",
+		"faq.barcode.7.a": "EAN-13 and JAN require 13 digits, while UPC-A requires 12 digits. If your value contains letters or has a different length, use CODE 128 instead.",
+		"faq.barcode.8.q": "Can I use this barcode generator on mobile?",
+		"faq.barcode.8.a": "Yes. The barcode generator works in modern mobile browsers on iPhone and Android. For large bulk barcode jobs, a desktop or laptop may be faster.",
+
+		// ─── JAN CODE GENERATOR — Dedicated LP (/jan-code-generator) ────────────────
+		"home.card.janCode.title": "JAN Code Generator",
+		"home.card.janCode.desc": "Create Japanese JAN barcodes online for products, labels and retail packaging. Free, private, no upload.",
+		"home.card.janCode.cta": "Generate JAN Code",
+
+		"related.janCodeGenerator.title": "JAN Code Generator",
+		"related.janCodeGenerator.desc": "Generate JAN codes for Japanese retail products and download them as PNG or SVG.",
+
+		"janCode.meta.title": "JAN Code Generator Online Free｜Create JAN Barcodes",
+		"janCode.meta.desc": "Create JAN codes online for free. Generate Japanese retail barcodes in your browser, one by one or in bulk. Download as PNG or SVG. No upload, no account.",
+		"janCode.hero.title": "Free Online JAN Code Generator",
+		"janCode.hero.sub": "Create JAN barcodes for Japanese retail products directly in your browser. Enter a 13-digit JAN value, generate one code or bulk codes, and download PNG or SVG files.",
+		"janCode.pill.free": "Free JAN generator",
+		"janCode.pill.noUpload": "No server upload",
+		"janCode.pill.bulk": "Single & bulk JAN",
+
+		"janCode.value.label": "JAN code value",
+		"janCode.value.placeholder": "Enter 13-digit JAN code…",
+		"janCode.format.label": "JAN format",
+		"janCode.format.jan.sub": "Japan retail",
+		"janCode.btn.generate": "Generate JAN Code",
+		"janCode.btn.generateAll": "Generate All JAN Codes",
+		"janCode.btn.download": "Download JAN Code",
+		"janCode.btn.downloadAll": "Download All JAN Codes (ZIP)",
+		"janCode.btn.new": "Generate new JAN code",
+		"janCode.res.title": "JAN code generated",
+		"janCode.res.bulkDone": "{n} JAN code(s) ready to download",
+		"janCode.note.privacy": "<strong>Your JAN values never leave your device.</strong> JAN codes are generated entirely in your browser — no product codes are sent to a server.",
+		"janCode.error.empty": "Please enter a JAN code value.",
+		"janCode.error.invalid": "Invalid JAN value. JAN codes must be 13 digits and pass the barcode validation rules.",
+		"janCode.error.generate": "Could not generate the JAN code. Check the digits and try again.",
+
+		"faq.janCode.title": "JAN Code Generator FAQ",
+		"faq.janCode.1.q": "Is this JAN code generator free?",
+		"faq.janCode.1.a": "Yes. You can create JAN barcodes online for free without creating an account, installing software or adding a watermark.",
+		"faq.janCode.2.q": "What is a JAN code?",
+		"faq.janCode.2.a": "A JAN code is the barcode format commonly used for retail products in Japan. It is compatible with EAN-13 style barcodes and is typically printed as 13 digits.",
+		"faq.janCode.3.q": "Can I generate multiple JAN codes at once?",
+		"faq.janCode.3.a": "Yes. Use bulk mode to enter several 13-digit JAN values and generate them together, then download the files in a ZIP.",
+		"faq.janCode.4.q": "Are my JAN codes uploaded to a server?",
+		"faq.janCode.4.a": "No. JAN barcode generation runs inside your browser. The values you enter stay on your device and are not uploaded to a server.",
+		"faq.janCode.5.q": "How many digits does a JAN code need?",
+		"faq.janCode.5.a": "JAN codes use 13 digits. If the value has letters, spaces or the wrong length, the generator will reject it.",
+		"faq.janCode.6.q": "Can I download a JAN code as PNG or SVG?",
+		"faq.janCode.6.a": "Yes. Download PNG for quick use and printing, or SVG when you need a scalable barcode for labels, packaging or design files.",
+		"faq.janCode.7.q": "Can I create JAN codes for product labels?",
+		"faq.janCode.7.a": "Yes. This tool is useful for creating JAN barcode images for product labels, packaging mockups, inventory sheets and internal checks. Make sure the JAN number itself is valid for your product use case.",
+		"faq.janCode.8.q": "Does the tool work on mobile?",
+		"faq.janCode.8.a": "Yes. The JAN code generator works in modern mobile browsers on iPhone and Android. For large bulk jobs, a desktop or laptop may be faster.",
+		"tab.barcode": "Barcode Generator",
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -1116,7 +1245,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.convert.7.a': '変換中にタブを閉じると処理が中断されます。変換が完了するまで、タブを開いたままにしてください。',
 		'faq.convert.8.q': '動画を変換できない場合はどうすればいいですか？',
 		'faq.convert.8.a': 'ファイル形式やコーデックが特殊な場合、大きすぎる動画、古いブラウザ、空きメモリ不足などが原因になることがあります。別のプレイヤーで再生できるか確認し、ブラウザを最新版にして、必要に応じてPCで試してください。',
-		
+
 		'nav.tools': 'ツール',
 		'tab.convert': '変換',
 		// ── Video converter page ───────────────────────────────────────────────────
@@ -1217,7 +1346,7 @@ export const translations: Record<string, Record<string, string>> = {
 		"faq.aviToMp4.5.a": "いいえ。ダウンロードされるMP4ファイルにSquishyfileの透かしは追加されません。",
 		"faq.aviToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
 		"faq.aviToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
-		
+
 		// mkv-to-mp4
 		"mkvToMp4.meta.title": "MKV MP4変換｜MKVをMP4に無料変換 - Squishyfile",
 		"mkvToMp4.meta.desc": "MKVをMP4に無料変換。再生しにくいMKV動画をブラウザでMP4化。インストール不要・アップロード不要・透かしなし。",
@@ -1463,7 +1592,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.reduceImageSize.5.a': 'はい。複数の画像を追加して、まとめてファイル容量を小さくできます。写真やサイト用画像を一括で軽量化したいときに便利です',
 		'faq.reduceImageSize.6.q': '品質を下げるのと幅を小さくするのはどちらがよいですか？',
 		'faq.reduceImageSize.6.a': '大きく容量を減らしたい場合は、品質調整と幅の縮小を組み合わせるのがおすすめです。画質をなるべく保ちたい場合は、品質を少しずつ下げて結果を確認してください',
-		
+
 
 		"common.image": "画像",
 		"common.images": "画像",
@@ -1510,6 +1639,135 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'related.reduceImageSize.title': '画像サイズを縮小',
 		'related.reduceImageSize.desc': 'アップロード、メール、フォーム、Webサイト用に画像を小さくできます。',
+
+
+		// ─── BARCODE GENERATOR — Translation keys for all 5 languages ────────────────
+		"home.card.barcode.title": "バーコード作成",
+		"home.card.barcode.desc": "1枚のバーコード作成から一括生成まで対応。CODE 128、CODE 39、EAN-13、UPC-A、ITF-14などを無料で作成できます。",
+		"home.card.barcode.cta": "バーコードを作成",
+
+		"related.barcodeGenerator.title": "バーコード作成",
+		"related.barcodeGenerator.desc": "ブラウザ上でバーコードを1枚または複数まとめて作成し、PNG/SVGでダウンロードできます。",
+
+		"barcode.meta.title": "バーコード作成 無料オンライン｜1枚・一括生成対応",
+		"barcode.meta.desc": "バーコードを無料でオンライン作成。CODE 128、CODE 39、EAN-13、EAN-8、UPC-A、JAN、ITF-14に対応。1枚または複数のバーコードを作成し、PNG/SVGでダウンロード。アップロード不要・登録不要。",
+		"barcode.hero.title": "無料オンラインバーコード作成ツール",
+		"barcode.hero.sub": "1枚のバーコード作成から複数バーコードの一括生成まで、ブラウザ上で完結。CODE 128、CODE 39、EAN、UPC、JAN、ITF-14に対応しています。",
+		"barcode.pill.free": "無料・登録不要",
+		"barcode.pill.noUpload": "サーバー送信なし",
+		"barcode.pill.bulk": "1枚・一括対応",
+
+		"barcode.mode.label": "モード",
+		"barcode.mode.single": "1枚作成",
+		"barcode.mode.bulk": "一括作成",
+
+		"barcode.value.label": "値",
+		"barcode.value.placeholder": "文字または数字を入力…",
+		"barcode.file.label": "ファイル名",
+		"barcode.format.label": "バーコード形式",
+		"barcode.height.label": "高さ",
+		"barcode.lineWidth.label": "線の太さ",
+		"barcode.showText.label": "文字を表示",
+		"barcode.showText.on": "表示",
+		"barcode.showText.off": "非表示",
+		"barcode.customText.label": "表示テキスト",
+		"barcode.customText.placeholder": "空白の場合はエンコード値を表示",
+		"barcode.output.label": "ファイル形式",
+
+		"barcode.format.code128.sub": "標準向け",
+		"barcode.format.code39.sub": "英数字",
+		"barcode.format.ean13.sub": "小売商品",
+		"barcode.format.jan.sub": "日本小売",
+		"barcode.format.ean8.sub": "短い小売コード",
+		"barcode.format.upca.sub": "米国小売",
+		"barcode.format.itf14.sub": "物流・外装箱",
+
+		"barcode.btn.generate": "バーコードを作成",
+		"barcode.btn.generateAll": "すべてのバーコードを作成",
+		"barcode.btn.addRow": "行を追加",
+		"barcode.btn.download": "バーコードをダウンロード",
+		"barcode.btn.downloadAll": "すべてダウンロード（ZIP）",
+		"barcode.btn.new": "新しいバーコードを作成",
+		"barcode.btn.remove": "削除",
+
+		"barcode.res.title": "バーコードを作成しました",
+		"barcode.res.bulkDone": "{n}件のバーコードをダウンロードできます",
+
+		"barcode.note.privacy": "<strong>入力データは端末の外へ送信されません。</strong> バーコードはブラウザ内で生成され、入力した値がサーバーへ送られることはありません。",
+
+		"barcode.error.empty": "値を入力してください。",
+		"barcode.error.invalid": "このバーコード形式では無効な値です。必要な桁数と使用できる文字を確認してください。",
+		"barcode.error.generate": "バーコードを作成できませんでした。別の値または形式を試してください。",
+
+		"faq.barcode.title": "バーコード作成のよくある質問",
+		"faq.barcode.1.q": "このバーコード作成ツールは無料ですか？",
+		"faq.barcode.1.a": "はい。登録やソフトのインストールなしで、無料でオンラインバーコードを作成できます。透かしも入りません。",
+		"faq.barcode.2.q": "1枚だけでなく複数のバーコードも作成できますか？",
+		"faq.barcode.2.a": "はい。1枚作成モードでは1つのバーコードを作成でき、一括作成モードでは複数の値を入力してまとめて生成できます。",
+		"faq.barcode.3.q": "入力したバーコードの値はサーバーに送信されますか？",
+		"faq.barcode.3.a": "いいえ。バーコード生成はブラウザ内で実行されます。入力した値は端末内に残り、サーバーへアップロードされません。",
+		"faq.barcode.4.q": "どのバーコード形式に対応していますか？",
+		"faq.barcode.4.a": "CODE 128、CODE 39、EAN-13、EAN-8、UPC-A、JAN、ITF-14に対応しています。SKU、在庫管理、社内管理コードにはCODE 128が使いやすい標準形式です。",
+		"faq.barcode.5.q": "どのバーコード形式を選べばいいですか？",
+		"faq.barcode.5.a": "一般的な文字列、数字、SKU、在庫ラベルにはCODE 128がおすすめです。小売商品コードにはEAN-13、JAN、UPC-A、外装箱や物流用途にはITF-14を使います。",
+		"faq.barcode.6.q": "PNGやSVGでダウンロードできますか？",
+		"faq.barcode.6.a": "はい。印刷や通常利用にはPNG、拡大しても劣化しないベクター形式が必要な場合はSVGでダウンロードできます。",
+		"faq.barcode.7.q": "EAN-13、JAN、UPC-Aで値が無効になるのはなぜですか？",
+		"faq.barcode.7.a": "EAN-13とJANは13桁、UPC-Aは12桁の数字が必要です。文字を含む値や桁数が異なる値を使う場合は、CODE 128を選んでください。",
+		"faq.barcode.8.q": "スマートフォンでも使えますか？",
+		"faq.barcode.8.a": "はい。iPhoneやAndroidのモダンブラウザで利用できます。大量のバーコードを一括作成する場合は、パソコンの方が速く処理できます。",
+
+		// ─── JAN CODE GENERATOR — Dedicated LP (/jan-code-generator) ────────────────
+		"home.card.janCode.title": "JANコード作成",
+		"home.card.janCode.desc": "JANコードを無料でオンライン作成。日本の商品ラベル・小売バーコード・JANバーコード画像をブラウザ上で生成できます。",
+		"home.card.janCode.cta": "JANコードを作成",
+
+		"related.janCodeGenerator.title": "JANコード作成",
+		"related.janCodeGenerator.desc": "日本の小売商品向けJANコードを作成し、PNG/SVGでダウンロードできます。",
+
+		"janCode.meta.title": "JANコード作成 無料オンライン｜JANバーコード生成",
+		"janCode.meta.desc": "JANコードを無料でオンライン作成。13桁のJANバーコードをブラウザ上で1件または一括生成し、PNG/SVGでダウンロードできます。アップロード不要・登録不要。",
+		"janCode.hero.title": "JANコード作成 無料オンラインツール",
+		"janCode.hero.sub": "日本の商品バーコード向けに、13桁のJANコードをブラウザ上で作成できます。1件ずつの作成にも、複数JANコードの一括生成にも対応しています。",
+		"janCode.pill.free": "無料JANコード作成",
+		"janCode.pill.noUpload": "サーバー送信なし",
+		"janCode.pill.bulk": "1件・一括対応",
+
+		"janCode.value.label": "JANコード値",
+		"janCode.value.placeholder": "13桁のJANコードを入力…",
+		"janCode.format.label": "JAN形式",
+		"janCode.format.jan.sub": "日本の商品バーコード",
+		"janCode.btn.generate": "JANコードを作成",
+		"janCode.btn.generateAll": "すべてのJANコードを作成",
+		"janCode.btn.download": "JANコードをダウンロード",
+		"janCode.btn.downloadAll": "すべてのJANコードをダウンロード（ZIP）",
+		"janCode.btn.new": "新しいJANコードを作成",
+		"janCode.res.title": "JANコードを作成しました",
+		"janCode.res.bulkDone": "{n}件のJANコードをダウンロードできます",
+		"janCode.note.privacy": "<strong>入力したJANコードは端末の外へ送信されません。</strong> JANコードはブラウザ内で生成され、商品コードがサーバーへ送られることはありません。",
+		"janCode.error.empty": "JANコードを入力してください。",
+		"janCode.error.invalid": "JANコードとして無効な値です。13桁の数字で、バーコードの検証ルールを満たしているか確認してください。",
+		"janCode.error.generate": "JANコードを作成できませんでした。数字を確認してもう一度お試しください。",
+
+		"faq.janCode.title": "JANコード作成のよくある質問",
+		"faq.janCode.1.q": "このJANコード作成ツールは無料ですか？",
+		"faq.janCode.1.a": "はい。登録やソフトのインストールなしで、無料でJANバーコードを作成できます。透かしも入りません。",
+		"faq.janCode.2.q": "JANコードとは何ですか？",
+		"faq.janCode.2.a": "JANコードは、日本の小売商品で広く使われる商品識別用バーコードです。EAN-13形式と互換性があり、通常は13桁の数字で表されます。",
+		"faq.janCode.3.q": "複数のJANコードを一括作成できますか？",
+		"faq.janCode.3.a": "はい。一括作成モードで複数の13桁JANコードを入力し、まとめて生成してZIPでダウンロードできます。",
+		"faq.janCode.4.q": "入力したJANコードはサーバーに送信されますか？",
+		"faq.janCode.4.a": "いいえ。JANコードの生成はブラウザ内で実行されます。入力した値は端末内に残り、サーバーへアップロードされません。",
+		"faq.janCode.5.q": "JANコードは何桁必要ですか？",
+		"faq.janCode.5.a": "JANコードは13桁の数字です。文字、スペース、桁数違いの値は生成時にエラーになります。",
+		"faq.janCode.6.q": "JANコードをPNGやSVGで保存できますか？",
+		"faq.janCode.6.a": "はい。通常の利用や印刷にはPNG、商品ラベル・パッケージ・デザインデータで拡大して使う場合はSVGでダウンロードできます。",
+		"faq.janCode.7.q": "商品ラベル用のJANコード画像を作れますか？",
+		"faq.janCode.7.a": "はい。商品ラベル、パッケージのモックアップ、在庫表、社内確認用のJANバーコード画像作成に使えます。実際の商品利用ではJAN番号自体が正しく割り当てられているか確認してください。",
+		"faq.janCode.8.q": "スマートフォンでも使えますか？",
+		"faq.janCode.8.a": "はい。iPhoneやAndroidのモダンブラウザで利用できます。大量のJANコードを一括作成する場合は、パソコンの方が速く処理できます。",
+		"tab.barcode": 'バーコード作成',
+
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -2005,7 +2263,7 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.webmToMp4.8.q': '轉檔時關掉分頁會怎樣？',
 		'faq.webmToMp4.8.a': '轉檔中關掉分頁會中斷處理。請保持頁面開啟，直到 MP4 檔案準備好下載。',
 
-		
+
 		// ── Image compressor hub / page — Traditional Chinese Taiwan ─────────────
 		// URL: /image-compressor
 		// Primary intent: "圖片壓縮", "照片壓縮", "線上圖片壓縮"
@@ -2242,6 +2500,135 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'related.reduceImageSize.title': '縮小圖片大小',
 		'related.reduceImageSize.desc': '將圖片縮小，方便上傳、寄信、填表單或用於網站。',
+
+		// ─── BARCODE GENERATOR — Translation keys for all 5 languages ────────────────
+		"home.card.barcode.title": "條碼產生器",
+		"home.card.barcode.desc": "免費線上產生單一或批量條碼，支援 CODE 128、CODE 39、EAN-13、UPC-A、ITF-14 等格式，免上傳、免安裝。",
+		"home.card.barcode.cta": "產生條碼",
+
+		"related.barcodeGenerator.title": "條碼產生器",
+		"related.barcodeGenerator.desc": "在瀏覽器中產生單一或批量條碼，並下載為 PNG 或 SVG。",
+
+		"barcode.meta.title": "免費線上條碼產生器｜單一與批量條碼產生",
+		"barcode.meta.desc": "免費線上條碼產生器，可產生單一或批量條碼。支援 CODE 128、CODE 39、EAN-13、EAN-8、UPC-A、JAN、ITF-14，下載 PNG 或 SVG，免上傳、免帳號。",
+		"barcode.hero.title": "免費線上條碼產生器",
+		"barcode.hero.sub": "在瀏覽器中產生一個條碼，或一次批量產生多個條碼。支援 CODE 128、CODE 39、EAN、UPC、JAN、ITF-14。",
+		"barcode.pill.free": "免費，免帳號",
+		"barcode.pill.noUpload": "不上傳伺服器",
+		"barcode.pill.bulk": "單一與批量",
+
+		"barcode.mode.label": "模式",
+		"barcode.mode.single": "單一條碼",
+		"barcode.mode.bulk": "批量條碼",
+
+		"barcode.value.label": "數值",
+		"barcode.value.placeholder": "輸入文字或數字…",
+		"barcode.file.label": "檔案名稱",
+		"barcode.format.label": "條碼格式",
+		"barcode.height.label": "高度",
+		"barcode.lineWidth.label": "線條寬度",
+		"barcode.showText.label": "顯示文字",
+		"barcode.showText.on": "顯示",
+		"barcode.showText.off": "隱藏",
+		"barcode.customText.label": "顯示文字",
+		"barcode.customText.placeholder": "留空則顯示編碼數值",
+		"barcode.output.label": "檔案格式",
+
+		"barcode.format.code128.sub": "預設推薦",
+		"barcode.format.code39.sub": "英數字",
+		"barcode.format.ean13.sub": "零售商品",
+		"barcode.format.jan.sub": "日本零售",
+		"barcode.format.ean8.sub": "短版零售",
+		"barcode.format.upca.sub": "美國零售",
+		"barcode.format.itf14.sub": "外箱與物流",
+
+		"barcode.btn.generate": "產生條碼",
+		"barcode.btn.generateAll": "產生所有條碼",
+		"barcode.btn.addRow": "新增一列",
+		"barcode.btn.download": "下載條碼",
+		"barcode.btn.downloadAll": "全部下載（ZIP）",
+		"barcode.btn.new": "產生新條碼",
+		"barcode.btn.remove": "移除",
+
+		"barcode.res.title": "條碼已產生",
+		"barcode.res.bulkDone": "{n} 個條碼已準備好下載",
+
+		"barcode.note.privacy": "<strong>你的資料不會離開裝置。</strong> 條碼會直接在瀏覽器中產生，輸入的數值不會傳送到伺服器。",
+
+		"barcode.error.empty": "請輸入數值。",
+		"barcode.error.invalid": "這個條碼格式不接受目前的數值，請確認所需長度與可用字元。",
+		"barcode.error.generate": "無法產生條碼，請嘗試其他數值或格式。",
+
+		"faq.barcode.title": "條碼產生器常見問題",
+		"faq.barcode.1.q": "這個條碼產生器是免費的嗎？",
+		"faq.barcode.1.a": "是。你可以免費線上產生條碼，不需要建立帳號、安裝軟體，也不會加上浮水印。",
+		"faq.barcode.2.q": "可以產生單一條碼，也可以批量產生嗎？",
+		"faq.barcode.2.a": "可以。使用單一條碼模式可以產生一個條碼；切換到批量條碼模式後，可以輸入多個數值並一次產生。",
+		"faq.barcode.3.q": "我輸入的條碼數值會上傳到伺服器嗎？",
+		"faq.barcode.3.a": "不會。條碼產生過程會在瀏覽器中完成，你輸入的數值會留在自己的裝置上，不會上傳到伺服器。",
+		"faq.barcode.4.q": "支援哪些條碼格式？",
+		"faq.barcode.4.a": "支援 CODE 128、CODE 39、EAN-13、EAN-8、UPC-A、JAN、ITF-14。一般文字、SKU、庫存與內部追蹤代碼可優先使用 CODE 128。",
+		"faq.barcode.5.q": "應該選哪一種條碼格式？",
+		"faq.barcode.5.a": "一般文字、數字、SKU 和庫存標籤建議使用 CODE 128。零售商品代碼可使用 EAN-13、JAN 或 UPC-A，外箱與物流單位可使用 ITF-14。",
+		"faq.barcode.6.q": "可以下載 PNG 或 SVG 嗎？",
+		"faq.barcode.6.a": "可以。PNG 適合快速使用與列印，SVG 是可縮放向量格式，放大後仍能保持清晰。",
+		"faq.barcode.7.q": "為什麼 EAN-13、JAN 或 UPC-A 不接受我的數值？",
+		"faq.barcode.7.a": "EAN-13 和 JAN 需要 13 位數字，UPC-A 需要 12 位數字。如果你的數值包含文字或長度不同，請改用 CODE 128。",
+		"faq.barcode.8.q": "手機也可以使用嗎？",
+		"faq.barcode.8.a": "可以。這個條碼產生器可在 iPhone 和 Android 的現代瀏覽器中使用。若要批量產生大量條碼，桌機或筆電通常會更快。",
+
+		// ─── JAN CODE GENERATOR — Dedicated LP (/jan-code-generator) ────────────────
+		"home.card.janCode.title": "JAN 條碼產生器",
+		"home.card.janCode.desc": "免費線上產生日本 JAN 條碼，適合商品標籤、零售包裝與條碼圖片製作，免上傳、免安裝。",
+		"home.card.janCode.cta": "產生 JAN 條碼",
+
+		"related.janCodeGenerator.title": "JAN 條碼產生器",
+		"related.janCodeGenerator.desc": "產生日本零售商品用 JAN 條碼，並下載為 PNG 或 SVG。",
+
+		"janCode.meta.title": "免費線上 JAN 條碼產生器｜JAN Code Generator",
+		"janCode.meta.desc": "免費線上產生 JAN 條碼。在瀏覽器中製作日本零售商品條碼，支援單一與批量產生，可下載 PNG 或 SVG，免上傳、免帳號。",
+		"janCode.hero.title": "免費線上 JAN 條碼產生器",
+		"janCode.hero.sub": "在瀏覽器中建立日本零售商品用 JAN 條碼。輸入 13 位數 JAN 值，可產生單一條碼或批量條碼，並下載 PNG 或 SVG。",
+		"janCode.pill.free": "免費 JAN 產生器",
+		"janCode.pill.noUpload": "不上傳伺服器",
+		"janCode.pill.bulk": "單一與批量 JAN",
+
+		"janCode.value.label": "JAN 條碼數值",
+		"janCode.value.placeholder": "輸入 13 位數 JAN 條碼…",
+		"janCode.format.label": "JAN 格式",
+		"janCode.format.jan.sub": "日本零售",
+		"janCode.btn.generate": "產生 JAN 條碼",
+		"janCode.btn.generateAll": "產生所有 JAN 條碼",
+		"janCode.btn.download": "下載 JAN 條碼",
+		"janCode.btn.downloadAll": "全部下載 JAN 條碼（ZIP）",
+		"janCode.btn.new": "產生新的 JAN 條碼",
+		"janCode.res.title": "JAN 條碼已產生",
+		"janCode.res.bulkDone": "{n} 個 JAN 條碼已準備好下載",
+		"janCode.note.privacy": "<strong>你輸入的 JAN 數值不會離開裝置。</strong> JAN 條碼會直接在瀏覽器中產生，不會傳送商品代碼到伺服器。",
+		"janCode.error.empty": "請輸入 JAN 條碼數值。",
+		"janCode.error.invalid": "JAN 數值無效。JAN 條碼必須是 13 位數字，並符合條碼驗證規則。",
+		"janCode.error.generate": "無法產生 JAN 條碼，請確認數字後再試一次。",
+
+		"faq.janCode.title": "JAN 條碼產生器常見問題",
+		"faq.janCode.1.q": "這個 JAN 條碼產生器是免費的嗎？",
+		"faq.janCode.1.a": "是。你可以免費線上產生 JAN 條碼，不需要建立帳號、安裝軟體，也不會加上浮水印。",
+		"faq.janCode.2.q": "什麼是 JAN 條碼？",
+		"faq.janCode.2.a": "JAN 條碼是日本零售商品常用的商品條碼格式，與 EAN-13 條碼相容，通常以 13 位數字表示。",
+		"faq.janCode.3.q": "可以一次產生多個 JAN 條碼嗎？",
+		"faq.janCode.3.a": "可以。切換到批量模式後，可輸入多個 13 位數 JAN 值並一次產生，再下載 ZIP 檔。",
+		"faq.janCode.4.q": "我輸入的 JAN 條碼會上傳到伺服器嗎？",
+		"faq.janCode.4.a": "不會。JAN 條碼產生會在瀏覽器中完成，輸入的數值會留在自己的裝置上，不會上傳到伺服器。",
+		"faq.janCode.5.q": "JAN 條碼需要幾位數？",
+		"faq.janCode.5.a": "JAN 條碼使用 13 位數字。如果包含文字、空格或長度不正確，產生器會拒絕該數值。",
+		"faq.janCode.6.q": "可以下載 JAN 條碼為 PNG 或 SVG 嗎？",
+		"faq.janCode.6.a": "可以。PNG 適合快速使用與列印；SVG 適合需要可縮放條碼的標籤、包裝或設計檔。",
+		"faq.janCode.7.q": "可以用來製作商品標籤的 JAN 條碼嗎？",
+		"faq.janCode.7.a": "可以。此工具適合製作商品標籤、包裝示意圖、庫存表與內部檢查用的 JAN 條碼圖片。實際商品使用時，請確認 JAN 號碼本身已正確分配。",
+		"faq.janCode.8.q": "手機也可以使用嗎？",
+		"faq.janCode.8.a": "可以。JAN 條碼產生器可在 iPhone 與 Android 的現代瀏覽器中使用。若要批量產生大量條碼，桌機或筆電通常會更快。",
+		"tab.barcode": '條碼產生器',
+	
+
 	},
 
 	// ─── PORTUGUESE BRAZIL (PT) ──────────────────────────────────────────────────
@@ -2570,7 +2957,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.mp3.12.q': 'O que acontece se eu fechar a aba durante a conversão?',
 		'faq.mp3.12.a': 'Se você fechar a aba antes do fim da conversão, o processo será interrompido. Mantenha a página aberta até o MP3 ficar pronto para download.',
-	
+
 		// Video converter
 		'home.card.convert.title': 'Converter vídeo para MP4',
 		'home.card.convert.desc': 'Converta MOV, AVI, MKV, WebM, WMV e outros vídeos para MP4. Grátis, sem instalação e sem upload: tudo acontece direto no navegador.',
@@ -2987,7 +3374,7 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.reduceImageSize.6.q': 'É melhor diminuir a qualidade ou reduzir a largura da imagem?',
 		'faq.reduceImageSize.6.a': 'Para reduzir bastante o tamanho do arquivo, você pode ajustar qualidade e largura ao mesmo tempo. Para preservar melhor a aparência, comece reduzindo levemente a qualidade e depois ajuste a largura se necessário',
-		
+
 		"common.image": "imagem",
 		"common.images": "imagens",
 		"common.selected": "selecionado",
@@ -3033,6 +3420,135 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'related.reduceImageSize.title': 'Reduzir tamanho da imagem',
 		'related.reduceImageSize.desc': 'Deixe imagens menores para uploads, emails, formulários e sites.',
+
+
+		// ─── BARCODE GENERATOR — Translation keys for all 5 languages ────────────────
+		"home.card.barcode.title": "Gerador de Código de Barras",
+		"home.card.barcode.desc": "Crie códigos de barras individuais ou em lote online. Suporta CODE 128, CODE 39, EAN-13, UPC-A, ITF-14 e mais. Grátis, privado e sem upload.",
+		"home.card.barcode.cta": "Gerar Código de Barras",
+
+		"related.barcodeGenerator.title": "Gerador de Código de Barras",
+		"related.barcodeGenerator.desc": "Crie códigos de barras individuais ou em lote no navegador e baixe como PNG ou SVG.",
+
+		"barcode.meta.title": "Gerador de Código de Barras Online Grátis｜Individual e em Lote",
+		"barcode.meta.desc": "Crie códigos de barras online grátis. Gere um código ou vários em lote com CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN e ITF-14. Baixe como PNG ou SVG. Sem upload e sem conta.",
+		"barcode.hero.title": "Gerador de Código de Barras Online Grátis",
+		"barcode.hero.sub": "Crie um código de barras ou gere vários em lote diretamente no navegador. Suporta CODE 128, CODE 39, EAN, UPC, JAN e ITF-14.",
+		"barcode.pill.free": "Grátis, sem conta",
+		"barcode.pill.noUpload": "Sem upload para servidor",
+		"barcode.pill.bulk": "Individual e em lote",
+
+		"barcode.mode.label": "Modo",
+		"barcode.mode.single": "Código individual",
+		"barcode.mode.bulk": "Códigos em lote",
+
+		"barcode.value.label": "Valor",
+		"barcode.value.placeholder": "Digite texto ou número…",
+		"barcode.file.label": "Nome do arquivo",
+		"barcode.format.label": "Formato do código de barras",
+		"barcode.height.label": "Altura",
+		"barcode.lineWidth.label": "Espessura das linhas",
+		"barcode.showText.label": "Mostrar texto",
+		"barcode.showText.on": "Mostrar",
+		"barcode.showText.off": "Ocultar",
+		"barcode.customText.label": "Texto exibido",
+		"barcode.customText.placeholder": "Deixe vazio para mostrar o valor codificado",
+		"barcode.output.label": "Formato do arquivo",
+
+		"barcode.format.code128.sub": "Melhor padrão",
+		"barcode.format.code39.sub": "Letras e números",
+		"barcode.format.ean13.sub": "Produtos no varejo",
+		"barcode.format.jan.sub": "Varejo Japão",
+		"barcode.format.ean8.sub": "Varejo curto",
+		"barcode.format.upca.sub": "Varejo EUA",
+		"barcode.format.itf14.sub": "Caixas e logística",
+
+		"barcode.btn.generate": "Gerar Código de Barras",
+		"barcode.btn.generateAll": "Gerar Todos os Códigos",
+		"barcode.btn.addRow": "Adicionar linha",
+		"barcode.btn.download": "Baixar Código de Barras",
+		"barcode.btn.downloadAll": "Baixar Todos (ZIP)",
+		"barcode.btn.new": "Gerar novo código",
+		"barcode.btn.remove": "Remover",
+
+		"barcode.res.title": "Código de barras gerado",
+		"barcode.res.bulkDone": "{n} código(s) de barras prontos para baixar",
+
+		"barcode.note.privacy": "<strong>Seus dados nunca saem do seu dispositivo.</strong> Os códigos de barras são gerados inteiramente no navegador — nenhum valor é enviado para um servidor.",
+
+		"barcode.error.empty": "Por favor, insira um valor.",
+		"barcode.error.invalid": "Valor inválido para este formato de código de barras. Verifique o tamanho exigido e os caracteres permitidos.",
+		"barcode.error.generate": "Não foi possível gerar o código de barras. Tente outro valor ou formato.",
+
+		"faq.barcode.title": "Perguntas frequentes sobre código de barras",
+		"faq.barcode.1.q": "Este gerador de código de barras é gratuito?",
+		"faq.barcode.1.a": "Sim. Você pode criar códigos de barras online grátis, sem criar conta, instalar software ou adicionar marca d’água.",
+		"faq.barcode.2.q": "Posso criar um código de barras ou vários de uma vez?",
+		"faq.barcode.2.a": "Sim. Use o modo Código individual para criar um código, ou Códigos em lote para inserir vários valores e gerar todos juntos.",
+		"faq.barcode.3.q": "Os valores dos meus códigos de barras são enviados para um servidor?",
+		"faq.barcode.3.a": "Não. A geração acontece dentro do navegador. Os valores inseridos ficam no seu dispositivo e não são enviados para um servidor.",
+		"faq.barcode.4.q": "Quais formatos de código de barras são suportados?",
+		"faq.barcode.4.a": "A ferramenta suporta CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN e ITF-14. O CODE 128 é uma boa opção padrão para textos, SKUs, estoque e códigos internos.",
+		"faq.barcode.5.q": "Qual formato de código de barras devo usar?",
+		"faq.barcode.5.a": "Use CODE 128 para textos, números, SKUs e etiquetas de estoque. Use EAN-13, JAN ou UPC-A para códigos de produtos no varejo, e ITF-14 para caixas ou unidades logísticas.",
+		"faq.barcode.6.q": "Posso baixar o código de barras como PNG ou SVG?",
+		"faq.barcode.6.a": "Sim. Você pode baixar como PNG para uso rápido e impressão, ou como SVG para gráficos vetoriais que continuam nítidos em qualquer tamanho.",
+		"faq.barcode.7.q": "Por que EAN-13, JAN ou UPC-A rejeita meu valor?",
+		"faq.barcode.7.a": "EAN-13 e JAN exigem 13 dígitos, enquanto UPC-A exige 12 dígitos. Se o valor tiver letras ou outro tamanho, use CODE 128.",
+		"faq.barcode.8.q": "Posso usar este gerador de código de barras no celular?",
+		"faq.barcode.8.a": "Sim. O gerador funciona em navegadores modernos no iPhone e Android. Para gerar muitos códigos em lote, um computador pode ser mais rápido.",
+
+		// ─── JAN CODE GENERATOR — Dedicated LP (/jan-code-generator) ────────────────
+		"home.card.janCode.title": "Gerador de Código JAN",
+		"home.card.janCode.desc": "Crie códigos JAN online para produtos, etiquetas e embalagens do varejo japonês. Grátis, privado e sem upload.",
+		"home.card.janCode.cta": "Gerar Código JAN",
+
+		"related.janCodeGenerator.title": "Gerador de Código JAN",
+		"related.janCodeGenerator.desc": "Gere códigos JAN para produtos do varejo japonês e baixe como PNG ou SVG.",
+
+		"janCode.meta.title": "Gerador de Código JAN Online Grátis｜Criar Código JAN",
+		"janCode.meta.desc": "Crie códigos JAN online grátis. Gere códigos de barras japoneses para varejo diretamente no navegador, individualmente ou em lote. Baixe como PNG ou SVG. Sem upload e sem conta.",
+		"janCode.hero.title": "Gerador de Código JAN Online Grátis",
+		"janCode.hero.sub": "Crie códigos JAN para produtos do varejo japonês diretamente no navegador. Digite um valor JAN de 13 dígitos, gere um código ou vários em lote e baixe PNG ou SVG.",
+		"janCode.pill.free": "Gerador JAN grátis",
+		"janCode.pill.noUpload": "Sem upload para servidor",
+		"janCode.pill.bulk": "JAN individual e em lote",
+
+		"janCode.value.label": "Valor do código JAN",
+		"janCode.value.placeholder": "Digite o código JAN de 13 dígitos…",
+		"janCode.format.label": "Formato JAN",
+		"janCode.format.jan.sub": "Varejo Japão",
+		"janCode.btn.generate": "Gerar Código JAN",
+		"janCode.btn.generateAll": "Gerar Todos os Códigos JAN",
+		"janCode.btn.download": "Baixar Código JAN",
+		"janCode.btn.downloadAll": "Baixar Todos os Códigos JAN (ZIP)",
+		"janCode.btn.new": "Gerar novo código JAN",
+		"janCode.res.title": "Código JAN gerado",
+		"janCode.res.bulkDone": "{n} código(s) JAN prontos para baixar",
+		"janCode.note.privacy": "<strong>Seus valores JAN nunca saem do seu dispositivo.</strong> Os códigos JAN são gerados inteiramente no navegador — nenhum código de produto é enviado para um servidor.",
+		"janCode.error.empty": "Por favor, insira um valor JAN.",
+		"janCode.error.invalid": "Valor JAN inválido. Códigos JAN devem ter 13 dígitos e passar pelas regras de validação do código de barras.",
+		"janCode.error.generate": "Não foi possível gerar o código JAN. Verifique os dígitos e tente novamente.",
+
+		"faq.janCode.title": "Perguntas frequentes sobre código JAN",
+		"faq.janCode.1.q": "Este gerador de código JAN é gratuito?",
+		"faq.janCode.1.a": "Sim. Você pode criar códigos JAN online grátis, sem criar conta, instalar software ou adicionar marca d’água.",
+		"faq.janCode.2.q": "O que é um código JAN?",
+		"faq.janCode.2.a": "O código JAN é um formato de código de barras usado com frequência em produtos de varejo no Japão. Ele é compatível com códigos do tipo EAN-13 e normalmente é impresso com 13 dígitos.",
+		"faq.janCode.3.q": "Posso gerar vários códigos JAN de uma vez?",
+		"faq.janCode.3.a": "Sim. Use o modo em lote para inserir vários valores JAN de 13 dígitos e gerar todos juntos, depois baixe os arquivos em ZIP.",
+		"faq.janCode.4.q": "Meus códigos JAN são enviados para um servidor?",
+		"faq.janCode.4.a": "Não. A geração do código JAN acontece dentro do navegador. Os valores inseridos ficam no seu dispositivo e não são enviados para um servidor.",
+		"faq.janCode.5.q": "Quantos dígitos um código JAN precisa ter?",
+		"faq.janCode.5.a": "Códigos JAN usam 13 dígitos. Se o valor tiver letras, espaços ou tamanho incorreto, o gerador vai rejeitar o valor.",
+		"faq.janCode.6.q": "Posso baixar o código JAN como PNG ou SVG?",
+		"faq.janCode.6.a": "Sim. Baixe PNG para uso rápido e impressão, ou SVG quando precisar de um código escalável para etiquetas, embalagens ou arquivos de design.",
+		"faq.janCode.7.q": "Posso criar códigos JAN para etiquetas de produto?",
+		"faq.janCode.7.a": "Sim. A ferramenta é útil para criar imagens de código JAN para etiquetas de produto, mockups de embalagem, planilhas de estoque e verificações internas. Confirme se o número JAN em si é válido para o seu uso comercial.",
+		"faq.janCode.8.q": "A ferramenta funciona no celular?",
+		"faq.janCode.8.a": "Sim. O gerador de código JAN funciona em navegadores modernos no iPhone e Android. Para grandes lotes, um desktop ou notebook pode ser mais rápido.",
+		"tab.barcode": 'Gerador de Código de Barras',
+	
 	},
 
 	th: {
@@ -3724,6 +4240,133 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'related.reduceImageSize.title': 'ลดขนาดรูปภาพ',
 		'related.reduceImageSize.desc': 'ทำให้รูปภาพเล็กลงสำหรับอัปโหลด อีเมล แบบฟอร์ม และเว็บไซต์',
-		
+
+		// ─── BARCODE GENERATOR — Translation keys for all 5 languages ────────────────
+		"home.card.barcode.title": "เครื่องสร้างบาร์โค้ด",
+		"home.card.barcode.desc": "สร้างบาร์โค้ดออนไลน์แบบเดี่ยวหรือหลายรายการ รองรับ CODE 128, CODE 39, EAN-13, UPC-A, ITF-14 และอื่น ๆ ฟรี เป็นส่วนตัว ไม่ต้องอัปโหลด",
+		"home.card.barcode.cta": "สร้างบาร์โค้ด",
+
+		"related.barcodeGenerator.title": "เครื่องสร้างบาร์โค้ด",
+		"related.barcodeGenerator.desc": "สร้างบาร์โค้ดแบบเดี่ยวหรือหลายรายการในเบราว์เซอร์ แล้วดาวน์โหลดเป็น PNG หรือ SVG",
+
+		"barcode.meta.title": "เครื่องสร้างบาร์โค้ดออนไลน์ฟรี｜สร้างเดี่ยวหรือหลายรายการ",
+		"barcode.meta.desc": "สร้างบาร์โค้ดออนไลน์ฟรี สร้างได้ทั้งแบบเดี่ยวและแบบหลายรายการ รองรับ CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN และ ITF-14 ดาวน์โหลดเป็น PNG หรือ SVG ไม่ต้องอัปโหลด ไม่ต้องสมัครบัญชี",
+		"barcode.hero.title": "เครื่องสร้างบาร์โค้ดออนไลน์ฟรี",
+		"barcode.hero.sub": "สร้างบาร์โค้ดหนึ่งรายการหรือสร้างหลายรายการพร้อมกันได้ในเบราว์เซอร์ รองรับ CODE 128, CODE 39, EAN, UPC, JAN และ ITF-14",
+		"barcode.pill.free": "ฟรี ไม่ต้องสมัคร",
+		"barcode.pill.noUpload": "ไม่อัปโหลดขึ้นเซิร์ฟเวอร์",
+		"barcode.pill.bulk": "เดี่ยวและหลายรายการ",
+
+		"barcode.mode.label": "โหมด",
+		"barcode.mode.single": "บาร์โค้ดเดี่ยว",
+		"barcode.mode.bulk": "บาร์โค้ดหลายรายการ",
+
+		"barcode.value.label": "ค่า",
+		"barcode.value.placeholder": "ใส่ข้อความหรือตัวเลข…",
+		"barcode.file.label": "ชื่อไฟล์",
+		"barcode.format.label": "รูปแบบบาร์โค้ด",
+		"barcode.height.label": "ความสูง",
+		"barcode.lineWidth.label": "ความหนาของเส้น",
+		"barcode.showText.label": "แสดงข้อความ",
+		"barcode.showText.on": "แสดง",
+		"barcode.showText.off": "ซ่อน",
+		"barcode.customText.label": "ข้อความที่แสดง",
+		"barcode.customText.placeholder": "เว้นว่างเพื่อแสดงค่าที่เข้ารหัส",
+		"barcode.output.label": "รูปแบบไฟล์",
+
+		"barcode.format.code128.sub": "ค่าเริ่มต้นที่แนะนำ",
+		"barcode.format.code39.sub": "ตัวอักษรและตัวเลข",
+		"barcode.format.ean13.sub": "สินค้าขายปลีก",
+		"barcode.format.jan.sub": "ค้าปลีกญี่ปุ่น",
+		"barcode.format.ean8.sub": "ค้าปลีกแบบสั้น",
+		"barcode.format.upca.sub": "ค้าปลีกสหรัฐ",
+		"barcode.format.itf14.sub": "กล่องและโลจิสติกส์",
+
+		"barcode.btn.generate": "สร้างบาร์โค้ด",
+		"barcode.btn.generateAll": "สร้างบาร์โค้ดทั้งหมด",
+		"barcode.btn.addRow": "เพิ่มแถว",
+		"barcode.btn.download": "ดาวน์โหลดบาร์โค้ด",
+		"barcode.btn.downloadAll": "ดาวน์โหลดทั้งหมด (ZIP)",
+		"barcode.btn.new": "สร้างบาร์โค้ดใหม่",
+		"barcode.btn.remove": "ลบออก",
+
+		"barcode.res.title": "สร้างบาร์โค้ดสำเร็จ",
+		"barcode.res.bulkDone": "{n} บาร์โค้ดพร้อมดาวน์โหลดแล้ว",
+
+		"barcode.note.privacy": "<strong>ข้อมูลของคุณไม่ออกจากอุปกรณ์</strong> บาร์โค้ดถูกสร้างในเบราว์เซอร์ทั้งหมด ไม่มีการส่งค่าที่ป้อนไปยังเซิร์ฟเวอร์",
+
+		"barcode.error.empty": "กรุณาใส่ค่า",
+		"barcode.error.invalid": "ค่านี้ไม่ถูกต้องสำหรับรูปแบบบาร์โค้ดที่เลือก กรุณาตรวจสอบจำนวนหลักและอักขระที่รองรับ",
+		"barcode.error.generate": "ไม่สามารถสร้างบาร์โค้ดได้ กรุณาลองใช้ค่าอื่นหรือรูปแบบอื่น",
+
+		"faq.barcode.title": "คำถามที่พบบ่อยเกี่ยวกับการสร้างบาร์โค้ด",
+		"faq.barcode.1.q": "เครื่องสร้างบาร์โค้ดนี้ฟรีไหม?",
+		"faq.barcode.1.a": "ฟรี คุณสามารถสร้างบาร์โค้ดออนไลน์ได้โดยไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำ",
+		"faq.barcode.2.q": "สร้างบาร์โค้ดหนึ่งรายการหรือหลายรายการพร้อมกันได้ไหม?",
+		"faq.barcode.2.a": "ได้ ใช้โหมดบาร์โค้ดเดี่ยวเพื่อสร้างหนึ่งรายการ หรือใช้โหมดบาร์โค้ดหลายรายการเพื่อใส่หลายค่าและสร้างพร้อมกัน",
+		"faq.barcode.3.q": "ค่าบาร์โค้ดที่ป้อนจะถูกอัปโหลดไปยังเซิร์ฟเวอร์ไหม?",
+		"faq.barcode.3.a": "ไม่ ข้อมูลจะถูกประมวลผลในเบราว์เซอร์ของคุณ ค่าที่ป้อนจะอยู่บนอุปกรณ์ของคุณและไม่ถูกส่งไปยังเซิร์ฟเวอร์",
+		"faq.barcode.4.q": "รองรับรูปแบบบาร์โค้ดอะไรบ้าง?",
+		"faq.barcode.4.a": "รองรับ CODE 128, CODE 39, EAN-13, EAN-8, UPC-A, JAN และ ITF-14 โดย CODE 128 เหมาะเป็นค่าเริ่มต้นสำหรับข้อความ SKU สต๊อกสินค้า และรหัสภายใน",
+		"faq.barcode.5.q": "ควรใช้รูปแบบบาร์โค้ดแบบไหน?",
+		"faq.barcode.5.a": "ใช้ CODE 128 สำหรับข้อความ ตัวเลข SKU และป้ายสต๊อกสินค้า ใช้ EAN-13, JAN หรือ UPC-A สำหรับรหัสสินค้าขายปลีก และใช้ ITF-14 สำหรับกล่องหรือหน่วยขนส่ง",
+		"faq.barcode.6.q": "ดาวน์โหลดบาร์โค้ดเป็น PNG หรือ SVG ได้ไหม?",
+		"faq.barcode.6.a": "ได้ PNG เหมาะสำหรับการใช้งานทั่วไปและการพิมพ์ ส่วน SVG เป็นไฟล์เวกเตอร์ที่ขยายได้โดยยังคมชัด",
+		"faq.barcode.7.q": "ทำไม EAN-13, JAN หรือ UPC-A ไม่ยอมรับค่าของฉัน?",
+		"faq.barcode.7.a": "EAN-13 และ JAN ต้องใช้ตัวเลข 13 หลัก ส่วน UPC-A ต้องใช้ 12 หลัก หากค่าของคุณมีตัวอักษรหรือจำนวนหลักไม่ตรง ให้ใช้ CODE 128 แทน",
+		"faq.barcode.8.q": "ใช้งานบนมือถือได้ไหม?",
+		"faq.barcode.8.a": "ได้ เครื่องสร้างบาร์โค้ดใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone และ Android หากสร้างหลายรายการจำนวนมาก คอมพิวเตอร์อาจทำงานได้เร็วกว่า",
+
+		// ─── JAN CODE GENERATOR — Dedicated LP (/jan-code-generator) ────────────────
+		"home.card.janCode.title": "เครื่องสร้างรหัส JAN",
+		"home.card.janCode.desc": "สร้างบาร์โค้ด JAN ออนไลน์สำหรับสินค้า ฉลาก และบรรจุภัณฑ์ค้าปลีกญี่ปุ่น ฟรี เป็นส่วนตัว ไม่ต้องอัปโหลด",
+		"home.card.janCode.cta": "สร้างรหัส JAN",
+
+		"related.janCodeGenerator.title": "เครื่องสร้างรหัส JAN",
+		"related.janCodeGenerator.desc": "สร้างรหัส JAN สำหรับสินค้าค้าปลีกญี่ปุ่น แล้วดาวน์โหลดเป็น PNG หรือ SVG",
+
+		"janCode.meta.title": "เครื่องสร้างรหัส JAN ออนไลน์ฟรี｜สร้างบาร์โค้ด JAN",
+		"janCode.meta.desc": "สร้างรหัส JAN ออนไลน์ฟรี สร้างบาร์โค้ดค้าปลีกญี่ปุ่นในเบราว์เซอร์ได้ทั้งแบบเดี่ยวและหลายรายการ ดาวน์โหลดเป็น PNG หรือ SVG ไม่ต้องอัปโหลด ไม่ต้องสมัครบัญชี",
+		"janCode.hero.title": "เครื่องสร้างรหัส JAN ออนไลน์ฟรี",
+		"janCode.hero.sub": "สร้างบาร์โค้ด JAN สำหรับสินค้าค้าปลีกญี่ปุ่นได้ในเบราว์เซอร์ ใส่รหัส JAN 13 หลัก สร้างแบบเดี่ยวหรือหลายรายการ แล้วดาวน์โหลด PNG หรือ SVG",
+		"janCode.pill.free": "สร้าง JAN ฟรี",
+		"janCode.pill.noUpload": "ไม่อัปโหลดขึ้นเซิร์ฟเวอร์",
+		"janCode.pill.bulk": "JAN เดี่ยวและหลายรายการ",
+
+		"janCode.value.label": "ค่ารหัส JAN",
+		"janCode.value.placeholder": "ใส่รหัส JAN 13 หลัก…",
+		"janCode.format.label": "รูปแบบ JAN",
+		"janCode.format.jan.sub": "ค้าปลีกญี่ปุ่น",
+		"janCode.btn.generate": "สร้างรหัส JAN",
+		"janCode.btn.generateAll": "สร้างรหัส JAN ทั้งหมด",
+		"janCode.btn.download": "ดาวน์โหลดรหัส JAN",
+		"janCode.btn.downloadAll": "ดาวน์โหลดรหัส JAN ทั้งหมด (ZIP)",
+		"janCode.btn.new": "สร้างรหัส JAN ใหม่",
+		"janCode.res.title": "สร้างรหัส JAN สำเร็จ",
+		"janCode.res.bulkDone": "{n} รหัส JAN พร้อมดาวน์โหลดแล้ว",
+		"janCode.note.privacy": "<strong>ค่ารหัส JAN ของคุณไม่ออกจากอุปกรณ์</strong> รหัส JAN ถูกสร้างในเบราว์เซอร์ทั้งหมด ไม่มีการส่งรหัสสินค้าไปยังเซิร์ฟเวอร์",
+		"janCode.error.empty": "กรุณาใส่ค่ารหัส JAN",
+		"janCode.error.invalid": "ค่ารหัส JAN ไม่ถูกต้อง รหัส JAN ต้องเป็นตัวเลข 13 หลักและผ่านกฎการตรวจสอบของบาร์โค้ด",
+		"janCode.error.generate": "ไม่สามารถสร้างรหัส JAN ได้ กรุณาตรวจสอบตัวเลขแล้วลองอีกครั้ง",
+
+		"faq.janCode.title": "คำถามที่พบบ่อยเกี่ยวกับรหัส JAN",
+		"faq.janCode.1.q": "เครื่องสร้างรหัส JAN นี้ฟรีไหม?",
+		"faq.janCode.1.a": "ฟรี คุณสามารถสร้างบาร์โค้ด JAN ออนไลน์ได้โดยไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำ",
+		"faq.janCode.2.q": "รหัส JAN คืออะไร?",
+		"faq.janCode.2.a": "รหัส JAN เป็นรูปแบบบาร์โค้ดที่ใช้กับสินค้าค้าปลีกในญี่ปุ่นโดยทั่วไป เข้ากันได้กับบาร์โค้ดแบบ EAN-13 และมักแสดงเป็นตัวเลข 13 หลัก",
+		"faq.janCode.3.q": "สร้างรหัส JAN หลายรายการพร้อมกันได้ไหม?",
+		"faq.janCode.3.a": "ได้ ใช้โหมดหลายรายการเพื่อใส่รหัส JAN 13 หลักหลายค่าและสร้างพร้อมกัน จากนั้นดาวน์โหลดไฟล์เป็น ZIP",
+		"faq.janCode.4.q": "รหัส JAN ที่ใส่จะถูกอัปโหลดไปยังเซิร์ฟเวอร์ไหม?",
+		"faq.janCode.4.a": "ไม่ การสร้างรหัส JAN ทำงานในเบราว์เซอร์ของคุณ ค่าที่ป้อนจะอยู่บนอุปกรณ์และไม่ถูกส่งไปยังเซิร์ฟเวอร์",
+		"faq.janCode.5.q": "รหัส JAN ต้องมีกี่หลัก?",
+		"faq.janCode.5.a": "รหัส JAN ใช้ตัวเลข 13 หลัก หากมีตัวอักษร เว้นวรรค หรือจำนวนหลักไม่ถูกต้อง เครื่องมือจะปฏิเสธค่านั้น",
+		"faq.janCode.6.q": "ดาวน์โหลดรหัส JAN เป็น PNG หรือ SVG ได้ไหม?",
+		"faq.janCode.6.a": "ได้ ดาวน์โหลด PNG สำหรับใช้งานและพิมพ์อย่างรวดเร็ว หรือ SVG เมื่อต้องการบาร์โค้ดแบบปรับขนาดได้สำหรับฉลาก บรรจุภัณฑ์ หรือไฟล์ออกแบบ",
+		"faq.janCode.7.q": "ใช้สร้างรหัส JAN สำหรับฉลากสินค้าได้ไหม?",
+		"faq.janCode.7.a": "ได้ เครื่องมือนี้เหมาะสำหรับสร้างภาพบาร์โค้ด JAN สำหรับฉลากสินค้า ตัวอย่างบรรจุภัณฑ์ ตารางสต๊อก และการตรวจสอบภายใน โปรดตรวจสอบว่าหมายเลข JAN นั้นถูกต้องสำหรับการใช้งานจริงของสินค้า",
+		"faq.janCode.8.q": "ใช้งานบนมือถือได้ไหม?",
+		"faq.janCode.8.a": "ได้ เครื่องสร้างรหัส JAN ใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone และ Android หากสร้างหลายรายการจำนวนมาก คอมพิวเตอร์อาจทำงานได้เร็วกว่า",
+
+		"tab.barcode": 'สร้างบาร์โค้ด',
 	},
 };
