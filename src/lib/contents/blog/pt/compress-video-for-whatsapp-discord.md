@@ -64,7 +64,7 @@ Aqui entra o diferencial de poder escolher o tamanho final do arquivo manualment
 
 ### Como comprimir vídeo para WhatsApp e Discord usando o Squishyfile
 
-O **[Squishyfile](https://squishyfile.com/pt/comprimir-video)** é uma ferramenta gratuita que funciona diretamente no navegador e foi desenvolvida exatamente para resolver esse tipo de dor de cabeça. Veja como usar:
+O **[Squishyfile](https://squishyfile.com/pt/compress-video)** é uma ferramenta gratuita que funciona diretamente no navegador e foi desenvolvida exatamente para resolver esse tipo de dor de cabeça. Veja como usar:
 
 1. Acesse o site pelo seu navegador preferido (funciona normalmente no Mac, Windows, Linux e até no celular).
 2. Arraste o vídeo que deseja comprimir para a área indicada na página. Não existe limite rígido para o arquivo original — você pode carregar um vídeo de **2 GB** ou mais que o navegador vai processar localmente.

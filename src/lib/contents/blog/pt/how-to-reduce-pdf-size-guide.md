@@ -77,7 +77,7 @@ O ideal seria combinar o melhor dos dois mundos: a praticidade de uma ferramenta
 
 Imagine poder usar um compressor de PDF gratuito com a mesma simplicidade de um site qualquer, mas sem que o arquivo saia do seu dispositivo. Isso é possível graças ao WebAssembly, uma tecnologia que permite executar processamento pesado diretamente dentro do navegador, sem depender de servidores externos.
 
-O [Squishyfile](https://squishyfile.com/pt/comprimir-pdf) funciona exatamente assim. Ao acessar o site, todo o processo de compressão acontece localmente, no seu próprio computador, através do navegador. O arquivo não é enviado para lugar nenhum, o que elimina completamente o risco de vazamento de dados.
+O [Squishyfile](https://squishyfile.com/pt/compress-pdf) funciona exatamente assim. Ao acessar o site, todo o processo de compressão acontece localmente, no seu próprio computador, através do navegador. O arquivo não é enviado para lugar nenhum, o que elimina completamente o risco de vazamento de dados.
 
 Além da privacidade, essa abordagem traz outras vantagens práticas:
 
