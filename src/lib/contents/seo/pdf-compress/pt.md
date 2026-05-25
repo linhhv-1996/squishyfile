@@ -1,151 +1,115 @@
-# Compressor de PDF: reduza o tamanho do PDF grátis
+## Reduza o tamanho do PDF sem deixar o documento difícil de ler
 
-O Squishyfile é um compressor de PDF gratuito que permite reduzir o tamanho de arquivos PDF diretamente no navegador. Não é necessário criar conta, instalar programas ou enviar o documento para servidores externos. Basta selecionar o PDF, escolher o modo de compressão e baixar uma versão mais leve para anexar em e-mails, enviar por formulários online, compartilhar pelo WhatsApp ou guardar na nuvem ocupando menos espaço.
+O Squishyfile é um compressor de PDF gratuito para diminuir o tamanho de arquivos PDF diretamente no navegador. Ele ajuda quando um documento está grande demais para anexar em e-mails, enviar por formulários online, usar em candidaturas, compartilhar pelo WhatsApp ou guardar na nuvem ocupando menos espaço.
 
-Diferente de muitos sites de comprimir PDF online, o Squishyfile usa WebAssembly para executar o processamento dentro do próprio navegador. Isso significa que o arquivo é comprimido no seu dispositivo, sem upload para a nuvem. Para documentos com dados pessoais, currículos, contratos, notas fiscais, relatórios financeiros ou arquivos de trabalho, essa abordagem ajuda a manter mais controle sobre a privacidade do conteúdo.
+Você não precisa criar conta, instalar programa ou configurar opções complicadas. Selecione o PDF, escolha o modo de compressão e baixe uma versão mais leve do arquivo.
 
----
-
-## O que este compressor de PDF faz
-
-- Reduz o tamanho de arquivos PDF
-- Ajuda a comprimir PDF para e-mail, formulários e plataformas com limite de upload
-- Comprime PDF escaneado, documentos com imagens e apresentações em PDF
-- Permite escolher entre qualidade equilibrada e compressão máxima
-- Ajuda a diminuir o tamanho de PDF sem perder a legibilidade do texto
-- Pode remover a proteção por senha quando você sabe a senha atual do arquivo
-- Funciona no navegador em Windows, Mac, Linux, Chromebook, iPhone e Android
-
-PDFs com fotos, páginas digitalizadas ou imagens em alta resolução costumam ter maior potencial de redução. Já PDFs formados quase só por texto, arquivos vetoriais simples ou documentos que já foram otimizados antes podem apresentar uma redução menor. Isso é normal: nesses casos, há menos dados redundantes para remover.
+A compressão acontece no seu próprio navegador usando WebAssembly. Isso significa que o PDF é processado no seu dispositivo, sem ser enviado para servidores externos. Essa abordagem é útil para documentos com dados pessoais ou profissionais, como currículos, contratos, notas fiscais, relatórios financeiros, documentos escaneados e arquivos internos de trabalho.
 
 ---
 
-## Como comprimir um PDF
+## Escolha o melhor modo de compressão
 
-### Passo 1: selecione seu PDF
+### Modo Equilibrado
 
-Arraste e solte o arquivo PDF na área de upload ou clique para selecionar o documento no seu dispositivo. Você pode usar PDFs escaneados, apresentações, contratos, currículos, formulários, apostilas, relatórios e outros tipos de documento.
+Comece pelo modo **Equilibrado** na maioria dos casos. Ele foi pensado para reduzir o tamanho do PDF mantendo boa legibilidade de textos, imagens, assinaturas, carimbos, tabelas e páginas escaneadas.
 
-### Passo 2: escolha o modo de compressão
+Use o modo Equilibrado para:
 
-Selecione o modo que melhor combina com o seu objetivo.
+- Currículos e documentos de candidatura
+- Contratos, formulários e notas fiscais
+- Relatórios, propostas e documentos de trabalho
+- Arquivos para anexar no Gmail, Outlook ou outro serviço de e-mail
+- PDFs que precisam ser revisados por outra pessoa
+- Documentos que serão lidos na tela, mas ainda precisam parecer profissionais
 
-- **Equilibrado**: indicado para reduzir tamanho de PDF mantendo boa leitura de textos e imagens. É a melhor escolha para anexos de e-mail, documentos de trabalho, currículos, contratos e formulários.
-- **Máximo**: indicado quando o tamanho final é mais importante que a qualidade visual. Use este modo para tentar reduzir PDF para 1MB, comprimir PDF 10MB ou cumprir limites rígidos de upload.
-- **Remover proteção por senha**: use esta opção apenas quando o PDF está protegido e você sabe a senha atual. O arquivo será desbloqueado antes da compressão.
+Se você quer comprimir PDF sem perder qualidade perceptível, o modo Equilibrado costuma ser o melhor primeiro teste.
 
-Na maioria dos casos, comece pelo modo **Equilibrado**. Ele costuma entregar o melhor resultado para quem quer um PDF menor sem deixar o documento com aparência borrada. Se o arquivo ainda ficar acima do limite exigido por um site, e-mail ou sistema, tente novamente com o modo **Máximo**.
+### Modo Máximo
 
-### Passo 3: digite a senha, se necessário
+Use o modo **Máximo** quando o tamanho final é mais importante que a qualidade visual. Ele é indicado para tentar cumprir limites rígidos de upload, como 1MB, 2MB, 5MB, 10MB ou 25MB.
 
-Se o PDF estiver protegido por senha, marque a opção para remover a proteção e informe a senha atual do documento. O Squishyfile não quebra senha nem burla proteção: ele só consegue processar arquivos protegidos quando você tem autorização e conhece a senha correta.
+Esse modo pode ajudar bastante em PDFs escaneados, apresentações e arquivos com muitas imagens. Porém, em alguns documentos, a compressão mais forte pode deixar fotos, gráficos ou textos pequenos menos nítidos.
 
-### Passo 4: comprima o PDF
+Depois de usar a compressão máxima, abra o PDF antes de enviar. Confira nomes, datas, textos pequenos, assinaturas, carimbos, QR codes, imagens e páginas importantes.
 
-Clique em **Comprimir PDF** para iniciar o processo. A compressão acontece no navegador usando WebAssembly, então o arquivo não é enviado para servidores externos. O tempo de processamento depende do tamanho do PDF, da quantidade de páginas, da presença de imagens e da capacidade do seu dispositivo.
+### PDF com senha
 
-### Passo 5: baixe o PDF comprimido
+Se o PDF estiver protegido por senha e você souber a senha atual, é possível remover a proteção antes de comprimir o arquivo.
 
-Quando a compressão terminar, você verá o tamanho original, o tamanho comprimido e a economia obtida. Clique em **Baixar** para salvar o PDF otimizado no seu computador, celular ou tablet.
+O Squishyfile não quebra senhas nem burla proteção. A opção só deve ser usada quando você tem permissão para abrir e modificar o PDF.
 
 ---
 
-## Para quais PDFs esta ferramenta é indicada?
+## PDFs que costumam diminuir mais
 
-O Squishyfile é útil para situações comuns em que um PDF está grande demais para enviar ou armazenar.
+Um redutor de tamanho de PDF funciona melhor quando o arquivo contém imagens, páginas escaneadas ou elementos visuais pesados. Nesses casos, há mais dados que podem ser otimizados.
 
-- PDFs para anexar no Gmail, Outlook ou outro serviço de e-mail
-- Currículos, certificados e documentos de candidatura
-- PDFs escaneados por impressora, aplicativo de celular ou scanner de escritório
+A compressão costuma funcionar bem em:
+
+- PDFs escaneados por celular, scanner ou impressora
+- Documentos com fotos, capturas de tela, gráficos ou imagens grandes
 - Apresentações exportadas do PowerPoint, Canva, Keynote ou Google Slides
-- Relatórios com muitas imagens, gráficos ou fotos
-- Contratos e documentos internos que não devem ser enviados para servidores desconhecidos
-- Arquivos que precisam caber em plataformas com limite de 1MB, 2MB, 5MB, 10MB ou 25MB
+- Portfólios, catálogos, apostilas e materiais visuais
+- Contratos, recibos, certificados e formulários digitalizados
+- Arquivos criados em qualidade de impressão, mas usados apenas para envio online
 
-Se o seu objetivo é entender melhor diferentes métodos para diminuir arquivos grandes, veja também o guia [como diminuir o tamanho de um PDF](/pt/blog/how-to-reduce-pdf-size-guide).
-
----
-
-## Quando usar o modo Equilibrado ou Máximo?
-
-Use o modo **Equilibrado** quando o PDF precisa continuar agradável de ler. Ele é recomendado para documentos profissionais, PDFs com texto pequeno, currículos, contratos, relatórios e materiais que serão revisados por outra pessoa.
-
-Use o modo **Máximo** quando você precisa alcançar um limite específico de tamanho. Por exemplo, alguns formulários públicos, portais de candidatura, sistemas empresariais e aplicativos de mensagem rejeitam arquivos grandes. Nesses casos, a compressão máxima pode ajudar a transformar um PDF muito pesado em um arquivo mais fácil de enviar.
-
-Mesmo assim, é importante verificar o resultado antes de compartilhar. Em PDFs com muitas imagens, a compressão agressiva pode reduzir detalhes visuais. Se o arquivo precisa ser impresso com alta qualidade, prefira o modo Equilibrado ou mantenha uma cópia do PDF original.
-
-Para casos extremos, como arquivos de dezenas ou centenas de megabytes, leia o artigo sobre [compressão extrema de PDF e PDFs muito pesados](/pt/blog/compress-heavy-pdf-files).
+Um PDF escaneado pode ficar muito pesado porque cada página funciona como uma imagem. Se o documento foi digitalizado em 300 DPI ou 600 DPI, talvez exista mais detalhe do que o necessário para leitura na tela. A compressão reduz parte desses dados para gerar um arquivo menor.
 
 ---
 
-## Como comprimir PDF sem perder qualidade?
+## Por que alguns PDFs quase não diminuem
 
-Toda compressão envolve algum tipo de otimização. Em PDFs com texto selecionável, fontes e gráficos vetoriais, muitas partes podem continuar nítidas mesmo após a redução do tamanho. O texto geralmente permanece legível, enquanto imagens, fotos e páginas escaneadas podem ser reamostradas ou recomprimidas para ocupar menos espaço.
+Às vezes, o tamanho do PDF muda pouco depois da compressão. Isso é normal em alguns tipos de arquivo.
 
-Se você quer comprimir PDF sem perder qualidade perceptível, escolha primeiro o modo **Equilibrado**. Ele busca reduzir dados desnecessários e otimizar imagens sem aplicar uma compressão visual excessiva. Para documentos com fotos, portfólios, trabalhos acadêmicos, propostas comerciais ou apresentações, essa costuma ser a opção mais segura.
+Isso pode acontecer quando:
 
-Também vale lembrar que um PDF escaneado é diferente de um PDF criado a partir de texto. Em arquivos escaneados, cada página funciona como uma imagem. Por isso, a compressão pode reduzir bastante o tamanho, mas a qualidade final depende da resolução original, do contraste e do nível de compressão escolhido.
+- O PDF já foi comprimido antes
+- O documento tem principalmente texto selecionável
+- Há poucas imagens para otimizar
+- O arquivo usa muitos elementos vetoriais
+- Fontes, formulários ou estrutura interna ocupam parte importante do tamanho
+- O PDF já foi exportado com boas configurações de otimização
+- O mesmo arquivo já passou por várias compressões
 
-Para um aprofundamento sobre qualidade visual, imagens, fontes e compressão, veja o guia [comprimir PDF sem perder qualidade](/pt/blog/compress-pdf-without-losing-quality).
-
----
-
-## Por que meu PDF está tão pesado?
-
-Um PDF pode ficar grande por vários motivos. O mais comum é a presença de imagens em alta resolução, especialmente quando o documento foi escaneado em 300 DPI ou 600 DPI. Fotos grandes, páginas coloridas, apresentações com imagens de fundo e arquivos exportados de ferramentas de design também aumentam bastante o tamanho final.
-
-Outros fatores incluem fontes embutidas, metadados, camadas ocultas, miniaturas, objetos duplicados e histórico de edição deixado por alguns programas. O usuário nem sempre vê esses dados, mas eles continuam dentro do arquivo e ocupam espaço.
-
-Um redutor de tamanho de PDF tenta resolver esse problema aplicando técnicas de otimização. Dependendo do conteúdo, ele pode recomprimir imagens, remover dados desnecessários, reorganizar objetos internos e gerar um arquivo menor.
+PDFs com muito texto geralmente já são leves. PDFs escaneados, apresentações e arquivos com imagens grandes tendem a ter mais potencial de redução.
 
 ---
 
-## O que fazer se o PDF não diminuir muito?
+## Dicas para limites de upload e anexos de e-mail
 
-Às vezes, o tamanho do PDF quase não muda depois da compressão. Isso pode acontecer quando o arquivo já foi comprimido antes, contém poucas imagens, usa muitos elementos vetoriais ou já está bem otimizado.
+Quando você precisa reduzir PDF para 1MB, comprimir PDF 10MB ou ficar abaixo de outro limite específico, vale seguir uma ordem simples.
 
-Nesses casos, tente estas alternativas:
+Primeiro, use o modo **Equilibrado**. Se o arquivo ainda ficar acima do limite, tente o modo **Máximo**. Se mesmo assim o PDF continuar grande, talvez seja necessário reduzir o conteúdo do arquivo, e não apenas comprimir.
 
-- Use o modo **Máximo** se o tamanho final for prioridade
-- Remova páginas desnecessárias antes de comprimir
-- Recrie o PDF a partir do arquivo original com imagens menores
-- Ao escanear documentos, use 150 DPI para textos simples quando possível
-- Use escala de cinza ou preto e branco em documentos que não precisam de cor
-- Verifique se o PDF final continua legível antes de enviar
+Para arquivos difíceis, tente estas ações:
 
-Se você está tentando enviar um documento escaneado por e-mail ou candidatura, o artigo [como comprimir PDF escaneado para e-mail ou currículo](/pt/blog/compress-scanned-pdf-for-email) pode ajudar com dicas mais específicas.
+- Remova páginas em branco, duplicadas ou desnecessárias
+- Recrie o PDF a partir do documento original com imagens menores
+- Digitalize documentos em 150–200 DPI para envio online comum
+- Use escala de cinza quando a cor não for obrigatória
+- Divida um PDF muito grande em arquivos menores, se a plataforma permitir
+- Evite comprimir o mesmo PDF muitas vezes, pois a qualidade pode piorar
 
----
-
-## É possível reduzir PDF para 1MB ou comprimir PDF 10MB?
-
-Depende do conteúdo do arquivo. Um PDF escaneado com muitas páginas em alta resolução pode ser bastante reduzido, especialmente no modo Máximo. Já um PDF pequeno, com texto puro ou já otimizado, talvez não consiga chegar a 1MB sem remover páginas ou recriar o arquivo de origem.
-
-Quando você precisa cumprir um limite rígido, comece pelo modo **Equilibrado** para preservar melhor a aparência. Se o resultado ainda ultrapassar o limite, use o modo **Máximo**. Depois, abra o PDF comprimido e confira se textos, assinaturas, imagens, carimbos e informações importantes continuam legíveis.
-
-Para anexos de e-mail, muitos usuários tentam ficar abaixo de 25MB. Para portais de inscrição, concursos, universidades e sistemas corporativos, os limites podem ser menores, como 10MB, 5MB, 2MB ou 1MB. Nesses casos, combinar compressão com boas configurações de digitalização costuma dar o melhor resultado.
+Antes de enviar um arquivo importante, confira o PDF comprimido. O ideal é que ele fique menor, mas continue legível para quem vai receber ou avaliar o documento.
 
 ---
 
-## Os arquivos são enviados para servidores?
+## Compressão de PDF no navegador, com mais privacidade
 
-Não. No Squishyfile, o PDF é processado localmente no navegador. A página carrega a tecnologia necessária para comprimir o arquivo, mas o documento em si não é enviado para um servidor externo.
+Muitos sites de comprimir PDF online funcionam enviando o arquivo para um servidor, processando o documento na nuvem e liberando o download depois. No Squishyfile, a compressão acontece no navegador.
 
-Muitos compressores online tradicionais funcionam de outra forma: primeiro fazem upload do PDF para a nuvem, depois processam o arquivo em um servidor e só então liberam o download. Esse modelo pode ser prático, mas não é ideal para documentos confidenciais.
+Isso ajuda a manter mais controle sobre PDFs que podem conter informações sensíveis, como contratos, documentos fiscais, relatórios financeiros, currículos, comprovantes, documentos pessoais ou arquivos internos de uma empresa.
 
-Com o processamento local via WebAssembly, o arquivo permanece no seu dispositivo durante a compressão. Isso torna a ferramenta uma opção mais adequada para quem procura comprimir PDF online seguro, comprimir PDF offline no navegador ou evitar upload de dados sensíveis.
-
-Para entender melhor essa diferença, leia o guia [como comprimir PDF offline e com segurança](/pt/blog/secure-offline-pdf-compression).
+O arquivo permanece no seu dispositivo durante a compressão. Mesmo assim, depois de baixar o PDF final, salve e compartilhe o documento com cuidado, principalmente se você removeu a proteção por senha.
 
 ---
 
-## Funciona no celular, Mac e Windows?
+## Funciona no celular, Mac e Windows
 
-Sim. Como o Squishyfile roda no navegador, você pode usar a ferramenta em Windows, Mac, Linux, Chromebook, iPhone e Android. Não é preciso instalar aplicativo, extensão ou programa pesado.
+Como o Squishyfile roda no navegador, você pode comprimir PDF em Windows, Mac, Linux, Chromebook, iPhone, Android e tablets. Não é necessário instalar aplicativo, extensão ou programa pesado.
 
-No celular, basta abrir a página no navegador, selecionar o PDF nos arquivos do aparelho e baixar o resultado depois da compressão. No computador, o processo é o mesmo: arraste o arquivo, escolha o modo e salve o PDF comprimido.
-
-Essa abordagem é útil para quem alterna entre dispositivos diferentes ou precisa resolver rapidamente um problema de arquivo grande sem procurar um aplicativo específico para cada sistema. Para mais detalhes, veja o artigo [como comprimir PDF no iPhone, Android, Mac ou Windows sem apps](/pt/blog/compress-pdf-any-device).
+No celular, selecione o PDF pelo gerenciador de arquivos, pasta de downloads ou aplicativo de nuvem. No computador, arraste o arquivo para a área de upload, escolha o modo de compressão e salve o PDF otimizado quando o processo terminar.
 
 ---
 
@@ -157,4 +121,3 @@ Essa abordagem é útil para quem alterna entre dispositivos diferentes ou preci
 - [Como comprimir PDF escaneado para enviar por e-mail ou currículo](/pt/blog/compress-scanned-pdf-for-email)
 - [Como comprimir PDF no iPhone, Android, Mac ou Windows sem apps](/pt/blog/compress-pdf-any-device)
 - [Como comprimir PDF offline e 100% seguro](/pt/blog/secure-offline-pdf-compression)
-

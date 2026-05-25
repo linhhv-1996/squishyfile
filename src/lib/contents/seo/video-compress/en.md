@@ -1,269 +1,86 @@
-# Video Compressor: Compress Video Online for Free
+## Compress videos online without uploading
 
-Squishyfile is a free online video compressor that helps you reduce video file size directly in your browser. You can compress MP4, MOV, WebM, MKV, AVI, WMV, and FLV files without creating an account, installing software, or uploading your video to a server.
+Squishyfile helps you compress video online directly in your browser. You can reduce the file size of MP4, MOV, WebM, MKV, AVI, WMV, and FLV videos without creating an account, installing software, or uploading your video to a server.
 
-Unlike many online video compression tools, Squishyfile uses WebAssembly and FFmpeg to process your video locally on your device. Your file does not leave your browser during compression, making it a practical choice for private videos, family clips, work recordings, client previews, school projects, and personal footage you do not want to upload elsewhere.
+The tool is useful when a video is too large for WhatsApp, Gmail, Outlook, Discord, Messenger, Telegram, Instagram, cloud sharing, or phone storage. Choose a compression mode, set a target file size when needed, and download a smaller MP4 file that is easier to send, upload, or keep.
 
-Use it when a video is too large for WhatsApp, Gmail, Outlook, Discord, Messenger, Telegram, Instagram, cloud sharing, or your phone storage. Pick a quality preset, enter a target file size, compress the video, and download a smaller MP4 file ready to share.
+Because compression runs locally with WebAssembly and FFmpeg, your video does not need to leave your device during processing. This makes Squishyfile a practical choice for family clips, work recordings, client previews, school projects, private footage, and videos you do not want to upload to a third-party server.
 
----
+## How to compress a video online
 
-## What You Can Do With This Video Compressor
+### 1. Choose your video
 
-- Compress video online for free
-- Reduce video file size without installing software
-- Compress MP4, MOV, AVI, MKV, WebM, WMV, and FLV files
-- Convert large MOV files from iPhone into smaller MP4 files
-- Make videos smaller for WhatsApp, email, Discord, Messenger, Telegram, and social media
-- Compress video for Instagram before uploading
-- Enter a target file size such as 8MB, 15MB, 24MB, 50MB, or 100MB
-- Choose between smaller file size and better visual quality
-- Compress videos without uploading them to any server
-- Download a clean MP4 file with no watermark
-- Use the tool on Mac, Windows, iPhone, Android, Chromebook, and modern browsers
+Drag your video into the upload area or click the browse button to select a file from your device. Squishyfile supports common video formats including MP4, MOV, MKV, AVI, WebM, WMV, and FLV.
 
-Video compression works especially well for screen recordings, tutorials, slides, animation, webcam videos, fixed-camera clips, and videos with little motion. Videos with fast movement, heavy grain, dark scenes, or very high resolution may need stronger compression to reach a small target size.
+Videos from iPhone, Android, cameras, screen recorders, meeting apps, video editors, and gaming software can be compressed. The final download is saved as MP4 because it works well across phones, computers, browsers, email clients, messaging apps, and social platforms.
 
----
+### 2. Pick a compression mode
 
-## How to Compress a Video Online
+Use the compression mode that matches your goal:
 
-### Step 1: Select Your Video
+- **Smallest size**: best for strict upload limits, chat apps, and quick sharing when file size matters more than sharp detail.
+- **Balanced**: the best starting point for most videos. It reduces file size while keeping quality suitable for everyday sharing.
+- **High quality**: better for videos with text, faces, products, slides, client previews, or important visual detail.
+- **Target file size**: best when the video must stay below a specific limit such as 8MB, 15MB, 25MB, 50MB, or 100MB.
 
-Drag and drop your video file into the upload area, or click the browse button to choose a file from your device. The tool supports common video formats including MP4, MOV, MKV, AVI, WebM, WMV, and FLV.
+If you are unsure, start with **Balanced**. If the result is still too large, try **Smallest size** or enter a target file size.
 
-You can compress videos recorded on iPhone, Android, DSLR cameras, screen recorders, video editors, meeting apps, gaming software, or downloaded clips. The output is saved as MP4 because it is widely supported across phones, computers, browsers, email clients, and social platforms.
+### 3. Set a target file size when needed
 
-### Step 2: Choose a Compression Mode
+Target size is useful when a platform rejects large uploads. Instead of guessing bitrate settings, enter the maximum file size you need and let the tool try to compress the video close to that limit.
 
-Choose the compression option that fits your goal.
+Useful starting points:
 
-- **Low**: Best when you need the smallest possible file size. This is useful for strict upload limits, messaging apps, or quick sharing where file size matters more than perfect quality.
-- **Balanced**: The recommended option for most videos. It gives a good balance between visual quality and file size, making it suitable for email, social media, cloud sharing, and everyday use.
-- **High**: Best when quality matters. Use this for client previews, presentations, product videos, portfolio clips, or videos that contain text and fine details.
-- **Target File Size**: Best when you must stay under a specific upload limit. Enter the size you need in MB, and the tool will try to compress the video close to that target.
+- **8MB** for Discord free-plan uploads.
+- **15MB** for WhatsApp video messages, leaving a little room below common limits.
+- **19MB** for stricter email services such as Outlook, Hotmail, iCloud Mail, or workplace email.
+- **24MB** for Gmail or Yahoo Mail attachments.
+- **50MB** for Telegram, Messenger, or moderate upload limits.
+- **100MB** for general sharing when you want a lighter file but do not need a strict limit.
 
-If you are not sure where to start, choose **Balanced** first. If the result is still too large, use **Low** or set a specific target file size.
+Platform limits can change, and some services calculate file size differently. For important uploads, leave a small buffer below the official limit instead of targeting the exact maximum.
 
-### Step 3: Set a Target File Size if Needed
+### 4. Compress and download the MP4
 
-Some platforms reject videos that exceed their upload or attachment limits. Instead of guessing which preset will work, you can enter a target size in MB.
+Click **Compress Now** and keep the browser tab open while the video is processed. Closing the tab, refreshing the page, locking your phone, or switching apps for too long may interrupt compression.
 
-Common targets include:
+When the process finishes, you will see the original size, compressed size, and space saved. Download the smaller MP4 and play it once before deleting or replacing the original video.
 
-- Use **8MB** for Discord free plan uploads.
-- Use **15MB** for WhatsApp video messages, leaving a small buffer under the 16MB limit.
-- Use **19MB** for Outlook, Hotmail, iCloud Mail, and other stricter email services.
-- Use **24MB** for Gmail or Yahoo Mail attachments.
-- Use **50MB** for Telegram or platforms with moderate file limits.
-- Use **100MB** when you want a smaller file for general sharing but do not need a very strict limit.
+## Which videos compress best?
 
-Platform limits can change, and some services apply different rules depending on your account, region, device, or upload method. For important uploads, leave a little space below the official limit instead of targeting the exact maximum.
+Video compression usually works best when the video has repeated frames, simple motion, or low visual complexity. Screen recordings, tutorials, slides, webcam clips, animation, and fixed-camera videos often shrink well while staying clear.
 
-### Step 4: Compress the Video
+Videos with fast motion, camera shake, heavy grain, dark scenes, sports, dancing, gaming footage, 4K resolution, or very high frame rates may need a larger file size to keep acceptable quality. If the output looks blurry or blocky, try a less aggressive setting, a larger target size, or trim the video before compressing.
 
-Click **Compress Now** to start. The progress bar shows the compression status while the video is processed in your browser.
+## Compress MP4, MOV, and iPhone videos
 
-Squishyfile uses FFmpeg through WebAssembly, so the video is compressed on your own device. Your video is not sent to our server for processing.
+MP4 is the easiest format for sharing, but MP4 files can still be large when the video is long, high resolution, or exported at a high bitrate. Squishyfile can compress MP4 files and export a smaller MP4 that is easier to upload or send.
 
-Keep the browser tab open while compression is running. Closing the tab, refreshing the page, locking your phone, or switching apps for too long may interrupt the process. For large videos or 4K files, a desktop or laptop usually provides a more stable experience than an older phone.
+MOV files from iPhone can also become very large, especially when recorded in 4K, 60fps, HDR, or high-efficiency settings. You can select a MOV file, compress it in the browser, and download an MP4 version for better compatibility with email, messaging apps, Windows devices, Android phones, and social platforms.
 
-### Step 5: Download the Compressed MP4
+## Compress video privately in your browser
 
-When compression finishes, you will see the original size, compressed size, and space saved. Click **Download** to save the smaller MP4 file to your device.
+Many online video compressors require you to upload the file before compression starts. That can be slow for large videos, and it also means private footage leaves your device.
 
-You can then attach it to an email, send it on WhatsApp, upload it to Instagram, share it on Discord, store it in the cloud, or keep it as a lighter copy to save storage space.
+Squishyfile works differently. After the page loads, video compression runs in your browser using WebAssembly and FFmpeg. The file is read locally, processed locally, and downloaded locally. No server upload is required for the compression step.
 
----
+This is especially useful for videos that include family moments, children, work calls, internal company material, client footage, legal or financial information, unpublished creative work, or anything you do not want stored on a third-party server.
 
-## When Should You Compress a Video?
+## Tips for better compression quality
 
-Squishyfile is useful when your video is too large to send, upload, store, or share. Common use cases include:
+Start with **Balanced** for most videos. Use **High quality** when the video contains small text, faces, product details, presentation slides, or content that needs to stay readable. Use **Smallest size** only when the file must fit a strict limit.
 
-- A video is too large for WhatsApp.
-- Gmail or Outlook rejects your attachment.
-- Discord says the file is over the upload limit.
-- Instagram makes your video look blurry after upload.
-- An iPhone MOV file is much larger than expected.
-- A screen recording takes too much storage.
-- A client preview needs to be smaller before sending.
-- A school or work video must fit under a specific file size.
-- A cloud upload is taking too long.
-- You want to keep a smaller copy of a video without deleting the original.
+Avoid forcing a long or high-resolution video into a very small target size. A 2-minute screen recording may look fine at 15MB, but a 20-minute 4K video will need much more space to stay clear. If you need a smaller result, trimming the video first often works better than over-compressing the whole file.
 
-For a full guide to reducing video size in different situations, read [How to Reduce Video File Size Without Losing Quality](/blog/how-to-reduce-video-file-size-without-losing-quality).
+Always keep the original video until you have checked the compressed version.
 
----
+## Supported formats and devices
 
-## Compress Video for WhatsApp
+Squishyfile supports MP4, MOV, WebM, MKV, AVI, WMV, FLV, and other common video formats. The compressed result is saved as MP4 for broad compatibility.
 
-WhatsApp can be strict about video size, especially when you send a video as a normal media message. A short video recorded on a modern iPhone or Android phone can easily exceed the limit.
+You can use the tool in modern browsers on Mac, Windows, Linux, Chromebook, iPhone, and Android. For very large files, long recordings, or 4K videos, a desktop or laptop usually provides a more stable experience than an older phone.
 
-To compress video for WhatsApp, select your file and enter **15MB** as the target file size. This leaves a small buffer below the common 16MB video message limit. For longer videos, you may need to use stronger compression or send the video as a document instead of a normal video message.
-
-If the video is too long or contains fast motion, it may not look sharp at 15MB. In that case, trim unnecessary parts first, or use a larger target size and send it as a document.
-
-For detailed WhatsApp settings, see [How to Compress Video for WhatsApp — Under 16MB in Seconds](/blog/compress-video-for-whatsapp-under-16mb).
-
----
-
-## Reduce Video File Size for Email
-
-Email providers often block attachments above 20MB or 25MB. A one-minute phone video can be much larger than that, especially if it was recorded in 1080p, 4K, or high frame rate.
-
-To compress video for email, use a target file size that gives you a safe buffer:
-
-- Use **19MB** for Outlook, Hotmail, iCloud Mail, and corporate email systems.
-- Use **24MB** for Gmail and Yahoo Mail.
-- Use a lower number if your workplace or school has a stricter attachment limit.
-
-For short clips, the **Balanced** preset may be enough. For longer videos, use **Target File Size** so the output is more likely to fit as an attachment.
-
-For a complete email-focused guide, read [How to Reduce Video File Size for Email — Under 25MB Without Quality Loss](/blog/reduce-video-file-size-for-email-under-25mb).
-
----
-
-## Compress Video for Instagram
-
-Instagram re-encodes videos after upload. If you upload a very large raw video, Instagram may apply aggressive compression, which can make the final post look blurry, soft, or washed out.
-
-Pre-compressing your video before uploading can help. Use **Balanced** for Reels, Stories, and feed posts. Use **High** if the video contains fast motion, product details, text, or professional content.
-
-The goal is not always to create the smallest file. For Instagram, the goal is to give the platform a clean, optimized source video that survives re-encoding better.
-
-For recommended settings by format, read [How to Compress Video for Instagram — Best Settings for Reels, Stories & Feed](/blog/compress-video-for-instagram-best-settings-reels-stories).
-
----
-
-## Compress MP4 and MOV Files
-
-MP4 is the most common video format for sharing, but MP4 files can still be large if they use a high bitrate, high resolution, or long duration. Squishyfile can compress MP4 files and export a smaller MP4 that is easier to share.
-
-MOV files from iPhones are also common. They can become very large, especially with 4K, 60fps, HDR, or high-efficiency recording settings. Squishyfile can compress MOV files and output MP4, making them easier to send by email, upload to social platforms, or play on different devices.
-
-You can also compress AVI, MKV, WebM, WMV, and FLV files. The final download is MP4 for better compatibility.
-
----
-
-## Compress Video Without Uploading
-
-Many online video compressors require you to upload your video to their servers before compression starts. That can be slow, especially for large files, and it also means your private footage leaves your device.
-
-Squishyfile works differently. The compression process runs inside your browser using WebAssembly. Your video is read locally, processed locally, and downloaded locally. No server upload is required for the video compression step.
-
-This is useful when your video contains:
-
-- Family footage
-- Children or private individuals
-- Work recordings
-- Client material
-- Internal company content
-- Legal or financial information
-- Unpublished creative work
-- Personal moments you do not want stored on a third-party server
-
-For more about local browser-based compression, read [Compress Video Online Free — No Upload, No Watermark, Instant Results](/blog/compress-video-online-free-no-upload).
-
----
-
-## Free Video Compressor With No Watermark
-
-Some free video compressors add a watermark to the exported file unless you pay. That can make the result unsuitable for work, school, client delivery, social media, or professional use.
-
-Squishyfile does not add a watermark to your compressed video. You can download a clean MP4 file and use it for personal, educational, or commercial purposes.
-
-The tool also does not require an account for basic compression. Open the page, choose your video, compress it, and download the result.
-
-For a deeper comparison of free online video compressors, read [Free Online Video Compressor — No Watermark, No Upload, No Account Required](/blog/free-online-video-compressor-no-watermark-no-upload).
-
----
-
-## Why Your Video File Is So Large
-
-Video files are large because they store many frames, audio data, resolution information, color information, and motion detail. A modern phone records more data than most sharing platforms actually need.
-
-File size depends on several factors:
-
-- Video length
-- Resolution such as 720p, 1080p, or 4K
-- Frame rate such as 30fps or 60fps
-- Bitrate
-- Codec
-- Audio quality
-- Amount of motion
-- Noise or grain
-- Whether the video was already compressed before
-
-A short 4K phone clip can be hundreds of megabytes. A screen recording can also become large if recorded at high resolution. Compression reduces the amount of data needed to represent the video while trying to preserve the parts viewers notice most.
-
----
-
-## Why the Compressed Video May Not Be Much Smaller
-
-Sometimes a video does not shrink as much as expected. This usually happens when the original file is already heavily compressed, or when the video contains details that are hard to compress.
-
-Common reasons include:
-
-- The video was already exported at a low bitrate.
-- The clip contains fast motion, sports, dancing, or camera shake.
-- The footage is dark or noisy.
-- The video is very short.
-- The video has high resolution or high frame rate.
-- The target size is too close to the original size.
-- The selected quality preset is too conservative.
-
-If the output is still too large, try the **Low** preset, enter a smaller target file size, trim the video before compressing, or reduce the original resolution in your video editor before uploading it to the compressor.
-
-Always keep your original video until you have checked the compressed version.
-
----
-
-## Tips for Better Video Compression Quality
-
-To reduce video size while keeping good visual quality, follow these tips:
-
-- Start with **Balanced** for most videos.
-- Use **High** when text, faces, products, or fine details matter.
-- Use **Low** only when file size is more important than quality.
-- Use **Target File Size** when you must stay under a platform limit.
-- Leave a small buffer below the platform's maximum file size.
-- Trim unnecessary parts before compression.
-- Avoid compressing the same file repeatedly if you still have the original.
-- Review the compressed video before deleting or sharing the original.
-- Use a computer for very large or long videos when possible.
-- Keep the tab open until compression finishes.
-
-Compression always involves a tradeoff. Smaller files usually mean lower bitrate, and lower bitrate can create softness or artifacts. The best setting depends on how the video will be viewed and how strict the file size limit is.
-
----
-
-## Does It Work on iPhone, Android, Mac, and Windows?
-
-Yes. Squishyfile runs in modern browsers, so you can use it on Mac, Windows, iPhone, Android, and Chromebook without installing a desktop app.
-
-On desktop, use Chrome, Edge, Safari, Firefox, or another modern browser. On iPhone, use Safari. On Android, use Chrome or a modern Chromium-based browser.
-
-Video compression uses CPU, memory, and battery. Very large videos, long recordings, or 4K files may be slower on older phones. If a file is several gigabytes or the browser becomes unstable, try compressing it on a laptop or desktop instead.
-
----
-
-## Supported Video Formats
-
-Squishyfile supports common input formats such as:
-
-- MP4
-- MOV
-- AVI
-- MKV
-- WebM
-- WMV
-- FLV
-
-The compressed output is saved as MP4 because MP4 works well across email clients, browsers, phones, computers, social media platforms, and messaging apps.
-
----
-
-## Related Articles
+## Related video compression guides
 
 - [How to Reduce Video File Size Without Losing Quality](/blog/how-to-reduce-video-file-size-without-losing-quality)
 - [Compress Video Online Free — No Upload, No Watermark, Instant Results](/blog/compress-video-online-free-no-upload)
