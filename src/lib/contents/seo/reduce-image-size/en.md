@@ -1,116 +1,96 @@
-# Reduce Image Size Online
+## Reduce Image Size Without Uploading Your Files
 
-Reduce image size online for free without uploading your files. Squishyfile helps you make images and photos smaller directly in your browser, so they are easier to upload, email, attach, submit, publish, or share.
+Squishyfile is an image size reducer that runs entirely in your browser. Your files are never sent to a server — everything is processed locally on your device. This makes it practical for personal photos, scanned documents, ID images, client files, and anything you prefer to keep private.
 
-Use this tool when an image file is too large for a form, website, document, email attachment, profile photo, CMS, or online portal.
-
----
-
-## Make Image Files Smaller Without Uploading
-
-Squishyfile processes your images directly in your browser. Your files stay on your device and are not sent to a server.
-
-This makes the tool useful for personal photos, work images, document scans, client files, product images, screenshots, and other private visuals. Add your image, adjust quality or width if needed, reduce the file size, and download the smaller version.
-
-You can reduce one image or process multiple images in bulk.
+Add one image or several. Adjust quality and width as needed. Download the smaller files.
 
 ---
 
-## Reduce Image Size for Uploads
+## Why Image Files Are Too Large to Upload
 
-Many websites and online systems reject image files that are too large. This can happen with application forms, school portals, government websites, job platforms, ecommerce dashboards, CMS tools, support tickets, and account profile pages.
+Phone and camera images are the main culprit. A standard smartphone photo today is 3–6MB and 4000px wide or more — far beyond what most upload systems accept or need. The image itself is fine; the file is just larger than the destination allows.
 
-This tool helps you reduce image file size before uploading, so the file is easier to submit and less likely to hit a size limit.
+You will see errors like these when the file is too large:
 
-For format-specific compression, use [JPG Compressor](/jpg-compressor) for JPG photos or [PNG Compressor](/png-compressor) for PNG screenshots, logos, icons, and transparent images.
+- *"File exceeds maximum upload size"*
+- *"Image must be under 2MB"*
+- *"Maximum file size: 1MB"*
+- *"Upload failed — file too large"*
 
----
+These errors come up across many types of platforms:
 
-## Make Photos Smaller for Email and Documents
+**Government and institutional portals** — visa applications, tax filings, permit submissions, and student enrollment systems almost always have strict file size caps, often 1–2MB per file.
 
-Large image files can make emails harder to send and documents heavier than necessary. Reducing image size helps when you need to attach photos, add images to PDFs, include screenshots in reports, or prepare files for sharing.
+**Job applications and HR platforms** — resume attachments, ID photos, and supporting documents frequently hit size limits on applicant tracking systems.
 
-Use Squishyfile to make images smaller for:
+**E-commerce dashboards** — product image uploads on Shopify, WooCommerce, Amazon Seller Central, and similar platforms have their own size and dimension requirements.
 
-- Email attachments
-- PDF documents
-- Work reports
-- School submissions
-- Resume or CV files
-- Presentations
-- Profile photos
-- Document images
+**CMS and website tools** — WordPress, Webflow, and similar tools may accept large files technically, but uploading uncompressed camera images slows your site and wastes storage.
 
-If you need a general compressor for JPG, PNG, WebP, and AVIF, use the main [Image Compressor](/image-compressor).
+**Email and document attachments** — large images make emails harder to send and documents unnecessarily heavy to share.
+
+Reducing image file size before uploading solves the problem regardless of the platform.
 
 ---
 
-## Reduce File Size by Adjusting Quality and Width
+## Image File Size vs Image Resolution: Not the Same Thing
 
-There are two practical ways to make an image file smaller: compression and resizing.
+These terms are often confused, and mixing them up leads to the wrong fix.
 
-Compression reduces file size by adjusting how image data is stored. Resizing reduces the image dimensions, such as width and height. In many cases, combining both gives the best result.
+**Image file size** is how much space the file takes up — measured in KB or MB. This is the number that triggers upload errors.
 
-If your original image is very large, reducing the width can make a big difference. If the dimensions are already fine, adjusting quality may be enough to lower the file size while keeping the image clear.
+**Image resolution** (or image dimensions) is the width and height in pixels — for example, 4032 × 3024px. Higher resolution means more pixels, which typically means a larger file, but the relationship isn't always direct.
 
----
+A 4000px wide image saved at low JPEG quality might be 800KB. The same image saved at high quality might be 8MB. Same resolution, very different file sizes.
 
-## Useful for Forms, Portals, and File Size Limits
-
-This page is built around a common problem: the image is fine, but the file is too large.
-
-You may see errors like “file too large,” “maximum upload size exceeded,” or “image must be under 2MB.” Reducing image size helps you prepare a smaller file before trying again.
-
-Common use cases include ID photos, application images, product photos, profile pictures, document scans, screenshots, and images for online submissions.
+This distinction matters when choosing how to reduce image size: you may need to reduce image resolution, compress quality, or both.
 
 ---
 
-## Reduce JPG, PNG, WebP, and AVIF Images
+## Reduce Image Resolution or Compress Quality?
 
-Squishyfile supports common image formats including JPG, JPEG, PNG, WebP, and AVIF.
+There are two practical approaches to shrink image size, and each works best in specific situations.
 
-Use JPG or JPEG for photos, product shots, and camera images. Use PNG for screenshots, logos, icons, UI graphics, and transparent images. WebP and AVIF are modern formats often used for web images.
+| Approach | How it works | Best for |
+|---|---|---|
+| Reduce image resolution | Lowers pixel dimensions (width × height) | Phone/camera photos with very high resolution |
+| Compress quality | Reduces file size without changing pixel dimensions | Images already at a reasonable size |
+| Both combined | Resize first, then compress | Large originals where you need the smallest possible result |
 
-For a broader format-based tool, visit [Image Compressor](/image-compressor). For JPG-only compression, use [JPG Compressor](/jpg-compressor). For PNG-only compression, use [PNG Compressor](/png-compressor).
+**When to reduce image resolution:** If your image came from a phone or camera, it is almost certainly much wider than needed for screen use. A 4000px wide photo displayed at 800px wide on a webpage or form is storing three times the pixels that will ever be shown. Reducing width to 1200–1600px for web use, or 800–1200px for forms and documents, typically cuts file size by 60–80% before any quality compression is applied.
 
----
+**When to compress quality:** If dimensions are already appropriate — for example, a screenshot that is 1280px wide — reducing quality from the default (often 90–95%) down to 70–80% usually produces a much smaller file with no visible difference at normal screen viewing.
 
-## How to Reduce Image Size
-
-Using the tool is simple:
-
-1. Add one or more image files.
-2. Adjust quality if you want a smaller file.
-3. Set a maximum width if the image is larger than needed.
-4. Click reduce or compress.
-5. Download the smaller image files.
-
-The default settings work well for most cases. You can adjust the settings if you need a smaller file or better visual quality.
+For most oversized phone images, start by reducing the width. For screenshots and images already at a reasonable size, adjust quality first.
 
 ---
 
-## Image Size vs Image Dimensions
+## File Size Targets by Use Case
 
-Image size usually means the file size, such as KB or MB. Image dimensions mean the width and height in pixels.
+| Use case | Practical target | Notes |
+|---|---|---|
+| Form upload (ID, profile photo) | Under the stated limit, typically 1–2MB | Check the exact limit before compressing |
+| Email attachment | Under 1MB per image | Most email clients handle this without issues |
+| PDF or Word document | 100–300KB per image | Keeps the document itself lightweight |
+| Website or CMS content image | 100–200KB | Balances visual quality and page load speed |
+| E-commerce product photo | 200–500KB | Enough detail for zoom, fast enough to load |
+| Chat or messaging app | 200–500KB | Loads quickly on mobile connections |
 
-For example, a photo can be 4000 pixels wide and 5MB in size. Reducing the width can lower the file size because the image contains fewer pixels. Compressing the image can reduce the file size further.
-
-This tool helps with both practical goals: smaller file size and more manageable image dimensions.
-
----
-
-## Best Practices for Reducing Image Size
-
-Start with a balanced quality setting. If the image is still too large, reduce the width, especially when the original photo came from a camera or phone and is much larger than needed for screen use.
-
-Use JPG for photos when transparency is not needed. Use PNG for screenshots, logos, icons, and transparent graphics. Keep an original copy if you may need the highest-quality version later.
-
-For website images, compress files before publishing them. For forms and portals, check the upload limit first, then reduce the image until it fits.
+The goal is not the smallest file possible — it is the smallest file that still serves its purpose clearly.
 
 ---
 
-## Start Reducing Image Size Online
+## JPG, PNG, WebP, and AVIF: Which Format to Reduce
 
-Use Squishyfile to reduce image size online for free. It works directly in your browser, keeps your files private, and helps create smaller images for uploads, email, forms, documents, websites, and online sharing.
+The format affects how much file size reduction is possible without visible quality loss.
 
-Add your images, reduce their file size, and download smaller files ready to use.
+| Format | Best for | Notes |
+|---|---|---|
+| JPG / JPEG | Photos, camera images, product shots | Compresses well; some quality loss at low settings |
+| PNG | Screenshots, logos, icons, transparent images | Lossless; larger files but sharp edges and text |
+| WebP | Web images, replacing JPG and PNG online | Smaller files than JPG at similar quality |
+| AVIF | Modern web use | Smallest files, but limited support in older software |
+
+For most upload and email use cases, JPG is the right format for photos and PNG is right for anything with text, sharp lines, or transparency. If you are unsure which format your file is, the file extension tells you.
+
+For format-specific compression, [JPG Compressor](/jpg-compressor) and [PNG Compressor](/png-compressor) are available as dedicated tools. For a general compressor across all formats, use [Image Compressor](/image-compressor).

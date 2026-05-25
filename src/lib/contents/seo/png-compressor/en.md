@@ -1,82 +1,59 @@
-# Free PNG Compressor Online
+## When to use a PNG compressor
 
-Compress PNG images online and reduce file size without uploading your files. Squishyfile works directly in your browser, so you can make PNG logos, screenshots, icons, UI graphics, and transparent images smaller in seconds.
+Use a PNG compressor when your image needs to stay sharp, readable, or transparent, but the file is too large to upload, send, or publish. PNG is often the right format for logos, icons, screenshots, UI graphics, diagrams, stickers, watermarks, and images with transparent backgrounds.
 
-Use this PNG compressor when a file is too large for a website, email attachment, online form, document, design handoff, or product page.
+PNG files can become heavy because they preserve clean edges and visual detail well. That is useful for design assets and screenshots, but it can also make files larger than needed for websites, documents, email attachments, and online forms. Compressing PNG files helps reduce file size while keeping the image practical for real use.
 
----
+This page is best for PNG images. For camera photos, product photos, and realistic images without transparency, use the [JPG Compressor](/jpg-compressor). For mixed formats such as JPG, PNG, WebP, and AVIF, use the [Image Compressor](/image-compressor).
 
-## Compress PNG Files Without Uploading
+## Recommended PNG settings by use case
 
-Squishyfile compresses PNG images in your browser. Your files stay on your device and are not sent to a server, which makes the tool practical for private screenshots, client assets, brand files, product graphics, and work documents.
+Use the table below as a starting point when reducing PNG file size. The best setting depends on the image type, how it will be displayed, and whether small text or transparent edges need to stay clean.
 
-Just add your PNG image, adjust quality or width if needed, compress it, and download the smaller file. You can also add multiple PNG files and compress them in bulk.
+| Use case | What to check | Suggested approach |
+|---|---|---|
+| Logo or brand mark | Edges, transparency, color accuracy | Keep quality high and avoid resizing below the display size |
+| Icon or small UI asset | Sharp outline and transparent background | Compress lightly; resize only if the exported image is much larger than needed |
+| Screenshot | Text readability, thin lines, interface details | Reduce width only if the screenshot is larger than the final display area |
+| Documentation image | Labels, menus, tables, small text | Keep enough resolution for reading; do not over-compress |
+| Website graphic | Page weight and visual clarity | Compress first, then reduce width if the file is still too large |
+| File upload or form submission | Final file size limit | Use compression with width reduction if the system rejects the PNG |
 
----
+After compression, preview the result at the size where people will actually see it. A PNG that looks fine as a thumbnail may not be clear enough in a help article, product page, or design handoff.
 
-## Best for Logos, Icons, Screenshots, and Transparent Images
+## PNG is best for transparency, text, and sharp edges
 
-PNG is commonly used when an image needs sharp edges, readable text, or a transparent background. That makes it a strong format for logos, icons, screenshots, interface graphics, watermarks, stickers, and design exports.
+PNG is different from JPG because it supports transparency and usually keeps text, lines, and flat colors cleaner. That makes it useful for assets that need to sit on different backgrounds or show interface details clearly.
 
-This PNG compressor helps reduce file size while keeping those visuals clean enough for websites, apps, documents, presentations, and marketing materials.
+Common PNG files include:
 
-For photo-based images without transparency, use the [JPG Compressor](/jpg-compressor). JPG is usually better for camera photos, product shots, and colorful real-world images.
+- Logos with transparent backgrounds
+- App icons and website icons
+- Screenshots with text or UI elements
+- Product cutouts and stickers
+- Diagrams, charts, and simple illustrations
+- Design exports and interface graphics
 
----
+If the image is mostly a photo, PNG is often not the most efficient choice. A large photo saved as PNG may stay much heavier than the same image saved as JPG. In that case, use the [JPG Compressor](/jpg-compressor) instead.
 
-## Reduce PNG Size for Websites
+## How to reduce PNG file size without losing important detail
 
-Large PNG files can slow down a page, especially when used for screenshots, UI previews, transparent graphics, or high-resolution brand assets. Compressing PNG images before publishing helps keep pages lighter and easier to load.
+Start by compressing the PNG while keeping enough quality for the image type. For logos, icons, and screenshots, the details that matter most are usually edges, text, and transparency. If those still look clean, the compressed PNG is usually safe to use.
 
-Use this tool before adding PNG files to landing pages, help center articles, ecommerce pages, app websites, documentation, blog posts, and portfolio pages.
+If the file is still too large, check the image dimensions. Many PNG files are exported much larger than the place where they will be displayed. For example, an icon shown at 128px wide does not need to be stored as a 2000px PNG. Reducing width can cut file size more effectively than compression alone.
 
-For mixed image formats such as JPG, PNG, WebP, and AVIF, use the main [Image Compressor](/image-compressor).
+Avoid compressing the same PNG repeatedly. If you need another version, go back to the original file and export or compress again from there.
 
----
+## PNG vs JPG: choose the right format
 
-## Make PNG Files Easier to Upload
+Use PNG when the image needs transparency, clean text, sharp edges, or precise graphic details. Use JPG when the image is a photo or realistic visual where a smaller file size matters more than perfect edges.
 
-Some websites, forms, email tools, CMS platforms, and document systems reject files that are too large. A smaller PNG file is easier to upload, attach, submit, and share.
+For websites, a good rule is simple: use PNG for logos, icons, screenshots, and transparent graphics; use JPG for photos, product shots, and large visual banners. This keeps pages lighter without making important graphic elements look blurry.
 
-This is useful for online applications, support tickets, school submissions, work reports, profile images, documentation screenshots, and design reviews.
+If your goal is not format-specific and you simply need to make an image smaller for upload, email, or a document limit, use [Reduce Image Size](/reduce-image-size).
 
-If your goal is mainly to make an image smaller for upload, email, forms, or documents, use [Reduce Image Size](/reduce-image-size).
+## Related tools
 
----
-
-## How to Compress a PNG Image
-
-Using the PNG compressor is simple:
-
-1. Add one or more PNG images.
-2. Adjust quality or width if needed.
-3. Click compress.
-4. Download the smaller PNG files.
-
-The quality setting helps control the balance between file size and visual clarity. The width setting is useful when the original PNG is much larger than needed for screen use.
-
----
-
-## PNG vs JPG: Which One Should You Use?
-
-Use PNG when the image needs transparency, sharp lines, readable text, or clean edges. PNG is usually the better choice for logos, icons, screenshots, UI graphics, and design assets.
-
-Use JPG when the image is a photo or a realistic image without transparency. JPG usually creates smaller files for camera photos, product photos, blog images, and social media pictures.
-
-Use [PNG Compressor](/png-compressor) for PNG files, [JPG Compressor](/jpg-compressor) for JPG/JPEG photos, and [Image Compressor](/image-compressor) when you want one tool for multiple image formats.
-
----
-
-## Best Practices for Smaller PNG Files
-
-Start by compressing the PNG with a balanced quality setting. If the file is still too large, reduce the width, especially when the image was exported at a very high resolution.
-
-Keep PNG for transparent graphics, icons, screenshots, and images with text. For large photos, consider using JPG instead. Always check small text, thin lines, and transparent edges after compression to make sure the image still looks clean.
-
----
-
-## Start Compressing PNG Images
-
-Use Squishyfile to compress PNG images online for free. It is fast, private, and works directly in your browser.
-
-Add your PNG files, reduce their size, and download smaller images ready for websites, emails, forms, documents, and online sharing.
+- [Image Compressor](/image-compressor) for compressing JPG, PNG, WebP, and AVIF in one place
+- [JPG Compressor](/jpg-compressor) for photos, product images, and JPEG files
+- [Reduce Image Size](/reduce-image-size) when you need a smaller file for uploads, forms, email, or documents

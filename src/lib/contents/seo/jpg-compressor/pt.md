@@ -1,107 +1,65 @@
-# Comprimir JPG online grátis
+## Quando usar um compressor JPG
 
-Comprimir JPG online é a forma mais prática de reduzir o tamanho de fotos e arquivos JPEG sem instalar programas. Com o Squishyfile, você pode compactar imagens JPG diretamente no navegador e baixar arquivos mais leves em poucos segundos.
+Use um compressor JPG quando uma foto ou arquivo JPEG está pesado demais para enviar, publicar ou armazenar. JPG é um dos formatos mais usados para fotos de celular, imagens de produtos, fotos de perfil, imagens de blog, banners, fotos de viagem, imagens de comida e arquivos visuais com muitas cores.
 
-Este compressor JPG online foi criado para quem precisa diminuir o peso de fotos, imagens de produtos, arquivos de câmera, imagens de celular, banners e arquivos JPEG usados em sites, e-mails, formulários, documentos ou redes sociais.
+Comprimir JPG ajuda a reduzir o tamanho do arquivo antes de enviar por e-mail, anexar em formulários, publicar em sites, subir imagens em lojas virtuais ou compartilhar nas redes sociais. A ideia é deixar o arquivo mais leve sem perder qualidade além do necessário.
 
-A ferramenta funciona no próprio navegador. Isso significa que seus arquivos JPG não precisam ser enviados para um servidor externo para serem comprimidos.
+Esta página é focada em JPG e JPEG. Para comprimir vários formatos, como PNG, WebP e AVIF, use o [compressor de imagem online](/pt/image-compressor). Se o objetivo principal for cumprir um limite de upload ou diminuir o peso de qualquer imagem, use [reduzir tamanho da imagem](/pt/reduce-image-size).
 
----
+## Configurações recomendadas para comprimir JPG
 
-## Compressor JPG online para fotos e arquivos JPEG
+A melhor configuração depende do tipo de imagem e do uso final. Em vez de reduzir a qualidade ao máximo, comece com um ajuste equilibrado e diminua aos poucos se o arquivo ainda estiver grande.
 
-Arquivos JPG e JPEG são muito usados em fotos digitais, imagens de produtos, banners, capas, materiais de marketing e imagens salvas por celulares ou câmeras. O formato é popular porque consegue manter boa qualidade visual com um tamanho de arquivo relativamente menor.
+| Uso | Qualidade sugerida | Largura sugerida | Observação |
+|---|---:|---:|---|
+| Fotos de produto | 80–90 | 1200–2000 px | Preserve detalhes, textura e cores do produto. |
+| Imagens para site ou blog | 70–85 | 1000–1600 px | Bom equilíbrio entre aparência e velocidade de carregamento. |
+| Imagens grandes de landing page | 80–90 | 1600–2400 px | Use largura maior, mas evite enviar a foto original completa. |
+| Anexos de e-mail | 60–80 | 1000–1600 px | Priorize arquivos leves e fáceis de baixar. |
+| Formulários e documentos online | 65–85 | Conforme a exigência do sistema | Verifique o limite de tamanho antes de comprimir. |
+| Redes sociais | 70–85 | 1000–1600 px | Suficiente para visualização em celular e telas comuns. |
+| Arquivo JPG muito pequeno | 50–70 | 800–1200 px | Confira se a imagem não ficou borrada ou com artefatos. |
 
-Mesmo assim, fotos em alta resolução podem ficar pesadas demais para upload, e-mail, formulários e páginas web. Um compressor JPG online ajuda a reduzir esse peso mantendo a imagem adequada para uso digital.
+Se a foto original tem muitos pixels de largura, ajustar a largura pode reduzir o tamanho final mais do que apenas baixar a qualidade. Para web, e-mail e formulários, nem sempre é necessário manter a resolução completa da câmera ou do celular.
 
-Esta página é focada especificamente em JPG e JPEG. Se você precisa comprimir diferentes formatos de imagem, como PNG, WebP ou AVIF, use o [compressor de imagem online](/pt/image-compressor). Se trabalha com logos, ícones ou imagens com transparência, acesse [comprimir PNG online](/pt/png-compressor).
+## JPG e JPEG são a mesma coisa?
 
----
+JPG e JPEG são o mesmo formato de imagem. A diferença está principalmente no nome da extensão do arquivo. Alguns sistemas usam `.jpg`, enquanto outros usam `.jpeg`.
 
-## Como comprimir JPG online
+Este compressor aceita arquivos JPG e JPEG. Você pode usá-lo para comprimir JPG, comprimir JPEG, compactar JPG, reduzir tamanho JPG ou diminuir o peso de fotos em formato JPEG sem converter antes.
 
-Comprimir um arquivo JPG no Squishyfile é simples:
+## Como reduzir JPG sem perder muita qualidade
 
-1. Selecione ou arraste seus arquivos JPG/JPEG para a ferramenta.
-2. Ajuste a qualidade JPG, se quiser controlar melhor o tamanho final.
-3. Defina uma largura máxima, se precisar reduzir dimensões muito grandes.
-4. Clique em comprimir JPG.
-5. Baixe os arquivos JPG otimizados individualmente ou todos de uma vez.
+A compressão JPG reduz dados da imagem para criar um arquivo menor. Se a qualidade for reduzida demais, a imagem pode ficar borrada, com blocos visíveis, perda de detalhes ou alteração em áreas suaves.
 
-Você pode usar esse processo para uma única foto ou para várias imagens JPG em lote, economizando tempo quando precisa otimizar muitos arquivos.
+Um fluxo prático:
 
----
+1. Comece com qualidade intermediária ou alta.
+2. Verifique o tamanho final do arquivo.
+3. Abra a imagem no tamanho em que ela será usada.
+4. Reduza a qualidade um pouco mais se ainda estiver pesada.
+5. Ajuste a largura se a foto original for maior do que o necessário.
 
-## Quando usar um compressor JPG?
+Para fotos de produto, retratos, portfólios e imagens institucionais, vale manter qualidade um pouco maior. Para anexos, formulários ou compartilhamento rápido, você pode priorizar um arquivo mais leve.
 
-Use um compressor JPG quando suas fotos ou imagens JPEG estão grandes demais para enviar, publicar ou armazenar. Isso acontece com frequência em imagens tiradas por celulares modernos, câmeras digitais ou arquivos exportados em alta qualidade.
+## Quando ajustar a largura junto com a compressão
 
-A compressão JPG é útil para:
+Muitas fotos de celular e câmera têm resolução alta demais para o uso real. Uma imagem pode ter 4000 px de largura, mesmo que seja exibida em um site com 1200 px ou enviada apenas como anexo.
 
-- Reduzir fotos antes de enviar por e-mail
-- Preparar imagens de produtos para lojas virtuais
-- Otimizar fotos para sites e blogs
-- Diminuir arquivos JPEG para formulários online
-- Deixar imagens mais leves para redes sociais
-- Reduzir o peso de fotos em documentos ou apresentações
-- Comprimir várias fotos em lote
+Nesses casos, reduzir a largura junto com a compressão costuma gerar um arquivo JPG menor com melhor aparência do que diminuir demais a qualidade. Para imagens de blog, fotos de produto, materiais de apresentação e formulários, essa combinação costuma funcionar melhor.
 
-Se o objetivo principal for deixar uma foto abaixo de um limite específico de tamanho, como para upload em sistema, formulário ou documento, veja também a página [reduzir tamanho da imagem](/pt/reduce-image-size).
+Se você precisa deixar uma imagem abaixo de um limite específico, como 1 MB ou 500 KB, a página [reduzir tamanho da imagem](/pt/reduce-image-size) pode ser mais adequada.
 
----
+## Quando JPG não é a melhor escolha
 
-## Comprimir JPG sem perder muita qualidade
+JPG funciona muito bem para fotos, mas não é ideal para todos os tipos de imagem. Ele não preserva transparência e pode deixar textos pequenos, linhas finas, ícones e capturas de tela menos nítidos.
 
-O JPG é um formato com compressão com perdas, o que significa que reduzir muito a qualidade pode afetar a aparência da imagem. Porém, em muitos casos, é possível diminuir bastante o tamanho do arquivo sem uma diferença visual grande.
+Use PNG quando a imagem tiver logo, ícone, interface, screenshot, fundo transparente ou muito texto. Para esses casos, use [comprimir PNG online](/pt/png-compressor).
 
-Para começar, use uma qualidade intermediária. Esse tipo de ajuste costuma funcionar bem para fotos de produtos, imagens de site, posts de blog e arquivos para redes sociais. Depois, compare o tamanho final com a nitidez da imagem.
+Se você não sabe qual formato tem ou quer processar uma pasta com formatos diferentes, use o [compressor de imagem online](/pt/image-compressor).
 
-Se o arquivo ainda estiver pesado, reduza um pouco mais a qualidade ou ajuste a largura máxima. Fotos muito grandes, como imagens com milhares de pixels de largura, geralmente podem ser reduzidas sem prejudicar o uso em telas comuns.
+## Ferramentas relacionadas
 
----
-
-## JPG ou JPEG: qual é a diferença?
-
-JPG e JPEG são basicamente o mesmo formato de imagem. A diferença está principalmente no nome da extensão do arquivo. Alguns sistemas usam `.jpg`, enquanto outros usam `.jpeg`.
-
-Na prática, você pode tratar os dois como o mesmo tipo de arquivo. O Squishyfile aceita tanto JPG quanto JPEG, permitindo comprimir fotos e imagens nesses dois formatos sem precisar converter antes.
-
-Por isso, se você procura por comprimir JPEG online ou compactar JPG, esta página atende os dois casos.
-
----
-
-## Por que arquivos JPG ficam tão pesados?
-
-Arquivos JPG podem ficar grandes quando a imagem tem alta resolução, muitos detalhes, qualidade muito alta ou dimensões maiores do que o necessário. Fotos tiradas por celulares e câmeras modernas costumam ter muitos pixels, o que aumenta o peso final do arquivo.
-
-Em alguns casos, a imagem é usada em uma página web ou enviada por e-mail, mas continua com resolução muito maior do que o necessário. Nesses casos, compactar JPG e ajustar a largura pode reduzir bastante o tamanho final.
-
-Isso ajuda a criar arquivos JPEG mais leves, fáceis de enviar e mais adequados para uso online.
-
----
-
-## Qual qualidade usar ao comprimir JPG?
-
-Não existe um valor único ideal para todos os casos. A melhor qualidade depende do tipo de imagem e do uso final.
-
-Para fotos comuns, imagens de produtos e conteúdo para web, uma qualidade intermediária costuma oferecer bom equilíbrio entre arquivo menor e boa aparência. Para imagens que precisam de mais detalhe, use uma qualidade maior. Para imagens simples ou arquivos que precisam ficar muito leves, reduza mais a qualidade.
-
-O ideal é testar o resultado e verificar se a imagem comprimida ainda parece nítida para o contexto em que será usada.
-
----
-
-## Compressão JPG com mais privacidade
-
-No Squishyfile, seus arquivos JPG são processados diretamente no navegador. Isso significa que as fotos não precisam ser enviadas para um servidor para serem comprimidas.
-
-Essa abordagem é útil para fotos pessoais, imagens de clientes, arquivos de trabalho, fotos de documentos, imagens internas e qualquer arquivo JPEG que você prefira manter no seu dispositivo.
-
-Você seleciona os arquivos, ajusta as opções e baixa as versões comprimidas sem depender de upload externo.
-
----
-
-## Comprimir JPG, PNG ou imagem: qual página usar?
-
-Esta página é a melhor escolha quando você quer comprimir JPG ou JPEG. Ela foi pensada para fotos, imagens de câmera, arquivos de celular, imagens de produtos e arquivos JPEG usados na web.
-
-Se você precisa de uma ferramenta mais ampla para vários formatos, use o [compressor de imagem online](/pt/image-compressor). Para arquivos PNG, logos, ícones, capturas de tela ou imagens com fundo transparente, use [comprimir PNG online](/pt/png-compressor). Para diminuir o peso de qualquer imagem com foco em limite de upload, use [reduzir tamanho da imagem](/pt/reduce-image-size).
+- [Compressor de imagem online](/pt/image-compressor) para JPG, PNG, WebP e AVIF
+- [Comprimir PNG online](/pt/png-compressor) para logos, ícones, screenshots e imagens com transparência
+- [Reduzir tamanho da imagem](/pt/reduce-image-size) para upload, e-mail, formulários e limites de tamanho
