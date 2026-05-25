@@ -1,61 +1,27 @@
-# JAN Code Generator Online
+## Create a JAN Barcode for Japan-Focused Product Work
 
-Use this JAN code generator to create Japanese retail barcodes directly in your browser. Enter a 13-digit JAN value, generate the barcode, then download it as a PNG or SVG file for labels, packaging drafts, product catalogs, ecommerce images, inventory sheets, or barcode scan testing.
+Use this JAN code generator to create a barcode image from a 13-digit Japanese product number. It is useful for Japan-focused labels, packaging drafts, ecommerce product images, internal catalogs, inventory sheets, and scanner testing.
 
-The tool is designed for quick barcode creation without installing software or uploading your data. Your JAN value is processed locally in the browser, so it is useful when you need to prepare internal product materials, sample labels, or test codes without sending product information to a server.
+The barcode is generated in your browser and can be downloaded as PNG or SVG. This keeps the workflow simple when you need a JAN barcode image for review, mockups, or product data preparation.
 
-## What Is a JAN Code?
+## Made for JAN, Not General Barcode Text
 
-JAN stands for Japanese Article Number. It is the barcode system commonly used for retail products in Japan. A JAN code uses the same 13-digit structure as EAN-13, which makes it compatible with many retail barcode scanners and product management systems that support EAN/JAN barcodes.
+JAN is the Japanese retail product barcode format. It uses the same 13-digit structure as EAN-13 and can be read by many scanners, POS systems, ecommerce workflows, and product management tools that support EAN/JAN.
 
-A JAN barcode is made from numbers only. It is not designed for letters, SKUs with symbols, or long internal notes. If you need to encode general text, a format such as CODE 128 is usually more suitable. Use JAN when your goal is to create a Japanese retail-style product barcode.
+Use this page when your content is a Japanese product number. If you need to encode flexible text, internal SKUs, serial numbers, or longer custom values, a general barcode generator such as CODE 128 may be a better fit.
 
-## When to Use a JAN Code Generator
+## Check the Number Before Generating
 
-A JAN code generator is useful when you need a barcode image quickly and do not want to open design software just to create one code. It can help with everyday product and operations work, especially for teams preparing materials for the Japanese market.
+A JAN value must contain 13 digits, including the final check digit. Enter numbers only. Remove spaces, hyphens, letters, and hidden formatting copied from spreadsheets or product master files.
 
-Common use cases include creating barcode images for packaging mockups, preparing product label drafts, testing barcode scanner behavior, adding barcode visuals to internal catalogs, making sample ecommerce images, and generating product codes in bulk for review.
+This tool creates the barcode image only. It does not issue official JAN numbers or register products. For real retail use, confirm that the number is officially assigned to your product or organization and matches the requirements of your retailer, marketplace, printer, or logistics partner.
 
-For production retail use, make sure the number you enter is a valid JAN/EAN value assigned to your product or organization. This tool creates the barcode image, but it does not issue official product numbers or register your item in a product database.
+## Download as PNG or SVG
 
-## JAN Code Format
+PNG is convenient for quick documents, slides, label drafts, ecommerce mockups, and internal review files.
 
-A JAN code is a 13-digit numeric barcode. The first digits identify the numbering system and organization, the middle digits identify the product, and the final digit is a check digit used to help scanners verify the code.
+SVG is better for packaging layouts and print work because it stays sharp when resized. Before printing, check the barcode size, quiet zone, contrast, and final label quality. Avoid stretching the barcode after download because distortion can reduce scan reliability.
 
-Because JAN follows the EAN-13 structure, the input must be numeric and must contain the correct number of digits. If the barcode is rejected, the most common reasons are that the value contains letters, has fewer or more than 13 digits, or uses a check digit that does not match the rest of the number.
+## Useful for Japanese Product Launches
 
-### 13 Digits Only
-
-JAN does not accept spaces, hyphens, letters, or symbols. Before generating a barcode, remove formatting characters and enter only the digits. For example, a value copied from a spreadsheet may include hidden spaces, so it is worth checking the input if generation fails.
-
-### Check Digit Matters
-
-The last digit is the check digit. It helps detect typing mistakes and makes scanning more reliable. If you already have an official JAN value, enter all 13 digits exactly as provided. If you are testing with sample data, use a structurally valid number so the generated barcode can be scanned correctly.
-
-## PNG or SVG: Which Output Should You Choose?
-
-PNG is convenient for quick use. It works well in documents, slides, ecommerce drafts, product sheets, and label templates where you just need a ready-to-use image.
-
-SVG is better when you need a sharp barcode at different sizes. Because SVG is a vector format, it stays clean when scaled for print layouts, packaging designs, or high-resolution label artwork.
-
-For final print work, check the barcode size, quiet zone, contrast, and label quality before sending files to production. A barcode may look correct on screen but still scan poorly if it is resized too small, printed with low contrast, or placed too close to other design elements.
-
-## Tips for Better JAN Barcodes
-
-Use a clean white background and strong contrast between the bars and the background. Avoid stretching the barcode horizontally or vertically after downloading it, because distortion can make scanning less reliable.
-
-Keep enough blank space around the barcode. This blank area is called the quiet zone, and scanners need it to detect the start and end of the barcode correctly. Also avoid placing text, borders, icons, or product graphics too close to the bars.
-
-If you are creating many JAN barcodes, prepare your values in a spreadsheet first. Check for duplicate numbers, missing digits, extra spaces, and invalid rows before generating all barcode images. This reduces label mistakes and saves time when preparing product data.
-
-## JAN Codes for Japanese Product Workflows
-
-JAN codes are especially useful for workflows connected to Japanese retail, product labels, catalog management, and ecommerce operations. They help connect a physical product with digital product information such as item name, variation, price, stock status, and sales channel data.
-
-For mockups and internal testing, a generated JAN barcode can be enough to check layout, scanning behavior, and label readability. For real retail distribution, always confirm that your JAN number is officially assigned and that the barcode meets the requirements of your retailer, marketplace, printer, or logistics partner.
-
-## Related Barcode Formats
-
-JAN is not the only barcode format. Use CODE 128 for flexible text and internal SKUs, CODE 39 for simple alphanumeric codes, UPC-A for many US retail products, EAN-13 for international retail products, and ITF-14 for cartons or shipping units.
-
-Choose JAN when the content is a Japanese retail product number. Choose a general barcode generator when you need to create many different barcode types for inventory, logistics, documents, or internal tracking.
+JAN barcodes help connect a physical product with information such as product name, variation, price, stock status, and sales channel. For internal testing, the generated image can help validate layout and scanner behavior before final production.

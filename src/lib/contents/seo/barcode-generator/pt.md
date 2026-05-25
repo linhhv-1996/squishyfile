@@ -1,16 +1,16 @@
-# Gerador de código de barras online grátis
+## Gerador de Código de Barras Online para Produtos, Estoque e SKUs
 
-Crie códigos de barras online para produtos, estoque, SKUs, números de série, etiquetas de envio e controle interno. Este gerador de código de barras funciona diretamente no navegador, sem enviar os valores digitados para um servidor.
+Crie códigos de barras online para produtos, estoque, SKUs, números de série, etiquetas de envio, almoxarifado e controle interno. Este gerador de código de barras funciona diretamente no navegador, sem instalar software e sem enviar os valores digitados para um servidor.
 
-Você pode gerar um único código de barras ou criar vários códigos de barras em lote e baixar os arquivos em PNG ou SVG.
+Você pode fazer um código de barras para uma tarefa rápida ou gerar vários códigos de barras em lote. Depois, baixe os arquivos em PNG para uso simples ou em SVG para layouts, etiquetas e impressão com melhor nitidez.
 
-## O que você pode criar
+## Formatos de Código de Barras Compatíveis
 
-Use esta ferramenta para gerar código de barras, criar código de barras online, fazer código de barras grátis ou preparar etiquetas para produtos e estoque.
+Use esta ferramenta para transformar textos ou números em códigos de barras 1D para etiquetas, documentos, produtos, estoque e sistemas internos.
 
 | Formato | Melhor uso |
 |---|---|
-| CODE 128 | SKUs, estoque, números de série e textos gerais |
+| CODE 128 | SKUs, códigos de estoque, números de série, pedidos e textos gerais |
 | CODE 39 | Códigos curtos com letras maiúsculas e números |
 | EAN-13 | Códigos de produto com 13 dígitos |
 | EAN-8 | Códigos de varejo curtos com 8 dígitos |
@@ -18,66 +18,64 @@ Use esta ferramenta para gerar código de barras, criar código de barras online
 | JAN | Códigos de produto usados no Japão |
 | ITF-14 | Caixas, embalagens externas e unidades logísticas |
 
-## Como gerar um código de barras
+Para a maioria dos códigos internos, CODE 128 é a opção mais flexível. Para códigos de varejo, use o formato correspondente ao número oficial que você já possui.
+
+## Como Gerar um Código de Barras
 
 1. Escolha **Código único** ou **Códigos em lote**.
-2. Digite o valor do código, como SKU, número do produto, código de estoque ou número de série.
+2. Digite o valor do código, como SKU, número do produto, código de estoque, número de série ou código interno.
 3. Selecione o formato do código de barras.
-4. Ajuste a altura, a largura das linhas e o texto exibido.
+4. Ajuste a altura, a largura das linhas e o texto exibido, se necessário.
 5. Gere o código de barras e baixe em PNG ou SVG.
 
-O modo em lote é útil para criar vários códigos de barras de uma vez, especialmente para etiquetas de produtos, inventário, almoxarifado ou listas em CSV.
+O modo em lote é útil para criar várias etiquetas de produtos, etiquetas de estoque, códigos de almoxarifado, etiquetas de envio ou números de série a partir de uma lista.
 
-## Qual formato de código de barras escolher?
+## Qual Formato de Código de Barras Escolher?
 
-Para a maioria dos códigos internos, **CODE 128** é a melhor opção inicial. Ele aceita números, letras e vários caracteres comuns, por isso funciona bem para SKUs, códigos de estoque e números de série.
+Use **CODE 128** para SKUs, códigos internos, números de série, pedidos, controle de estoque e etiquetas de rastreamento. Ele aceita números, letras e vários caracteres comuns.
 
-Para códigos de produtos no varejo, escolha o formato correto: **EAN-13**, **UPC-A** ou **JAN**. Esses formatos exigem números com quantidade fixa de dígitos e não aceitam letras.
+Use **CODE 39** para códigos curtos com letras maiúsculas e números. É simples, mas aceita menos caracteres do que CODE 128.
 
-Para caixas, embalagens externas e logística, **ITF-14** costuma ser a opção mais adequada.
+Use **EAN-13**, **UPC-A** ou **JAN** quando você já tiver um número de produto válido nesse padrão. Esses formatos exigem apenas números e uma quantidade fixa de dígitos.
 
-## PNG ou SVG: qual formato baixar?
+Use **ITF-14** para caixas, embalagens externas e unidades logísticas.
 
-Use **PNG** quando precisar de uma imagem rápida para documentos, planilhas, etiquetas simples ou impressão comum.
+## Códigos de Produto e Registro Oficial
 
-Use **SVG** quando precisar de um arquivo vetorial que continue nítido em qualquer tamanho, como em artes, layouts de etiquetas ou impressão profissional.
+Esta ferramenta cria imagens de código de barras a partir dos valores digitados. Ela não emite, registra nem atribui números oficiais de produto.
 
-## Geração privada no navegador
+Se o código será usado em lojas, marketplaces, distribuidores ou cadeia de suprimentos, use um número oficial já atribuído ao produto. Para uso interno, como SKU, controle de estoque, número de série ou rastreamento interno, CODE 128 geralmente é suficiente.
 
-Códigos de barras podem conter dados internos, como códigos de produto, estoque, clientes ou rastreamento. Esta ferramenta gera os códigos diretamente no navegador, sem cadastro e sem enviar os valores para um servidor.
+## PNG ou SVG: Qual Formato Baixar?
 
-## Erros comuns ao criar código de barras
+Use **PNG** quando precisar de uma imagem rápida para documentos, planilhas, etiquetas simples, notas internas ou impressão comum.
+
+Use **SVG** quando precisar de um arquivo vetorial que continue nítido em qualquer tamanho. SVG é melhor para artes, layouts de etiquetas, impressão profissional e softwares de design.
+
+## Geração Privada no Navegador
+
+Códigos de barras podem conter dados internos, como códigos de produto, estoque, clientes, pedidos, remessas ou rastreamento. O Squishyfile gera os códigos diretamente no navegador, sem cadastro e sem enviar os valores para um servidor.
+
+Isso ajuda a manter os dados no seu dispositivo, especialmente ao trabalhar com listas de produtos, informações de estoque ou códigos internos.
+
+## Erros Comuns ao Criar Código de Barras
 
 ### Tamanho incorreto em códigos de varejo
 
-EAN-13 e JAN precisam de 13 dígitos. UPC-A precisa de 12 dígitos. EAN-8 precisa de 8 dígitos. Se o seu valor tiver outro tamanho, use CODE 128.
+EAN-13 e JAN precisam de 13 dígitos. UPC-A precisa de 12 dígitos. EAN-8 precisa de 8 dígitos. Se o valor tiver outro tamanho ou contiver letras, use CODE 128.
 
 ### Letras em formatos apenas numéricos
 
 EAN, UPC, JAN e ITF-14 são formatos numéricos. Se o valor tiver letras, espaços ou símbolos, use CODE 128 ou CODE 39.
 
+### Escolher um formato que não combina com o uso
+
+Códigos internos de estoque, SKUs e números de série geralmente funcionam bem com CODE 128. Códigos de produtos para varejo devem usar o padrão correto e um número oficial já atribuído.
+
 ### Código de barras pequeno demais para leitura
 
-Se o código for impresso muito pequeno, com linhas finas ou pouco espaço ao redor, pode ficar difícil de escanear. Aumente a altura ou a largura das linhas e teste antes de imprimir em grande quantidade.
+Se o código for impresso muito pequeno, com linhas finas ou pouco espaço ao redor, pode ficar difícil de escanear. Ajuste a altura, a largura das linhas e o espaço livre antes de imprimir.
 
-## Perguntas frequentes
+### Não testar antes da impressão em lote
 
-### Este gerador de código de barras é grátis?
-
-Sim. Você pode gerar códigos de barras online gratuitamente, sem instalar programa e sem criar conta.
-
-### Posso gerar vários códigos de barras ao mesmo tempo?
-
-Sim. Use o modo em lote para criar múltiplos códigos de barras e baixá-los juntos.
-
-### Os valores digitados são enviados para algum servidor?
-
-Não. A geração acontece no navegador, e os valores digitados ficam no seu dispositivo.
-
-### Posso criar código de barras para produtos?
-
-Sim, se você já tiver o número correto do produto. Use EAN-13, UPC-A ou JAN conforme o tipo de código. A ferramenta gera a imagem do código de barras, mas não registra números oficiais de produto.
-
-### Por que meu código de barras não foi gerado?
-
-O formato escolhido pode exigir apenas números ou uma quantidade específica de dígitos. Para textos, SKUs e códigos internos, tente usar CODE 128.
+Antes de imprimir muitas etiquetas, teste o código de barras com o scanner ou aplicativo que será usado. Isso ajuda a identificar problemas de tamanho, contraste, formato, impressão ou valores incorretos.

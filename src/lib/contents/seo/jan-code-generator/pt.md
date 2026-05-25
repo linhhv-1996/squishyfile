@@ -1,61 +1,27 @@
-# Gerador de Código JAN Online
+## Crie um Código JAN para Produtos do Japão
 
-Use este gerador de código JAN para criar códigos de barras de produtos japoneses diretamente no navegador. Digite um valor JAN de 13 dígitos, gere o código de barras e baixe o resultado em PNG ou SVG para etiquetas, rascunhos de embalagem, catálogos, imagens de ecommerce, planilhas de estoque ou testes de leitura.
+Use este gerador de código JAN para criar uma imagem de código de barras a partir de um número japonês de produto com 13 dígitos. Ele é útil para etiquetas, mockups de embalagem, imagens de ecommerce, catálogos internos, planilhas de estoque e testes de leitura voltados a produtos para o mercado japonês.
 
-A ferramenta foi pensada para criação rápida de códigos JAN, sem instalar software e sem enviar seus dados para um servidor. O valor digitado é processado localmente no navegador, o que ajuda em tarefas internas, testes de produto, materiais de apresentação e preparação de layouts para o mercado japonês.
+A geração acontece no navegador, e o arquivo pode ser baixado em PNG ou SVG. Assim, você consegue preparar materiais de produto sem instalar software e sem criar um fluxo complexo só para gerar a imagem do JAN.
 
-## O que é um Código JAN?
+## Foco em JAN, não em qualquer código de barras
 
-JAN significa Japanese Article Number. É um sistema de código de barras usado em produtos de varejo no Japão. O código JAN usa a mesma estrutura de 13 dígitos do EAN-13, por isso pode ser lido por muitos scanners, sistemas de ponto de venda e sistemas de gestão de produtos compatíveis com EAN/JAN.
+JAN é o formato usado em produtos de varejo no Japão. Ele segue a mesma estrutura do EAN-13 e pode ser lido por muitos scanners, sistemas de ponto de venda e ferramentas de gestão compatíveis com EAN/JAN.
 
-O JAN aceita apenas números. Ele não foi feito para letras, símbolos, SKUs longos ou descrições internas. Se você precisa transformar texto livre ou códigos internos em código de barras, CODE 128 costuma ser uma escolha melhor. Use JAN quando o objetivo for criar um código de produto no padrão japonês de varejo.
+Use esta página quando o conteúdo for um número de produto japonês. Para texto livre, SKUs internos, números de série ou códigos mais flexíveis, um gerador geral com CODE 128 pode ser mais adequado.
 
-## Quando usar um gerador de Código JAN
+## Confira o número antes de gerar
 
-Um gerador de código JAN é útil quando você precisa de uma imagem de código de barras de forma rápida, sem abrir um programa de design ou configurar uma ferramenta complexa.
+O valor precisa ter 13 dígitos, incluindo o dígito verificador final. Digite apenas números. Remova espaços, hífens, letras e caracteres invisíveis copiados de planilhas ou cadastros de produto.
 
-Ele pode ser usado para mockups de embalagem, rascunhos de etiquetas, imagens de produtos para ecommerce, catálogos internos, testes com leitores de código de barras, preparação de materiais para venda no Japão e organização de dados de produtos.
+Esta ferramenta cria somente a imagem do código de barras. Ela não emite números JAN oficiais e não registra produtos. Para venda real, confirme se o número foi atribuído corretamente e se atende às exigências do varejista, marketplace, gráfica ou parceiro logístico.
 
-Para uso real em varejo e distribuição, confirme se o número digitado é um JAN válido e oficialmente atribuído ao produto ou à organização responsável. Esta ferramenta gera a imagem do código de barras, mas não emite números oficiais, não registra produtos e não substitui processos de cadastro exigidos por varejistas, marketplaces ou distribuidores.
+## PNG ou SVG
 
-## Formato do Código JAN
+PNG é prático para documentos, apresentações, rascunhos de ecommerce, catálogos internos e modelos de etiqueta.
 
-Um código JAN é formado por 13 dígitos numéricos. Os primeiros dígitos identificam o sistema de numeração e a organização, os dígitos centrais identificam o produto, e o último dígito é o dígito verificador, usado para ajudar scanners e sistemas a detectar erros.
+SVG é melhor para impressão e layouts de embalagem, porque mantém as barras nítidas ao redimensionar. Antes de imprimir, revise tamanho, contraste, área livre ao redor do código e qualidade final da etiqueta.
 
-Como o JAN segue a estrutura EAN-13, o valor precisa conter apenas números e ter o comprimento correto. Se a geração falhar, os motivos mais comuns são letras no campo, espaços invisíveis, hífens, quantidade incorreta de dígitos ou um dígito verificador inválido.
+## Para preparação de produtos japoneses
 
-### Use apenas 13 dígitos
-
-O JAN não aceita espaços, hífens, letras ou símbolos. Ao copiar dados de uma planilha ou catálogo de produtos, verifique se não existem espaços antes ou depois do número. Uma limpeza simples do valor costuma resolver muitos erros de geração.
-
-### Verifique o dígito final
-
-O último dígito é o dígito verificador. Ele ajuda a confirmar se o número foi digitado corretamente. Se você já tem um JAN oficial, insira os 13 dígitos exatamente como foram fornecidos. Para testes de leitura, também é melhor usar um número estruturalmente válido, pois isso aproxima o teste de um cenário real.
-
-## PNG ou SVG: qual formato escolher?
-
-PNG é prático para uso rápido em documentos, apresentações, catálogos internos, rascunhos de ecommerce e modelos de etiqueta. É um formato de imagem comum e fácil de inserir em várias ferramentas.
-
-SVG é melhor quando você precisa redimensionar o código de barras sem perder nitidez. Por ser um formato vetorial, ele é mais adequado para layouts de impressão, embalagens, artes finais e etiquetas que podem ser ajustadas em diferentes tamanhos.
-
-Antes de imprimir, revise tamanho, contraste, área livre ao redor do código e qualidade da impressora. Um código pode parecer correto na tela, mas ficar difícil de escanear se for pequeno demais, se estiver deformado, se tiver pouco contraste ou se houver elementos gráficos muito próximos das barras.
-
-## Como criar códigos JAN mais fáceis de escanear
-
-Use alto contraste entre as barras e o fundo. O padrão mais seguro é barra escura sobre fundo claro. Evite esticar a imagem depois do download, porque a distorção pode prejudicar a leitura do scanner.
-
-Mantenha uma área vazia ao redor do código de barras. Essa área é chamada de quiet zone e ajuda o scanner a identificar onde o código começa e termina. Não coloque bordas, textos, ícones ou imagens muito próximos das barras.
-
-Se você precisa gerar muitos códigos JAN, organize os valores em uma planilha antes de começar. Procure números duplicados, linhas vazias, dígitos faltando, espaços extras e erros de digitação. Essa etapa simples reduz problemas em etiquetas, embalagens e cadastros de produto.
-
-## Código JAN em fluxos de produtos japoneses
-
-O código JAN é especialmente útil em fluxos relacionados ao mercado japonês, como rótulos de produtos, gestão de catálogo, ecommerce, controle de estoque e materiais de embalagem. Ele ajuda a conectar um item físico a dados como nome do produto, variação, preço, estoque e canal de venda.
-
-Para mockups, testes internos e revisão visual, um código JAN gerado pode ser suficiente para validar layout, tamanho e leitura. Para venda real, confirme sempre as regras do varejista, marketplace, gráfica ou parceiro logístico antes de enviar o material para produção.
-
-## Diferença entre JAN e outros códigos de barras
-
-JAN é indicado para números de produtos japoneses. CODE 128 é melhor para texto flexível, SKUs e códigos internos. CODE 39 funciona para códigos alfanuméricos simples. UPC-A é comum em produtos de varejo dos Estados Unidos. EAN-13 é usado em produtos internacionais. ITF-14 costuma aparecer em caixas, embalagens de transporte e unidades logísticas.
-
-Escolha JAN quando o conteúdo for um número de produto japonês. Para outros tipos de dados ou vários formatos de código de barras, use um gerador de código de barras geral.
+O JAN ajuda a conectar o produto físico a dados como nome, variação, preço, estoque e canal de venda. Em mockups e revisões internas, a imagem gerada ajuda a validar layout, tamanho e leitura antes da produção final.
