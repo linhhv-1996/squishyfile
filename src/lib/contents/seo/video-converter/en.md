@@ -1,61 +1,34 @@
-# Online Video Converter: Convert Video Files Free in Your Browser
+Squishyfile is a free online video converter that runs entirely in your browser. Files are processed locally using WebAssembly and FFmpeg — your video is never uploaded to a server.
 
-Squishyfile is a free online video converter that helps you convert video files directly in your browser. You can convert MP4, MOV, AVI, MKV, WebM, WMV, FLV, M4V, 3GP, TS and other common video formats without installing software or creating an account.
+## Supported input and output formats
 
-Use it when a video will not open on your phone, computer, editing app, media player, social platform, or shared workspace. Choose a file from your device, select the output format, convert it in the browser, and download the converted video.
+This video converter accepts MP4, MOV, AVI, MKV, WebM, WMV, FLV, M4V, 3GP, and TS files. Output formats are MP4, WebM, MOV, and MKV.
 
-Unlike many online video converter sites, Squishyfile processes files locally in your browser with WebAssembly and FFmpeg. Your video does not need to be uploaded to a server, which makes the tool useful for personal videos, work recordings, school projects, unpublished clips, and other files you prefer to keep on your device.
-
----
-
-## What this video converter can do
-
-- Convert video files to MP4
-- Convert MOV, AVI, MKV, WebM and other formats
-- Change a video format so it is easier to play or share
-- Create a more compatible file for phones, computers, browsers, editors and media players
-- Convert videos in your browser without installing desktop software
-- Avoid uploading private video files to a remote server
-- Use the tool on modern browsers on Windows, Mac, iPhone, Android and Chromebook
-- Export to common formats such as MP4, WebM, MOV and MKV
-
-MP4 is usually the safest output choice because it works across most devices, apps, websites and editing tools. WebM can be useful for web projects, MOV can be useful in Apple workflows, and MKV can be useful when you need a flexible container for high-quality video.
+The tool works with video files already saved on your device. It does not download videos from YouTube, TikTok, or other URLs.
 
 ---
 
-## How to convert a video file online
+## How to convert a video file
 
-### Step 1: Choose a video file
+**Step 1 — Choose a file.** Drag a video into the upload area or click to pick one from your device.
 
-Drag and drop a video into the converter or click the upload area to select a file from your device. The tool is designed for local video files such as MP4, MOV, AVI, MKV, WebM, WMV, FLV, M4V, 3GP and TS.
+**Step 2 — Select an output format.** MP4 works on the widest range of devices, apps, and platforms. Choose WebM for web projects, MOV for Apple-centered workflows, or MKV when you need a container that supports multiple audio tracks or high-quality video.
 
-This tool is not a video downloader. It does not convert videos from YouTube, Instagram, TikTok or other URLs. Choose a video file that is already saved on your device.
-
-### Step 2: Select an output format
-
-Choose the format you want to create. For most users, MP4 is the best option because it is widely supported on phones, computers, social media platforms, messaging apps, cloud drives and video editors.
-
-Choose WebM for web-friendly files, MOV for Apple-centered workflows, or MKV when you need a flexible video container.
-
-### Step 3: Convert and download
-
-Start the conversion and keep the browser tab open while the file is being processed. When the conversion is complete, download the new video file to your device.
+**Step 3 — Convert and download.** Keep the tab open while processing. When the conversion finishes, download the file to your device.
 
 ---
 
 ## Convert video to MP4
 
-Many people use a video format converter because they need an MP4 file. MP4 is one of the most compatible video formats for everyday use. It is a good choice for sharing videos, uploading clips, sending files by chat or email, adding videos to presentations, and importing clips into editing software.
+MP4 is the most compatible format for everyday use — phones, computers, social media, messaging apps, and most video editors all handle it well. Common conversions include:
 
-You can convert many common video types to MP4, including:
+- **MOV to MP4** — iPhone, iPad, and Mac recordings
+- **AVI to MP4** — older camera files or legacy Windows software
+- **MKV to MP4** — high-quality video, subtitle files, or large archives
+- **WebM to MP4** — screen recordings or browser-exported video
+- **WMV, FLV, M4V, 3GP, TS to MP4**
 
-- iPhone or Mac MOV videos
-- Older AVI videos from cameras or Windows PCs
-- MKV videos that may not open in all apps
-- WebM videos from screen recorders or browser-based tools
-- WMV, FLV, M4V, 3GP and TS files
-
-For a format-specific page, use one of these dedicated converters:
+For a dedicated converter, use one of these pages:
 
 - [Convert MOV to MP4](/mov-to-mp4)
 - [Convert AVI to MP4](/avi-to-mp4)
@@ -64,27 +37,19 @@ For a format-specific page, use one of these dedicated converters:
 
 ---
 
-## Why use a browser-based video converter?
+## Use on iPhone, Android, Mac, and Windows
 
-A browser video converter is useful when you do not want to install a large desktop app just to change one file. It is also helpful on school or work computers where installing software is not allowed.
+Squishyfile works in any modern browser. On iPhone, open Safari and choose a file from the Files app or Photos. On Android, use Chrome and select a video stored on your device. On Mac or Windows, drag a file from Finder or File Explorer into the upload area.
 
-Because Squishyfile runs the conversion in your browser, the file can be processed on your own device instead of being uploaded first. This can save upload time and gives you more control when working with private or sensitive videos.
-
----
-
-## Video conversion on iPhone, Android, Mac and Windows
-
-You can use Squishyfile from a modern browser on desktop or mobile. On iPhone, open the tool in Safari and choose a file from Files or Photos. On Android, open it in Chrome and select a video from your device. On Mac and Windows, drag a file into the browser from Finder or File Explorer.
-
-Large videos, long recordings and 4K files can use a lot of memory and processing power. If a mobile device struggles with a large file, try converting the video on a desktop or laptop for better stability.
+Large files, 4K recordings, and long videos use significant memory. If a mobile browser struggles, switch to a desktop or laptop for a more stable conversion.
 
 ---
 
-## If your video will not convert
+## If a conversion fails
 
-Video conversion can fail when the source file is damaged, extremely large, or encoded with an unusual codec. First, check whether the original file plays correctly in a media player. If the source video cannot be opened anywhere, the converter may not be able to read it.
-
-If the video is long or high-resolution, keep the browser tab open and avoid locking the screen during conversion. Updating your browser and closing other heavy tabs can also help.
+- **File won't play before converting** — a damaged or incomplete source file cannot be converted. Check that the original plays normally first.
+- **Conversion is slow or freezes** — close unused tabs, update your browser, and keep the page active. Do not lock the screen on mobile during processing.
+- **Unusual codec or file structure** — some files use uncommon internal codecs even if the extension looks familiar. Try playing the file in a different media player to confirm it works.
 
 ---
 
@@ -92,4 +57,4 @@ If the video is long or high-resolution, keep the browser tab open and avoid loc
 
 - [How to choose the best video converter for quality and privacy](/blog/best-video-converter-quality-privacy)
 - [How to convert video without losing quality](/blog/convert-video-without-losing-quality)
-- [Why a secure no-upload video converter can be better for private files](/blog/secure-video-converter-no-upload)
+- [Why a no-upload video converter is better for private files](/blog/secure-video-converter-no-upload)

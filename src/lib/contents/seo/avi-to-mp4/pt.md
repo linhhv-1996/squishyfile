@@ -1,88 +1,57 @@
-# Converter AVI para MP4 online
-
-Use o Squishyfile para converter AVI para MP4 no navegador, sem instalar programas e sem criar conta. A página é indicada para quem tem um arquivo AVI antigo, uma gravação exportada por software antigo ou um vídeo que não abre bem em celulares, navegadores ou aplicativos modernos.
-
-Escolha o arquivo AVI, converta para MP4 e baixe o resultado no seu dispositivo. O processamento acontece no navegador com WebAssembly e FFmpeg, sem necessidade de enviar o vídeo para um servidor de conversão.
+O Squishyfile permite converter AVI para MP4 diretamente no navegador, sem instalar programas e sem enviar o vídeo para um servidor. O processamento acontece no seu dispositivo com WebAssembly e FFmpeg. Não é necessário criar conta.
 
 ---
 
 ## Por que converter AVI para MP4
 
-AVI foi muito usado em computadores Windows, câmeras antigas e programas de captura. Apesar de ainda aparecer em muitos arquivos, ele pode causar problemas de compatibilidade em celulares, navegadores, redes sociais e editores modernos.
+AVI foi amplamente usado em computadores Windows, câmeras antigas e programas de captura. Ainda é possível encontrar muitos arquivos nesse formato, mas ele pode causar problemas de compatibilidade em celulares, navegadores, redes sociais e editores modernos.
 
-MP4 é mais aceito em ambientes atuais. Converter um arquivo AVI para MP4 ajuda a tornar o vídeo mais fácil de abrir, enviar, publicar e editar.
+Converter AVI para MP4 é útil quando você quer:
 
-A conversão de AVI para MP4 é útil quando você quer:
-
-- Reproduzir um vídeo antigo no celular
-- Enviar um arquivo AVI pelo WhatsApp, e-mail ou armazenamento em nuvem
-- Usar o vídeo em uma plataforma que prefere MP4
-- Importar o arquivo em um editor moderno
-- Evitar que a outra pessoa precise instalar codecs extras
+- Reproduzir vídeos antigos no celular ou em um dispositivo moderno
+- Compartilhar um arquivo AVI por WhatsApp, e-mail ou nuvem
+- Fazer upload em uma plataforma que não aceita AVI
+- Importar gravações antigas em um editor de vídeo atual
+- Evitar que o destinatário precise instalar codecs antigos para abrir o arquivo
 
 ---
 
-## Como converter AVI para MP4
+## Como converter AVI para MP4 online
 
-### Passo 1: selecione o arquivo AVI
+**Passo 1 — Selecione o arquivo AVI.** Arraste o vídeo para a área de upload ou clique para escolher um arquivo salvo no seu computador, celular ou tablet.
 
-Arraste o vídeo AVI para a ferramenta ou clique para escolher um arquivo salvo no computador ou no celular.
+**Passo 2 — Confirme o formato de saída.** Esta página já converte para MP4 por padrão. MP4 é aceito em celulares, computadores, plataformas de vídeo e aplicativos de edição.
 
-### Passo 2: escolha MP4 como formato final
-
-A página já é preparada para AVI para MP4. Confirme que o formato de saída está definido como MP4.
-
-### Passo 3: inicie a conversão
-
-Clique para converter e mantenha a aba aberta até o fim. Como a conversão usa recursos do seu dispositivo, vídeos grandes podem levar mais tempo.
-
-### Passo 4: baixe o vídeo em MP4
-
-Depois da conversão, faça o download do arquivo MP4 e use-o onde precisar.
+**Passo 3 — Converta e baixe.** Mantenha a aba aberta durante o processamento. Quando a conversão terminar, baixe o MP4 para o seu dispositivo.
 
 ---
 
-## Converter arquivo AVI para MP4 sem instalar codec
+## AVI e MP4: diferença prática
 
-Um problema comum com AVI é a dependência de codecs antigos. Em alguns casos, o arquivo tem extensão AVI, mas usa um codec de vídeo ou áudio que não está disponível no aparelho da pessoa que vai assistir.
+AVI é um contêiner mais antigo que pode usar codecs não disponíveis em dispositivos modernos. MP4 tende a ser melhor aceito em celulares, navegadores, plataformas de streaming e editores de vídeo.
 
-Ao converter AVI para MP4, você reduz esse tipo de barreira. O arquivo final tende a ser mais simples de abrir em players, celulares, navegadores e plataformas online.
-
----
-
-## AVI para MP4 no Windows, Mac e celular
-
-No Windows, muitos arquivos AVI ainda abrem em players específicos, mas podem falhar em aplicativos modernos. No Mac e no celular, a compatibilidade pode ser ainda mais limitada. Como o Squishyfile funciona no navegador, você pode usar a mesma página em diferentes sistemas sem instalar um programa de conversão.
-
-Para arquivos longos ou muito pesados, prefira um computador. Em celulares, mantenha a tela ativa e evite fechar o navegador durante a conversão.
+Se o objetivo for só arquivar o vídeo localmente, o AVI original pode ser mantido. Se você precisa abrir, compartilhar ou editar o arquivo em ambientes diferentes, converter para MP4 costuma resolver problemas de compatibilidade.
 
 ---
 
-## Conversão AVI para MP4 sem upload
+## Converter AVI para MP4 no celular
 
-O Squishyfile processa o vídeo no navegador sempre que possível. Isso é útil quando você quer converter vídeos pessoais, gravações de trabalho, aulas, reuniões ou arquivos antigos sem enviar tudo para um servidor externo.
+O Squishyfile funciona em navegadores modernos no celular. No iPhone, use o Safari e escolha o arquivo no app Arquivos ou Fotos. No Android, use o Chrome e selecione o vídeo armazenado no dispositivo.
 
-Além da privacidade, esse fluxo evita depender da velocidade de upload da internet, o que pode fazer diferença em arquivos grandes.
+Arquivos AVI de câmeras antigas costumam ser grandes e usar codecs legados, o que pode tornar a conversão mais lenta no celular. Para vídeos pesados, prefira um computador. Não feche a aba nem bloqueie a tela durante a conversão.
 
 ---
 
-## Se o AVI não converter
+## Outros conversores de vídeo
 
-### Teste o arquivo original
-
-Veja se o AVI abre em algum player confiável. Se o arquivo estiver quebrado, a conversão pode não funcionar.
-
-### Verifique codecs muito antigos
-
-Alguns arquivos AVI usam codecs raros. Mesmo com FFmpeg, certos arquivos danificados ou muito específicos podem falhar.
-
-### Reduza a carga do dispositivo
-
-Feche outros aplicativos, mantenha a aba aberta e tente usar um computador se o celular travar.
+- [Conversor de vídeo online](/pt/video-converter) — MP4, MOV, AVI, MKV, WebM e mais
+- [Converter MOV para MP4](/pt/mov-to-mp4)
+- [Converter MKV para MP4](/pt/mkv-to-mp4)
+- [Converter WebM para MP4](/pt/webm-to-mp4)
 
 ---
 
 ## Leia também
 
-- [AVI, MKV e WebM: diferenças antes de converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
-- [Conversor de vídeo online](/pt/video-converter)
+- [AVI, MKV e WebM: o que muda ao converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
+- [Por que usar um conversor de vídeo sem upload](/pt/blog/conversor-video-sem-upload-privacidade)
