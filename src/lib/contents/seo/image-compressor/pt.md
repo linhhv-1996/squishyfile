@@ -4,6 +4,8 @@ Comprimir imagem não significa deixar o arquivo no menor tamanho possível a qu
 
 Use as recomendações abaixo como ponto de partida para compactar imagens com mais controle.
 
+---
+
 ## Configurações recomendadas por tipo de uso
 
 | Uso da imagem | Ponto de partida | O que conferir depois |
@@ -17,6 +19,8 @@ Use as recomendações abaixo como ponto de partida para compactar imagens com m
 
 Em fotos muito grandes, reduzir a largura pode diminuir bastante o tamanho final sem prejudicar tanto a aparência. Para imagens com texto, documentos ou capturas de tela, a legibilidade deve ser mais importante do que o menor arquivo possível.
 
+---
+
 ## Foto, JPG, PNG e outros formatos
 
 Fotos de celular, imagens de câmera, retratos e fotos de produto geralmente usam JPG ou JPEG. Esse tipo de arquivo costuma responder bem à compressão, principalmente quando a imagem original é grande. Se você quer trabalhar especificamente com esse formato, use a página de [comprimir JPG online](/pt/jpg-compressor).
@@ -25,6 +29,8 @@ PNG é mais comum em logos, ícones, capturas de tela, imagens com texto, elemen
 
 WebP e AVIF são formatos modernos usados em páginas web porque podem gerar arquivos menores com boa qualidade visual. Eles são úteis para otimização de sites, mas vale confirmar se a plataforma onde você vai enviar a imagem aceita esses formatos.
 
+---
+
 ## Como reduzir o peso da imagem do jeito certo
 
 Comece com uma compressão moderada. Depois de baixar o resultado, abra a imagem e veja no tamanho em que ela será usada. Uma diferença quase invisível quando a imagem está no tamanho real de uso geralmente é aceitável para web, e-mail e redes sociais.
@@ -32,6 +38,8 @@ Comece com uma compressão moderada. Depois de baixar o resultado, abra a imagem
 Se a imagem veio de um celular ou câmera, ela pode ter largura muito maior do que o necessário. Uma foto de 4000px de largura pode ser exagerada para um post de blog, uma página de produto ou uma imagem de formulário. Nesses casos, ajustar a largura junto com a compressão costuma funcionar melhor do que apenas baixar muito a qualidade.
 
 Para documentos, recibos, prints, tabelas e imagens com texto, faça o contrário: compacte com cuidado e confira os detalhes. Se as letras ficarem borradas, aumente a qualidade ou reduza menos.
+
+---
 
 ## Compressão de imagem para sites e lojas virtuais
 
@@ -47,6 +55,8 @@ Um fluxo simples é:
 
 Esse processo ajuda a deixar imagens mais leves sem perder qualidade visual importante.
 
+---
+
 ## Quando usar a página de reduzir tamanho da imagem
 
 Comprimir imagem normalmente significa diminuir o peso do arquivo por meio de compressão e ajustes de qualidade. Reduzir tamanho da imagem pode envolver também diminuir largura, altura ou resolução para cumprir um limite específico.
@@ -54,6 +64,8 @@ Comprimir imagem normalmente significa diminuir o peso do arquivo por meio de co
 Use esta página quando quiser um compressor de imagem geral para JPG, PNG, WebP, AVIF, fotos, prints e imagens para web.
 
 Use [reduzir tamanho da imagem](/pt/reduce-image-size) quando o objetivo principal for deixar uma foto abaixo de um limite de upload, anexar em e-mail, enviar em formulário, currículo, documento ou sistema online.
+
+---
 
 ## Ferramentas relacionadas
 

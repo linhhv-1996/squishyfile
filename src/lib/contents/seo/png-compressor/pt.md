@@ -6,6 +6,8 @@ Arquivos PNG podem ficar grandes porque preservam bem detalhes visuais, linhas e
 
 Esta página é indicada para comprimir PNG. Para fotos, imagens de produtos e arquivos JPEG, use [comprimir JPG online](/pt/jpg-compressor). Para comprimir vários formatos em uma só ferramenta, como JPG, PNG, WebP e AVIF, use o [compressor de imagem online](/pt/image-compressor).
 
+---
+
 ## Configurações recomendadas para reduzir PNG
 
 Ao compactar PNG, confira se o arquivo ficou menor sem prejudicar o que torna o formato útil: transparência, linhas limpas, texto legível e detalhes de interface.
@@ -20,6 +22,8 @@ Ao compactar PNG, confira se o arquivo ficou menor sem prejudicar o que torna o 
 | Upload, formulário ou e-mail | Limite de tamanho final | Combine compressão com redução de largura quando preciso |
 
 Depois de comprimir PNG, abra o arquivo e veja como ele aparece no contexto real: página web, documento, apresentação, produto ou área de upload. Um arquivo pequeno só é útil se continuar claro o bastante para o uso final.
+
+---
 
 ## PNG é melhor para transparência, texto e bordas nítidas
 
@@ -36,6 +40,8 @@ Use PNG para:
 
 Se a imagem for uma foto comum, como produto, pessoa, comida, paisagem ou imagem de câmera, JPG costuma gerar arquivos menores com boa aparência. Nesse caso, use [comprimir JPG online](/pt/jpg-compressor).
 
+---
+
 ## Como diminuir PNG sem perder detalhes importantes
 
 Comece com uma compressão moderada e compare o resultado com o arquivo original. Em logos e ícones, observe as bordas. Em screenshots, confira textos pequenos, menus e linhas finas. Em PNG com transparência, verifique se o fundo continua transparente e se sombras ou recortes continuam naturais.
@@ -44,6 +50,8 @@ Se o PNG ainda estiver pesado, veja se as dimensões são maiores do que o neces
 
 Evite compactar o mesmo PNG várias vezes. Se precisar de outra versão, volte ao arquivo original e faça uma nova compressão a partir dele.
 
+---
+
 ## PNG ou JPG: escolha o formato certo
 
 PNG é melhor para transparência, texto, linhas, ícones, logos, screenshots e gráficos simples. JPG é melhor para fotos e imagens realistas, especialmente quando o objetivo é reduzir bastante o tamanho do arquivo.
@@ -51,6 +59,8 @@ PNG é melhor para transparência, texto, linhas, ícones, logos, screenshots e 
 Em sites, uma boa prática é usar PNG apenas onde ele realmente faz diferença, como logo, ícones e imagens com transparência. Para fotos grandes, banners fotográficos e imagens de produtos, JPG costuma ser mais leve.
 
 Se seu objetivo principal é deixar qualquer imagem menor para upload, formulário, e-mail ou limite de tamanho, use [reduzir tamanho da imagem](/pt/reduce-image-size).
+
+---
 
 ## Ferramentas relacionadas
 

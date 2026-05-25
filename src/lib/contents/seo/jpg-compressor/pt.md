@@ -6,6 +6,8 @@ Comprimir JPG ajuda a reduzir o tamanho do arquivo antes de enviar por e-mail, a
 
 Esta página é focada em JPG e JPEG. Para comprimir vários formatos, como PNG, WebP e AVIF, use o [compressor de imagem online](/pt/image-compressor). Se o objetivo principal for cumprir um limite de upload ou diminuir o peso de qualquer imagem, use [reduzir tamanho da imagem](/pt/reduce-image-size).
 
+---
+
 ## Configurações recomendadas para comprimir JPG
 
 A melhor configuração depende do tipo de imagem e do uso final. Em vez de reduzir a qualidade ao máximo, comece com um ajuste equilibrado e diminua aos poucos se o arquivo ainda estiver grande.
@@ -22,11 +24,15 @@ A melhor configuração depende do tipo de imagem e do uso final. Em vez de redu
 
 Se a foto original tem muitos pixels de largura, ajustar a largura pode reduzir o tamanho final mais do que apenas baixar a qualidade. Para web, e-mail e formulários, nem sempre é necessário manter a resolução completa da câmera ou do celular.
 
+---
+
 ## JPG e JPEG são a mesma coisa?
 
 JPG e JPEG são o mesmo formato de imagem. A diferença está principalmente no nome da extensão do arquivo. Alguns sistemas usam `.jpg`, enquanto outros usam `.jpeg`.
 
 Este compressor aceita arquivos JPG e JPEG. Você pode usá-lo para comprimir JPG, comprimir JPEG, compactar JPG, reduzir tamanho JPG ou diminuir o peso de fotos em formato JPEG sem converter antes.
+
+---
 
 ## Como reduzir JPG sem perder muita qualidade
 
@@ -42,6 +48,8 @@ Um fluxo prático:
 
 Para fotos de produto, retratos, portfólios e imagens institucionais, vale manter qualidade um pouco maior. Para anexos, formulários ou compartilhamento rápido, você pode priorizar um arquivo mais leve.
 
+---
+
 ## Quando ajustar a largura junto com a compressão
 
 Muitas fotos de celular e câmera têm resolução alta demais para o uso real. Uma imagem pode ter 4000 px de largura, mesmo que seja exibida em um site com 1200 px ou enviada apenas como anexo.
@@ -50,6 +58,8 @@ Nesses casos, reduzir a largura junto com a compressão costuma gerar um arquivo
 
 Se você precisa deixar uma imagem abaixo de um limite específico, como 1 MB ou 500 KB, a página [reduzir tamanho da imagem](/pt/reduce-image-size) pode ser mais adequada.
 
+---
+
 ## Quando JPG não é a melhor escolha
 
 JPG funciona muito bem para fotos, mas não é ideal para todos os tipos de imagem. Ele não preserva transparência e pode deixar textos pequenos, linhas finas, ícones e capturas de tela menos nítidos.
@@ -57,6 +67,8 @@ JPG funciona muito bem para fotos, mas não é ideal para todos os tipos de imag
 Use PNG quando a imagem tiver logo, ícone, interface, screenshot, fundo transparente ou muito texto. Para esses casos, use [comprimir PNG online](/pt/png-compressor).
 
 Se você não sabe qual formato tem ou quer processar uma pasta com formatos diferentes, use o [compressor de imagem online](/pt/image-compressor).
+
+---
 
 ## Ferramentas relacionadas
 

@@ -6,6 +6,8 @@ This tool is useful for meeting recordings, class videos, screen recordings, pho
 
 Squishyfile is designed for video files stored on your device. It is not a YouTube to MP3 downloader and does not convert video URLs.
 
+---
+
 ## How to Convert a Video to MP3
 
 Converting a video to MP3 only takes a few steps. The tool reads the audio track inside your video file and creates a separate MP3 file from it.
@@ -28,6 +30,8 @@ When the conversion is complete, download the MP3 file to your device. You can p
 
 The downloaded file contains the audio only. It will not include the video image, subtitles, slides, or other visual content from the original video.
 
+---
+
 ## Convert MP4 to MP3
 
 MP4 is one of the most common video formats. It is used by smartphones, cameras, screen recorders, online meeting apps, social platforms, and video editing tools.
@@ -35,6 +39,8 @@ MP4 is one of the most common video formats. It is used by smartphones, cameras,
 If you only need the sound from an MP4 file, converting MP4 to MP3 can make the file easier to store, replay, and share. This is useful when you want to listen to a lecture, save the conversation from a meeting recording, extract narration from a screen recording, or keep only the audio from a phone video.
 
 For a more detailed guide focused on this format, read: [How to convert MP4 to MP3 for free](/blog/convert-mp4-to-mp3-free-browser).
+
+---
 
 ## Extract Audio from a Video File
 
@@ -53,6 +59,8 @@ Squishyfile extracts the complete audio track from the video. It does not separa
 
 For more details, see: [How to extract audio from video online](/blog/extract-audio-from-video-online).
 
+---
+
 ## Supported Video Formats
 
 Squishyfile supports common video formats used on phones, computers, browsers, and editing tools.
@@ -62,6 +70,8 @@ MP4 is the best starting point because it is widely used and usually works well 
 Some video files can still fail if the audio codec inside the file is unusual, the file is damaged, or the video is too large for your device to process smoothly. If a file does not convert, try playing the original video first to confirm that it has audio, then try again on a desktop browser.
 
 You can also read: [Convert MOV, WebM, MKV, and AVI to MP3](/blog/convert-video-formats-to-mp3).
+
+---
 
 ## Convert Video to MP3 on iPhone or Android
 
@@ -73,6 +83,8 @@ Before converting on a phone, make sure you have enough storage space, keep the 
 
 For a mobile-focused walkthrough, read: [Convert video to MP3 on iPhone and Android](/blog/convert-video-to-mp3-on-phone).
 
+---
+
 ## Private Browser-Based Conversion
 
 Squishyfile is built to process files locally in your browser using WebAssembly and FFmpeg. That means your video does not need to be uploaded to a server for conversion.
@@ -80,6 +92,8 @@ Squishyfile is built to process files locally in your browser using WebAssembly 
 This is useful for personal videos, private recordings, work files, unpublished materials, internal training videos, and meeting recordings that you do not want to send to another service.
 
 Because the conversion happens on your own device, performance depends on your browser, device memory, file size, and video length. Smaller files usually finish faster, while long videos may need more time.
+
+---
 
 ## Before You Convert
 
@@ -93,6 +107,8 @@ A few checks can help you get a better result:
 - do not repeatedly convert the same audio if you want to preserve quality
 
 MP3 is a compressed audio format. It is not lossless, but it is widely supported, easy to play, and practical for everyday listening, study notes, meeting reviews, and simple audio storage.
+
+---
 
 ## Related Guides
 

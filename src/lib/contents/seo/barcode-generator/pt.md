@@ -4,6 +4,8 @@ Crie códigos de barras online para produtos, estoque, SKUs, números de série,
 
 Você pode fazer um código de barras para uma tarefa rápida ou gerar vários códigos de barras em lote. Depois, baixe os arquivos em PNG para uso simples ou em SVG para layouts, etiquetas e impressão com melhor nitidez.
 
+---
+
 ## Formatos de Código de Barras Compatíveis
 
 Use esta ferramenta para transformar textos ou números em códigos de barras 1D para etiquetas, documentos, produtos, estoque e sistemas internos.
@@ -20,6 +22,8 @@ Use esta ferramenta para transformar textos ou números em códigos de barras 1D
 
 Para a maioria dos códigos internos, CODE 128 é a opção mais flexível. Para códigos de varejo, use o formato correspondente ao número oficial que você já possui.
 
+---
+
 ## Como Gerar um Código de Barras
 
 1. Escolha **Código único** ou **Códigos em lote**.
@@ -29,6 +33,8 @@ Para a maioria dos códigos internos, CODE 128 é a opção mais flexível. Para
 5. Gere o código de barras e baixe em PNG ou SVG.
 
 O modo em lote é útil para criar várias etiquetas de produtos, etiquetas de estoque, códigos de almoxarifado, etiquetas de envio ou números de série a partir de uma lista.
+
+---
 
 ## Qual Formato de Código de Barras Escolher?
 
@@ -40,11 +46,15 @@ Use **EAN-13**, **UPC-A** ou **JAN** quando você já tiver um número de produt
 
 Use **ITF-14** para caixas, embalagens externas e unidades logísticas.
 
+---
+
 ## Códigos de Produto e Registro Oficial
 
 Esta ferramenta cria imagens de código de barras a partir dos valores digitados. Ela não emite, registra nem atribui números oficiais de produto.
 
 Se o código será usado em lojas, marketplaces, distribuidores ou cadeia de suprimentos, use um número oficial já atribuído ao produto. Para uso interno, como SKU, controle de estoque, número de série ou rastreamento interno, CODE 128 geralmente é suficiente.
+
+---
 
 ## PNG ou SVG: Qual Formato Baixar?
 
@@ -52,11 +62,15 @@ Use **PNG** quando precisar de uma imagem rápida para documentos, planilhas, et
 
 Use **SVG** quando precisar de um arquivo vetorial que continue nítido em qualquer tamanho. SVG é melhor para artes, layouts de etiquetas, impressão profissional e softwares de design.
 
+---
+
 ## Geração Privada no Navegador
 
 Códigos de barras podem conter dados internos, como códigos de produto, estoque, clientes, pedidos, remessas ou rastreamento. O Squishyfile gera os códigos diretamente no navegador, sem cadastro e sem enviar os valores para um servidor.
 
 Isso ajuda a manter os dados no seu dispositivo, especialmente ao trabalhar com listas de produtos, informações de estoque ou códigos internos.
+
+---
 
 ## Erros Comuns ao Criar Código de Barras
 

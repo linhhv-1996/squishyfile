@@ -6,6 +6,8 @@ The tool is useful when a video is too large for WhatsApp, Gmail, Outlook, Disco
 
 Because compression runs locally with WebAssembly and FFmpeg, your video does not need to leave your device during processing. This makes Squishyfile a practical choice for family clips, work recordings, client previews, school projects, private footage, and videos you do not want to upload to a third-party server.
 
+---
+
 ## How to compress a video online
 
 ### 1. Choose your video
@@ -46,17 +48,23 @@ Click **Compress Now** and keep the browser tab open while the video is processe
 
 When the process finishes, you will see the original size, compressed size, and space saved. Download the smaller MP4 and play it once before deleting or replacing the original video.
 
+---
+
 ## Which videos compress best?
 
 Video compression usually works best when the video has repeated frames, simple motion, or low visual complexity. Screen recordings, tutorials, slides, webcam clips, animation, and fixed-camera videos often shrink well while staying clear.
 
 Videos with fast motion, camera shake, heavy grain, dark scenes, sports, dancing, gaming footage, 4K resolution, or very high frame rates may need a larger file size to keep acceptable quality. If the output looks blurry or blocky, try a less aggressive setting, a larger target size, or trim the video before compressing.
 
+---
+
 ## Compress MP4, MOV, and iPhone videos
 
 MP4 is the easiest format for sharing, but MP4 files can still be large when the video is long, high resolution, or exported at a high bitrate. Squishyfile can compress MP4 files and export a smaller MP4 that is easier to upload or send.
 
 MOV files from iPhone can also become very large, especially when recorded in 4K, 60fps, HDR, or high-efficiency settings. You can select a MOV file, compress it in the browser, and download an MP4 version for better compatibility with email, messaging apps, Windows devices, Android phones, and social platforms.
+
+---
 
 ## Compress video privately in your browser
 
@@ -66,6 +74,8 @@ Squishyfile works differently. After the page loads, video compression runs in y
 
 This is especially useful for videos that include family moments, children, work calls, internal company material, client footage, legal or financial information, unpublished creative work, or anything you do not want stored on a third-party server.
 
+---
+
 ## Tips for better compression quality
 
 Start with **Balanced** for most videos. Use **High quality** when the video contains small text, faces, product details, presentation slides, or content that needs to stay readable. Use **Smallest size** only when the file must fit a strict limit.
@@ -74,11 +84,15 @@ Avoid forcing a long or high-resolution video into a very small target size. A 2
 
 Always keep the original video until you have checked the compressed version.
 
+---
+
 ## Supported formats and devices
 
 Squishyfile supports MP4, MOV, WebM, MKV, AVI, WMV, FLV, and other common video formats. The compressed result is saved as MP4 for broad compatibility.
 
 You can use the tool in modern browsers on Mac, Windows, Linux, Chromebook, iPhone, and Android. For very large files, long recordings, or 4K videos, a desktop or laptop usually provides a more stable experience than an older phone.
+
+---
 
 ## Related video compression guides
 

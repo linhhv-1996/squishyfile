@@ -6,6 +6,8 @@ PNG files can become heavy because they preserve clean edges and visual detail w
 
 This page is best for PNG images. For camera photos, product photos, and realistic images without transparency, use the [JPG Compressor](/jpg-compressor). For mixed formats such as JPG, PNG, WebP, and AVIF, use the [Image Compressor](/image-compressor).
 
+---
+
 ## Recommended PNG settings by use case
 
 Use the table below as a starting point when reducing PNG file size. The best setting depends on the image type, how it will be displayed, and whether small text or transparent edges need to stay clean.
@@ -20,6 +22,8 @@ Use the table below as a starting point when reducing PNG file size. The best se
 | File upload or form submission | Final file size limit | Use compression with width reduction if the system rejects the PNG |
 
 After compression, preview the result at the size where people will actually see it. A PNG that looks fine as a thumbnail may not be clear enough in a help article, product page, or design handoff.
+
+---
 
 ## PNG is best for transparency, text, and sharp edges
 
@@ -36,6 +40,8 @@ Common PNG files include:
 
 If the image is mostly a photo, PNG is often not the most efficient choice. A large photo saved as PNG may stay much heavier than the same image saved as JPG. In that case, use the [JPG Compressor](/jpg-compressor) instead.
 
+---
+
 ## How to reduce PNG file size without losing important detail
 
 Start by compressing the PNG while keeping enough quality for the image type. For logos, icons, and screenshots, the details that matter most are usually edges, text, and transparency. If those still look clean, the compressed PNG is usually safe to use.
@@ -44,6 +50,8 @@ If the file is still too large, check the image dimensions. Many PNG files are e
 
 Avoid compressing the same PNG repeatedly. If you need another version, go back to the original file and export or compress again from there.
 
+---
+
 ## PNG vs JPG: choose the right format
 
 Use PNG when the image needs transparency, clean text, sharp edges, or precise graphic details. Use JPG when the image is a photo or realistic visual where a smaller file size matters more than perfect edges.
@@ -51,6 +59,8 @@ Use PNG when the image needs transparency, clean text, sharp edges, or precise g
 For websites, a good rule is simple: use PNG for logos, icons, screenshots, and transparent graphics; use JPG for photos, product shots, and large visual banners. This keeps pages lighter without making important graphic elements look blurry.
 
 If your goal is not format-specific and you simply need to make an image smaller for upload, email, or a document limit, use [Reduce Image Size](/reduce-image-size).
+
+---
 
 ## Related tools
 

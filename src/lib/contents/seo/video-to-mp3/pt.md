@@ -6,6 +6,8 @@ A ferramenta é útil para gravações de reunião, aulas, vídeos do celular, g
 
 Este conversor foi feito para arquivos de vídeo do seu dispositivo. Ele não baixa áudio de links do YouTube nem converte URLs de plataformas de vídeo.
 
+---
+
 ## Como converter vídeo para MP3 online
 
 Converter vídeo para MP3 com o Squishyfile é simples. A ferramenta lê a faixa de áudio que já existe dentro do vídeo e cria um arquivo MP3 separado.
@@ -32,6 +34,8 @@ Quando a conversão terminar, baixe o arquivo MP3 para o seu dispositivo. O áud
 
 O MP3 baixado terá apenas o som do vídeo. Ele não inclui imagem, slides, legendas ou qualquer conteúdo visual do arquivo original.
 
+---
+
 ## Converter MP4 para MP3
 
 MP4 é um dos formatos de vídeo mais usados. Ele aparece em vídeos de celular, gravações de tela, arquivos de câmeras, reuniões online, vídeos exportados de editores e muitos outros conteúdos.
@@ -49,6 +53,8 @@ Você pode converter MP4 para MP3 quando quiser:
 
 Para um guia específico desse formato, leia: [como converter MP4 para MP3 online grátis](/pt/blog/convert-mp4-to-mp3-online-free).
 
+---
+
 ## Extrair áudio de vídeo
 
 Converter vídeo para MP3 também é uma forma prática de extrair áudio de vídeo. Em vez de manter imagem e som no mesmo arquivo, você salva apenas a parte sonora em MP3.
@@ -58,6 +64,8 @@ Esse uso é comum para aulas, reuniões, palestras, gravações de tela, vídeos
 O Squishyfile extrai o áudio completo que existe dentro do vídeo. Ele não separa voz, música de fundo, ruídos, efeitos sonoros ou pessoas diferentes em faixas separadas. Se esses sons estiverem misturados no vídeo original, eles continuarão juntos no MP3.
 
 Veja também: [como extrair áudio de vídeo online](/pt/blog/extract-audio-from-video-online).
+
+---
 
 ## Formatos compatíveis
 
@@ -69,6 +77,8 @@ Em muitos casos, basta selecionar o arquivo e converter. Porém, alguns vídeos 
 
 Para entender melhor os formatos, leia: [como converter MOV, MKV e AVI para MP3 online](/pt/blog/convert-mov-mkv-avi-to-mp3-online) e [como converter WebM para MP3 online](/pt/blog/convert-webm-to-mp3-online).
 
+---
+
 ## Converter vídeo para MP3 no celular
 
 Você pode converter vídeo para MP3 no celular usando o navegador. No iPhone, abra o Squishyfile no Safari e escolha um vídeo dos apps Fotos, Arquivos ou Downloads. No Android, use o Chrome ou outro navegador moderno e selecione um vídeo da galeria, do gerenciador de arquivos ou da pasta de downloads.
@@ -77,6 +87,8 @@ Para vídeos curtos e médios, o celular costuma ser suficiente. Para arquivos m
 
 Ao converter no celular, mantenha a aba aberta, evite bloquear a tela durante o processamento e confirme se há espaço suficiente para salvar o MP3.
 
+---
+
 ## Conversão local, sem upload para servidor
 
 O Squishyfile processa o vídeo no navegador usando WebAssembly e FFmpeg. Isso significa que o arquivo selecionado não precisa ser enviado para um servidor para ser convertido.
@@ -84,6 +96,8 @@ O Squishyfile processa o vídeo no navegador usando WebAssembly e FFmpeg. Isso s
 Essa abordagem é útil para vídeos pessoais, gravações privadas, arquivos de trabalho, reuniões, materiais internos, aulas gravadas e conteúdos ainda não publicados.
 
 Como a conversão acontece no seu próprio dispositivo, a velocidade depende do tamanho do arquivo, da duração do vídeo, da memória disponível e do desempenho do navegador.
+
+---
 
 ## Antes de converter
 
@@ -97,6 +111,8 @@ Antes de transformar um vídeo em MP3, vale conferir alguns pontos:
 - evite reconverter várias vezes o mesmo áudio se quiser preservar qualidade
 
 MP3 é um formato de áudio compactado. Ele não é sem perdas, mas é leve, compatível com a maioria dos dispositivos e prático para ouvir aulas, reuniões, falas, narrações e gravações do dia a dia.
+
+---
 
 ## Guias relacionados
 

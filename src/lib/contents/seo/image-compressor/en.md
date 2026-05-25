@@ -4,6 +4,8 @@ A good image compressor should make files smaller without making the image look 
 
 Use this guide to choose the right compression approach before downloading your compressed images.
 
+---
+
 ## Recommended Settings by Use Case
 
 | Use case | Good starting point | What to check before using |
@@ -17,6 +19,8 @@ Use this guide to choose the right compression approach before downloading your 
 
 For many everyday images, a balanced quality setting is enough. If the original file is a large camera photo, reducing the width can have a bigger impact than lowering quality too much.
 
+---
+
 ## Compressing Photos vs Graphics
 
 Photos and graphics behave differently when compressed.
@@ -27,6 +31,8 @@ PNG files are often used for screenshots, logos, icons, UI graphics, and images 
 
 WebP and AVIF are modern formats designed for efficient web images. They can be useful when you want smaller files for websites, but compatibility and workflow needs can vary depending on where the image will be used.
 
+---
+
 ## How to Make an Image Smaller Without Ruining Quality
 
 Start with moderate compression instead of immediately choosing the lowest quality setting. Download the result, open it, and compare it with the original at the size where people will actually view it.
@@ -34,6 +40,8 @@ Start with moderate compression instead of immediately choosing the lowest quali
 For website images, do not keep the original camera dimensions unless they are needed. A photo that is 4000px wide is often much larger than necessary for a blog post, landing page, or product card. Setting a smaller maximum width can reduce file size while keeping the image clear on screen.
 
 For documents, forms, receipts, screenshots, and images with text, be more careful. The smallest file is not always the best file. Readability matters more than maximum compression.
+
+---
 
 ## Image Compression and Page Speed
 
@@ -48,6 +56,8 @@ A simple workflow is:
 3. Check the image on desktop and mobile.
 4. Keep the original file separately if it is important.
 
+---
+
 ## When to Use Reduce Image Size Instead
 
 People often use “compress image” and “reduce image size” to describe the same goal, but they are not always identical.
@@ -57,6 +67,8 @@ Image compression mainly reduces the file size by adjusting image data and quali
 Use this page when you want a general image compressor for JPG, PNG, WebP, AVIF, photos, screenshots, and website images.
 
 Use [Reduce Image Size](/reduce-image-size) when your main goal is to make an image fit an upload limit, email limit, form requirement, or document submission rule.
+
+---
 
 ## Related Image Tools
 

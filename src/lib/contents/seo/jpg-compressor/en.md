@@ -6,6 +6,8 @@ Compressing JPG images helps reduce file size before you upload, send, or publis
 
 This page is focused on JPG and JPEG compression. If you need to compress several image formats together, use the [Image Compressor](/image-compressor). If your main goal is to make any image smaller for an upload limit, use [Reduce Image Size](/reduce-image-size).
 
+---
+
 ## Recommended JPG Settings by Use Case
 
 There is no single perfect setting for every JPG file. The best result depends on how the image will be used, how detailed it is, and how small the final file needs to be.
@@ -22,11 +24,15 @@ There is no single perfect setting for every JPG file. The best result depends o
 
 Start with a balanced quality setting first. If the JPG is still too large, lower the quality slightly or reduce the width. Reducing width often has a bigger impact than lowering quality when the original photo is several thousand pixels wide.
 
+---
+
 ## JPG or JPEG: Same Format, Same Compressor
 
 JPG and JPEG are the same image format. The difference is only the file extension. Some systems use `.jpg`, while others use `.jpeg`.
 
 You can use this tool as a JPG compressor or JPEG compressor. It works for both file extensions, so there is no need to convert a `.jpeg` file to `.jpg` before compressing it.
+
+---
 
 ## How to Make JPG Files Smaller Without Ruining Quality
 
@@ -42,6 +48,8 @@ A practical workflow:
 
 Watch for common signs of over-compression: blocky areas, blurry details, color banding, rough skin tones, or messy edges around objects. These issues are more visible in portraits, product photos, and images with smooth gradients.
 
+---
+
 ## When Resizing Matters More Than Compression
 
 Many JPG photos from phones and cameras are much larger than necessary for web use. A photo may be 4000 px wide, even though it will only be displayed at 1000 px or 1200 px on a page.
@@ -50,6 +58,8 @@ In that case, reducing the width can make the file much smaller while preserving
 
 If your goal is mainly to reduce an image to meet a specific upload limit, the [Reduce Image Size](/reduce-image-size) page may match that intent better.
 
+---
+
 ## When JPG Is Not the Best Choice
 
 JPG is excellent for photos, but it is not ideal for every image. Use another format when the image has transparency, tiny text, sharp UI lines, icons, logos, or screenshots that must stay crisp.
@@ -57,6 +67,8 @@ JPG is excellent for photos, but it is not ideal for every image. Use another fo
 For logos, transparent graphics, app screenshots, interface images, and images with text, use the [PNG Compressor](/png-compressor). PNG usually keeps edges and transparency cleaner than JPG.
 
 For mixed image folders or when you are not sure which format you have, use the main [Image Compressor](/image-compressor).
+
+---
 
 ## Related Tools
 

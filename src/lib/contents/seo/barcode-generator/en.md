@@ -4,6 +4,8 @@ Create barcodes online for product labels, inventory codes, SKUs, serial numbers
 
 Use it for a quick single barcode or switch to bulk generation when you need many barcode images at once. After generating the barcode, download it as PNG for everyday use or SVG for sharper print and design workflows.
 
+---
+
 ## Supported Barcode Formats
 
 This tool creates 1D barcodes for products, documents, labels, warehouse workflows and internal systems.
@@ -20,6 +22,8 @@ This tool creates 1D barcodes for products, documents, labels, warehouse workflo
 
 For most internal labels, CODE 128 is the best default because it accepts numbers, letters and many common characters. Retail formats such as EAN-13, UPC-A and JAN are stricter because they require fixed-length numeric values.
 
+---
+
 ## How to Generate a Barcode
 
 1. Choose **Single barcode** or **Bulk barcodes**.
@@ -29,6 +33,8 @@ For most internal labels, CODE 128 is the best default because it accepts number
 5. Generate the barcode and download it as PNG or SVG.
 
 Bulk barcode generation is useful when preparing many product labels, inventory labels, warehouse labels or serial number barcodes from a list.
+
+---
 
 ## Choosing the Right Barcode Type
 
@@ -40,11 +46,15 @@ Choose **EAN-13**, **UPC-A** or **JAN** only when you already have a valid retai
 
 Choose **ITF-14** for cartons, outer cases and logistics units where a package-level code is needed.
 
+---
+
 ## Product Barcodes and Official Numbers
 
 This barcode generator creates barcode images from the values you enter. It does not issue official product numbers, register products or assign retail codes.
 
 For stores, marketplaces and supply chains, use the official product code assigned to your item, then generate the barcode image in the matching format. For internal labels, SKUs and inventory tracking, CODE 128 is often enough.
+
+---
 
 ## PNG or SVG Download
 
@@ -52,11 +62,15 @@ Download **PNG** when you need a ready-to-use barcode image for documents, sprea
 
 Download **SVG** when you need a scalable barcode for design software, professional labels, packaging layouts or print files. SVG stays sharp when resized, which makes it better for production artwork.
 
+---
+
 ## Private Barcode Creation in Your Browser
 
 Barcode values can include product numbers, internal IDs, customer references, order numbers or warehouse tracking codes. This tool generates barcodes locally in your browser, so the values you enter are not sent to a server.
 
 No account is required. You can create barcodes quickly while keeping internal data on your device.
+
+---
 
 ## Common Mistakes to Avoid
 

@@ -6,6 +6,8 @@ Use quando um vídeo estiver grande demais para WhatsApp, Discord, Gmail, Messen
 
 A compressão é feita localmente com WebAssembly e FFmpeg. Isso significa que o vídeo não precisa sair do seu dispositivo durante o processo. É uma opção prática para vídeos pessoais, gravações de trabalho, aulas, reuniões, materiais de clientes, clipes de jogos e arquivos que você não quer colocar em serviços de terceiros.
 
+---
+
 ## Como reduzir o tamanho de um vídeo
 
 ### 1. Selecione seu vídeo
@@ -46,6 +48,8 @@ Clique em **Comprimir Agora** e mantenha a aba aberta até o fim do processo. Fe
 
 Quando terminar, confira o tamanho original, o tamanho final e o espaço economizado. Baixe o MP4 comprimido e assista ao resultado antes de apagar o vídeo original.
 
+---
+
 ## Qual modo usar para cada tipo de vídeo
 
 Use **Equilibrado** para vídeos do dia a dia, redes sociais, aulas rápidas, reuniões, gravações de tela e compartilhamento geral. Use **Alta qualidade** quando a imagem precisa continuar nítida, como em vídeos de produto, apresentações, tutoriais com texto pequeno ou prévias para clientes.
@@ -54,11 +58,15 @@ Use **Menor tamanho** quando o limite de upload é mais importante que a qualida
 
 Se você precisa de um número exato, use **Tamanho alvo**. Esse modo é mais direto para pedidos como “preciso que este vídeo fique abaixo de 25 MB” ou “quero reduzir este arquivo para cerca de 50 MB”.
 
+---
+
 ## Comprimir vídeo para WhatsApp, Discord e e-mail
 
 Vídeos gravados em celular podem ficar grandes mesmo quando são curtos, principalmente em 1080p, 4K ou 60fps. Antes de enviar por WhatsApp, Discord, Gmail ou Messenger, comprimir o arquivo evita erros de upload e reduz o tempo de envio.
 
 Para WhatsApp, comece com algo próximo de **15 MB** quando quiser enviar como vídeo comum. Para Discord gratuito, use **8 MB** ou um pouco menos. Para Gmail, mantenha o arquivo abaixo de **25 MB** se quiser anexar diretamente. Em todos os casos, escolha uma meta um pouco menor que o limite para evitar falhas.
+
+---
 
 ## Converter MOV para MP4 e comprimir vídeos do iPhone
 
@@ -66,11 +74,15 @@ Vídeos do iPhone geralmente vêm em MOV e podem ficar muito grandes, especialme
 
 Com o Squishyfile, você pode selecionar um MOV, comprimir o vídeo no navegador e baixar uma versão MP4 menor. Isso ajuda a compartilhar vídeos do iPhone por WhatsApp, e-mail, redes sociais, formulários, armazenamento em nuvem ou com pessoas que precisam de um formato mais compatível.
 
+---
+
 ## O que influencia o tamanho final do vídeo
 
 O tamanho do arquivo depende de duração, resolução, frame rate, bitrate, codec, áudio e complexidade da imagem. Gravações de tela, aulas, slides, vídeos com câmera parada e clipes com pouco movimento costumam comprimir bem.
 
 Vídeos 4K, cenas escuras com ruído, esportes, dança, jogos rápidos, câmera tremida e arquivos que já foram comprimidos várias vezes podem exigir mais espaço para manter qualidade aceitável. Se o resultado ficar borrado, tente uma meta maior, use **Alta qualidade** ou corte partes desnecessárias antes de comprimir.
+
+---
 
 ## Compressão local para vídeos privados
 
@@ -79,6 +91,8 @@ Muitos compressores online funcionam enviando o vídeo para um servidor, process
 No Squishyfile, a compressão acontece no navegador usando WebAssembly e FFmpeg. O arquivo é lido, processado e baixado localmente. Nenhum upload para servidor é necessário durante a compressão.
 
 Esse fluxo é útil para vídeos de família, reuniões internas, materiais de clientes, aulas privadas, screencasts com dados sensíveis, documentos aparecendo na tela e conteúdos ainda não publicados.
+
+---
 
 ## Guias relacionados
 
