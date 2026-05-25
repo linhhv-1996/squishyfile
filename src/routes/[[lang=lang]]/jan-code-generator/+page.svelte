@@ -207,7 +207,7 @@
 	.how-to-sec :global(li) { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 6px; }
 	.how-to-sec :global(li strong) { color: var(--fg); font-weight: 600; }
 	.how-to-sec :global(strong) { color: var(--fg); font-weight: 600; }
-	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 15px 0; }
 	.how-to-sec :global(blockquote) {
 		margin: 12px 0 16px; padding: 10px 14px;
 		border-left: 3px solid var(--accent);

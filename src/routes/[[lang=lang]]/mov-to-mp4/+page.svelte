@@ -230,7 +230,7 @@
 	.how-to-sec :global(hr) {
 		border: none;
 		border-top: 1px solid var(--border);
-		margin: 28px 0;
+		margin: 15px 0;
 	}
 
 	.how-to-sec :global(blockquote) {

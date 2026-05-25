@@ -1,5 +1,3 @@
-Squishyfile is a free online video converter that runs entirely in your browser. Files are processed locally using WebAssembly and FFmpeg — your video is never uploaded to a server.
-
 ## Supported input and output formats
 
 This video converter accepts MP4, MOV, AVI, MKV, WebM, WMV, FLV, M4V, 3GP, and TS files. Output formats are MP4, WebM, MOV, and MKV.

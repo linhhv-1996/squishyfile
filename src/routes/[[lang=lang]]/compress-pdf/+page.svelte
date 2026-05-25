@@ -621,5 +621,5 @@
 	.how-to-sec :global(ul), .how-to-sec :global(ol) { padding-left: 1.4em; margin: 8px 0 16px; }
 	.how-to-sec :global(li) { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 6px; }
 	.how-to-sec :global(li strong), .how-to-sec :global(strong) { color: var(--text); font-weight: 600; }
-	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 15px 0; }
 </style>

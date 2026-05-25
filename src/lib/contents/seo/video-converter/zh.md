@@ -1,5 +1,3 @@
-Squishyfile 是免費的線上影片轉檔工具，直接在瀏覽器中使用 WebAssembly 與 FFmpeg 處理檔案。影片不會上傳到伺服器，所有轉換都在你的裝置本機執行。不需要安裝軟體，也不需要登入帳號。
-
 ## 支援的影片格式
 
 輸入格式：MP4、MOV、AVI、MKV、WebM、WMV、FLV、M4V、3GP、TS
