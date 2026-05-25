@@ -1,6 +1,5 @@
 // src/routes/sitemap.xml/+server.ts
 // export const prerender = true;
-
 import { languages } from '$lib/i18n/languages';
 import type { RequestHandler } from './$types';
 
