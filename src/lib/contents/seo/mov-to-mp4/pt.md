@@ -1,88 +1,62 @@
-# Converter MOV para MP4 online
+## Quando o MOV não funciona bem fora do ecossistema Apple
 
-Use o Squishyfile para converter MOV para MP4 diretamente no navegador. A ferramenta é útil para vídeos gravados no iPhone, iPad ou Mac que precisam funcionar melhor em Windows, Android, redes sociais, editores de vídeo ou aplicativos de mensagem.
+MOV é o formato nativo da Apple, usado pelo iPhone, iPad, Mac e QuickTime. Dentro do ecossistema Apple ele funciona sem problemas — mas quando você envia um MOV para alguém que usa Windows ou Android, ou tenta fazer upload em uma plataforma que espera MP4, os problemas de compatibilidade aparecem. O arquivo pode não tocar, o upload pode falhar, ou o editor pode apresentar erro de codec.
 
-Você não precisa instalar programa, criar conta ou enviar o arquivo para um servidor de conversão. Selecione o arquivo MOV, mantenha MP4 como formato de saída e baixe o vídeo convertido quando o processo terminar.
+Converter MOV para MP4 resolve isso sem precisar recodificar em qualidade inferior. MP4 é aceito em quase todo lugar: Windows, Android, a maioria dos navegadores, plataformas sociais, drives na nuvem e a maior parte dos editores de vídeo. O Squishyfile faz a conversão no navegador usando WebAssembly e FFmpeg — o arquivo é processado no seu dispositivo, não é enviado para um servidor, não é preciso criar conta e o MP4 resultante não tem marca d'água.
 
 ---
 
-## Por que converter MOV para MP4
+## Quando faz sentido converter
 
-MOV é um formato muito comum em dispositivos Apple. Ele funciona bem no iPhone, iPad e Mac, mas pode gerar problemas em alguns computadores Windows, celulares Android, players antigos, plataformas de upload ou ferramentas de edição.
+Nem todo arquivo MOV precisa ser convertido. Se você só vai assistir o vídeo no seu próprio Mac ou iPhone, o MOV funciona bem como está. Mas há situações em que o MP4 é claramente a escolha certa:
 
-MP4 costuma ter compatibilidade mais ampla. Ao converter um arquivo MOV para MP4, você deixa o vídeo mais fácil de reproduzir, enviar, anexar, publicar e editar em diferentes ambientes.
+- Você quer enviar um vídeo do iPhone para alguém que usa Android ou Windows sem problemas de compatibilidade
+- Você está fazendo upload para Instagram, YouTube, Google Drive ou outra plataforma que prefere MP4
+- Você está anexando um vídeo a um e-mail ou documento de trabalho e não quer que o destinatário tenha problemas para abrir
+- Seu programa de edição importa MOV com instabilidade ou apresenta erros de codec
+- Você quer arquivar vídeos em um formato que vai continuar funcionando em qualquer dispositivo no futuro
 
-Converter MOV para MP4 é uma boa opção quando você quer:
-
-- Enviar um vídeo do iPhone para alguém que usa Android ou Windows
-- Publicar uma gravação em redes sociais ou plataformas de vídeo
-- Abrir um arquivo MOV em um player que não reconhece o formato
-- Importar o vídeo em um editor que trabalha melhor com MP4
-- Reduzir problemas de compatibilidade antes de compartilhar
+Os arquivos MOV do iPhone também variam no codec interno. Dependendo das configurações de gravação, o vídeo pode usar H.264 ou HEVC — e arquivos MOV com HEVC podem causar problemas de reprodução em computadores Windows mais antigos e em alguns dispositivos Android. Se você já enviou um vídeo do iPhone e a outra pessoa não conseguiu abrir, o MOV em HEVC costuma ser a causa. Converter para MP4 com H.264 elimina essa barreira.
 
 ---
 
 ## Como converter MOV para MP4
 
-### Passo 1: escolha o arquivo MOV
+**Passo 1 — Selecione o arquivo MOV.** Arraste o vídeo para a área de upload ou clique para escolher um arquivo no seu dispositivo. A ferramenta trabalha com arquivos MOV salvos localmente no computador, celular ou tablet. Ela não baixa vídeos a partir de URLs.
 
-Clique na área de seleção ou arraste o arquivo MOV para a ferramenta. Você pode usar um vídeo salvo no computador, no celular, no app Arquivos do iPhone ou em uma pasta local.
+**Passo 2 — Confirme MP4 como formato de saída.** Esta página já está configurada para exportar MP4. MP4 é a escolha certa para a maioria das conversões de MOV — garante compatibilidade no maior número possível de dispositivos e plataformas.
 
-### Passo 2: mantenha MP4 como saída
-
-A página já é focada em converter MOV para MP4. Verifique se o formato de saída está definido como MP4 antes de iniciar.
-
-### Passo 3: converta no navegador
-
-Inicie a conversão e mantenha a aba aberta. O Squishyfile processa o vídeo no navegador com WebAssembly e FFmpeg, sem precisar fazer upload do arquivo para um servidor.
-
-### Passo 4: baixe o MP4 final
-
-Quando a conversão terminar, faça o download do arquivo MP4 e use-o no aparelho, plataforma ou aplicativo que precisar.
+**Passo 3 — Converta e baixe.** Mantenha a aba do navegador aberta enquanto a conversão acontece. O tempo de processamento varia conforme tamanho do arquivo, duração, resolução e desempenho do dispositivo. Vídeos 4K do iPhone e gravações longas levam mais tempo do que clipes curtos. Quando a conversão terminar, baixe o MP4.
 
 ---
 
-## Converter arquivo MOV para MP4 no celular
+## Arquivos MOV do iPhone e por que causam problemas
 
-Você pode converter MOV para MP4 no celular usando um navegador moderno. No iPhone, vídeos gravados pela câmera podem aparecer como MOV dependendo das configurações de câmera, compatibilidade e exportação. Abra a ferramenta no Safari, escolha o arquivo e faça a conversão para MP4.
+O iPhone grava em formatos diferentes dependendo das suas configurações. Em alguns cenários de exportação — via QuickTime, AirDrop para o Mac, ou ao exportar pelo app Fotos — o arquivo resultante é um MOV.
 
-No Android, a conversão também pode ser feita pelo navegador quando o arquivo MOV estiver salvo no aparelho. Para vídeos muito grandes, um computador pode oferecer mais estabilidade.
-
----
-
-## Converter MOV para MP4 no Mac ou Windows
-
-No Mac, arquivos MOV costumam abrir bem, mas ainda pode ser melhor converter para MP4 quando o vídeo será enviado para pessoas que usam outros sistemas. No Windows, MP4 tende a ser mais prático para reprodução, edição e compartilhamento.
-
-Como o Squishyfile funciona no navegador, você pode usar a mesma página no macOS, Windows, Linux, iPhone ou Android, sem instalar um conversor dedicado.
+O codec interno é o que mais importa. iPhones que gravam em HEVC produzem arquivos MOV eficientes em armazenamento, mas que podem ser difíceis de abrir no Windows sem pacotes de codec adicionais. Converter para MP4 em H.264 remove essa barreira e cria um arquivo que toca em qualquer dispositivo.
 
 ---
 
-## Conversão MOV para MP4 sem upload
+## Usar no Mac, Windows, iPhone e Android
 
-Alguns conversores online enviam o vídeo para um servidor antes de processar. Isso pode ser lento para arquivos grandes e pouco confortável quando o vídeo contém material pessoal, profissional ou privado.
+Como o Squishyfile roda no navegador, funciona da mesma forma no macOS, Windows, iPhone e Android. No Mac, arraste o MOV do Finder para a área de upload. No Windows, use o Explorador de Arquivos. No iPhone, abra a página no Safari e escolha um vídeo do app Arquivos ou Fotos.
 
-No Squishyfile, a conversão é feita no navegador sempre que possível. Isso significa que o arquivo MOV é processado localmente no seu dispositivo, ajudando a manter mais controle sobre o conteúdo.
+Vídeos 4K e gravações longas do iPhone costumam ser arquivos grandes. Para esses casos, um computador ou notebook vai ser mais estável e rápido do que um celular. Se a conversão travar no celular, tente em um computador. Mantenha a tela ativa e não feche a aba durante o processamento.
 
 ---
 
-## Problemas comuns ao converter MOV
+## Outros conversores de vídeo
 
-### O arquivo MOV é muito grande
-
-Vídeos longos, em 4K ou com bitrate alto podem exigir bastante memória. Se a conversão travar no celular, tente usar um computador.
-
-### O MOV não abre em nenhum player
-
-Se o arquivo original estiver corrompido, incompleto ou com codec muito específico, a conversão pode falhar. Tente reproduzir o arquivo antes de converter.
-
-### A conversão parou no meio
-
-Mantenha a aba aberta, evite bloquear a tela e feche outros apps pesados. Em notebooks, conecte o carregador para evitar suspensão automática.
+- [Conversor de vídeo online](/pt/video-converter) — MP4, MOV, AVI, MKV, WebM e mais
+- [Converter AVI para MP4](/pt/avi-to-mp4)
+- [Converter MKV para MP4](/pt/mkv-to-mp4)
+- [Converter WebM para MP4](/pt/webm-to-mp4)
 
 ---
 
 ## Leia também
 
 - [MOV e MP4: diferenças e quando usar cada formato](/pt/blog/mov-vs-mp4-diferencas)
-- [Conversor de vídeo online](/pt/video-converter)
+- [Por que usar um conversor de vídeo sem upload](/pt/blog/conversor-video-sem-upload-privacidade)
+- [AVI, MKV e WebM: o que muda ao converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)

@@ -1,84 +1,67 @@
-# Converter MKV para MP4 online
+## Quando o MKV não abre ou não compartilha bem
 
-Use o Squishyfile para converter MKV para MP4 diretamente no navegador. Esta página é indicada para vídeos em MKV que você quer reproduzir com mais facilidade no celular, enviar para outra pessoa, usar em redes sociais ou abrir em aplicativos que aceitam melhor arquivos MP4.
+MKV é um formato poderoso que consegue guardar vídeo de alta qualidade, múltiplas faixas de áudio, legendas incorporadas e marcadores de capítulo dentro de um único arquivo. É muito usado em coleções de filmes, gravações em alta definição e arquivos de vídeo. O problema não é qualidade — MKV lida bem com qualidade. O problema é compatibilidade.
 
-Selecione o arquivo MKV, converta para MP4 e baixe o vídeo final. A conversão acontece no navegador com WebAssembly e FFmpeg, sem instalar programas e sem enviar o arquivo para um servidor de conversão.
+Muitos celulares, smart TVs, plataformas sociais e até alguns programas de edição não abrem MKV de forma confiável. Você pode ter um vídeo perfeitamente íntegro que simplesmente se recusa a tocar em um dispositivo ou falha ao ser enviado para uma plataforma. Converter para MP4 resolve isso sem precisar recodificar em qualidade inferior. MP4 é aceito em quase todo lugar: iPhones, Android, Windows, Mac, a maioria dos navegadores, redes sociais, drives na nuvem e a maior parte dos editores de vídeo.
 
----
-
-## Por que converter MKV para MP4
-
-MKV é um formato flexível, muito usado para vídeos em alta qualidade, arquivos com legendas, múltiplas faixas de áudio ou diferentes trilhas dentro do mesmo contêiner. Essa flexibilidade é útil, mas nem sempre é aceita por celulares, navegadores, redes sociais e editores simples.
-
-MP4 é mais compatível no uso diário. Converter MKV para MP4 pode facilitar a reprodução em aparelhos comuns e reduzir problemas ao enviar ou publicar o vídeo.
-
-A conversão de MKV para MP4 ajuda quando você precisa:
-
-- Abrir o vídeo no celular sem instalar player extra
-- Enviar o arquivo para alguém que não usa player avançado
-- Usar o vídeo em plataformas que não aceitam MKV
-- Importar o vídeo em um editor que trabalha melhor com MP4
-- Deixar o arquivo mais prático para compartilhamento
+O Squishyfile converte MKV para MP4 no seu navegador usando WebAssembly e FFmpeg. O vídeo é processado no seu dispositivo — nada é enviado para um servidor. Sem conta, sem software para instalar, sem marca d'água no arquivo final.
 
 ---
 
-## Como converter MKV para MP4
+## Quando faz sentido converter
 
-### Passo 1: escolha o arquivo MKV
+Nem todo MKV precisa ser convertido. Se você guarda uma coleção de filmes em um HD externo e assiste no VLC, o MKV funciona bem como está. Mas há situações em que o MP4 é claramente a melhor opção:
 
-Clique para selecionar um vídeo MKV salvo no seu dispositivo ou arraste o arquivo para a ferramenta.
+- Você quer reproduzir o vídeo em um iPhone, Android ou smart TV que não abre MKV nativamente
+- Precisa fazer upload para YouTube, Instagram, Google Drive ou outra plataforma que prefere MP4
+- Vai enviar o vídeo para alguém e não sabe qual dispositivo ou aplicativo a pessoa vai usar para abrir
+- Seu programa de edição importa MKV com instabilidade ou apresenta erros de codec
+- Você quer enviar um vídeo por aplicativo de mensagem ou e-mail sem que o destinatário precise instalar nada extra
 
-### Passo 2: confirme MP4 como formato de saída
-
-A página é focada em MKV para MP4. Confira se a saída está definida como MP4 antes de iniciar.
-
-### Passo 3: converta no navegador
-
-Clique no botão de conversão e mantenha a aba aberta. Arquivos MKV podem ser grandes, então o processo pode levar alguns minutos dependendo do tamanho, da duração e do desempenho do dispositivo.
-
-### Passo 4: baixe o arquivo convertido
-
-Depois que o processamento terminar, baixe o vídeo em MP4 e use-o no aplicativo, aparelho ou plataforma desejada.
+Se o MKV é um arquivo pessoal que você só vai assistir no seu próprio computador, a conversão é opcional. Se você precisa que o vídeo funcione de forma confiável em dispositivos e situações diferentes, MP4 é o formato mais seguro.
 
 ---
 
-## O que acontece com áudio e legendas em MKV
+## Como converter
 
-Arquivos MKV podem conter mais de uma faixa de áudio, legendas internas ou metadados extras. Ao converter para MP4, o resultado pode depender da estrutura do arquivo original e do que é compatível com MP4.
+**Passo 1 — Selecione o arquivo MKV.** Arraste o vídeo para a área de upload ou clique para escolher um arquivo no seu dispositivo. A ferramenta trabalha com arquivos MKV salvos localmente no seu computador, celular ou tablet. Ela não baixa vídeos a partir de URLs.
 
-Se o seu MKV tem várias faixas, confira o arquivo final depois da conversão. Para usos comuns, como assistir no celular ou enviar um vídeo simples, MP4 costuma ser mais prático. Para preservar muitas trilhas e legendas complexas, MKV ainda pode ser melhor como arquivo original.
+**Passo 2 — Confirme MP4 como formato de saída.** Esta página já está configurada para exportar MP4. MP4 é a escolha certa para a maioria das conversões — oferece um arquivo que toca no maior número possível de dispositivos e aplicativos.
 
----
-
-## Converter MKV para MP4 no celular ou computador
-
-Você pode usar a ferramenta no navegador do computador ou do celular. Como muitos arquivos MKV são grandes, um computador geralmente oferece mais estabilidade e velocidade. No celular, mantenha o navegador aberto e evite bloquear a tela enquanto a conversão estiver em andamento.
+**Passo 3 — Converta e baixe.** Mantenha a aba do navegador aberta enquanto a conversão acontece. O tempo de processamento depende do tamanho do arquivo, da duração do vídeo, da resolução e do desempenho do seu dispositivo. Quando terminar, baixe o MP4.
 
 ---
 
-## Conversão MKV para MP4 sem upload
+## O que acontece com legendas e múltiplas faixas de áudio
 
-O Squishyfile foi pensado para converter arquivos no navegador. Isso evita o envio do vídeo para um servidor de terceiros e pode ser importante para gravações pessoais, materiais de trabalho, arquivos privados ou vídeos que você não quer subir para um serviço online.
+Essa é a área em que a conversão de MKV para MP4 exige mais atenção. MKV consegue armazenar várias faixas de áudio, várias faixas de legenda e informações de capítulo em um único arquivo. MP4 suporta parte disso, mas nem tudo é transferido de forma limpa.
+
+Na maioria das conversões, a faixa de vídeo principal e a faixa de áudio principal passam sem problemas. Legendas em texto incorporadas podem ou não ser transferidas, dependendo do formato de legenda usado no MKV. Se o seu arquivo tem uma faixa de vídeo, uma faixa de áudio e sem legendas, a conversão vai ser direta. Se legendas ou faixas de áudio alternativas são importantes, confira o arquivo final depois da conversão antes de apagar o original.
+
+Para arquivos em que preservar todas as faixas é essencial — múltiplos idiomas, faixas de comentário, sets de legenda completos — guarde o MKV original como backup. O MP4 serve para compartilhar e reproduzir; o MKV fica como cópia de arquivo.
 
 ---
 
-## Se o MKV não converter
+## Arquivos grandes e navegadores mobile
 
-### O arquivo é muito grande
+Arquivos MKV costumam ser grandes. Vídeo de alta qualidade em alto bitrate exige memória e processamento consideráveis durante a conversão. A ferramenta funciona em iPhone e Android, mas há limites para o que um navegador mobile consegue processar com conforto.
 
-MKV costuma aparecer em vídeos longos ou de alta qualidade. Se a conversão não avançar, tente em um computador com mais memória.
+Para MKVs pequenos ou médios, um celular moderno dá conta da conversão normalmente. Para gravações longas, vídeo 4K ou arquivos grandes de arquivo, um computador ou notebook é mais estável e rápido. Se a conversão travar ou falhar no celular, tente novamente em um computador.
 
-### O arquivo tem trilhas incomuns
+Durante a conversão, mantenha a aba aberta e a tela ativa. No celular, evite trocar de aplicativo ou bloquear a tela — isso pode fazer o navegador pausar o processo e interromper a conversão.
 
-Múltiplos áudios, legendas internas e codecs específicos podem afetar o resultado. Teste o MP4 final e confira áudio e imagem.
+---
 
-### O navegador interrompeu o processo
+## Outros conversores de vídeo
 
-Não feche a aba durante a conversão. Em notebooks, evite suspensão automática; em celulares, mantenha a tela ativa.
+- [Conversor de vídeo online](/pt/video-converter) — MP4, MOV, AVI, MKV, WebM e mais
+- [Converter MOV para MP4](/pt/mov-to-mp4)
+- [Converter AVI para MP4](/pt/avi-to-mp4)
+- [Converter WebM para MP4](/pt/webm-to-mp4)
 
 ---
 
 ## Leia também
 
-- [AVI, MKV e WebM: diferenças antes de converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
-- [Conversor de vídeo online](/pt/video-converter)
+- [AVI, MKV e WebM: o que muda ao converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
+- [Por que usar um conversor de vídeo sem upload](/pt/blog/conversor-video-sem-upload-privacidade)
