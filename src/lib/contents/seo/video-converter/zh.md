@@ -20,10 +20,10 @@ Squishyfile 是一個免費的線上影片轉檔工具，可以在瀏覽器中�
 
 如果你有明確的來源格式，也可以使用更精準的專用頁面：
 
-- [MOV 轉 MP4](/zh/mov-to-mp4/)：適合 iPhone、Mac、QuickTime 影片
-- [AVI 轉 MP4](/zh/avi-to-mp4/)：適合舊 Windows、相機或封存影片
-- [MKV 轉 MP4](/zh/mkv-to-mp4/)：適合高畫質影片、字幕影片或大型影片
-- [WebM 轉 MP4](/zh/webm-to-mp4/)：適合瀏覽器錄影、網頁素材與螢幕錄影
+- [MOV 轉 MP4](/zh/mov-to-mp4)：適合 iPhone、Mac、QuickTime 影片
+- [AVI 轉 MP4](/zh/avi-to-mp4)：適合舊 Windows、相機或封存影片
+- [MKV 轉 MP4](/zh/mkv-to-mp4)：適合高畫質影片、字幕影片或大型影片
+- [WebM 轉 MP4](/zh/webm-to-mp4)：適合瀏覽器錄影、網頁素材與螢幕錄影
 
 ---
 

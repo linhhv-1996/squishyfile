@@ -53,11 +53,11 @@ WebM 常見於網頁與瀏覽器環境，通常搭配 VP8、VP9 或 AV1 等影�
 
 ## 需要轉其他影片格式？
 
-如果你要處理更多格式，可以使用 [影片轉檔工具](/zh/video-converter/)，或前往：
+如果你要處理更多格式，可以使用 [影片轉檔工具](/zh/video-converter)，或前往：
 
-- [MOV 轉 MP4](/zh/mov-to-mp4/)
-- [AVI 轉 MP4](/zh/avi-to-mp4/)
-- [MKV 轉 MP4](/zh/mkv-to-mp4/)
+- [MOV 轉 MP4](/zh/mov-to-mp4)
+- [AVI 轉 MP4](/zh/avi-to-mp4)
+- [MKV 轉 MP4](/zh/mkv-to-mp4)
 
 ---
 

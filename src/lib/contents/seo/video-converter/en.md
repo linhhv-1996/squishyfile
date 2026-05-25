@@ -57,10 +57,10 @@ You can convert many common video types to MP4, including:
 
 For a format-specific page, use one of these dedicated converters:
 
-- [Convert MOV to MP4](/mov-to-mp4/)
-- [Convert AVI to MP4](/avi-to-mp4/)
-- [Convert MKV to MP4](/mkv-to-mp4/)
-- [Convert WebM to MP4](/webm-to-mp4/)
+- [Convert MOV to MP4](/mov-to-mp4)
+- [Convert AVI to MP4](/avi-to-mp4)
+- [Convert MKV to MP4](/mkv-to-mp4)
+- [Convert WebM to MP4](/webm-to-mp4)
 
 ---
 
@@ -90,6 +90,6 @@ If the video is long or high-resolution, keep the browser tab open and avoid loc
 
 ## Related guides
 
-- [How to choose the best video converter for quality and privacy](/blog/best-video-converter-quality-privacy/)
-- [How to convert video without losing quality](/blog/convert-video-without-losing-quality/)
-- [Why a secure no-upload video converter can be better for private files](/blog/secure-video-converter-no-upload/)
+- [How to choose the best video converter for quality and privacy](/blog/best-video-converter-quality-privacy)
+- [How to convert video without losing quality](/blog/convert-video-without-losing-quality)
+- [Why a secure no-upload video converter can be better for private files](/blog/secure-video-converter-no-upload)

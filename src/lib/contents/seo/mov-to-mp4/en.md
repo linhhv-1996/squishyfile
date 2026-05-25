@@ -60,11 +60,11 @@ Also check that your browser is up to date, the tab stays open during conversion
 
 ## More video conversion options
 
-Need a broader tool for other formats? Use the [online video converter](/video-converter/) to convert MP4, MOV, AVI, MKV, WebM and more.
+Need a broader tool for other formats? Use the [online video converter](/video-converter) to convert MP4, MOV, AVI, MKV, WebM and more.
 
 Other dedicated converters:
 
-- [Convert MOV to MP4](/mov-to-mp4/)
-- [Convert AVI to MP4](/avi-to-mp4/)
-- [Convert MKV to MP4](/mkv-to-mp4/)
-- [Convert WebM to MP4](/webm-to-mp4/)
+- [Convert MOV to MP4](/mov-to-mp4)
+- [Convert AVI to MP4](/avi-to-mp4)
+- [Convert MKV to MP4](/mkv-to-mp4)
+- [Convert WebM to MP4](/webm-to-mp4)

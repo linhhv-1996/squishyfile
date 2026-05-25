@@ -72,7 +72,7 @@ After conversion, play the MP4 and check motion, audio sync, sharpness and file 
 - Convert MKV to MP4 when a flexible container needs to become easier to share.
 - Convert WebM to MP4 when a browser recording needs to work in more apps.
 
-Use the [online video converter](/video-converter/) for general conversions, or choose a dedicated page for [MOV](/mov-to-mp4/), [AVI](/avi-to-mp4/), [MKV](/mkv-to-mp4/) or [WebM](/webm-to-mp4/).
+Use the [online video converter](/video-converter) for general conversions, or choose a dedicated page for [MOV](/mov-to-mp4), [AVI](/avi-to-mp4), [MKV](/mkv-to-mp4) or [WebM](/webm-to-mp4).
 
 ---
 

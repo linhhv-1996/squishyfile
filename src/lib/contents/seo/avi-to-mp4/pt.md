@@ -85,4 +85,4 @@ Feche outros aplicativos, mantenha a aba aberta e tente usar um computador se o 
 ## Leia também
 
 - [AVI, MKV e WebM: diferenças antes de converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
-- [Conversor de vídeo online](/pt/video-converter/)
+- [Conversor de vídeo online](/pt/video-converter)

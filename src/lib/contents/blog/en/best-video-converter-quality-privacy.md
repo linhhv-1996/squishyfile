@@ -82,4 +82,4 @@ For advanced editing, color correction, batch automation or professional masteri
 
 ## Recommended starting point
 
-If you need a simple tool for common file conversions, try the [online video converter](/video-converter/). For format-specific conversions, use [MOV to MP4](/mov-to-mp4/), [AVI to MP4](/avi-to-mp4/), [MKV to MP4](/mkv-to-mp4/) or [WebM to MP4](/webm-to-mp4/).
+If you need a simple tool for common file conversions, try the [online video converter](/video-converter). For format-specific conversions, use [MOV to MP4](/mov-to-mp4), [AVI to MP4](/avi-to-mp4), [MKV to MP4](/mkv-to-mp4) or [WebM to MP4](/webm-to-mp4).

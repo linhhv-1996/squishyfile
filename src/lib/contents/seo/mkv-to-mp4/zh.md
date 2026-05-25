@@ -53,11 +53,11 @@ MKV 可以包含多種音訊軌、字幕軌、章節資訊與附件。轉成 MP4
 
 ## 需要轉其他影片格式？
 
-如果你不是 MKV 檔，可以使用 [影片轉檔工具](/zh/video-converter/)，或前往：
+如果你不是 MKV 檔，可以使用 [影片轉檔工具](/zh/video-converter)，或前往：
 
-- [MOV 轉 MP4](/zh/mov-to-mp4/)
-- [AVI 轉 MP4](/zh/avi-to-mp4/)
-- [WebM 轉 MP4](/zh/webm-to-mp4/)
+- [MOV 轉 MP4](/zh/mov-to-mp4)
+- [AVI 轉 MP4](/zh/avi-to-mp4)
+- [WebM 轉 MP4](/zh/webm-to-mp4)
 
 ---
 

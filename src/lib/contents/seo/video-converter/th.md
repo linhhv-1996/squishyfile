@@ -10,10 +10,10 @@ Squishyfile คือเว็บแปลงวิดีโอเป็น MP4 
 
 ## เครื่องมือแปลงวิดีโอยอดนิยม
 
-- [แปลง MOV เป็น MP4](/th/mov-to-mp4/)
-- [แปลง AVI เป็น MP4](/th/avi-to-mp4/)
-- [แปลง MKV เป็น MP4](/th/mkv-to-mp4/)
-- [แปลง WebM เป็น MP4](/th/webm-to-mp4/)
+- [แปลง MOV เป็น MP4](/th/mov-to-mp4)
+- [แปลง AVI เป็น MP4](/th/avi-to-mp4)
+- [แปลง MKV เป็น MP4](/th/mkv-to-mp4)
+- [แปลง WebM เป็น MP4](/th/webm-to-mp4)
 
 หากต้องการแปลงไฟล์จาก iPhone, กล้อง, โปรแกรมบันทึกหน้าจอ หรือไฟล์วิดีโอเก่าที่เปิดยาก หน้าเฉพาะทางเหล่านี้จะช่วยให้เลือกเครื่องมือได้ตรงกับประเภทไฟล์มากขึ้น
 
@@ -68,10 +68,10 @@ MP4 เป็นรูปแบบวิดีโอที่เข้ากั�
 
 หากต้องการแปลงไฟล์เฉพาะประเภทเป็น MP4 สามารถใช้หน้าเฉพาะทางเหล่านี้ได้
 
-- [แปลง MOV เป็น MP4](/th/mov-to-mp4/)
-- [แปลง AVI เป็น MP4](/th/avi-to-mp4/)
-- [แปลง MKV เป็น MP4](/th/mkv-to-mp4/)
-- [แปลง WebM เป็น MP4](/th/webm-to-mp4/)
+- [แปลง MOV เป็น MP4](/th/mov-to-mp4)
+- [แปลง AVI เป็น MP4](/th/avi-to-mp4)
+- [แปลง MKV เป็น MP4](/th/mkv-to-mp4)
+- [แปลง WebM เป็น MP4](/th/webm-to-mp4)
 
 ---
 
@@ -111,11 +111,11 @@ Squishyfile ยังต่างจากบริการออนไลน�
 
 ## เครื่องมือที่เกี่ยวข้อง
 
-- [แปลง MOV เป็น MP4](/th/mov-to-mp4/)
-- [แปลง AVI เป็น MP4](/th/avi-to-mp4/)
-- [แปลง MKV เป็น MP4](/th/mkv-to-mp4/)
-- [แปลง WebM เป็น MP4](/th/webm-to-mp4/)
-- [บีบอัดวิดีโอ](/th/compress-video/)
+- [แปลง MOV เป็น MP4](/th/mov-to-mp4)
+- [แปลง AVI เป็น MP4](/th/avi-to-mp4)
+- [แปลง MKV เป็น MP4](/th/mkv-to-mp4)
+- [แปลง WebM เป็น MP4](/th/webm-to-mp4)
+- [บีบอัดวิดีโอ](/th/compress-video)
 
 ---
 

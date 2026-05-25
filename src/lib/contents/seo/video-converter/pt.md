@@ -55,10 +55,10 @@ Você pode usar este conversor para transformar diferentes formatos em MP4, como
 
 Se você já sabe qual é o formato de origem, use uma página específica:
 
-- [Converter MOV para MP4](/pt/mov-to-mp4/)
-- [Converter AVI para MP4](/pt/avi-to-mp4/)
-- [Converter MKV para MP4](/pt/mkv-to-mp4/)
-- [Converter WebM para MP4](/pt/webm-to-mp4/)
+- [Converter MOV para MP4](/pt/mov-to-mp4)
+- [Converter AVI para MP4](/pt/avi-to-mp4)
+- [Converter MKV para MP4](/pt/mkv-to-mp4)
+- [Converter WebM para MP4](/pt/webm-to-mp4)
 
 ---
 

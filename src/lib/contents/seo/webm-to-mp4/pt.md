@@ -79,4 +79,4 @@ Mantenha o navegador aberto até o download do MP4 final. Se o dispositivo suspe
 ## Leia também
 
 - [AVI, MKV e WebM: diferenças antes de converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
-- [Conversor de vídeo online](/pt/video-converter/)
+- [Conversor de vídeo online](/pt/video-converter)

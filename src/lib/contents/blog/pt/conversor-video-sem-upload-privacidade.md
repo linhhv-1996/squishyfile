@@ -80,4 +80,4 @@ Um conversor sem upload é especialmente útil para:
 
 Um conversor de vídeo sem upload ajuda a manter o arquivo no seu dispositivo durante a conversão. Isso pode melhorar a privacidade, reduzir dependência da velocidade de upload e simplificar o fluxo para conversões rápidas.
 
-Para converter arquivos diretamente no navegador, acesse o [Conversor de vídeo online](/pt/video-converter/). Se você já sabe o formato de origem, use também as páginas específicas para [MOV para MP4](/pt/mov-to-mp4/), [AVI para MP4](/pt/avi-to-mp4/), [MKV para MP4](/pt/mkv-to-mp4/) ou [WebM para MP4](/pt/webm-to-mp4/).
+Para converter arquivos diretamente no navegador, acesse o [Conversor de vídeo online](/pt/video-converter). Se você já sabe o formato de origem, use também as páginas específicas para [MOV para MP4](/pt/mov-to-mp4), [AVI para MP4](/pt/avi-to-mp4), [MKV para MP4](/pt/mkv-to-mp4) ou [WebM para MP4](/pt/webm-to-mp4).

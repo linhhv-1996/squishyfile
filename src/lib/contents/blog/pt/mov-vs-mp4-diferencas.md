@@ -14,7 +14,7 @@ cta:
 
 MOV e MP4 são formatos de vídeo parecidos em alguns aspectos, mas não têm o mesmo nível de compatibilidade no uso diário. MOV é muito comum no ecossistema Apple, enquanto MP4 costuma funcionar melhor em diferentes celulares, computadores, redes sociais e editores.
 
-Neste artigo, você vai entender a diferença entre os dois formatos, quando vale manter MOV e quando faz sentido usar MP4. Se você já precisa transformar um arquivo agora, use a página [Converter MOV para MP4](/pt/mov-to-mp4/).
+Neste artigo, você vai entender a diferença entre os dois formatos, quando vale manter MOV e quando faz sentido usar MP4. Se você já precisa transformar um arquivo agora, use a página [Converter MOV para MP4](/pt/mov-to-mp4).
 
 ---
 
@@ -78,4 +78,4 @@ Se o vídeo é muito importante, guarde o MOV original e use o MP4 como versão 
 
 MOV é forte no ambiente Apple. MP4 é mais prático quando o vídeo precisa funcionar em muitos dispositivos e plataformas. Para vídeos do iPhone, Mac ou iPad que serão enviados para outras pessoas, MP4 geralmente é a opção mais segura.
 
-Para fazer a conversão, acesse [Converter MOV para MP4](/pt/mov-to-mp4/). Para outros formatos, veja também o [Conversor de vídeo online](/pt/video-converter/).
+Para fazer a conversão, acesse [Converter MOV para MP4](/pt/mov-to-mp4). Para outros formatos, veja também o [Conversor de vídeo online](/pt/video-converter).

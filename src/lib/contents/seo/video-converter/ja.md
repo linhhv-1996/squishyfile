@@ -57,10 +57,10 @@ Web向けに軽く使いたい場合はWebM、Apple環境で扱いたい場合�
 
 形式ごとに詳しく変換したい場合は、専用ページをご利用ください。
 
-- [MOVをMP4に変換](/ja/mov-to-mp4/)
-- [AVIをMP4に変換](/ja/avi-to-mp4/)
-- [MKVをMP4に変換](/ja/mkv-to-mp4/)
-- [WebMをMP4に変換](/ja/webm-to-mp4/)
+- [MOVをMP4に変換](/ja/mov-to-mp4)
+- [AVIをMP4に変換](/ja/avi-to-mp4)
+- [MKVをMP4に変換](/ja/mkv-to-mp4)
+- [WebMをMP4に変換](/ja/webm-to-mp4)
 
 ---
 

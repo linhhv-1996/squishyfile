@@ -85,4 +85,4 @@ Mantenha a aba aberta, evite bloquear a tela e feche outros apps pesados. Em not
 ## Leia também
 
 - [MOV e MP4: diferenças e quando usar cada formato](/pt/blog/mov-vs-mp4-diferencas)
-- [Conversor de vídeo online](/pt/video-converter/)
+- [Conversor de vídeo online](/pt/video-converter)

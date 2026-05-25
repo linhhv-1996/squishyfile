@@ -81,4 +81,4 @@ Não feche a aba durante a conversão. Em notebooks, evite suspensão automátic
 ## Leia também
 
 - [AVI, MKV e WebM: diferenças antes de converter para MP4](/pt/blog/avi-mkv-webm-diferencas-mp4)
-- [Conversor de vídeo online](/pt/video-converter/)
+- [Conversor de vídeo online](/pt/video-converter)

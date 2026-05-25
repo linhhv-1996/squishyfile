@@ -71,11 +71,11 @@ MOV 是容器格式，內部可能包含不同的影像或音訊編碼。少數�
 
 ## 需要轉其他影片格式？
 
-如果你不是 MOV 檔案，可以回到 [影片轉檔工具](/zh/video-converter/)，或使用：
+如果你不是 MOV 檔案，可以回到 [影片轉檔工具](/zh/video-converter)，或使用：
 
-- [AVI 轉 MP4](/zh/avi-to-mp4/)
-- [MKV 轉 MP4](/zh/mkv-to-mp4/)
-- [WebM 轉 MP4](/zh/webm-to-mp4/)
+- [AVI 轉 MP4](/zh/avi-to-mp4)
+- [MKV 轉 MP4](/zh/mkv-to-mp4)
+- [WebM 轉 MP4](/zh/webm-to-mp4)
 
 ---
 

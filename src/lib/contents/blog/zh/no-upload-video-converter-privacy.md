@@ -77,11 +77,11 @@ Squishyfile 的影片轉檔工具採用瀏覽器內處理方式，影片不需�
 
 如果你的影片是常見格式，且主要需求是轉成 MP4 或其他常用格式，瀏覽器內工具很適合。例如：
 
-- [MOV 轉 MP4](/zh/mov-to-mp4/)
-- [AVI 轉 MP4](/zh/avi-to-mp4/)
-- [MKV 轉 MP4](/zh/mkv-to-mp4/)
-- [WebM 轉 MP4](/zh/webm-to-mp4/)
-- [一般影片轉檔工具](/zh/video-converter/)
+- [MOV 轉 MP4](/zh/mov-to-mp4)
+- [AVI 轉 MP4](/zh/avi-to-mp4)
+- [MKV 轉 MP4](/zh/mkv-to-mp4)
+- [WebM 轉 MP4](/zh/webm-to-mp4)
+- [一般影片轉檔工具](/zh/video-converter)
 
 如果你的影片超大、編碼很特殊，或需要進階字幕、多音軌、批次處理功能，桌面專業工具可能更適合。
 
@@ -91,4 +91,4 @@ Squishyfile 的影片轉檔工具採用瀏覽器內處理方式，影片不需�
 
 線上影片轉檔不一定都要把影片上傳到伺服器。對隱私敏感、工作素材、家庭影片或臨時轉檔任務來說，瀏覽器內處理是一個更安心的選擇。
 
-需要轉檔時，可以從 [影片轉檔工具](/zh/video-converter/) 開始，依照檔案格式選擇最適合的頁面。
+需要轉檔時，可以從 [影片轉檔工具](/zh/video-converter) 開始，依照檔案格式選擇最適合的頁面。

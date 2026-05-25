@@ -14,7 +14,7 @@ cta:
 
 AVI, MKV e WebM aparecem em situações bem diferentes. AVI é comum em arquivos antigos, MKV é frequente em vídeos com mais faixas e WebM é popular na web. Todos podem funcionar bem no contexto certo, mas nem sempre são os formatos mais práticos para compartilhar ou reproduzir em qualquer aparelho.
 
-Este guia explica as diferenças entre esses formatos e quando MP4 pode ser uma escolha melhor. Se você precisa fazer uma conversão específica, use as páginas [AVI para MP4](/pt/avi-to-mp4/), [MKV para MP4](/pt/mkv-to-mp4/) ou [WebM para MP4](/pt/webm-to-mp4/).
+Este guia explica as diferenças entre esses formatos e quando MP4 pode ser uma escolha melhor. Se você precisa fazer uma conversão específica, use as páginas [AVI para MP4](/pt/avi-to-mp4), [MKV para MP4](/pt/mkv-to-mp4) ou [WebM para MP4](/pt/webm-to-mp4).
 
 ---
 
@@ -73,4 +73,4 @@ Se o arquivo MKV tiver várias trilhas de áudio ou legendas internas, confira o
 
 AVI, MKV e WebM têm usos legítimos, mas MP4 costuma ser o formato mais prático para compartilhar, editar e reproduzir em aparelhos comuns. Escolha o formato de acordo com o destino do vídeo, não apenas pela extensão do arquivo.
 
-Para converter formatos específicos, acesse [AVI para MP4](/pt/avi-to-mp4/), [MKV para MP4](/pt/mkv-to-mp4/) ou [WebM para MP4](/pt/webm-to-mp4/).
+Para converter formatos específicos, acesse [AVI para MP4](/pt/avi-to-mp4), [MKV para MP4](/pt/mkv-to-mp4) ou [WebM para MP4](/pt/webm-to-mp4).

@@ -13,7 +13,7 @@ cta:
 
 用 iPhone 拍攝或匯出的影片，有時會是 MOV 格式。MOV 在 Apple 裝置上通常很好用，但如果你要傳給 Windows、Android 使用者，或上傳到某些平台，MP4 往往更容易被接受。
 
-這篇文章會說明 iPhone 影片轉成 MP4 的常見原因、轉檔前要注意什麼，以及如何用瀏覽器完成轉換。如果你已經有 MOV 檔案，可以直接使用 [MOV 轉 MP4 工具](/zh/mov-to-mp4/)。
+這篇文章會說明 iPhone 影片轉成 MP4 的常見原因、轉檔前要注意什麼，以及如何用瀏覽器完成轉換。如果你已經有 MOV 檔案，可以直接使用 [MOV 轉 MP4 工具](/zh/mov-to-mp4)。
 
 ---
 
@@ -57,7 +57,7 @@ MP4 的優勢是相容性高，對跨裝置分享更友善。
 
 ### 步驟 2：開啟 MOV 轉 MP4 工具
 
-開啟 [MOV 轉 MP4](/zh/mov-to-mp4/) 頁面，選擇你的 MOV 檔案。不需要安裝桌面軟體，也不需要建立帳號。
+開啟 [MOV 轉 MP4](/zh/mov-to-mp4) 頁面，選擇你的 MOV 檔案。不需要安裝桌面軟體，也不需要建立帳號。
 
 ### 步驟 3：轉換並下載 MP4
 
@@ -81,6 +81,6 @@ MP4 的優勢是相容性高，對跨裝置分享更友善。
 
 ## 相關工具與延伸閱讀
 
-- 需要直接處理 MOV：使用 [MOV 轉 MP4](/zh/mov-to-mp4/)
-- 不確定格式：使用 [影片轉檔工具](/zh/video-converter/)
+- 需要直接處理 MOV：使用 [MOV 轉 MP4](/zh/mov-to-mp4)
+- 不確定格式：使用 [影片轉檔工具](/zh/video-converter)
 - 想了解格式差異：閱讀 [MOV、AVI、MKV、WebM 轉 MP4 有什麼差別？](/zh/blog/video-formats-to-mp4-differences)

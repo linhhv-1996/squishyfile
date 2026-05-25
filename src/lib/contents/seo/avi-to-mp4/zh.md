@@ -53,11 +53,11 @@ AVI 只是影片容器，內部可能使用非常多不同的影像與音訊編�
 
 ## 需要轉其他影片格式？
 
-如果你要轉換的不只是 AVI，可以使用 [影片轉檔工具](/zh/video-converter/)。如果你有其他明確格式，也可以使用：
+如果你要轉換的不只是 AVI，可以使用 [影片轉檔工具](/zh/video-converter)。如果你有其他明確格式，也可以使用：
 
-- [MOV 轉 MP4](/zh/mov-to-mp4/)
-- [MKV 轉 MP4](/zh/mkv-to-mp4/)
-- [WebM 轉 MP4](/zh/webm-to-mp4/)
+- [MOV 轉 MP4](/zh/mov-to-mp4)
+- [MKV 轉 MP4](/zh/mkv-to-mp4)
+- [WebM 轉 MP4](/zh/webm-to-mp4)
 
 ---
 
