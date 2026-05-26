@@ -4,6 +4,7 @@ import {
 	Image,
 	Music,
 	RefreshCcw,
+	Type,
 	Video,
 	type Icon
 } from 'lucide-svelte';
@@ -21,7 +22,11 @@ export type ToolSlug =
 	| 'jpg-compressor'
 	| 'png-compressor'
 	| 'reduce-image-size'
-	| 'barcode-generator';
+	| 'barcode-generator'
+	| 'character-counter'
+	| 'word-counter'
+	| 'manuscript-counter'
+	| 'sns-character-limit';
 
 export type ToolConfig = {
 	slug: ToolSlug;
@@ -141,8 +146,41 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Barcode,
 		titleKey: 'home.card.barcode.title',
 		descKey: 'home.card.barcode.desc',
-		related: ['image-compressor', 'jpg-compressor', 'reduce-image-size', 'compress-pdf']
-	}
+		related: ['character-counter', 'image-compressor', 'reduce-image-size', 'compress-pdf']
+	},
+
+	// ── Character counter family ───────────────────────────────────────────────
+	'character-counter': {
+		slug: 'character-counter',
+		icon: Type,
+		titleKey: 'related.characterCounter.title',
+		descKey: 'related.characterCounter.desc',
+		related: ['word-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator']
+	},
+
+	'word-counter': {
+		slug: 'word-counter',
+		icon: Type,
+		titleKey: 'related.wordCounter.title',
+		descKey: 'related.wordCounter.desc',
+		related: ['character-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator']
+	},
+
+	'manuscript-counter': {
+		slug: 'manuscript-counter',
+		icon: Type,
+		titleKey: 'related.manuscriptCounter.title',
+		descKey: 'related.manuscriptCounter.desc',
+		related: ['character-counter', 'word-counter', 'sns-character-limit', 'barcode-generator']
+	},
+
+	'sns-character-limit': {
+		slug: 'sns-character-limit',
+		icon: Type,
+		titleKey: 'related.snsCharacterLimit.title',
+		descKey: 'related.snsCharacterLimit.desc',
+		related: ['character-counter', 'word-counter', 'manuscript-counter', 'barcode-generator']
+	},
 };
 
 export function getToolHref(lang: string, slug: ToolSlug) {

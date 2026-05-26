@@ -7,6 +7,10 @@
 	let currentLangKey = $derived($page.params.lang || 'en');
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
 	let t = $derived((key: string) => translations[activeLang.key]?.[key] || translations['en'][key] || key);
+	let tx = $derived((key: string, fallback: string) => {
+		const value = t(key);
+		return value === key ? fallback : value;
+	});
 
 	let compressHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/compress-video` : '/compress-video'
@@ -25,6 +29,18 @@
 	);
 	let barcodeHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/barcode-generator` : '/barcode-generator'
+	);
+	let characterCounterHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/character-counter` : '/character-counter'
+	);
+	let manuscriptCounterHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/manuscript-counter` : '/manuscript-counter'
+	);
+	let snsCharacterLimitHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/sns-character-limit` : '/sns-character-limit'
+	);
+	let wordCounterHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/word-counter` : '/word-counter'
 	);
 </script>
 
@@ -167,6 +183,91 @@
 				</div>
 				<div class="tc-cta tc-cta--barcode">
 					{t('home.card.barcode.cta')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
+
+			<a href={characterCounterHref} class="tool-card tool-card--counter">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{tx('related.characterCounter.title', 'Character Counter')}</h2>
+						<p class="tc-desc">{tx('related.characterCounter.desc', 'Count characters, words, bytes and more in real time.')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">{tx('cc.stat.chars', 'Characters')}</span>
+							<span class="tc-tag">{tx('cc.stat.words', 'Words')}</span>
+							<span class="tc-tag">{tx('cc.stat.bytes', 'Bytes')}</span>
+							<span class="tc-tag">{tx('cc.pill.realtime', 'Real-time')}</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--counter">
+					{tx('home.card.characterCounter.cta', 'Open character counter')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
+			<a href={wordCounterHref} class="tool-card tool-card--counter">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{tx('related.wordCounter.title', 'Word Counter')}</h2>
+						<p class="tc-desc">{tx('related.wordCounter.desc', 'Accurate word count with reading time estimate.')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">{tx('cc.stat.words', 'Words')}</span>
+							<span class="tc-tag">{tx('cc.stat.chars', 'Characters')}</span>
+							<span class="tc-tag">{tx('cc.stat.readTime', 'Read time')}</span>
+							<span class="tc-tag">{tx('wc.pill.noUpload', 'No upload')}</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--counter">
+					{tx('home.card.wordCounter.cta', 'Open word counter')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
+			<a href={manuscriptCounterHref} class="tool-card tool-card--counter">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{tx('related.manuscriptCounter.title', 'Manuscript Counter')}</h2>
+						<p class="tc-desc">{tx('related.manuscriptCounter.desc', 'Convert your text to 400-char manuscript pages (原稿用紙).')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">原稿用紙</span>
+							<span class="tc-tag">400</span>
+							<span class="tc-tag">{tx('cc.stat.manuscript', 'Manuscript')}</span>
+							<span class="tc-tag">{tx('mc.pill.free', 'Free')}</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--counter">
+					{tx('home.card.manuscriptCounter.cta', 'Open manuscript counter')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
+			</a>
+
+			<a href={snsCharacterLimitHref} class="tool-card tool-card--counter">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{tx('related.snsCharacterLimit.title', 'SNS Character Limit')}</h2>
+						<p class="tc-desc">{tx('related.snsCharacterLimit.desc', 'Check your text fits X, Instagram, YouTube and more.')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">X</span>
+							<span class="tc-tag">Instagram</span>
+							<span class="tc-tag">YouTube</span>
+							<span class="tc-tag">Meta</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--counter">
+					{tx('home.card.snsCharacterLimit.cta', 'Open SNS limit checker')} <ArrowRight size={14} strokeWidth={2.2} />
 				</div>
 			</a>
 
@@ -359,7 +460,8 @@
 	.tc-cta--mp3,
 	.tc-cta--convert,
 	.tc-cta--image,
-	.tc-cta--barcode {
+	.tc-cta--barcode,
+	.tc-cta--counter {
 		background: transparent;
 		color: var(--accent);
 	}

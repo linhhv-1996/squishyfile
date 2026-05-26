@@ -21,6 +21,10 @@ const STATIC_PAGES = ['',
 	'reduce-image-size',
 	'barcode-generator',
 	'jan-code-generator',
+	'character-counter',
+	'word-counter',
+	'manuscript-counter',
+	'sns-character-limit',
 	'blog'
 	] as const;
 

@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import { languages } from '$lib/i18n/languages';
 	import { translations } from '$lib/i18n/translations';
-	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw, FileImage, ScanBarcode } from 'lucide-svelte';
+	import { ChevronDown, Home, FileText, Zap, Music, RefreshCw, FileImage, ScanBarcode, Hash, Type } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -67,6 +67,10 @@
 	let videoToMp3Href = $derived(`${prefix}/video-to-mp3`);
 	let videoConverterHref = $derived(`${prefix}/video-converter`);
 	let barcodeGeneratorHref = $derived(`${prefix}/barcode-generator`);
+	let characterCounterHref = $derived(`${prefix}/character-counter`);
+	let manuscriptCounterHref = $derived(`${prefix}/manuscript-counter`);
+	let snsCharacterLimitHref = $derived(`${prefix}/sns-character-limit`);
+	let wordCounterHref = $derived(`${prefix}/word-counter`);
 	let privacyHref = $derived(`${prefix}/privacy`);
 	let termsHref = $derived(`${prefix}/terms`);
 	let contactHref = $derived(`${prefix}/contact`);
@@ -99,9 +103,22 @@
 		$page.url.pathname.includes('/barcode-generator') || 
 		$page.url.pathname.includes('/jan-code-generator')
 	);
+	let isCharacterCounter = $derived($page.url.pathname.includes('/character-counter'));
+	let isManuscriptCounter = $derived($page.url.pathname.includes('/manuscript-counter'));
+	let isSnsCharacterLimit = $derived($page.url.pathname.includes('/sns-character-limit'));
+	let isWordCounter = $derived($page.url.pathname.includes('/word-counter'));
 
 	let isToolPage = $derived(
-		isCompressVideo || isCompressPdf || isImageCompressor || isVideoToMp3 || isVideoConverter || isBarcodeGenerator
+		isCompressVideo ||
+		isCompressPdf ||
+		isImageCompressor ||
+		isVideoToMp3 ||
+		isVideoConverter ||
+		isBarcodeGenerator ||
+		isCharacterCounter ||
+		isManuscriptCounter ||
+		isSnsCharacterLimit ||
+		isWordCounter
 	);
 
 	let toolsLabel = $derived(t('nav.tools') !== 'nav.tools' ? t('nav.tools') : 'Tools');
@@ -163,6 +180,24 @@
 			currentPath === '/jan-code-generator' || currentPath.startsWith('/jan-code-generator/')
 		){
 			return `/og/barcode-generator/${lang}.png`;
+		}
+
+		if (
+			currentPath === '/character-counter' || currentPath.startsWith('/character-counter/') ||
+			currentPath === '/manuscript-counter' || currentPath.startsWith('/manuscript-counter/') ||
+			currentPath === '/sns-character-limit' || currentPath.startsWith('/sns-character-limit/') ||
+			currentPath === '/word-counter' || currentPath.startsWith('/word-counter/')
+		) {
+			return `/og/character-counter/${lang}.png`;
+		}
+
+		if (
+			currentPath === '/character-counter' || currentPath.startsWith('/character-counter/') ||
+			currentPath === '/word-counter' || currentPath.startsWith('/word-counter/') ||
+			currentPath === '/sns-character-limit' || currentPath.startsWith('/sns-character-limit/') ||
+			currentPath === '/manuscript-counter' || currentPath.startsWith('/manuscript-counter/')
+		) {
+			return `/og/character-counter/${lang}.png`;
 		}
 
 		return `/og/${lang}.png`;
@@ -265,7 +300,29 @@
 
 					<a href={barcodeGeneratorHref} class:active={isBarcodeGenerator} onclick={() => (toolsOpen = false)}>
 						<ScanBarcode size={13} strokeWidth={2.2} />
-						<span>{t('tab.barcode') || 'Barcode Generator'}</span>
+						<span>{t('tab.barcode') !== 'tab.barcode' ? t('tab.barcode') : 'Barcode Generator'}</span>
+					</a>
+
+					<div class="tools-menu-sep"></div>
+
+					<a href={characterCounterHref} class:active={isCharacterCounter} onclick={() => (toolsOpen = false)}>
+						<Hash size={13} strokeWidth={2.2} />
+						<span>{t('related.characterCounter.title') !== 'related.characterCounter.title' ? t('related.characterCounter.title') : 'Character Counter'}</span>
+					</a>
+
+					<a href={wordCounterHref} class:active={isWordCounter} onclick={() => (toolsOpen = false)}>
+						<Type size={13} strokeWidth={2.2} />
+						<span>{t('related.wordCounter.title') !== 'related.wordCounter.title' ? t('related.wordCounter.title') : 'Word Counter'}</span>
+					</a>
+
+					<a href={manuscriptCounterHref} class:active={isManuscriptCounter} onclick={() => (toolsOpen = false)}>
+						<FileText size={13} strokeWidth={2.2} />
+						<span>{t('related.manuscriptCounter.title') !== 'related.manuscriptCounter.title' ? t('related.manuscriptCounter.title') : 'Manuscript Counter'}</span>
+					</a>
+
+					<a href={snsCharacterLimitHref} class:active={isSnsCharacterLimit} onclick={() => (toolsOpen = false)}>
+						<Hash size={13} strokeWidth={2.2} />
+						<span>{t('related.snsCharacterLimit.title') !== 'related.snsCharacterLimit.title' ? t('related.snsCharacterLimit.title') : 'SNS Character Limit'}</span>
 					</a>
 				</div>
 			</div>
@@ -338,7 +395,23 @@
 	</a>
 
 	<a href={barcodeGeneratorHref} class="mm-link" onclick={closeMobileMenu}>
-		<span class="mm-ico"><ScanBarcode size={18} /></span><span>{t('tab.barcode') || 'Barcode Generator'}</span>
+		<span class="mm-ico"><ScanBarcode size={18} /></span><span>{t('tab.barcode') !== 'tab.barcode' ? t('tab.barcode') : 'Barcode Generator'}</span>
+	</a>
+
+	<a href={characterCounterHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><Hash size={18} /></span><span>{t('related.characterCounter.title') !== 'related.characterCounter.title' ? t('related.characterCounter.title') : 'Character Counter'}</span>
+	</a>
+
+	<a href={wordCounterHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><Type size={18} /></span><span>{t('related.wordCounter.title') !== 'related.wordCounter.title' ? t('related.wordCounter.title') : 'Word Counter'}</span>
+	</a>
+
+	<a href={manuscriptCounterHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><FileText size={18} /></span><span>{t('related.manuscriptCounter.title') !== 'related.manuscriptCounter.title' ? t('related.manuscriptCounter.title') : 'Manuscript Counter'}</span>
+	</a>
+
+	<a href={snsCharacterLimitHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><Hash size={18} /></span><span>{t('related.snsCharacterLimit.title') !== 'related.snsCharacterLimit.title' ? t('related.snsCharacterLimit.title') : 'SNS Character Limit'}</span>
 	</a>
 
 	<a href={blogHref} class="mm-link" onclick={closeMobileMenu}>
@@ -422,7 +495,7 @@
 		top: calc(100% + 12px);
 		left: 0;
 		z-index: 50;
-		min-width: 184px;
+		min-width: 220px;
 		padding: 5px;
 		border: 1px solid var(--border);
 		border-radius: 10px;
@@ -462,8 +535,14 @@
 		color: var(--brand);
 	}
 
+	.tools-menu-sep {
+		height: 1px;
+		margin: 5px 3px;
+		background: var(--border);
+	}
+
 	.tools-menu span {
-		max-width: 170px;
+		max-width: 190px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
