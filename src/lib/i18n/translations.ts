@@ -4673,7 +4673,7 @@ export const translations: Record<string, Record<string, string>> = {
 		// Intent note: keep this page focused on PNG files, transparency, logos, screenshots, icons, and UI graphics.
 
 		'pngCompressor.meta.title': 'ย่อไฟล์ PNG ออนไลน์ – บีบอัด PNG ฟรี',
-		'pngCompressor.meta.desc': 'ย่อไฟล์ PNG ออนไลน์ฟรี ลดขนาด PNG ในเบราว์เซอร์ เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ และรูปพื้นหลังโปร่งใส ใช้งานง่ายและเป็นส่วนตัว',
+		'pngCompressor.meta.desc': 'ย่อไฟล์ PNG และบีบอัด PNG ออนไลน์ฟรี ลดขนาดไฟล์ในเบราว์เซอร์ ไม่ต้องอัปโหลด เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ และรูปพื้นหลังโปร่งใส',
 		'pngCompressor.hero.title': 'ย่อไฟล์ PNG ออนไลน์',
 		'pngCompressor.hero.sub': 'บีบอัด PNG ให้ไฟล์เล็กลงในเบราว์เซอร์ของคุณ เหมาะสำหรับโลโก้ ไอคอน ภาพหน้าจอ และรูปที่ต้องการพื้นหลังโปร่งใส',
 		'pngCompressor.pill.png': 'ไฟล์ PNG',
