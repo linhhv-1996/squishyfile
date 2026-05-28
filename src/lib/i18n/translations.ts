@@ -1121,6 +1121,16 @@ export const translations: Record<string, Record<string, string>> = {
 
 		"tab.pdfMerge": "Merge PDF",
 
+		// ── Home navigation / search ────────────────────────────────────────────
+		"home.group.compress": "Compress",
+		"home.group.pdf": "PDF",
+		"home.group.videoAudio": "Video & audio",
+		"home.group.text": "Text",
+		"home.group.generator": "Generator",
+		"home.tools.all": "All",
+		"home.search.placeholder": "Search — video, pdf, image, barcode…",
+		"home.search.empty": "No tools found.",
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -2210,6 +2220,15 @@ export const translations: Record<string, Record<string, string>> = {
 
 		"tab.pdfMerge": "PDF結合",
 
+		"home.group.compress": "圧縮",
+		"home.group.pdf": "PDF",
+		"home.group.videoAudio": "動画・音声",
+		"home.group.text": "テキスト",
+		"home.group.generator": "生成ツール",
+		"home.tools.all": "すべて",
+		"home.search.placeholder": "検索 — 動画、PDF、画像、バーコード…",
+		"home.search.empty": "ツールが見つかりませんでした。",
+
 
 	},
 
@@ -3290,6 +3309,16 @@ export const translations: Record<string, Record<string, string>> = {
 		"faq.pdfMerge.8.a": "如果關閉分頁，處理會停止。請保持頁面開啟，直到合併 PDF 準備好下載。",
 
 		"tab.pdfMerge": "PDF 合併",
+
+		// ── Home navigation / search ────────────────────────────────────────────
+		"home.group.compress": "壓縮",
+		"home.group.pdf": "PDF",
+		"home.group.videoAudio": "影片與音訊",
+		"home.group.text": "文字",
+		"home.group.generator": "產生器",
+		"home.tools.all": "全部",
+		"home.search.placeholder": "搜尋 — 影片、PDF、圖片、條碼…",
+		"home.search.empty": "找不到工具。",
 
 	},
 
@@ -4430,6 +4459,16 @@ export const translations: Record<string, Record<string, string>> = {
 		"faq.pdfMerge.8.a": "O processo será interrompido se você fechar a aba. Mantenha a página aberta até o PDF unido ficar pronto para baixar.",
 
 		"tab.pdfMerge": "Juntar PDF",
+
+		// ── Home navigation / search ────────────────────────────────────────────
+		"home.group.compress": "Comprimir",
+		"home.group.pdf": "PDF",
+		"home.group.videoAudio": "Vídeo e áudio",
+		"home.group.text": "Texto",
+		"home.group.generator": "Gerador",
+		"home.tools.all": "Todos",
+		"home.search.placeholder": "Buscar — vídeo, PDF, imagem, código de barras…",
+		"home.search.empty": "Nenhuma ferramenta encontrada.",
 	},
 
 	th: {
@@ -5468,5 +5507,15 @@ export const translations: Record<string, Record<string, string>> = {
 		"faq.pdfMerge.8.a": "กระบวนการจะหยุดหากคุณปิดแท็บ กรุณาเปิดหน้านี้ไว้จนกว่าไฟล์ PDF ที่รวมแล้วจะพร้อมดาวน์โหลด",
 
 		"tab.pdfMerge": "รวมไฟล์ PDF",
+
+		// ── Home navigation / search ────────────────────────────────────────────
+		"home.group.compress": "บีบอัด",
+		"home.group.pdf": "PDF",
+		"home.group.videoAudio": "วิดีโอและเสียง",
+		"home.group.text": "ข้อความ",
+		"home.group.generator": "เครื่องสร้าง",
+		"home.tools.all": "ทั้งหมด",
+		"home.search.placeholder": "ค้นหา — วิดีโอ, PDF, รูปภาพ, บาร์โค้ด…",
+		"home.search.empty": "ไม่พบเครื่องมือ",
 	},
 };
