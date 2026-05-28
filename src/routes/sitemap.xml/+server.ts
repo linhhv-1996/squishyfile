@@ -25,6 +25,7 @@ const STATIC_PAGES = ['',
 	'word-counter',
 	'manuscript-counter',
 	'sns-character-limit',
+	'pdf-merge',
 	'blog'
 	] as const;
 

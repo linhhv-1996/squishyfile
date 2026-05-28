@@ -63,6 +63,7 @@
 	let blogHref = $derived(`${prefix}/blog`);
 	let compressVideoHref = $derived(`${prefix}/compress-video`);
 	let compressPdfHref = $derived(`${prefix}/compress-pdf`);
+	let pdfMergeHref = $derived(`${prefix}/pdf-merge`);
 	let imageCompressorHref = $derived(`${prefix}/image-compressor`);
 	let videoToMp3Href = $derived(`${prefix}/video-to-mp3`);
 	let videoConverterHref = $derived(`${prefix}/video-converter`);
@@ -83,6 +84,7 @@
 
 	let isCompressVideo = $derived($page.url.pathname.includes('/compress-video'));
 	let isCompressPdf = $derived($page.url.pathname.includes('/compress-pdf'));
+	let isPdfMerge = $derived($page.url.pathname.includes('/pdf-merge'));
 	let isImageCompressor = $derived(
 		$page.url.pathname.includes('/image-compressor') ||
 			$page.url.pathname.includes('/jpg-compressor') ||
@@ -111,6 +113,7 @@
 	let isToolPage = $derived(
 		isCompressVideo ||
 		isCompressPdf ||
+		isPdfMerge ||
 		isImageCompressor ||
 		isVideoToMp3 ||
 		isVideoConverter ||
@@ -123,6 +126,7 @@
 
 	let toolsLabel = $derived(t('nav.tools') !== 'nav.tools' ? t('nav.tools') : 'Tools');
 	let convertLabel = $derived(t('tab.convert') !== 'tab.convert' ? t('tab.convert') : 'Convert');
+	let pdfMergeLabel = $derived(t('tab.pdfMerge') !== 'tab.pdfMerge' ? t('tab.pdfMerge') : 'Merge PDF');
 	let imageLabel = $derived(
 		t('tab.image') !== 'tab.image'
 			? t('tab.image')
@@ -146,6 +150,10 @@
 
 		if (currentPath === '/compress-pdf' || currentPath.startsWith('/compress-pdf/')) {
 			return `/og/compress-pdf/${lang}.png`;
+		}
+
+		if (currentPath === '/pdf-merge' || currentPath.startsWith('/pdf-merge/')) {
+			return `/og/pdf-merge/${lang}.png`;
 		}
 
 		if (currentPath === '/compress-video' || currentPath.startsWith('/compress-video/')) {
@@ -288,6 +296,11 @@
 						<span>{t('tab.pdf')}</span>
 					</a>
 
+					<a href={pdfMergeHref} class:active={isPdfMerge} onclick={() => (toolsOpen = false)}>
+						<FileText size={13} strokeWidth={2.2} />
+						<span>{pdfMergeLabel}</span>
+					</a>
+
 					<a href={imageCompressorHref} class:active={isImageCompressor} onclick={() => (toolsOpen = false)}>
 						<FileImage size={13} strokeWidth={2.2} />
 						<span>{imageLabel}</span>
@@ -384,6 +397,10 @@
 
 	<a href={compressPdfHref} class="mm-link" onclick={closeMobileMenu}>
 		<span class="mm-ico"><FileText size={18} /></span><span>{t('tab.pdf')}</span>
+	</a>
+
+	<a href={pdfMergeHref} class="mm-link" onclick={closeMobileMenu}>
+		<span class="mm-ico"><FileText size={18} /></span><span>{pdfMergeLabel}</span>
 	</a>
 
 	<a href={imageCompressorHref} class="mm-link" onclick={closeMobileMenu}>

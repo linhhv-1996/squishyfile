@@ -18,6 +18,9 @@
 	let pdfHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/compress-pdf` : '/compress-pdf'
 	);
+	let pdfMergeHref = $derived(
+		currentLangKey !== 'en' ? `/${currentLangKey}/pdf-merge` : '/pdf-merge'
+	);
 	let imageHref = $derived(
 		currentLangKey !== 'en' ? `/${currentLangKey}/image-compressor` : '/image-compressor'
 	);
@@ -99,6 +102,27 @@
 					</div>
 				</div>
 				<div class="tc-cta tc-cta--pdf">{t('home.card.pdf.cta')} <ArrowRight size={14} strokeWidth={2.2} /></div>
+			</a>
+
+			<a href={pdfMergeHref} class="tool-card tool-card--pdf">
+				<div class="tc-inner">
+					<div class="tc-body">
+						<h2 class="tc-title">{tx('home.card.pdfMerge.title', 'Merge PDF')}</h2>
+						<p class="tc-desc">{tx('home.card.pdfMerge.desc', 'Merge PDF files online for free. Combine multiple PDFs into one file directly in your browser.')}</p>
+						<div class="tc-tags">
+							<span class="tc-tag">PDF</span>
+							<span class="tc-tag">Merge</span>
+							<span class="tc-tag">Combine</span>
+							<span class="tc-tag">{tx('pdfMerge.pill.noUpload', 'No upload')}</span>
+						</div>
+					</div>
+					<div class="tc-arrow">
+						<ArrowRight size={18} strokeWidth={2} />
+					</div>
+				</div>
+				<div class="tc-cta tc-cta--pdf">
+					{tx('home.card.pdfMerge.cta', 'Merge PDF')} <ArrowRight size={14} strokeWidth={2.2} />
+				</div>
 			</a>
 
 			<a href={imageHref} class="tool-card tool-card--image">

@@ -12,6 +12,7 @@ import {
 export type ToolSlug =
 	| 'compress-video'
 	| 'compress-pdf'
+	| 'pdf-merge'
 	| 'video-to-mp3'
 	| 'video-converter'
 	| 'mov-to-mp4'
@@ -58,7 +59,15 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: FileText,
 		titleKey: 'home.card.pdf.title',
 		descKey: 'home.card.pdf.desc',
-		related: ['compress-video', 'image-compressor', 'reduce-image-size', 'video-to-mp3']
+		related: ['pdf-merge', 'compress-video', 'image-compressor', 'reduce-image-size']
+	},
+
+	'pdf-merge': {
+		slug: 'pdf-merge',
+		icon: FileText,
+		titleKey: 'home.card.pdfMerge.title',
+		descKey: 'home.card.pdfMerge.desc',
+		related: ['compress-pdf', 'image-compressor', 'reduce-image-size', 'barcode-generator']
 	},
 
 	'video-to-mp3': {
@@ -114,7 +123,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'home.card.image.title',
 		descKey: 'home.card.image.desc',
-		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'barcode-generator']
+		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'pdf-merge']
 	},
 
 	'jpg-compressor': {
@@ -122,7 +131,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.jpgCompressor.title',
 		descKey: 'related.jpgCompressor.desc',
-		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'barcode-generator']
+		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'pdf-merge']
 	},
 
 	'png-compressor': {
@@ -138,7 +147,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.reduceImageSize.title',
 		descKey: 'related.reduceImageSize.desc',
-		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'barcode-generator']
+		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'pdf-merge']
 	},
 
 	'barcode-generator': {
@@ -180,7 +189,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		titleKey: 'related.snsCharacterLimit.title',
 		descKey: 'related.snsCharacterLimit.desc',
 		related: ['character-counter', 'word-counter', 'manuscript-counter', 'barcode-generator']
-	},
+	}
 };
 
 export function getToolHref(lang: string, slug: ToolSlug) {

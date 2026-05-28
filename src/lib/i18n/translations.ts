@@ -1039,6 +1039,88 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.card.snsCharacterLimit.desc": "Check whether your text fits X, Instagram, YouTube and meta description character limits.",
 		"home.card.snsCharacterLimit.cta": "Open SNS limit checker",
 
+
+		// Merge PDF
+		"home.card.pdfMerge.title": "Merge PDF",
+		"home.card.pdfMerge.desc": "Merge PDF files online for free. Combine multiple PDFs into one file directly in your browser with no upload, no account and no watermark.",
+		"home.card.pdfMerge.cta": "Merge PDF",
+
+		"related.pdfMerge.title": "Merge PDF",
+		"related.pdfMerge.desc": "Combine multiple PDF files into one document directly in your browser.",
+
+		"pdfMerge.meta.title": "Merge PDF Online Free｜Combine PDF Files - Squishyfile",
+		"pdfMerge.meta.desc": "Merge PDF files online for free. Combine multiple PDFs into one document directly in your browser. No upload, no account, no watermark.",
+		"pdfMerge.hero.title": "Merge PDF Online for Free",
+		"pdfMerge.hero.sub": "Combine multiple PDF files into one document directly in your browser. Fast, private and free — no upload, no account and no watermark.",
+
+		"pdfMerge.pill.free": "Free PDF merger",
+		"pdfMerge.pill.noUpload": "No server upload",
+		"pdfMerge.pill.browser": "Runs in your browser",
+
+		"pdfMerge.drop.title": "Drop your PDF files here",
+		"pdfMerge.drop.sub": "Drag and drop two or more PDF files, or click to choose files.",
+		"pdfMerge.hint": "PDF files only · Add multiple files · Reorder before merging",
+
+		"pdfMerge.files.label": "Selected PDFs",
+		"pdfMerge.files.empty": "No PDF files selected yet",
+		"pdfMerge.btn.addFiles": "Add PDF files",
+		"pdfMerge.btn.merge": "Merge PDF",
+		"pdfMerge.btn.download": "Download merged PDF",
+		"pdfMerge.btn.new": "Merge new PDFs",
+		"pdfMerge.btn.remove": "Remove",
+
+		"pdfMerge.status.loading": "Loading PDF merger",
+		"pdfMerge.status.merging": "Merging PDF files",
+		"pdfMerge.warning.keepOpen": "Keep this tab open while your PDF files are being merged.",
+
+		"pdfMerge.error.selectPdf": "Please select PDF files first.",
+		"pdfMerge.error.needTwo": "Please select at least two PDF files to merge.",
+		"pdfMerge.error.invalidFile": "Only PDF files are supported.",
+		"pdfMerge.error.browserOnly": "PDF merging only runs in the browser.",
+		"pdfMerge.error.mergeFailed": "Could not merge these PDF files. Please try again with different files.",
+
+		"pdfMerge.res.title": "PDF files merged successfully",
+		"pdfMerge.res.sub": "Your combined PDF is ready to download.",
+		"pdfMerge.stat.files": "Files merged",
+		"pdfMerge.stat.output": "Merged PDF",
+
+		"pdfMerge.note.privacy": "<strong>Your files never leave your device.</strong> PDF files are merged directly in your browser — no uploads to a server, no account required.",
+
+		"pdfMerge.howTo.title": "How to merge PDF files online",
+		"pdfMerge.howTo.1.title": "Add PDF files",
+		"pdfMerge.howTo.1.desc": "Choose two or more PDF files from your device.",
+		"pdfMerge.howTo.2.title": "Arrange the order",
+		"pdfMerge.howTo.2.desc": "Place the PDFs in the order you want them to appear in the final document.",
+		"pdfMerge.howTo.3.title": "Merge and download",
+		"pdfMerge.howTo.3.desc": "Combine the PDF files and download one merged PDF document.",
+
+		"pdfMerge.benefit.private.title": "Private PDF merging",
+		"pdfMerge.benefit.private.desc": "Your PDFs are processed locally in your browser and are not uploaded to our servers.",
+		"pdfMerge.benefit.free.title": "Free and simple",
+		"pdfMerge.benefit.free.desc": "Merge PDF files for free without installing software, creating an account or adding a watermark.",
+		"pdfMerge.benefit.online.title": "Works on any device",
+		"pdfMerge.benefit.online.desc": "Use the PDF merger on Mac, Windows, Linux, iPhone or Android in a modern browser.",
+
+		"faq.pdfMerge.title": "Merge PDF FAQ",
+		"faq.pdfMerge.1.q": "Is this PDF merger free?",
+		"faq.pdfMerge.1.a": "Yes. You can merge PDF files online for free without creating an account, installing software or adding a watermark.",
+		"faq.pdfMerge.2.q": "Are my PDF files uploaded to a server?",
+		"faq.pdfMerge.2.a": "No. PDF merging runs directly in your browser. Your files stay on your device and are not uploaded to a server.",
+		"faq.pdfMerge.3.q": "Can I combine multiple PDF files into one?",
+		"faq.pdfMerge.3.a": "Yes. Select two or more PDF files, arrange them in the order you want, and combine them into one PDF document.",
+		"faq.pdfMerge.4.q": "Can I change the order before merging PDFs?",
+		"faq.pdfMerge.4.a": "Yes. You can reorder the selected PDF files before creating the final merged PDF.",
+		"faq.pdfMerge.5.q": "Do I need Adobe Acrobat to merge PDFs?",
+		"faq.pdfMerge.5.a": "No. You can merge PDF files online in your browser without Adobe Acrobat or any desktop app.",
+		"faq.pdfMerge.6.q": "Does it work on mobile?",
+		"faq.pdfMerge.6.a": "Yes. The PDF merger works in modern mobile browsers on iPhone and Android. Large PDF files may process faster on a desktop or laptop.",
+		"faq.pdfMerge.7.q": "Will the merged PDF have a watermark?",
+		"faq.pdfMerge.7.a": "No. Squishyfile does not add a watermark to your merged PDF.",
+		"faq.pdfMerge.8.q": "What happens if I close the tab while merging?",
+		"faq.pdfMerge.8.a": "The process will stop if you close the tab. Keep the page open until the merged PDF is ready to download.",
+
+		"tab.pdfMerge": "Merge PDF",
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -2047,6 +2129,88 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.card.snsCharacterLimit.cta": "SNS文字数をチェックする",
 
 
+		// Merge PDF
+		"home.card.pdfMerge.title": "PDF結合",
+		"home.card.pdfMerge.desc": "複数のPDFを無料でオンライン結合。アップロード不要・登録不要・透かしなしで、ブラウザ上でPDFを1つにまとめられます。",
+		"home.card.pdfMerge.cta": "PDFを結合",
+
+		"related.pdfMerge.title": "PDF結合",
+		"related.pdfMerge.desc": "複数のPDFファイルをブラウザ上で1つの文書に結合できます。",
+
+		"pdfMerge.meta.title": "PDF結合 無料オンライン｜複数PDFを1つに結合 - Squishyfile",
+		"pdfMerge.meta.desc": "PDFを無料でオンライン結合。複数のPDFファイルをブラウザ上で1つの文書にまとめられます。アップロード不要・登録不要・透かしなし。",
+		"pdfMerge.hero.title": "PDFを無料でオンライン結合",
+		"pdfMerge.hero.sub": "複数のPDFファイルを1つの文書にまとめられます。ブラウザ上で完結し、アップロード不要・登録不要・透かしなしで使えます。",
+
+		"pdfMerge.pill.free": "無料PDF結合",
+		"pdfMerge.pill.noUpload": "サーバー送信なし",
+		"pdfMerge.pill.browser": "ブラウザ内で処理",
+
+		"pdfMerge.drop.title": "PDFファイルをここにドロップ",
+		"pdfMerge.drop.sub": "2つ以上のPDFをドラッグ＆ドロップ、またはクリックして選択してください。",
+		"pdfMerge.hint": "PDFのみ対応 · 複数ファイル対応 · 結合前に並び替え可能",
+
+		"pdfMerge.files.label": "選択したPDF",
+		"pdfMerge.files.empty": "PDFファイルがまだ選択されていません",
+		"pdfMerge.btn.addFiles": "PDFを追加",
+		"pdfMerge.btn.merge": "PDFを結合",
+		"pdfMerge.btn.download": "結合したPDFをダウンロード",
+		"pdfMerge.btn.new": "新しいPDFを結合",
+		"pdfMerge.btn.remove": "削除",
+
+		"pdfMerge.status.loading": "PDF結合ツールを読み込み中",
+		"pdfMerge.status.merging": "PDFファイルを結合中",
+		"pdfMerge.warning.keepOpen": "PDFを結合している間は、このタブを開いたままにしてください。",
+
+		"pdfMerge.error.selectPdf": "PDFファイルを選択してください。",
+		"pdfMerge.error.needTwo": "結合するには2つ以上のPDFファイルを選択してください。",
+		"pdfMerge.error.invalidFile": "PDFファイルのみ対応しています。",
+		"pdfMerge.error.browserOnly": "PDF結合はブラウザ上でのみ実行できます。",
+		"pdfMerge.error.mergeFailed": "PDFを結合できませんでした。別のファイルでもう一度お試しください。",
+
+		"pdfMerge.res.title": "PDFの結合が完了しました",
+		"pdfMerge.res.sub": "結合されたPDFをダウンロードできます。",
+		"pdfMerge.stat.files": "結合したファイル数",
+		"pdfMerge.stat.output": "結合PDF",
+
+		"pdfMerge.note.privacy": "<strong>ファイルは端末の外へ送信されません。</strong> PDFはブラウザ内で直接結合され、サーバーへアップロードされません。登録も不要です。",
+
+		"pdfMerge.howTo.title": "PDFをオンラインで結合する方法",
+		"pdfMerge.howTo.1.title": "PDFを追加",
+		"pdfMerge.howTo.1.desc": "端末から2つ以上のPDFファイルを選択します。",
+		"pdfMerge.howTo.2.title": "順番を調整",
+		"pdfMerge.howTo.2.desc": "最終的なPDFに表示したい順番にファイルを並べます。",
+		"pdfMerge.howTo.3.title": "結合してダウンロード",
+		"pdfMerge.howTo.3.desc": "PDFを1つに結合し、完成したファイルをダウンロードします。",
+
+		"pdfMerge.benefit.private.title": "プライベートにPDF結合",
+		"pdfMerge.benefit.private.desc": "PDFはブラウザ内で処理され、サーバーへアップロードされません。",
+		"pdfMerge.benefit.free.title": "無料でシンプル",
+		"pdfMerge.benefit.free.desc": "ソフトのインストール、登録、透かしなしでPDFを無料結合できます。",
+		"pdfMerge.benefit.online.title": "どの端末でも使える",
+		"pdfMerge.benefit.online.desc": "Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
+
+		"faq.pdfMerge.title": "PDF結合のよくある質問",
+		"faq.pdfMerge.1.q": "このPDF結合ツールは無料ですか？",
+		"faq.pdfMerge.1.a": "はい。登録やソフトのインストールなしで、無料でPDFをオンライン結合できます。透かしも入りません。",
+		"faq.pdfMerge.2.q": "PDFファイルはサーバーにアップロードされますか？",
+		"faq.pdfMerge.2.a": "いいえ。PDF結合はブラウザ内で実行されます。ファイルは端末内に残り、サーバーへアップロードされません。",
+		"faq.pdfMerge.3.q": "複数のPDFを1つにまとめられますか？",
+		"faq.pdfMerge.3.a": "はい。2つ以上のPDFを選択し、順番を調整して1つのPDF文書に結合できます。",
+		"faq.pdfMerge.4.q": "結合前にPDFの順番を変更できますか？",
+		"faq.pdfMerge.4.a": "はい。選択したPDFファイルの順番を変更してから、最終的なPDFを作成できます。",
+		"faq.pdfMerge.5.q": "PDF結合にAdobe Acrobatは必要ですか？",
+		"faq.pdfMerge.5.a": "いいえ。Adobe Acrobatやデスクトップアプリを使わず、ブラウザだけでPDFを結合できます。",
+		"faq.pdfMerge.6.q": "スマートフォンでも使えますか？",
+		"faq.pdfMerge.6.a": "はい。iPhoneやAndroidのモダンブラウザで使えます。大きなPDFはパソコンの方が速く処理できる場合があります。",
+		"faq.pdfMerge.7.q": "結合したPDFに透かしは入りますか？",
+		"faq.pdfMerge.7.a": "いいえ。Squishyfileは結合したPDFに透かしを追加しません。",
+		"faq.pdfMerge.8.q": "結合中にタブを閉じるとどうなりますか？",
+		"faq.pdfMerge.8.a": "タブを閉じると処理は停止します。結合PDFの準備ができるまでページを開いたままにしてください。",
+
+		"tab.pdfMerge": "PDF結合",
+
+
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -3044,6 +3208,88 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.card.snsCharacterLimit.title": "SNS 字數限制檢查",
 		"home.card.snsCharacterLimit.desc": "檢查文字是否符合 X、Instagram、YouTube 與 Meta description 的字數限制。",
 		"home.card.snsCharacterLimit.cta": "檢查 SNS 字數",
+
+
+		// Merge PDF
+		"home.card.pdfMerge.title": "PDF 合併",
+		"home.card.pdfMerge.desc": "免費線上合併 PDF，將多個 PDF 合併成一個檔案。直接在瀏覽器中處理，免上傳、免帳號、無浮水印。",
+		"home.card.pdfMerge.cta": "合併 PDF",
+
+		"related.pdfMerge.title": "PDF 合併",
+		"related.pdfMerge.desc": "直接在瀏覽器中將多個 PDF 檔案合併成一份文件。",
+
+		"pdfMerge.meta.title": "PDF 合併線上免費工具｜將多個 PDF 合併成一個 - Squishyfile",
+		"pdfMerge.meta.desc": "免費線上合併 PDF。將多個 PDF 檔案合併成一份文件，直接在瀏覽器中完成，免上傳、免帳號、無浮水印。",
+		"pdfMerge.hero.title": "免費線上合併 PDF",
+		"pdfMerge.hero.sub": "將多個 PDF 檔案合併成一份文件。快速、私密、免費，直接在瀏覽器中處理，免上傳、免帳號、無浮水印。",
+
+		"pdfMerge.pill.free": "免費 PDF 合併",
+		"pdfMerge.pill.noUpload": "不上傳伺服器",
+		"pdfMerge.pill.browser": "瀏覽器內處理",
+
+		"pdfMerge.drop.title": "將 PDF 檔案拖曳到這裡",
+		"pdfMerge.drop.sub": "拖曳兩個以上 PDF 檔案，或點擊選擇檔案。",
+		"pdfMerge.hint": "僅支援 PDF · 可加入多個檔案 · 合併前可調整順序",
+
+		"pdfMerge.files.label": "已選擇的 PDF",
+		"pdfMerge.files.empty": "尚未選擇 PDF 檔案",
+		"pdfMerge.btn.addFiles": "加入 PDF 檔案",
+		"pdfMerge.btn.merge": "合併 PDF",
+		"pdfMerge.btn.download": "下載合併後的 PDF",
+		"pdfMerge.btn.new": "合併新的 PDF",
+		"pdfMerge.btn.remove": "移除",
+
+		"pdfMerge.status.loading": "正在載入 PDF 合併工具",
+		"pdfMerge.status.merging": "正在合併 PDF 檔案",
+		"pdfMerge.warning.keepOpen": "PDF 合併期間請保持此分頁開啟。",
+
+		"pdfMerge.error.selectPdf": "請先選擇 PDF 檔案。",
+		"pdfMerge.error.needTwo": "請至少選擇兩個 PDF 檔案進行合併。",
+		"pdfMerge.error.invalidFile": "僅支援 PDF 檔案。",
+		"pdfMerge.error.browserOnly": "PDF 合併只能在瀏覽器中執行。",
+		"pdfMerge.error.mergeFailed": "無法合併這些 PDF 檔案，請改用其他檔案再試一次。",
+
+		"pdfMerge.res.title": "PDF 檔案已成功合併",
+		"pdfMerge.res.sub": "你的合併 PDF 已可下載。",
+		"pdfMerge.stat.files": "已合併檔案",
+		"pdfMerge.stat.output": "合併 PDF",
+
+		"pdfMerge.note.privacy": "<strong>你的檔案不會離開裝置。</strong> PDF 會直接在瀏覽器中合併，不會上傳到伺服器，也不需要帳號。",
+
+		"pdfMerge.howTo.title": "如何線上合併 PDF",
+		"pdfMerge.howTo.1.title": "加入 PDF 檔案",
+		"pdfMerge.howTo.1.desc": "從裝置選擇兩個以上 PDF 檔案。",
+		"pdfMerge.howTo.2.title": "調整順序",
+		"pdfMerge.howTo.2.desc": "依照你希望在最終文件中出現的順序排列 PDF。",
+		"pdfMerge.howTo.3.title": "合併並下載",
+		"pdfMerge.howTo.3.desc": "將 PDF 合併成一個檔案，然後下載完成的文件。",
+
+		"pdfMerge.benefit.private.title": "私密合併 PDF",
+		"pdfMerge.benefit.private.desc": "PDF 會在瀏覽器中本機處理，不會上傳到我們的伺服器。",
+		"pdfMerge.benefit.free.title": "免費又簡單",
+		"pdfMerge.benefit.free.desc": "免安裝軟體、免建立帳號、無浮水印，即可免費合併 PDF。",
+		"pdfMerge.benefit.online.title": "任何裝置都能使用",
+		"pdfMerge.benefit.online.desc": "可在 Mac、Windows、Linux、iPhone 或 Android 的現代瀏覽器中使用。",
+
+		"faq.pdfMerge.title": "PDF 合併常見問題",
+		"faq.pdfMerge.1.q": "這個 PDF 合併工具是免費的嗎？",
+		"faq.pdfMerge.1.a": "是。你可以免費線上合併 PDF，不需要建立帳號、安裝軟體，也不會加上浮水印。",
+		"faq.pdfMerge.2.q": "我的 PDF 檔案會上傳到伺服器嗎？",
+		"faq.pdfMerge.2.a": "不會。PDF 合併會直接在瀏覽器中執行，檔案會留在你的裝置上，不會上傳到伺服器。",
+		"faq.pdfMerge.3.q": "可以將多個 PDF 合併成一個檔案嗎？",
+		"faq.pdfMerge.3.a": "可以。選擇兩個以上 PDF，調整順序後即可合併成一份 PDF 文件。",
+		"faq.pdfMerge.4.q": "合併前可以調整 PDF 順序嗎？",
+		"faq.pdfMerge.4.a": "可以。你可以在建立最終 PDF 前，重新排列已選擇的 PDF 檔案順序。",
+		"faq.pdfMerge.5.q": "合併 PDF 需要 Adobe Acrobat 嗎？",
+		"faq.pdfMerge.5.a": "不需要。你可以直接在瀏覽器中線上合併 PDF，不必使用 Adobe Acrobat 或桌面軟體。",
+		"faq.pdfMerge.6.q": "手機也可以使用嗎？",
+		"faq.pdfMerge.6.a": "可以。PDF 合併工具可在 iPhone 和 Android 的現代瀏覽器中使用。大型 PDF 在桌機或筆電上可能處理更快。",
+		"faq.pdfMerge.7.q": "合併後的 PDF 會有浮水印嗎？",
+		"faq.pdfMerge.7.a": "不會。Squishyfile 不會在合併後的 PDF 加上浮水印。",
+		"faq.pdfMerge.8.q": "合併時關閉分頁會怎樣？",
+		"faq.pdfMerge.8.a": "如果關閉分頁，處理會停止。請保持頁面開啟，直到合併 PDF 準備好下載。",
+
+		"tab.pdfMerge": "PDF 合併",
 
 	},
 
@@ -4102,6 +4348,88 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.card.snsCharacterLimit.title": "Limite de caracteres SNS",
 		"home.card.snsCharacterLimit.desc": "Verifique se seu texto cabe nos limites de X, Instagram, YouTube e meta description.",
 		"home.card.snsCharacterLimit.cta": "Verificar limite SNS",
+
+
+		// Merge PDF
+		"home.card.pdfMerge.title": "Juntar PDF",
+		"home.card.pdfMerge.desc": "Junte arquivos PDF online grátis. Combine vários PDFs em um único arquivo direto no navegador, sem upload, sem conta e sem marca d’água.",
+		"home.card.pdfMerge.cta": "Juntar PDF",
+
+		"related.pdfMerge.title": "Juntar PDF",
+		"related.pdfMerge.desc": "Combine vários arquivos PDF em um único documento diretamente no navegador.",
+
+		"pdfMerge.meta.title": "Juntar PDF Online Grátis｜Mesclar Arquivos PDF - Squishyfile",
+		"pdfMerge.meta.desc": "Junte arquivos PDF online grátis. Combine vários PDFs em um único documento diretamente no navegador. Sem upload, sem conta e sem marca d’água.",
+		"pdfMerge.hero.title": "Juntar PDF Online Grátis",
+		"pdfMerge.hero.sub": "Combine vários arquivos PDF em um único documento diretamente no navegador. Rápido, privado e grátis — sem upload, sem conta e sem marca d’água.",
+
+		"pdfMerge.pill.free": "Juntar PDF grátis",
+		"pdfMerge.pill.noUpload": "Sem upload para servidor",
+		"pdfMerge.pill.browser": "Roda no navegador",
+
+		"pdfMerge.drop.title": "Arraste seus PDFs aqui",
+		"pdfMerge.drop.sub": "Arraste dois ou mais arquivos PDF, ou clique para escolher os arquivos.",
+		"pdfMerge.hint": "Somente PDFs · Adicione vários arquivos · Reordene antes de juntar",
+
+		"pdfMerge.files.label": "PDFs selecionados",
+		"pdfMerge.files.empty": "Nenhum PDF selecionado ainda",
+		"pdfMerge.btn.addFiles": "Adicionar PDFs",
+		"pdfMerge.btn.merge": "Juntar PDF",
+		"pdfMerge.btn.download": "Baixar PDF unido",
+		"pdfMerge.btn.new": "Juntar novos PDFs",
+		"pdfMerge.btn.remove": "Remover",
+
+		"pdfMerge.status.loading": "Carregando ferramenta para juntar PDF",
+		"pdfMerge.status.merging": "Juntando arquivos PDF",
+		"pdfMerge.warning.keepOpen": "Mantenha esta aba aberta enquanto seus PDFs são unidos.",
+
+		"pdfMerge.error.selectPdf": "Selecione arquivos PDF primeiro.",
+		"pdfMerge.error.needTwo": "Selecione pelo menos dois arquivos PDF para juntar.",
+		"pdfMerge.error.invalidFile": "Somente arquivos PDF são suportados.",
+		"pdfMerge.error.browserOnly": "A junção de PDF só roda no navegador.",
+		"pdfMerge.error.mergeFailed": "Não foi possível juntar estes PDFs. Tente novamente com outros arquivos.",
+
+		"pdfMerge.res.title": "PDFs unidos com sucesso",
+		"pdfMerge.res.sub": "Seu PDF combinado está pronto para baixar.",
+		"pdfMerge.stat.files": "Arquivos unidos",
+		"pdfMerge.stat.output": "PDF unido",
+
+		"pdfMerge.note.privacy": "<strong>Seus arquivos nunca saem do seu dispositivo.</strong> Os PDFs são unidos diretamente no navegador — sem upload para servidor e sem necessidade de conta.",
+
+		"pdfMerge.howTo.title": "Como juntar arquivos PDF online",
+		"pdfMerge.howTo.1.title": "Adicione os PDFs",
+		"pdfMerge.howTo.1.desc": "Escolha dois ou mais arquivos PDF do seu dispositivo.",
+		"pdfMerge.howTo.2.title": "Organize a ordem",
+		"pdfMerge.howTo.2.desc": "Coloque os PDFs na ordem em que eles devem aparecer no documento final.",
+		"pdfMerge.howTo.3.title": "Junte e baixe",
+		"pdfMerge.howTo.3.desc": "Combine os PDFs e baixe um único documento final.",
+
+		"pdfMerge.benefit.private.title": "Junção de PDF privada",
+		"pdfMerge.benefit.private.desc": "Seus PDFs são processados localmente no navegador e não são enviados aos nossos servidores.",
+		"pdfMerge.benefit.free.title": "Grátis e simples",
+		"pdfMerge.benefit.free.desc": "Junte PDFs grátis sem instalar software, criar conta ou adicionar marca d’água.",
+		"pdfMerge.benefit.online.title": "Funciona em qualquer dispositivo",
+		"pdfMerge.benefit.online.desc": "Use o juntador de PDF no Mac, Windows, Linux, iPhone ou Android em um navegador moderno.",
+
+		"faq.pdfMerge.title": "Perguntas frequentes sobre juntar PDF",
+		"faq.pdfMerge.1.q": "Esta ferramenta para juntar PDF é gratuita?",
+		"faq.pdfMerge.1.a": "Sim. Você pode juntar PDFs online grátis sem criar conta, instalar software ou adicionar marca d’água.",
+		"faq.pdfMerge.2.q": "Meus arquivos PDF são enviados para um servidor?",
+		"faq.pdfMerge.2.a": "Não. A junção de PDF roda diretamente no navegador. Seus arquivos ficam no seu dispositivo e não são enviados para um servidor.",
+		"faq.pdfMerge.3.q": "Posso combinar vários PDFs em um só?",
+		"faq.pdfMerge.3.a": "Sim. Selecione dois ou mais PDFs, organize a ordem e combine tudo em um único documento PDF.",
+		"faq.pdfMerge.4.q": "Posso mudar a ordem antes de juntar os PDFs?",
+		"faq.pdfMerge.4.a": "Sim. Você pode reordenar os arquivos PDF selecionados antes de criar o PDF final.",
+		"faq.pdfMerge.5.q": "Preciso do Adobe Acrobat para juntar PDFs?",
+		"faq.pdfMerge.5.a": "Não. Você pode juntar PDFs online no navegador sem Adobe Acrobat ou aplicativo de desktop.",
+		"faq.pdfMerge.6.q": "Funciona no celular?",
+		"faq.pdfMerge.6.a": "Sim. A ferramenta funciona em navegadores modernos no iPhone e Android. PDFs grandes podem processar mais rápido em um desktop ou notebook.",
+		"faq.pdfMerge.7.q": "O PDF unido terá marca d’água?",
+		"faq.pdfMerge.7.a": "Não. O Squishyfile não adiciona marca d’água ao PDF unido.",
+		"faq.pdfMerge.8.q": "O que acontece se eu fechar a aba durante o processo?",
+		"faq.pdfMerge.8.a": "O processo será interrompido se você fechar a aba. Mantenha a página aberta até o PDF unido ficar pronto para baixar.",
+
+		"tab.pdfMerge": "Juntar PDF",
 	},
 
 	th: {
@@ -5060,5 +5388,85 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.card.snsCharacterLimit.desc": "ตรวจว่าข้อความพอดีกับลิมิตของ X, Instagram, YouTube และ Meta description หรือไม่",
 		"home.card.snsCharacterLimit.cta": "เช็กลิมิต SNS",
 
+		// Merge PDF
+		"home.card.pdfMerge.title": "รวมไฟล์ PDF",
+		"home.card.pdfMerge.desc": "รวมไฟล์ PDF ออนไลน์ฟรี รวม PDF หลายไฟล์เป็นไฟล์เดียวในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่ต้องสมัครบัญชี และไม่มีลายน้ำ",
+		"home.card.pdfMerge.cta": "รวมไฟล์ PDF",
+
+		"related.pdfMerge.title": "รวมไฟล์ PDF",
+		"related.pdfMerge.desc": "รวมไฟล์ PDF หลายไฟล์เป็นเอกสารเดียวได้โดยตรงในเบราว์เซอร์",
+
+		"pdfMerge.meta.title": "รวมไฟล์ PDF ออนไลน์ฟรี｜รวม PDF หลายไฟล์เป็นไฟล์เดียว - Squishyfile",
+		"pdfMerge.meta.desc": "รวมไฟล์ PDF ออนไลน์ฟรี รวม PDF หลายไฟล์เป็นเอกสารเดียวได้ในเบราว์เซอร์ ไม่ต้องอัปโหลด ไม่ต้องสมัครบัญชี ไม่มีลายน้ำ",
+		"pdfMerge.hero.title": "รวมไฟล์ PDF ออนไลน์ฟรี",
+		"pdfMerge.hero.sub": "รวมไฟล์ PDF หลายไฟล์เป็นเอกสารเดียวได้ในเบราว์เซอร์ รวดเร็ว เป็นส่วนตัว และฟรี — ไม่ต้องอัปโหลด ไม่ต้องสมัครบัญชี ไม่มีลายน้ำ",
+
+		"pdfMerge.pill.free": "รวม PDF ฟรี",
+		"pdfMerge.pill.noUpload": "ไม่อัปโหลดขึ้นเซิร์ฟเวอร์",
+		"pdfMerge.pill.browser": "ทำงานในเบราว์เซอร์",
+
+		"pdfMerge.drop.title": "วางไฟล์ PDF ที่นี่",
+		"pdfMerge.drop.sub": "ลากและวางไฟล์ PDF อย่างน้อยสองไฟล์ หรือคลิกเพื่อเลือกไฟล์",
+		"pdfMerge.hint": "รองรับเฉพาะ PDF · เพิ่มได้หลายไฟล์ · จัดลำดับก่อนรวมได้",
+
+		"pdfMerge.files.label": "PDF ที่เลือก",
+		"pdfMerge.files.empty": "ยังไม่ได้เลือกไฟล์ PDF",
+		"pdfMerge.btn.addFiles": "เพิ่มไฟล์ PDF",
+		"pdfMerge.btn.merge": "รวมไฟล์ PDF",
+		"pdfMerge.btn.download": "ดาวน์โหลด PDF ที่รวมแล้ว",
+		"pdfMerge.btn.new": "รวม PDF ใหม่",
+		"pdfMerge.btn.remove": "ลบออก",
+
+		"pdfMerge.status.loading": "กำลังโหลดเครื่องมือรวม PDF",
+		"pdfMerge.status.merging": "กำลังรวมไฟล์ PDF",
+		"pdfMerge.warning.keepOpen": "กรุณาเปิดแท็บนี้ไว้ระหว่างรวมไฟล์ PDF",
+
+		"pdfMerge.error.selectPdf": "กรุณาเลือกไฟล์ PDF ก่อน",
+		"pdfMerge.error.needTwo": "กรุณาเลือกไฟล์ PDF อย่างน้อยสองไฟล์เพื่อรวม",
+		"pdfMerge.error.invalidFile": "รองรับเฉพาะไฟล์ PDF เท่านั้น",
+		"pdfMerge.error.browserOnly": "การรวม PDF ทำงานได้เฉพาะในเบราว์เซอร์",
+		"pdfMerge.error.mergeFailed": "ไม่สามารถรวมไฟล์ PDF เหล่านี้ได้ กรุณาลองใช้ไฟล์อื่น",
+
+		"pdfMerge.res.title": "รวมไฟล์ PDF สำเร็จ",
+		"pdfMerge.res.sub": "ไฟล์ PDF ที่รวมแล้วพร้อมดาวน์โหลด",
+		"pdfMerge.stat.files": "ไฟล์ที่รวม",
+		"pdfMerge.stat.output": "PDF ที่รวมแล้ว",
+
+		"pdfMerge.note.privacy": "<strong>ไฟล์ของคุณไม่ออกจากอุปกรณ์</strong> ไฟล์ PDF จะถูกรวมโดยตรงในเบราว์เซอร์ ไม่มีการอัปโหลดขึ้นเซิร์ฟเวอร์ และไม่ต้องสมัครบัญชี",
+
+		"pdfMerge.howTo.title": "วิธีรวมไฟล์ PDF ออนไลน์",
+		"pdfMerge.howTo.1.title": "เพิ่มไฟล์ PDF",
+		"pdfMerge.howTo.1.desc": "เลือกไฟล์ PDF อย่างน้อยสองไฟล์จากอุปกรณ์ของคุณ",
+		"pdfMerge.howTo.2.title": "จัดลำดับไฟล์",
+		"pdfMerge.howTo.2.desc": "เรียงลำดับไฟล์ PDF ตามลำดับที่ต้องการให้ปรากฏในเอกสารสุดท้าย",
+		"pdfMerge.howTo.3.title": "รวมและดาวน์โหลด",
+		"pdfMerge.howTo.3.desc": "รวมไฟล์ PDF เป็นเอกสารเดียว แล้วดาวน์โหลดไฟล์ที่เสร็จแล้ว",
+
+		"pdfMerge.benefit.private.title": "รวม PDF แบบเป็นส่วนตัว",
+		"pdfMerge.benefit.private.desc": "PDF ของคุณถูกประมวลผลในเบราว์เซอร์และไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์ของเรา",
+		"pdfMerge.benefit.free.title": "ฟรีและใช้ง่าย",
+		"pdfMerge.benefit.free.desc": "รวมไฟล์ PDF ฟรีโดยไม่ต้องติดตั้งโปรแกรม ไม่ต้องสมัครบัญชี และไม่มีลายน้ำ",
+		"pdfMerge.benefit.online.title": "ใช้ได้บนทุกอุปกรณ์",
+		"pdfMerge.benefit.online.desc": "ใช้เครื่องมือรวม PDF ได้บน Mac, Windows, Linux, iPhone หรือ Android ผ่านเบราว์เซอร์สมัยใหม่",
+
+		"faq.pdfMerge.title": "คำถามที่พบบ่อยเกี่ยวกับการรวม PDF",
+		"faq.pdfMerge.1.q": "เครื่องมือรวม PDF นี้ฟรีไหม?",
+		"faq.pdfMerge.1.a": "ฟรี คุณสามารถรวมไฟล์ PDF ออนไลน์ได้โดยไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำ",
+		"faq.pdfMerge.2.q": "ไฟล์ PDF ของฉันจะถูกอัปโหลดไปยังเซิร์ฟเวอร์ไหม?",
+		"faq.pdfMerge.2.a": "ไม่ การรวม PDF ทำงานในเบราว์เซอร์ ไฟล์ของคุณจะอยู่บนอุปกรณ์ของคุณและไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์",
+		"faq.pdfMerge.3.q": "รวม PDF หลายไฟล์เป็นไฟล์เดียวได้ไหม?",
+		"faq.pdfMerge.3.a": "ได้ เลือกไฟล์ PDF อย่างน้อยสองไฟล์ จัดลำดับ แล้วรวมเป็นเอกสาร PDF ไฟล์เดียว",
+		"faq.pdfMerge.4.q": "จัดลำดับไฟล์ก่อนรวม PDF ได้ไหม?",
+		"faq.pdfMerge.4.a": "ได้ คุณสามารถจัดลำดับไฟล์ PDF ที่เลือกก่อนสร้างไฟล์ PDF สุดท้าย",
+		"faq.pdfMerge.5.q": "ต้องใช้ Adobe Acrobat เพื่อรวม PDF ไหม?",
+		"faq.pdfMerge.5.a": "ไม่ต้อง คุณสามารถรวมไฟล์ PDF ออนไลน์ในเบราว์เซอร์ได้โดยไม่ต้องใช้ Adobe Acrobat หรือแอปเดสก์ท็อป",
+		"faq.pdfMerge.6.q": "ใช้งานบนมือถือได้ไหม?",
+		"faq.pdfMerge.6.a": "ได้ เครื่องมือรวม PDF ใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone และ Android ไฟล์ PDF ขนาดใหญ่อาจทำงานได้เร็วกว่าในคอมพิวเตอร์",
+		"faq.pdfMerge.7.q": "ไฟล์ PDF ที่รวมแล้วจะมีลายน้ำไหม?",
+		"faq.pdfMerge.7.a": "ไม่มี Squishyfile จะไม่เพิ่มลายน้ำลงในไฟล์ PDF ที่รวมแล้ว",
+		"faq.pdfMerge.8.q": "ถ้าปิดแท็บระหว่างรวมไฟล์จะเกิดอะไรขึ้น?",
+		"faq.pdfMerge.8.a": "กระบวนการจะหยุดหากคุณปิดแท็บ กรุณาเปิดหน้านี้ไว้จนกว่าไฟล์ PDF ที่รวมแล้วจะพร้อมดาวน์โหลด",
+
+		"tab.pdfMerge": "รวมไฟล์ PDF",
 	},
 };
