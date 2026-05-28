@@ -292,7 +292,6 @@
 				<details
 					class="faq-item"
 					id={n === 12 ? "faq-why-small" : undefined}
-					open={n === 1}
 					itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
 				>
 					<summary class="faq-q" itemprop="name">{t(`faq.pdf.${n}.q`)}</summary>
@@ -459,16 +458,6 @@
 	}
 	@keyframes p-spin { to { transform: rotate(360deg); } }
 	.p-spinner-label { font-size: 12px; color: var(--muted); }
-
-	.p-tip {
-		padding: 9px 16px;
-		font-size: 12px;
-		color: var(--muted);
-		line-height: 1.5;
-		border-top: 1px solid var(--border);
-		opacity: 0;
-		transition: opacity 0.35s ease;
-	}
 
 	.p-warning {
 		padding: 4px 16px 10px;
