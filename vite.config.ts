@@ -13,6 +13,9 @@ export default defineConfig({
 		}
 	},
 	optimizeDeps: {
-		exclude: ["@ffmpeg/ffmpeg", "@ffmpeg/util", "@jsquash/jpeg", "@jsquash/png", "@jsquash/webp", "@jsquash/avif"],
+		exclude: ["@jsquash/jpeg", "@jsquash/png", "@jsquash/webp", "@jsquash/avif"],
+	},
+	worker: {
+		format: 'es',
 	},
 });

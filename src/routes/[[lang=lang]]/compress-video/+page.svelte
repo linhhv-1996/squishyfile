@@ -63,7 +63,8 @@
 	let dragOver = $state(false);
 	let compressInput: HTMLInputElement;
 	let compressFile: File | null = $state(null);
-	let selectedPreset = $state("balanced");
+	type CompressionPreset = "low" | "balanced" | "high";
+	let selectedPreset = $state<CompressionPreset>("balanced");
 	let targetMb = $state("");
 	let selectedTag: number | null = $state(null);
 	let compressError = $state("");
@@ -119,7 +120,7 @@
 		const file = event.dataTransfer?.files?.[0];
 		if (file && file.type.startsWith("video/")) loadFile(file);
 	}
-	function pickPreset(key: string) {
+	function pickPreset(key: CompressionPreset) {
 		if (hasTarget || compressBusy) return;
 		selectedPreset = key;
 	}
@@ -132,7 +133,7 @@
 		if (selectedTag === mb) { clearTargetSize(); return; }
 		targetMb = String(mb);
 		selectedTag = mb;
-		selectedPreset = "";
+		selectedPreset = "balanced";
 	}
 	function clearTargetSize() {
 		if (compressBusy) return;
