@@ -536,15 +536,19 @@
 	.v-target-head {
 		display: flex;
 		align-items: center;
-		gap: 12px;
+		gap: 8px;
+		flex-wrap: wrap;          /* ← wrap khi không đủ chỗ */
 	}
 	.v-input-wrap {
 		position: relative;
 		display: flex;
 		align-items: center;
+		flex: 1;                  /* ← co giãn theo không gian còn lại */
+		min-width: 120px;         /* ← không thu nhỏ quá */
 	}
 	.v-target-input {
-		width: 200px;
+		width: 100%;              /* ← thay vì fixed 200px */
+		max-width: 200px;         /* ← giữ max trên desktop */
 		height: 32px;
 		padding: 0 28px 0 10px;
 		border-radius: 6px;
