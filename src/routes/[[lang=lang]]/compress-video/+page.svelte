@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
+	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 	import { languages } from "$lib/i18n/languages";
 	import { translations } from "$lib/i18n/translations";
@@ -211,10 +212,23 @@
 		</div>
 	</section>
 
-	<!-- Drop zone -->
+	<input
+		bind:this={compressInput}
+		class="file-input"
+		type="file"
+		accept="video/*"
+		onchange={handleFile}
+		disabled={compressBusy}
+	/>
+
+	<!-- ── Unified tool card (always in DOM → no layout jump) ── -->
+	<div class="v-card">
+
 	{#if !compressFile}
+		<!-- State 1: Drop zone -->
 		<button
-			class="dz" class:over={dragOver}
+			in:fade={{ duration: 150 }}
+			class="dz dz--card" class:over={dragOver}
 			type="button"
 			onclick={triggerInput}
 			ondragover={onDragOver}
@@ -228,19 +242,10 @@
 			<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
 			<p class="fmt-hint">{@html t("hint.compress")}</p>
 		</button>
-	{/if}
-	<input
-		bind:this={compressInput}
-		class="file-input"
-		type="file"
-		accept="video/*"
-		onchange={handleFile}
-		disabled={compressBusy}
-	/>
 
-	<!-- ── File card ── -->
-	{#if compressFile && !compressResult}
-	<div class="v-card">
+	{:else if !compressResult}
+		<!-- State 2: File selected + settings -->
+		<div in:fade={{ duration: 150 }}>
 
 		<!-- File row -->
 		<div class="v-file-row">
@@ -352,26 +357,26 @@
 			</button>
 		</div>
 
-	</div>
-	{/if}
+	</div><!-- end state 2 inner div -->
 
-	<!-- ── Result card ── -->
-	{#if compressResult}
-	<div class="v-result">
+	{:else}
+		<!-- State 3: Result -->
+		<div in:fade={{ duration: 150 }}>
+		<div class="v-result-inner">
 
 		<div class="v-result-head">
 			<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
 			<div>
 				<div class="v-result-title">{t("res.compress.title")}</div>
 				<div class="v-result-stats">
-					{compressResult.original} → {compressResult.compressed}
-					<span class="v-result-saved">· −{compressResult.saved}</span>
+					{compressResult?.original} → {compressResult?.compressed}
+					<span class="v-result-saved">· −{compressResult?.saved}</span>
 				</div>
 			</div>
 		</div>
 
 		<div class="v-result-actions">
-			<a class="v-btn-dl" href={compressResult.href} download={compressResult.download}>
+			<a class="v-btn-dl" href={compressResult?.href} download={compressResult?.download}>
 				<Download size={15} strokeWidth={2.2} />
 				{t("btn.dl.compress")}
 			</a>
@@ -387,8 +392,11 @@
 			tools={relatedTools}
 		/>
 
-	</div>
+		</div><!-- end .v-result-inner -->
+		</div><!-- end state 3 inner div -->
+
 	{/if}
+	</div><!-- end .v-card -->
 
 	<!-- Privacy note -->
 	<div class="pnote">
@@ -432,10 +440,29 @@
 	/* ── File card ───────────────────────────────────────────────────────────── */
 	.v-card {
 		background: var(--surf);
-		border: 1px solid var(--border);
+		border: 1px dashed #90b5d6;
 		border-radius: var(--r);
 		overflow: hidden;
 		margin-bottom: 10px;
+		min-height: 280px;
+	}
+
+	/* Drop zone bên trong card: bỏ outer border/bg (card đã có rồi) */
+	.dz--card {
+		width: 100%;
+		margin: 0;
+		border: none !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+	}
+	.dz--card.over {
+		background: color-mix(in srgb, var(--accent) 6%, transparent) !important;
+	}
+
+	/* Result bên trong v-card */
+	.v-result-inner {
+		/* Không cần border/bg riêng vì đã dùng .v-card */
 	}
 
 	/* File row */
@@ -682,14 +709,7 @@
 	.v-submit:hover { opacity: 0.88; }
 	.v-submit:disabled { opacity: 0.5; cursor: default; }
 
-	/* ── Result card ─────────────────────────────────────────────────────────── */
-	.v-result {
-		background: var(--surf);
-		border: 1px solid var(--border);
-		border-radius: var(--r);
-		overflow: hidden;
-		margin-bottom: 10px;
-	}
+	/* ── Result (inside .v-card) ─────────────────────────────────────────────── */
 	.v-result-head {
 		display: flex;
 		align-items: center;
