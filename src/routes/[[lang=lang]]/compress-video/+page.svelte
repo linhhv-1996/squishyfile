@@ -543,8 +543,8 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		flex: 1;                  /* ← co giãn theo không gian còn lại */
-		min-width: 120px;         /* ← không thu nhỏ quá */
+		/* flex: 1; */
+		min-width: 140px;
 	}
 	.v-target-input {
 		width: 100%;              /* ← thay vì fixed 200px */

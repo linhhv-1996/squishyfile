@@ -533,8 +533,7 @@ body {
   /* border: 1.5px dashed var(--border); */
   border: 1.5px dashed #90b5d6;
   border-radius: var(--r);
-  /* padding: 12px 16px; */
-  padding: 20px;
+  padding: 32px;
   text-align: center;
   cursor: pointer;
   transition: background .15s, border-color .15s, color .15s;
@@ -1370,7 +1369,8 @@ footer a:hover {
   }
 
   .dz {
-    padding: 18px 14px;
+    /* padding: 18px 14px; */
+    padding: 30px 14px;
   }
 
   .pnote {
