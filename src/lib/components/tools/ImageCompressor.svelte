@@ -6,7 +6,7 @@
 
 	import { translations } from "$lib/i18n/translations";
 	import { languages } from "$lib/i18n/languages";
-	import CompressWorker from "$lib/workers/image-compress.worker.ts?worker";
+	import CompressWorker from "$lib/workers/image-compress.worker.ts?worker&inline";
 
 	type OutputFormat = "jpeg" | "png" | "webp" | "avif";
 
