@@ -11,7 +11,7 @@
 	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
 
-	import MergeWorker from "$lib/workers/pdf-merge-worker.ts?worker";
+	import MergeWorker from "$lib/workers/pdf-merge-worker.ts?worker&inline";
 
 
 	type PdfItem = {
