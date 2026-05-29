@@ -11,6 +11,9 @@
 	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
 
+	import MergeWorker from "$lib/workers/pdf-merge-worker.ts?worker";
+
+
 	type PdfItem = {
 		id: string;
 		file: File;
@@ -337,7 +340,10 @@
 			fileUrl: URL.createObjectURL(item.file),
 			name: item.file.name,
 		}));
-		const worker = new Worker(new URL("$lib/workers/pdf-merge-worker.ts", import.meta.url), { type: "module" });
+
+		// const worker = new Worker(new URL("$lib/workers/pdf-merge-worker.ts", import.meta.url), { type: "module" });
+		const worker = new MergeWorker();
+		
 		worker.postMessage({ files: fileUrls });
 		worker.onmessage = (e) => {
 			const { success, pdfData, error } = e.data;
