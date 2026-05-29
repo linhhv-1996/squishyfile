@@ -329,216 +329,223 @@
 	onchange={onFileChange}
 />
 
-<!-- ── Drop zone ─────────────────────────────────────────────────────────────── -->
-{#if !hasJobs}
-	<section class="empty-layout">
-		<button
-			type="button"
-			class:over={isOver}
-			class="dz dz--img"
-			ondragenter={(e) => { e.preventDefault(); isOver = true; }}
-			ondragover={(e) => e.preventDefault()}
-			ondragleave={() => { isOver = false; }}
-			ondrop={onDrop}
-			onclick={() => fileInput?.click()}
-		>
-			<div class="dz-ico dz-ico--img"><ImagePlus size={24} strokeWidth={1.8} /></div>
-			<h3>{copy.dropTitle}</h3>
-			<p class="sub">{copy.dropSub}</p>
-			<span class="btn-browse"><ImagePlus size={14} strokeWidth={2} /> {copy.browse}</span>
-			<p class="fmt-hint">{copy.hint}</p>
-		</button>
-	</section>
-{/if}
+<!-- ── Unified tool card ─────────────────────────────────────────────────────── -->
+<div class="p-card">
 
-<!-- ── File card ─────────────────────────────────────────────────────────────── -->
-{#if hasJobs}
-	<div class="p-card">
+	<!-- ── Preview / Gallery zone (top, fixed height) ──────────────────────────── -->
+	<div
+		class="p-preview"
+		class:over={isOver && !hasJobs}
+		ondragenter={(e) => { e.preventDefault(); isOver = true; }}
+		ondragover={(e) => e.preventDefault()}
+		ondragleave={() => { isOver = false; }}
+		ondrop={onDrop}
+	>
+		{#if hasJobs}
+			<!-- Image gallery grid -->
+			<div class="p-gallery-wrap">
+				<!-- Toolbar: add-more + summary + clear -->
+				<div class="p-gallery-bar">
+					<button
+						type="button"
+						class="p-add-btn"
+						class:over={isOver}
+						disabled={isCompressing}
+						title={copy.addLabel}
+						ondragenter={(e) => { e.preventDefault(); isOver = true; }}
+						ondragover={(e) => e.preventDefault()}
+						ondragleave={() => { isOver = false; }}
+						ondrop={onDrop}
+						onclick={() => fileInput?.click()}
+					>
+						<ImagePlus size={15} strokeWidth={2} />
+					</button>
+					<div class="p-gallery-summary">
+						{#if doneCount}
+							{doneCount}/{jobs.length} {copy.doneLabel} · {formatBytes(totalOriginalSize)} → {formatBytes(totalOutputSize)}
+						{:else}
+							{jobs.length} {jobs.length === 1 ? t("common.image") : t("common.images")} · {formatBytes(totalOriginalSize)}
+						{/if}
+					</div>
+					<button class="p-remove" type="button" onclick={clearJobs} disabled={isCompressing} title="Remove all">
+						<X size={15} strokeWidth={2.5} />
+					</button>
+				</div>
 
-		<!-- Toolbar row: add-more + summary + clear -->
-		<div class="p-file-row">
+				<!-- Grid -->
+				<div class="p-gallery">
+					{#each jobs as job (job.id)}
+						<article
+							class="p-tile"
+							class:p-tile--done={job.status === "done"}
+							class:p-tile--error={job.status === "error"}
+							class:p-tile--busy={job.status === "compressing"}
+						>
+							<div class="p-tile-preview">
+								<img src={job.previewUrl} alt={job.name} />
+
+								<button
+									type="button"
+									class="p-tile-remove"
+									aria-label={copy.remove}
+									disabled={job.status === "compressing"}
+									onclick={() => removeJob(job.id)}
+								>×</button>
+
+								{#if job.status === "compressing"}
+									<div class="p-tile-overlay">
+										<div class="p-tile-spin"></div>
+										<div class="p-tile-pbar">
+											<div class="p-tile-pfill" style="width:{job.progress}%"></div>
+										</div>
+									</div>
+								{/if}
+
+								{#if job.status === "done"}
+									<a class="p-tile-dl-hover" href={job.outputUrl} download={getOutputName(job)}>
+										<Download size={14} strokeWidth={2.5} />
+										{copy.download}
+									</a>
+								{/if}
+							</div>
+
+							<div class="p-tile-info">
+								<div class="p-tile-name">{job.name}</div>
+								{#if job.status === "done"}
+									<div class="p-tile-meta">
+										<span>{formatBytes(job.size)} → {formatBytes(job.outputSize)}</span>
+										<strong>−{getSavedPercent(job)}%</strong>
+									</div>
+								{:else if job.status === "error"}
+									<div class="p-tile-err">{job.error}</div>
+								{:else}
+									<div class="p-tile-meta">
+										<span>{formatBytes(job.size)}</span>
+										<strong>{outputFormat.toUpperCase()}</strong>
+									</div>
+								{/if}
+							</div>
+						</article>
+					{/each}
+				</div>
+			</div>
+		{:else}
+			<!-- Drop zone (empty state) -->
 			<button
+				class="p-dz"
 				type="button"
-				class="p-add-btn"
-				class:over={isOver}
-				disabled={isCompressing}
-				title={copy.addLabel}
-				ondragenter={(e) => { e.preventDefault(); isOver = true; }}
-				ondragover={(e) => e.preventDefault()}
-				ondragleave={() => { isOver = false; }}
-				ondrop={onDrop}
 				onclick={() => fileInput?.click()}
 			>
-				<ImagePlus size={15} strokeWidth={2} />
+				<div class="dz-ico"><ImagePlus size={28} strokeWidth={1.4} /></div>
+				<h3>{copy.dropTitle}</h3>
+				<p class="sub">{copy.dropSub}</p>
+				<span class="btn-browse"><ImagePlus size={14} strokeWidth={2} /> {copy.browse}</span>
+				<p class="fmt-hint">{copy.hint}</p>
 			</button>
-			<div class="p-file-info">
-				<div class="p-file-name">
-					{jobs.length} {jobs.length === 1 ? t("common.image") : t("common.images")}
-				</div>
-				<div class="p-file-size">
-					{#if doneCount}
-						{doneCount}/{jobs.length} {copy.doneLabel} · {formatBytes(totalOriginalSize)} → {formatBytes(totalOutputSize)}
-					{:else}
-						{formatBytes(totalOriginalSize)} {t("common.selected")}
-					{/if}
-				</div>
-			</div>
-			<button class="p-remove" type="button" onclick={clearJobs} disabled={isCompressing} title="Remove all">
-				<X size={15} strokeWidth={2.5} />
-			</button>
-		</div>
-
-		<!-- Error bar -->
-		{#if error}
-			<div class="p-error">
-				<span class="p-error-badge">!</span>
-				<span>{error}</span>
-			</div>
 		{/if}
+	</div>
 
-		<!-- Image gallery grid -->
-		<div class="p-gallery">
-			{#each jobs as job (job.id)}
-				<article
-					class="p-tile"
-					class:p-tile--done={job.status === "done"}
-					class:p-tile--error={job.status === "error"}
-					class:p-tile--busy={job.status === "compressing"}
-				>
-					<div class="p-tile-preview">
-						<img src={job.previewUrl} alt={job.name} />
+	<!-- ── Settings / Result panel (bottom) ─────────────────────────────────────── -->
+	<div class="p-panel">
 
+		{#if allDone}
+			<!-- ── Result state ── -->
+			<div class="p-result-head">
+				<div class="p-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
+				<div>
+					<div class="p-result-title">{copy.resultTitle}</div>
+					<div class="p-result-stats">
+						{formatBytes(totalOriginalSize)} → {formatBytes(totalOutputSize)}
+						<span class="p-result-saved">· −{totalSavedPercent}%</span>
+					</div>
+				</div>
+			</div>
+			<div class="p-result-actions">
+				{#if jobs.length === 1}
+					<a class="p-submit" href={doneJobs[0]?.outputUrl} download={doneJobs[0] ? getOutputName(doneJobs[0]) : ""}>
+						<Download size={15} strokeWidth={2.2} />
+						{copy.download}
+					</a>
+				{:else}
+					<button class="p-submit" type="button" onclick={downloadAll}>
+						<Download size={15} strokeWidth={2.2} />
+						{copy.downloadAll}
+					</button>
+				{/if}
+				<button class="p-btn-new" type="button" onclick={clearJobs}>{copy.newFile}</button>
+			</div>
+
+		{:else}
+			<!-- ── Settings state ── -->
+
+			<!-- Error bar -->
+			{#if error}
+				<div class="p-error">
+					<span class="p-error-badge">!</span>
+					<span>{error}</span>
+				</div>
+			{/if}
+
+			<!-- Format -->
+			<div class="p-row">
+				<span class="p-label">{copy.formatLabel}</span>
+				<div class="p-opts">
+					{#each formats as item}
 						<button
 							type="button"
-							class="p-tile-remove"
-							aria-label={copy.remove}
-							disabled={job.status === "compressing"}
-							onclick={() => removeJob(job.id)}
-						>×</button>
-
-						{#if job.status === "compressing"}
-							<div class="p-tile-overlay">
-								<div class="p-tile-spin"></div>
-								<div class="p-tile-pbar">
-									<div class="p-tile-pfill" style="width:{job.progress}%"></div>
-								</div>
-							</div>
-						{/if}
-
-						{#if job.status === "done"}
-							<a class="p-tile-dl-hover" href={job.outputUrl} download={getOutputName(job)}>
-								<Download size={13} strokeWidth={2.5} />
-								{copy.download}
-							</a>
-						{/if}
-					</div>
-
-					<div class="p-tile-info">
-						<div class="p-tile-name">{job.name}</div>
-						{#if job.status === "done"}
-							<div class="p-tile-meta">
-								<span>{formatBytes(job.size)} → {formatBytes(job.outputSize)}</span>
-								<strong>−{getSavedPercent(job)}%</strong>
-							</div>
-						{:else if job.status === "error"}
-							<div class="p-tile-err">{job.error}</div>
-						{:else}
-							<div class="p-tile-meta">
-								<span>{formatBytes(job.size)}</span>
-								<strong>{outputFormat.toUpperCase()}</strong>
-							</div>
-						{/if}
-					</div>
-				</article>
-			{/each}
-		</div>
-
-		<!-- Format -->
-		<div class="p-row">
-			<span class="p-label">{copy.formatLabel}</span>
-			<div class="p-opts">
-				{#each formats as item}
-					<button
-						type="button"
-						class="p-opt"
-						class:p-opt--on={outputFormat === item.value}
-						disabled={isCompressing}
-						onclick={() => { outputFormat = item.value; onOptionChange(); }}
-					>{item.label}</button>
-				{/each}
+							class="p-opt"
+							class:p-opt--on={outputFormat === item.value}
+							disabled={isCompressing}
+							onclick={() => { outputFormat = item.value; onOptionChange(); }}
+						>{item.label}</button>
+					{/each}
+				</div>
 			</div>
-		</div>
 
-		<!-- Quality -->
-		<div class="p-row">
-			<span class="p-label">{copy.qualityLabel}</span>
-			<div class="p-opts">
-				{#each qualityPresets as value}
-					<button
-						type="button"
-						class="p-opt"
-						class:p-opt--on={quality === value}
-						disabled={isCompressing}
-						onclick={() => { quality = value; onOptionChange(); }}
-					>{value}%</button>
-				{/each}
+			<!-- Quality -->
+			<div class="p-row">
+				<span class="p-label">{copy.qualityLabel}</span>
+				<div class="p-opts">
+					{#each qualityPresets as value}
+						<button
+							type="button"
+							class="p-opt"
+							class:p-opt--on={quality === value}
+							disabled={isCompressing}
+							onclick={() => { quality = value; onOptionChange(); }}
+						>{value}%</button>
+					{/each}
+				</div>
 			</div>
-		</div>
 
-		<!-- Max width -->
-		<label class="p-row">
-			<span class="p-label">{copy.maxWidthLabel}</span>
-			<span class="p-width-ctrl">
-				<input
-					type="number"
-					min="1"
-					bind:value={width}
-					disabled={isCompressing}
-					oninput={onOptionChange}
-					placeholder="Original"
-				/>
-				<span class="p-width-unit">px</span>
-			</span>
-		</label>
-
-		<!-- Processing indicator -->
-		{#if isCompressing}
-			<div class="p-spinner-row">
-				<div class="p-spinner"></div>
-				<span class="p-spinner-label">
-					{copy.compressingLabel}
-					{#if doneCount < jobs.length}· {doneCount}/{jobs.length}{/if}
+			<!-- Max width -->
+			<label class="p-row">
+				<span class="p-label">{copy.maxWidthLabel}</span>
+				<span class="p-width-ctrl">
+					<input
+						type="number"
+						min="1"
+						bind:value={width}
+						disabled={isCompressing}
+						oninput={onOptionChange}
+						placeholder="Original"
+					/>
+					<span class="p-width-unit">px</span>
 				</span>
-			</div>
-			<p class="p-warning">{copy.keepOpen}</p>
-		{/if}
+			</label>
 
-		<!-- Action: compress / download-all -->
-		<div class="p-action">
-			{#if allDone}
-				<!-- Results inline — show download + stats + reset -->
-				<div class="p-done-bar">
-					<div class="p-done-info">
-						<span class="p-done-ico"><CheckCircle2 size={13} strokeWidth={2.2} /></span>
-						<span class="p-done-stats">
-							{formatBytes(totalOriginalSize)} → {formatBytes(totalOutputSize)}
-							<strong>−{totalSavedPercent}%</strong>
+			<!-- Submit + processing — pinned to bottom -->
+			<div class="p-action" style="margin-top: auto;">
+				{#if isCompressing}
+					<div class="p-spinner-row">
+						<div class="p-spinner"></div>
+						<span class="p-spinner-label">
+							{copy.compressingLabel}
+							{#if doneCount < jobs.length}· {doneCount}/{jobs.length}{/if}
 						</span>
 					</div>
-					{#if jobs.length === 1}
-						<a class="p-submit" href={doneJobs[0]?.outputUrl} download={doneJobs[0] ? getOutputName(doneJobs[0]) : ""}>
-							<Download size={15} strokeWidth={2.2} />
-							{copy.download}
-						</a>
-					{:else}
-						<button class="p-submit" type="button" onclick={downloadAll}>
-							<Download size={15} strokeWidth={2.2} />
-							{copy.downloadAll}
-						</button>
-					{/if}
-				</div>
-				<button class="p-btn-new" type="button" onclick={clearJobs}>{copy.newFile}</button>
-			{:else}
+					<p class="p-warning">{copy.keepOpen}</p>
+				{/if}
 				<button class="p-submit" type="button" disabled={isCompressing} onclick={compressAll}>
 					{#if isCompressing}
 						<span class="p-dots">
@@ -551,11 +558,13 @@
 					{/if}
 					{isCompressing ? copy.compressingLabel : copy.compressButton}
 				</button>
-			{/if}
-		</div>
+			</div>
 
-	</div>
-{/if}
+		{/if}
+
+	</div><!-- end .p-panel -->
+
+</div><!-- end .p-card -->
 
 <!-- Privacy note -->
 <div class="pnote">
@@ -565,29 +574,96 @@
 
 <style>
 	/* ─────────────────────────────────────────────────────────────────────────────
-	   ImageCompressor — styled to match the PDF/Video compressor design language.
-	   Uses CSS vars: --text, --muted, --border, --accent, --surf, --bg, --r, --rsm
+	   ImageCompressor — layout mirrors VideoCompressor: preview/gallery zone on top,
+	   settings panel below. Uses CSS vars: --text, --muted, --border, --accent,
+	   --surf, --bg, --r, --rsm
 	───────────────────────────────────────────────────────────────────────────── */
 
-	/* ── File card ───────────────────────────────────────────────────────────── */
+	/* ── Card: preview top + panel bottom ───────────────────────────────────── */
 	.p-card {
 		background: var(--surf);
-		border: 1px solid var(--border);
+		border: 1px dashed #90b5d6;
 		border-radius: var(--r);
 		overflow: hidden;
 		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
 	}
 
-	/* Toolbar / file row */
-	.p-file-row {
+	/* Preview / gallery zone — fixed height, gallery scrolls inside */
+	.p-preview {
+		height: 340px;
+		max-height: 340px;
+		flex-shrink: 0;
+		position: relative;
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
+		display: flex;
+		align-items: stretch;
+		transition: background 0.15s;
+	}
+	.p-preview.over {
+		background: color-mix(in srgb, var(--accent) 6%, transparent);
+	}
+
+	/* Settings/result panel */
+	.p-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	/* ── Drop zone (empty state inside preview) ──────────────────────────────── */
+	.p-dz {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 16px;
+		color: var(--text);
+	}
+	.p-dz:disabled { cursor: default; opacity: 0.6; }
+	.p-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.p-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+	.p-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
+	.p-dz .dz-ico { color: var(--accent); }
+
+	/* ── Gallery wrap (fills the preview zone when images loaded) ─────────────── */
+	.p-gallery-wrap {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	/* Toolbar bar inside gallery */
+	.p-gallery-bar {
 		display: flex;
 		align-items: center;
 		gap: 10px;
-		padding: 10px 16px;
+		padding: 8px 12px;
 		border-bottom: 1px solid var(--border);
+		flex-shrink: 0;
+	}
+	.p-gallery-summary {
+		flex: 1;
+		min-width: 0;
+		font-size: 12px;
+		color: var(--muted);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
-	/* Add-more button — icon-only square, không bị vỡ mobile */
+	/* Add-more button — icon only */
 	.p-add-btn {
 		display: flex;
 		align-items: center;
@@ -604,17 +680,6 @@
 	}
 	.p-add-btn:hover, .p-add-btn.over { border-color: var(--accent); background: var(--surf); }
 	.p-add-btn:disabled { opacity: 0.5; cursor: default; }
-
-	.p-file-info { flex: 1; min-width: 0; }
-	.p-file-name {
-		font-size: 13px;
-		font-weight: 500;
-		color: var(--text);
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	.p-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
 
 	.p-remove {
 		display: flex;
@@ -634,19 +699,36 @@
 
 	/* ── Gallery grid ────────────────────────────────────────────────────────── */
 	.p-gallery {
+		flex: 1 1 auto;
+		min-height: 0;
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: 178px;
 		gap: 8px;
-		padding: 12px;
-		max-height: 260px;
+		padding: 10px 12px;
+		max-height: none;
 		overflow-y: auto;
-		overflow-x: hidden;
 		overscroll-behavior: contain;
-		border-bottom: 1px solid var(--border);
+		align-content: start;
+	}
+
+	/* 1 ảnh: full width */
+	.p-gallery:has(.p-tile:only-child) {
+		grid-template-columns: 1fr;
+		grid-auto-rows: minmax(0, 100%);
+	}
+
+	/* 2 ảnh: 2 cột */
+	.p-gallery:has(.p-tile:nth-child(2)):not(:has(.p-tile:nth-child(3))) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 225px;
 	}
 
 	.p-tile {
 		min-width: 0;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
 		overflow: hidden;
 		border: 1px solid var(--border);
 		border-radius: var(--rsm, 6px);
@@ -659,7 +741,9 @@
 
 	.p-tile-preview {
 		position: relative;
-		aspect-ratio: 4 / 3;
+		flex: 1 1 auto;
+		min-height: 0;
+		height: auto;
 		background: var(--surf);
 		overflow: hidden;
 	}
@@ -667,7 +751,7 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: contain;
 	}
 	.p-tile--done .p-tile-preview img { transition: filter 0.15s; }
 	.p-tile--done:hover .p-tile-preview img { filter: brightness(0.68); }
@@ -739,7 +823,10 @@
 	}
 	.p-tile:hover .p-tile-dl-hover { opacity: 1; }
 
-	.p-tile-info { padding: 6px 7px 7px; }
+	.p-tile-info {
+		flex: 0 0 auto;
+		padding: 6px 7px 7px;
+	}
 	.p-tile-name {
 		color: var(--text);
 		font-size: 11px;
@@ -953,23 +1040,45 @@
 	.p-submit:hover { opacity: 0.88; }
 	.p-submit:disabled { opacity: 0.5; cursor: default; }
 
-	/* Done state — inline within the same card */
-	.p-done-bar {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-	.p-done-info {
+	/* ── Result state (in panel) ─────────────────────────────────────────────── */
+	.p-result-head {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: 10px;
+		padding: 12px 16px 10px;
+	}
+	.p-result-ico {
+		color: #3daa6a;
+		flex-shrink: 0;
+		display: flex;
+		margin-top: 1px;
+	}
+	.p-result-title {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--text);
+	}
+	.p-result-stats {
 		font-size: 12px;
 		color: var(--muted);
+		margin-top: 2px;
 	}
-	.p-done-ico { color: #3daa6a; display: flex; flex-shrink: 0; }
-	.p-done-stats strong { color: #3daa6a; font-weight: 600; margin-left: 4px; }
+	.p-result-saved {
+		font-weight: 600;
+		color: #3daa6a;
+	}
+	.p-result-actions {
+		padding: 0 16px 12px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	}
 
 	.p-btn-new {
+		display: flex;
+		align-items: center;
+		gap: 5px;
 		background: none;
 		border: none;
 		padding: 0;
@@ -984,10 +1093,21 @@
 	.p-btn-new:hover { color: var(--text); }
 
 	/* ── Responsive ──────────────────────────────────────────────────────────── */
-	@media (max-width: 680px) {
-		.p-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 8px; }
-	}
-	@media (max-width: 420px) {
-		.p-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	@media (max-width: 600px) {
+		.p-preview { height: 320px; max-height: 320px; }
+		.p-gallery {
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: 170px;
+			gap: 6px;
+			padding: 8px;
+			max-height: none;
+		}
+		.p-gallery:has(.p-tile:only-child) {
+			grid-template-columns: 1fr;
+			grid-auto-rows: minmax(0, 100%);
+		}
+		.p-gallery:has(.p-tile:nth-child(2)):not(:has(.p-tile:nth-child(3))) {
+			grid-auto-rows: 210px;
+		}
 	}
 </style>

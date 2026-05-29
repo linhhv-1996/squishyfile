@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
+	import { fade } from "svelte/transition";
 	import {
 		AlertTriangle,
 		CheckCircle2,
 		Download,
+		FileVideo2,
 		Film,
 		Folder,
 		ShieldCheck,
@@ -12,9 +14,9 @@
 	} from "lucide-svelte";
 	import { VideoConverter, type VideoOutputFormat } from "$lib/utils/videoConverter";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
-    import { page } from "$app/stores";
-    import { languages } from "$lib/i18n/languages";
-    import { translations } from "$lib/i18n/translations";
+	import { page } from "$app/stores";
+	import { languages } from "$lib/i18n/languages";
+	import { translations } from "$lib/i18n/translations";
 
 	type OutputOption = {
 		value: VideoOutputFormat;
@@ -73,6 +75,7 @@
 	let inputEl: HTMLInputElement;
 	let dragOver = $state(false);
 	let file: File | null = $state(null);
+	let videoSrc: string | null = $state(null);
 	let selectedOutput = $state<VideoOutputFormat>(defaultOutput);
 	let busy = $state(false);
 	let error = $state("");
@@ -110,6 +113,8 @@
 			error = copy.selectVideoError;
 			return;
 		}
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
+		videoSrc = URL.createObjectURL(picked);
 		file = picked;
 		error = "";
 		progress = { show: false, pct: 0, label: copy.convertingLabel };
@@ -117,6 +122,7 @@
 	}
 
 	function clearFile() {
+		if (videoSrc) { URL.revokeObjectURL(videoSrc); videoSrc = null; }
 		file = null;
 		if (inputEl) inputEl.value = "";
 		error = "";
@@ -206,6 +212,7 @@
 	onDestroy(() => {
 		converter.cancel();
 		clearResult();
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
 	});
 
 	let currentLangKey = $derived($page.params.lang || "en");
@@ -213,28 +220,7 @@
 	let t = $derived((key: string) =>
 		translations[activeLang.key]?.[key] || translations["en"][key] || key
 	);
-
 </script>
-
-<!-- Drop zone -->
-{#if !file}
-	<button
-		class="dz dz--video"
-		class:over={dragOver}
-		type="button"
-		onclick={triggerInput}
-		ondragover={onDragOver}
-		ondragleave={onDragLeave}
-		ondrop={onDrop}
-		disabled={busy}
-	>
-		<div class="dz-ico dz-ico--video"><Film size={24} strokeWidth={1.5} /></div>
-		<h3>{copy.dropTitle}</h3>
-		<p class="sub">{copy.dropSub}</p>
-		<span class="btn-browse"><Folder size={14} strokeWidth={2} /> {copy.browse}</span>
-		<p class="fmt-hint">{@html copy.hint}</p>
-	</button>
-{/if}
 
 <input
 	bind:this={inputEl}
@@ -245,110 +231,139 @@
 	disabled={busy}
 />
 
-<!-- ── File card ──────────────────────────────────────────────────────────── -->
-{#if file && !result}
-<div class="p-card">
+<!-- ── Unified tool card ── -->
+<div class="v-card">
 
-	<!-- File row -->
-	<div class="p-file-row">
-		<div class="p-file-ico"><Film size={18} strokeWidth={1.8} /></div>
-		<div class="p-file-info">
-			<div class="p-file-name">{file.name}</div>
-			<div class="p-file-size">{fmtBytes(file.size)} · {file.type || copy.fileTypeFallback}</div>
-		</div>
-		<button class="p-remove" type="button" disabled={busy} onclick={clearFile} title={copy.remove}>
-			<X size={15} strokeWidth={2.5} />
-		</button>
+	<!-- ── Preview zone (top, fixed height) ── -->
+	<div
+		class="v-preview"
+		class:over={dragOver && !file}
+		ondragover={onDragOver}
+		ondragleave={onDragLeave}
+		ondrop={onDrop}
+	>
+		{#if result}
+			<!-- Converted video preview -->
+			<video class="v-video" src={result.href} controls playsinline></video>
+		{:else if file && videoSrc}
+			<!-- Uploaded video preview -->
+			<video class="v-video" src={videoSrc} controls playsinline muted></video>
+		{:else}
+			<!-- Drop zone -->
+			<button
+				class="v-dz"
+				type="button"
+				onclick={triggerInput}
+				disabled={busy}
+			>
+				<div class="dz-ico"><Film size={28} strokeWidth={1.4} /></div>
+				<h3>{copy.dropTitle}</h3>
+				<p class="sub">{copy.dropSub}</p>
+				<span class="btn-browse"><Folder size={14} strokeWidth={2} />{copy.browse}</span>
+				<p class="fmt-hint">{@html copy.hint}</p>
+			</button>
+		{/if}
 	</div>
 
-	<!-- Output format -->
-	{#if !fixedOutput}
-	<div class="p-row">
-		<span class="p-label">{copy.formatLabel}</span>
-		<div class="p-opts p-opts--wrap">
-			{#each outputOptions as option}
-				<button
-					class="p-opt"
-					class:p-opt--on={selectedOutput === option.value}
-					type="button"
-					disabled={busy}
-					onclick={() => (selectedOutput = option.value)}
-				>
-					{option.label}
-					<span class="p-opt-sub">{option.sub ?? option.subKey ?? ""}</span>
+	<!-- ── Settings / Result panel (bottom, always visible) ── -->
+	<div class="v-panel">
+
+		{#if result}
+			<!-- ── Result state ── -->
+			<div class="v-result-head">
+				<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
+				<div>
+					<div class="v-result-title">{copy.resultTitle}</div>
+					<div class="v-result-stats">
+						{result.original} → {result.converted}
+						<span class="v-result-fmt">· {result.format}</span>
+					</div>
+				</div>
+			</div>
+			<div class="v-result-actions">
+				<a class="v-btn-dl" href={result.href} download={result.download}>
+					<Download size={15} strokeWidth={2.2} />
+					{copy.download}
+				</a>
+				<button class="v-btn-new" type="button" onclick={clearFile}>
+					<FileVideo2 size={13} strokeWidth={2} />
+					{copy.newFile}
 				</button>
-			{/each}
-		</div>
-	</div>
-	{/if}
-
-	<!-- Processing -->
-	{#if progress.show}
-		<div class="p-progress-row">
-			<div class="p-prog-top">
-				<span class="p-spinner-label">{progress.label}</span>
-				<span class="p-pct">{progress.pct}%</span>
 			</div>
-			<div class="p-pbar">
-				<div class="p-pfill" style:width={`${progress.pct}%`}></div>
+			{#if relatedTools.length > 0}
+				<RelatedTools label={t("relatedTools.label")} tools={relatedTools} />
+			{/if}
+
+		{:else}
+			<!-- ── Settings state ── -->
+
+			<!-- File row — only when file loaded -->
+			{#if file}
+				<div class="v-file-row" in:fade={{ duration: 150 }}>
+					<div class="v-file-ico"><Film size={18} strokeWidth={1.8} /></div>
+					<div class="v-file-info">
+						<div class="v-file-name">{file.name}</div>
+						<div class="v-file-size">
+							{fmtBytes(file.size)} · {file.type || copy.fileTypeFallback}
+						</div>
+					</div>
+					<button class="v-remove" type="button" disabled={busy} onclick={clearFile} title={copy.remove}>
+						<X size={15} strokeWidth={2.5} />
+					</button>
+				</div>
+			{/if}
+
+			<!-- Output format row -->
+			{#if !fixedOutput}
+			<div class="v-row">
+				<span class="v-label">{copy.formatLabel}</span>
+				<div class="v-opts">
+					{#each outputOptions as option}
+						<button
+							class="v-opt"
+							class:v-opt--on={selectedOutput === option.value}
+							type="button"
+							disabled={busy}
+							onclick={() => (selectedOutput = option.value)}
+						>
+							{option.label}
+							<span class="v-opt-sub">{option.sub ?? option.subKey ?? ""}</span>
+						</button>
+					{/each}
+				</div>
 			</div>
-		</div>
-		<p class="p-warning">{copy.keepOpen}</p>
-	{/if}
+			{/if}
 
-	<!-- Error -->
-	{#if error}
-		<div class="p-error">
-			<AlertTriangle size={14} strokeWidth={2} />
-			<span>{error}</span>
-		</div>
-	{/if}
-
-	<!-- Submit -->
-	<div class="p-action">
-		<button class="p-submit" type="button" disabled={busy} onclick={startConvert}>
-			<Zap size={15} strokeWidth={2.2} />
-			{copy.convertButton}
-		</button>
-	</div>
-
-</div>
-{/if}
-
-<!-- ── Result card ─────────────────────────────────────────────────────────── -->
-{#if result}
-<div class="p-result">
-
-	<!-- Header: icon + title + stats inline -->
-	<div class="p-result-head">
-		<div class="p-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
-		<div>
-			<div class="p-result-title">{copy.resultTitle}</div>
-			<div class="p-result-stats">
-				{result.original} → {result.converted}
-				<span class="p-result-fmt">· {result.format}</span>
+			<!-- Submit + processing + error -->
+			<div class="v-action" style="margin-top:auto;">
+				{#if progress.show}
+					<div class="v-progress-row">
+						<div class="v-prog-top">
+							<span class="v-spinner-label">{progress.label}</span>
+							<span class="v-pct">{progress.pct}%</span>
+						</div>
+						<div class="v-pbar">
+							<div class="v-pfill" style:width={`${progress.pct}%`}></div>
+						</div>
+					</div>
+					<p class="v-warning">{copy.keepOpen}</p>
+				{/if}
+				{#if error}
+					<div class="v-error">
+						<AlertTriangle size={14} strokeWidth={2} />
+						<span>{error}</span>
+					</div>
+				{/if}
+				<button class="v-submit" type="button" disabled={busy || !file} onclick={startConvert}>
+					<Zap size={15} strokeWidth={2.2} />
+					{copy.convertButton}
+				</button>
 			</div>
-		</div>
-	</div>
 
-	<!-- Actions -->
-	<div class="p-result-actions">
-		<a class="p-btn-dl" href={result.href} download={result.download}>
-			<Download size={15} strokeWidth={2.2} />
-			{copy.download}
-		</a>
-		<button class="p-btn-new" type="button" onclick={clearFile}>
-			{copy.newFile}
-		</button>
-	</div>
+		{/if}
+	</div><!-- end .v-panel -->
 
-	<!-- Related tools -->
-	{#if relatedTools.length > 0}
-		<RelatedTools label={t("relatedTools.label")} tools={relatedTools} />
-	{/if}
-
-</div>
-{/if}
+</div><!-- end .v-card -->
 
 <!-- Privacy note -->
 <div class="pnote">
@@ -357,30 +372,104 @@
 </div>
 
 <style>
-	/* ── File card ───────────────────────────────────────────────────────────── */
-	.p-card {
+	/* ── Hidden file input ────────────────────────────────────────────────────── */
+	.file-input { display: none; }
+
+	/* ── Card layout: preview top + panel bottom ──────────────────────────────── */
+	.v-card {
 		background: var(--surf);
-		border: 1px solid var(--border);
+		border: 1px dashed #90b5d6;
 		border-radius: var(--r);
 		overflow: hidden;
 		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Preview zone — fixed height, shows drop zone / video */
+	.v-preview {
+		height: 260px;
+		flex-shrink: 0;
+		position: relative;
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
+		display: flex;
+		align-items: stretch;
+		overflow: hidden;
+		transition: background 0.15s;
+	}
+	.v-preview.over {
+		background: color-mix(in srgb, var(--accent) 6%, transparent);
+	}
+
+	/* Video element fills preview */
+	.v-video {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		background: #000;
+		display: block;
+	}
+
+	/* Drop zone inside preview */
+	.v-dz {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-dz:disabled { cursor: default; opacity: 0.6; }
+	.v-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
+	.dz-ico { color: var(--accent); }
+
+	/* Browse button inside drop zone */
+	.btn-browse {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		padding: 6px 14px;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+		background: var(--surf);
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--text);
+		pointer-events: none;
+	}
+
+	/* Settings/result panel — fills remaining height */
+	.v-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 	}
 
 	/* File row */
-	.p-file-row {
+	.v-file-row {
 		display: flex;
 		align-items: center;
 		gap: 10px;
 		padding: 12px 16px;
 		border-bottom: 1px solid var(--border);
 	}
-	.p-file-ico {
+	.v-file-ico {
 		color: var(--accent);
 		flex-shrink: 0;
 		display: flex;
 	}
-	.p-file-info { flex: 1; min-width: 0; }
-	.p-file-name {
+	.v-file-info { flex: 1; min-width: 0; }
+	.v-file-name {
 		font-size: 13px;
 		font-weight: 500;
 		color: var(--text);
@@ -388,8 +477,8 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	.p-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
-	.p-remove {
+	.v-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
+	.v-remove {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -402,44 +491,38 @@
 		flex-shrink: 0;
 		transition: color 0.15s, background 0.15s;
 	}
-	.p-remove:hover { color: var(--text); background: var(--border); }
-	.p-remove:disabled { opacity: 0.4; cursor: default; }
+	.v-remove:hover { color: var(--text); background: var(--border); }
+	.v-remove:disabled { opacity: 0.4; cursor: default; }
 
-	/* Option rows — stack on mobile, inline on desktop */
-	.p-row {
+	/* Option rows */
+	.v-row {
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
 		padding: 10px 16px;
 		border-bottom: 1px solid var(--border);
 	}
-	.p-label {
+	.v-label {
 		font-size: 12px;
 		font-weight: 500;
 		color: var(--muted);
 		white-space: nowrap;
 	}
 	@media (min-width: 540px) {
-		.p-row {
+		.v-row {
 			flex-direction: row;
 			align-items: center;
 			gap: 12px;
 		}
-		.p-label {
+		.v-label {
 			flex-shrink: 0;
 			min-width: 130px;
 		}
 	}
 
 	/* Format option buttons */
-	.p-opts {
-		display: flex;
-		gap: 6px;
-	}
-	.p-opts--wrap {
-		flex-wrap: wrap;
-	}
-	.p-opt {
+	.v-opts { display: flex; gap: 6px; flex-wrap: wrap; }
+	.v-opt {
 		display: flex;
 		align-items: baseline;
 		gap: 5px;
@@ -454,51 +537,46 @@
 		transition: border-color 0.15s, background 0.15s;
 		white-space: nowrap;
 	}
-	.p-opt:hover { border-color: var(--accent); }
-	.p-opt--on {
+	.v-opt:hover { border-color: var(--accent); }
+	.v-opt--on {
 		border-color: var(--accent);
 		background: var(--surf);
 		color: var(--accent);
 	}
-	.p-opt:disabled { opacity: 0.5; cursor: default; }
-	.p-opt-sub {
-		font-size: 11px;
-		font-weight: 400;
-		color: var(--muted);
-	}
-	.p-opt--on .p-opt-sub { color: var(--accent); opacity: 0.7; }
+	.v-opt:disabled { opacity: 0.5; cursor: default; }
+	.v-opt-sub { font-size: 11px; font-weight: 400; color: var(--muted); }
+	.v-opt--on .v-opt-sub { color: var(--accent); opacity: 0.7; }
 
 	/* Progress bar row */
-	.p-progress-row {
+	.v-progress-row {
 		padding: 12px 16px 8px;
 		border-top: 1px solid var(--border);
 	}
-	.p-prog-top {
+	.v-prog-top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 6px;
 	}
-	.p-spinner-label { font-size: 12px; color: var(--muted); }
-	.p-pct {
+	.v-spinner-label { font-size: 12px; color: var(--muted); }
+	.v-pct {
 		font-size: 12px;
 		font-weight: 600;
 		color: var(--accent);
 	}
-	.p-pbar {
+	.v-pbar {
 		height: 4px;
 		border-radius: 2px;
 		background: var(--border);
 		overflow: hidden;
 	}
-	.p-pfill {
+	.v-pfill {
 		height: 100%;
 		border-radius: 2px;
 		background: var(--accent);
 		transition: width 0.3s ease;
 	}
-
-	.p-warning {
+	.v-warning {
 		padding: 4px 16px 10px;
 		font-size: 11.5px;
 		color: var(--muted);
@@ -507,7 +585,7 @@
 	}
 
 	/* Error bar */
-	.p-error {
+	.v-error {
 		display: flex;
 		align-items: center;
 		gap: 7px;
@@ -517,12 +595,12 @@
 		border-top: 1px solid var(--border);
 	}
 
-	/* Submit button */
-	.p-action {
+	/* Submit */
+	.v-action {
 		padding: 12px 16px;
 		border-top: 1px solid var(--border);
 	}
-	.p-submit {
+	.v-submit {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -538,54 +616,44 @@
 		cursor: pointer;
 		transition: opacity 0.15s;
 	}
-	.p-submit:hover { opacity: 0.88; }
-	.p-submit:disabled { opacity: 0.5; cursor: default; }
+	.v-submit:hover { opacity: 0.88; }
+	.v-submit:disabled { opacity: 0.5; cursor: default; }
 
-	/* ── Result card ─────────────────────────────────────────────────────────── */
-	.p-result {
-		background: var(--surf);
-		border: 1px solid var(--border);
-		border-radius: var(--r);
-		overflow: hidden;
-		margin-bottom: 10px;
-	}
-
-	.p-result-head {
+	/* ── Result (inside .v-card) ────────────────────────────────────────────── */
+	.v-result-head {
 		display: flex;
 		align-items: center;
 		gap: 10px;
 		padding: 12px 16px 10px;
 	}
-	.p-result-ico {
+	.v-result-ico {
 		color: #3daa6a;
 		flex-shrink: 0;
 		display: flex;
 		margin-top: 1px;
 	}
-	.p-result-title {
+	.v-result-title {
 		font-size: 13px;
 		font-weight: 600;
 		color: var(--text);
 	}
-	.p-result-stats {
+	.v-result-stats {
 		font-size: 12px;
 		color: var(--muted);
 		margin-top: 2px;
 	}
-	.p-result-fmt {
+	.v-result-fmt {
 		font-weight: 600;
 		color: #3daa6a;
 	}
-
-	/* Actions */
-	.p-result-actions {
+	.v-result-actions {
 		padding: 0 16px 12px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 8px;
 	}
-	.p-btn-dl {
+	.v-btn-dl {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -600,8 +668,11 @@
 		text-decoration: none;
 		transition: opacity 0.15s;
 	}
-	.p-btn-dl:hover { opacity: 0.88; }
-	.p-btn-new {
+	.v-btn-dl:hover { opacity: 0.88; }
+	.v-btn-new {
+		display: flex;
+		align-items: center;
+		gap: 5px;
 		background: none;
 		border: none;
 		padding: 0;
@@ -612,5 +683,25 @@
 		text-underline-offset: 2px;
 		transition: color 0.15s;
 	}
-	.p-btn-new:hover { color: var(--text); }
+	.v-btn-new:hover { color: var(--text); }
+
+	/* ── Privacy note ────────────────────────────────────────────────────────── */
+	.pnote {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		margin-bottom: 24px;
+	}
+	.ni {
+		color: var(--muted);
+		flex-shrink: 0;
+		margin-top: 1px;
+		display: flex;
+	}
+	.pnote p {
+		font-size: 12px;
+		color: var(--muted);
+		margin: 0;
+		line-height: 1.5;
+	}
 </style>
