@@ -10,6 +10,7 @@
 	} from "lucide-svelte";
 	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
+	import CompressWorker from "$lib/workers/pdf-worker.ts?worker&inline";
 
 	let currentLangKey = $derived($page.params.lang || "en");
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
@@ -178,7 +179,10 @@
 		pdfBusy = true; pdfProcessing = true;
 		const originalSize = pdfFile.size;
 		const fileUrl = URL.createObjectURL(pdfFile);
-		const worker = new Worker(new URL("$lib/workers/pdf-worker.ts", import.meta.url), { type: "module" });
+
+		// const worker = new Worker(new URL("$lib/workers/pdf-worker.ts", import.meta.url), { type: "module" });
+		const worker = new CompressWorker();
+
 		worker.postMessage({ fileUrl, password: pdfPassword.trim() || null, quality: pdfQuality });
 		worker.onmessage = (e) => {
 			const { success, pdfData } = e.data;

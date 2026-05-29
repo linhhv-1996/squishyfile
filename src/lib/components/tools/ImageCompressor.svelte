@@ -6,6 +6,7 @@
 
 	import { translations } from "$lib/i18n/translations";
 	import { languages } from "$lib/i18n/languages";
+	import CompressWorker from "$lib/workers/image-compress.worker.ts?worker&inline";
 
 	type OutputFormat = "jpeg" | "png" | "webp" | "avif";
 
@@ -223,7 +224,10 @@
 	function getWorker() {
 		if (typeof window === "undefined") throw new Error(t("common.browserOnlyError"));
 		if (worker) return worker;
-		worker = new Worker(new URL("../../workers/image-compress.worker.ts", import.meta.url), { type: "module" });
+
+		// worker = new Worker(new URL("../../workers/image-compress.worker.ts", import.meta.url), { type: "module" });
+		worker = new CompressWorker();
+		
 		worker.onmessage = (event: MessageEvent<WorkerMessage>) => {
 			const message = event.data;
 			const pending = pendingWorkerJobs.get(message.id);
