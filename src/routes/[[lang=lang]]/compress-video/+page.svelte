@@ -64,6 +64,7 @@
 	let dragOver = $state(false);
 	let compressInput: HTMLInputElement;
 	let compressFile: File | null = $state(null);
+	let videoSrc: string | null = $state(null);
 	type CompressionPreset = "low" | "balanced" | "high";
 	let selectedPreset = $state<CompressionPreset>("balanced");
 	let targetMb = $state("");
@@ -92,12 +93,15 @@
 		if (file) loadFile(file);
 	}
 	function loadFile(file: File) {
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
+		videoSrc = URL.createObjectURL(file);
 		compressFile = file;
 		compressError = "";
 		compressProcessing = false;
 		clearResult();
 	}
 	function clearFile() {
+		if (videoSrc) { URL.revokeObjectURL(videoSrc); videoSrc = null; }
 		compressFile = null;
 		compressInput.value = "";
 		compressError = "";
@@ -184,7 +188,7 @@
 		if (compressResult?.href) URL.revokeObjectURL(compressResult.href);
 		compressResult = null;
 	}
-	onDestroy(() => { compressor.cancel(); clearResult(); });
+	onDestroy(() => { compressor.cancel(); clearResult(); if (videoSrc) URL.revokeObjectURL(videoSrc); });
 
 	function markdownToHtml(text: string) {
 		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
@@ -221,181 +225,181 @@
 		disabled={compressBusy}
 	/>
 
-	<!-- ── Unified tool card (always in DOM → no layout jump) ── -->
+	<!-- ── Unified tool card ── -->
 	<div class="v-card">
 
-	{#if !compressFile}
-		<!-- State 1: Drop zone -->
-		<button
-			in:fade={{ duration: 150 }}
-			class="dz dz--card" class:over={dragOver}
-			type="button"
-			onclick={triggerInput}
-			ondragover={onDragOver}
-			ondragleave={onDragLeave}
-			ondrop={onDrop}
-			disabled={compressBusy}
-		>
-			<div class="dz-ico"><Film size={24} strokeWidth={1.5} /></div>
-			<h3>{t("drop.video")}</h3>
-			<p class="sub">{t("drop.compress.sub")}</p>
-			<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
-			<p class="fmt-hint">{@html t("hint.compress")}</p>
-		</button>
-
-	{:else if !compressResult}
-		<!-- State 2: File selected + settings -->
-		<div in:fade={{ duration: 150 }}>
-
-		<!-- File row -->
-		<div class="v-file-row">
-			<div class="v-file-ico"><Film size={18} strokeWidth={1.8} /></div>
-			<div class="v-file-info">
-				<div class="v-file-name">{compressFile.name}</div>
-				<div class="v-file-size">
-					{fmtBytes(compressFile.size)} · {compressFile.type || t("file.type.video")}
-				</div>
-			</div>
-			<button class="v-remove" type="button" disabled={compressBusy} onclick={clearFile} title="Remove">
-				<X size={15} strokeWidth={2.5} />
+	<!-- ── Preview zone (top, fixed height) ── -->
+	<div
+		class="v-preview"
+		class:over={dragOver && !compressFile}
+		ondragover={onDragOver}
+		ondragleave={onDragLeave}
+		ondrop={onDrop}
+	>
+		{#if compressResult}
+			<!-- Compressed video preview -->
+			<video class="v-video" src={compressResult.href} controls playsinline></video>
+		{:else if compressFile && videoSrc}
+			<!-- Uploaded video preview -->
+			<video class="v-video" src={videoSrc} controls playsinline muted></video>
+		{:else}
+			<!-- Drop zone -->
+			<button
+				class="v-dz"
+				type="button"
+				onclick={triggerInput}
+				disabled={compressBusy}
+			>
+				<div class="dz-ico"><Film size={28} strokeWidth={1.4} /></div>
+				<h3>{t("drop.video")}</h3>
+				<p class="sub">{t("drop.compress.sub")}</p>
+				<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
+				<p class="fmt-hint">{@html t("hint.compress")}</p>
 			</button>
-		</div>
+		{/if}
+	</div>
 
-		<!-- Quality preset row -->
-		<div class="v-row">
-			<span class="v-label">{t("sec.quickPreset")}</span>
-			<div class="v-opts">
-				<button
-					class="v-opt" class:v-opt--on={selectedPreset === "low" && !hasTarget}
-					class:v-opt--disabled={hasTarget || compressBusy}
-					type="button" disabled={hasTarget || compressBusy}
-					onclick={() => pickPreset("low")}
-				>
-					{t("preset.low")}
-					<span class="v-opt-sub">{t("preset.low.sub")}</span>
-				</button>
-				<button
-					class="v-opt" class:v-opt--on={selectedPreset === "balanced" && !hasTarget}
-					class:v-opt--disabled={hasTarget || compressBusy}
-					type="button" disabled={hasTarget || compressBusy}
-					onclick={() => pickPreset("balanced")}
-				>
-					{t("preset.balanced")}
-					<span class="v-opt-sub">{t("preset.balanced.sub")}</span>
-				</button>
-				<button
-					class="v-opt" class:v-opt--on={selectedPreset === "high" && !hasTarget}
-					class:v-opt--disabled={hasTarget || compressBusy}
-					type="button" disabled={hasTarget || compressBusy}
-					onclick={() => pickPreset("high")}
-				>
-					{t("preset.high")}
-					<span class="v-opt-sub">{t("preset.high.sub")}</span>
-				</button>
-			</div>
-		</div>
+	<!-- ── Settings / Result panel (bottom, always visible) ── -->
+	<div class="v-panel">
 
-		<!-- Target size row -->
-		<div class="v-row v-row--col">
-			<div class="v-target-head">
-				<span class="v-label">{t("sec.targetSize")}</span>
-				<div class="v-input-wrap">
-					<input
-						class="v-target-input"
-						bind:value={targetMb}
-						type="number"
-						placeholder={t("input.target.ph")}
-						min="1" max="4000"
-						oninput={onTargetInput}
-						disabled={compressBusy}
-					/>
-					{#if hasTarget}
-						<button class="v-input-clear" type="button" disabled={compressBusy} onclick={clearTargetSize} title="Clear">
-							<X size={13} strokeWidth={2.5} />
-						</button>
-					{:else}
-						<span class="v-input-unit">MB</span>
-					{/if}
+		{#if compressResult}
+			<!-- ── Result state ── -->
+			<div class="v-result-head">
+				<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
+				<div>
+					<div class="v-result-title">{t("res.compress.title")}</div>
+					<div class="v-result-stats">
+						{compressResult?.original} → {compressResult?.compressed}
+						<span class="v-result-saved">· −{compressResult?.saved}</span>
+					</div>
 				</div>
 			</div>
-			<div class="v-tags">
-				{#each sizeTags as tag}
-					<button
-						class="v-tag" class:v-tag--on={selectedTag === tag.mb}
-						type="button" disabled={compressBusy}
-						onclick={() => fillTargetSize(tag.mb)}
-					>
-						{tag.label}
-						<span class="v-tag-size">{tag.mb} MB</span>
+			<div class="v-result-actions">
+				<a class="v-btn-dl" href={compressResult?.href} download={compressResult?.download}>
+					<Download size={15} strokeWidth={2.2} />
+					{t("btn.dl.compress")}
+				</a>
+				<button class="v-btn-new" type="button" onclick={clearFile}>
+					<FileVideo2 size={13} strokeWidth={2} />
+					{t("btn.compressNew")}
+				</button>
+			</div>
+			<RelatedTools label={t('relatedTools.label')} tools={relatedTools} />
+
+		{:else}
+			<!-- ── Settings state (always shown) ── -->
+
+			<!-- File row — only when file loaded -->
+			{#if compressFile}
+				<div class="v-file-row" in:fade={{ duration: 150 }}>
+					<div class="v-file-ico"><Film size={18} strokeWidth={1.8} /></div>
+					<div class="v-file-info">
+						<div class="v-file-name">{compressFile.name}</div>
+						<div class="v-file-size">
+							{fmtBytes(compressFile.size)} · {compressFile.type || t("file.type.video")}
+						</div>
+					</div>
+					<button class="v-remove" type="button" disabled={compressBusy} onclick={clearFile} title="Remove">
+						<X size={15} strokeWidth={2.5} />
 					</button>
-				{/each}
-			</div>
-		</div>
+				</div>
+			{/if}
 
-		<!-- Processing spinner -->
-		{#if compressProcessing}
-			<div class="v-spinner-row">
-				<div class="v-spinner"></div>
-				<span class="v-spinner-label">{t("status.compressing")}</span>
-			</div>
-			<p class="v-warning">{t("status.warning.keepOpen")}</p>
-		{/if}
-
-		<!-- Error bar -->
-		{#if compressError}
-			<div class="v-error">
-				<AlertTriangle size={14} strokeWidth={2} />
-				<span>{compressError}</span>
-			</div>
-		{/if}
-
-		<!-- Submit -->
-		<div class="v-action">
-			<button class="v-submit" type="button" disabled={compressBusy} onclick={startCompress}>
-				<Zap size={15} strokeWidth={2.2} />
-				{t("btn.compressNow")}
-			</button>
-		</div>
-
-	</div><!-- end state 2 inner div -->
-
-	{:else}
-		<!-- State 3: Result -->
-		<div in:fade={{ duration: 150 }}>
-		<div class="v-result-inner">
-
-		<div class="v-result-head">
-			<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
-			<div>
-				<div class="v-result-title">{t("res.compress.title")}</div>
-				<div class="v-result-stats">
-					{compressResult?.original} → {compressResult?.compressed}
-					<span class="v-result-saved">· −{compressResult?.saved}</span>
+			<!-- Quality preset row -->
+			<div class="v-row">
+				<span class="v-label">{t("sec.quickPreset")}</span>
+				<div class="v-opts">
+					<button
+						class="v-opt" class:v-opt--on={selectedPreset === "low" && !hasTarget}
+						class:v-opt--disabled={hasTarget || compressBusy}
+						type="button" disabled={hasTarget || compressBusy}
+						onclick={() => pickPreset("low")}
+					>
+						{t("preset.low")}
+						<span class="v-opt-sub">{t("preset.low.sub")}</span>
+					</button>
+					<button
+						class="v-opt" class:v-opt--on={selectedPreset === "balanced" && !hasTarget}
+						class:v-opt--disabled={hasTarget || compressBusy}
+						type="button" disabled={hasTarget || compressBusy}
+						onclick={() => pickPreset("balanced")}
+					>
+						{t("preset.balanced")}
+						<span class="v-opt-sub">{t("preset.balanced.sub")}</span>
+					</button>
+					<button
+						class="v-opt" class:v-opt--on={selectedPreset === "high" && !hasTarget}
+						class:v-opt--disabled={hasTarget || compressBusy}
+						type="button" disabled={hasTarget || compressBusy}
+						onclick={() => pickPreset("high")}
+					>
+						{t("preset.high")}
+						<span class="v-opt-sub">{t("preset.high.sub")}</span>
+					</button>
 				</div>
 			</div>
-		</div>
 
-		<div class="v-result-actions">
-			<a class="v-btn-dl" href={compressResult?.href} download={compressResult?.download}>
-				<Download size={15} strokeWidth={2.2} />
-				{t("btn.dl.compress")}
-			</a>
-			<button class="v-btn-new" type="button" onclick={clearFile}>
-				<FileVideo2 size={13} strokeWidth={2} />
-				{t("btn.compressNew")}
-			</button>
-		</div>
+			<!-- Target size row -->
+			<div class="v-row v-row--col">
+				<div class="v-target-head">
+					<span class="v-label">{t("sec.targetSize")}</span>
+					<div class="v-input-wrap">
+						<input
+							class="v-target-input"
+							bind:value={targetMb}
+							type="number"
+							placeholder={t("input.target.ph")}
+							min="1" max="4000"
+							oninput={onTargetInput}
+							disabled={compressBusy}
+						/>
+						{#if hasTarget}
+							<button class="v-input-clear" type="button" disabled={compressBusy} onclick={clearTargetSize} title="Clear">
+								<X size={13} strokeWidth={2.5} />
+							</button>
+						{:else}
+							<span class="v-input-unit">MB</span>
+						{/if}
+					</div>
+				</div>
+				<div class="v-tags">
+					{#each sizeTags as tag}
+						<button
+							class="v-tag" class:v-tag--on={selectedTag === tag.mb}
+							type="button" disabled={compressBusy}
+							onclick={() => fillTargetSize(tag.mb)}
+						>
+							{tag.label}
+							<span class="v-tag-size">{tag.mb} MB</span>
+						</button>
+					{/each}
+				</div>
+			</div>
 
-		<!-- Also try -->
-		<RelatedTools
-			label={t('relatedTools.label')}
-			tools={relatedTools}
-		/>
+			<!-- Submit + processing + error — all pinned to bottom -->
+			<div class="v-action" style="margin-top:auto;">
+				{#if compressProcessing}
+					<div class="v-spinner-row">
+						<div class="v-spinner"></div>
+						<span class="v-spinner-label">{t("status.compressing")}</span>
+					</div>
+					<p class="v-warning">{t("status.warning.keepOpen")}</p>
+				{/if}
+				{#if compressError}
+					<div class="v-error">
+						<AlertTriangle size={14} strokeWidth={2} />
+						<span>{compressError}</span>
+					</div>
+				{/if}
+				<button class="v-submit" type="button" disabled={compressBusy || !compressFile} onclick={startCompress}>
+					<Zap size={15} strokeWidth={2.2} />
+					{t("btn.compressNow")}
+				</button>
+			</div>
 
-		</div><!-- end .v-result-inner -->
-		</div><!-- end state 3 inner div -->
+		{/if}
+	</div><!-- end .v-panel -->
 
-	{/if}
 	</div><!-- end .v-card -->
 
 	<!-- Privacy note -->
@@ -437,32 +441,73 @@
 	   Uses CSS vars: --text, --muted, --border, --accent, --surf, --bg, --r
 	───────────────────────────────────────────────────────────────────────────── */
 
-	/* ── File card ───────────────────────────────────────────────────────────── */
+	/* ── Card layout: preview top + panel bottom ───────────────────────────── */
 	.v-card {
 		background: var(--surf);
 		border: 1px dashed #90b5d6;
 		border-radius: var(--r);
 		overflow: hidden;
 		margin-bottom: 10px;
-		min-height: 280px;
+		display: flex;
+		flex-direction: column;
 	}
 
-	/* Drop zone bên trong card: bỏ outer border/bg (card đã có rồi) */
-	.dz--card {
+	/* Preview zone — fixed height, shows drop zone / video */
+	.v-preview {
+		height: 260px;
+		flex-shrink: 0;
+		position: relative;
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
+		display: flex;
+		align-items: stretch;
+		overflow: hidden;
+		transition: background 0.15s;
+	}
+	.v-preview.over {
+		background: color-mix(in srgb, var(--accent) 6%, transparent);
+	}
+
+	/* Video element fills preview */
+	.v-video {
 		width: 100%;
-		margin: 0;
-		border: none !important;
-		border-radius: 0 !important;
-		background: transparent !important;
-		box-shadow: none !important;
-	}
-	.dz--card.over {
-		background: color-mix(in srgb, var(--accent) 6%, transparent) !important;
+		height: 100%;
+		object-fit: contain;
+		background: #000;
+		display: block;
 	}
 
-	/* Result bên trong v-card */
-	.v-result-inner {
-		/* Không cần border/bg riêng vì đã dùng .v-card */
+	/* Drop zone inside preview (no outer card needed) */
+	.v-dz {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-dz:disabled { cursor: default; opacity: 0.6; }
+	.v-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
+	.v-dz .dz-ico { color: var(--accent); }
+
+	/* Settings/result panel — fills remaining height */
+	.v-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	@media (max-width: 599px) {
+		/* .v-preview { height: 180px; } */
 	}
 
 	/* File row */
