@@ -14,7 +14,7 @@ const DEBUG = import.meta.env.DEV;
 const OUTPUT_MIME = "video/mp4";
 
 const FFMPEG_CORE_BASE_URL =
-	"https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm";
+    "https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm";
 
 // ─── logging ────────────────────────────────────────────────────────────────
 // log() luôn in ra dù DEV hay PROD — xóa sau khi debug xong
@@ -77,36 +77,47 @@ async function loadFFmpeg(onProgress?: (pct: number) => void) {
 	const ffmpeg = new FFmpeg();
 
 	ffmpeg.on("log", ({ type, message }) => {
+		// luôn log ffmpeg internal — quan trọng để biết nó đang làm gì
 		console.log(LABEL, `[ffmpeg:${type}]`, message);
 	});
+
 	ffmpeg.on("progress", ({ progress, time }) => {
+		debug("progress:", progress, "time:", time);
+
 		const pct = normalizeProgress(progress);
 		if (pct !== null) onProgress?.(pct);
 	});
 
+	log("📦 Loading ffmpeg.wasm from CDN...");
+	log("   baseURL:", FFMPEG_CORE_BASE_URL);
+
 	onProgress?.(2);
 
-	log("fetching coreURL...");
+	log("   fetching ffmpeg-core.js...");
+	const coreURL = await toBlobURL(
+		`${FFMPEG_CORE_BASE_URL}/ffmpeg-core.js`,
+		"text/javascript",
+	);
+	log("   ✅ coreURL blob created");
 
-	log("✅ classWorkerURL done");
+	log("   fetching ffmpeg-core.wasm...");
+	const wasmURL = await toBlobURL(
+		`${FFMPEG_CORE_BASE_URL}/ffmpeg-core.wasm`,
+		"application/wasm",
+	);
+	log("   ✅ wasmURL blob created");
 
-	log("calling ffmpeg.load()...");
-	
-	const [coreURL, wasmURL, classWorkerURL] = await Promise.all([
-	toBlobURL(`${FFMPEG_CORE_BASE_URL}/ffmpeg-core.js`, "text/javascript"),
-	toBlobURL(`${FFMPEG_CORE_BASE_URL}/ffmpeg-core.wasm`, "application/wasm"),
-	toBlobURL(
-		"https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/worker.js",
-		"text/javascript"
-	),
-	]);
-
-	await ffmpeg.load({ coreURL, wasmURL, classWorkerURL });
+	log("   calling ffmpeg.load()...");
 
 
-	log("✅ ffmpeg loaded");
+	await ffmpeg.load({
+		coreURL,
+		wasmURL,
+	});
 
+	log("✅ ffmpeg.wasm loaded and ready.");
 	onProgress?.(8);
+
 	return ffmpeg;
 }
 
@@ -170,7 +181,7 @@ export class AviVideoConverter {
 				"-hide_banner",
 				"-y",
 
-				"-threads", "1",
+                "-threads", "1",
 
 				"-i",
 				inputName,
@@ -232,8 +243,8 @@ export class AviVideoConverter {
 			log("✅ output read:", formatBytes(data.byteLength));
 
 			const blob = new Blob([data.buffer as ArrayBuffer], {
-				type: OUTPUT_MIME,
-			});
+                type: OUTPUT_MIME,
+            });
 
 			log("🎉 Done! AVI → MP4:", formatBytes(blob.size));
 

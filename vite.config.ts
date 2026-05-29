@@ -17,11 +17,6 @@ export default defineConfig({
 	},
 	worker: {
 		format: 'es',
-		rollupOptions: {
-			output: {
-				entryFileNames: '_app/immutable/workers/[name]-[hash].js'
-			}
-		}
 	},
 	build: {
 		target: 'es2020',
