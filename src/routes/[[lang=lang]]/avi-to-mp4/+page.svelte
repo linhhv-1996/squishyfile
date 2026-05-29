@@ -130,7 +130,7 @@
 			</div>
 		</section>
 
-		<VideoConverter {copy} {relatedTools}/>
+		<VideoConverter {copy} {relatedTools} sampleVideoUrl="/file_example_AVI_1920_2_3MG.avi"/>
 
 		{#if data.contentHtml}
 			<section class="how-to-sec prose">

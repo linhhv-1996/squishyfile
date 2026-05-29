@@ -62,7 +62,7 @@
 </svelte:head>
 
 <main>
-	<div class="wrap">
+	<div class="wrap wrap-home">
 
 		<!-- 1. Hero -->
 		<section class="hero" aria-labelledby="site-title">

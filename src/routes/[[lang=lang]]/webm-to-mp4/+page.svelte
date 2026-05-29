@@ -129,7 +129,7 @@
 			</div>
 		</section>
 
-		<VideoConverter {copy} {relatedTools}/>
+		<VideoConverter {copy} {relatedTools} sampleVideoUrl="/file_example_WEBM_1920_3_7MB.webm"/>
 
 		{#if data.contentHtml}
 			<section class="how-to-sec prose">

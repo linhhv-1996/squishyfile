@@ -128,7 +128,7 @@
 			</div>
 		</section>
 
-		<VideoConverter {copy} {relatedTools}/>
+		<VideoConverter {copy} {relatedTools} sampleVideoUrl="/file_example_MOV_1920_2_2MB.mov"/>
 
 		{#if data.contentHtml}
 			<section class="how-to-sec prose">

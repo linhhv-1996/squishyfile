@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onDestroy } from "svelte";
+	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 	import { languages } from "$lib/i18n/languages";
 	import { translations } from "$lib/i18n/translations";
@@ -8,9 +9,8 @@
 		CheckCircle2,
 		Download,
 		FileAudio2,
-		Film,
-		Folder,
 		Music2,
+		Folder,
 		ShieldCheck,
 		X,
 		Zap,
@@ -55,10 +55,30 @@
 	let dragOver = $state(false);
 
 	let file: File | null = $state(null);
+	let videoSrc: string | null = $state(null);
 	let selectedBitrate = $state(192);
 	let busy = $state(false);
+	let sampleLoading = $state(false);
 	let error = $state("");
-	let processing = $state(false);
+
+	async function loadSampleVideo(event?: MouseEvent) {
+		event?.stopPropagation();
+		if (busy || sampleLoading) return;
+		error = "";
+		sampleLoading = true;
+		try {
+			const res = await fetch("/file_example_WEBM_1920_3_7MB.webm");
+			if (!res.ok) throw new Error("sample_not_found");
+			const blob = await res.blob();
+			const filename = "sample-video.webm";
+			const f = new File([blob], filename, { type: blob.type || "video/webm" });
+			loadFile(f);
+		} catch {
+			error = t("error.sampleVideoLoadFailed");
+		} finally {
+			sampleLoading = false;
+		}
+	}
 
 	let progress = $state({
 		show: false,
@@ -80,7 +100,7 @@
 	];
 
 	function triggerInput() {
-		if (!busy) inputEl.click();
+		if (!busy && !sampleLoading) inputEl.click();
 	}
 
 	function handleFile(event: Event) {
@@ -94,6 +114,8 @@
 			error = t("mp3.error.selectVideo");
 			return;
 		}
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
+		videoSrc = URL.createObjectURL(picked);
 		file = picked;
 		error = "";
 		progress = { show: false, pct: 0, labelKey: "mp3.status.converting" };
@@ -101,11 +123,12 @@
 	}
 
 	function clearFile() {
+		if (videoSrc) { URL.revokeObjectURL(videoSrc); videoSrc = null; }
 		file = null;
-		inputEl.value = "";
+		if (inputEl) inputEl.value = "";
 		error = "";
 		busy = false;
-		processing = false;
+		sampleLoading = false;
 		selectedBitrate = 192;
 		progress = { show: false, pct: 0, labelKey: "mp3.status.converting" };
 		clearResult();
@@ -134,17 +157,21 @@
 	function startConvert() {
 		if (!file) { error = t("mp3.error.selectVideo"); return; }
 		const currentFile = file;
+		const currentBitrate = selectedBitrate;
 		error = "";
 		clearResult();
 		busy = true;
-		processing = true;
-		progress = { show: true, pct: 0, labelKey: "mp3.status.converting" };
+		progress = { show: true, pct: 1, labelKey: "mp3.status.loading" };
 
 		converter.convert({
 			file: currentFile,
-			bitrate: selectedBitrate * 1000,
+			bitrate: currentBitrate * 1000,
 			onProgress: (pct) => {
-				progress = { ...progress, pct };
+				progress = {
+					...progress,
+					pct,
+					labelKey: pct < 40 ? "mp3.status.loading" : "mp3.status.converting",
+				};
 			},
 			onSuccess: (blob, finalSize) => {
 				const href = URL.createObjectURL(blob);
@@ -155,13 +182,12 @@
 					original: fmtBytes(currentFile.size),
 					converted: fmtBytes(finalSize),
 				};
+				progress = { show: true, pct: 100, labelKey: "mp3.status.done" };
 				busy = false;
-				processing = false;
 			},
 			onError: (message) => {
 				error = message;
 				busy = false;
-				processing = false;
 				progress = { show: false, pct: 0, labelKey: "mp3.status.converting" };
 			},
 		});
@@ -179,6 +205,7 @@
 	onDestroy(() => {
 		converter.cancel();
 		clearResult();
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
 	});
 </script>
 
@@ -189,154 +216,181 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
+<input
+	bind:this={inputEl}
+	class="file-input"
+	type="file"
+	accept="video/*,audio/*"
+	onchange={handleFile}
+	disabled={busy || sampleLoading}
+/>
+
 <main>
 <div class="wrap">
 
 	<!-- Hero -->
 	<section class="hero">
-			<h1>{@html t("mp3.hero.title")}</h1>
-			<p class="hero-sub">{t("mp3.hero.sub")}</p>
-			<div class="hero-pills">
-				<div class="pill"><span class="pill-ico">🔒</span>{t("hero.pill1")}</div>
-				<div class="pill"><span class="pill-ico">✨</span>{t("hero.pill2")}</div>
-				<div class="pill"><span class="pill-ico">⚡</span>{t("hero.pill3")}</div>
-			</div>
-	</section>
-	<!-- <section class="hero">
 		<h1>{@html t("mp3.hero.title")}</h1>
-		<p>{t("mp3.hero.sub")}</p>
-		<div class="pills">
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill1")}</span></div>
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill2")}</span></div>
-			<div class="pill"><span class="dot"></span><span>{t("hero.pill3")}</span></div>
+		<p class="hero-sub">{t("mp3.hero.sub")}</p>
+		<div class="hero-pills">
+			<div class="pill"><span class="pill-ico">🔒</span>{t("hero.pill1")}</div>
+			<div class="pill"><span class="pill-ico">✨</span>{t("hero.pill2")}</div>
+			<div class="pill"><span class="pill-ico">⚡</span>{t("hero.pill3")}</div>
 		</div>
-	</section> -->
+	</section>
 
-	<!-- Drop zone -->
-	{#if !file}
-		<button
-			class="dz dz--mp3"
-			class:over={dragOver}
-			type="button"
-			onclick={triggerInput}
+	<!-- ── Unified tool card ── -->
+	<div class="v-card">
+
+		<!-- ── Preview / Drop zone (top) ── -->
+		<div
+			class="v-preview"
+			class:over={dragOver && !file}
 			ondragover={onDragOver}
 			ondragleave={onDragLeave}
 			ondrop={onDrop}
-			disabled={busy}
 		>
-			<div class="dz-ico dz-ico--mp3"><Music2 size={24} strokeWidth={1.5} /></div>
-			<h3>{t("mp3.drop.title")}</h3>
-			<p class="sub">{t("drop.compress.sub")}</p>
-			<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
-			<p class="fmt-hint">{@html t("mp3.hint")}</p>
-		</button>
-	{/if}
-
-	<input
-		bind:this={inputEl}
-		class="file-input"
-		type="file"
-		accept="video/*,audio/*"
-		onchange={handleFile}
-		disabled={busy}
-	/>
-
-	<!-- ── File card ── -->
-	{#if file && !result}
-	<div class="p-card">
-
-		<!-- File row -->
-		<div class="p-file-row">
-			<div class="p-file-ico"><Film size={18} strokeWidth={1.8} /></div>
-			<div class="p-file-info">
-				<div class="p-file-name">{file.name}</div>
-				<div class="p-file-size">{fmtBytes(file.size)} · {file.type || t("file.type.video")}</div>
-			</div>
-			<button class="p-remove" type="button" disabled={busy} onclick={clearFile} title="Remove">
-				<X size={15} strokeWidth={2.5} />
-			</button>
-		</div>
-
-		<!-- Bitrate quality -->
-		<div class="p-row">
-			<span class="p-label">{t("mp3.sec.quality")}</span>
-			<div class="p-opts">
-				{#each bitrateOptions as option}
-					<button
-						class="p-opt"
-						class:p-opt--on={selectedBitrate === option.value}
-						disabled={busy}
-						type="button"
-						onclick={() => (selectedBitrate = option.value)}
-					>
-						{t(option.labelKey)}
-						<span class="p-opt-sub">{t(option.subKey)}</span>
-					</button>
-				{/each}
-			</div>
-		</div>
-
-		<!-- Processing -->
-		{#if processing}
-			<div class="p-spinner-row">
-				<div class="p-spinner"></div>
-				<span class="p-spinner-label">{t(progress.labelKey)} {progress.pct > 0 ? `${progress.pct}%` : ""}</span>
-			</div>
-			<p class="p-warning">{t("status.warning.keepOpen")}</p>
-		{/if}
-
-		<!-- Error -->
-		{#if error}
-			<div class="p-error">
-				<AlertTriangle size={14} strokeWidth={2} />
-				<span>{error}</span>
-			</div>
-		{/if}
-
-		<!-- Submit -->
-		<div class="p-action">
-			<button class="p-submit" type="button" disabled={busy} onclick={startConvert}>
-				<Zap size={15} strokeWidth={2.2} />
-				{t("mp3.btn.convert")}
-			</button>
-		</div>
-
-	</div>
-	{/if}
-
-	<!-- ── Result card ── -->
-	{#if result}
-	<div class="p-result">
-
-		<div class="p-result-head">
-			<div class="p-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
-			<div>
-				<div class="p-result-title">{t("mp3.res.title")}</div>
-				<div class="p-result-stats">
-					{result.original} → {result.converted}
-					<span class="p-result-saved">· MP3 {selectedBitrate}kbps</span>
+			{#if result}
+				<!-- Result: audio player to preview converted MP3 -->
+				<div class="v-audio-result">
+					<div class="v-audio-ico"><Music2 size={40} strokeWidth={1.2} /></div>
+					<div class="v-audio-name">{result.download}</div>
+					<audio class="v-audio-player" src={result.href} controls></audio>
 				</div>
-			</div>
+			{:else if file && videoSrc}
+				<!-- Uploaded video preview -->
+				<video class="v-video" src={videoSrc} controls playsinline muted></video>
+			{:else}
+				<!-- Drop zone -->
+				<div
+					class="v-dz"
+					role="button"
+					tabindex={busy || sampleLoading ? -1 : 0}
+					aria-disabled={busy || sampleLoading}
+					onclick={triggerInput}
+					onkeydown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerInput(); } }}
+				>
+					<div class="dz-ico"><Music2 size={55} strokeWidth={1.4} /></div>
+					<h3>{t("mp3.drop.title")}</h3>
+					<p class="sub">{t("drop.compress.sub")}</p>
+					<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
+
+					<button
+						class="sample-btn"
+						type="button"
+						disabled={busy || sampleLoading}
+						onclick={loadSampleVideo}
+					>
+						{#if sampleLoading}
+							<span class="sample-spinner" aria-hidden="true"></span>
+							{t("status.loadingSampleVideo")}
+						{:else}
+							{t("btn.sampleVideo")}
+						{/if}
+					</button>
+
+					<p class="fmt-hint">{@html t("mp3.hint")}</p>
+				</div>
+			{/if}
 		</div>
 
-		<div class="p-result-actions">
-			<a class="p-btn-dl" href={result.href} download={result.download}>
-				<Download size={15} strokeWidth={2.2} />
-				{t("mp3.btn.download")}
-			</a>
-			<button class="p-btn-new" type="button" onclick={clearFile}>
-				<FileAudio2 size={13} strokeWidth={2.2} />
-				{t("mp3.btn.new")}
-			</button>
-		</div>
+		<!-- ── Settings / Result panel (bottom) ── -->
+		<div class="v-panel">
 
-		<RelatedTools
-			label={t('relatedTools.label')}
-			tools={relatedTools}
-		/>
+			{#if result}
+				<!-- ── Result state ── -->
+				<div class="v-result-head">
+					<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
+					<div>
+						<div class="v-result-title">{t("mp3.res.title")}</div>
+						<div class="v-result-stats">
+							{result.original} → {result.converted}
+							<span class="v-result-fmt">· MP3 {selectedBitrate}kbps</span>
+						</div>
+					</div>
+				</div>
+				<div class="v-result-actions">
+					<a class="v-btn-dl" href={result.href} download={result.download}>
+						<Download size={15} strokeWidth={2.2} />
+						{t("mp3.btn.download")}
+					</a>
+					<button class="v-btn-new" type="button" onclick={clearFile}>
+						<FileAudio2 size={13} strokeWidth={2} />
+						{t("mp3.btn.new")}
+					</button>
+				</div>
+				{#if relatedTools.length > 0}
+					<RelatedTools label={t("relatedTools.label")} tools={relatedTools} />
+				{/if}
 
-	</div>
-	{/if}
+			{:else}
+				<!-- ── Settings state ── -->
+
+				<!-- File row — only when file loaded -->
+				{#if file}
+					<div class="v-file-row" in:fade={{ duration: 150 }}>
+						<div class="v-file-ico"><Music2 size={18} strokeWidth={1.8} /></div>
+						<div class="v-file-info">
+							<div class="v-file-name">{file.name}</div>
+							<div class="v-file-size">
+								{fmtBytes(file.size)} · {file.type || t("file.type.video")}
+							</div>
+						</div>
+						<button class="v-remove" type="button" disabled={busy} onclick={clearFile} title={t("btn.remove")}>
+							<X size={15} strokeWidth={2.5} />
+						</button>
+					</div>
+				{/if}
+
+				<!-- Bitrate quality row -->
+				<div class="v-row">
+					<span class="v-label">{t("mp3.sec.quality")}</span>
+					<div class="v-opts">
+						{#each bitrateOptions as option}
+							<button
+								class="v-opt"
+								class:v-opt--on={selectedBitrate === option.value}
+								type="button"
+								disabled={busy}
+								onclick={() => (selectedBitrate = option.value)}
+							>
+								{t(option.labelKey)}
+								<span class="v-opt-sub">{t(option.subKey)}</span>
+							</button>
+						{/each}
+					</div>
+				</div>
+
+				<!-- Submit + progress + error -->
+				<div class="v-action" style="margin-top:auto;">
+					{#if progress.show}
+						<div class="v-progress-row">
+							<div class="v-prog-top">
+								<span class="v-spinner-label">{t(progress.labelKey)}</span>
+								<span class="v-pct">{progress.pct}%</span>
+							</div>
+							<div class="v-pbar">
+								<div class="v-pfill" style:width={`${progress.pct}%`}></div>
+							</div>
+						</div>
+						<p class="v-warning">{t("status.warning.keepOpen")}</p>
+					{/if}
+					{#if error}
+						<div class="v-error">
+							<AlertTriangle size={14} strokeWidth={2} />
+							<span>{error}</span>
+						</div>
+					{/if}
+					<button class="v-submit" type="button" disabled={busy || !file} onclick={startConvert}>
+						<Zap size={15} strokeWidth={2.2} />
+						{t("mp3.btn.convert")}
+					</button>
+				</div>
+
+			{/if}
+		</div><!-- end .v-panel -->
+
+	</div><!-- end .v-card -->
 
 	<!-- Privacy note -->
 	<div class="pnote">
@@ -371,39 +425,189 @@
 </main>
 
 <style>
-	/* ─────────────────────────────────────────────────────────────────────────
-	   Self-contained styles mirroring the PDF tool conventions.
-	   Relies on global CSS vars: --text, --muted, --border, --accent,
-	   --surf, --bg, --r
-	───────────────────────────────────────────────────────────────────────── */
+	/* ── Hidden file input ────────────────────────────────────────────────────── */
+	.file-input { display: none; }
 
-	/* Drop zone accent colour for MP3 tool */
-	.dz-ico--mp3 { color: var(--accent); }
-
-	/* ── File card ───────────────────────────────────────────────────────── */
-	.p-card {
+	/* ── Card layout: preview top + panel bottom ──────────────────────────────── */
+	.v-card {
 		background: var(--surf);
-		border: 1px solid var(--border);
+		border: 1px dashed #90b5d6;
 		border-radius: var(--r);
 		overflow: hidden;
 		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Preview zone — fixed height */
+	.v-preview {
+		height: 260px;
+		flex-shrink: 0;
+		position: relative;
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
+		display: flex;
+		align-items: stretch;
+		overflow: hidden;
+		transition: background 0.15s;
+	}
+	.v-preview.over {
+		background: color-mix(in srgb, var(--accent) 6%, transparent);
+		border-color: var(--accent);
+	}
+
+	/* Audio result display inside preview */
+	.v-audio-result {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-audio-ico { color: var(--accent); }
+	.v-audio-name {
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--text);
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.v-audio-size { font-size: 12px; color: var(--muted); }
+	.v-audio-player {
+		width: min(340px, 100%);
+		margin-top: 4px;
+	}
+
+	/* Drop zone inside preview */
+	.v-dz {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-dz[aria-disabled="true"] { cursor: default; opacity: 0.6; }
+	.v-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
+	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
+	.dz-ico { color: var(--accent); }
+
+	/* Browse button inside drop zone */
+	.btn-browse {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		padding: 6px 14px;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+		background: var(--surf);
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--text);
+		pointer-events: none;
+	}
+
+	/* Video element fills preview */
+	.v-video {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		background: #000;
+		display: block;
+	}
+
+	/* Audio result display inside preview */
+	.v-audio-result {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-audio-ico { color: var(--accent); }
+	.v-audio-name {
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--text);
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.v-audio-player {
+		width: min(340px, 100%);
+		margin-top: 4px;
+	}
+
+	/* Sample video button */
+	.sample-btn {
+		margin-top: 2px;
+		border: none;
+		background: transparent;
+		color: var(--accent);
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 0;
+	}
+	.sample-btn:hover { opacity: 0.8; }
+	.sample-btn:disabled { opacity: 0.6; cursor: default; }
+	.sample-spinner {
+		width: 12px;
+		height: 12px;
+		border: 2px solid currentColor;
+		border-top-color: transparent;
+		border-radius: 999px;
+		animation: sample-spin 0.7s linear infinite;
+	}
+	@keyframes sample-spin {
+		to { transform: rotate(360deg); }
+	}
+
+	/* Settings/result panel — fills remaining height */
+	.v-panel {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 	}
 
 	/* File row */
-	.p-file-row {
+	.v-file-row {
 		display: flex;
 		align-items: center;
 		gap: 10px;
 		padding: 12px 16px;
 		border-bottom: 1px solid var(--border);
 	}
-	.p-file-ico {
+	.v-file-ico {
 		color: var(--accent);
 		flex-shrink: 0;
 		display: flex;
 	}
-	.p-file-info { flex: 1; min-width: 0; }
-	.p-file-name {
+	.v-file-info { flex: 1; min-width: 0; }
+	.v-file-name {
 		font-size: 13px;
 		font-weight: 500;
 		color: var(--text);
@@ -411,8 +615,8 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	.p-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
-	.p-remove {
+	.v-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
+	.v-remove {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -425,31 +629,38 @@
 		flex-shrink: 0;
 		transition: color 0.15s, background 0.15s;
 	}
-	.p-remove:hover { color: var(--text); background: var(--border); }
-	.p-remove:disabled { opacity: 0.4; cursor: default; }
+	.v-remove:hover { color: var(--text); background: var(--border); }
+	.v-remove:disabled { opacity: 0.4; cursor: default; }
 
 	/* Option rows */
-	.p-row {
+	.v-row {
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
 		padding: 10px 16px;
 		border-bottom: 1px solid var(--border);
 	}
-	.p-label {
+	.v-label {
 		font-size: 12px;
 		font-weight: 500;
 		color: var(--muted);
 		white-space: nowrap;
 	}
 	@media (min-width: 540px) {
-		.p-row { flex-direction: row; align-items: center; gap: 12px; }
-		.p-label { flex-shrink: 0; min-width: 130px; }
+		.v-row {
+			flex-direction: row;
+			align-items: center;
+			gap: 12px;
+		}
+		.v-label {
+			flex-shrink: 0;
+			min-width: 130px;
+		}
 	}
 
 	/* Bitrate option buttons */
-	.p-opts { display: flex; gap: 6px; flex-wrap: wrap; }
-	.p-opt {
+	.v-opts { display: flex; gap: 6px; flex-wrap: wrap; }
+	.v-opt {
 		display: flex;
 		align-items: baseline;
 		gap: 5px;
@@ -464,37 +675,46 @@
 		transition: border-color 0.15s, background 0.15s;
 		white-space: nowrap;
 	}
-	.p-opt:hover { border-color: var(--accent); }
-	.p-opt--on {
+	.v-opt:hover { border-color: var(--accent); }
+	.v-opt--on {
 		border-color: var(--accent);
 		background: var(--surf);
 		color: var(--accent);
 	}
-	.p-opt:disabled { opacity: 0.5; cursor: default; }
-	.p-opt-sub { font-size: 11px; font-weight: 400; color: var(--muted); }
-	.p-opt--on .p-opt-sub { color: var(--accent); opacity: 0.7; }
+	.v-opt:disabled { opacity: 0.5; cursor: default; }
+	.v-opt-sub { font-size: 11px; font-weight: 400; color: var(--muted); }
+	.v-opt--on .v-opt-sub { color: var(--accent); opacity: 0.7; }
 
-	/* Processing spinner */
-	.p-spinner-row {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 10px;
-		padding: 12px 16px;
+	/* Progress bar row */
+	.v-progress-row {
+		padding: 12px 16px 8px;
 		border-top: 1px solid var(--border);
 	}
-	.p-spinner {
-		width: 16px; height: 16px;
-		border: 2px solid var(--border);
-		border-top-color: var(--accent);
-		border-radius: 50%;
-		animation: p-spin 0.7s linear infinite;
-		flex-shrink: 0;
+	.v-prog-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 6px;
 	}
-	@keyframes p-spin { to { transform: rotate(360deg); } }
-	.p-spinner-label { font-size: 12px; color: var(--muted); }
-
-	.p-warning {
+	.v-spinner-label { font-size: 12px; color: var(--muted); }
+	.v-pct {
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--accent);
+	}
+	.v-pbar {
+		height: 4px;
+		border-radius: 2px;
+		background: var(--border);
+		overflow: hidden;
+	}
+	.v-pfill {
+		height: 100%;
+		border-radius: 2px;
+		background: var(--accent);
+		transition: width 0.3s ease;
+	}
+	.v-warning {
 		padding: 4px 16px 10px;
 		font-size: 11.5px;
 		color: var(--muted);
@@ -503,7 +723,7 @@
 	}
 
 	/* Error bar */
-	.p-error {
+	.v-error {
 		display: flex;
 		align-items: center;
 		gap: 7px;
@@ -513,12 +733,12 @@
 		border-top: 1px solid var(--border);
 	}
 
-	/* Submit button */
-	.p-action {
+	/* Submit */
+	.v-action {
 		padding: 12px 16px;
 		border-top: 1px solid var(--border);
 	}
-	.p-submit {
+	.v-submit {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -534,36 +754,44 @@
 		cursor: pointer;
 		transition: opacity 0.15s;
 	}
-	.p-submit:hover { opacity: 0.88; }
-	.p-submit:disabled { opacity: 0.5; cursor: default; }
+	.v-submit:hover { opacity: 0.88; }
+	.v-submit:disabled { opacity: 0.5; cursor: default; }
 
-	/* ── Result card ─────────────────────────────────────────────────────── */
-	.p-result {
-		background: var(--surf);
-		border: 1px solid var(--border);
-		border-radius: var(--r);
-		overflow: hidden;
-		margin-bottom: 10px;
-	}
-	.p-result-head {
+	/* ── Result (inside .v-card) ── */
+	.v-result-head {
 		display: flex;
 		align-items: center;
 		gap: 10px;
 		padding: 12px 16px 10px;
 	}
-	.p-result-ico { color: #3daa6a; flex-shrink: 0; display: flex; margin-top: 1px; }
-	.p-result-title { font-size: 13px; font-weight: 600; color: var(--text); }
-	.p-result-stats { font-size: 12px; color: var(--muted); margin-top: 2px; }
-	.p-result-saved { font-weight: 600; color: #3daa6a; }
-
-	.p-result-actions {
+	.v-result-ico {
+		color: #3daa6a;
+		flex-shrink: 0;
+		display: flex;
+		margin-top: 1px;
+	}
+	.v-result-title {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--text);
+	}
+	.v-result-stats {
+		font-size: 12px;
+		color: var(--muted);
+		margin-top: 2px;
+	}
+	.v-result-fmt {
+		font-weight: 600;
+		color: #3daa6a;
+	}
+	.v-result-actions {
 		padding: 0 16px 12px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 8px;
 	}
-	.p-btn-dl {
+	.v-btn-dl {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -578,8 +806,8 @@
 		text-decoration: none;
 		transition: opacity 0.15s;
 	}
-	.p-btn-dl:hover { opacity: 0.88; }
-	.p-btn-new {
+	.v-btn-dl:hover { opacity: 0.88; }
+	.v-btn-new {
 		display: flex;
 		align-items: center;
 		gap: 5px;
@@ -593,14 +821,33 @@
 		text-underline-offset: 2px;
 		transition: color 0.15s;
 	}
-	.p-btn-new:hover { color: var(--text); }
+	.v-btn-new:hover { color: var(--text); }
 
-	/* ── How-to section ──────────────────────────────────────────────────── */
+	/* ── Privacy note ── */
+	.pnote {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		margin-bottom: 24px;
+	}
+	.ni {
+		color: var(--muted);
+		flex-shrink: 0;
+		margin-top: 1px;
+		display: flex;
+	}
+	.pnote p {
+		font-size: 12px;
+		color: var(--muted);
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	/* ── How-to section ── */
 	.how-to-sec {
 		padding-top: 18px;
 		border-top: 1px solid var(--border);
 	}
-	
 	.how-to-sec :global(a) { color: #1550ae; }
 	.how-to-sec :global(h1) { font-size: 1.35rem; font-weight: 650; color: var(--text); margin: 0 0 20px; line-height: 1.3; }
 	.how-to-sec :global(h2) { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 15px 0 10px; }

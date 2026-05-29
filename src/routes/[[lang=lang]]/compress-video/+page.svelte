@@ -17,8 +17,10 @@
 	} from "lucide-svelte";
 
 	import { VideoCompressor } from "$lib/utils/videoCompressor";
-    import RelatedTools from "$lib/components/RelatedTools.svelte";
-    import { getRelatedTools } from "$lib/config/relatedTools.js";
+	import RelatedTools from "$lib/components/RelatedTools.svelte";
+	import { getRelatedTools } from "$lib/config/relatedTools.js";
+
+	const SAMPLE_VIDEO_URL = "/sample_video.mp4";
 
 	const sizeTags = [
 		{ mb: 10, label: "LINE" },
@@ -56,7 +58,7 @@
 
 	// Related tools — update slugs to match your routes
 	let relatedTools = $derived(
-		getRelatedTools('compress-video', currentLangKey, t)
+		getRelatedTools("compress-video", currentLangKey, t),
 	);
 
 	let { data } = $props();
@@ -71,6 +73,7 @@
 	let selectedTag: number | null = $state(null);
 	let compressError = $state("");
 	let compressBusy = $state(false);
+	let sampleLoading = $state(false);
 	let compressProcessing = $state(false);
 	let compressResult: {
 		href: string;
@@ -84,8 +87,39 @@
 
 	let hasTarget = $derived(targetMb.trim() !== "");
 
+	async function loadSampleVideo(event?: MouseEvent) {
+		event?.stopPropagation();
+
+		if (compressBusy || sampleLoading) return;
+
+		compressError = "";
+		sampleLoading = true;
+
+		try {
+			const res = await fetch(SAMPLE_VIDEO_URL);
+			if (!res.ok) throw new Error("sample_not_found");
+
+			const blob = await res.blob();
+			const file = new File([blob], "sample-video.mp4", {
+				type: blob.type || "video/mp4",
+			});
+
+			loadFile(file);
+		} catch {
+			compressError = t("error.sampleVideoLoadFailed");
+		} finally {
+			sampleLoading = false;
+		}
+	}
+
 	function triggerInput() {
-		if (!compressBusy) compressInput.click();
+		if (!compressBusy && !sampleLoading) compressInput.click();
+	}
+	function onDropZoneKeydown(event: KeyboardEvent) {
+		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault();
+			triggerInput();
+		}
 	}
 	function handleFile(event: Event) {
 		const input = event.currentTarget as HTMLInputElement;
@@ -101,11 +135,15 @@
 		clearResult();
 	}
 	function clearFile() {
-		if (videoSrc) { URL.revokeObjectURL(videoSrc); videoSrc = null; }
+		if (videoSrc) {
+			URL.revokeObjectURL(videoSrc);
+			videoSrc = null;
+		}
 		compressFile = null;
 		compressInput.value = "";
 		compressError = "";
 		compressBusy = false;
+		sampleLoading = false;
 		compressProcessing = false;
 		targetMb = "";
 		selectedTag = null;
@@ -117,7 +155,9 @@
 		event.preventDefault();
 		if (!compressBusy) dragOver = true;
 	}
-	function onDragLeave() { dragOver = false; }
+	function onDragLeave() {
+		dragOver = false;
+	}
 	function onDrop(event: DragEvent) {
 		event.preventDefault();
 		dragOver = false;
@@ -135,7 +175,10 @@
 	}
 	function fillTargetSize(mb: number) {
 		if (compressBusy) return;
-		if (selectedTag === mb) { clearTargetSize(); return; }
+		if (selectedTag === mb) {
+			clearTargetSize();
+			return;
+		}
 		targetMb = String(mb);
 		selectedTag = mb;
 		selectedPreset = "balanced";
@@ -148,11 +191,15 @@
 	}
 	function fmtBytes(bytes: number) {
 		if (bytes < 1_048_576) return `${(bytes / 1024).toFixed(1)} KB`;
-		if (bytes < 1_073_741_824) return `${(bytes / 1_048_576).toFixed(1)} MB`;
+		if (bytes < 1_073_741_824)
+			return `${(bytes / 1_048_576).toFixed(1)} MB`;
 		return `${(bytes / 1_073_741_824).toFixed(2)} GB`;
 	}
 	function startCompress() {
-		if (!compressFile) { compressError = t("error.selectFile"); return; }
+		if (!compressFile) {
+			compressError = t("error.selectFile");
+			return;
+		}
 		compressError = "";
 		clearResult();
 		compressBusy = true;
@@ -188,7 +235,11 @@
 		if (compressResult?.href) URL.revokeObjectURL(compressResult.href);
 		compressResult = null;
 	}
-	onDestroy(() => { compressor.cancel(); clearResult(); if (videoSrc) URL.revokeObjectURL(videoSrc); });
+	onDestroy(() => {
+		compressor.cancel();
+		clearResult();
+		if (videoSrc) URL.revokeObjectURL(videoSrc);
+	});
 
 	function markdownToHtml(text: string) {
 		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
@@ -203,235 +254,352 @@
 </svelte:head>
 
 <main>
-<div class="wrap">
-
-	<!-- Hero -->
-	<section class="hero">
-		<h1>{@html t("compress.hero.title")}</h1>
-		<p class="hero-sub">{t("compress.hero.sub")}</p>
-		<div class="hero-pills">
-			<div class="pill"><span class="pill-ico">🔒</span>{t("hero.pill1")}</div>
-			<div class="pill"><span class="pill-ico">✨</span>{t("hero.pill2")}</div>
-			<div class="pill"><span class="pill-ico">⚡</span>{t("hero.pill3")}</div>
-		</div>
-	</section>
-
-	<input
-		bind:this={compressInput}
-		class="file-input"
-		type="file"
-		accept="video/*"
-		onchange={handleFile}
-		disabled={compressBusy}
-	/>
-
-	<!-- ── Unified tool card ── -->
-	<div class="v-card">
-
-	<!-- ── Preview zone (top, fixed height) ── -->
-	<div
-		class="v-preview"
-		class:over={dragOver && !compressFile}
-		ondragover={onDragOver}
-		ondragleave={onDragLeave}
-		ondrop={onDrop}
-	>
-		{#if compressResult}
-			<!-- Compressed video preview -->
-			<video class="v-video" src={compressResult.href} controls playsinline></video>
-		{:else if compressFile && videoSrc}
-			<!-- Uploaded video preview -->
-			<video class="v-video" src={videoSrc} controls playsinline muted></video>
-		{:else}
-			<!-- Drop zone -->
-			<button
-				class="v-dz"
-				type="button"
-				onclick={triggerInput}
-				disabled={compressBusy}
-			>
-				<div class="dz-ico"><Film size={28} strokeWidth={1.4} /></div>
-				<h3>{t("drop.video")}</h3>
-				<p class="sub">{t("drop.compress.sub")}</p>
-				<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
-				<p class="fmt-hint">{@html t("hint.compress")}</p>
-			</button>
-		{/if}
-	</div>
-
-	<!-- ── Settings / Result panel (bottom, always visible) ── -->
-	<div class="v-panel">
-
-		{#if compressResult}
-			<!-- ── Result state ── -->
-			<div class="v-result-head">
-				<div class="v-result-ico"><CheckCircle2 size={15} strokeWidth={2.2} /></div>
-				<div>
-					<div class="v-result-title">{t("res.compress.title")}</div>
-					<div class="v-result-stats">
-						{compressResult?.original} → {compressResult?.compressed}
-						<span class="v-result-saved">· −{compressResult?.saved}</span>
-					</div>
+	<div class="wrap">
+		<!-- Hero -->
+		<section class="hero">
+			<h1>{@html t("compress.hero.title")}</h1>
+			<p class="hero-sub">{t("compress.hero.sub")}</p>
+			<div class="hero-pills">
+				<div class="pill">
+					<span class="pill-ico">🔒</span>{t("hero.pill1")}
+				</div>
+				<div class="pill">
+					<span class="pill-ico">✨</span>{t("hero.pill2")}
+				</div>
+				<div class="pill">
+					<span class="pill-ico">⚡</span>{t("hero.pill3")}
 				</div>
 			</div>
-			<div class="v-result-actions">
-				<a class="v-btn-dl" href={compressResult?.href} download={compressResult?.download}>
-					<Download size={15} strokeWidth={2.2} />
-					{t("btn.dl.compress")}
-				</a>
-				<button class="v-btn-new" type="button" onclick={clearFile}>
-					<FileVideo2 size={13} strokeWidth={2} />
-					{t("btn.compressNew")}
-				</button>
+		</section>
+
+		<input
+			bind:this={compressInput}
+			class="file-input"
+			type="file"
+			accept="video/*"
+			onchange={handleFile}
+			disabled={compressBusy || sampleLoading}
+		/>
+
+		<!-- ── Unified tool card ── -->
+		<div class="v-card">
+			<!-- ── Preview zone (top, fixed height) ── -->
+			<div
+				class="v-preview"
+				class:over={dragOver && !compressFile}
+				role="button"
+				tabindex={compressBusy || sampleLoading ? -1 : 0}
+				aria-label={t("drop.video")}
+				aria-disabled={compressBusy || sampleLoading}
+				ondragover={onDragOver}
+				ondragleave={onDragLeave}
+				ondrop={onDrop}
+				onclick={triggerInput}
+				onkeydown={onDropZoneKeydown}
+			>
+				{#if compressResult}
+					<!-- Compressed video preview -->
+					<video
+						class="v-video"
+						src={compressResult.href}
+						controls
+						playsinline
+					></video>
+				{:else if compressFile && videoSrc}
+					<!-- Uploaded video preview -->
+					<video
+						class="v-video"
+						src={videoSrc}
+						controls
+						playsinline
+						muted
+					></video>
+				{:else}
+					<!-- Drop zone content -->
+					<div class="v-dz">
+						<div class="dz-ico">
+							<Film size={55} strokeWidth={1.4} />
+						</div>
+						<h3>{t("drop.video")}</h3>
+						<p class="sub">{t("drop.compress.sub")}</p>
+
+						<span class="btn-browse">
+							<Folder size={14} strokeWidth={2} />{t(
+								"btn.browse",
+							)}
+						</span>
+
+						<button
+							class="sample-btn"
+							type="button"
+							disabled={compressBusy || sampleLoading}
+							onclick={loadSampleVideo}
+						>
+							{#if sampleLoading}
+								<span class="sample-spinner" aria-hidden="true"
+								></span>
+								{t("status.loadingSampleVideo")}
+							{:else}
+								{t("btn.sampleVideo")}
+							{/if}
+						</button>
+
+						<p class="fmt-hint">{@html t("hint.compress")}</p>
+					</div>
+				{/if}
 			</div>
-			<RelatedTools label={t('relatedTools.label')} tools={relatedTools} />
 
-		{:else}
-			<!-- ── Settings state (always shown) ── -->
-
-			<!-- File row — only when file loaded -->
-			{#if compressFile}
-				<div class="v-file-row" in:fade={{ duration: 150 }}>
-					<div class="v-file-ico"><Film size={18} strokeWidth={1.8} /></div>
-					<div class="v-file-info">
-						<div class="v-file-name">{compressFile.name}</div>
-						<div class="v-file-size">
-							{fmtBytes(compressFile.size)} · {compressFile.type || t("file.type.video")}
+			<!-- ── Settings / Result panel (bottom, always visible) ── -->
+			<div class="v-panel">
+				{#if compressResult}
+					<!-- ── Result state ── -->
+					<div class="v-result-head">
+						<div class="v-result-ico">
+							<CheckCircle2 size={15} strokeWidth={2.2} />
+						</div>
+						<div>
+							<div class="v-result-title">
+								{t("res.compress.title")}
+							</div>
+							<div class="v-result-stats">
+								{compressResult?.original} → {compressResult?.compressed}
+								<span class="v-result-saved"
+									>· −{compressResult?.saved}</span
+								>
+							</div>
 						</div>
 					</div>
-					<button class="v-remove" type="button" disabled={compressBusy} onclick={clearFile} title="Remove">
-						<X size={15} strokeWidth={2.5} />
-					</button>
-				</div>
-			{/if}
-
-			<!-- Quality preset row -->
-			<div class="v-row">
-				<span class="v-label">{t("sec.quickPreset")}</span>
-				<div class="v-opts">
-					<button
-						class="v-opt" class:v-opt--on={selectedPreset === "low" && !hasTarget}
-						class:v-opt--disabled={hasTarget || compressBusy}
-						type="button" disabled={hasTarget || compressBusy}
-						onclick={() => pickPreset("low")}
-					>
-						{t("preset.low")}
-						<span class="v-opt-sub">{t("preset.low.sub")}</span>
-					</button>
-					<button
-						class="v-opt" class:v-opt--on={selectedPreset === "balanced" && !hasTarget}
-						class:v-opt--disabled={hasTarget || compressBusy}
-						type="button" disabled={hasTarget || compressBusy}
-						onclick={() => pickPreset("balanced")}
-					>
-						{t("preset.balanced")}
-						<span class="v-opt-sub">{t("preset.balanced.sub")}</span>
-					</button>
-					<button
-						class="v-opt" class:v-opt--on={selectedPreset === "high" && !hasTarget}
-						class:v-opt--disabled={hasTarget || compressBusy}
-						type="button" disabled={hasTarget || compressBusy}
-						onclick={() => pickPreset("high")}
-					>
-						{t("preset.high")}
-						<span class="v-opt-sub">{t("preset.high.sub")}</span>
-					</button>
-				</div>
-			</div>
-
-			<!-- Target size row -->
-			<div class="v-row v-row--col">
-				<div class="v-target-head">
-					<span class="v-label">{t("sec.targetSize")}</span>
-					<div class="v-input-wrap">
-						<input
-							class="v-target-input"
-							bind:value={targetMb}
-							type="number"
-							placeholder={t("input.target.ph")}
-							min="1" max="4000"
-							oninput={onTargetInput}
-							disabled={compressBusy}
-						/>
-						{#if hasTarget}
-							<button class="v-input-clear" type="button" disabled={compressBusy} onclick={clearTargetSize} title="Clear">
-								<X size={13} strokeWidth={2.5} />
-							</button>
-						{:else}
-							<span class="v-input-unit">MB</span>
-						{/if}
-					</div>
-				</div>
-				<div class="v-tags">
-					{#each sizeTags as tag}
-						<button
-							class="v-tag" class:v-tag--on={selectedTag === tag.mb}
-							type="button" disabled={compressBusy}
-							onclick={() => fillTargetSize(tag.mb)}
+					<div class="v-result-actions">
+						<a
+							class="v-btn-dl"
+							href={compressResult?.href}
+							download={compressResult?.download}
 						>
-							{tag.label}
-							<span class="v-tag-size">{tag.mb} MB</span>
+							<Download size={15} strokeWidth={2.2} />
+							{t("btn.dl.compress")}
+						</a>
+						<button
+							class="v-btn-new"
+							type="button"
+							onclick={clearFile}
+						>
+							<FileVideo2 size={13} strokeWidth={2} />
+							{t("btn.compressNew")}
 						</button>
-					{/each}
-				</div>
-			</div>
-
-			<!-- Submit + processing + error — all pinned to bottom -->
-			<div class="v-action" style="margin-top:auto;">
-				{#if compressProcessing}
-					<div class="v-spinner-row">
-						<div class="v-spinner"></div>
-						<span class="v-spinner-label">{t("status.compressing")}</span>
 					</div>
-					<p class="v-warning">{t("status.warning.keepOpen")}</p>
+					<RelatedTools
+						label={t("relatedTools.label")}
+						tools={relatedTools}
+					/>
+				{:else}
+					<!-- ── Settings state (always shown) ── -->
+
+					<!-- File row — only when file loaded -->
+					{#if compressFile}
+						<div class="v-file-row" in:fade={{ duration: 150 }}>
+							<div class="v-file-ico">
+								<Film size={18} strokeWidth={1.8} />
+							</div>
+							<div class="v-file-info">
+								<div class="v-file-name">
+									{compressFile.name}
+								</div>
+								<div class="v-file-size">
+									{fmtBytes(compressFile.size)} · {compressFile.type ||
+										t("file.type.video")}
+								</div>
+							</div>
+							<button
+								class="v-remove"
+								type="button"
+								disabled={compressBusy}
+								onclick={clearFile}
+								title="Remove"
+							>
+								<X size={15} strokeWidth={2.5} />
+							</button>
+						</div>
+					{/if}
+
+					<!-- Quality preset row -->
+					<div class="v-row">
+						<span class="v-label">{t("sec.quickPreset")}</span>
+						<div class="v-opts">
+							<button
+								class="v-opt"
+								class:v-opt--on={selectedPreset === "low" &&
+									!hasTarget}
+								class:v-opt--disabled={hasTarget ||
+									compressBusy}
+								type="button"
+								disabled={hasTarget || compressBusy}
+								onclick={() => pickPreset("low")}
+							>
+								{t("preset.low")}
+								<span class="v-opt-sub"
+									>{t("preset.low.sub")}</span
+								>
+							</button>
+							<button
+								class="v-opt"
+								class:v-opt--on={selectedPreset ===
+									"balanced" && !hasTarget}
+								class:v-opt--disabled={hasTarget ||
+									compressBusy}
+								type="button"
+								disabled={hasTarget || compressBusy}
+								onclick={() => pickPreset("balanced")}
+							>
+								{t("preset.balanced")}
+								<span class="v-opt-sub"
+									>{t("preset.balanced.sub")}</span
+								>
+							</button>
+							<button
+								class="v-opt"
+								class:v-opt--on={selectedPreset === "high" &&
+									!hasTarget}
+								class:v-opt--disabled={hasTarget ||
+									compressBusy}
+								type="button"
+								disabled={hasTarget || compressBusy}
+								onclick={() => pickPreset("high")}
+							>
+								{t("preset.high")}
+								<span class="v-opt-sub"
+									>{t("preset.high.sub")}</span
+								>
+							</button>
+						</div>
+					</div>
+
+					<!-- Target size row -->
+					<div class="v-row v-row--col">
+						<div class="v-target-head">
+							<span class="v-label">{t("sec.targetSize")}</span>
+							<div class="v-input-wrap">
+								<input
+									class="v-target-input"
+									bind:value={targetMb}
+									type="number"
+									placeholder={t("input.target.ph")}
+									min="1"
+									max="4000"
+									oninput={onTargetInput}
+									disabled={compressBusy}
+								/>
+								{#if hasTarget}
+									<button
+										class="v-input-clear"
+										type="button"
+										disabled={compressBusy}
+										onclick={clearTargetSize}
+										title="Clear"
+									>
+										<X size={13} strokeWidth={2.5} />
+									</button>
+								{:else}
+									<span class="v-input-unit">MB</span>
+								{/if}
+							</div>
+						</div>
+						<div class="v-tags">
+							{#each sizeTags as tag}
+								<button
+									class="v-tag"
+									class:v-tag--on={selectedTag === tag.mb}
+									type="button"
+									disabled={compressBusy}
+									onclick={() => fillTargetSize(tag.mb)}
+								>
+									{tag.label}
+									<span class="v-tag-size">{tag.mb} MB</span>
+								</button>
+							{/each}
+						</div>
+					</div>
+
+					<!-- Submit + processing + error — all pinned to bottom -->
+					<div class="v-action" style="margin-top:auto;">
+						{#if compressProcessing}
+							<div class="v-spinner-row">
+								<div class="v-spinner"></div>
+								<span class="v-spinner-label"
+									>{t("status.compressing")}</span
+								>
+							</div>
+							<p class="v-warning">
+								{t("status.warning.keepOpen")}
+							</p>
+						{/if}
+						{#if compressError}
+							<div class="v-error">
+								<AlertTriangle size={14} strokeWidth={2} />
+								<span>{compressError}</span>
+							</div>
+						{/if}
+						<button
+							class="v-submit"
+							type="button"
+							disabled={compressBusy || !compressFile}
+							onclick={startCompress}
+						>
+							<Zap size={15} strokeWidth={2.2} />
+							{t("btn.compressNow")}
+						</button>
+					</div>
 				{/if}
-				{#if compressError}
-					<div class="v-error">
-						<AlertTriangle size={14} strokeWidth={2} />
-						<span>{compressError}</span>
-					</div>
-				{/if}
-				<button class="v-submit" type="button" disabled={compressBusy || !compressFile} onclick={startCompress}>
-					<Zap size={15} strokeWidth={2.2} />
-					{t("btn.compressNow")}
-				</button>
 			</div>
-
-		{/if}
-	</div><!-- end .v-panel -->
-
-	</div><!-- end .v-card -->
-
-	<!-- Privacy note -->
-	<div class="pnote">
-		<span class="ni"><ShieldCheck size={16} strokeWidth={2} /></span>
-		<p>{@html t("note.privacy")}</p>
-	</div>
-
-	<!-- How to use -->
-	{#if data.howToHtml}
-		<section class="how-to-sec prose">{@html data.howToHtml}</section>
-	{/if}
-
-	<!-- FAQ -->
-	<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-		<h2>{t("faq.video.title")}</h2>
-		<div class="faq-list">
-			{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
-				<details
-					class="faq-item"
-					itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
-				>
-					<summary class="faq-q" itemprop="name">{t(`faq.video.${n}.q`)}</summary>
-					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-						<span itemprop="text">{@html markdownToHtml(t(`faq.video.${n}.a`))}</span>
-					</div>
-				</details>
-			{/each}
+			<!-- end .v-panel -->
 		</div>
-	</section>
+		<!-- end .v-card -->
 
-</div>
+		<!-- Privacy note -->
+		<div class="pnote">
+			<span class="ni"><ShieldCheck size={16} strokeWidth={2} /></span>
+			<p>{@html t("note.privacy")}</p>
+		</div>
+
+		<!-- How to use -->
+		{#if data.howToHtml}
+			<section class="how-to-sec prose">{@html data.howToHtml}</section>
+		{/if}
+
+		<!-- FAQ -->
+		<section
+			class="faq-sec"
+			itemscope
+			itemtype="https://schema.org/FAQPage"
+		>
+			<h2>{t("faq.video.title")}</h2>
+			<div class="faq-list">
+				{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
+					<details
+						class="faq-item"
+						itemscope
+						itemprop="mainEntity"
+						itemtype="https://schema.org/Question"
+					>
+						<summary class="faq-q" itemprop="name"
+							>{t(`faq.video.${n}.q`)}</summary
+						>
+						<div
+							class="faq-a"
+							itemscope
+							itemprop="acceptedAnswer"
+							itemtype="https://schema.org/Answer"
+						>
+							<span itemprop="text"
+								>{@html markdownToHtml(
+									t(`faq.video.${n}.a`),
+								)}</span
+							>
+						</div>
+					</details>
+				{/each}
+			</div>
+		</section>
+	</div>
 </main>
 
 <style>
@@ -454,7 +622,7 @@
 
 	/* Preview zone — fixed height, shows drop zone / video */
 	.v-preview {
-		height: 260px;
+		height: 290px;
 		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
@@ -492,11 +660,65 @@
 		padding: 16px;
 		color: var(--text);
 	}
-	.v-dz:disabled { cursor: default; opacity: 0.6; }
-	.v-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
-	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
-	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
-	.v-dz .dz-ico { color: var(--accent); }
+	.v-dz[aria-disabled="true"] {
+		cursor: default;
+		opacity: 0.6;
+	}
+	.v-dz h3 {
+		margin: 6px 0 2px;
+		font-size: 16px;
+		font-weight: 600;
+	}
+	.v-dz .sub {
+		font-size: 12px;
+		color: var(--muted);
+		margin: 0 0 8px;
+	}
+	.v-dz .fmt-hint {
+		font-size: 11px;
+		color: var(--muted);
+		margin: 6px 0 0;
+	}
+	.v-dz .dz-ico {
+		color: var(--accent);
+	}
+
+	.sample-btn {
+		margin-top: 2px;
+		border: none;
+		background: transparent;
+		color: var(--accent);
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 0;
+	}
+	.sample-btn:hover {
+		opacity: 0.8;
+	}
+	.sample-btn:disabled {
+		opacity: 0.6;
+		cursor: default;
+	}
+	.sample-spinner {
+		width: 12px;
+		height: 12px;
+		border: 2px solid currentColor;
+		border-top-color: transparent;
+		border-radius: 999px;
+		animation: sample-spin 0.7s linear infinite;
+	}
+	@keyframes sample-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
 
 	/* Settings/result panel — fills remaining height */
 	.v-panel {
@@ -507,7 +729,9 @@
 	}
 
 	@media (max-width: 599px) {
-		/* .v-preview { height: 180px; } */
+		.v-preview {
+			height: 240px;
+		}
 	}
 
 	/* File row */
@@ -523,7 +747,10 @@
 		flex-shrink: 0;
 		display: flex;
 	}
-	.v-file-info { flex: 1; min-width: 0; }
+	.v-file-info {
+		flex: 1;
+		min-width: 0;
+	}
 	.v-file-name {
 		font-size: 13px;
 		font-weight: 500;
@@ -532,22 +759,35 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	.v-file-size { font-size: 12px; color: var(--muted); margin-top: 1px; }
+	.v-file-size {
+		font-size: 12px;
+		color: var(--muted);
+		margin-top: 1px;
+	}
 	.v-remove {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 28px; height: 28px;
+		width: 28px;
+		height: 28px;
 		border-radius: 6px;
 		border: none;
 		background: none;
 		color: var(--muted);
 		cursor: pointer;
 		flex-shrink: 0;
-		transition: color 0.15s, background 0.15s;
+		transition:
+			color 0.15s,
+			background 0.15s;
 	}
-	.v-remove:hover { color: var(--text); background: var(--border); }
-	.v-remove:disabled { opacity: 0.4; cursor: default; }
+	.v-remove:hover {
+		color: var(--text);
+		background: var(--border);
+	}
+	.v-remove:disabled {
+		opacity: 0.4;
+		cursor: default;
+	}
 
 	/* Option rows */
 	.v-row {
@@ -558,7 +798,9 @@
 		border-bottom: 1px solid var(--border);
 	}
 	/* Target size row stays column always (has multi-line tags) */
-	.v-row--col { flex-direction: column; }
+	.v-row--col {
+		flex-direction: column;
+	}
 	.v-label {
 		font-size: 12px;
 		font-weight: 500;
@@ -578,7 +820,11 @@
 	}
 
 	/* Preset option buttons */
-	.v-opts { display: flex; gap: 6px; flex-wrap: wrap; }
+	.v-opts {
+		display: flex;
+		gap: 6px;
+		flex-wrap: wrap;
+	}
 	.v-opt {
 		display: flex;
 		align-items: baseline;
@@ -591,25 +837,40 @@
 		font-weight: 500;
 		color: var(--text);
 		cursor: pointer;
-		transition: border-color 0.15s, background 0.15s;
+		transition:
+			border-color 0.15s,
+			background 0.15s;
 		white-space: nowrap;
 	}
-	.v-opt:hover { border-color: var(--accent); }
+	.v-opt:hover {
+		border-color: var(--accent);
+	}
 	.v-opt--on {
 		border-color: var(--accent);
 		background: var(--surf);
 		color: var(--accent);
 	}
-	.v-opt--disabled, .v-opt:disabled { opacity: 0.5; cursor: default; }
-	.v-opt-sub { font-size: 11px; font-weight: 400; color: var(--muted); }
-	.v-opt--on .v-opt-sub { color: var(--accent); opacity: 0.7; }
+	.v-opt--disabled,
+	.v-opt:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	.v-opt-sub {
+		font-size: 11px;
+		font-weight: 400;
+		color: var(--muted);
+	}
+	.v-opt--on .v-opt-sub {
+		color: var(--accent);
+		opacity: 0.7;
+	}
 
 	/* Target size input */
 	.v-target-head {
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		flex-wrap: wrap;          /* ← wrap khi không đủ chỗ */
+		flex-wrap: wrap; /* ← wrap khi không đủ chỗ */
 	}
 	.v-input-wrap {
 		position: relative;
@@ -619,8 +880,8 @@
 		min-width: 140px;
 	}
 	.v-target-input {
-		width: 100%;              /* ← thay vì fixed 200px */
-		max-width: 200px;         /* ← giữ max trên desktop */
+		width: 100%; /* ← thay vì fixed 200px */
+		max-width: 200px; /* ← giữ max trên desktop */
 		height: 32px;
 		padding: 0 28px 0 10px;
 		border-radius: 6px;
@@ -634,10 +895,19 @@
 		-moz-appearance: textfield;
 	}
 	.v-target-input::-webkit-inner-spin-button,
-	.v-target-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-	.v-target-input::placeholder { color: var(--muted); }
-	.v-target-input:focus { border-color: var(--accent); }
-	.v-target-input:disabled { opacity: 0.5; }
+	.v-target-input::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	.v-target-input::placeholder {
+		color: var(--muted);
+	}
+	.v-target-input:focus {
+		border-color: var(--accent);
+	}
+	.v-target-input:disabled {
+		opacity: 0.5;
+	}
 	.v-input-unit {
 		position: absolute;
 		right: 9px;
@@ -651,7 +921,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 20px; height: 20px;
+		width: 20px;
+		height: 20px;
 		border: none;
 		background: none;
 		color: var(--muted);
@@ -659,7 +930,9 @@
 		border-radius: 4px;
 		transition: color 0.15s;
 	}
-	.v-input-clear:hover { color: var(--text); }
+	.v-input-clear:hover {
+		color: var(--text);
+	}
 
 	/* Platform size tags */
 	.v-tags {
@@ -680,17 +953,29 @@
 		font-weight: 500;
 		color: var(--muted);
 		cursor: pointer;
-		transition: border-color 0.15s, color 0.15s, background 0.15s;
+		transition:
+			border-color 0.15s,
+			color 0.15s,
+			background 0.15s;
 		white-space: nowrap;
 	}
-	.v-tag:hover { border-color: var(--accent); color: var(--text); }
+	.v-tag:hover {
+		border-color: var(--accent);
+		color: var(--text);
+	}
 	.v-tag--on {
 		border-color: var(--accent);
 		background: var(--surf);
 		color: var(--accent);
 	}
-	.v-tag:disabled { opacity: 0.5; cursor: default; }
-	.v-tag-size { font-size: 11px; opacity: 0.65; }
+	.v-tag:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	.v-tag-size {
+		font-size: 11px;
+		opacity: 0.65;
+	}
 
 	/* Processing spinner */
 	.v-spinner-row {
@@ -702,15 +987,23 @@
 		border-top: 1px solid var(--border);
 	}
 	.v-spinner {
-		width: 16px; height: 16px;
+		width: 16px;
+		height: 16px;
 		border: 2px solid var(--border);
 		border-top-color: var(--accent);
 		border-radius: 50%;
 		animation: v-spin 0.7s linear infinite;
 		flex-shrink: 0;
 	}
-	@keyframes v-spin { to { transform: rotate(360deg); } }
-	.v-spinner-label { font-size: 12px; color: var(--muted); }
+	@keyframes v-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	.v-spinner-label {
+		font-size: 12px;
+		color: var(--muted);
+	}
 	.v-warning {
 		padding: 4px 16px 10px;
 		font-size: 11.5px;
@@ -751,8 +1044,13 @@
 		cursor: pointer;
 		transition: opacity 0.15s;
 	}
-	.v-submit:hover { opacity: 0.88; }
-	.v-submit:disabled { opacity: 0.5; cursor: default; }
+	.v-submit:hover {
+		opacity: 0.88;
+	}
+	.v-submit:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
 
 	/* ── Result (inside .v-card) ─────────────────────────────────────────────── */
 	.v-result-head {
@@ -803,7 +1101,9 @@
 		text-decoration: none;
 		transition: opacity 0.15s;
 	}
-	.v-btn-dl:hover { opacity: 0.88; }
+	.v-btn-dl:hover {
+		opacity: 0.88;
+	}
 	.v-btn-new {
 		display: flex;
 		align-items: center;
@@ -818,20 +1118,62 @@
 		text-underline-offset: 2px;
 		transition: color 0.15s;
 	}
-	.v-btn-new:hover { color: var(--text); }
+	.v-btn-new:hover {
+		color: var(--text);
+	}
 
 	/* ── How-to section ──────────────────────────────────────────────────────── */
 	.how-to-sec {
 		padding-top: 18px;
 		border-top: 1px solid var(--border);
 	}
-	.how-to-sec :global(a) { color: #1550ae; }
-	.how-to-sec :global(h1) { font-size: 1.35rem; font-weight: 650; color: var(--text); margin: 0 0 20px; line-height: 1.3; }
-	.how-to-sec :global(h2) { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 15px 0 10px; }
-	.how-to-sec :global(h3) { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
-	.how-to-sec :global(p)  { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0 0 12px; }
-	.how-to-sec :global(ul), .how-to-sec :global(ol) { padding-left: 1.4em; margin: 8px 0 16px; }
-	.how-to-sec :global(li) { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 6px; }
-	.how-to-sec :global(li strong), .how-to-sec :global(strong) { color: var(--text); font-weight: 600; }
-	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 15px 0; }
+	.how-to-sec :global(a) {
+		color: #1550ae;
+	}
+	.how-to-sec :global(h1) {
+		font-size: 1.35rem;
+		font-weight: 650;
+		color: var(--text);
+		margin: 0 0 20px;
+		line-height: 1.3;
+	}
+	.how-to-sec :global(h2) {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 15px 0 10px;
+	}
+	.how-to-sec :global(h3) {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 20px 0 8px;
+	}
+	.how-to-sec :global(p) {
+		font-size: 0.9rem;
+		color: var(--muted);
+		line-height: 1.7;
+		margin: 0 0 12px;
+	}
+	.how-to-sec :global(ul),
+	.how-to-sec :global(ol) {
+		padding-left: 1.4em;
+		margin: 8px 0 16px;
+	}
+	.how-to-sec :global(li) {
+		font-size: 0.9rem;
+		color: var(--muted);
+		line-height: 1.7;
+		margin-bottom: 6px;
+	}
+	.how-to-sec :global(li strong),
+	.how-to-sec :global(strong) {
+		color: var(--text);
+		font-weight: 600;
+	}
+	.how-to-sec :global(hr) {
+		border: none;
+		border-top: 1px solid var(--border);
+		margin: 15px 0;
+	}
 </style>

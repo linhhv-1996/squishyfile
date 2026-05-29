@@ -10,30 +10,40 @@ import {
 	Output,
 	WebMOutputFormat,
 	QUALITY_HIGH,
+	canEncode,
 	type AudioCodec,
 	type VideoCodec,
 } from "mediabunny";
+
+import { AviVideoConverter } from "./aviVideoConverter";
 
 export type VideoOutputFormat = "mp4" | "webm" | "mov" | "mkv";
 
 export type VideoConvertMode =
 	/**
-	 * Default.
-	 *
-	 * Không ép codec/bitrate.
-	 * Mediabunny sẽ copy/remux nếu có thể, chỉ transcode nếu bắt buộc.
+	 * Auto:
+	 * - Mediabunny copy/remux nếu có thể.
+	 * - Có thể nhanh hơn.
+	 * - Nhưng KHÔNG đảm bảo output play được rộng rãi.
 	 */
 	| "auto"
 
 	/**
-	 * Ép transcode video/audio bằng WebCodecs.
-	 * Chỉ dùng khi muốn normalize codec hoặc auto output không play được.
+	 * Force transcode:
+	 * - Ép normalize codec bằng WebCodecs.
+	 * - Nên dùng cho output MP4 public/download để dễ xem.
 	 */
 	| "force-transcode";
 
 export type VideoConvertOptions = {
 	file: File;
 	outputFormat?: VideoOutputFormat;
+
+	/**
+	 * Nếu không truyền:
+	 * - output mp4 + input không phải mp4/m4v => force-transcode
+	 * - còn lại => auto
+	 */
 	mode?: VideoConvertMode;
 
 	/**
@@ -50,11 +60,13 @@ export type VideoConvertOptions = {
 
 	/**
 	 * Chỉ dùng trong force-transcode.
+	 * Default theo outputFormat.
 	 */
 	videoCodec?: VideoCodec;
 
 	/**
 	 * Chỉ dùng trong force-transcode.
+	 * Default theo outputFormat.
 	 */
 	audioCodec?: AudioCodec;
 
@@ -72,6 +84,8 @@ const OUTPUT_MIME: Record<VideoOutputFormat, string> = {
 	mov: "video/quicktime",
 	mkv: "video/x-matroska",
 };
+
+// const INPUT_EXTENSIONS_UNSUPPORTED_BY_MEDIABUNNY = new Set(["avi"]);
 
 function debug(...args: unknown[]) {
 	if (DEBUG) console.log(LABEL, ...args);
@@ -104,10 +118,24 @@ function formatBytes(bytes: number) {
 	return `${value.toFixed(unit === 0 ? 0 : 1)} ${units[unit]}`;
 }
 
+function getFileExtension(file: File) {
+	const name = file.name || "";
+	const ext = name.split(".").pop()?.toLowerCase();
+
+	return ext && ext !== name.toLowerCase() ? ext : "";
+}
+
+function isAviFile(file: File) {
+	return getFileExtension(file) === "avi";
+}
+
 function createOutputFormat(format: VideoOutputFormat) {
 	switch (format) {
 		case "mp4":
 			return new Mp4OutputFormat({
+				/**
+				 * Giúp MP4 stream/play sớm hơn, metadata ở đầu file.
+				 */
 				fastStart: "in-memory",
 			});
 
@@ -131,11 +159,19 @@ function getDefaultVideoCodec(format: VideoOutputFormat): VideoCodec {
 	switch (format) {
 		case "mp4":
 		case "mov":
-		case "mkv":
+			/**
+			 * H.264/AVC là lựa chọn an toàn nhất cho MP4/MOV.
+			 */
 			return "avc";
 
 		case "webm":
 			return "vp9";
+
+		case "mkv":
+			/**
+			 * MKV support nhiều codec, nhưng AVC dễ play hơn.
+			 */
+			return "avc";
 
 		default: {
 			const exhaustive: never = format;
@@ -148,11 +184,16 @@ function getDefaultAudioCodec(format: VideoOutputFormat): AudioCodec {
 	switch (format) {
 		case "mp4":
 		case "mov":
-		case "mkv":
 			return "aac";
 
 		case "webm":
 			return "opus";
+
+		case "mkv":
+			/**
+			 * MKV support nhiều codec, nhưng AAC tương đối phổ biến.
+			 */
+			return "aac";
 
 		default: {
 			const exhaustive: never = format;
@@ -161,30 +202,59 @@ function getDefaultAudioCodec(format: VideoOutputFormat): AudioCodec {
 	}
 }
 
-function stringifyForDebug(value: unknown) {
-	try {
-		return JSON.stringify(
-			value,
-			(_key, item) => {
-				if (typeof item === "function") return undefined;
-				if (item instanceof Error) return item.message;
-				return item;
-			},
-			2,
-		);
-	} catch {
-		return String(value);
+/**
+ * Auto mode nhanh nhưng không đảm bảo output play được.
+ *
+ * Với output MP4, nếu input là webm/mkv/mov thì nên force transcode
+ * sang H.264 + AAC để tránh file MP4 tạo ra nhưng không xem được.
+ */
+function getDefaultMode(file: File, outputFormat: VideoOutputFormat): VideoConvertMode {
+	const ext = getFileExtension(file);
+
+	// if (INPUT_EXTENSIONS_UNSUPPORTED_BY_MEDIABUNNY.has(ext)) {
+	// 	throw new Error("error.videoConverterAviUnsupported");
+	// }
+
+	if (outputFormat === "mp4") {
+		if (!["mp4", "m4v"].includes(ext)) {
+			return "force-transcode";
+		}
+	}
+
+	return "auto";
+}
+
+async function assertBrowserEncoderSupport() {
+	if (typeof window === "undefined") {
+		throw new Error("error.videoConverterBrowserOnly");
+	}
+
+	if (!("VideoEncoder" in window)) {
+		throw new Error("error.videoConverterVideoEncoderUnsupported");
+	}
+
+	if (!("AudioEncoder" in window)) {
+		throw new Error("error.videoConverterAudioEncoderUnsupported");
+	}
+}
+
+async function assertCanEncodeCodec(codec: VideoCodec | AudioCodec, errorKey: string) {
+	const supported = await canEncode(codec);
+
+	if (!supported) {
+		throw new Error(errorKey);
 	}
 }
 
 export class VideoConverter {
 	private conversion: Conversion | null = null;
+	private aviConverter: AviVideoConverter | null = null;
 
 	async convert(options: VideoConvertOptions) {
 		const {
 			file,
 			outputFormat = "mp4",
-			mode = "auto",
+			mode,
 			primaryTracksOnly = true,
 			hardwareAcceleration = "no-preference",
 			videoCodec,
@@ -200,29 +270,60 @@ export class VideoConverter {
 			}
 
 			if (!file) {
-				throw new Error("Không có file đầu vào.");
+				throw new Error("error.videoConverterMissingInputFile");
 			}
 
-			if (mode === "force-transcode") {
-				if (!("VideoEncoder" in window)) {
-					throw new Error("error.videoConverterVideoEncoderUnsupported");
+			if (isAviFile(file)) {
+				if (outputFormat !== "mp4") {
+					throw new Error("error.videoConverterAviOnlySupportsMp4");
 				}
 
-				if (!("AudioEncoder" in window)) {
-					throw new Error("error.videoConverterAudioEncoderUnsupported");
+				const aviConverter = new AviVideoConverter();
+				this.aviConverter = aviConverter;
+				this.conversion = null;
+
+				try {
+					return await aviConverter.convert({
+						file,
+						onProgress,
+						onSuccess,
+						onError,
+					});
+				} finally {
+					this.aviConverter = null;
 				}
 			}
+
+			const finalMode = mode ?? getDefaultMode(file, outputFormat);
+			const finalVideoCodec = videoCodec ?? getDefaultVideoCodec(outputFormat);
+			const finalAudioCodec = audioCodec ?? getDefaultAudioCodec(outputFormat);
 
 			debug(
 				"Convert:",
 				file.name,
 				"→",
 				outputFormat,
-				`mode=${mode}`,
+				`mode=${finalMode}`,
+				`video=${finalMode === "force-transcode" ? finalVideoCodec : "auto"}`,
+				`audio=${finalMode === "force-transcode" ? finalAudioCodec : "auto"}`,
 				`size=${formatBytes(file.size)}`,
 			);
 
 			onProgress?.(1);
+
+			if (finalMode === "force-transcode") {
+				await assertBrowserEncoderSupport();
+
+				await assertCanEncodeCodec(
+					finalVideoCodec,
+					"error.videoConverterVideoCodecUnsupported",
+				);
+
+				await assertCanEncodeCodec(
+					finalAudioCodec,
+					"error.videoConverterAudioCodecUnsupported",
+				);
+			}
 
 			const input = new Input({
 				source: new BlobSource(file),
@@ -240,16 +341,11 @@ export class VideoConverter {
 
 			let conversion: Conversion;
 
-			if (mode === "auto") {
+			if (finalMode === "auto") {
 				/**
-				 * QUAN TRỌNG:
-				 *
-				 * Auto mode KHÔNG truyền video/audio options.
-				 *
-				 * Nếu truyền codec hoặc bitrate, Mediabunny có thể ép transcode.
-				 * Auto đúng nghĩa:
-				 * - copy/remux nếu codec đã compatible
-				 * - chỉ transcode nếu thật sự bắt buộc
+				 * Auto mode:
+				 * Không truyền codec/bitrate để Mediabunny tự copy/remux/transcode nếu cần.
+				 * Dùng cho tốc độ, không dùng khi cần đảm bảo MP4 play được rộng rãi.
 				 */
 				conversion = await Conversion.init({
 					input,
@@ -258,8 +354,12 @@ export class VideoConverter {
 				});
 			} else {
 				/**
-				 * Force-transcode mode:
-				 * Chỉ mode này mới set codec/bitrate/hardwareAcceleration.
+				 * Force-transcode:
+				 * Normalize codec để output dễ play hơn.
+				 *
+				 * MP4 nên là:
+				 * - video: avc / H.264
+				 * - audio: aac
 				 */
 				conversion = await Conversion.init({
 					input,
@@ -267,14 +367,14 @@ export class VideoConverter {
 					tracks: primaryTracksOnly ? "primary" : "all",
 
 					video: {
-						codec: videoCodec ?? getDefaultVideoCodec(outputFormat),
+						codec: finalVideoCodec,
 						bitrate: QUALITY_HIGH,
 						hardwareAcceleration,
 						forceTranscode: true,
 					},
 
 					audio: {
-						codec: audioCodec ?? getDefaultAudioCodec(outputFormat),
+						codec: finalAudioCodec,
 						bitrate: QUALITY_HIGH,
 						forceTranscode: true,
 					},
@@ -333,6 +433,14 @@ export class VideoConverter {
 	}
 
 	async cancel() {
+		const aviConverter = this.aviConverter;
+
+		if (aviConverter) {
+			this.aviConverter = null;
+			aviConverter.cancel();
+			return;
+		}
+
 		const conversion = this.conversion;
 
 		if (!conversion) return;

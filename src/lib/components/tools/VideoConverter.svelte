@@ -55,6 +55,7 @@
 		defaultOutput = "mp4" as VideoOutputFormat,
 		fixedOutput = false,
 		copy,
+		sampleVideoUrl = "/file_example_WEBM_1920_3_7MB.webm",
 		relatedTools = [] as { href: string; label: string; icon?: any }[],
 		outputOptions = copy.outputOptions ?? [
 			{ value: "mp4", label: "MP4", sub: "" },
@@ -66,6 +67,7 @@
 		defaultOutput?: VideoOutputFormat;
 		fixedOutput?: boolean;
 		copy: Copy;
+		sampleVideoUrl?: string;
 		relatedTools?: { href: string; label: string; icon?: any }[];
 		outputOptions?: OutputOption[];
 	}>();
@@ -78,7 +80,29 @@
 	let videoSrc: string | null = $state(null);
 	let selectedOutput = $state<VideoOutputFormat>(defaultOutput);
 	let busy = $state(false);
+	let sampleLoading = $state(false);
 	let error = $state("");
+
+	async function loadSampleVideo(event?: MouseEvent) {
+		event?.stopPropagation();
+		if (busy || sampleLoading) return;
+		error = "";
+		sampleLoading = true;
+		try {
+			const res = await fetch(sampleVideoUrl);
+			if (!res.ok) throw new Error("sample_not_found");
+			const blob = await res.blob();
+			const filename = sampleVideoUrl.split("/").pop() || "sample-video";
+			const f = new File([blob], filename, {
+				type: blob.type || "video/" + (filename.split(".").pop() || "mp4"),
+			});
+			loadFile(f);
+		} catch {
+			error = t("error.sampleVideoLoadFailed");
+		} finally {
+			sampleLoading = false;
+		}
+	}
 
 	let progress = $state({
 		show: false,
@@ -95,7 +119,7 @@
 	} | null = $state(null);
 
 	function triggerInput() {
-		if (!busy) inputEl.click();
+		if (!busy && !sampleLoading) inputEl.click();
 	}
 
 	function handleFile(event: Event) {
@@ -127,6 +151,7 @@
 		if (inputEl) inputEl.value = "";
 		error = "";
 		busy = false;
+		sampleLoading = false;
 		selectedOutput = defaultOutput;
 		progress = { show: false, pct: 0, label: copy.convertingLabel };
 		clearResult();
@@ -228,7 +253,7 @@
 	type="file"
 	accept="video/*,.mp4,.mov,.m4v,.avi,.mkv,.webm,.wmv,.flv,.3gp,.ts,.m2ts,.mts"
 	onchange={handleFile}
-	disabled={busy}
+	disabled={busy || sampleLoading}
 />
 
 <!-- ── Unified tool card ── -->
@@ -250,18 +275,35 @@
 			<video class="v-video" src={videoSrc} controls playsinline muted></video>
 		{:else}
 			<!-- Drop zone -->
-			<button
+			<div
 				class="v-dz"
-				type="button"
+				role="button"
+				tabindex={busy || sampleLoading ? -1 : 0}
+				aria-disabled={busy || sampleLoading}
 				onclick={triggerInput}
-				disabled={busy}
+				onkeydown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerInput(); } }}
 			>
-				<div class="dz-ico"><Film size={28} strokeWidth={1.4} /></div>
+				<div class="dz-ico"><Film size={55} strokeWidth={1.4} /></div>
 				<h3>{copy.dropTitle}</h3>
 				<p class="sub">{copy.dropSub}</p>
 				<span class="btn-browse"><Folder size={14} strokeWidth={2} />{copy.browse}</span>
+
+				<button
+					class="sample-btn"
+					type="button"
+					disabled={busy || sampleLoading}
+					onclick={loadSampleVideo}
+				>
+					{#if sampleLoading}
+						<span class="sample-spinner" aria-hidden="true"></span>
+						{t("status.loadingSampleVideo")}
+					{:else}
+						{t("btn.sampleVideo")}
+					{/if}
+				</button>
+
 				<p class="fmt-hint">{@html copy.hint}</p>
-			</button>
+			</div>
 		{/if}
 	</div>
 
@@ -388,7 +430,7 @@
 
 	/* Preview zone — fixed height, shows drop zone / video */
 	.v-preview {
-		height: 260px;
+		height: 290px;
 		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
@@ -426,8 +468,8 @@
 		padding: 16px;
 		color: var(--text);
 	}
-	.v-dz:disabled { cursor: default; opacity: 0.6; }
-	.v-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.v-dz[aria-disabled="true"] { cursor: default; opacity: 0.6; }
+	.v-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
 	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
 	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
 	.dz-ico { color: var(--accent); }
@@ -684,6 +726,37 @@
 		transition: color 0.15s;
 	}
 	.v-btn-new:hover { color: var(--text); }
+
+	/* ── Sample video button ─────────────────────────────────────────────────── */
+	.sample-btn {
+		margin-top: 2px;
+		border: none;
+		background: transparent;
+		color: var(--accent);
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 0;
+	}
+	.sample-btn:hover { opacity: 0.8; }
+	.sample-btn:disabled { opacity: 0.6; cursor: default; }
+	.sample-spinner {
+		width: 12px;
+		height: 12px;
+		border: 2px solid currentColor;
+		border-top-color: transparent;
+		border-radius: 999px;
+		animation: sample-spin 0.7s linear infinite;
+	}
+	@keyframes sample-spin {
+		to { transform: rotate(360deg); }
+	}
 
 	/* ── Privacy note ────────────────────────────────────────────────────────── */
 	.pnote {

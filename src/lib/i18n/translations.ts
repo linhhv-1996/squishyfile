@@ -1134,6 +1134,19 @@ export const translations: Record<string, Record<string, string>> = {
 		'pdf.viewer.pages': 'pages',
 		'status.loadingPreview': 'Loading preview…',
 
+		'btn.sampleVideo': 'Try with a sample video',
+		'status.loadingSampleVideo': 'Loading sample video…',
+		'error.sampleVideoLoadFailed': 'Could not load the sample video.',
+
+		'btn.samplePdf': 'Try a sample PDF',
+		'status.loadingSamplePdf': 'Loading sample…',
+		'error.samplePdfLoadFailed': 'Failed to load sample. Please try again.',
+
+		"pdfMerge.btn.samplePdf": "Try sample PDFs",
+		"pdfMerge.status.loadingSample": "Loading samples...",
+		"pdfMerge.error.sampleLoadFailed": "Failed to load sample files.",
+		"pdfMerge.hint.dragToReorder": "Drag to reorder",
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -2235,6 +2248,19 @@ export const translations: Record<string, Record<string, string>> = {
 		'status.loadingPreview': 'プレビューを読み込み中…',
 		'pdf.viewer.pages': 'ページ',
 
+		'btn.sampleVideo': 'サンプル動画で試す',
+		'status.loadingSampleVideo': 'サンプル動画を読み込み中…',
+		'error.sampleVideoLoadFailed': 'サンプル動画を読み込めませんでした。',
+
+		'btn.samplePdf': 'サンプルPDFを試す',
+		'status.loadingSamplePdf': '読み込み中…',
+		'error.samplePdfLoadFailed': 'サンプルの読み込みに失敗しました。もう一度お試しください。',
+
+		"pdfMerge.btn.samplePdf": "サンプルPDFを試す",
+		"pdfMerge.status.loadingSample": "サンプルを読み込み中...",
+		"pdfMerge.error.sampleLoadFailed": "サンプルファイルの読み込みに失敗しました。",
+		"pdfMerge.hint.dragToReorder": "ドラッグして並べ替え",
+
 	},
 
 	// ─── TRADITIONAL CHINESE / TAIWAN (ZH / TW) ──────────────────────────────────
@@ -3327,6 +3353,20 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'status.loadingPreview': '載入預覽中…',
 		'pdf.viewer.pages': '頁',
+
+		'btn.sampleVideo': '使用示例视频试用',
+		'status.loadingSampleVideo': '正在加载示例视频…',
+		'error.sampleVideoLoadFailed': '无法加载示例视频。',
+
+		'btn.samplePdf': '試用範例 PDF',
+		'status.loadingSamplePdf': '載入中…	',
+		'error.samplePdfLoadFailed': '載入範例失敗，請再試一次。',
+
+		"pdfMerge.btn.samplePdf": "試用範例 PDF",
+		"pdfMerge.status.loadingSample": "正在載入範例...",
+		"pdfMerge.error.sampleLoadFailed": "範例檔案載入失敗。",
+		"pdfMerge.hint.dragToReorder": "拖曳以重新排序",
+
 	},
 
 	// ─── PORTUGUESE BRAZIL (PT) ──────────────────────────────────────────────────
@@ -4479,6 +4519,20 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'status.loadingPreview': 'Carregando prévia…',
 		'pdf.viewer.pages': 'páginas',
+
+		'btn.sampleVideo': 'Testar com um vídeo de exemplo',
+		'status.loadingSampleVideo': 'Carregando vídeo de exemplo…',
+		'error.sampleVideoLoadFailed': 'Não foi possível carregar o vídeo de exemplo.',
+
+		'btn.samplePdf': 'Experimentar PDF de exemplo ',
+		'status.loadingSamplePdf': 'Carregando…',
+		'error.samplePdfLoadFailed': 'Falha ao carregar o exemplo. Tente novamente.',
+
+		"pdfMerge.btn.samplePdf": "Experimentar PDFs de exemplo",
+		"pdfMerge.status.loadingSample": "Carregando exemplos...",
+		"pdfMerge.error.sampleLoadFailed": "Falha ao carregar arquivos de exemplo.",
+		"pdfMerge.hint.dragToReorder": "Arraste para reordenar",
+
 	},
 
 	th: {
@@ -5530,5 +5584,19 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'status.loadingPreview': 'กำลังโหลดตัวอย่าง…',
 		'pdf.viewer.pages': 'หน้า',
+
+		'btn.sampleVideo': 'ลองใช้วิดีโอตัวอย่าง',
+		'status.loadingSampleVideo': 'กำลังโหลดวิดีโอตัวอย่าง…',
+		'error.sampleVideoLoadFailed': 'ไม่สามารถโหลดวิดีโอตัวอย่างได้',
+
+		'btn.samplePdf': 'ลองใช้ PDF ตัวอย่าง',
+		'status.loadingSamplePdf': 'กำลังโหลด…',
+		'error.samplePdfLoadFailed': 'โหลดตัวอย่างไม่สำเร็จ กรุณาลองอีกครั้ง',
+
+		"pdfMerge.btn.samplePdf": "ลองใช้ไฟล์ PDF ตัวอย่าง",
+		"pdfMerge.status.loadingSample": "กำลังโหลดตัวอย่าง...",
+		"pdfMerge.error.sampleLoadFailed": "ไม่สามารถโหลดไฟล์ตัวอย่างได้",
+		"pdfMerge.hint.dragToReorder": "ลากเพื่อจัดเรียงใหม่",
+
 	},
 };

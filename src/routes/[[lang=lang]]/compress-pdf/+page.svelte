@@ -28,6 +28,8 @@
 		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 	}));
 
+	const SAMPLE_PDF_URL = "/sample_pdf.pdf";
+
 	let { data } = $props();
 	let relatedTools = $derived(getRelatedTools('compress-pdf', currentLangKey, t));
 
@@ -35,6 +37,7 @@
 	let dragOver = $state(false);
 	let pdfInput: HTMLInputElement;
 	let pdfFile: File | null = $state(null);
+	let sampleLoading = $state(false);
 	let pdfPassword = $state("");
 	let pdfError = $state("");
 	let pdfProcessing = $state(false);
@@ -113,8 +116,29 @@
 		}
 	});
 
+	// ── Sample PDF ───────────────────────────────────────────────────────────────
+	async function loadSamplePdf(event?: MouseEvent) {
+		event?.stopPropagation();
+		if (pdfBusy || sampleLoading) return;
+		pdfError = "";
+		sampleLoading = true;
+		try {
+			const res = await fetch(SAMPLE_PDF_URL);
+			if (!res.ok) throw new Error("sample_not_found");
+			const blob = await res.blob();
+			const file = new File([blob], "sample-document.pdf", {
+				type: blob.type || "application/pdf",
+			});
+			loadFile(file);
+		} catch {
+			pdfError = t("error.samplePdfLoadFailed");
+		} finally {
+			sampleLoading = false;
+		}
+	}
+
 	// ── File handling ────────────────────────────────────────────────────────────
-	function triggerInput() { if (!pdfBusy) pdfInput.click(); }
+	function triggerInput() { if (!pdfBusy && !sampleLoading) pdfInput.click(); }
 	function handleFile(e: Event) {
 		const f = (e.currentTarget as HTMLInputElement).files?.[0];
 		if (f) loadFile(f);
@@ -128,6 +152,7 @@
 		pdfFile = null;
 		if (pdfInput) pdfInput.value = "";
 		pdfError = ""; pdfBusy = false; pdfProcessing = false; pdfPassword = "";
+		sampleLoading = false;
 		viewerReady = false; viewerLoading = false; pdfPageCount = 0;
 		if (viewerContainer) viewerContainer.innerHTML = "";
 		clearResult();
@@ -214,7 +239,7 @@
 		</div>
 	</section>
 
-	<input bind:this={pdfInput} class="file-input" type="file" accept="application/pdf" onchange={handleFile} />
+	<input bind:this={pdfInput} class="file-input" type="file" accept="application/pdf" onchange={handleFile} disabled={pdfBusy || sampleLoading} />
 
 	<!-- ── Unified tool card ── -->
 	<div class="p-card">
@@ -223,9 +248,15 @@
 		<div
 			class="p-viewer-zone"
 			class:over={dragOver && !pdfFile}
+			role="button"
+			tabindex={pdfBusy || sampleLoading ? -1 : 0}
+			aria-label={t("drop.pdf")}
+			aria-disabled={pdfBusy || sampleLoading}
 			ondragover={onDragOver}
 			ondragleave={onDragLeave}
 			ondrop={onDrop}
+			onclick={triggerInput}
+			onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerInput(); } }}
 		>
 			{#if pdfFile}
 				<!-- Viewer: scrollable container with all pages rendered as canvases -->
@@ -247,18 +278,28 @@
 				{/if}
 			{:else}
 				<!-- Drop zone -->
-				<button
-					class="p-dz"
-					type="button"
-					onclick={triggerInput}
-					disabled={pdfBusy}
-				>
-					<div class="dz-ico"><FileText size={28} strokeWidth={1.4} /></div>
+				<div class="p-dz">
+					<div class="dz-ico"><FileText size={55} strokeWidth={1.4} /></div>
 					<h3>{t("drop.pdf")}</h3>
 					<p class="sub">{t("drop.pdf.sub")}</p>
 					<span class="btn-browse"><Folder size={14} strokeWidth={2} />{t("btn.browse")}</span>
+
+					<button
+						class="sample-btn"
+						type="button"
+						disabled={pdfBusy || sampleLoading}
+						onclick={loadSamplePdf}
+					>
+						{#if sampleLoading}
+							<span class="sample-spinner" aria-hidden="true"></span>
+							{t("status.loadingSamplePdf")}
+						{:else}
+							{t("btn.samplePdf")}
+						{/if}
+					</button>
+
 					<p class="fmt-hint">{t("hint.pdf")}</p>
-				</button>
+				</div>
 			{/if}
 		</div>
 
@@ -498,7 +539,7 @@
 	/* Drop zone */
 	.p-dz {
 		width: 100%;
-		min-height: 260px;
+		min-height: 290px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -511,10 +552,38 @@
 		color: var(--text);
 	}
 	.p-dz:disabled { cursor: default; opacity: 0.6; }
-	.p-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.p-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
 	.p-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
 	.p-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
 	.p-dz .dz-ico { color: var(--accent); }
+
+	.sample-btn {
+		margin-top: 2px;
+		border: none;
+		background: transparent;
+		color: var(--accent);
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 0;
+	}
+	.sample-btn:hover { opacity: 0.8; }
+	.sample-btn:disabled { opacity: 0.6; cursor: default; }
+	.sample-spinner {
+		width: 12px;
+		height: 12px;
+		border: 2px solid currentColor;
+		border-top-color: transparent;
+		border-radius: 999px;
+		animation: sample-spin 0.7s linear infinite;
+	}
+	@keyframes sample-spin { to { transform: rotate(360deg); } }
 
 	/* ── Settings/result panel ───────────────────────────────────────────────── */
 	.p-panel {

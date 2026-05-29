@@ -436,7 +436,7 @@
 				type="button"
 				onclick={() => fileInput?.click()}
 			>
-				<div class="dz-ico"><ImagePlus size={28} strokeWidth={1.4} /></div>
+				<div class="dz-ico"><ImagePlus size={55} strokeWidth={1.4} /></div>
 				<h3>{copy.dropTitle}</h3>
 				<p class="sub">{copy.dropSub}</p>
 				<span class="btn-browse"><ImagePlus size={14} strokeWidth={2} /> {copy.browse}</span>
@@ -592,8 +592,8 @@
 
 	/* Preview / gallery zone — fixed height, gallery scrolls inside */
 	.p-preview {
-		height: 340px;
-		max-height: 340px;
+		height: 310px;
+		max-height: 310px;
 		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
@@ -630,7 +630,7 @@
 		color: var(--text);
 	}
 	.p-dz:disabled { cursor: default; opacity: 0.6; }
-	.p-dz h3 { margin: 6px 0 2px; font-size: 14px; font-weight: 600; }
+	.p-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
 	.p-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
 	.p-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
 	.p-dz .dz-ico { color: var(--accent); }
