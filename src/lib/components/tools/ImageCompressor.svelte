@@ -337,6 +337,7 @@
 <div class="p-card">
 
 	<!-- ── Preview / Gallery zone (top, fixed height) ──────────────────────────── -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="p-preview"
 		class:over={isOver && !hasJobs}
