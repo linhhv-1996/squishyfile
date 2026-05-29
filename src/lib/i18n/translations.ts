@@ -1131,6 +1131,9 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.search.placeholder": "Search — video, pdf, image, barcode…",
 		"home.search.empty": "No tools found.",
 
+		'pdf.viewer.pages': 'pages',
+		'status.loadingPreview': 'Loading preview…',
+
 	},
 
 	// ─── JAPANESE (JA) ───────────────────────────────────────────────────────────
@@ -2229,6 +2232,8 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.search.placeholder": "検索 — 動画、PDF、画像、バーコード…",
 		"home.search.empty": "ツールが見つかりませんでした。",
 
+		'status.loadingPreview': 'プレビューを読み込み中…',
+		'pdf.viewer.pages': 'ページ',
 
 	},
 
@@ -3320,6 +3325,8 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.search.placeholder": "搜尋 — 影片、PDF、圖片、條碼…",
 		"home.search.empty": "找不到工具。",
 
+		'status.loadingPreview': '載入預覽中…',
+		'pdf.viewer.pages': '頁',
 	},
 
 	// ─── PORTUGUESE BRAZIL (PT) ──────────────────────────────────────────────────
@@ -4469,6 +4476,9 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.tools.all": "Todos",
 		"home.search.placeholder": "Buscar — vídeo, PDF, imagem, código de barras…",
 		"home.search.empty": "Nenhuma ferramenta encontrada.",
+
+		'status.loadingPreview': 'Carregando prévia…',
+		'pdf.viewer.pages': 'páginas',
 	},
 
 	th: {
@@ -5517,5 +5527,8 @@ export const translations: Record<string, Record<string, string>> = {
 		"home.tools.all": "ทั้งหมด",
 		"home.search.placeholder": "ค้นหา — วิดีโอ, PDF, รูปภาพ, บาร์โค้ด…",
 		"home.search.empty": "ไม่พบเครื่องมือ",
+
+		'status.loadingPreview': 'กำลังโหลดตัวอย่าง…',
+		'pdf.viewer.pages': 'หน้า',
 	},
 };

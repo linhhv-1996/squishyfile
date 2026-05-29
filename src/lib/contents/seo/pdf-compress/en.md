@@ -1,118 +1,53 @@
-## Reduce PDF File Size Without Making It Hard to Read
+Compress PDF files in your browser when a document is too large for email, upload forms, resumes, applications, or cloud storage. Squishyfile helps reduce PDF size without account signup, software installation, or watermark.
 
-Use Squishyfile to compress a PDF directly in your browser when a file is too large to email, upload to a form, attach to an application, or store efficiently. It works without an account or software installation, and it is especially useful for scanned documents, resumes, contracts, invoices, reports, presentations, and PDFs with large images.
+Your file is processed locally in the browser with WebAssembly, so the PDF does not need to be uploaded to a server for compression.
 
-The compression runs locally in your browser using WebAssembly. That means your PDF is processed on your own device instead of being uploaded to a remote server for compression. This browser-based approach is helpful when you need to reduce PDF size for documents that may contain personal, work, financial, or legal information.
+## Choose the Right PDF Compression Mode
 
----
+Use **Balanced** mode first for most PDFs. It reduces file size while keeping text, scanned pages, tables, signatures, stamps, and images readable for normal screen use.
 
-## Choose the Best Compression Mode
+Balanced mode is best for resumes, application documents, contracts, invoices, reports, school forms, government forms, and PDF attachments that someone else needs to review clearly.
 
-### Balanced Compression
+Use **Maximum** mode when the final file size matters more than image sharpness. This is useful when a website, email system, or application portal rejects files above limits such as 1 MB, 2 MB, 5 MB, 10 MB, or 25 MB.
 
-Start with **Balanced** mode for most documents. It is designed to reduce PDF file size while keeping text, images, signatures, tables, and scanned pages readable for normal screen use.
+After maximum compression, open the PDF and check small text, signatures, stamps, QR codes, charts, and important images before submitting it.
 
-Balanced mode is usually the best choice for:
+## PDF Files That Usually Compress Well
 
-- Email attachments
-- Resumes and job application documents
-- Contracts, forms, and invoices
-- School or government upload portals
-- Reports and business documents
-- PDFs that someone else needs to review clearly
+PDF compression works best when the file contains images or scanned pages. These files often have extra image data that can be optimized.
 
-If you want a smaller PDF but still care about how the document looks, this is the safest first option.
+Common examples include scanned documents, phone scans, PDFs with photos or screenshots, presentation PDFs, portfolios, catalogs, brochures, receipts, certificates, and print-quality files that only need to be uploaded online.
 
-### Maximum Compression
+Scanned PDFs are often large because each page is stored like an image. If a document was scanned at 300 DPI or 600 DPI, it may contain more detail than needed for reading on a screen.
 
-Use **Maximum** mode when the final file size matters more than image sharpness. This mode is useful when a website, email system, company portal, or application form rejects PDFs above a specific limit.
+## Why a PDF May Not Get Much Smaller
 
-Try Maximum mode when you need to compress a PDF to fit under limits such as 1 MB, 2 MB, 5 MB, 10 MB, or 25 MB. It can help with image-heavy PDFs, scanned documents, and presentations, but the output may look less sharp if the original file contains many photos or detailed graphics.
+Some PDFs shrink only a little after compression. This is normal when the file has already been optimized or has very little image data.
 
-After using Maximum mode, open the compressed PDF and check small text, signatures, stamps, QR codes, charts, and images before submitting or sharing it.
+A PDF may not reduce much if it contains mostly selectable text, vector graphics, embedded fonts, form fields, or document structure instead of large images. Repeatedly compressing the same PDF can also give smaller gains while reducing quality.
 
-### Password-Protected PDFs
+For text-heavy files, the original PDF may already be close to its smallest practical size.
 
-If your PDF is protected and you know the current password, you can remove the password protection before compression. Use this only for files you have permission to open and modify.
+## Tips for Email and Upload Size Limits
 
-Squishyfile does not break passwords or bypass protection. It can process a protected PDF only when you provide the correct password.
+Start with Balanced mode. If the compressed PDF is still too large, try Maximum mode. If it still does not meet the required limit, reduce the document itself before compressing again.
 
----
+Helpful fixes include removing blank or duplicate pages, recreating the PDF from the original file with smaller images, scanning at 150–200 DPI for online submission, using grayscale when color is not required, or splitting a large PDF if the upload portal allows it.
 
-## PDFs That Usually Compress Well
+Always review the final PDF before sending. Make sure page order, names, dates, signatures, stamps, QR codes, and form fields are still clear.
 
-PDF compression works best when the file contains image data that can be optimized. The biggest reductions usually happen with:
+## Private Browser-Based PDF Compression
 
-- Scanned documents from a phone, scanner, or office printer
-- PDFs with photos, screenshots, or large background images
-- Presentations exported from PowerPoint, Keynote, Google Slides, or Canva
-- Portfolios, catalogs, brochures, and image-heavy reports
-- Forms, certificates, receipts, and paperwork scanned at high resolution
-- Files created for print quality but only needed for online submission
+Many online PDF compressors upload files to a server before processing. Squishyfile compresses the PDF in your browser instead.
 
-A scanned PDF is often large because each page is stored like an image. If the scan was created at 300 DPI or 600 DPI, there may be more image detail than needed for reading on a screen. Compressing the PDF can reduce that extra data and make the file easier to send.
+This browser-based approach is useful for everyday documents that may contain personal, work, financial, school, or legal information. You still need to store and share the downloaded PDF carefully, especially if the file was password-protected before compression.
 
----
+## Works on Desktop and Mobile
 
-## Why Some PDFs Do Not Get Much Smaller
-
-Sometimes a PDF only shrinks a little. This is normal and does not mean the PDF compressor failed.
-
-A PDF may not reduce much when:
-
-- It was already compressed before
-- It contains mostly selectable text and vector graphics
-- It has very few images to optimize
-- Most of the size comes from embedded fonts, forms, or document structure
-- It was exported with efficient settings from the original app
-- It has already been repeatedly compressed
-
-Text-heavy PDFs are usually already small. Image-heavy PDFs, scanned files, and presentation PDFs often have more room for optimization.
-
----
-
-## Tips for Email Attachments and Upload Limits
-
-When you need to meet a strict file size limit, use a step-by-step approach instead of compressing blindly.
-
-Start with **Balanced** mode and check the result. If the PDF is still too large, try **Maximum** mode. If it is still over the limit, the file may contain too many pages or too much image data to reach the target size through compression alone.
-
-For difficult files, try these fixes before compressing again:
-
-- Remove blank, duplicate, or unnecessary pages
-- Recreate the PDF from the original document with smaller images
-- Scan paper documents at 150–200 DPI for normal online submission
-- Use grayscale instead of color when color is not required
-- Split a very large PDF into smaller files if the upload portal allows it
-- Avoid compressing the same PDF many times, because quality can keep degrading
-
-For important submissions, always open the compressed file before sending it. Make sure the page order is correct and that names, dates, form fields, signatures, stamps, and QR codes are still readable.
-
----
-
-## Browser-Based Compression for Private Documents
-
-Many online PDF compression tools upload your file to a server, process it there, and then provide a download link. Squishyfile works differently: the compression happens in your browser.
-
-This is useful for everyday documents that may contain sensitive information, such as contracts, tax documents, identity documents, invoices, resumes, medical forms, school records, or internal business files. The PDF stays on your device during compression, so you have more control over where the file goes.
-
-You should still handle the downloaded PDF carefully, especially if you removed password protection or created a smaller copy of a confidential document.
-
----
-
-## Works on Common Devices
-
-Squishyfile runs in modern browsers, so you can compress PDFs on Windows, Mac, Linux, Chromebook, iPhone, Android, and tablets without installing a dedicated PDF app.
-
-On a phone, choose the PDF from your Files app, Downloads folder, cloud storage app, or another location supported by your browser. On a computer, drag the PDF into the upload area, choose a compression mode, and save the smaller file when processing is complete.
-
----
+Squishyfile works in modern browsers on Windows, Mac, Linux, Chromebook, iPhone, Android, and tablets. On desktop, drag the PDF into the upload area. On mobile, choose the PDF from Files, Downloads, cloud storage, or another location supported by your browser.
 
 ## Related Guides
 
 - [Free PDF compressor online: no registration, no watermark](/blog/free-pdf-compressor-online-no-registration)
 - [How to reduce PDF file size without losing quality](/blog/how-to-reduce-pdf-file-size-without-losing-quality)
 - [Compress PDF to 1 MB or less online](/blog/compress-pdf-to-1mb-online-free)
-- [Compress PDF on Mac: 3 free methods](/blog/compress-pdf-mac-free-methods)
-- [How to compress a PDF on iPhone with no app required](/blog/compress-pdf-iphone-no-app-required)
-- [How to remove password from a PDF](/blog/remove-password-from-pdf-free-online)
