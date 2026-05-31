@@ -737,6 +737,9 @@
 		gap: 6px;
 		margin-bottom: 12px;
 		flex-wrap: wrap;
+		border: 1px solid #e8e8e8;
+		padding: 6px;
+		border-radius: 8px;
 	}
 	.mode-btn {
 		display: flex;

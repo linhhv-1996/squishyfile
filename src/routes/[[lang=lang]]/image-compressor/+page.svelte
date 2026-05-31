@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+	import RelatedTools from "$lib/components/RelatedTools.svelte";
 	import ImageCompressor from "$lib/components/tools/ImageCompressor.svelte";
 	import { translations } from "$lib/i18n/translations";
+	import { getRelatedTools } from "$lib/config/relatedTools.js";
+    import ToolSteps from "$lib/components/ToolSteps.svelte";
 
 	type PageCopy = {
 		metaTitle: string;
@@ -56,22 +59,28 @@
 	}
 
 	let copy: PageCopy = $derived({
-		metaTitle: t("imageCompressor.meta.title", "Compress Images Online – Reduce Image File Size"),
+		metaTitle: t(
+			"imageCompressor.meta.title",
+			"Compress Images Online – Reduce Image File Size",
+		),
 		metaDesc: t(
 			"imageCompressor.meta.desc",
-			"Compress JPG, PNG, WebP, and AVIF images directly in your browser."
+			"Compress JPG, PNG, WebP, and AVIF images directly in your browser.",
 		),
 		heroTitle: t("imageCompressor.hero.title", "Compress images online"),
 		heroSub: t(
 			"imageCompressor.hero.sub",
-			"Reduce image file size locally in your browser. Fast, private, and free."
+			"Reduce image file size locally in your browser. Fast, private, and free.",
 		),
 		pill1: t("imageCompressor.pill.images", "JPG, PNG, WebP, AVIF"),
 		pill2: t("convert.pill.noInstall", "No install"),
 		pill3: t("hero.pill1", "Local processing"),
 
 		dropTitle: t("imageCompressor.drop.title", "Drop images here"),
-		dropSub: t("imageCompressor.drop.sub", "Add multiple images and compress them at once."),
+		dropSub: t(
+			"imageCompressor.drop.sub",
+			"Add multiple images and compress them at once.",
+		),
 		browse: t("btn.browse", "Browse Files"),
 		hint: t("imageCompressor.hint", "Supports JPG, PNG, WebP, and AVIF."),
 
@@ -81,13 +90,25 @@
 
 		compressButton: t("imageCompressor.btn.compress", "Compress images"),
 		loadingLabel: t("convert.status.loading", "Loading"),
-		compressingLabel: t("imageCompressor.status.compressing", "Compressing"),
+		compressingLabel: t(
+			"imageCompressor.status.compressing",
+			"Compressing",
+		),
 		doneLabel: t("status.done", "done"),
-		keepOpen: t("convert.warning.keepOpen", "Keep this tab open while processing."),
-		selectImageError: t("imageCompressor.error.selectImage", "Please select image files."),
+		keepOpen: t(
+			"convert.warning.keepOpen",
+			"Keep this tab open while processing.",
+		),
+		selectImageError: t(
+			"imageCompressor.error.selectImage",
+			"Please select image files.",
+		),
 
 		resultTitle: t("imageCompressor.res.title", "Images compressed"),
-		resultSub: t("imageCompressor.res.sub", "Your optimized images are ready."),
+		resultSub: t(
+			"imageCompressor.res.sub",
+			"Your optimized images are ready.",
+		),
 		download: t("imageCompressor.btn.download", "Download"),
 		downloadAll: t("imageCompressor.btn.downloadAll", "Download all"),
 		newFile: t("imageCompressor.btn.new", "Start over"),
@@ -99,7 +120,7 @@
 
 		privacyNote: t(
 			"imageCompressor.note.privacy",
-			"<strong>Private by design.</strong> Images are processed locally in your browser and are not uploaded."
+			"<strong>Private by design.</strong> Images are processed locally in your browser and are not uploaded.",
 		),
 		fileTypeFallback: t("imageCompressor.fileTypeFallback", "Image file"),
 		remove: t("convert.btn.remove", "Remove"),
@@ -126,12 +147,18 @@
 				price: "0",
 				priceCurrency: "USD",
 			},
-		}).replace(/</g, "\\u003c")
+		}).replace(/</g, "\\u003c"),
 	);
 
 	function markdownToHtml(text: string) {
 		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 	}
+
+	let relatedTools = $derived.by(() =>
+		getRelatedTools("image-compressor", currentLangKey, (key: string) =>
+			t(key, translations.en[key] ?? key)
+		)
+	);
 </script>
 
 <svelte:head>
@@ -146,74 +173,151 @@
 
 <main>
 	<div class="wrap">
-		<!-- <section class="hero">
-			<h1>{@html copy.heroTitle}</h1>
-			<p>{copy.heroSub}</p>
-
-			<div class="pills">
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill1}</span>
-				</div>
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill2}</span>
-				</div>
-				<div class="pill">
-					<span class="dot"></span><span>{copy.pill3}</span>
-				</div>
-			</div>
-		</section> -->
 		<section class="hero">
 			<h1>{@html copy.heroTitle}</h1>
 			<p class="hero-sub">{copy.heroSub}</p>
 			<div class="hero-pills">
-				<div class="pill"><span class="pill-ico">🔒</span>{copy.pill1}</div>
-				<div class="pill"><span class="pill-ico">✨</span>{copy.pill2}</div>
-				<div class="pill"><span class="pill-ico">⚡</span>{copy.pill3}</div>
+				<div class="pill">
+					<span class="pill-ico">🔒</span>{copy.pill1}
+				</div>
+				<div class="pill">
+					<span class="pill-ico">✨</span>{copy.pill2}
+				</div>
+				<div class="pill">
+					<span class="pill-ico">⚡</span>{copy.pill3}
+				</div>
 			</div>
 		</section>
-		
 
-		<ImageCompressor {copy} />
+		<div class="page-layout">
+			<!-- ── Tool column ── -->
+			<div class="tool-col">
+				<ImageCompressor {copy} />
 
-		{#if data.contentHtml}
-			<section class="how-to-sec prose">
-				{@html data.contentHtml}
-			</section>
-		{/if}
+				<!-- ── How to use — 3 steps ── -->
+				<ToolSteps
+					title={t("steps.title", "")}
+					steps={[
+						{
+							title: t("steps.1.title", ""),
+							desc: t("steps.1.desc", ""),
+						},
+						{
+							title: t("steps.2.title", ""),
+							desc: t("steps.2.desc", ""),
+						},
+						{
+							title: t("steps.3.title", ""),
+							desc: t("steps.3.desc", ""),
+						},
+					]}
+				/>
 
-		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-			<h2>{t("faq.imageCompressor.title", "Image compressor FAQ")}</h2>
+				<section
+					class="faq-sec"
+					itemscope
+					itemtype="https://schema.org/FAQPage"
+				>
+					<h2>
+						{t("faq.imageCompressor.title", "Image compressor FAQ")}
+					</h2>
 
-			<div class="faq-list">
-				{#each Array.from({ length: 6 }, (_, i) => i + 1) as n}
-					<details
-						class="faq-item"
-						itemscope
-						itemprop="mainEntity"
-						itemtype="https://schema.org/Question"
-					>
-						<summary class="faq-q" itemprop="name">
-							{t(`faq.imageCompressor.${n}.q`, "")}
-						</summary>
+					<div class="faq-list">
+						{#each Array.from({ length: 6 }, (_, i) => i + 1) as n}
+							<details
+								class="faq-item"
+								itemscope
+								itemprop="mainEntity"
+								itemtype="https://schema.org/Question"
+							>
+								<summary class="faq-q" itemprop="name">
+									{t(`faq.imageCompressor.${n}.q`, "")}
+								</summary>
 
-						<div
-							class="faq-a"
-							itemscope
-							itemprop="acceptedAnswer"
-							itemtype="https://schema.org/Answer"
-						>
-							<span itemprop="text">
-								{@html markdownToHtml(t(`faq.imageCompressor.${n}.a`, ""))}
-							</span>
-						</div>
-					</details>
-				{/each}
+								<div
+									class="faq-a"
+									itemscope
+									itemprop="acceptedAnswer"
+									itemtype="https://schema.org/Answer"
+								>
+									<span itemprop="text">
+										{@html markdownToHtml(
+											t(`faq.imageCompressor.${n}.a`, ""),
+										)}
+									</span>
+								</div>
+							</details>
+						{/each}
+					</div>
+				</section>
+
+				<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+				<!-- {#if data.contentHtml}
+					<section class="howto-sec">
+						<h2 class="steps-title">{t("howto.section.title", "")}</h2>
+						<details open class="howto-details">
+							<summary class="howto-summary">
+								{t("howto.toggle", "")}
+							</summary>
+							<section class="how-to-sec prose">{@html data.contentHtml}</section>
+						</details>
+					</section>
+				{/if} -->
+
 			</div>
-		</section>
+
+			<!-- ── Sidebar column ── -->
+			<aside class="sidebar-col">
+				<RelatedTools
+					label={t("relatedTools.label", "Related tools")}
+					tools={relatedTools}
+				/>
+			</aside>
+		</div>
 	</div>
 </main>
 
 <style>
+
+/* ── How-to details accordion ────────────────────────────────────────────── */
+	.howto-details {
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		margin-top: 12px;
+		overflow: hidden;
+	}
+	.howto-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 11px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--muted);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		transition: color 0.15s;
+	}
+	.howto-summary::-webkit-details-marker { display: none; }
+	.howto-summary::after {
+		content: '▾';
+		font-size: 12px;
+		transition: transform 0.2s;
+		flex-shrink: 0;
+	}
+	details[open] .howto-summary::after { transform: rotate(-180deg); }
+	details[open] .howto-summary {
+		color: var(--text);
+		border-bottom: 1px solid var(--border);
+	}
+	.howto-summary:hover { color: var(--text); }
+
+	.howto-details .how-to-sec {
+		padding: 16px;
+		border-top: none; /* details đã có border */
+	}
+
 	.how-to-sec {
 		margin-top: 0px;
 		padding-top: 20px;

@@ -261,7 +261,7 @@
 
 	<!-- ── Preview zone (top, fixed height) ── -->
 	<div
-		class="v-preview"
+		class={result ? "v-preview v-preview--result" : "v-preview v-preview--upload"}
 		class:over={dragOver && !file}
 		ondragover={onDragOver}
 		ondragleave={onDragLeave}
@@ -430,7 +430,6 @@
 
 	/* Preview zone — fixed height, shows drop zone / video */
 	.v-preview {
-		height: 290px;
 		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
@@ -439,6 +438,18 @@
 		align-items: stretch;
 		overflow: hidden;
 		transition: background 0.15s;
+	}
+	/* Upload/drop state — còn settings panel bên dưới */
+	.v-preview--upload {
+		height: 270px;
+	}
+	/* Result state — không có settings nữa, fill cao hơn */
+	.v-preview--result {
+		height: 420px;
+	}
+	@media (max-width: 599px) {
+		.v-preview--upload { height: 250px; }
+		.v-preview--result { height: 340px; }
 	}
 	.v-preview.over {
 		background: color-mix(in srgb, var(--accent) 6%, transparent);

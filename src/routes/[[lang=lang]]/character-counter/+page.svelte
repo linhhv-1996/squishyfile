@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CharacterCounter from '$lib/components/tools/CharacterCounter.svelte';
+	import RelatedTools from '$lib/components/RelatedTools.svelte';
 	import { getRelatedTools } from '$lib/config/relatedTools.js';
 	import { translations } from '$lib/i18n/translations';
+    import ToolSteps from '$lib/components/ToolSteps.svelte';
 
 	type PageCopy = {
 		metaTitle: string;
@@ -129,43 +131,86 @@
 			</div>
 		</section>
 
-		<CharacterCounter {copy} {relatedTools}/>
+		<div class="page-layout">
+			<!-- ── Tool column ── -->
+			<div class="tool-col">
+				<CharacterCounter {copy} />
 
-		{#if data.contentHtml}
-			<section class="how-to-sec prose">
-				{@html data.contentHtml}
-			</section>
-		{/if}
+				<!-- ── How to use — 3 steps ── -->
+				<ToolSteps
+					title={t("steps.cc.title")}
+					steps={[
+						{
+							title: t("steps.cc.1.title"),
+							desc: t("steps.cc.1.desc"),
+						},
+						{
+							title: t("steps.cc.2.title"),
+							desc: t("steps.cc.2.desc"),
+						},
+						{
+							title: t("steps.cc.3.title"),
+							desc: t("steps.cc.3.desc"),
+						},
+					]}
+				/>
 
-		{#if hasFaq}
-			<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-				<h2>{t('faq.cc.title')}</h2>
-				<div class="faq-list">
-					{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
-						<details
-							class="faq-item"
-							itemscope
-							itemprop="mainEntity"
-							itemtype="https://schema.org/Question"
-						>
-							<summary class="faq-q" itemprop="name">
-								{t(`faq.cc.${n}.q`)}
+				{#if hasFaq}
+					<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
+						<h2>{t('faq.cc.title')}</h2>
+						<div class="faq-list">
+							{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
+								<details
+									class="faq-item"
+									itemscope
+									itemprop="mainEntity"
+									itemtype="https://schema.org/Question"
+								>
+									<summary class="faq-q" itemprop="name">
+										{t(`faq.cc.${n}.q`)}
+									</summary>
+									<div
+										class="faq-a"
+										itemscope
+										itemprop="acceptedAnswer"
+										itemtype="https://schema.org/Answer"
+									>
+										<span itemprop="text">
+											{@html markdownToHtml(t(`faq.cc.${n}.a`))}
+										</span>
+									</div>
+								</details>
+							{/each}
+						</div>
+					</section>
+				{/if}
+				
+
+				<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+				<!-- {#if data.contentHtml}
+					<section class="howto-sec">
+						<h2 class="steps-title">{t("howto.section.title")}</h2>
+						<details open class="howto-details">
+							<summary class="howto-summary">
+								{t("howto.toggle")}
 							</summary>
-							<div
-								class="faq-a"
-								itemscope
-								itemprop="acceptedAnswer"
-								itemtype="https://schema.org/Answer"
-							>
-								<span itemprop="text">
-									{@html markdownToHtml(t(`faq.cc.${n}.a`))}
-								</span>
-							</div>
+							<section class="how-to-sec prose">{@html data.contentHtml}</section>
 						</details>
-					{/each}
-				</div>
-			</section>
-		{/if}
+					</section>
+				{/if} -->
+
+			</div>
+			<!-- end .tool-col -->
+
+			<!-- ── Sidebar column ── -->
+			<aside class="sidebar-col">
+				<RelatedTools
+					label={t('relatedTools.label')}
+					tools={relatedTools}
+				/>
+			</aside>
+		</div>
+		<!-- end .page-layout -->
 	</div>
 </main>
 

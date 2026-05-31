@@ -25,9 +25,6 @@
 	let snsHref         = $derived(pathFor('/sns-character-limit'));
 	let wordCounterHref = $derived(pathFor('/word-counter'));
 
-	let q           = $state('');
-	let activeGroup = $state<string | null>(null);
-
 	let videoCmp = $derived({ title: t('home.card.video.title'), desc: t('home.card.video.desc'), href: compressHref, tags: ['MP4','MOV','AVI','WebM','MKV'] } satisfies Tool);
 	let pdfCmp   = $derived({ title: t('home.card.pdf.title'),   desc: t('home.card.pdf.desc'),   href: pdfHref,      tags: ['PDF', t('home.card.pdf.tag.password'), t('home.card.pdf.tag.fast')] } satisfies Tool);
 	let imgCmp   = $derived({ title: t('home.card.image.title'), desc: t('home.card.image.desc'), href: imageHref,    tags: ['JPG','PNG','WebP','GIF'] } satisfies Tool);
@@ -40,25 +37,22 @@
 		{ title: tx('home.group.generator','Generator'),      tools: [{ title: t('home.card.barcode.title'), desc: t('home.card.barcode.desc'), href: barcodeHref, tags: ['CODE 128','EAN-13','UPC-A','PNG','SVG'] }] },
 	] satisfies ToolGroup[]);
 
+	let featured = $derived([videoCmp, pdfCmp, imgCmp]);
+
 	let searched = $derived(
 		groups
-			.map(g => ({ ...g, tools: g.tools.filter(tool => `${tool.title} ${tool.desc} ${tool.tags.join(' ')}`.toLowerCase().includes(q.trim().toLowerCase())) }))
+			.map(g => ({ ...g, tools: g.tools.filter(tool => `${tool.title} ${tool.desc} ${tool.tags.join(' ')}`.toLowerCase().includes('')) }))
 			.filter(g => g.tools.length > 0)
 	);
 
-	let visible = $derived(activeGroup ? searched.filter(g => g.title === activeGroup) : searched);
-	let uniq    = $derived(new Set(groups.flatMap(g => g.tools.map(t => t.href))).size);
-
-	function pick(name: string | null) { activeGroup = name; q = ''; }
+	let visible = $derived(searched);
+	let uniq = $derived(new Set(groups.flatMap(g => g.tools.map(t => t.href))).size);
 </script>
 
 <svelte:head>
 	<title>{t('meta.title')}</title>
 	<meta property="og:title" content={t('meta.title')} />
 	<meta name="description" content={t('meta.desc')} />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <main>
@@ -66,85 +60,76 @@
 
 		<!-- 1. Hero -->
 		<section class="hero" aria-labelledby="site-title">
-			<h1 id="site-title">{@html t('hero.title')}</h1>
-			<p>{t('hero.sub')}</p>
-		</section>
+			<div class="hero-copy">
+				<div class="hero-badge">
+					<span class="hero-badge-dot"></span>
+					{tx('home.eyebrow', 'Private browser tools')}
+				</div>
+				<h1 id="site-title">{@html t('hero.title')}</h1>
+				<p class="hero-sub">{t('hero.sub')}</p>
+				<div class="hero-actions" aria-label="Popular tools">
+					<a href={compressHref} class="action-pill">{t('home.card.video.title')}</a>
+					<a href={pdfHref}      class="action-pill">{t('home.card.pdf.title')}</a>
+					<a href={imageHref}    class="action-pill">{t('home.card.image.title')}</a>
+				</div>
+			</div>
 
-		<!-- 2. Search -->
-		<div class="search-row">
-			<label class="search">
-				<svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-					<path d="M9.5 6a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-.64 3.36a4.5 4.5 0 1 1 .71-.71l2.43 2.43a.5.5 0 0 1-.7.7L8.86 9.36Z" fill="currentColor"/>
-				</svg>
-				<input
-					bind:value={q}
-					type="search"
-					placeholder={tx('home.search.placeholder','Search — video, pdf, image, barcode…')}
-					oninput={() => { if (q) activeGroup = null; }}
-				/>
-				{#if q}
-					<button class="clear" onclick={() => q = ''} aria-label="Clear">✕</button>
-				{/if}
-			</label>
-		</div>
-
-		<!-- 3. Category tabs -->
-		<nav class="tabs" aria-label="Filter by category">
-			<button class="tab" class:on={!activeGroup && !q} onclick={() => pick(null)}>
-				{tx('home.tools.all','All')}<em>{uniq}</em>
-			</button>
-			{#each groups as g}
-				<button class="tab" class:on={activeGroup === g.title} onclick={() => pick(g.title)}>
-					{g.title}<em>{g.tools.length}</em>
-				</button>
-			{/each}
-		</nav>
-
-		<!-- 4. Tool list -->
-		<section class="dir" aria-label="Tools">
-			{#if visible.length}
-				{#each visible as g}
-					<div class="grp">
-						{#if !activeGroup}
-							<h2 class="glabel">{g.title}</h2>
-						{/if}
-						<ul>
-							{#each g.tools as tool}
-								<li>
-									<a class="row" href={tool.href}>
-										<span class="ri">
-											<strong>{tool.title}</strong>
-											<span>{tool.desc}</span>
-										</span>
-										<span class="tags">
-											{#each tool.tags.slice(0,4) as tag}<span>{tag}</span>{/each}
-										</span>
-										<ArrowRight class="arr" size={14} strokeWidth={2} aria-hidden="true" />
-									</a>
-								</li>
-							{/each}
-						</ul>
-					</div>
+			<div class="hero-panel" aria-label="Featured tools">
+				{#each featured as tool, i}
+					<a class="feature" href={tool.href} style={`--i:${i + 1}`}>
+						<span class="feature-top">
+							<strong>{tool.title}</strong>
+							<ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
+						</span>
+						<span class="feature-desc">{tool.desc}</span>
+						<em>{tool.tags.slice(0,3).join(' · ')}</em>
+					</a>
 				{/each}
-			{:else}
-				<p class="empty">{tx('home.search.empty','No tools found.')}</p>
-			{/if}
+			</div>
 		</section>
 
-		<!-- 5. Privacy note -->
+		<!-- 2. Tool directory -->
+		<section class="dir" aria-label="Tools">
+			{#each visible as g}
+				<div class="grp">
+					<div class="grp-head">
+						<h2 class="glabel">{g.title}</h2>
+						<span class="grp-count">{g.tools.length}</span>
+					</div>
+					<ul>
+						{#each g.tools as tool}
+							<li>
+								<a class="row" href={tool.href}>
+									<span class="ri">
+										<strong>{tool.title}</strong>
+										<span>{tool.desc}</span>
+									</span>
+									<span class="tags">
+										{#each tool.tags.slice(0,3) as tag}<span>{tag}</span>{/each}
+									</span>
+									<ArrowRight class="arr" size={14} strokeWidth={2} aria-hidden="true" />
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</section>
+
+		<!-- 3. Privacy note -->
 		<div class="pnote">
 			<ShieldCheck size={14} strokeWidth={2} aria-hidden="true" />
 			<p>{@html t('note.privacy')}</p>
 		</div>
 
-		<!-- 6. FAQ -->
-		<section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+		<!-- 4. FAQ -->
+		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
 			<h2>{t('faq.home.title')}</h2>
 			<div class="faq-list">
 				{#each [1,2,3,4,5,6] as n}
-					<details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-						<summary itemprop="name">{t(`faq.home.${n}.q`)}</summary>
-						<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+						<summary class="faq-q" itemprop="name">{t(`faq.home.${n}.q`)}</summary>
+						<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 							<span itemprop="text">{t(`faq.home.${n}.a`)}</span>
 						</div>
 					</details>
@@ -156,214 +141,302 @@
 </main>
 
 <style>
-	main { font-family: 'DM Sans', sans-serif; }
+	/* ─── Layout ───────────────────────────────────────────────── */
+	.wrap-home {
+		max-width: 990px;
+		margin: 0 auto;
+		padding: 20px 16px 56px;
+	}
 
-	/* 1. Hero */
+	/* ─── Hero ──────────────────────────────────────────────────── */
 	.hero {
-		padding: 22px 0 20px;
+		display: grid;
+		grid-template-columns: 1fr minmax(280px, 360px);
+		gap: 24px;
+		align-items: center;
+		padding: 28px 0 24px;
 		border-bottom: 1px solid var(--border);
-	}
-	.hero h1 {
-		margin: 0 0 8px;
-		font-size: clamp(28px, 4vw, 42px);
-		font-weight: 700;
-		letter-spacing: -0.03em;
-		line-height: 1.15;
-		color: var(--text);
-	}
-	.hero p {
-		margin: 0;
-		font-size: 16px;
-		line-height: 1.6;
-		color: var(--muted);
+		margin-bottom: 24px;
 	}
 
-	/* 2. Search */
-	.search-row {
-		padding: 0 16px 10px 0;
-		border-bottom: 1px solid var(--border);
-	}
-	.search {
-		position: relative;
+	.hero-copy {
 		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.hero-badge {
+		display: inline-flex;
 		align-items: center;
-		width: 100%;
-	}
-	.search svg {
-		position: absolute;
-		left: 12px;
+		gap: 6px;
+		width: fit-content;
+		padding: 3px 10px;
+		font-size: 11px;
+		font-weight: 500;
 		color: var(--muted);
-		pointer-events: none;
-		flex-shrink: 0;
-	}
-	.search input {
-		width: 100%;
-		height: 40px;
-		padding: 0 40px 0 36px;
-		font: inherit;
-		font-size: 15px;
-		color: var(--text);
 		background: var(--surf);
 		border: 1px solid var(--border);
-		border-radius: 8px;
-		outline: none;
-		transition: border-color .1s, background .1s;
+		border-radius: 999px;
+		letter-spacing: .02em;
 	}
-	.search input:focus { background: var(--bg); border-color: var(--text); }
-	.clear {
-		position: absolute;
-		right: 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 20px;
-		height: 20px;
-		font-size: 10px;
-		color: var(--muted);
-		background: var(--border);
-		border: none;
-		border-radius: 50%;
-		cursor: pointer;
-		line-height: 1;
-	}
-	.clear:hover { color: var(--text); }
 
-	/* 3. Tabs */
-	.tabs {
-		display: flex;
-		align-items: center;
-		gap: 2px;
-		padding: 0px;
-		border: none;
-		overflow-x: auto;
-		scrollbar-width: none;
-		margin-top: 10px;
+	.hero-badge-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #1d9e75;
+		flex-shrink: 0;
 	}
-	.tabs::-webkit-scrollbar { display: none; }
-	.tab {
+
+	.hero h1 {
+		margin: 0;
+		font-size: clamp(22px, 3.2vw, 34px);
+		font-weight: 700;
+		letter-spacing: -.025em;
+		line-height: 1.18;
+		color: var(--text);
+	}
+
+	.hero-sub {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.65;
+		color: var(--muted);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin-top: 6px;
+	}
+
+	.action-pill {
 		display: inline-flex;
 		align-items: center;
-		gap: 5px;
 		height: 32px;
 		padding: 0 12px;
-		font: inherit;
-		font-family: 'DM Sans', sans-serif;
-		font-size: 14px;
+		font-size: 13px;
 		font-weight: 500;
-		color: var(--muted);
-		background: none;
-		border: 1px solid transparent;
-		border-radius: 6px;
-		cursor: pointer;
-		white-space: nowrap;
-		transition: background .1s, color .1s, border-color .1s;
-	}
-	.tab:hover { background: var(--surf); color: var(--text); }
-	.tab.on {
-		background: var(--surf);
-		color: var(--text);
-		border-color: var(--border);
-		font-weight: 600;
-	}
-	.tab em {
-		font-family: 'DM Mono', monospace;
-		font-style: normal;
-		font-size: 10.5px;
-		color: var(--muted);
-	}
-	.tab.on em { color: var(--text); }
-
-	/* 4. Tool list */
-	.dir { padding-top: 20px; }
-	.grp + .grp { margin-top: 26px; }
-	.glabel {
-		margin: 0 0 6px;
-		font-family: 'DM Mono', monospace;
-		font-size: 10.5px;
-		font-weight: 500;
-		letter-spacing: .07em;
-		text-transform: uppercase;
-		color: var(--muted);
-	}
-	ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
-	li { border-bottom: 1px solid var(--border); }
-
-	.row {
-		display: grid;
-		grid-template-columns: minmax(0,1fr) auto 18px;
-		align-items: center;
-		gap: 16px;
-		padding: 14px 4px;
 		color: var(--text);
 		text-decoration: none;
-		border-radius: 4px;
-		transition: background .1s;
+		background: var(--surf);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		transition: border-color .12s, background .12s;
 	}
-	.row:hover { background: var(--surf); }
-	.row:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
+	.action-pill:hover {
+		border-color: var(--border-hover);
+		background: var(--surf2);
+	}
 
-	.ri { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-	.ri strong { font-size: 15px; font-weight: 600; letter-spacing: -.01em; color: var(--text); }
-	.ri span { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+	/* Featured cards panel */
+	.hero-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
 
-	.tags { display: flex; gap: 4px; flex-shrink: 0; }
-	.tags span {
+	.feature {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		padding: 13px 14px;
+		color: var(--text);
+		text-decoration: none;
+		background: var(--surf);
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		transition: border-color .12s, background .12s;
+	}
+	.feature:hover {
+		border-color: var(--border-hover);
+		background: var(--surf2);
+	}
+
+	.feature-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+	}
+	.feature strong {
+		font-size: 13.5px;
+		font-weight: 650;
+		letter-spacing: -.01em;
+		color: var(--text);
+	}
+	.feature-top :global(svg) {
+		color: var(--muted);
+		flex-shrink: 0;
+		transition: transform .12s, color .12s;
+	}
+	.feature:hover .feature-top :global(svg) {
+		color: var(--text);
+		transform: translateX(2px);
+	}
+	.feature-desc {
+		font-size: 12.5px;
+		line-height: 1.5;
+		color: var(--muted);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.feature em {
+		font-style: normal;
+		font-size: 11px;
+		color: var(--muted);
+		opacity: .8;
+	}
+
+	/* ─── Tool directory ────────────────────────────────────────── */
+	.dir {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.grp {
+		display: flex;
+		flex-direction: column;
+		background: var(--surf);
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		overflow: hidden;
+	}
+
+	.grp-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 11px 14px;
+		background: var(--surf2);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.glabel {
+		margin: 0;
+		font-size: 12.5px;
+		font-weight: 650;
+		letter-spacing: .01em;
+		color: var(--text);
+		text-transform: uppercase;
+	}
+
+	.grp-count {
 		display: inline-flex;
 		align-items: center;
-		height: 22px;
-		padding: 0 7px;
-		font-family: 'DM Mono', monospace;
-		font-size: 11.5px;
+		justify-content: center;
+		min-width: 20px;
+		height: 20px;
+		padding: 0 6px;
+		font-size: 11px;
 		font-weight: 500;
 		color: var(--muted);
 		background: var(--bg);
 		border: 1px solid var(--border);
-		border-radius: 4px;
+		border-radius: 999px;
 	}
 
-	:global(.arr) { color: var(--muted); transition: transform .1s, color .1s; }
-	.row:hover :global(.arr) { color: var(--text); transform: translateX(2px); }
+	ul { list-style: none; margin: 0; padding: 0; }
+	li + li { border-top: 1px solid var(--border); }
 
-	.empty { padding: 18px; font-size: 13px; color: var(--muted); background: var(--surf); border: 1px solid var(--border); border-radius: 8px; }
+	.row {
+		display: grid;
+		grid-template-columns: minmax(0,1fr) auto 16px;
+		align-items: center;
+		gap: 10px;
+		min-height: 78px;
+		padding: 12px 14px;
+		color: var(--text);
+		text-decoration: none;
+		transition: background .1s;
+	}
+	.row:hover { background: var(--surf2); }
+	.row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
-	/* 5. Privacy note */
+	.ri { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+	.ri strong {
+		font-size: 13.5px;
+		font-weight: 650;
+		letter-spacing: -.01em;
+		color: var(--text);
+	}
+	.ri span {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		font-size: 12.5px;
+		color: var(--muted);
+		line-height: 1.45;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 3px;
+		max-width: 130px;
+		flex-shrink: 0;
+	}
+	.tags span {
+		display: inline-flex;
+		align-items: center;
+		height: 20px;
+		padding: 0 6px;
+		font-size: 11px;
+		font-weight: 500;
+		color: var(--muted);
+		background: var(--bg);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		white-space: nowrap;
+	}
+
+	:global(.arr) {
+		color: var(--muted);
+		flex-shrink: 0;
+		transition: transform .12s, color .12s;
+	}
+	.row:hover :global(.arr) {
+		color: var(--text);
+		transform: translateX(2px);
+	}
+
+	/* ─── Privacy note ──────────────────────────────────────────── */
 	.pnote {
 		display: flex;
 		align-items: flex-start;
 		gap: 8px;
-		margin-top: 28px;
-		padding-top: 20px;
-		border-top: 1px solid var(--border);
+		margin-top: 12px;
+		padding: 12px 14px;
+		background: var(--surf);
+		border: 1px solid var(--border);
+		border-radius: var(--r);
 	}
 	.pnote :global(svg) { flex-shrink: 0; margin-top: 2px; color: var(--muted); }
-	.pnote p { margin: 0; font-size: 12px; line-height: 1.6; color: var(--muted); }
+	.pnote p { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--muted); }
 
-	/* 6. FAQ */
-	.faq { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border); }
-	.faq h2 { margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: -.01em; color: var(--text); }
-	.faq-list { border-top: 1px solid var(--border); }
-	.faq-list details { border-bottom: 1px solid var(--border); }
-	.faq-list summary {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 16px;
-		padding: 14px 4px;
-		font-size: 15px;
-		font-weight: 500;
-		color: var(--text);
-		cursor: pointer;
-		list-style: none;
-		user-select: none;
+	/* ─── FAQ (reuse global classes from app.css) ────────────────── */
+	.faq-sec { margin-top: 12px; }
+
+	/* ─── Responsive ────────────────────────────────────────────── */
+	@media (max-width: 860px) {
+		.hero { grid-template-columns: 1fr; gap: 20px; }
+		.hero-panel { flex-direction: row; }
+		.feature { flex: 1; }
+		.dir { grid-template-columns: 1fr; }
 	}
-	.faq-list summary::-webkit-details-marker { display: none; }
-	.faq-list summary::after { content: '+'; font-size: 18px; font-weight: 300; color: var(--muted); flex-shrink: 0; transition: transform .15s; }
-	.faq-list details[open] > summary::after { transform: rotate(45deg); }
-	.faq-list div { padding: 0 4px 14px; font-size: 14px; line-height: 1.65; color: var(--muted); }
 
-	/* Mobile */
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
+		.wrap-home { padding: 14px 12px 40px; }
+		.hero { padding: 18px 0 18px; }
+		.hero-panel { flex-direction: column; }
+		.row { grid-template-columns: minmax(0,1fr) 16px; min-height: 68px; gap: 8px; }
 		.tags { display: none; }
-		.row { grid-template-columns: minmax(0,1fr) 18px; gap: 10px; }
 	}
 </style>

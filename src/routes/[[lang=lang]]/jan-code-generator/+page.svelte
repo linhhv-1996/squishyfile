@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+    import RelatedTools from '$lib/components/RelatedTools.svelte';
 	import BarcodeGenerator from '$lib/components/tools/BarcodeGenerator.svelte';
+    import ToolSteps from '$lib/components/ToolSteps.svelte';
 	import { getRelatedTools } from '$lib/config/relatedTools.js';
 	import { translations } from '$lib/i18n/translations';
 
@@ -152,43 +154,85 @@
 			</div>
 		</section>
 
-		<BarcodeGenerator {copy} {relatedTools} initialFormat={initialFormat() ?? 'JAN'} type="jan" />
+		<div class="page-layout">
+			<!-- ── Tool column ── -->
+			<div class="tool-col">
+			
+				<BarcodeGenerator {copy} initialFormat={initialFormat() ?? 'JAN'} type="jan" />
 
-		{#if data.contentHtml}
-			<section class="how-to-sec prose">
-				{@html data.contentHtml}
-			</section>
-		{/if}
+				<!-- ── How to use — 3 steps ── -->
+				<ToolSteps
+					title={t("steps.bg.title")}
+					steps={[
+						{
+							title: t("steps.bg.1.title"),
+							desc: t("steps.bg.1.desc"),
+						},
+						{
+							title: t("steps.bg.2.title"),
+							desc: t("steps.bg.2.desc"),
+						},
+						{
+							title: t("steps.bg.3.title"),
+							desc: t("steps.bg.3.desc"),
+						},
+					]}
+				/>
+				
+				{#if hasFaq}
+					<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
+						<h2>{t('faq.janCode.title')}</h2>
+						<div class="faq-list">
+							{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
+								<details
+									class="faq-item"
+									itemscope
+									itemprop="mainEntity"
+									itemtype="https://schema.org/Question"
+								>
+									<summary class="faq-q" itemprop="name">
+										{t(`faq.janCode.${n}.q`)}
+									</summary>
+									<div
+										class="faq-a"
+										itemscope
+										itemprop="acceptedAnswer"
+										itemtype="https://schema.org/Answer"
+									>
+										<span itemprop="text">
+											{@html markdownToHtml(t(`faq.janCode.${n}.a`))}
+										</span>
+									</div>
+								</details>
+							{/each}
+						</div>
+					</section>
+				{/if}
 
-		{#if hasFaq}
-			<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-				<h2>{t('faq.janCode.title')}</h2>
-				<div class="faq-list">
-					{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
-						<details
-							class="faq-item"
-							itemscope
-							itemprop="mainEntity"
-							itemtype="https://schema.org/Question"
-						>
-							<summary class="faq-q" itemprop="name">
-								{t(`faq.janCode.${n}.q`)}
+				<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+				<!-- {#if data.contentHtml}
+					<section class="howto-sec">
+						<h2 class="steps-title">{t("howto.section.title")}</h2>
+						<details open class="howto-details">
+							<summary class="howto-summary">
+								{t("howto.toggle")}
 							</summary>
-							<div
-								class="faq-a"
-								itemscope
-								itemprop="acceptedAnswer"
-								itemtype="https://schema.org/Answer"
-							>
-								<span itemprop="text">
-									{@html markdownToHtml(t(`faq.janCode.${n}.a`))}
-								</span>
-							</div>
+							<section class="how-to-sec prose">{@html data.contentHtml}</section>
 						</details>
-					{/each}
-				</div>
-			</section>
-		{/if}
+					</section>
+				{/if} -->
+
+			</div>
+
+			<!-- ── Sidebar column ── -->
+			<aside class="sidebar-col">
+				<RelatedTools
+					label={t('relatedTools.label')}
+					tools={relatedTools}
+				/>
+			</aside>
+		</div>
+
 	</div>
 </main>
 

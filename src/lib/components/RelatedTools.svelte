@@ -26,15 +26,19 @@
 <style>
 	.related-tools {
 		padding: 10px 16px 12px;
-		border-top: 1px solid var(--border);
+		/* border-top: 1px solid var(--border); */
+		border: 1px solid var(--border);
+		border-radius: 8px;
 	}
 
 	.related-tools-label {
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 600;
 		color: var(--muted);
 		letter-spacing: 0.07em;
 		margin: 0 0 4px;
+		border-bottom: 1px solid #e4e4e4;
+    	padding-bottom: 5px;
 	}
 
 	.related-tools-link {

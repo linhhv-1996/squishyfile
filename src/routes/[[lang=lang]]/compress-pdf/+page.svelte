@@ -11,6 +11,7 @@
 	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
 	import CompressWorker from "$lib/workers/pdf-worker.ts?worker&inline";
+    import ToolSteps from "$lib/components/ToolSteps.svelte";
 
 	let currentLangKey = $derived($page.params.lang || "en");
 	let activeLang = $derived(languages.find((l) => l.key === currentLangKey) || languages[0]);
@@ -243,14 +244,18 @@
 		</div>
 	</section>
 
+	<div class="page-layout">
+	<!-- ── Tool column ── -->
+	<div class="tool-col">
+
 	<input bind:this={pdfInput} class="file-input" type="file" accept="application/pdf" onchange={handleFile} disabled={pdfBusy || sampleLoading} />
 
 	<!-- ── Unified tool card ── -->
 	<div class="p-card">
 
-		<!-- ── PDF Viewer zone (top, scrollable) ── -->
+		<!-- ── Preview zone (top, fixed height) ── -->
 		<div
-			class="p-viewer-zone"
+			class={pdfResult ? "p-preview p-preview--result" : "p-preview p-preview--upload"}
 			class:over={dragOver && !pdfFile}
 			role="button"
 			tabindex={pdfBusy || sampleLoading ? -1 : 0}
@@ -307,7 +312,7 @@
 			{/if}
 		</div>
 
-		<!-- ── Settings / Result panel (bottom) ── -->
+		<!-- ── Settings / Result panel (bottom, always visible) ── -->
 		<div class="p-panel">
 
 			{#if pdfResult}
@@ -332,7 +337,6 @@
 						{t("btn.compressNew")}
 					</button>
 				</div>
-				<RelatedTools label={t('relatedTools.label')} tools={relatedTools} />
 
 			{:else}
 				<!-- File row -->
@@ -405,16 +409,31 @@
 		<p>{@html t("note.privacy")}</p>
 	</div>
 
-	<div class="ad-slot ad-slot--after-tool" aria-label="Advertisement"></div>
+	<!-- ── How to use — 3 steps ── -->
+	<ToolSteps
+		title={t("steps.title")}
+		steps={[
+			{
+				title: t("steps.1.title"),
+				desc: t("steps.1.desc"),
+			},
+			{
+				title: t("steps.2.title"),
+				desc: t("steps.2.desc"),
+			},
+			{
+				title: t("steps.3.title"),
+				desc: t("steps.3.desc"),
+			},
+		]}
+	/>
 
-	{#if data.howToHtml}
-		<section class="how-to-sec prose">{@html data.howToHtml}</section>
-	{/if}
-
+	
+	<!-- FAQ -->
 	<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
 		<h2>{t("faq.pdf.title")}</h2>
 		<div class="faq-list">
-			{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
+			{#each Array.from({ length: 15 }, (_, i) => i + 1) as n}
 				<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 					<summary class="faq-q" itemprop="name">{t(`faq.pdf.${n}.q`)}</summary>
 					<div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
@@ -424,6 +443,31 @@
 			{/each}
 		</div>
 	</section>
+
+	<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+	<!-- {#if data.howToHtml}
+		<section class="howto-sec">
+			<h2 class="steps-title">{t("howto.section.title") || "Advanced tips & more info"}</h2>
+			<details open class="howto-details">
+				<summary class="howto-summary">
+					{t("howto.toggle") || "Read more"}
+				</summary>
+				<section class="how-to-sec prose">{@html data.howToHtml}</section>
+			</details>
+		</section>
+	{/if} -->
+
+	</div>
+	<!-- end .tool-col -->
+
+	<!-- ── Sidebar column ── -->
+	<aside class="sidebar-col">
+		<div class="ad-slot ad-slot--sidebar"></div>
+		<RelatedTools label={t("relatedTools.label")} tools={relatedTools} />
+	</aside>
+
+	</div>
+	<!-- end .page-layout -->
 
 </div>
 </main>
@@ -440,25 +484,44 @@
 		flex-direction: column;
 	}
 
-	/* ── Viewer zone — scrollable, fills up to 480px ─────────────────────────── */
-	.p-viewer-zone {
+	/* ── Preview zone — base styles ─────────────────────────────────────────── */
+	.p-preview {
+		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
 		border-bottom: 1px solid var(--border);
+		display: flex;
+		align-items: stretch;
+		overflow: hidden;
 		transition: background 0.15s;
 	}
-	.p-viewer-zone.over {
+
+	/* Upload / drop state — settings panel bên dưới, preview nhỏ hơn */
+	.p-preview--upload {
+		height: 270px;
+	}
+
+	/* Result state — settings panel ẩn, preview lớn hơn để fill card */
+	.p-preview--result {
+		height: 420px;
+	}
+
+	.p-preview.over {
 		background: color-mix(in srgb, var(--accent) 6%, transparent);
 	}
 
-	/* Scrollable wrapper: max 480px tall, min 260px */
+	@media (max-width: 599px) {
+		.p-preview--upload { height: 240px; }
+		.p-preview--result { height: 340px; }
+	}
+
+	/* Scrollable PDF viewer — fills preview zone */
 	.p-viewer-scroll {
-		max-height: 360px;
-		min-height: 260px;
+		width: 100%;
+		height: 100%;
 		overflow-y: auto;
 		overflow-x: hidden;
 		position: relative;
-		/* Custom scrollbar */
 		scrollbar-width: thin;
 		scrollbar-color: var(--border) transparent;
 	}
@@ -525,7 +588,7 @@
 		animation: p-spin 0.7s linear infinite;
 	}
 
-	/* Total page count chip — top-right of viewer zone */
+	/* Total page count chip — top-right of preview zone */
 	.p-page-chip {
 		position: absolute;
 		top: 8px;
@@ -540,10 +603,10 @@
 		z-index: 3;
 	}
 
-	/* Drop zone */
+	/* Drop zone inside preview */
 	.p-dz {
 		width: 100%;
-		min-height: 290px;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -555,7 +618,6 @@
 		padding: 16px;
 		color: var(--text);
 	}
-	.p-dz:disabled { cursor: default; opacity: 0.6; }
 	.p-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
 	.p-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
 	.p-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
@@ -589,7 +651,7 @@
 	}
 	@keyframes sample-spin { to { transform: rotate(360deg); } }
 
-	/* ── Settings/result panel ───────────────────────────────────────────────── */
+	/* ── Settings/result panel — fills remaining height ──────────────────────── */
 	.p-panel {
 		flex: 1;
 		display: flex;
@@ -658,7 +720,8 @@
 	/* Processing */
 	.p-spinner-row {
 		display: flex; align-items: center; justify-content: center;
-		gap: 10px; padding: 10px 16px;
+		gap: 10px; padding: 12px 16px;
+		border-top: 1px solid var(--border);
 	}
 	.p-spinner {
 		width: 16px; height: 16px;
@@ -671,13 +734,14 @@
 	@keyframes p-spin { to { transform: rotate(360deg); } }
 	.p-spinner-label { font-size: 12px; color: var(--muted); }
 	.p-warning {
-		padding: 0 16px 10px; font-size: 11.5px;
+		padding: 4px 16px 10px; font-size: 11.5px;
 		color: var(--muted); margin: 0; text-align: center;
 	}
 
 	.p-error {
 		display: flex; align-items: center; gap: 7px;
 		padding: 9px 16px; font-size: 12.5px; color: #e05252;
+		border-top: 1px solid var(--border);
 	}
 
 	.p-action { padding: 12px 16px; border-top: 1px solid var(--border); }
@@ -721,22 +785,106 @@
 	}
 	.p-btn-new:hover { color: var(--text); }
 
-	/* ── Ad / How-to / FAQ ───────────────────────────────────────────────────── */
-	.ad-slot {
-		margin: 14px 0 18px; min-height: 90px;
-		border-radius: var(--r); overflow: hidden; background: var(--surf);
+	/* ── Sidebar ad slot ─────────────────────────────────────────────────────── */
+	.ad-slot--sidebar {
+		min-height: 90px;
+		border-radius: var(--r);
+		overflow: hidden;
+		background: var(--surf);
 	}
-	.ad-slot:empty { display: none; }
-	@media (min-width: 1024px) { .ad-slot--after-tool { display: none; } }
+	.ad-slot--sidebar:empty { display: none; }
 
-	.how-to-sec { padding-top: 18px; border-top: 1px solid var(--border); }
+	/* ── How-to details accordion ────────────────────────────────────────────── */
+	.howto-details {
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		margin-top: 12px;
+		overflow: hidden;
+	}
+	.howto-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 11px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--muted);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		transition: color 0.15s;
+	}
+	.howto-summary::-webkit-details-marker { display: none; }
+	.howto-summary::after {
+		content: '▾';
+		font-size: 12px;
+		transition: transform 0.2s;
+		flex-shrink: 0;
+	}
+	details[open] .howto-summary::after { transform: rotate(-180deg); }
+	details[open] .howto-summary {
+		color: var(--text);
+		border-bottom: 1px solid var(--border);
+	}
+	.howto-summary:hover { color: var(--text); }
+
+	.howto-details .how-to-sec {
+		padding: 16px;
+		border-top: none; /* details đã có border */
+	}
+
+	/* ── How-to content styles ───────────────────────────────────────────────── */
 	.how-to-sec :global(a) { color: #1550ae; }
-	.how-to-sec :global(h1) { font-size: 1.35rem; font-weight: 650; color: var(--text); margin: 0 0 20px; line-height: 1.3; }
-	.how-to-sec :global(h2) { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 15px 0 10px; }
-	.how-to-sec :global(h3) { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
-	.how-to-sec :global(p)  { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0 0 12px; }
-	.how-to-sec :global(ul), .how-to-sec :global(ol) { padding-left: 1.4em; margin: 8px 0 16px; }
-	.how-to-sec :global(li) { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 6px; }
-	.how-to-sec :global(li strong), .how-to-sec :global(strong) { color: var(--text); font-weight: 600; }
+	.how-to-sec :global(h1) {
+		font-size: 1.35rem;
+		font-weight: 650;
+		color: var(--text);
+		margin: 0 0 20px;
+		line-height: 1.3;
+	}
+	.how-to-sec :global(h2) {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 15px 0 10px;
+	}
+	.how-to-sec :global(h3) {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 20px 0 8px;
+	}
+	.how-to-sec :global(p) {
+		font-size: 0.9rem;
+		color: var(--muted);
+		line-height: 1.7;
+		margin: 0 0 12px;
+	}
+	.how-to-sec :global(ul),
+	.how-to-sec :global(ol) { padding-left: 1.4em; margin: 8px 0 16px; }
+	.how-to-sec :global(li) {
+		font-size: 0.9rem;
+		color: var(--muted);
+		line-height: 1.7;
+		margin-bottom: 6px;
+	}
+	.how-to-sec :global(li strong),
+	.how-to-sec :global(strong) { color: var(--text); font-weight: 600; }
 	.how-to-sec :global(hr) { border: none; border-top: 1px solid var(--border); margin: 15px 0; }
+
+	.steps-title {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 0 0 12px;
+		text-align: left;
+	}
+
+	.howto-sec {
+		margin-top: 24px;
+	}
+	/* ── howto-details margin-bottom để không dính footer ───────────────────── */
+	.howto-details {
+		margin-bottom: 32px;
+	}
 </style>

@@ -51,7 +51,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Video,
 		titleKey: 'home.card.video.title',
 		descKey: 'home.card.video.desc',
-		related: ['compress-pdf', 'video-to-mp3', 'video-converter', 'mov-to-mp4']
+		related: ['video-converter', 'video-to-mp3', 'mov-to-mp4', 'avi-to-mp4', 'mkv-to-mp4', 'webm-to-mp4', 'compress-pdf']
 	},
 
 	'compress-pdf': {
@@ -59,7 +59,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: FileText,
 		titleKey: 'home.card.pdf.title',
 		descKey: 'home.card.pdf.desc',
-		related: ['pdf-merge', 'compress-video', 'image-compressor', 'reduce-image-size']
+		related: ['pdf-merge', 'image-compressor', 'reduce-image-size', 'jpg-compressor', 'png-compressor', 'compress-video', 'barcode-generator']
 	},
 
 	'pdf-merge': {
@@ -67,7 +67,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: FileText,
 		titleKey: 'home.card.pdfMerge.title',
 		descKey: 'home.card.pdfMerge.desc',
-		related: ['compress-pdf', 'image-compressor', 'reduce-image-size', 'barcode-generator']
+		related: ['compress-pdf', 'image-compressor', 'reduce-image-size', 'jpg-compressor', 'png-compressor', 'barcode-generator', 'character-counter']
 	},
 
 	'video-to-mp3': {
@@ -75,7 +75,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Music,
 		titleKey: 'home.card.mp3.title',
 		descKey: 'home.card.mp3.desc',
-		related: ['compress-video', 'video-converter', 'mov-to-mp4', 'compress-pdf']
+		related: ['compress-video', 'video-converter', 'mov-to-mp4', 'avi-to-mp4', 'mkv-to-mp4', 'webm-to-mp4', 'compress-pdf']
 	},
 
 	'video-converter': {
@@ -83,7 +83,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: RefreshCcw,
 		titleKey: 'home.card.convert.title',
 		descKey: 'home.card.convert.desc',
-		related: ['mov-to-mp4', 'avi-to-mp4', 'mkv-to-mp4', 'webm-to-mp4']
+		related: ['mov-to-mp4', 'avi-to-mp4', 'mkv-to-mp4', 'webm-to-mp4', 'compress-video', 'video-to-mp3', 'compress-pdf']
 	},
 
 	'mov-to-mp4': {
@@ -91,7 +91,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: RefreshCcw,
 		titleKey: 'related.movToMp4.title',
 		descKey: 'related.movToMp4.desc',
-		related: ['video-converter', 'compress-video', 'video-to-mp3', 'avi-to-mp4']
+		related: ['video-converter', 'compress-video', 'video-to-mp3', 'avi-to-mp4', 'mkv-to-mp4', 'webm-to-mp4', 'compress-pdf']
 	},
 
 	'avi-to-mp4': {
@@ -99,7 +99,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: RefreshCcw,
 		titleKey: 'related.aviToMp4.title',
 		descKey: 'related.aviToMp4.desc',
-		related: ['video-converter', 'compress-video', 'mov-to-mp4', 'mkv-to-mp4']
+		related: ['video-converter', 'compress-video', 'video-to-mp3', 'mov-to-mp4', 'mkv-to-mp4', 'webm-to-mp4', 'compress-pdf']
 	},
 
 	'mkv-to-mp4': {
@@ -107,7 +107,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: RefreshCcw,
 		titleKey: 'related.mkvToMp4.title',
 		descKey: 'related.mkvToMp4.desc',
-		related: ['video-converter', 'compress-video', 'avi-to-mp4', 'webm-to-mp4']
+		related: ['video-converter', 'compress-video', 'video-to-mp3', 'mov-to-mp4', 'avi-to-mp4', 'webm-to-mp4', 'compress-pdf']
 	},
 
 	'webm-to-mp4': {
@@ -115,7 +115,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: RefreshCcw,
 		titleKey: 'related.webmToMp4.title',
 		descKey: 'related.webmToMp4.desc',
-		related: ['video-converter', 'compress-video', 'mov-to-mp4', 'mkv-to-mp4']
+		related: ['video-converter', 'compress-video', 'video-to-mp3', 'mov-to-mp4', 'avi-to-mp4', 'mkv-to-mp4', 'compress-pdf']
 	},
 
 	'image-compressor': {
@@ -123,7 +123,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'home.card.image.title',
 		descKey: 'home.card.image.desc',
-		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'pdf-merge']
+		related: ['jpg-compressor', 'png-compressor', 'reduce-image-size', 'compress-pdf', 'pdf-merge', 'barcode-generator', 'compress-video']
 	},
 
 	'jpg-compressor': {
@@ -131,7 +131,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.jpgCompressor.title',
 		descKey: 'related.jpgCompressor.desc',
-		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'pdf-merge']
+		related: ['image-compressor', 'png-compressor', 'reduce-image-size', 'compress-pdf', 'pdf-merge', 'barcode-generator', 'compress-video']
 	},
 
 	'png-compressor': {
@@ -139,7 +139,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.pngCompressor.title',
 		descKey: 'related.pngCompressor.desc',
-		related: ['image-compressor', 'jpg-compressor', 'reduce-image-size', 'compress-pdf']
+		related: ['image-compressor', 'jpg-compressor', 'reduce-image-size', 'compress-pdf', 'pdf-merge', 'barcode-generator', 'compress-video']
 	},
 
 	'reduce-image-size': {
@@ -147,7 +147,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Image,
 		titleKey: 'related.reduceImageSize.title',
 		descKey: 'related.reduceImageSize.desc',
-		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'pdf-merge']
+		related: ['image-compressor', 'jpg-compressor', 'png-compressor', 'compress-pdf', 'pdf-merge', 'barcode-generator', 'compress-video']
 	},
 
 	'barcode-generator': {
@@ -155,7 +155,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Barcode,
 		titleKey: 'home.card.barcode.title',
 		descKey: 'home.card.barcode.desc',
-		related: ['character-counter', 'image-compressor', 'reduce-image-size', 'compress-pdf']
+		related: ['character-counter', 'word-counter', 'sns-character-limit', 'image-compressor', 'reduce-image-size', 'compress-pdf', 'pdf-merge']
 	},
 
 	// ── Character counter family ───────────────────────────────────────────────
@@ -164,7 +164,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Type,
 		titleKey: 'related.characterCounter.title',
 		descKey: 'related.characterCounter.desc',
-		related: ['word-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator']
+		related: ['word-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator', 'compress-pdf', 'pdf-merge', 'image-compressor']
 	},
 
 	'word-counter': {
@@ -172,7 +172,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Type,
 		titleKey: 'related.wordCounter.title',
 		descKey: 'related.wordCounter.desc',
-		related: ['character-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator']
+		related: ['character-counter', 'manuscript-counter', 'sns-character-limit', 'barcode-generator', 'compress-pdf', 'pdf-merge', 'image-compressor']
 	},
 
 	'manuscript-counter': {
@@ -180,7 +180,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Type,
 		titleKey: 'related.manuscriptCounter.title',
 		descKey: 'related.manuscriptCounter.desc',
-		related: ['character-counter', 'word-counter', 'sns-character-limit', 'barcode-generator']
+		related: ['character-counter', 'word-counter', 'sns-character-limit', 'barcode-generator', 'compress-pdf', 'pdf-merge', 'image-compressor']
 	},
 
 	'sns-character-limit': {
@@ -188,7 +188,7 @@ export const TOOL_CONFIG: Record<ToolSlug, ToolConfig> = {
 		icon: Type,
 		titleKey: 'related.snsCharacterLimit.title',
 		descKey: 'related.snsCharacterLimit.desc',
-		related: ['character-counter', 'word-counter', 'manuscript-counter', 'barcode-generator']
+		related: ['character-counter', 'word-counter', 'manuscript-counter', 'barcode-generator', 'compress-pdf', 'pdf-merge', 'image-compressor']
 	}
 };
 

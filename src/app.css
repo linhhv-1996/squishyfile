@@ -26,6 +26,7 @@
   --muted: #667085;
   --r: 6px;
   --rsm: 6px;
+  --site-width: 990px;
 }
 
 /* Optional dark mode: add data-theme="dark" on html/body to enable */
@@ -56,10 +57,33 @@ body {
 }
 
 .wrap {
-  max-width: 840px;
-  /* max-width: 780px; */
+  max-width: var(--site-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
+}
+
+/* ── 2-column page layout ── */
+.page-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tool-col {
+  flex: 0 0 730px;
+  min-width: 0;
+}
+
+.sidebar-col {
+  flex: 1;
+  min-width: 0;
+  position: sticky;
+  top: 70px;
+}
+
+@media (max-width: 980px) {
+  .sidebar-col { display: none; }
+  .tool-col { flex: 1; }
 }
 
 /* ── HEADER ── */
@@ -75,10 +99,9 @@ body {
 }
 
 .hinner {
-  max-width: 840px;
-  /* max-width: 780px; */
+  max-width: var(--site-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1189,48 +1212,54 @@ body {
 
 /* ── FAQ SECTION ── */
 .faq-sec {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .faq-sec h2 {
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
   margin-top: 30px;
-  text-align: center;
+  text-align: left;
   color: var(--text);
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
 }
 
 details.faq-item {
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  transition: border-color .15s, background .15s;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  transition: none;
+}
+
+details.faq-item:first-child {
+  border-top: 1px solid var(--border);
 }
 
 details.faq-item[open] {
-  border-color: var(--accent);
+  border-color: var(--border);
   box-shadow: none;
 }
 
 summary.faq-q {
-  padding: 10px 20px;
+  padding: 13px 4px;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  font-weight: 450;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 13.5px;
   cursor: pointer;
   color: var(--text);
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  gap: 12px;
 }
 
 summary.faq-q::-webkit-details-marker {
@@ -1239,29 +1268,30 @@ summary.faq-q::-webkit-details-marker {
 
 summary.faq-q::after {
   content: '+';
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
   color: var(--muted);
   transition: transform 0.2s;
+  flex-shrink: 0;
 }
 
 details.faq-item[open] summary.faq-q::after {
   transform: rotate(45deg);
-  color: var(--accent);
+  color: var(--muted);
 }
 
 .faq-a {
-  padding: 0 20px 18px;
-  font-size: 13.5px;
+  padding: 0 4px 14px;
+  font-size: 13px;
   color: var(--muted);
-  line-height: 1.6;
-  border-top: 1px solid transparent;
+  line-height: 1.65;
+  border-top: none;
 }
 
 details.faq-item[open] .faq-a {
-  border-top-color: var(--border);
-  margin-top: 4px;
-  padding-top: 16px;
+  border-top-color: transparent;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 footer {
@@ -1282,6 +1312,46 @@ footer a:hover {
   color: var(--text);
 }
 
+/* ── How-to details accordion ────────────────────────────────────────────── */
+	.howto-details {
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		margin-top: 12px;
+		overflow: hidden;
+		margin-bottom: 40px;
+	}
+	.howto-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 11px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--muted);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		transition: color 0.15s;
+	}
+	.howto-summary::-webkit-details-marker { display: none; }
+	.howto-summary::after {
+		content: '▾';
+		font-size: 12px;
+		transition: transform 0.2s;
+		flex-shrink: 0;
+	}
+	details[open] .howto-summary::after { transform: rotate(-180deg); }
+	details[open] .howto-summary {
+		color: var(--text);
+		border-bottom: 1px solid var(--border);
+	}
+	.howto-summary:hover { color: var(--text); }
+
+	.howto-details .how-to-sec {
+		padding: 16px;
+		border-top: none; /* details đã có border */
+	}
+	h2.steps-title {font-size: 0.95rem;}
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .hnav {
@@ -1498,36 +1568,26 @@ button {
   }
 }
 
-/* ── SIDE BANNERS ── */
+/* Floating side banners (fallback cho màn hình rất rộng nếu cần) */
 .banner-left,
 .banner-right {
   display: none;
   position: fixed;
-  top: calc(54px + (100vh - 54px) / 2);   /* căn giữa phần dưới header */
+  top: calc(54px + (100vh - 54px) / 2);
   transform: translateY(-50%);
   width: 160px;
   min-height: 600px;
   z-index: 10;
 }
 
-/* Căn ra khỏi content 840px — thêm 12px gap */
-.banner-left  { left:  calc(50% - 420px - 160px - 12px); }
-.banner-right { right: calc(50% - 420px - 160px - 12px); }
+/* căn ra ngoài content 948px */
+.banner-left  { left:  calc(50% - 474px - 160px - 12px); }
+.banner-right { right: calc(50% - 474px - 160px - 12px); }
 
-/* ≥ 1200px: hiện cả 2 bên, 160px */
-@media (min-width: 1200px) {
+@media (min-width: 1340px) {
   .banner-left,
   .banner-right {
     display: block;
-  }
-}
-
-/* 1024–1199px: chỉ hiện bên phải, thu về 120px */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .banner-right {
-    display: block;
-    width: 120px;
-    right: calc(50% - 420px - 120px - 8px);
   }
 }
 
@@ -1643,4 +1703,3 @@ button {
     .hero h1 { font-size: 1.2rem; }
     .hero-pills { gap: 10px; }
 }
-

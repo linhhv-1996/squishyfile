@@ -18,6 +18,7 @@
 	import { VideoToMp3Converter } from "$lib/utils/videoToMp3Converter";
 	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import RelatedTools from "$lib/components/RelatedTools.svelte";
+    import ToolSteps from "$lib/components/ToolSteps.svelte";
 
 	let { data } = $props();
 
@@ -216,17 +217,8 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
-<input
-	bind:this={inputEl}
-	class="file-input"
-	type="file"
-	accept="video/*,audio/*"
-	onchange={handleFile}
-	disabled={busy || sampleLoading}
-/>
-
 <main>
-<div class="wrap">
+	<div class="wrap">
 
 	<!-- Hero -->
 	<section class="hero">
@@ -239,16 +231,35 @@
 		</div>
 	</section>
 
+	<div class="page-layout">
+	<!-- ── Tool column ── -->
+	<div class="tool-col">
+
+	<input
+		bind:this={inputEl}
+		class="file-input"
+		type="file"
+		accept="video/*,audio/*"
+		onchange={handleFile}
+		disabled={busy || sampleLoading}
+	/>
+
 	<!-- ── Unified tool card ── -->
 	<div class="v-card">
 
 		<!-- ── Preview / Drop zone (top) ── -->
 		<div
-			class="v-preview"
+			class={result ? "v-preview v-preview--result" : "v-preview v-preview--upload"}
 			class:over={dragOver && !file}
+			role="button"
+			tabindex={busy || sampleLoading ? -1 : 0}
+			aria-label={t("mp3.drop.title")}
+			aria-disabled={busy || sampleLoading}
 			ondragover={onDragOver}
 			ondragleave={onDragLeave}
 			ondrop={onDrop}
+			onclick={triggerInput}
+			onkeydown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerInput(); } }}
 		>
 			{#if result}
 				<!-- Result: audio player to preview converted MP3 -->
@@ -262,14 +273,7 @@
 				<video class="v-video" src={videoSrc} controls playsinline muted></video>
 			{:else}
 				<!-- Drop zone -->
-				<div
-					class="v-dz"
-					role="button"
-					tabindex={busy || sampleLoading ? -1 : 0}
-					aria-disabled={busy || sampleLoading}
-					onclick={triggerInput}
-					onkeydown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerInput(); } }}
-				>
+				<div class="v-dz">
 					<div class="dz-ico"><Music2 size={55} strokeWidth={1.4} /></div>
 					<h3>{t("mp3.drop.title")}</h3>
 					<p class="sub">{t("drop.compress.sub")}</p>
@@ -319,9 +323,6 @@
 						{t("mp3.btn.new")}
 					</button>
 				</div>
-				{#if relatedTools.length > 0}
-					<RelatedTools label={t("relatedTools.label")} tools={relatedTools} />
-				{/if}
 
 			{:else}
 				<!-- ── Settings state ── -->
@@ -398,16 +399,30 @@
 		<p>{@html t("mp3.note.privacy")}</p>
 	</div>
 
-	<!-- How to use -->
-	{#if data.howToHtml}
-		<section class="how-to-sec prose">{@html data.howToHtml}</section>
-	{/if}
+	<!-- ── How to use — 3 steps ── -->
+	<ToolSteps
+		title={t("steps.title")}
+		steps={[
+			{
+				title: t("steps.1.title"),
+				desc: t("steps.1.desc"),
+			},
+			{
+				title: t("steps.2.title"),
+				desc: t("steps.2.desc"),
+			},
+			{
+				title: t("steps.3.title"),
+				desc: t("steps.3.desc"),
+			},
+		]}
+	/>
 
 	<!-- FAQ -->
 	<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
 		<h2>{t("faq.mp3.title")}</h2>
 		<div class="faq-list">
-			{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
+			{#each Array.from({ length: 12 }, (_, i) => i + 1) as n}
 				<details
 					class="faq-item"
 					itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
@@ -420,6 +435,33 @@
 			{/each}
 		</div>
 	</section>
+
+	<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+	<!-- {#if data.howToHtml}
+		<section class="howto-sec">
+			<h2 class="steps-title">{t("howto.section.title")}</h2>
+			<details open class="howto-details">
+				<summary class="howto-summary">
+					{t("howto.toggle")}
+				</summary>
+				<section class="how-to-sec prose">{@html data.howToHtml}</section>
+			</details>
+		</section>
+	{/if} -->
+
+	</div>
+	<!-- end .tool-col -->
+
+	<!-- ── Sidebar column ── -->
+	<aside class="sidebar-col">
+		<RelatedTools
+			label={t("relatedTools.label")}
+			tools={relatedTools}
+		/>
+	</aside>
+
+	</div>
+	<!-- end .page-layout -->
 
 </div>
 </main>
@@ -439,9 +481,8 @@
 		flex-direction: column;
 	}
 
-	/* Preview zone — fixed height */
+	/* Preview zone — base styles */
 	.v-preview {
-		height: 260px;
 		flex-shrink: 0;
 		position: relative;
 		background: var(--bg);
@@ -451,9 +492,51 @@
 		overflow: hidden;
 		transition: background 0.15s;
 	}
+
+	/* Upload / drop state — settings panel bên dưới, preview nhỏ hơn */
+	.v-preview--upload {
+		height: 270px;
+	}
+
+	/* Result state — không có settings panel, preview lớn hơn để fill card */
+	.v-preview--result {
+		height: 320px;
+	}
+
 	.v-preview.over {
 		background: color-mix(in srgb, var(--accent) 6%, transparent);
-		border-color: var(--accent);
+	}
+
+	@media (max-width: 599px) {
+		.v-preview--upload { height: 240px; }
+		.v-preview--result { height: 340px; }
+	}
+
+	/* Audio result display inside preview */
+	.v-audio-result {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 16px;
+		color: var(--text);
+	}
+	.v-audio-ico { color: var(--accent); }
+	.v-audio-name {
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--text);
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.v-audio-size { font-size: 12px; color: var(--muted); }
+	.v-audio-player {
+		width: min(340px, 100%);
+		margin-top: 4px;
 	}
 
 	/* Audio result display inside preview */
@@ -498,7 +581,6 @@
 		padding: 16px;
 		color: var(--text);
 	}
-	.v-dz[aria-disabled="true"] { cursor: default; opacity: 0.6; }
 	.v-dz h3 { margin: 6px 0 2px; font-size: 16px; font-weight: 600; }
 	.v-dz .sub { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
 	.v-dz .fmt-hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
@@ -526,32 +608,6 @@
 		object-fit: contain;
 		background: #000;
 		display: block;
-	}
-
-	/* Audio result display inside preview */
-	.v-audio-result {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 8px;
-		padding: 16px;
-		color: var(--text);
-	}
-	.v-audio-ico { color: var(--accent); }
-	.v-audio-name {
-		font-size: 13px;
-		font-weight: 500;
-		color: var(--text);
-		max-width: 100%;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	.v-audio-player {
-		width: min(340px, 100%);
-		margin-top: 4px;
 	}
 
 	/* Sample video button */

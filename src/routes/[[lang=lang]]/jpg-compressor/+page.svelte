@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+    import RelatedTools from "$lib/components/RelatedTools.svelte";
 	import ImageCompressor from "$lib/components/tools/ImageCompressor.svelte";
+    import ToolSteps from "$lib/components/ToolSteps.svelte";
+    import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import { translations } from "$lib/i18n/translations";
 
 	type PageCopy = {
@@ -132,6 +135,12 @@
 	function markdownToHtml(text: string) {
 		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 	}
+
+	let relatedTools = $derived.by(() =>
+		getRelatedTools("jpg-compressor", currentLangKey, (key: string) =>
+			t(key, translations.en[key] ?? key)
+		)
+	);
 </script>
 
 <svelte:head>
@@ -156,47 +165,128 @@
 			</div>
 		</section>
 
-		<ImageCompressor {copy} />
+		<div class="page-layout">
+			<!-- ── Tool column ── -->
+			<div class="tool-col">
 
-		{#if data.contentHtml}
-			<section class="how-to-sec prose">
-				{@html data.contentHtml}
-			</section>
-		{/if}
+				<ImageCompressor {copy} />
 
-		<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-			<h2>{t("faq.jpgCompressor.title", "JPG compressor FAQ")}</h2>
+				<!-- ── How to use — 3 steps ── -->
+				<ToolSteps
+					title={t("steps.title", "")}
+					steps={[
+						{
+							title: t("steps.1.title", ""),
+							desc: t("steps.1.desc", ""),
+						},
+						{
+							title: t("steps.2.title", ""),
+							desc: t("steps.2.desc", ""),
+						},
+						{
+							title: t("steps.3.title", ""),
+							desc: t("steps.3.desc", ""),
+						},
+					]}
+				/>
 
-			<div class="faq-list">
-				{#each Array.from({ length: 6 }, (_, i) => i + 1) as n}
-					<details
-						class="faq-item"
-						itemscope
-						itemprop="mainEntity"
-						itemtype="https://schema.org/Question"
-					>
-						<summary class="faq-q" itemprop="name">
-							{t(`faq.jpgCompressor.${n}.q`, "")}
-						</summary>
+				<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
+					<h2>{t("faq.jpgCompressor.title", "JPG compressor FAQ")}</h2>
 
-						<div
-							class="faq-a"
-							itemscope
-							itemprop="acceptedAnswer"
-							itemtype="https://schema.org/Answer"
-						>
-							<span itemprop="text">
-								{@html markdownToHtml(t(`faq.jpgCompressor.${n}.a`, ""))}
-							</span>
-						</div>
-					</details>
-				{/each}
+					<div class="faq-list">
+						{#each Array.from({ length: 6 }, (_, i) => i + 1) as n}
+							<details
+								class="faq-item"
+								itemscope
+								itemprop="mainEntity"
+								itemtype="https://schema.org/Question"
+							>
+								<summary class="faq-q" itemprop="name">
+									{t(`faq.jpgCompressor.${n}.q`, "")}
+								</summary>
+
+								<div
+									class="faq-a"
+									itemscope
+									itemprop="acceptedAnswer"
+									itemtype="https://schema.org/Answer"
+								>
+									<span itemprop="text">
+										{@html markdownToHtml(t(`faq.jpgCompressor.${n}.a`, ""))}
+									</span>
+								</div>
+							</details>
+						{/each}
+					</div>
+				</section>
+
+				<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+				<!-- {#if data.contentHtml}
+					<section class="howto-sec">
+						<h2 class="steps-title">{t("howto.section.title", "")}</h2>
+						<details open class="howto-details">
+							<summary class="howto-summary">
+								{t("howto.toggle", "")}
+							</summary>
+							<section class="how-to-sec prose">{@html data.contentHtml}</section>
+						</details>
+					</section>
+				{/if} -->
+			
 			</div>
-		</section>
+			<!-- ── Sidebar column ── -->
+			<aside class="sidebar-col">
+				<RelatedTools
+					label={t("relatedTools.label", "Related tools")}
+					tools={relatedTools}
+				/>
+			</aside>
+		</div>
+
 	</div>
 </main>
 
 <style>
+/* ── How-to details accordion ────────────────────────────────────────────── */
+	.howto-details {
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		margin-top: 12px;
+		overflow: hidden;
+		margin-bottom: 40px;
+	}
+	.howto-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 11px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--muted);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		transition: color 0.15s;
+	}
+	.howto-summary::-webkit-details-marker { display: none; }
+	.howto-summary::after {
+		content: '▾';
+		font-size: 12px;
+		transition: transform 0.2s;
+		flex-shrink: 0;
+	}
+	details[open] .howto-summary::after { transform: rotate(-180deg); }
+	details[open] .howto-summary {
+		color: var(--text);
+		border-bottom: 1px solid var(--border);
+	}
+	.howto-summary:hover { color: var(--text); }
+
+	.howto-details .how-to-sec {
+		padding: 16px;
+		border-top: none; /* details đã có border */
+	}
+
 	.how-to-sec {
 		margin-top: 0px;
 		padding-top: 20px;

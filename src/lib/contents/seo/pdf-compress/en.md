@@ -1,53 +1,40 @@
-Compress PDF files in your browser when a document is too large for email, upload forms, resumes, applications, or cloud storage. Squishyfile helps reduce PDF size without account signup, software installation, or watermark.
+Compress PDF files online when a document is too large for email, resumes, application forms, or upload limits. Squishyfile reduces PDF size in your browser with no sign-up, no software, and no watermark.
 
-Your file is processed locally in the browser with WebAssembly, so the PDF does not need to be uploaded to a server for compression.
+## Quick Steps
 
-## Choose the Right PDF Compression Mode
+1. Choose a PDF from your device or drag it into the upload area.
+2. Pick Balanced or Maximum compression.
+3. Click Compress PDF and keep the tab open while the browser processes the file.
+4. Download the smaller PDF and review it before submitting or sharing.
 
-Use **Balanced** mode first for most PDFs. It reduces file size while keeping text, scanned pages, tables, signatures, stamps, and images readable for normal screen use.
+## When to Use This PDF Compressor
 
-Balanced mode is best for resumes, application documents, contracts, invoices, reports, school forms, government forms, and PDF attachments that someone else needs to review clearly.
+Use it to shrink large PDFs for email attachments, job applications, school forms, government portals, scanned documents, reports, invoices, contracts, and cloud uploads.
 
-Use **Maximum** mode when the final file size matters more than image sharpness. This is useful when a website, email system, or application portal rejects files above limits such as 1 MB, 2 MB, 5 MB, 10 MB, or 25 MB.
+## Choose a Compression Mode
 
-After maximum compression, open the PDF and check small text, signatures, stamps, QR codes, charts, and important images before submitting it.
+Use **Balanced** for most PDFs. It keeps text, images, signatures, stamps, and scanned pages readable while reducing file size.
 
-## PDF Files That Usually Compress Well
+Use **Maximum** when you need the smallest possible file for limits like 1 MB, 2 MB, 5 MB, 10 MB, or 25 MB. Review the compressed PDF before submitting it.
 
-PDF compression works best when the file contains images or scanned pages. These files often have extra image data that can be optimized.
+## What Compresses Best
 
-Common examples include scanned documents, phone scans, PDFs with photos or screenshots, presentation PDFs, portfolios, catalogs, brochures, receipts, certificates, and print-quality files that only need to be uploaded online.
+PDFs with scanned pages, photos, screenshots, presentations, brochures, certificates, and image-heavy pages usually shrink the most.
 
-Scanned PDFs are often large because each page is stored like an image. If a document was scanned at 300 DPI or 600 DPI, it may contain more detail than needed for reading on a screen.
+Text-only PDFs or files that were already optimized may only get slightly smaller. That is normal because there is less image data to reduce.
 
-## Why a PDF May Not Get Much Smaller
+## Private Browser-Based Compression
 
-Some PDFs shrink only a little after compression. This is normal when the file has already been optimized or has very little image data.
+Your PDF is processed locally in your browser using WebAssembly. The file does not need to be uploaded to a server for compression.
 
-A PDF may not reduce much if it contains mostly selectable text, vector graphics, embedded fonts, form fields, or document structure instead of large images. Repeatedly compressing the same PDF can also give smaller gains while reducing quality.
+## Works on Any Device
 
-For text-heavy files, the original PDF may already be close to its smallest practical size.
-
-## Tips for Email and Upload Size Limits
-
-Start with Balanced mode. If the compressed PDF is still too large, try Maximum mode. If it still does not meet the required limit, reduce the document itself before compressing again.
-
-Helpful fixes include removing blank or duplicate pages, recreating the PDF from the original file with smaller images, scanning at 150–200 DPI for online submission, using grayscale when color is not required, or splitting a large PDF if the upload portal allows it.
-
-Always review the final PDF before sending. Make sure page order, names, dates, signatures, stamps, QR codes, and form fields are still clear.
-
-## Private Browser-Based PDF Compression
-
-Many online PDF compressors upload files to a server before processing. Squishyfile compresses the PDF in your browser instead.
-
-This browser-based approach is useful for everyday documents that may contain personal, work, financial, school, or legal information. You still need to store and share the downloaded PDF carefully, especially if the file was password-protected before compression.
-
-## Works on Desktop and Mobile
-
-Squishyfile works in modern browsers on Windows, Mac, Linux, Chromebook, iPhone, Android, and tablets. On desktop, drag the PDF into the upload area. On mobile, choose the PDF from Files, Downloads, cloud storage, or another location supported by your browser.
+Compress PDFs on Windows, Mac, Linux, Chromebook, iPhone, Android, and tablets. On desktop, drag and drop the PDF. On mobile, choose a file from Files, Downloads, or cloud storage.
 
 ## Related Guides
 
-- [Free PDF compressor online: no registration, no watermark](/blog/free-pdf-compressor-online-no-registration)
-- [How to reduce PDF file size without losing quality](/blog/how-to-reduce-pdf-file-size-without-losing-quality)
-- [Compress PDF to 1 MB or less online](/blog/compress-pdf-to-1mb-online-free)
+* [Free PDF compressor online: no registration, no watermark](/blog/free-pdf-compressor-online-no-registration)
+* [How to reduce PDF file size without losing quality](/blog/how-to-reduce-pdf-file-size-without-losing-quality)
+* [Compress PDF to 1 MB or less online](/blog/compress-pdf-to-1mb-online-free)
+* [Compress PDF on iPhone without an app](/blog/compress-pdf-iphone-no-app-required)
+* [Compress PDF on Mac for free](/blog/compress-pdf-mac-free-methods)

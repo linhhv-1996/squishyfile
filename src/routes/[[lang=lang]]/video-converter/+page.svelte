@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import VideoConverter from "$lib/components/tools/VideoConverter.svelte";
-    import { getRelatedTools } from "$lib/config/relatedTools.js";
+	import RelatedTools from "$lib/components/RelatedTools.svelte";
+	import { ShieldCheck } from "lucide-svelte";
+	import { getRelatedTools } from "$lib/config/relatedTools.js";
 	import { translations } from "$lib/i18n/translations";
+    import ToolSteps from "$lib/components/ToolSteps.svelte";
+    import { markdownToHtml } from "$lib/utils/utils.js";
 
 	type VideoOutputFormat = "mp4" | "webm" | "mov" | "mkv";
 	type PageCopy = {
@@ -91,10 +95,6 @@
 		),
 	);
 
-	function markdownToHtml(text: string) {
-		return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-	}
-
 	let jsonLd = $derived(
 		JSON.stringify(
 			{
@@ -128,6 +128,7 @@
 
 <main>
 	<div class="wrap">
+		<!-- Hero -->
 		<section class="hero">
 			<h1>{@html copy.heroTitle}</h1>
 			<p class="hero-sub">{copy.heroSub}</p>
@@ -138,55 +139,134 @@
 			</div>
 		</section>
 
-		<VideoConverter
-			{copy}
-			{relatedTools}
-		/>
+		<div class="page-layout">
+			<!-- ── Tool column ── -->
+			<div class="tool-col">
+				<VideoConverter {copy}/>
 
-		{#if data.contentHtml}
-			<section class="how-to-sec prose">
-				{@html data.contentHtml}
-			</section>
-		{/if}
+				<!-- ── How to use — 3 steps ── -->
+				<ToolSteps
+					title={t("steps.title")}
+					steps={[
+						{
+							title: t("steps.1.title"),
+							desc: t("steps.1.desc"),
+						},
+						{
+							title: t("steps.2.title"),
+							desc: t("steps.2.desc"),
+						},
+						{
+							title: t("steps.3.title"),
+							desc: t("steps.3.desc"),
+						},
+					]}
+				/>
 
-		{#if hasConvertFaq}
-			<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
-				<h2>{t("faq.convert.title")}</h2>
+				{#if hasConvertFaq}
+					<section class="faq-sec" itemscope itemtype="https://schema.org/FAQPage">
+						<h2>{t("faq.convert.title")}</h2>
+						<div class="faq-list">
+							{#each Array.from({ length: 10 }, (_, i) => i + 1) as n}
+								<details
+									class="faq-item"
+									itemscope
+									itemprop="mainEntity"
+									itemtype="https://schema.org/Question"
+								>
+									<summary class="faq-q" itemprop="name">
+										{t(`faq.convert.${n}.q`)}
+									</summary>
+									<div
+										class="faq-a"
+										itemscope
+										itemprop="acceptedAnswer"
+										itemtype="https://schema.org/Answer"
+									>
+										<span itemprop="text">
+											{@html markdownToHtml(t(`faq.convert.${n}.a`))}
+										</span>
+									</div>
+								</details>
+							{/each}
+						</div>
+					</section>
+				{/if}
 
-				<div class="faq-list">
-					{#each Array.from({ length: 8 }, (_, i) => i + 1) as n}
-						<details
-							class="faq-item"
-							itemscope
-							itemprop="mainEntity"
-							itemtype="https://schema.org/Question"
-						>
-							<summary class="faq-q" itemprop="name">
-								{t(`faq.convert.${n}.q`)}
+				<!-- ── Advanced tips — ẩn trong details, đặt sau FAQ ── -->
+				<!-- {#if data.contentHtml}
+					<section class="howto-sec">
+						<h2 class="steps-title">{t("howto.section.title")}</h2>
+						<details open class="howto-details">
+							<summary class="howto-summary">
+								{t("howto.toggle")}
 							</summary>
-
-							<div
-								class="faq-a"
-								itemscope
-								itemprop="acceptedAnswer"
-								itemtype="https://schema.org/Answer"
-							>
-								<span itemprop="text">
-									{@html markdownToHtml(t(`faq.convert.${n}.a`))}
-								</span>
-							</div>
+							<section class="how-to-sec prose">{@html data.contentHtml}</section>
 						</details>
-					{/each}
-				</div>
-			</section>
-		{/if}
+					</section>
+				{/if} -->
+
+
+			</div>
+			<!-- end .tool-col -->
+
+			<!-- ── Sidebar column ── -->
+			<aside class="sidebar-col">
+				<RelatedTools
+					label={t("relatedTools.label")}
+					tools={relatedTools}
+				/>
+			</aside>
+		</div>
+		<!-- end .page-layout -->
 	</div>
 </main>
 
 <style>
+/* ── How-to details accordion ────────────────────────────────────────────── */
+	.howto-details {
+		border: 1px solid var(--border);
+		border-radius: var(--r);
+		margin-top: 12px;
+		overflow: hidden;
+		margin-bottom: 40px;
+	}
+	.howto-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 11px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--muted);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		transition: color 0.15s;
+	}
+	.howto-summary::-webkit-details-marker { display: none; }
+	.howto-summary::after {
+		content: '▾';
+		font-size: 12px;
+		transition: transform 0.2s;
+		flex-shrink: 0;
+	}
+	details[open] .howto-summary::after { transform: rotate(-180deg); }
+	details[open] .howto-summary {
+		color: var(--text);
+		border-bottom: 1px solid var(--border);
+	}
+	.howto-summary:hover { color: var(--text); }
+
+	.howto-details .how-to-sec {
+		padding: 16px;
+		border-top: none; /* details đã có border */
+	}
+
+	/* How-to section */
 	.how-to-sec {
-		margin-top: 0px;
-		padding-top: 20px;
+		margin-top: 0;
+		padding-top: 18px;
 		border-top: 1px solid var(--border);
 	}
 
@@ -197,7 +277,7 @@
 	.how-to-sec :global(h1) {
 		font-size: 1.35rem;
 		font-weight: 650;
-		color: var(--fg);
+		color: var(--text);
 		margin: 0 0 20px;
 		line-height: 1.3;
 	}
@@ -205,14 +285,14 @@
 	.how-to-sec :global(h2) {
 		font-size: 1.05rem;
 		font-weight: 600;
-		color: var(--fg);
+		color: var(--text);
 		margin: 15px 0 10px;
 	}
 
 	.how-to-sec :global(h3) {
 		font-size: 0.95rem;
 		font-weight: 600;
-		color: var(--fg);
+		color: var(--text);
 		margin: 20px 0 8px;
 	}
 
@@ -236,8 +316,9 @@
 		margin-bottom: 6px;
 	}
 
-	.how-to-sec :global(li strong) {
-		color: var(--fg);
+	.how-to-sec :global(li strong),
+	.how-to-sec :global(strong) {
+		color: var(--text);
 		font-weight: 600;
 	}
 
@@ -245,11 +326,6 @@
 		border: none;
 		border-top: 1px solid var(--border);
 		margin: 15px 0;
-	}
-
-	.how-to-sec :global(strong) {
-		color: var(--fg);
-		font-weight: 600;
 	}
 
 	.how-to-sec :global(blockquote) {
@@ -276,7 +352,7 @@
 		text-align: left;
 		padding: 8px 12px;
 		border-bottom: 1px solid var(--border);
-		color: var(--fg);
+		color: var(--text);
 		font-weight: 600;
 		font-size: 0.8rem;
 		text-transform: uppercase;

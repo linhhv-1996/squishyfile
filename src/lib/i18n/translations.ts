@@ -90,96 +90,103 @@ export const translations: Record<string, Record<string, string>> = {
 		'faq.home.6.q': 'What browsers are supported?',
 		'faq.home.6.a': 'Squishyfile works in modern browsers such as Chrome, Safari, Firefox, Edge, and Brave. No plugins or extensions are required.',
 
+
 		// ── Video FAQ ─────────────────────────────────────────────────────────────
 		'faq.video.title': 'Frequently Asked Questions',
 
 		'faq.video.1.q': 'Is this video compressor free?',
-		'faq.video.1.a': 'Yes. You can compress videos for free without creating an account or installing software.',
+		'faq.video.1.a': 'Yes. You can compress videos for free without creating an account, installing software, or adding a watermark to the output file.',
 
 		'faq.video.2.q': 'Does Squishyfile upload my video?',
-		'faq.video.2.a': 'No. Video compression runs inside your browser using WebAssembly and FFmpeg. Your video is processed locally on your device instead of being uploaded to a server.',
+		'faq.video.2.a': 'No. Video compression runs locally in your browser using WebAssembly and FFmpeg. Your video is processed on your device instead of being uploaded to a server.',
 
 		'faq.video.3.q': 'Will there be a watermark?',
-		'faq.video.3.a': 'No. The compressed video is downloaded as a clean MP4 file with no watermark added by Squishyfile.',
+		'faq.video.3.a': 'No. Squishyfile does not add a watermark. The compressed video is downloaded as a clean MP4 file.',
 
-		'faq.video.4.q': 'Can I compress MP4 files?',
-		'faq.video.4.a': 'Yes. You can compress MP4 files and download a smaller MP4 output.',
+		'faq.video.4.q': 'Do I need to install an app?',
+		'faq.video.4.a': 'No. The compressor works in your browser, so you do not need to install a desktop app, mobile app, plugin, or video editing software.',
 
-		'faq.video.5.q': 'Can I compress MOV files from iPhone?',
-		'faq.video.5.a': 'Yes. You can select MOV videos recorded on iPhone and compress them into smaller MP4 files that are easier to share.',
+		'faq.video.5.q': 'Which video formats can I compress?',
+		'faq.video.5.a': 'You can compress common video formats such as MP4, MOV, AVI, MKV, WebM, WMV, and FLV. The compressed output is saved as MP4 for easier sharing and playback.',
 
-		'faq.video.6.q': 'Can I reduce video file size without losing quality?',
-		'faq.video.6.a': 'Compression always changes the file in some way, but the Balanced and High presets are designed to reduce size while keeping the video looking good for normal viewing. For many everyday videos, the difference is hard to notice on a phone or laptop screen.',
+		'faq.video.6.q': 'Can I compress MP4 files online?',
+		'faq.video.6.a': 'Yes. You can select an MP4 file, reduce its file size in your browser, and download a smaller MP4 version.',
 
-		'faq.video.7.q': 'Can I compress a video to a specific size?',
-		'faq.video.7.a': 'Yes. Use the Target File Size option and enter the desired size in MB. The tool will try to create a compressed video close to that size while preserving as much quality as possible.',
+		'faq.video.7.q': 'Can I make a video file smaller?',
+		'faq.video.7.a': 'Yes. Squishyfile reduces video file size by adjusting compression settings such as bitrate and output quality. You can use a preset or enter a target file size in MB.',
 
-		'faq.video.8.q': 'Can I compress video for WhatsApp under 16MB?',
-		'faq.video.8.a': 'Yes. Enter 15MB as the target size to leave a small buffer under the common WhatsApp video message limit. Very long or fast-moving videos may need trimming or stronger compression.',
+		'faq.video.8.q': 'Can I compress a video without losing quality?',
+		'faq.video.8.a': 'All real video compression changes the file in some way, but the Balanced and High Quality presets are designed to make the file smaller while keeping it clear for normal viewing.',
 
-		'faq.video.9.q': 'Can I compress video for Gmail under 25MB?',
-		'faq.video.9.a': 'Yes. Enter 24MB as the target size for Gmail. If you want a safer size for more email providers, use 19MB instead.',
+		'faq.video.9.q': 'Which compression preset should I choose?',
+		'faq.video.9.a': 'Use Balanced for most videos, High Quality when detail matters, and Small File when the smallest possible size is more important than sharpness. Use Target File Size when you need the video under a specific MB limit.',
 
-		'faq.video.10.q': 'Can I compress video for Discord under 8MB?',
-		'faq.video.10.a': 'Yes. Enter 8MB as the target file size. For long clips, you may need to trim the video or accept lower quality to fit under that limit.',
+		'faq.video.10.q': 'Can I compress a video to a specific size?',
+		'faq.video.10.a': 'Yes. Enter your target size in MB and Squishyfile will try to create a compressed MP4 close to that size while preserving as much quality as possible.',
 
-		'faq.video.11.q': 'Does it work on mobile?',
-		'faq.video.11.a': 'Yes. You can use the compressor in Safari on iPhone and Chrome on Android. Large videos may process more smoothly on a desktop or laptop.',
+		'faq.video.11.q': 'Can I reduce video size for email?',
+		'faq.video.11.a': 'Yes. Use Target File Size and enter a safe size for your email provider. For many email attachments, 24MB is safer than aiming for the exact 25MB limit.',
 
-		'faq.video.12.q': 'Why is compression slow?',
-		'faq.video.12.a': 'Video compression is CPU-intensive. Speed depends on video length, resolution, codec, browser, and device performance. A large 4K file will take longer than a short 720p clip.',
+		'faq.video.12.q': 'Does it work on iPhone and Android?',
+		'faq.video.12.a': 'Yes. You can compress videos in Safari on iPhone and Chrome on Android. Large videos may process more smoothly on a desktop or laptop.',
 
-		'faq.video.13.q': 'What happens if I close the tab?',
-		'faq.video.13.a': 'If you close the tab while compression is running, the process stops. Keep the tab open until the compressed video is ready to download.',
+		'faq.video.13.q': 'Can I compress large or 4K videos?',
+		'faq.video.13.a': 'Yes, but large 4K videos need more processing power, memory, and time. For very large files, a desktop or laptop usually works better than an older phone.',
 
-		'faq.video.14.q': 'Where is the compressed video saved?',
-		'faq.video.14.a': 'After compression finishes, click Download. The file will be saved to your browser\'s default download location, which depends on your device and browser settings.',
+		'faq.video.14.q': 'Why is video compression slow?',
+		'faq.video.14.a': 'Video compression is CPU-intensive. Speed depends on your device, browser, video length, resolution, codec, and how much the file needs to be reduced.',
+
+		'faq.video.15.q': 'Where is the compressed video saved?',
+		'faq.video.15.a': 'After compression finishes, click Download. The file is saved to your browser\'s default download location, which depends on your device and browser settings.',
 
 
 		// ── PDF FAQ (size reduction, password, scanned, email) ──────────────────
 		'faq.pdf.title': 'Frequently Asked Questions',
 
-		'faq.pdf.1.q': 'Is this PDF compressor free?',
-		'faq.pdf.1.a': 'Yes. Squishyfile\'s PDF compression tool is free to use and does not require an account.',
+'faq.pdf.1.q': 'Is this PDF compressor free?',
+'faq.pdf.1.a': 'Yes. You can compress PDF files for free without creating an account, installing software, or adding a watermark to the compressed PDF.',
 
-		'faq.pdf.2.q': 'Do I need to install software?',
-		'faq.pdf.2.a': 'No. The tool runs in your browser. You do not need Adobe Acrobat, a desktop app, or a mobile app.',
+'faq.pdf.2.q': 'How do I compress a PDF online?',
+'faq.pdf.2.a': 'Upload your PDF, wait for the compressor to reduce the file size, then download the smaller PDF. The tool works directly in your browser, so you do not need Adobe Acrobat or any extra software.',
 
-		'faq.pdf.3.q': 'Is my PDF uploaded anywhere?',
-		'faq.pdf.3.a': 'No. Compression happens inside your browser using WebAssembly. Your PDF is not uploaded to a server for processing.',
+'faq.pdf.3.q': 'Will compressing a PDF change the text or layout?',
+'faq.pdf.3.a': 'No. PDF compression reduces file size by optimizing images, fonts, metadata, and internal file data. Your text, page order, formatting, and layout stay the same.',
 
-		'faq.pdf.4.q': 'How much smaller can my PDF become?',
-		'faq.pdf.4.a': 'It depends on the content. Scanned documents and image-heavy PDFs can often shrink a lot. Text-only PDFs or already-optimized files may only become slightly smaller.',
+'faq.pdf.4.q': 'How much can I reduce PDF file size?',
+'faq.pdf.4.a': 'It depends on the PDF. Scanned PDFs and image-heavy files usually shrink the most, while text-only PDFs are often already small and may only reduce slightly.',
 
-		'faq.pdf.5.q': 'Will compressing a PDF reduce quality?',
-		'faq.pdf.5.a': 'PDF compression can optimize image data, so the output is not always identical to the original. In Balanced mode, the goal is to keep text and images readable while reducing file size. Maximum mode may reduce image sharpness more noticeably, but it can create a smaller file.',
+'faq.pdf.5.q': 'Can I compress a large PDF file?',
+'faq.pdf.5.a': 'Yes. This PDF size reducer is designed for large PDFs such as scanned documents, reports, contracts, forms, and presentation exports that are too big to email or upload.',
 
-		'faq.pdf.6.q': 'Can I compress a password-protected PDF?',
-		'faq.pdf.6.a': 'Yes, if you know the current password. Enable the password removal option, enter the password, and the tool can remove protection before compressing the PDF.',
+'faq.pdf.6.q': 'Can I reduce a PDF for email attachments?',
+'faq.pdf.6.a': 'Yes. Compressing a PDF makes it easier to send by email, upload to forms, or share through messaging apps. Smaller PDF files upload faster and are less likely to hit attachment limits.',
 
-		'faq.pdf.7.q': 'Can I compress a PDF for email?',
-		'faq.pdf.7.a': 'Yes. PDF compression is useful when a file is too large to attach to an email or when you want the attachment to upload and send faster. Start with Balanced mode, then try Maximum mode if the file is still too large.',
+'faq.pdf.7.q': 'Does this PDF compressor add a watermark?',
+'faq.pdf.7.a': 'No. The compressed PDF is downloaded without a watermark, so you can use it for work, school, applications, forms, and personal documents.',
 
-		'faq.pdf.8.q': 'Can I compress a PDF to 1 MB?',
-		'faq.pdf.8.a': 'Sometimes. It depends on the number of pages, images, scan quality, and whether the PDF has already been optimized. Scanned documents usually compress better than photo-heavy portfolios or files that were already compressed.',
+'faq.pdf.8.q': 'Do I need to sign up to compress a PDF?',
+'faq.pdf.8.a': 'No. You can reduce PDF size online without registration, email signup, or a free trial. Just upload the file, compress it, and download the result.',
 
-		'faq.pdf.9.q': 'Does it work on iPhone or Android?',
-		'faq.pdf.9.a': 'Yes. Use a modern mobile browser, select the PDF from your device, compress it, and download the result. No app installation is required.',
+'faq.pdf.9.q': 'Is it safe to compress PDFs online?',
+'faq.pdf.9.a': 'Yes, especially when compression runs in your browser. Browser-based PDF compression helps keep your document private because the file does not need to be handled like a traditional cloud upload.',
 
-		'faq.pdf.10.q': 'Where is the compressed PDF saved?',
-		'faq.pdf.10.a': 'After processing, click Download. Your browser will save the compressed PDF to your default download location, such as Downloads, Files, or another folder chosen by your device.',
+'faq.pdf.10.q': 'Can I compress a PDF on any device?',
+'faq.pdf.10.a': 'Yes. The PDF compressor works in modern browsers on Windows, Mac, iPhone, iPad, Android, Chromebook, and Linux. You only need a browser and your PDF file.',
 
-		'faq.pdf.11.q': 'What types of PDFs compress best?',
-		'faq.pdf.11.a': 'PDFs with scanned pages, photos, screenshots, presentation slides, charts, or other large embedded images usually compress best because they contain image data that can often be optimized.',
+'faq.pdf.11.q': 'What types of PDFs can I compress?',
+'faq.pdf.11.a': 'You can compress scanned PDFs, resumes, contracts, forms, invoices, reports, image-heavy PDFs, and presentation PDFs. Files with many images usually get the biggest size reduction.',
 
-		'faq.pdf.12.q': 'Why did my PDF file size not decrease much?',
-		'faq.pdf.12.a': 'This can happen when the PDF was already compressed, contains mostly text or vector graphics, has very few images, or includes fonts, forms, or metadata that cannot be reduced much.',
+'faq.pdf.12.q': 'Can I compress multiple PDF files?',
+'faq.pdf.12.a': 'If batch compression is available, you can reduce the size of multiple PDF files in one session. This is useful when you need to shrink several reports, forms, or scanned documents quickly.',
 
-		'faq.pdf.13.q': 'Which compression mode should I choose?',
-		'faq.pdf.13.a': 'Balanced mode is best for most PDFs because it reduces file size while keeping text and images easy to read. Maximum mode is better when you need the smallest possible file size and can accept lower image sharpness.',
+'faq.pdf.13.q': 'Why is my compressed PDF still large?',
+'faq.pdf.13.a': 'Some PDFs are already optimized or contain high-resolution images that cannot be reduced much without visible quality loss. If the file is still too large, remove unnecessary pages or compress images before creating the PDF.',
 
-		'faq.pdf.14.q': 'Can I use this PDF compressor on Mac or Windows?',
-		'faq.pdf.14.a': 'Yes. Squishyfile works in modern browsers on Mac, Windows, Linux, iPhone, Android, and other common devices without installing dedicated software.',
+'faq.pdf.14.q': 'What is the difference between compressing and optimizing a PDF?',
+'faq.pdf.14.a': 'Both terms mean reducing PDF file size. Optimization usually describes a more complete process that can include image compression, font subsetting, metadata cleanup, and removal of redundant file data.',
+
+'faq.pdf.15.q': 'When should I use this PDF compressor?',
+'faq.pdf.15.a': 'Use it when a PDF is too large to email, upload, store, or share. It is ideal for quickly shrinking PDF files while keeping the document readable and ready to use.',
 
 
 		'tab.compress': 'Compress Video',
@@ -290,22 +297,43 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.note.privacy': '<strong>Your files never leave your device.</strong> Squishyfile converts videos to MP3 locally in your browser — no server uploads, no accounts needed. Files are cleared from memory after download.',
 
 		'faq.mp3.title': 'Frequently Asked Questions',
-		'faq.mp3.1.q': 'Is this video to MP3 converter free?',
-		'faq.mp3.1.a': 'Yes. You can convert videos to MP3 for free without creating an account or installing software.',
-		'faq.mp3.2.q': 'Does Squishyfile upload my video?',
-		'faq.mp3.2.a': 'No. The conversion runs inside your browser. Your video stays on your device and is not uploaded to a server.',
-		'faq.mp3.3.q': 'Which video formats are supported?',
-		'faq.mp3.3.a': 'You can select common video files such as MP4, MOV, AVI, WebM and MKV. The output is an MP3 audio file.',
-		'faq.mp3.4.q': 'Can I convert iPhone MOV videos to MP3?',
-		'faq.mp3.4.a': 'Yes. You can select a MOV video recorded on iPhone and extract its audio as an MP3 file.',
-		'faq.mp3.5.q': 'What MP3 quality should I choose?',
-		'faq.mp3.5.a': '192 kbps is recommended for most videos. Choose 128 kbps for smaller files or 320 kbps for higher audio quality.',
-		'faq.mp3.6.q': 'Will the exported MP3 have a watermark?',
-		'faq.mp3.6.a': 'No. The downloaded MP3 is a clean audio file with no watermark.',
-		'faq.mp3.7.q': 'Does it work on mobile?',
-		'faq.mp3.7.a': 'Yes. It works in modern mobile browsers on iPhone and Android, although large files may process better on a desktop or laptop.',
-		'faq.mp3.8.q': 'What happens if I close the tab?',
-		'faq.mp3.8.a': 'If you close the tab during conversion, the process stops. Keep the tab open until the MP3 file is ready.',
+'faq.mp3.1.q': 'Is this video to MP3 converter free?',
+'faq.mp3.1.a': 'Yes. Convert any video file to MP3 for free — no account, no subscription, and no software to install.',
+
+'faq.mp3.2.q': 'Do I need to install any software or app?',
+'faq.mp3.2.a': 'No. The converter runs entirely in your browser. Open it on Chrome, Safari, or Edge on any device and start converting immediately — nothing to download or set up.',
+
+'faq.mp3.3.q': 'Can I convert MP4 to MP3?',
+'faq.mp3.3.a': 'Yes. MP4 is the most common format supported. Whether it\'s a phone video, meeting recording, screen recording, or online class, just select the file and convert it to MP3.',
+
+'faq.mp3.4.q': 'Which video formats are supported besides MP4?',
+'faq.mp3.4.a': 'The converter supports MP4, MOV (iPhone), WebM, MKV, AVI, WMV, and FLV. As long as the file has an audio track and plays normally, it can be converted to MP3.',
+
+'faq.mp3.5.q': 'Is my video file uploaded to a server?',
+'faq.mp3.5.a': 'Never. Everything is processed locally in your browser. Your file never leaves your device, so your videos and their contents stay completely private.',
+
+'faq.mp3.6.q': 'Does it work on iPhone and Android?',
+'faq.mp3.6.a': 'Yes. On iPhone, use Safari. On Android, use Chrome. Select a video file from your device and convert it to MP3 directly on your phone. Keep the browser tab open until the conversion finishes.',
+
+'faq.mp3.7.q': 'What\'s the difference between extracting audio and converting video to MP3?',
+'faq.mp3.7.a': 'They\'re the same thing. This tool pulls the audio track from your video file and saves it as an MP3. The video image is discarded — you get audio only, ideal for meetings, lectures, and voice recordings.',
+
+'faq.mp3.8.q': 'Can I use this to convert YouTube or TikTok videos to MP3?',
+'faq.mp3.8.a': 'No. This tool only works with video files already stored on your device. Pasting a URL or link from YouTube, TikTok, or any other platform is not supported.',
+
+'faq.mp3.9.q': 'What audio quality will I get?',
+'faq.mp3.9.a': 'The output quality matches the audio in your original video. If the source audio is clear, the MP3 will be clear. Conversion does not improve or degrade the original audio quality.',
+
+'faq.mp3.10.q': 'Why does my converted MP3 have no sound?',
+'faq.mp3.10.a': 'The most common cause is that the original video has no audio track — for example, a screen recording made without a microphone. Open the source video in a media player first to confirm it has sound before converting.',
+
+'faq.mp3.11.q': 'Can I use this for meeting recordings and online class videos?',
+'faq.mp3.11.a': 'Yes, and that\'s one of the most common use cases. Recordings from Zoom, Google Meet, Teams, or any saved lecture file can be converted to MP3 for easy playback, note-taking, or listening on the go.',
+
+'faq.mp3.12.q': 'Does the MP3 file have a watermark or any usage restrictions?',
+'faq.mp3.12.a': 'No watermark, no time limits, no restrictions. The MP3 you download is a standard audio file that plays on any media player, music app, or audio editor.',
+
+
 
 		'nav.tools': 'Tools',
 		'tab.convert': 'Convert',
@@ -315,22 +343,9 @@ export const translations: Record<string, Record<string, string>> = {
 		'home.card.convert.cta': 'Convert Video',
 
 		'faq.convert.title': 'Frequently Asked Questions',
-		'faq.convert.1.q': 'Is this online video converter free?',
-		'faq.convert.1.a': 'Yes. Squishyfile lets you convert video files for free without creating an account or installing software.',
-		'faq.convert.2.q': 'Are my videos uploaded to a server?',
-		'faq.convert.2.a': 'No. Your video is processed directly in your browser. The file stays on your device and is not uploaded to Squishyfile servers for conversion.',
-		'faq.convert.3.q': 'What video formats are supported?',
-		'faq.convert.3.a': 'You can choose common video files such as MP4, MOV, AVI, MKV, WebM, WMV, FLV, M4V, 3GP and TS. Output formats include MP4, WebM, MOV and MKV.',
-		'faq.convert.4.q': 'Why should I convert video to MP4?',
-		'faq.convert.4.a': 'MP4 is one of the most compatible video formats. It works well on phones, computers, browsers, social media platforms, cloud storage, email attachments and editing apps.',
-		'faq.convert.5.q': 'Can I use this video converter on iPhone or Android?',
-		'faq.convert.5.a': 'Yes. You can open Squishyfile in a modern browser on iPhone, Android, Mac, Windows or Linux. Large videos may work more reliably on a computer.',
-		'faq.convert.6.q': 'Will the converted video have a watermark?',
-		'faq.convert.6.a': 'No. Squishyfile does not add a watermark to your converted video.',
-		'faq.convert.7.q': 'What happens if I close the tab while converting?',
-		'faq.convert.7.a': 'The conversion will stop if you close the tab. Keep the page open until the MP4 file is ready to download.',
-		'faq.convert.8.q': 'What should I do if my video cannot be converted?',
-		'faq.convert.8.a': 'The file may use an unusual codec, be damaged, be too large, or your browser/device may not have enough memory. Try confirming the original video plays correctly, updating your browser, or using a computer.',
+
+
+
 
 		// ── Video converter page / Hub ─────────────────────────────────────────────
 		'convert.meta.title': 'Online Video Converter｜Free Video to MP4 Converter - Squishyfile',
@@ -1102,22 +1117,46 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.benefit.online.desc": "Use the PDF merger on Mac, Windows, Linux, iPhone or Android in a modern browser.",
 
 		"faq.pdfMerge.title": "Merge PDF FAQ",
-		"faq.pdfMerge.1.q": "Is this PDF merger free?",
-		"faq.pdfMerge.1.a": "Yes. You can merge PDF files online for free without creating an account, installing software or adding a watermark.",
-		"faq.pdfMerge.2.q": "Are my PDF files uploaded to a server?",
-		"faq.pdfMerge.2.a": "No. PDF merging runs directly in your browser. Your files stay on your device and are not uploaded to a server.",
-		"faq.pdfMerge.3.q": "Can I combine multiple PDF files into one?",
-		"faq.pdfMerge.3.a": "Yes. Select two or more PDF files, arrange them in the order you want, and combine them into one PDF document.",
-		"faq.pdfMerge.4.q": "Can I change the order before merging PDFs?",
-		"faq.pdfMerge.4.a": "Yes. You can reorder the selected PDF files before creating the final merged PDF.",
-		"faq.pdfMerge.5.q": "Do I need Adobe Acrobat to merge PDFs?",
-		"faq.pdfMerge.5.a": "No. You can merge PDF files online in your browser without Adobe Acrobat or any desktop app.",
-		"faq.pdfMerge.6.q": "Does it work on mobile?",
-		"faq.pdfMerge.6.a": "Yes. The PDF merger works in modern mobile browsers on iPhone and Android. Large PDF files may process faster on a desktop or laptop.",
-		"faq.pdfMerge.7.q": "Will the merged PDF have a watermark?",
-		"faq.pdfMerge.7.a": "No. Squishyfile does not add a watermark to your merged PDF.",
-		"faq.pdfMerge.8.q": "What happens if I close the tab while merging?",
-		"faq.pdfMerge.8.a": "The process will stop if you close the tab. Keep the page open until the merged PDF is ready to download.",
+'faq.pdfMerge.1.q': 'How do I merge PDF files online?',
+'faq.pdfMerge.1.a': 'Select your PDF files in the browser, arrange them in the order you want, then merge them into one PDF. Your files are processed locally on your device and are not uploaded to our server.',
+
+'faq.pdfMerge.2.q': 'Is this PDF merger free?',
+'faq.pdfMerge.2.a': 'Yes. You can merge PDF files for free without creating an account, installing Adobe Acrobat, or adding a watermark to the final PDF.',
+
+'faq.pdfMerge.3.q': 'Can I combine multiple PDF files into one?',
+'faq.pdfMerge.3.a': 'Yes. You can combine multiple PDFs into a single PDF file. Add your files in the browser, reorder them, and download one merged document.',
+
+'faq.pdfMerge.4.q': 'Can I merge two PDF files?',
+'faq.pdfMerge.4.a': 'Yes. This PDF combiner works for two PDF files as well as larger batches of documents. Select both files, choose the order, and merge them into one PDF.',
+
+'faq.pdfMerge.5.q': 'Do I need Adobe Acrobat to merge PDFs?',
+'faq.pdfMerge.5.a': 'No. You can merge PDFs without Adobe Acrobat or any desktop app. The tool runs in your browser, so it works on most devices.',
+
+'faq.pdfMerge.6.q': 'Are my PDF files uploaded to your server?',
+'faq.pdfMerge.6.a': 'No. Your PDF files are processed locally in your browser. They do not leave your device, which helps keep your documents private.',
+
+'faq.pdfMerge.7.q': 'Can I reorder PDF files before merging?',
+'faq.pdfMerge.7.a': 'Yes. After selecting your PDFs, you can rearrange the file order before merging. The final PDF will follow the order you set.',
+
+'faq.pdfMerge.8.q': 'Can I add pages to an existing PDF?',
+'faq.pdfMerge.8.a': 'Yes. To add pages to a PDF, select your original PDF together with the file that contains the new pages, place them in the correct order, and merge them into one document.',
+
+'faq.pdfMerge.9.q': 'Can I merge PDF pages from different files?',
+'faq.pdfMerge.9.a': 'Yes. You can join PDF pages from different files by combining the PDFs into one document. This is useful for reports, contracts, forms, invoices, and scanned documents.',
+
+'faq.pdfMerge.10.q': 'Does this PDF merge tool work on Mac and Windows?',
+'faq.pdfMerge.10.a': 'Yes. The PDF merge tool works in the browser, so you can use it on Mac, Windows, Linux, Chromebook, and other devices with a modern web browser.',
+
+'faq.pdfMerge.11.q': 'Can I merge PDFs on iPhone or Android?',
+'faq.pdfMerge.11.a': 'Yes. You can merge PDF files on iPhone, iPad, Android phones, and tablets. Open the tool in your mobile browser, select your PDFs, and download the combined file.',
+
+'faq.pdfMerge.12.q': 'Can I merge scanned PDF files?',
+'faq.pdfMerge.12.a': 'Yes. Scanned PDFs can be merged just like regular PDFs. Select the scanned documents, arrange them in the correct order, and combine them into one PDF file.',
+
+'faq.pdfMerge.13.q': 'What is the difference between merge PDF and combine PDF?',
+'faq.pdfMerge.13.a': 'Merge PDF and combine PDF usually mean the same thing: joining two or more PDF files into one document. This tool works as both a PDF merger and a PDF combiner.',
+
+
 
 		"tab.pdfMerge": "Merge PDF",
 
@@ -1146,6 +1185,41 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.status.loadingSample": "Loading samples...",
 		"pdfMerge.error.sampleLoadFailed": "Failed to load sample files.",
 		"pdfMerge.hint.dragToReorder": "Drag to reorder",
+
+		"home.eyebrow": "Private browser tools",
+
+		"steps.title": "How to use this tool",
+		"steps.1.title": "Upload your file",
+		"steps.1.desc": "Choose a file from your device, or drag and drop it into the tool area. Your file is ready to process in just a few seconds.",
+
+		"steps.2.title": "Adjust the settings",
+		"steps.2.desc": "Pick the output option, quality level, target size, or format you need. You can keep the default settings for a quick result.",
+
+		"steps.3.title": "Process and download",
+		"steps.3.desc": "Start the tool, wait for the browser to finish processing, then download the finished file directly to your device.",
+
+		"howto.toggle": "About this tool",
+		"howto.section.title": "How this tool works",
+
+		"steps.bg.title": "How to create a barcode",
+		"steps.bg.1.title": "Enter the code",
+		"steps.bg.1.desc": "Type or paste the number, text, or product code you want to convert.",
+		"steps.bg.2.title": "Adjust the settings",
+		"steps.bg.2.desc": "Choose the barcode format and customize options like size, label text, or image output.",
+		"steps.bg.3.title": "Download the barcode",
+		"steps.bg.3.desc": "Generate the barcode, check the preview, then save it to your device.",
+
+		"steps.cc.title": "How to check your text",
+
+		"steps.cc.1.title": "Paste your text",
+		"steps.cc.1.desc": "Type or paste the text you want to count into the input box.",
+
+		"steps.cc.2.title": "Review the results",
+		"steps.cc.2.desc": "Check characters, words, lines, paragraphs, or platform limits depending on the tool.",
+
+		"steps.cc.3.title": "Edit or copy",
+		"steps.cc.3.desc": "Adjust your text based on the results, then copy the final version when it is ready.",
+
 
 	},
 
@@ -1239,92 +1313,99 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.video.title': 'よくある質問',
 
-		'faq.video.1.q': '無料で使えますか？',
-		'faq.video.1.a': 'はい。Squishyfileの動画圧縮ツールは無料で利用できます。アカウント登録やソフトのインストールも不要です。',
+'faq.video.1.q': 'この動画圧縮ツールは無料で使えますか？',
+'faq.video.1.a': 'はい。Squishyfileの動画圧縮ツールは無料で使えます。アカウント登録、ログイン、ソフトのインストールは不要で、動画を選ぶだけですぐに圧縮できます。',
 
-		'faq.video.2.q': '動画はサーバーにアップロードされますか？',
-		'faq.video.2.a': 'いいえ。動画はブラウザ内で処理され、サーバーにアップロードされません。圧縮処理はお使いの端末上で行われます。',
+'faq.video.2.q': '動画に透かしは入りますか？',
+'faq.video.2.a': 'いいえ。圧縮後の動画に透かしは入りません。SNS投稿、共有、保存用の動画としてそのまま使いやすいファイルを作成できます。',
 
-		'faq.video.3.q': 'MP4以外の動画も圧縮できますか？',
-		'faq.video.3.a': 'はい。MP4、MOV、MKV、AVI、WebMなど、主要な動画形式に対応しています。出力は扱いやすいMP4形式になります。',
+'faq.video.3.q': 'MP4動画を圧縮できますか？',
+'faq.video.3.a': 'はい。MP4動画の容量を小さくできます。ファイルサイズが大きいMP4を軽量化して、保存しやすく、送信やアップロードもしやすい動画にできます。',
 
-		'faq.video.4.q': 'iPhoneのMOV動画も圧縮できますか？',
-		'faq.video.4.a': 'はい。iPhoneで撮影したMOV動画も圧縮できます。圧縮後はMP4として保存できるため、LINE、Discord、メール、SNSで共有しやすくなります。',
+'faq.video.4.q': 'MOVやWebMなど、MP4以外の動画も圧縮できますか？',
+'faq.video.4.a': 'はい。MP4、MOV、WebM、MKV、AVIなど、よく使われる動画形式に対応しています。iPhoneで撮影したMOV動画や、編集アプリから書き出した動画もブラウザ上で圧縮できます。',
 
-		'faq.video.5.q': 'LINEで送れるサイズにできますか？',
-		'faq.video.5.a': 'はい。目標ファイルサイズを指定することで、LINEで送りやすいサイズに調整できます。動画の長さや内容によって結果は変わるため、必要に応じて再圧縮してください。',
+'faq.video.5.q': '動画を圧縮するとどれくらい容量を小さくできますか？',
+'faq.video.5.a': '圧縮後のサイズは、元動画の長さ、解像度、ビットレート、映像の内容によって変わります。大きな動画でも、画質とのバランスを見ながらファイルサイズを小さくできます。',
 
-		'faq.video.6.q': 'Discord用に8MB以下にできますか？',
-		'faq.video.6.a': '動画の長さや内容によりますが、ターゲットファイルサイズを8MBに指定して圧縮できます。長い動画や動きの激しい動画では、画質を大きく下げる必要がある場合があります。',
+'faq.video.6.q': '画質をできるだけ保ったまま動画を軽量化できますか？',
+'faq.video.6.a': 'はい。高画質を重視した設定を選べば、見た目の劣化を抑えながら動画を軽量化できます。字幕や文字が入った動画、商品紹介、画面録画などにも使いやすいです。',
 
-		'faq.video.7.q': 'Gmailやメール添付用に25MB以下にできますか？',
-		'faq.video.7.a': 'はい。メール添付用に25MB以下を目標に圧縮できます。安全に送信したい場合は、25MBぴったりではなく、少し小さめのサイズを指定するのがおすすめです。',
+'faq.video.7.q': '動画の目標サイズを指定して圧縮できますか？',
+'faq.video.7.a': 'はい。必要に応じて目標ファイルサイズを指定できます。容量制限に合わせたいときや、できるだけ軽い動画を作りたいときに便利です。',
 
-		'faq.video.8.q': '圧縮すると画質は悪くなりますか？',
-		'faq.video.8.a': '圧縮の仕組み上、元ファイルと完全に同じ品質ではありません。ただし、「バランス」や「高画質」を選ぶことで、見た目をできるだけ保ちながら容量を小さくできます。',
+'faq.video.8.q': '4K動画も圧縮できますか？',
+'faq.video.8.a': 'はい。4K動画も圧縮できます。4K動画はファイルサイズが大きくなりやすいため、圧縮することで保存、共有、アップロードがしやすくなります。',
 
-		'faq.video.9.q': '長い動画や4K動画も圧縮できますか？',
-		'faq.video.9.a': 'はい。ただし、処理できるかどうかは端末の性能、メモリ、ブラウザ環境によって変わります。大きな動画では処理に時間がかかるため、PCでの利用がおすすめです。',
+'faq.video.9.q': 'スマホからでも動画を圧縮できますか？',
+'faq.video.9.a': 'はい。iPhoneやAndroidのブラウザから動画を選択して圧縮できます。アプリを追加せずに、スマホ内の動画をそのまま軽量化できます。',
 
-		'faq.video.10.q': 'スマホでも動画を圧縮できますか？',
-		'faq.video.10.a': 'はい。iPhoneやAndroidのブラウザからも利用できます。専用アプリをインストールする必要はありません。',
+'faq.video.10.q': '動画圧縮にアプリのインストールは必要ですか？',
+'faq.video.10.a': 'いいえ。Squishyfileはブラウザで使える動画圧縮ツールです。PC、スマホ、タブレットからアクセスして、インストール不要ですぐに使えます。',
 
-		'faq.video.11.q': '圧縮中にタブを閉じるとどうなりますか？',
-		'faq.video.11.a': '圧縮中にタブを閉じると、処理が中断されます。圧縮が完了するまで、できるだけタブを開いたままにしてください。',
+'faq.video.11.q': '動画ファイルはサーバーにアップロードされますか？',
+'faq.video.11.a': 'いいえ。動画はブラウザ内で処理されるため、ファイルをサーバーにアップロードせずに圧縮できます。プライベートな動画や未公開の素材にも使いやすい仕組みです。',
 
-		'faq.video.12.q': '圧縮後の動画はどこに保存されますか？',
-		'faq.video.12.a': '処理完了後に「ダウンロード」ボタンから、お使いの端末に保存できます。保存先はブラウザや端末の設定によって異なります。',
+'faq.video.12.q': '圧縮前の元動画は消えたり変更されたりしますか？',
+'faq.video.12.a': 'いいえ。元の動画ファイルは変更されません。圧縮後の動画は別ファイルとして保存できるので、元動画を残したまま軽いコピーを作成できます。',
 
-		'faq.video.13.q': 'MacやWindowsでも使えますか？',
-		'faq.video.13.a': 'はい。Squishyfileはブラウザ上で動作するため、Mac、Windows、iPhone、Androidなど主要な環境で利用できます。Chrome、Edge、Safariなどのブラウザから動画を圧縮できます。',
+'faq.video.13.q': '動画の音声も残したまま圧縮できますか？',
+'faq.video.13.a': 'はい。通常は音声を残したまま動画を圧縮できます。圧縮後は、映像の見え方だけでなく、音声が問題なく再生されるかも確認してください。',
 
-		'faq.video.14.q': '圧縮後のファイルがほとんど小さくなりません。なぜですか？',
-		'faq.video.14.a': '元の動画がすでに強く圧縮されている場合や、動きが激しい動画、ノイズが多い動画、高解像度・高フレームレートの動画では、容量があまり減らないことがあります。その場合は「低画質（最小サイズ）」や目標ファイルサイズ指定を試してください。',
+'faq.video.14.q': '長い動画や大きい動画も圧縮できますか？',
+'faq.video.14.a': 'はい。長い動画やファイルサイズの大きい動画も圧縮できます。ただし、処理時間は動画の長さ、解像度、端末の性能によって変わります。',
+
+'faq.video.15.q': '動画を圧縮するにはどうすればいいですか？',
+'faq.video.15.a': '圧縮したい動画を選択し、品質や目標サイズを選んで、圧縮を開始するだけです。完了後は、軽量化された動画をダウンロードしてすぐに使えます。',
 
 
 		'faq.pdf.title': 'よくある質問',
 
-		'faq.pdf.1.q': '無料で使えますか？',
-		'faq.pdf.1.a': 'はい。SquishyfileのPDF圧縮ツールは無料で利用できます。アカウント登録も不要です。',
+'faq.pdf.1.q': 'このPDF圧縮ツールは無料で使えますか？',
+'faq.pdf.1.a': 'はい。SquishyfileのPDF圧縮ツールは無料で使えます。アカウント登録やソフトのインストールなしで、PDFファイルのサイズを小さくできます。',
 
-		'faq.pdf.2.q': 'PDFはどのくらい圧縮できますか？',
-		'faq.pdf.2.a': '圧縮率はPDFの内容によって異なります。画像やスキャンデータが多いPDFは容量を大きく減らせる場合があります。一方で、すでに最適化済みのPDFやテキスト中心のPDFでは、サイズがあまり変わらないこともあります。',
+'faq.pdf.2.q': 'PDFを圧縮すると何ができますか？',
+'faq.pdf.2.a': 'PDFを圧縮すると、ファイル容量を減らしてメール送信、Web提出、クラウド保存がしやすくなります。大きすぎるPDFを軽量化したい時に便利です。',
 
-		'faq.pdf.3.q': 'PDFはサーバーに送信されますか？',
-		'faq.pdf.3.a': 'いいえ。PDFはブラウザ内で処理され、サーバーにアップロードされません。',
+'faq.pdf.3.q': 'PDFの画質は落ちますか？',
+'faq.pdf.3.a': 'PDFの内容によって圧縮結果は変わりますが、Squishyfileは文字の読みやすさや画像の見やすさをできるだけ保ちながらファイルサイズを削減します。',
 
-		'faq.pdf.4.q': 'パスワード付きPDFも圧縮できますか？',
-		'faq.pdf.4.a': '現在のパスワードが分かっている場合は、パスワードを入力して保護を解除してから圧縮できます。',
+'faq.pdf.4.q': 'PDFファイルをサーバーにアップロードしますか？',
+'faq.pdf.4.a': 'いいえ。Squishyfileはブラウザ内でPDFを処理するため、ファイルを外部サーバーにアップロードせずに圧縮できます。機密書類や個人情報を含むPDFにも使いやすい設計です。',
 
-		'faq.pdf.5.q': 'PDF圧縮のファイルサイズ制限はありますか？',
-		'faq.pdf.5.a': 'Squishyfileはブラウザ内で処理を行うため、処理できるファイルサイズはお使いの端末のメモリやブラウザ環境によって変わります。非常に大きなPDFでは、処理に時間がかかったり、ブラウザが重くなったりする場合があります。',
+'faq.pdf.5.q': 'MacでもWindowsでもPDFを圧縮できますか？',
+'faq.pdf.5.a': 'はい。ブラウザで動作するPDF圧縮ツールなので、Mac、Windows、Chromebookなど、主要なパソコン環境で利用できます。',
 
-		'faq.pdf.6.q': '圧縮すると画質は悪くなりますか？',
-		'faq.pdf.6.a': '圧縮の仕組み上、画像データは最適化されるため、元ファイルと完全に同じ品質ではありません。ただし、「バランス」モードでは、文字や画像の見やすさを保ちながらファイルサイズを小さくすることを目指します。',
+'faq.pdf.6.q': 'iPhoneやAndroidスマホでも使えますか？',
+'faq.pdf.6.a': 'はい。スマホのブラウザからPDFを選択して圧縮できます。外出先で履歴書、申請書、スキャンPDFなどの容量を小さくしたい時にも便利です。',
 
-		'faq.pdf.7.q': 'メール添付用にPDFを圧縮できますか？',
-		'faq.pdf.7.a': 'はい。メールに添付しやすいサイズまでPDFの容量を小さくしたい場合に利用できます。まずは「バランス」モードで圧縮し、まだ容量が大きい場合は「最大圧縮」を試してください。',
+'faq.pdf.7.q': 'PDFを圧縮するのに登録は必要ですか？',
+'faq.pdf.7.a': 'いいえ。メールアドレスの入力、ログイン、会員登録は不要です。ページを開いてPDFを選ぶだけですぐに圧縮を開始できます。',
 
-		'faq.pdf.8.q': 'PDFを2MB以下にできますか？',
-		'faq.pdf.8.a': 'PDFの内容によります。画像が多いPDFやスキャンPDFは大きく圧縮できることがありますが、すでに最適化済みのPDFでは2MB以下にならない場合もあります。',
+'faq.pdf.8.q': '圧縮後のPDFに透かしやロゴは入りますか？',
+'faq.pdf.8.a': 'いいえ。圧縮したPDFに透かしやロゴは追加されません。元のPDFの内容を保ったまま、ファイルサイズだけを小さくできます。',
 
-		'faq.pdf.9.q': 'スマホでもPDFを圧縮できますか？',
-		'faq.pdf.9.a': 'はい。iPhoneやAndroidのブラウザからも利用できます。専用アプリをインストールする必要はありません。',
+'faq.pdf.9.q': 'メールで送れない大きなPDFにも使えますか？',
+'faq.pdf.9.a': 'はい。PDFの容量を減らすことで、メール添付やフォーム提出のサイズ制限に収まりやすくなります。圧縮後はファイルサイズを確認してから送信してください。',
 
-		'faq.pdf.10.q': '圧縮後のPDFはどこに保存されますか？',
-		'faq.pdf.10.a': '処理完了後に「ダウンロード」ボタンから、お使いの端末に保存できます。',
+'faq.pdf.10.q': 'スキャンしたPDFも圧縮できますか？',
+'faq.pdf.10.a': 'はい。スキャンPDFや画像が多いPDFも圧縮できます。写真やスキャン画像を含むPDFは容量が大きくなりやすいため、圧縮効果が出やすい場合があります。',
 
-		'faq.pdf.11.q': 'どんなPDFに向いていますか？',
-		'faq.pdf.11.a': 'メールに添付したいPDF、Webフォームに提出する履歴書や申請書、スキャンした書類、画像や写真が多いPDF、プレゼン資料をPDF化したファイルなどに向いています。',
+'faq.pdf.11.q': 'PDFを2MB以下や10MB以下にできますか？',
+'faq.pdf.11.a': 'PDFの元データによって結果は異なりますが、容量制限に近づけたい時にも使えます。まず一度圧縮し、目標サイズに届かない場合は不要なページや画像を見直すのがおすすめです。',
 
-		'faq.pdf.12.q': 'PDFの容量があまり減らないのはなぜですか？',
-		'faq.pdf.12.a': '元のPDFがすでに最適化されている、画像が少ない、フォントやベクターデータが容量の大半を占めている場合は、圧縮してもサイズがあまり変わらないことがあります。',
+'faq.pdf.12.q': '圧縮してもPDFサイズがあまり小さくならないことはありますか？',
+'faq.pdf.12.a': 'はい。すでに最適化されたPDF、複雑な図面を含むPDF、特殊なフォントを多く含むPDFでは、圧縮できる余地が少ない場合があります。',
 
-		'faq.pdf.13.q': 'どの圧縮モードを選べばよいですか？',
-		'faq.pdf.13.a': '通常は「バランス」モードがおすすめです。文字や画像の見やすさを保ちながら容量を減らせます。できるだけ小さいPDFにしたい場合は「最大圧縮」を選んでください。',
+'faq.pdf.13.q': 'PDF圧縮にインストールは必要ですか？',
+'faq.pdf.13.a': 'いいえ。Squishyfileはブラウザ上で使えるPDF圧縮サイトです。専用ソフトやフリーソフトをインストールせずに、すぐにPDFを軽量化できます。',
 
-		'faq.pdf.14.q': 'MacやWindowsでも使えますか？',
-		'faq.pdf.14.a': 'はい。Squishyfileはブラウザ上で動作するため、Mac、Windows、iPhone、Androidなど主要な環境で利用できます。専用ソフトのインストールは不要です。',
+'faq.pdf.14.q': '複数のPDFを一括で圧縮できますか？',
+'faq.pdf.14.a': '現在は1ファイルずつ圧縮する仕様です。大切なPDFを確認しながら安全に処理したい場合は、ファイルごとに圧縮してください。',
+
+'faq.pdf.15.q': '圧縮したPDFはどこに保存されますか？',
+'faq.pdf.15.a': '圧縮が完了したら、ブラウザから圧縮済みPDFをダウンロードできます。保存先はお使いの端末やブラウザのダウンロード設定によって異なります。',
+
 
 
 		'tab.compress': '動画を圧縮',
@@ -1440,59 +1521,81 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.note.privacy': '<strong>ファイルは端末から外へ送信されません。</strong> Squishyfileは動画をブラウザ内でMP3に変換します。サーバーへのアップロード、アカウント作成は不要です。ダウンロード後、ファイルはメモリから削除されます。',
 
 		'faq.mp3.title': 'よくある質問',
+'faq.mp3.1.q': '動画をMP3に無料で変換できますか？',
+'faq.mp3.1.a': 'はい。Squishyfileでは、動画ファイルを無料でMP3に変換できます。アカウント登録やソフトのインストールは不要です。',
 
-		'faq.mp3.1.q': 'MP4をMP3に無料で変換できますか？',
-		'faq.mp3.1.a': 'はい。SquishyfileではMP4などの動画ファイルを無料でMP3に変換できます。アカウント作成やソフトのインストールは不要です。',
+'faq.mp3.2.q': 'MP4をMP3に変換できますか？',
+'faq.mp3.2.a': 'はい。MP4動画に含まれる音声を抽出し、MP3ファイルとして保存できます。変換後のMP3には映像は含まれず、音声だけが保存されます。',
 
-		'faq.mp3.2.q': '動画ファイルはアップロードされますか？',
-		'faq.mp3.2.a': 'いいえ。変換はブラウザ上で行われるため、動画ファイルは端末内に残ります。サーバーへアップロードされません。',
+'faq.mp3.3.q': '動画ファイルはサーバーにアップロードされますか？',
+'faq.mp3.3.a': 'いいえ。変換処理はブラウザ内で行われるため、動画ファイルをサーバーにアップロードする必要はありません。個人動画や仕事用の録画も安心して変換できます。',
 
-		'faq.mp3.3.q': '対応している動画形式は何ですか？',
-		'faq.mp3.3.a': 'MP4、MOV、AVI、WebM、MKVなどの一般的な動画ファイルに対応しています。出力形式はMP3です。',
+'faq.mp3.4.q': 'この動画MP3変換サイトは安全ですか？',
+'faq.mp3.4.a': 'はい。Squishyfileはお使いの端末上で動画から音声を抽出します。ファイルを外部サーバーへ送信しないため、プライバシーを重視したい場合にも使いやすい仕組みです。',
 
-		'faq.mp3.4.q': 'iPhoneで撮影したMOV動画をMP3に変換できますか？',
-		'faq.mp3.4.a': 'はい。iPhoneで撮影したMOV動画を選択して、音声だけをMP3ファイルとして保存できます。',
+'faq.mp3.5.q': 'スマホでも動画をMP3に変換できますか？',
+'faq.mp3.5.a': 'はい。iPhoneやAndroidのブラウザから動画ファイルを選択してMP3に変換できます。アプリのインストールは不要です。',
 
-		'faq.mp3.5.q': '動画から音声だけを抽出できますか？',
-		'faq.mp3.5.a': 'はい。動画の映像部分を除き、音声のみをMP3として抽出できます。BGM、ナレーション、録音音声の保存にも使えます。',
+'faq.mp3.6.q': 'MP4以外の動画もMP3に変換できますか？',
+'faq.mp3.6.a': 'はい。MP4のほか、MOV、WebM、MKV、AVIなどの動画ファイルから音声を抽出してMP3として保存できます。',
 
-		'faq.mp3.6.q': 'MP3の音質はどれを選べばいいですか？',
-		'faq.mp3.6.a': '通常は192 kbpsがおすすめです。ファイルサイズを小さくしたい場合は128 kbps、高音質で保存したい場合は320 kbpsを選んでください。',
+'faq.mp3.7.q': 'YouTubeのURLからMP3に変換できますか？',
+'faq.mp3.7.a': 'いいえ。このツールはYouTubeなどのURLからMP3を取得するためのものではありません。お使いの端末に保存されている動画ファイルを選択して変換してください。',
 
-		'faq.mp3.7.q': '変換後のMP3にウォーターマークは入りますか？',
-		'faq.mp3.7.a': 'いいえ。ダウンロードされるMP3ファイルにウォーターマークは入りません。',
+'faq.mp3.8.q': '動画から音声だけを抽出できますか？',
+'faq.mp3.8.a': 'はい。動画に含まれる音声部分だけを取り出し、MP3ファイルとして保存できます。会議録画、講義動画、画面録画、スマホ動画の音声保存に便利です。',
 
-		'faq.mp3.8.q': 'スマホでも動画をMP3に変換できますか？',
-		'faq.mp3.8.a': 'はい。iPhoneやAndroidの最新ブラウザで利用できます。ただし、大きな動画ファイルはパソコンやノートPCの方が安定して処理できます。',
+'faq.mp3.9.q': 'MP3に変換すると音質は落ちますか？',
+'faq.mp3.9.a': 'MP3は圧縮音声形式のため、完全な無劣化ではありません。ただし、元動画の音声に近い聞きやすさを保ちながら、扱いやすい音声ファイルとして保存できます。',
 
-		'faq.mp3.9.q': 'MP4から音声だけを保存できますか？',
-		'faq.mp3.9.a': 'はい。MP4動画を選択すると、音声部分だけを抽出してMP3として保存できます。',
+'faq.mp3.10.q': '変換したMP3はどこに保存されますか？',
+'faq.mp3.10.a': '変換後のMP3はブラウザからダウンロードできます。PCではダウンロードフォルダ、スマホではファイルアプリやダウンロードフォルダを確認してください。',
 
-		'faq.mp3.10.q': '変換中にタブを閉じるとどうなりますか？',
-		'faq.mp3.10.a': '変換中にタブを閉じると処理は停止します。MP3ファイルの準備が完了するまで、タブを開いたままにしてください。',
+'faq.mp3.11.q': '動画をMP3に変換できない場合はどうすればいいですか？',
+'faq.mp3.11.a': 'まず元の動画に音声が入っているか確認してください。ファイルが破損している場合や、動画が大きすぎる場合は、別のブラウザやPCで試すと変換しやすいことがあります。',
+
+'faq.mp3.12.q': 'BGMや声だけを個別に抽出できますか？',
+'faq.mp3.12.a': 'このツールは動画内の音声トラック全体をMP3として保存するためのものです。BGM、声、効果音をAIで個別に分離する機能ではありません。',
+
 
 		// Convert Video to MP4
 		'home.card.convert.title': '動画をMP4に変換',
 		'home.card.convert.desc': 'MOV・MKV・AVI・WebMなどをMP4に変換。アップロード不要でブラウザ内処理。',
 		'home.card.convert.cta': '動画をMP4に変換',
 		'faq.convert.title': 'よくある質問',
-		'faq.convert.1.q': 'この動画変換サイトは無料ですか？',
-		'faq.convert.1.a': 'はい。Squishyfileの動画変換ツールは無料で利用できます。アカウント登録やソフトのインストールも不要です。',
-		'faq.convert.2.q': '動画はサーバーにアップロードされますか？',
-		'faq.convert.2.a': 'いいえ。動画変換はブラウザ内で行われます。動画ファイルはお使いの端末上で処理され、変換のためにサーバーへアップロードされません。',
-		'faq.convert.3.q': 'どの動画形式に対応していますか？',
-		'faq.convert.3.a': 'MP4、MOV、AVI、MKV、WebM、WMV、FLV、M4V、3GP、TSなど、主要な動画ファイルを選択できます。出力形式はMP4、WebM、MOV、MKVから選べます。',
-		'faq.convert.4.q': 'MP4に変換するのがおすすめですか？',
-		'faq.convert.4.a': '多くの場合はMP4がおすすめです。互換性が高く、スマホ、PC、SNS、メール、編集ソフトなどで扱いやすい形式です。',
-		'faq.convert.5.q': 'スマホでも使えますか？',
-		'faq.convert.5.a': 'はい。iPhoneやAndroidのブラウザから利用できます。ただし、大きな動画はPCの方が安定しやすい場合があります。',
-		'faq.convert.6.q': '変換後の動画に透かしは入りますか？',
-		'faq.convert.6.a': 'いいえ。Squishyfileは変換後の動画に透かしを追加しません。',
-		'faq.convert.7.q': '変換中にタブを閉じるとどうなりますか？',
-		'faq.convert.7.a': '変換中にタブを閉じると処理が中断されます。変換が完了するまで、タブを開いたままにしてください。',
-		'faq.convert.8.q': '動画を変換できない場合はどうすればいいですか？',
-		'faq.convert.8.a': 'ファイル形式やコーデックが特殊な場合、大きすぎる動画、古いブラウザ、空きメモリ不足などが原因になることがあります。別のプレイヤーで再生できるか確認し、ブラウザを最新版にして、必要に応じてPCで試してください。',
+'faq.convert.1.q': 'この動画変換サイトは無料で使えますか？',
+'faq.convert.1.a': 'はい。Squishyfileの動画変換サイトは完全無料でご利用いただけます。アカウント登録やソフトのインストールも不要です。MOV、AVI、MKV、WebMなど、さまざまな形式をMP4に変換できます。',
 
+'faq.convert.2.q': 'どの動画形式からMP4に変換できますか？',
+'faq.convert.2.a': 'MOV、AVI、MKV、WebMなどの形式からMP4への変換に対応しています。iPhone動画（MOV）は[MOVをMP4に変換](/ja/mov-to-mp4)、古いAVI動画は[AVIをMP4に変換](/ja/avi-to-mp4)、高画質MKV動画は[MKVをMP4に変換](/ja/mkv-to-mp4)、ブラウザ録画（WebM）は[WebMをMP4に変換](/ja/webm-to-mp4)から変換できます。',
+
+'faq.convert.3.q': 'インストール不要でオンライン変換できますか？',
+'faq.convert.3.a': 'はい。Squishyfileはブラウザ上で動作するオンライン動画変換サイトです。ソフトのダウンロードやインストールは一切不要で、WindowsでもMacでもすぐに使えます。',
+
+'faq.convert.4.q': 'スマホ（iPhone・Android）でも動画変換できますか？',
+'faq.convert.4.a': 'はい、スマホのブラウザからもご利用いただけます。ただし、4K動画や長時間の動画はPCの方が安定して変換できます。変換中は画面ロックや他のアプリへの切り替えを避けてください。',
+
+'faq.convert.5.q': '動画ファイルをサーバーにアップロードしないで変換できますか？',
+'faq.convert.5.a': 'はい。SquishyfileはWebAssemblyとFFmpegを使い、すべての変換処理をブラウザ上（お使いの端末内）で行います。動画ファイルが外部サーバーに送信されることはないため、家族の動画や仕事用録画など、プライバシーが気になる動画も安心して変換できます。',
+
+'faq.convert.6.q': 'MOV動画をMP4に変換したいのですが、どうすればいいですか？',
+'faq.convert.6.a': 'iPhoneやMacで撮影したMOV動画は、専用の[MOVをMP4に変換](/ja/mov-to-mp4)ツールから変換できます。WindowsやAndroidで再生したい場合や、SNSにアップロードしたい場合は、MP4への変換をおすすめします。',
+
+'faq.convert.7.q': 'AVI形式の古い動画もMP4に変換できますか？',
+'faq.convert.7.a': 'はい。古いWindows PCやデジタルカメラで保存されたAVI動画も変換できます。[AVIをMP4に変換](/ja/avi-to-mp4)ツールをご利用ください。AVI動画をスマホやSNSで扱いやすいMP4形式にまとめて整理できます。',
+
+'faq.convert.8.q': 'MKVやWebMもMP4に変換できますか？',
+'faq.convert.8.a': 'はい、対応しています。MKV動画の変換は[MKVをMP4に変換](/ja/mkv-to-mp4)、ブラウザ録画やWeb動画のWebM変換は[WebMをMP4に変換](/ja/webm-to-mp4)をご利用ください。スマホ再生・SNS共有・動画編集ソフトへの読み込みが必要な場合に便利です。',
+
+'faq.convert.9.q': 'MP4に変換すると画質は下がりますか？',
+'faq.convert.9.a': '形式変換の主な目的は画質を上げることではなく、再生・共有の互換性を高めることです。変換によって画質が大きく劣化することはありませんが、元ファイルの状態やコーデックによって結果が変わる場合があります。大切な動画は変換後のファイルとともに、元ファイルも残しておくことをおすすめします。',
+
+'faq.convert.10.q': '動画変換が途中で止まる・うまくいかない場合は？',
+'faq.convert.10.a': 'まず元の動画ファイルが正常に再生できるかご確認ください。変換中はブラウザのタブを閉じないようにしてください。スマホの場合は省電力モードや画面ロックで処理が止まることがあります。長時間・高解像度（4K）の動画はPCでの変換をお試しください。',		
+
+
+		
+		
 		'nav.tools': 'ツール',
 		'tab.convert': '変換',
 		// ── Video converter page ───────────────────────────────────────────────────
@@ -1549,19 +1652,37 @@ export const translations: Record<string, Record<string, string>> = {
 		"movToMp4.fileTypeFallback": "MOV動画",
 		"movToMp4.output.mp4.sub": "互換性が高い",
 		"faq.movToMp4.title": "よくある質問",
-		"faq.movToMp4.1.q": "MOVをMP4に無料で変換できますか？",
-		"faq.movToMp4.1.a": "はい。Squishyfileでは、MOVをMP4に無料で変換できます。アカウント登録やソフトのインストールは不要です。",
-		"faq.movToMp4.2.q": "MOV動画はサーバーにアップロードされますか？",
-		"faq.movToMp4.2.a": "いいえ。変換はブラウザ内で行われます。MOVファイルはお使いの端末上に残り、サーバーにはアップロードされません。",
-		"faq.movToMp4.3.q": "iPhoneのMOV動画をMP4に変換できますか？",
-		"faq.movToMp4.3.a": "はい。iPhoneやiPadで撮影したMOV動画をMP4に変換し、Windows、Android、SNS、メールで扱いやすくできます。",
-		"faq.movToMp4.4.q": "MacやWindowsでも使えますか？",
-		"faq.movToMp4.4.a": "はい。Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
-		"faq.movToMp4.5.q": "変換後のMP4に透かしは入りますか？",
-		"faq.movToMp4.5.a": "いいえ。ダウンロードされるMP4ファイルにSquishyfileの透かしは追加されません。",
-		"faq.movToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
-		"faq.movToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
+'faq.movToMp4.1.q': 'MOVをMP4に変換するのに料金はかかりますか？',
+'faq.movToMp4.1.a': 'いいえ、SquishyfileのMOV MP4変換ツールは無料でご利用いただけます。アカウント登録もソフトのインストールも不要で、ブラウザからすぐに変換できます。',
 
+'faq.movToMp4.2.q': 'iPhoneで撮影したMOV動画をMP4に変換できますか？',
+'faq.movToMp4.2.a': 'はい。iPhoneやiPadで撮影したMOVファイルをそのままMP4に変換できます。変換後はAndroidスマホやWindowsパソコン、SNSなど幅広い環境で再生・共有しやすくなります。',
+
+'faq.movToMp4.3.q': 'MOVをMP4に変換するとき、動画はサーバーにアップロードされますか？',
+'faq.movToMp4.3.a': 'いいえ。SquishyfileではWebAssemblyとFFmpegを使ってブラウザ内で変換処理を行うため、MOVファイルが外部サーバーに送信されることはありません。家族の動画や公開前の素材など、プライベートな動画を安心して変換できます。',
+
+'faq.movToMp4.4.q': 'MOVとMP4の違いは何ですか？',
+'faq.movToMp4.4.a': 'MOVはAppleのQuickTime由来の動画形式で、iPhone・iPad・Macでよく使われます。MP4はスマホ・PC・SNS・動画編集ソフトなど幅広い環境で再生・共有しやすい形式です。MOVのままだとWindowsやAndroidで開けない場合があるため、相手の環境を問わず使いたいときはMP4への変換が便利です。',
+
+'faq.movToMp4.5.q': 'MacでMOVをMP4に変換できますか？',
+'faq.movToMp4.5.a': 'はい。MacのSafariやChromeなどのブラウザからSquishyfileにアクセスするだけで変換できます。ソフトのインストールは不要です。WindowsのブラウザからでもMOVをMP4に変換できます。',
+
+'faq.movToMp4.6.q': 'スマホでMOVをMP4に変換できますか？',
+'faq.movToMp4.6.a': 'はい、iPhoneやAndroidのブラウザからでもMOVをMP4に変換できます。ただし、4K動画や長時間のMOVファイルはスマホよりPCの方が安定して処理できる場合があります。変換中は画面ロックや省電力モードにならないよう注意してください。',
+
+'faq.movToMp4.7.q': 'MOVをMP4に変換すると画質は変わりますか？',
+'faq.movToMp4.7.a': 'MP4への形式変換の主な目的は画質を変えることではなく、再生・共有できる環境を広げることです。変換後の画質は元ファイルの解像度・ビットレートに依存します。なお、ファイルサイズを小さくしたい場合は変換ではなく動画圧縮が必要です。',
+
+'faq.movToMp4.8.q': 'MOVをMP4に変換したいのはどんな場面ですか？',
+'faq.movToMp4.8.a': 'iPhoneの動画をWindowsパソコンで再生したい、AndroidスマホやSNSで共有したい、動画編集ソフトに読み込みたい、相手の端末環境が分からないといった場面でMOVをMP4に変換するのが便利です。仕事や学校で動画を共有する場合も、MP4にしておく方が無難です。',
+
+'faq.movToMp4.9.q': 'ソフトをインストールせずにMOVをMP4に変換できますか？',
+'faq.movToMp4.9.a': 'はい。SquishyfileのMOV MP4変換ツールはブラウザで動作するため、ソフトのインストールは一切不要です。一度だけ変換したい場合や、PCに余計なソフトを入れたくない場合に特に便利です。',
+
+'faq.movToMp4.10.q': 'AVI・MKV・WebMなど他の形式もMP4に変換できますか？',
+'faq.movToMp4.10.a': 'はい。Squishyfileでは複数の形式に対応しています。AVIをMP4に変換したい場合は[AVIをMP4に変換](/ja/avi-to-mp4)、MKVをMP4に変換したい場合は[MKVをMP4に変換](/ja/mkv-to-mp4)、WebMをMP4に変換したい場合は[WebMをMP4に変換](/ja/webm-to-mp4)をご利用ください。形式を選ばずまとめて変換したい場合は[動画変換サイト](/ja/video-converter)が便利です。',
+
+		
 		// avi-to-mp4
 		"aviToMp4.meta.title": "AVI MP4変換｜AVIをMP4に無料変換 - Squishyfile",
 		"aviToMp4.meta.desc": "AVIをMP4に無料変換。古いPC動画やカメラ動画をブラウザでMP4化。インストール不要・アップロード不要・透かしなし。",
@@ -1581,18 +1702,37 @@ export const translations: Record<string, Record<string, string>> = {
 		"aviToMp4.fileTypeFallback": "AVI動画",
 		"aviToMp4.output.mp4.sub": "互換性が高い",
 		"faq.aviToMp4.title": "よくある質問",
-		"faq.aviToMp4.1.q": "AVIをMP4に無料で変換できますか？",
-		"faq.aviToMp4.1.a": "はい。Squishyfileでは、AVIをMP4に無料で変換できます。アカウント登録やソフトのインストールは不要です。",
-		"faq.aviToMp4.2.q": "AVI動画はサーバーにアップロードされますか？",
-		"faq.aviToMp4.2.a": "いいえ。変換はブラウザ内で行われます。AVIファイルはお使いの端末上に残り、サーバーにはアップロードされません。",
-		"faq.aviToMp4.3.q": "古いWindowsのAVI動画をMP4に変換できますか？",
-		"faq.aviToMp4.3.a": "はい。古いWindows PC、デジタルカメラ、録画ソフトなどで保存されたAVI動画をMP4に変換し、スマホやSNSで扱いやすくできます。",
-		"faq.aviToMp4.4.q": "MacやWindowsでも使えますか？",
-		"faq.aviToMp4.4.a": "はい。Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
-		"faq.aviToMp4.5.q": "変換後のMP4に透かしは入りますか？",
-		"faq.aviToMp4.5.a": "いいえ。ダウンロードされるMP4ファイルにSquishyfileの透かしは追加されません。",
-		"faq.aviToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
-		"faq.aviToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
+'faq.aviToMp4.1.q': 'AVIをMP4に変換するのは無料ですか？',
+'faq.aviToMp4.1.a': 'はい、完全無料でご利用いただけます。アカウント登録やソフトのインストールも不要です。ブラウザを開いてAVIファイルを選択するだけで、すぐにMP4へ変換できます。',
+
+'faq.aviToMp4.2.q': 'AVIをMP4に変換するソフトをインストールしないといけませんか？',
+'faq.aviToMp4.2.a': 'インストールは不要です。SquishyfileはブラウザだけでAVIをMP4に変換できるオンラインツールです。WindowsでもMacでも、ブラウザさえあればすぐに使えます。',
+
+'faq.aviToMp4.3.q': 'スマホ（iPhone・Android）でAVIをMP4に変換できますか？',
+'faq.aviToMp4.3.a': 'はい、スマホのブラウザからも変換できます。ただし、ファイルサイズが大きいAVI動画や長時間の動画は、PCで変換する方が安定します。変換中は画面ロックや他アプリへの切り替えをしないようにご注意ください。',
+
+'faq.aviToMp4.4.q': 'AVIファイルをMP4に変換する必要があるのはなぜですか？',
+'faq.aviToMp4.4.a': 'AVIは主に古いWindows PC・デジタルカメラ・録画ソフトで使われてきた形式です。現在のスマホ、SNS、クラウドサービス、動画編集ソフトではMP4の方が互換性が高く、再生・共有・アップロードがしやすくなります。相手の再生環境が分からない場合もMP4が無難です。',
+
+'faq.aviToMp4.5.q': 'AVIが再生できない・開けない場合、MP4に変換すれば解決しますか？',
+'faq.aviToMp4.5.a': '多くの場合、AVIをMP4に変換することでスマホや最新のWebサービスで再生できるようになります。ただし、まず元のAVIファイルが正常に再生できるか確認してください。ファイル自体が壊れている場合は、変換ツールでも処理できないことがあります。',
+
+'faq.aviToMp4.6.q': 'AVI動画をサーバーにアップロードせずに変換できますか？',
+'faq.aviToMp4.6.a': 'はい。SquishyfileはWebAssemblyとFFmpegを使い、変換処理をすべてブラウザ上（お使いの端末内）で実行します。AVIファイルが外部サーバーに送信されることはないため、仕事用の録画や個人情報が含まれる動画も安心してご利用いただけます。',
+
+'faq.aviToMp4.7.q': 'AVIをMP4に変換すると画質は変わりますか？',
+'faq.aviToMp4.7.a': 'AVIからMP4への変換は、画質を上げるためではなく再生・共有の互換性を高めることが目的です。変換で画質が大きく落ちることはありませんが、元ファイルの状態やコーデックによって結果が変わる場合があります。大切な動画は、元のAVIファイルも残しておくことをおすすめします。',
+
+'faq.aviToMp4.8.q': 'AVIとMP4はどちらが使いやすいですか？',
+'faq.aviToMp4.8.a': '現在の環境では、MP4の方がスマホ・SNS・ブラウザ・動画編集ソフトでの互換性が高くなっています。古いAVI動画を保管するだけならそのままでも問題ありませんが、共有・投稿・編集に使いたい場合はMP4への変換がおすすめです。',
+
+'faq.aviToMp4.9.q': 'AVI以外の形式もMP4に変換できますか？',
+'faq.aviToMp4.9.a': 'はい。iPhone動画（MOV）は[MOVをMP4に変換](/ja/mov-to-mp4)、高画質動画（MKV）は[MKVをMP4に変換](/ja/mkv-to-mp4)、ブラウザ録画（WebM）は[WebMをMP4に変換](/ja/webm-to-mp4)、その他の形式は[動画変換サイト](/ja/video-converter)からもご利用いただけます。',
+
+'faq.aviToMp4.10.q': 'AVIをMP4に変換できない・途中で止まる場合はどうすればいいですか？',
+'faq.aviToMp4.10.a': '以下をご確認ください。①元のAVIファイルが正常に再生できるか。②変換中にブラウザのタブを閉じていないか。③スマホの場合、省電力モードや画面ロックが変換を中断させていないか。ファイルサイズが大きい場合はPCでの変換をお試しください。',
+
+
 
 		// mkv-to-mp4
 		"mkvToMp4.meta.title": "MKV MP4変換｜MKVをMP4に無料変換 - Squishyfile",
@@ -1613,19 +1753,38 @@ export const translations: Record<string, Record<string, string>> = {
 		"mkvToMp4.fileTypeFallback": "MKV動画",
 		"mkvToMp4.output.mp4.sub": "互換性が高い",
 		"faq.mkvToMp4.title": "よくある質問",
-		"faq.mkvToMp4.1.q": "MKVをMP4に無料で変換できますか？",
-		"faq.mkvToMp4.1.a": "はい。Squishyfileでは、MKVをMP4に無料で変換できます。アカウント登録やソフトのインストールは不要です。",
-		"faq.mkvToMp4.2.q": "MKV動画はサーバーにアップロードされますか？",
-		"faq.mkvToMp4.2.a": "いいえ。変換はブラウザ内で行われます。MKVファイルはお使いの端末上に残り、サーバーにはアップロードされません。",
-		"faq.mkvToMp4.3.q": "字幕付きMKVをMP4に変換できますか？",
-		"faq.mkvToMp4.3.a": "多くのMKVファイルはMP4に変換できます。ただし、特殊な字幕、複数音声、チャプター情報などは、シンプルなMP4出力では元ファイルと完全に同じ形で保持されない場合があります。",
-		"faq.mkvToMp4.4.q": "MacやWindowsでも使えますか？",
-		"faq.mkvToMp4.4.a": "はい。Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
-		"faq.mkvToMp4.5.q": "変換後のMP4に透かしは入りますか？",
-		"faq.mkvToMp4.5.a": "いいえ。ダウンロードされるMP4ファイルにSquishyfileの透かしは追加されません。",
-		"faq.mkvToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
-		"faq.mkvToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
+'faq.mkvToMp4.1.q': 'MKVをMP4に変換するのに料金はかかりますか？',
+'faq.mkvToMp4.1.a': 'いいえ、Squishyfileの MKV MP4変換ツールは無料でご利用いただけます。アカウント登録もソフトのインストールも不要で、ブラウザからすぐに変換できます。',
 
+'faq.mkvToMp4.2.q': 'MKVをMP4に変換するとき、動画はサーバーにアップロードされますか？',
+'faq.mkvToMp4.2.a': 'いいえ。SquishyfileではWebAssemblyとFFmpegを使ってブラウザ内で変換処理を行うため、MKVファイルが外部サーバーに送信されることはありません。会議の録画や顧客情報が含まれる動画など、プライベートな動画を安心して変換できます。',
+
+'faq.mkvToMp4.3.q': 'スマホでMKVをMP4に変換できますか？',
+'faq.mkvToMp4.3.a': 'はい、iPhoneやAndroidのブラウザからでもMKVをMP4に変換できます。ただし、4K動画や長時間のMKVファイルはスマホよりPCの方が安定して処理できる場合があります。変換中は画面ロックや省電力モードにならないよう注意してください。',
+
+'faq.mkvToMp4.4.q': 'MKVとMP4の違いは何ですか？',
+'faq.mkvToMp4.4.a': 'MKVは複数の音声トラック、字幕、高画質映像をまとめて保存できるコンテナ形式です。一方、MP4はスマホ・PC・SNS・動画編集ソフトなど幅広い環境で再生・共有しやすい形式です。MKVのままだと開けない場面があるため、互換性を高める目的でMP4への変換が選ばれます。',
+
+'faq.mkvToMp4.5.q': 'MKVをMP4に変換すると画質は変わりますか？',
+'faq.mkvToMp4.5.a': 'MP4への形式変換の主な目的は画質を変えることではなく、再生・共有できる環境を広げることです。変換後の画質は元ファイルの映像コーデック・解像度・ビットレートに依存します。なお、ファイルサイズを小さくしたい場合は変換ではなく動画圧縮が必要です。',
+
+'faq.mkvToMp4.6.q': 'MKVに入っている字幕や複数音声はMP4変換後も残りますか？',
+'faq.mkvToMp4.6.a': 'MKVに複数の音声トラックや字幕が含まれている場合、変換後のMP4で全てが同じように保持されるとは限りません。変換後は必ず再生して、必要な音声・字幕が含まれているか確認することをおすすめします。',
+
+'faq.mkvToMp4.7.q': 'MKVをMP4に変換したいのはなぜですか？どんな場面で必要になりますか？',
+'faq.mkvToMp4.7.a': 'スマホの標準プレイヤーで再生できない、SNSやクラウドにアップロードできない、動画編集ソフトに読み込めないといった場合に、MKVをMP4に変換すると解決できることがあります。高画質な保存用としてMKVを使いつつ、共有・編集用にMP4版を作成しておくのが便利です。',
+
+'faq.mkvToMp4.8.q': 'ソフトをインストールせずにMKVをMP4に変換できますか？',
+'faq.mkvToMp4.8.a': 'はい。SquishyfileのMKV MP4変換ツールはブラウザで動作するため、ソフトのインストールは一切不要です。WindowsでもMacでも、ブラウザさえあれば変換できます。一度だけ変換したい場合や、PCに余計なソフトを入れたくない場合に特に便利です。',
+
+'faq.mkvToMp4.9.q': 'AVIやMOV、WebMをMP4に変換することもできますか？',
+'faq.mkvToMp4.9.a': 'はい。Squishyfileでは複数の形式に対応しています。AVIをMP4に変換したい場合は[AVIをMP4に変換](/ja/avi-to-mp4)、MOVをMP4に変換したい場合は[MOVをMP4に変換](/ja/mov-to-mp4)、WebMをMP4に変換したい場合は[WebMをMP4に変換](/ja/webm-to-mp4)をご利用ください。形式を選ばずまとめて変換したい場合は[動画変換サイト](/ja/video-converter)が便利です。',
+
+'faq.mkvToMp4.10.q': 'MKVファイルのサイズが大きい場合でも変換できますか？',
+'faq.mkvToMp4.10.a': '変換できますが、大きなMKVファイルや4K動画は処理に時間がかかる場合があります。スマホで変換が止まる場合はPCでお試しください。変換中はブラウザのタブを閉じず、スリープや省電力モードにならないようにすると安定して処理できます。',
+
+
+		
 		// webm-to-mp4
 		"webmToMp4.meta.title": "WebM MP4変換｜WebMをMP4に無料変換 - Squishyfile",
 		"webmToMp4.meta.desc": "WebMをMP4に無料変換。ブラウザ録画や画面録画のWebM動画をMP4化。インストール不要・アップロード不要・透かしなし。",
@@ -1645,18 +1804,37 @@ export const translations: Record<string, Record<string, string>> = {
 		"webmToMp4.fileTypeFallback": "WebM動画",
 		"webmToMp4.output.mp4.sub": "互換性が高い",
 		"faq.webmToMp4.title": "よくある質問",
-		"faq.webmToMp4.1.q": "WebMをMP4に無料で変換できますか？",
-		"faq.webmToMp4.1.a": "はい。Squishyfileでは、WebMをMP4に無料で変換できます。アカウント登録やソフトのインストールは不要です。",
-		"faq.webmToMp4.2.q": "WebM動画はサーバーにアップロードされますか？",
-		"faq.webmToMp4.2.a": "いいえ。変換はブラウザ内で行われます。WebMファイルはお使いの端末上に残り、サーバーにはアップロードされません。",
-		"faq.webmToMp4.3.q": "ブラウザ録画のWebMをMP4に変換できますか？",
-		"faq.webmToMp4.3.a": "はい。ブラウザ録画、画面録画、オンライン会議ツールなどで作成されたWebM動画を、共有しやすいMP4として保存できます。",
-		"faq.webmToMp4.4.q": "MacやWindowsでも使えますか？",
-		"faq.webmToMp4.4.a": "はい。Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
-		"faq.webmToMp4.5.q": "変換後のMP4に透かしは入りますか？",
-		"faq.webmToMp4.5.a": "いいえ。ダウンロードされるMP4ファイルにSquishyfileの透かしは追加されません。",
-		"faq.webmToMp4.6.q": "変換中にタブを閉じるとどうなりますか？",
-		"faq.webmToMp4.6.a": "変換中にタブを閉じると処理が中断されます。MP4ファイルの準備ができるまでページを開いたままにしてください。",
+'faq.webmToMp4.1.q': 'WebMをMP4に変換するのに料金はかかりますか？',
+'faq.webmToMp4.1.a': 'いいえ、SquishyfileのWebM MP4変換ツールは無料でご利用いただけます。アカウント登録もソフトのインストールも不要で、ブラウザからすぐに変換できます。',
+
+'faq.webmToMp4.2.q': 'WebMとMP4の違いは何ですか？',
+'faq.webmToMp4.2.a': 'WebMはGoogle発のWeb向け動画形式で、ブラウザ録画・画面収録・オンラインツールの出力などで使われます。MP4はスマホ・PC・SNS・動画編集ソフトなど幅広い環境で再生・共有しやすい形式です。WebMのままだとスマホの標準アプリや編集ソフトで開けない場合があるため、汎用性を高めたいときはMP4への変換が便利です。',
+
+'faq.webmToMp4.3.q': 'ブラウザで録画したWebMファイルをMP4に変換できますか？',
+'faq.webmToMp4.3.a': 'はい。ChromeやEdgeなどのブラウザで録画・収録したWebMファイルをそのままMP4に変換できます。変換後はスマホでの再生、SNSへの投稿、動画編集ソフトへの読み込みがしやすくなります。',
+
+'faq.webmToMp4.4.q': 'WebMをMP4に変換するとき、動画はサーバーにアップロードされますか？',
+'faq.webmToMp4.4.a': 'いいえ。SquishyfileではWebAssemblyとFFmpegを使ってブラウザ内で変換処理を行うため、WebMファイルが外部サーバーに送信されることはありません。会議の画面録画や公開前の素材など、外部に送りたくない動画も安心して変換できます。',
+
+'faq.webmToMp4.5.q': 'スマホでWebMをMP4に変換できますか？',
+'faq.webmToMp4.5.a': 'はい、iPhoneやAndroidのブラウザからでもWebMをMP4に変換できます。ただし、長時間の動画や高解像度ファイルはスマホよりPCの方が安定して処理できる場合があります。変換中は画面ロックや省電力モードにならないよう注意してください。',
+
+'faq.webmToMp4.6.q': 'WebMをMP4に変換するのはどんな場面で必要ですか？',
+'faq.webmToMp4.6.a': 'ブラウザ録画した動画をスマホで再生できない、WebMファイルをSNSやチャットで共有したい、動画編集ソフトにWebMが読み込めない、オンラインツールから出力された動画を一般的な形式で保存したいといった場面でWebMをMP4に変換すると便利です。',
+
+'faq.webmToMp4.7.q': 'WebMをMP4に変換すると画質は変わりますか？',
+'faq.webmToMp4.7.a': 'MP4への形式変換の主な目的は画質を変えることではなく、再生・共有できる環境を広げることです。変換後の画質は元ファイルの解像度・ビットレートに依存します。ファイルサイズを小さくしたい場合は変換ではなく動画圧縮が必要になることがあります。',
+
+'faq.webmToMp4.8.q': 'ソフトをインストールせずにWebMをMP4に変換できますか？',
+'faq.webmToMp4.8.a': 'はい。SquishyfileのWebM MP4変換ツールはブラウザで動作するため、ソフトのインストールは一切不要です。WindowsでもMacでも、ブラウザさえあればすぐに変換できます。一度だけ変換したい場合や、PCに余計なソフトを入れたくない場合に特に便利です。',
+
+'faq.webmToMp4.9.q': 'WebMをMP4に変換できない場合はどうすればよいですか？',
+'faq.webmToMp4.9.a': 'まず元のWebMファイルがブラウザで正常に再生できるか確認してください。ファイルが壊れている場合、変換ツールでも処理できないことがあります。スマホで変換が止まる場合はPCでお試しください。変換中はブラウザのタブを閉じず、スリープや省電力モードにならないようにすると安定して処理できます。',
+
+'faq.webmToMp4.10.q': 'MOV・AVI・MKVなど他の形式もMP4に変換できますか？',
+'faq.webmToMp4.10.a': 'はい。Squishyfileでは複数の形式に対応しています。MOVをMP4に変換したい場合は[MOVをMP4に変換](/ja/mov-to-mp4)、AVIをMP4に変換したい場合は[AVIをMP4に変換](/ja/avi-to-mp4)、MKVをMP4に変換したい場合は[MKVをMP4に変換](/ja/mkv-to-mp4)をご利用ください。形式を選ばずまとめて変換したい場合は[動画変換サイト](/ja/video-converter)が便利です。',
+
+
 
 		// ── Image compressor hub / page — Japanese ───────────────────────────────
 		'imageCompressor.meta.title': '画像圧縮オンライン無料｜JPG・PNG・WebP対応 - Squishyfile',
@@ -2217,22 +2395,46 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.benefit.online.desc": "Mac、Windows、Linux、iPhone、Androidのモダンブラウザで利用できます。",
 
 		"faq.pdfMerge.title": "PDF結合のよくある質問",
-		"faq.pdfMerge.1.q": "このPDF結合ツールは無料ですか？",
-		"faq.pdfMerge.1.a": "はい。登録やソフトのインストールなしで、無料でPDFをオンライン結合できます。透かしも入りません。",
-		"faq.pdfMerge.2.q": "PDFファイルはサーバーにアップロードされますか？",
-		"faq.pdfMerge.2.a": "いいえ。PDF結合はブラウザ内で実行されます。ファイルは端末内に残り、サーバーへアップロードされません。",
-		"faq.pdfMerge.3.q": "複数のPDFを1つにまとめられますか？",
-		"faq.pdfMerge.3.a": "はい。2つ以上のPDFを選択し、順番を調整して1つのPDF文書に結合できます。",
-		"faq.pdfMerge.4.q": "結合前にPDFの順番を変更できますか？",
-		"faq.pdfMerge.4.a": "はい。選択したPDFファイルの順番を変更してから、最終的なPDFを作成できます。",
-		"faq.pdfMerge.5.q": "PDF結合にAdobe Acrobatは必要ですか？",
-		"faq.pdfMerge.5.a": "いいえ。Adobe Acrobatやデスクトップアプリを使わず、ブラウザだけでPDFを結合できます。",
-		"faq.pdfMerge.6.q": "スマートフォンでも使えますか？",
-		"faq.pdfMerge.6.a": "はい。iPhoneやAndroidのモダンブラウザで使えます。大きなPDFはパソコンの方が速く処理できる場合があります。",
-		"faq.pdfMerge.7.q": "結合したPDFに透かしは入りますか？",
-		"faq.pdfMerge.7.a": "いいえ。Squishyfileは結合したPDFに透かしを追加しません。",
-		"faq.pdfMerge.8.q": "結合中にタブを閉じるとどうなりますか？",
-		"faq.pdfMerge.8.a": "タブを閉じると処理は停止します。結合PDFの準備ができるまでページを開いたままにしてください。",
+'faq.pdfMerge.1.q': 'PDFファイルをオンラインで結合する方法は？',
+'faq.pdfMerge.1.a': 'PDFファイルをブラウザ上で選択し、結合したい順番に並べ替えてから「結合」ボタンを押すだけです。ファイルはお使いの端末内で処理され、サーバーへアップロードされません。',
+
+'faq.pdfMerge.2.q': '無料でPDFを結合できますか？',
+'faq.pdfMerge.2.a': 'はい。SquishyfileのPDF結合ツールを使えば、複数のPDFファイルを無料で1つにまとめることができます。ソフトのインストールやアカウント登録も不要です。',
+
+'faq.pdfMerge.3.q': 'PDFファイルはサーバーにアップロードされますか？',
+'faq.pdfMerge.3.a': 'いいえ。PDFの結合処理はブラウザ内で行われるため、ファイルをサーバーにアップロードする必要がありません。契約書、請求書、スキャン書類などのPDFもプライバシーを保ちながら結合できます。',
+
+'faq.pdfMerge.4.q': '複数のPDFを1つのファイルにまとめられますか？',
+'faq.pdfMerge.4.a': 'はい。2つ以上のPDFファイルを選択して、1つのPDFファイルにまとめることができます。資料、レポート、申請書、スキャンPDFなどを1つに整理したいときに便利です。',
+
+'faq.pdfMerge.5.q': 'PDFのページ順番を並べ替えてから結合できますか？',
+'faq.pdfMerge.5.a': 'はい。PDFを結合する前に、ファイルの順番を並べ替えることができます。先頭に置きたいPDF、最後に追加したいPDFなどを調整してから、1つのPDFとして保存できます。',
+
+'faq.pdfMerge.6.q': 'Adobe AcrobatなしでPDFを結合できますか？',
+'faq.pdfMerge.6.a': 'はい。Adobe Acrobatや専用ソフトを使わなくても、ブラウザだけでPDFファイルを結合できます。インストール不要なので、すぐにPDFをまとめたい場合に使いやすいツールです。',
+
+'faq.pdfMerge.7.q': 'MacでPDFを結合できますか？',
+'faq.pdfMerge.7.a': 'はい。MacのSafari、Chrome、EdgeなどのブラウザからPDFを結合できます。ファイルは端末内で処理されるため、Mac上のPDFを安全にまとめられます。',
+
+'faq.pdfMerge.8.q': 'WindowsでPDFを結合できますか？',
+'faq.pdfMerge.8.a': 'はい。WindowsのChrome、Edge、FirefoxなどのブラウザでPDFファイルを結合できます。ソフトを追加でインストールする必要はありません。',
+
+'faq.pdfMerge.9.q': 'iPhoneやAndroidでもPDFを結合できますか？',
+'faq.pdfMerge.9.a': 'はい。iPhoneやAndroidのブラウザからPDF結合ツールを利用できます。スマホ内のPDFファイルを選択して、複数のPDFを1つにまとめられます。',
+
+'faq.pdfMerge.10.q': 'アップロード不要でPDFを結合できますか？',
+'faq.pdfMerge.10.a': 'はい。SquishyfileではPDFファイルをアップロードせず、ブラウザ上でローカル処理します。オンラインツールの便利さと、オフラインに近いプライバシー保護を両立できます。',
+
+'faq.pdfMerge.11.q': 'スキャンしたPDFも結合できますか？',
+'faq.pdfMerge.11.a': 'はい。スキャンして作成したPDFファイルも結合できます。領収書、契約書、申請書、紙資料のスキャンデータを1つのPDFにまとめる用途に向いています。',
+
+'faq.pdfMerge.12.q': 'PDFに別のPDFページを追加できますか？',
+'faq.pdfMerge.12.a': 'はい。既存のPDFに別のPDFファイルを追加して、1つのPDFとして結合できます。表紙、補足資料、別ページのPDFをまとめたいときに便利です。',
+
+'faq.pdfMerge.13.q': 'PDFを結合すると画質は落ちますか？',
+'faq.pdfMerge.13.a': '通常、PDF結合では元のPDFページをまとめるだけなので、画像の再圧縮による画質低下は起こりにくいです。複数のPDFをできるだけ元の状態のまま1つのファイルにまとめられます。',
+
+
 
 		"tab.pdfMerge": "PDF結合",
 
@@ -2260,6 +2462,43 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.status.loadingSample": "サンプルを読み込み中...",
 		"pdfMerge.error.sampleLoadFailed": "サンプルファイルの読み込みに失敗しました。",
 		"pdfMerge.hint.dragToReorder": "ドラッグして並べ替え",
+
+		"home.eyebrow": "プライベートなブラウザツール",
+
+		"steps.title": "このツールの使い方",
+		"steps.1.title": "ファイルをアップロード",
+		"steps.1.desc": "デバイスからファイルを選択するか、ツールエリアにドラッグ＆ドロップします。数秒でファイルの処理準備が完了します。",
+
+		"steps.2.title": "設定を調整",
+		"steps.2.desc": "必要な出力オプション、品質レベル、目標サイズ、または形式を選択します。すばやく結果を得たい場合は、デフォルト設定のままでも問題ありません。",
+
+		"steps.3.title": "処理してダウンロード",
+		"steps.3.desc": "ツールを開始し、ブラウザでの処理が完了するまで待ってから、完成したファイルをデバイスに直接ダウンロードします。",
+
+		"howto.toggle": "このツールについて詳しく見る",
+		"howto.section.title": "このツールの仕組み",
+
+		"steps.bg.title": "バーコードの作成方法",
+
+		"steps.bg.1.title": "コードを入力",
+		"steps.bg.1.desc": "変換したい数字、テキスト、商品コードを入力または貼り付けます。",
+
+		"steps.bg.2.title": "設定を調整",
+		"steps.bg.2.desc": "バーコード形式を選び、サイズ、ラベル表示、画像出力などを調整します。",
+
+		"steps.bg.3.title": "バーコードをダウンロード",
+		"steps.bg.3.desc": "バーコードを生成し、プレビューを確認してからデバイスに保存します。",
+
+		"steps.cc.title": "テキストを確認する方法",
+
+		"steps.cc.1.title": "テキストを貼り付け",
+		"steps.cc.1.desc": "カウントしたい文章を入力欄に入力、または貼り付けます。",
+
+		"steps.cc.2.title": "結果を確認",
+		"steps.cc.2.desc": "ツールに応じて、文字数、単語数、行数、段落数、各サービスの文字数制限などを確認できます。",
+
+		"steps.cc.3.title": "編集またはコピー",
+		"steps.cc.3.desc": "結果を見ながら文章を調整し、完成したら最終版をコピーします。",
 
 	},
 
@@ -2351,79 +2590,97 @@ export const translations: Record<string, Record<string, string>> = {
 
 
 		'faq.video.title': '常見問題',
-		'faq.video.1.q': '怎麼壓縮影片傳 LINE / WhatsApp / Discord？',
-		'faq.video.1.a': '把影片拖進來，點一下大小標籤（LINE 10MB、Discord 8MB、Gmail 25MB 等），或自行輸入目標 MB 數。Squishyfile 自動計算最佳壓縮比例。',
-		'faq.video.2.q': '壓縮後畫質會變差嗎？',
-		'faq.video.2.a': '選「均衡」預設可在視覺劣化最小的情況下大幅縮小檔案。若設定非常小的目標大小，部分畫質損失不可避免，這是所有壓縮工具的共同特性。',
-		'faq.video.3.q': '支援哪些影片格式？',
-		'faq.video.3.a': '輸入支援 MP4、MOV、AVI、WebM、MKV。輸出為幾乎所有裝置都能播放的 MP4 格式。',
-		'faq.video.4.q': '4K 影片也可以壓縮嗎？',
-		'faq.video.4.a': '可以。4K 影片壓縮完全在瀏覽器內處理，沒有伺服器端限制。為確保穩定，建議單檔在 2GB 以下。',
-		'faq.video.5.q': '可以在手機上不裝 App 就壓縮影片嗎？',
-		'faq.video.5.a': '可以。iPhone 或 Android 瀏覽器直接開啟本頁，不需安裝任何 App，選擇影片後即可下載壓縮結果。',
-		'faq.video.6.q': '為什麼壓縮後檔案大小幾乎沒變？',
-		'faq.video.6.a': '從 YouTube 或 TikTok 下載的影片通常已高度壓縮，再次壓縮效果有限。請嘗試更低品質的預設或更小的目標大小。',
-		'faq.video.7.q': 'Squishyfile 可以免費使用嗎？',
-		'faq.video.7.a': '可以。Squishyfile 的影片壓縮工具可以免費使用，不需要註冊帳號，也不需要安裝軟體。',
-		'faq.video.8.q': '影片會上傳到伺服器嗎？',
-		'faq.video.8.a': '不會。影片會在您的瀏覽器中透過 WebAssembly 與 FFmpeg 進行壓縮，檔案不會上傳到伺服器。',
-		'faq.video.9.q': '可以壓縮 iPhone 的 MOV 影片嗎？',
-		'faq.video.9.a': '可以。iPhone 拍攝的 MOV 影片可以在瀏覽器中壓縮，並輸出成更容易傳送、上傳與播放的 MP4。',
-		'faq.video.10.q': '可以把影片壓到 LINE 可以傳送的大小嗎？',
-		'faq.video.10.a': '可以嘗試透過目標檔案大小功能，把影片壓縮到較適合 LINE 傳送的大小。實際結果會受到影片長度、畫面複雜度與原始畫質影響。',
-		'faq.video.11.q': '可以把 Discord 影片壓到 8 MB 以下嗎？',
-		'faq.video.11.a': '可以設定目標檔案大小為 8 MB。不過，如果影片很長或畫面動作很多，可能需要大幅降低畫質才能接近這個大小。',
-		'faq.video.12.q': 'Gmail 或電子郵件附件可以壓到 25 MB 以下嗎？',
-		'faq.video.12.a': '可以。您可以將目標檔案大小設定為 25 MB 以下。為了提高傳送成功率，建議設定成比平台上限略低一些。',
-		'faq.video.13.q': '壓縮中關閉分頁會怎樣？',
-		'faq.video.13.a': '如果在壓縮過程中關閉分頁，處理會中斷。請等到壓縮完成並下載檔案後，再關閉頁面。',
-		'faq.video.14.q': '壓縮後的影片會存在哪裡？',
-		'faq.video.14.a': '壓縮完成後，您可以點擊「下載」將影片儲存到自己的裝置。實際存放位置會依瀏覽器與裝置設定而不同。',
+'faq.video.1.q': '這個影片壓縮工具可以免費使用嗎？',
+'faq.video.1.a': '可以。你可以免費壓縮影片，不需要註冊帳號、安裝軟體，也不會在壓縮後的影片加上浮水印。',
+
+'faq.video.2.q': '可以直接在線上壓縮影片嗎？',
+'faq.video.2.a': '可以。打開 Squishyfile 的線上影片壓縮工具，選擇影片、設定壓縮方式，就能在瀏覽器中把影片變小。',
+
+'faq.video.3.q': '影片需要上傳到伺服器嗎？',
+'faq.video.3.a': '不需要。影片會在你的瀏覽器中處理，不必先上傳到伺服器，適合用來壓縮私人影片、工作錄影或客戶素材。',
+
+'faq.video.4.q': '可以把影片壓縮成 MP4 嗎？',
+'faq.video.4.a': '可以。MP4 相容性高，壓縮後更適合傳 LINE、寄 Email、上傳社群平台，或在手機與電腦上播放。',
+
+'faq.video.5.q': '可以壓縮 MOV 影片嗎？',
+'faq.video.5.a': '可以。你可以選擇 iPhone 拍攝的 MOV 影片，並輸出成較小、較容易分享的 MP4 檔案。',
+
+'faq.video.6.q': '可以指定壓縮後的檔案大小嗎？',
+'faq.video.6.a': '可以。當你需要符合上傳限制、附件限制或傳送需求時，可以設定目標檔案大小，讓影片更容易分享。',
+
+'faq.video.7.q': '壓縮影片會讓畫質變差嗎？',
+'faq.video.7.a': '影片壓縮會在檔案大小與畫質之間取捨，但不一定會明顯變差。建議先用平衡設定，壓縮後確認畫面清楚再使用。',
+
+'faq.video.8.q': '怎麼縮小影片又保留清楚畫質？',
+'faq.video.8.a': '如果影片有文字、商品細節或工作內容，建議使用較高畫質或平衡模式。若只是日常分享，可以優先縮小容量。',
+
+'faq.video.9.q': '可以壓縮很大的影片檔嗎？',
+'faq.video.9.a': '可以。因為影片不用先上傳，處理大檔案時可以省下等待上傳的時間。若影片很長或容量很大，建議用電腦瀏覽器操作。',
+
+'faq.video.10.q': '可以壓縮 4K 影片嗎？',
+'faq.video.10.a': '可以。4K 影片通常容量很大，壓縮後會更容易備份、傳送或上傳。處理 4K 大檔時，建議使用效能較好的電腦。',
+
+'faq.video.11.q': '手機可以壓縮影片嗎？',
+'faq.video.11.a': '可以。Squishyfile 可在 iPhone 和 Android 的瀏覽器中使用。短影片可直接用手機處理，長影片或 4K 影片則建議用電腦。',
+
+'faq.video.12.q': '壓縮影片會刪掉原始檔嗎？',
+'faq.video.12.a': '不會。原始影片會保留在你的裝置中，Squishyfile 會產生一個新的壓縮版本，方便你另外下載與分享。',
+
+'faq.video.13.q': '影片太大傳不出去，可以用這個工具嗎？',
+'faq.video.13.a': '可以。先把影片壓縮成較小的 MP4，通常可以減少上傳時間，也更適合透過聊天軟體、Email 或雲端連結分享。',
+
+'faq.video.14.q': '這個影片壓縮網站需要安裝 App 嗎？',
+'faq.video.14.a': '不需要。你只要用瀏覽器開啟工具頁面，就能開始壓縮影片，適合臨時處理影片或不想安裝額外軟體的情境。',
+
+'faq.video.15.q': '如何開始壓縮影片？',
+'faq.video.15.a': '選擇你的影片，設定壓縮品質或目標檔案大小，等待瀏覽器完成處理，然後下載壓縮後的 MP4 檔案即可。',
 
 
 		'faq.pdf.title': '常見問題',
+'faq.pdf.1.q': 'PDF 壓縮是什麼？',
+'faq.pdf.1.a': 'PDF 壓縮是將 PDF 檔案大小縮小，讓文件更容易透過 Email 傳送、上傳到網站，或儲存在裝置與雲端空間中。',
 
-		'faq.pdf.1.q': '可以免費使用嗎？',
-		'faq.pdf.1.a': '可以。Squishyfile 的 PDF 壓縮工具可以免費使用，不需要註冊帳號，也不需要安裝軟體。',
+'faq.pdf.2.q': '如何在線上縮小 PDF 檔案大小？',
+'faq.pdf.2.a': '你可以使用線上 PDF 壓縮器處理檔案。通常只需要選擇 PDF，等待壓縮完成，再下載縮小後的檔案。',
 
-		'faq.pdf.2.q': 'PDF 可以壓縮多少？',
-		'faq.pdf.2.a': '壓縮率取決於 PDF 內容。圖片、照片、掃描頁面較多的 PDF 通常能減少更多容量；已經最佳化過或以文字為主的 PDF，大小可能不會有明顯變化。',
+'faq.pdf.3.q': 'PDF 壓縮會改變文件內容嗎？',
+'faq.pdf.3.a': '一般 PDF 壓縮不會改變文字內容、頁面順序或版面結構，主要是最佳化圖片、字型與檔案內部資料來減少容量。',
 
-		'faq.pdf.3.q': 'PDF 會傳送到伺服器嗎？',
-		'faq.pdf.3.a': '不會。PDF 會在瀏覽器內處理，不會上傳到伺服器。',
+'faq.pdf.4.q': '壓縮 PDF 會讓畫質變差嗎？',
+'faq.pdf.4.a': '壓縮程度越高，圖片型 PDF 越可能出現畫質下降。好的 PDF 壓縮工具會在檔案大小與清晰度之間取得平衡。',
 
-		'faq.pdf.4.q': '可以壓縮有密碼的 PDF 嗎？',
-		'faq.pdf.4.a': '如果您知道目前密碼，可以輸入密碼解除保護後再壓縮。請只處理您有權限修改的文件。',
+'faq.pdf.5.q': '什麼 PDF 最需要壓縮？',
+'faq.pdf.5.a': '掃描文件、簡報匯出的 PDF、含有大量圖片的報告、作品集與型錄，通常檔案較大，也最適合進行 PDF 壓縮。',
 
-		'faq.pdf.5.q': 'PDF 壓縮有檔案大小限制嗎？',
-		'faq.pdf.5.a': 'Squishyfile 在瀏覽器內處理 PDF，因此實際可處理的檔案大小會受到裝置記憶體、瀏覽器環境與 PDF 複雜度影響。非常大的 PDF 可能需要較長時間，或讓瀏覽器變慢。',
+'faq.pdf.6.q': '純文字 PDF 也能壓縮嗎？',
+'faq.pdf.6.a': '可以，但純文字 PDF 原本通常就比較小，因此壓縮幅度可能有限。含圖片或掃描頁面的 PDF 通常能縮小更多。',
 
-		'faq.pdf.6.q': '壓縮後畫質會變差嗎？',
-		'faq.pdf.6.a': '壓縮會對圖片資料進行最佳化，因此不一定能與原始檔案完全相同。不過，「平衡」模式會盡量保留文字與圖片的清晰度，同時縮小檔案大小。如果您處理的是掃描文件、簽名或設計圖，建議壓縮後放大檢查重要區域。',
+'faq.pdf.7.q': 'PDF 壓縮適合用在 Email 附件嗎？',
+'faq.pdf.7.a': '適合。當 PDF 檔案太大導致 Email 無法寄出時，先壓縮 PDF 可以降低檔案大小，讓文件更容易通過附件限制。',
 
-		'faq.pdf.7.q': '可以壓縮掃描 PDF 嗎？',
-		'faq.pdf.7.a': '可以。掃描 PDF 通常包含大量圖片，因此壓縮效果可能比較明顯。',
+'faq.pdf.8.q': '線上 PDF 壓縮工具安全嗎？',
+'faq.pdf.8.a': '安全性取決於工具的處理方式。若 PDF 包含合約、證件或個人資料，建議選擇不需要將檔案上傳到伺服器的壓縮方式。',
 
-		'faq.pdf.8.q': '可以用來壓縮 Email 附件嗎？',
-		'faq.pdf.8.a': '可以。如果 PDF 太大無法寄出，可以先使用「平衡」模式壓縮；如果仍然超過附件限制，再使用「最大壓縮」。',
+'faq.pdf.9.q': 'PDF 壓縮工具需要安裝軟體嗎？',
+'faq.pdf.9.a': '不一定。許多 PDF 壓縮器可以直接在瀏覽器中使用，適合臨時需要縮小 PDF、但不想安裝桌面軟體的情境。',
 
-		'faq.pdf.9.q': '可以把 PDF 壓縮到 10MB 以下嗎？',
-		'faq.pdf.9.a': '要看 PDF 的原始內容。圖片多、掃描頁面多的 PDF 通常比較容易大幅壓縮；如果檔案已經最佳化過，就不一定能壓到指定大小。',
+'faq.pdf.10.q': 'Mac 可以壓縮 PDF 嗎？',
+'faq.pdf.10.a': '可以。Mac 使用者可以透過瀏覽器或系統工具壓縮 PDF；若想避免安裝軟體，線上 PDF 壓縮器會更方便。',
 
-		'faq.pdf.10.q': '手機也可以壓縮 PDF 嗎？',
-		'faq.pdf.10.a': '可以。iPhone 和 Android 的瀏覽器都可以使用，不需要安裝 App。不過，大型 PDF 會消耗較多記憶體，建議用電腦處理更穩定。',
+'faq.pdf.11.q': 'Windows 可以壓縮 PDF 嗎？',
+'faq.pdf.11.a': '可以。Windows 使用者可以使用瀏覽器型 PDF 壓縮工具，直接縮小 PDF 檔案大小，不需要額外安裝大型軟體。',
 
-		'faq.pdf.11.q': '壓縮後的 PDF 會存在哪裡？',
-		'faq.pdf.11.a': '處理完成後，您可以點擊「下載」按鈕，將壓縮後的 PDF 儲存到目前使用的裝置。',
+'faq.pdf.12.q': '手機可以壓縮 PDF 嗎？',
+'faq.pdf.12.a': '可以。手機瀏覽器也能處理 PDF 壓縮，不過大型 PDF 通常建議使用電腦操作，速度與穩定性會更好。',
 
-		'faq.pdf.12.q': '適合壓縮哪些 PDF？',
-		'faq.pdf.12.a': 'Squishyfile 適合壓縮 Email 附件、履歷、申請書、證明文件、掃描合約、發票、證件、含大量圖片的 PDF，以及從 PowerPoint、Keynote 或設計稿匯出的簡報 PDF。',
+'faq.pdf.13.q': 'PDF 壓縮後還能列印嗎？',
+'faq.pdf.13.a': '通常可以。只要壓縮後文字與圖片仍保持清晰，縮小後的 PDF 仍可用於列印、提交或正式文件分享。',
 
-		'faq.pdf.13.q': 'PDF 容量沒有明顯變小怎麼辦？',
-		'faq.pdf.13.a': '可以先刪除不需要的頁面、降低掃描解析度，或在圖片很多時改用「最大壓縮」。重要文件提交前，請確認壓縮後的文字與圖片仍可閱讀。',
+'faq.pdf.14.q': 'PDF 壓縮和 PDF 轉檔一樣嗎？',
+'faq.pdf.14.a': '不一樣。PDF 壓縮是縮小原本 PDF 的檔案大小；PDF 轉檔則是將 PDF 轉成 Word、圖片或其他格式。',
 
-		'faq.pdf.14.q': 'Mac、Windows、手機都可以使用嗎？',
-		'faq.pdf.14.a': '可以。Squishyfile 在瀏覽器中運作，因此 Mac、Windows、iPhone、Android、Chromebook 等主要環境都可以使用，不需要安裝專用軟體。',
+'faq.pdf.15.q': '為什麼 PDF 檔案會很大？',
+'faq.pdf.15.a': 'PDF 變大通常是因為內含高解析度圖片、掃描頁面、嵌入字型、圖表或設計素材。壓縮可以移除部分冗餘資料並最佳化檔案大小。',
 
 
 		'tab.compress': '壓縮影片',
@@ -2513,22 +2770,42 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.bitrate.320.sub': '最佳音質',
 
 		'faq.mp3.title': '常見問題',
-		'faq.mp3.1.q': '這個影片轉 MP3 工具是免費的嗎？',
-		'faq.mp3.1.a': '是的。你可以免費將影片轉換成 MP3，不需要建立帳號或安裝軟體。',
-		'faq.mp3.2.q': 'Squishyfile 會上傳我的影片嗎？',
-		'faq.mp3.2.a': '不會。轉換會在你的瀏覽器中執行。你的影片會留在你的裝置上，不會上傳到伺服器。',
-		'faq.mp3.3.q': '支援哪些影片格式？',
-		'faq.mp3.3.a': '你可以選擇常見的影片檔案，例如 MP4、MOV、AVI、WebM 和 MKV。輸出檔案會是 MP3 音訊檔。',
-		'faq.mp3.4.q': '我可以將 iPhone 的 MOV 影片轉成 MP3 嗎？',
-		'faq.mp3.4.a': '可以。你可以選擇 iPhone 錄製的 MOV 影片，並將其中的音訊擷取成 MP3 檔案。',
-		'faq.mp3.5.q': '我應該選擇什麼 MP3 品質？',
-		'faq.mp3.5.a': '大多數影片建議使用 192 kbps。選擇 128 kbps 可讓檔案更小，或選擇 320 kbps 以獲得更高音質。',
-		'faq.mp3.6.q': '匯出的 MP3 會有浮水印嗎？',
-		'faq.mp3.6.a': '不會。下載的 MP3 是乾淨的音訊檔，沒有浮水印。',
-		'faq.mp3.7.q': '它可以在手機上使用嗎？',
-		'faq.mp3.7.a': '可以。它可以在 iPhone 和 Android 的現代行動瀏覽器中使用，不過大型檔案在桌機或筆電上處理可能會更順暢。',
-		'faq.mp3.8.q': '如果我關閉分頁會怎樣？',
-		'faq.mp3.8.a': '如果你在轉換期間關閉分頁，處理程序會停止。請保持分頁開啟，直到 MP3 檔案準備完成。',
+'faq.mp3.1.q': '影片轉MP3免費嗎？',
+'faq.mp3.1.a': '完全免費。你可以將影片轉成 MP3，不需要建立帳號，也不需要安裝任何軟體。直接在瀏覽器中選擇影片檔案，就可以開始轉換。',
+
+'faq.mp3.2.q': '影片轉MP3需要安裝軟體嗎？',
+'faq.mp3.2.a': '不需要。這個工具直接在瀏覽器中運作，不需要安裝任何桌面軟體或手機 App。Mac、Windows、iPhone、Android 都可以直接使用。',
+
+'faq.mp3.3.q': '影片檔案會上傳到伺服器嗎？',
+'faq.mp3.3.a': '不會。轉換流程完全在你的裝置上完成，影片檔案不會上傳到任何伺服器。無論是個人影片、會議錄影或未公開的影片，隱私都受到保護。',
+
+'faq.mp3.4.q': '支援哪些影片格式轉MP3？',
+'faq.mp3.4.a': '支援 MP4、MOV、WebM、MKV、AVI 等常見影片格式。不管是手機錄影、電腦螢幕錄影或其他來源的影片，只要影片中有聲音，都可以嘗試轉換成 MP3。',
+
+'faq.mp3.5.q': '可以在iPhone或Android手機上使用嗎？',
+'faq.mp3.5.a': '可以。iPhone 使用 Safari，Android 使用 Chrome，直接在手機瀏覽器中選擇影片檔案即可轉換。不需要下載 App，也不需要帳號。',
+
+'faq.mp3.6.q': '轉換後的MP3音質如何？',
+'faq.mp3.6.a': '轉換後的音質取決於原影片中的聲音品質。如果原影片聲音清楚，轉換後的 MP3 通常也會清楚。這個工具提取影片中的音訊軌道並轉成 MP3，不會對聲音做額外處理。',
+
+'faq.mp3.7.q': '影片轉MP3後，畫面還會保留嗎？',
+'faq.mp3.7.a': '不會。MP3 是純音訊格式，只保存影片中的聲音，不包含畫面、字幕或投影片內容。如果你還需要影片畫面，請保留原始影片檔案。',
+
+'faq.mp3.8.q': '轉換後的MP3檔案會儲存在哪裡？',
+'faq.mp3.8.a': '轉換完成後，MP3 檔案會下載到瀏覽器的預設位置。電腦通常是「下載」資料夾；iPhone 會出現在「檔案」App；Android 則通常在下載資料夾中。',
+
+'faq.mp3.9.q': '可以轉換大型或長時間的影片嗎？',
+'faq.mp3.9.a': '可以，但大型影片需要較多處理時間，建議使用電腦操作會比手機更穩定。轉換過程中請保持瀏覽器分頁開啟，不要重新整理頁面。',
+
+'faq.mp3.10.q': '這個工具可以貼上YouTube網址轉MP3嗎？',
+'faq.mp3.10.a': '不可以。這個工具用來處理已儲存在你裝置中的影片檔案，例如手機錄影、螢幕錄影、會議錄影或課程影片。它不是 YouTube 轉 MP3 下載器，無法透過網址取得音訊。',
+
+'faq.mp3.11.q': '為什麼影片轉MP3會失敗？',
+'faq.mp3.11.a': '常見原因包括：影片本身沒有音訊、檔案已損壞、檔案太大導致裝置記憶體不足，或瀏覽器版本太舊。可以先播放原影片確認有聲音，再改用電腦或最新版瀏覽器重新嘗試。',
+
+'faq.mp3.12.q': '影片轉成MP3後，檔案大小會變小嗎？',
+'faq.mp3.12.a': '通常會。MP3 只保存聲音，不包含影片畫面，因此檔案通常比原始影片小很多。這讓 MP3 更容易保存、分享，也更適合在手機或音訊播放器中使用。',
+
 
 		'mp3.meta.title': '免費線上將 MP4 轉換為 MP3｜無需上傳 | Squishyfile',
 		'mp3.meta.desc': '在瀏覽器中將 MP4、MOV、AVI、WebM、MKV 影片轉換為 MP3。你可以從影片中擷取音訊並儲存。無需上傳、免費、無浮水印。',
@@ -3322,23 +3599,48 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.benefit.online.desc": "可在 Mac、Windows、Linux、iPhone 或 Android 的現代瀏覽器中使用。",
 
 		"faq.pdfMerge.title": "PDF 合併常見問題",
-		"faq.pdfMerge.1.q": "這個 PDF 合併工具是免費的嗎？",
-		"faq.pdfMerge.1.a": "是。你可以免費線上合併 PDF，不需要建立帳號、安裝軟體，也不會加上浮水印。",
-		"faq.pdfMerge.2.q": "我的 PDF 檔案會上傳到伺服器嗎？",
-		"faq.pdfMerge.2.a": "不會。PDF 合併會直接在瀏覽器中執行，檔案會留在你的裝置上，不會上傳到伺服器。",
-		"faq.pdfMerge.3.q": "可以將多個 PDF 合併成一個檔案嗎？",
-		"faq.pdfMerge.3.a": "可以。選擇兩個以上 PDF，調整順序後即可合併成一份 PDF 文件。",
-		"faq.pdfMerge.4.q": "合併前可以調整 PDF 順序嗎？",
-		"faq.pdfMerge.4.a": "可以。你可以在建立最終 PDF 前，重新排列已選擇的 PDF 檔案順序。",
-		"faq.pdfMerge.5.q": "合併 PDF 需要 Adobe Acrobat 嗎？",
-		"faq.pdfMerge.5.a": "不需要。你可以直接在瀏覽器中線上合併 PDF，不必使用 Adobe Acrobat 或桌面軟體。",
-		"faq.pdfMerge.6.q": "手機也可以使用嗎？",
-		"faq.pdfMerge.6.a": "可以。PDF 合併工具可在 iPhone 和 Android 的現代瀏覽器中使用。大型 PDF 在桌機或筆電上可能處理更快。",
-		"faq.pdfMerge.7.q": "合併後的 PDF 會有浮水印嗎？",
-		"faq.pdfMerge.7.a": "不會。Squishyfile 不會在合併後的 PDF 加上浮水印。",
-		"faq.pdfMerge.8.q": "合併時關閉分頁會怎樣？",
-		"faq.pdfMerge.8.a": "如果關閉分頁，處理會停止。請保持頁面開啟，直到合併 PDF 準備好下載。",
+'faq.pdfMerge.1.q': '如何線上合併 PDF 檔案？',
+'faq.pdfMerge.1.a': '選擇要合併的 PDF 檔案，在瀏覽器中調整順序，然後將多個 PDF 合併成一個檔案。所有處理都在你的裝置本機完成，PDF 不會上傳到伺服器。',
 
+'faq.pdfMerge.2.q': '這個 PDF 合併工具是免費的嗎？',
+'faq.pdfMerge.2.a': '是的，你可以免費使用這個線上 PDF 合併工具，把多個 PDF 檔案合併成一份文件。工具直接在瀏覽器中運作，不需要安裝軟體，也不需要上傳檔案。',
+
+'faq.pdfMerge.3.q': '合併 PDF 時檔案會被上傳嗎？',
+'faq.pdfMerge.3.a': '不會。你的 PDF 檔案會在瀏覽器本機處理，不會傳到我們的伺服器。這適合用來合併合約、帳單、報告、掃描文件等需要保護隱私的 PDF。',
+
+'faq.pdfMerge.4.q': '如何把多個 PDF 合併成一個檔案？',
+'faq.pdfMerge.4.a': '上傳或拖曳多個 PDF 到工具中，依照你想要的順序排列，然後點擊合併即可產生單一 PDF 檔案。整個過程在瀏覽器內完成，快速又安全。',
+
+'faq.pdfMerge.5.q': '可以重新排列 PDF 頁面順序再合併嗎？',
+'faq.pdfMerge.5.a': '可以。你可以先調整 PDF 檔案的排列順序，再將它們合併成一份完整文件。這很適合整理申請資料、報價單、掃描檔或多份報告。',
+
+'faq.pdfMerge.6.q': 'Mac 可以合併 PDF 嗎？',
+'faq.pdfMerge.6.a': '可以。這個線上 PDF 合併工具可在 Mac 的 Safari、Chrome、Edge 等瀏覽器中使用，不需要下載 Adobe Acrobat 或其他軟體，直接在瀏覽器完成 PDF 合併。',
+
+'faq.pdfMerge.7.q': 'Windows 可以使用這個 PDF 合併工具嗎？',
+'faq.pdfMerge.7.a': '可以。只要使用 Windows 上的 Chrome、Edge、Firefox 或其他現代瀏覽器，就能線上合併 PDF 檔案。檔案在本機瀏覽器處理，不會上傳到伺服器。',
+
+'faq.pdfMerge.8.q': 'iPhone 可以合併 PDF 檔案嗎？',
+'faq.pdfMerge.8.a': '可以。你可以在 iPhone 的 Safari 或 Chrome 中開啟工具，選擇 PDF 檔案後直接合併。適合在手機上快速整理掃描文件、表單或附件。',
+
+'faq.pdfMerge.9.q': 'Android 手機可以合併 PDF 嗎？',
+'faq.pdfMerge.9.a': '可以。Android 使用者可以透過 Chrome 或其他瀏覽器合併 PDF 檔案，不需要安裝 App。PDF 會在手機瀏覽器中處理，保留更好的檔案隱私。',
+
+'faq.pdfMerge.10.q': '需要 Adobe Acrobat 才能合併 PDF 嗎？',
+'faq.pdfMerge.10.a': '不需要。你可以直接使用這個免費的線上 PDF 合併工具，不用 Adobe Acrobat，也不用建立帳號。選擇檔案、排序、合併，就能下載完成的 PDF。',
+
+'faq.pdfMerge.11.q': '可以合併掃描 PDF 嗎？',
+'faq.pdfMerge.11.a': '可以。只要掃描文件已經是 PDF 格式，就能和其他 PDF 一起合併成一份檔案。這很適合整理收據、證明文件、合約頁面或申請資料。',
+
+'faq.pdfMerge.12.q': '線上合併 PDF 安全嗎？',
+'faq.pdfMerge.12.a': '這個工具採用瀏覽器本機處理方式，你的 PDF 不會上傳到伺服器，因此比需要上傳檔案的 PDF 合併服務更適合處理私人或敏感文件。',
+
+'faq.pdfMerge.13.q': '合併 PDF 後會影響原本檔案嗎？',
+'faq.pdfMerge.13.a': '不會。工具會產生一個新的合併 PDF 檔案，原本的 PDF 不會被修改。你可以下載合併後的文件，並保留原始檔案作為備份。',
+
+
+
+		
 		"tab.pdfMerge": "PDF 合併",
 
 		// ── Home navigation / search ────────────────────────────────────────────
@@ -3366,6 +3668,43 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.status.loadingSample": "正在載入範例...",
 		"pdfMerge.error.sampleLoadFailed": "範例檔案載入失敗。",
 		"pdfMerge.hint.dragToReorder": "拖曳以重新排序",
+
+		"home.eyebrow": "私密瀏覽器工具",
+
+		"steps.title": "如何使用此工具",
+		"steps.1.title": "上傳你的檔案",
+		"steps.1.desc": "從你的裝置選擇檔案，或將檔案拖放到工具區域。你的檔案只需幾秒鐘即可準備處理。",
+
+		"steps.2.title": "調整設定",
+		"steps.2.desc": "選擇你需要的輸出選項、品質等級、目標大小或格式。若想快速取得結果，也可以保留預設設定。",
+
+		"steps.3.title": "處理並下載",
+		"steps.3.desc": "啟動工具，等待瀏覽器完成處理，然後將完成的檔案直接下載到你的裝置。",
+
+		"howto.toggle": "深入了解此工具",
+		"howto.section.title": "此工具的運作方式",
+
+		"steps.bg.title": "如何製作條碼",
+
+		"steps.bg.1.title": "輸入代碼",
+		"steps.bg.1.desc": "輸入或貼上要轉換的數字、文字或商品代碼。",
+
+		"steps.bg.2.title": "調整設定",
+		"steps.bg.2.desc": "選擇條碼格式，並自訂尺寸、標籤文字或圖片輸出等選項。",
+
+		"steps.bg.3.title": "下載條碼",
+		"steps.bg.3.desc": "產生條碼、確認預覽結果，然後儲存到你的裝置。",
+
+		"steps.cc.title": "如何檢查文字",
+
+		"steps.cc.1.title": "貼上文字",
+		"steps.cc.1.desc": "在輸入框中輸入或貼上你想計算的文字。",
+
+		"steps.cc.2.title": "查看結果",
+		"steps.cc.2.desc": "依工具不同，可查看字元數、字數、行數、段落數或平台字數限制。",
+
+		"steps.cc.3.title": "編輯或複製",
+		"steps.cc.3.desc": "根據結果調整文字，完成後再複製最終版本。",
 
 	},
 
@@ -3459,92 +3798,97 @@ export const translations: Record<string, Record<string, string>> = {
 
 		'faq.video.title': 'Perguntas frequentes',
 
-		'faq.video.1.q': 'O compressor de vídeo é gratuito?',
-		'faq.video.1.a': 'Sim. O Squishyfile permite comprimir vídeo online gratuitamente, sem criar conta e sem instalar software.',
+'faq.video.1.q': 'Este compressor de vídeo é gratuito?',
+'faq.video.1.a': 'Sim. Você pode comprimir vídeo gratuitamente, sem criar conta, sem instalar software e sem adicionar marca d’água ao arquivo final.',
 
-		'faq.video.2.q': 'Meu vídeo é enviado para algum servidor?',
-		'faq.video.2.a': 'Não. A compressão é feita no navegador com WebAssembly e FFmpeg. O arquivo é processado no seu próprio dispositivo e não precisa ser enviado para servidores externos.',
+'faq.video.2.q': 'Como comprimir vídeo online no Squishyfile?',
+'faq.video.2.a': 'Basta selecionar ou arrastar seu vídeo para a ferramenta, escolher o nível de compressão ou o tamanho desejado e baixar o arquivo comprimido quando o processamento terminar.',
 
-		'faq.video.3.q': 'Posso comprimir MP4 online?',
-		'faq.video.3.a': 'Sim. Você pode comprimir arquivos MP4 diretamente no navegador. O resultado também é salvo em MP4 para facilitar o envio, a reprodução e o compartilhamento.',
+'faq.video.3.q': 'Meu vídeo é enviado para algum servidor?',
+'faq.video.3.a': 'Não. O Squishyfile comprime o vídeo diretamente no seu navegador. O arquivo permanece no seu dispositivo durante o processo, ajudando a proteger sua privacidade.',
 
-		'faq.video.4.q': 'Posso comprimir MOV do iPhone?',
-		'faq.video.4.a': 'Sim. Vídeos MOV gravados no iPhone podem ser selecionados e comprimidos. O arquivo final em MP4 costuma ser mais fácil de enviar por WhatsApp, Discord, Gmail e redes sociais.',
+'faq.video.4.q': 'Posso comprimir MP4 online?',
+'faq.video.4.a': 'Sim. A ferramenta funciona muito bem para comprimir MP4 online e reduzir o tamanho do arquivo para facilitar envio, armazenamento ou compartilhamento.',
 
-		'faq.video.5.q': 'MP4, MOV, MKV, AVI e WebM são suportados?',
-		'faq.video.5.a': 'Sim. A ferramenta aceita os principais formatos de vídeo, incluindo MP4, MOV, MKV, AVI e WebM. A compatibilidade pode variar conforme o navegador e o codec original do arquivo.',
+'faq.video.5.q': 'Quais formatos de vídeo são compatíveis?',
+'faq.video.5.a': 'O compressor aceita formatos populares como MP4, MOV, AVI, MKV e WebM, dependendo do navegador e do arquivo original.',
 
-		'faq.video.6.q': 'Comprimir vídeo reduz a qualidade?',
-		'faq.video.6.a': 'Pode reduzir, porque diminuir bastante o tamanho normalmente exige descartar dados. Porém, os modos "Equilibrado" e "Alto" buscam preservar a aparência visual sempre que possível. Quanto menor for o tamanho alvo, maior tende a ser a perda de qualidade.',
+'faq.video.6.q': 'Posso reduzir o tamanho de vídeo para um valor específico em MB?',
+'faq.video.6.a': 'Sim. Você pode definir um tamanho final personalizado, como 15 MB, 25 MB ou 100 MB, e a ferramenta ajusta a compressão para chegar o mais perto possível desse limite.',
 
-		'faq.video.7.q': 'Como deixar um vídeo abaixo de 25 MB para Gmail?',
-		'faq.video.7.a': 'Use o modo de tamanho alvo e defina um valor um pouco abaixo de 25 MB, como 23 MB ou 24 MB. Assim você mantém margem para evitar erro no anexo.',
+'faq.video.7.q': 'Comprimir vídeo reduz a qualidade?',
+'faq.video.7.a': 'Toda compressão forte pode reduzir alguns dados do vídeo, mas o Squishyfile busca manter a melhor qualidade visual possível dentro do tamanho escolhido.',
 
-		'faq.video.8.q': 'Como deixar um vídeo abaixo de 8 MB para Discord?',
-		'faq.video.8.a': 'Use o tamanho alvo de 8 MB ou um pouco menos. Se o vídeo for longo ou tiver muito movimento, talvez seja necessário aceitar uma qualidade menor ou cortar o vídeo antes de comprimir.',
+'faq.video.8.q': 'Qual é o melhor compressor de vídeo gratuito para usar no navegador?',
+'faq.video.8.a': 'Para quem quer uma opção simples, gratuita e sem instalação, o Squishyfile é uma boa escolha porque comprime vídeos direto no navegador e não exige upload para servidores externos.',
 
-		'faq.video.9.q': 'Dá para comprimir vídeo para WhatsApp?',
-		'faq.video.9.a': 'Sim. Para envio comum, uma meta próxima de 15 MB costuma ser útil. Se o vídeo for longo, talvez seja melhor cortar partes desnecessárias ou aceitar uma compressão mais forte.',
+'faq.video.9.q': 'Posso redimensionar vídeo grátis?',
+'faq.video.9.a': 'Sim. Você pode redimensionar e comprimir vídeos gratuitamente, ajustando o tamanho final do arquivo para compartilhar com mais facilidade.',
 
-		'faq.video.10.q': 'Posso comprimir vídeos grandes ou 4K?',
-		'faq.video.10.a': 'Sim, mas o resultado depende do dispositivo, da memória disponível e do navegador. Para vídeos muito grandes, longos ou em 4K, um computador costuma ser mais estável que um celular.',
+'faq.video.10.q': 'Funciona no iPhone e no Android?',
+'faq.video.10.a': 'Sim. O compressor funciona em navegadores modernos no iPhone, Android, Windows, Mac e Linux. Em vídeos muito grandes, um computador pode oferecer mais estabilidade e velocidade.',
 
-		'faq.video.11.q': 'Por que o tamanho final não ficou exatamente igual ao valor escolhido?',
-		'faq.video.11.a': 'O tamanho alvo é uma estimativa. A variação pode acontecer por causa do codec, do áudio, dos metadados e da complexidade do vídeo. Normalmente, é melhor escolher uma meta um pouco abaixo do limite real da plataforma.',
+'faq.video.11.q': 'Preciso instalar algum aplicativo para comprimir vídeo?',
+'faq.video.11.a': 'Não. A ferramenta roda no navegador, então você não precisa baixar aplicativo, instalar extensão ou liberar permissões extras no seu dispositivo.',
 
-		'faq.video.12.q': 'O que fazer se o navegador travar?',
-		'faq.video.12.a': 'Tente fechar outros aplicativos, usar um vídeo menor, reduzir a resolução ou processar o arquivo em um computador. Em celulares antigos, vídeos muito pesados podem ultrapassar a memória disponível para o navegador.',
+'faq.video.12.q': 'O vídeo comprimido fica com marca d’água?',
+'faq.video.12.a': 'Não. O Squishyfile não adiciona marca d’água ao vídeo comprimido. O arquivo final fica limpo para você usar onde quiser.',
 
-		'faq.video.13.q': 'Posso usar sem instalar aplicativo?',
-		'faq.video.13.a': 'Sim. A ferramenta funciona no navegador. Você não precisa instalar app, extensão ou programa de edição de vídeo.',
+'faq.video.13.q': 'Posso comprimir vídeos grandes?',
+'faq.video.13.a': 'Sim. Como o processamento acontece no seu dispositivo, o limite prático depende da memória e da potência do aparelho. Arquivos muito grandes podem funcionar melhor em computadores.',
 
-		'faq.video.14.q': 'Onde o vídeo comprimido é salvo?',
-		'faq.video.14.a': 'Depois da compressão, clique em "Baixar". O arquivo será salvo na pasta de downloads ou no local definido pelo navegador e pelo sistema do seu dispositivo.',
+'faq.video.14.q': 'Este compressor serve para WhatsApp, Discord, Facebook ou YouTube?',
+'faq.video.14.a': 'Sim. Você pode reduzir o tamanho do vídeo para facilitar o envio em apps e plataformas com limite de arquivo. Para melhores resultados, escolha um tamanho final abaixo do limite da plataforma.',
+
+'faq.video.15.q': 'O que é melhor: comprimir vídeo online ou usar um programa instalado?',
+'faq.video.15.a': 'Para tarefas rápidas, uma ferramenta online no navegador é mais prática porque não exige instalação. Programas desktop podem ser úteis para edição avançada ou compressão em lote profissional.',
 
 
 		'faq.pdf.title': 'Perguntas frequentes',
+'faq.pdf.1.q': 'Este compressor de PDF é gratuito?',
+'faq.pdf.1.a': 'Sim. Você pode comprimir PDF gratuitamente, sem criar conta, sem instalar programas e sem marca d’água no arquivo final.',
 
-		'faq.pdf.1.q': 'O compressor de PDF é gratuito?',
-		'faq.pdf.1.a': 'Sim. O Squishyfile pode ser usado gratuitamente para comprimir PDF no navegador. Não é necessário criar conta para reduzir o tamanho do arquivo.',
+'faq.pdf.2.q': 'Como comprimir um PDF online no Squishyfile?',
+'faq.pdf.2.a': 'Basta selecionar ou arrastar seu arquivo PDF para a ferramenta, aguardar a compressão no navegador e baixar a versão reduzida em poucos segundos.',
 
-		'faq.pdf.2.q': 'Preciso instalar algum programa?',
-		'faq.pdf.2.a': 'Não. A ferramenta funciona diretamente no navegador. Você não precisa instalar software, aplicativo, plugin ou extensão.',
+'faq.pdf.3.q': 'Meu PDF é enviado para algum servidor?',
+'faq.pdf.3.a': 'Não. O Squishyfile processa o PDF localmente no seu navegador. Isso significa que o arquivo não precisa ser enviado para servidores externos para ser comprimido.',
 
-		'faq.pdf.3.q': 'Meu PDF é enviado para a nuvem?',
-		'faq.pdf.3.a': 'Não. O processamento acontece localmente no seu dispositivo usando WebAssembly. O arquivo não é enviado para servidores externos para ser comprimido.',
+'faq.pdf.4.q': 'Posso reduzir o tamanho de um PDF sem perder qualidade?',
+'faq.pdf.4.a': 'Sim. A ferramenta busca reduzir o tamanho do PDF mantendo o texto legível e preservando a melhor qualidade possível para imagens e elementos visuais.',
 
-		'faq.pdf.4.q': 'Quanto um PDF pode ser comprimido?',
-		'faq.pdf.4.a': 'A redução depende do conteúdo do arquivo. PDFs escaneados, documentos com fotos e apresentações com imagens costumam reduzir mais. PDFs de texto puro ou já otimizados podem reduzir pouco.',
+'faq.pdf.5.q': 'O compressor de PDF funciona no celular?',
+'faq.pdf.5.a': 'Sim. Você pode comprimir PDF no celular usando o navegador do iPhone ou Android, sem baixar aplicativo na App Store ou no Google Play.',
 
-		'faq.pdf.5.q': 'Dá para comprimir PDF sem perder qualidade?',
-		'faq.pdf.5.a': 'É possível reduzir o tamanho mantendo boa legibilidade, especialmente usando o modo Equilibrado. Porém, quando imagens são otimizadas, o arquivo final pode não ser idêntico ao original. Sempre confira o PDF comprimido antes de enviar.',
+'faq.pdf.6.q': 'Funciona no Windows, Mac, Linux e Chromebook?',
+'faq.pdf.6.a': 'Sim. Como a compressão acontece no navegador, o Squishyfile funciona em sistemas modernos como Windows, macOS, Linux e Chromebook.',
 
-		'faq.pdf.6.q': 'Posso comprimir PDF escaneado?',
-		'faq.pdf.6.a': 'Sim. PDFs escaneados geralmente comprimem bem porque cada página costuma ser armazenada como imagem. A redução final depende da resolução, das cores e da quantidade de páginas.',
+'faq.pdf.7.q': 'Preciso instalar algum programa para comprimir PDF?',
+'faq.pdf.7.a': 'Não. A ferramenta roda diretamente no navegador, então você não precisa instalar software, extensão, plugin ou aplicativo.',
 
-		'faq.pdf.7.q': 'Posso reduzir PDF para 1MB?',
-		'faq.pdf.7.a': 'Depende do arquivo. PDFs com imagens podem chegar a tamanhos bem menores, mas nem todo documento consegue ficar abaixo de 1MB sem perda de qualidade significativa ou remoção de páginas.',
+'faq.pdf.8.q': 'É possível comprimir PDF sem cadastro?',
+'faq.pdf.8.a': 'Sim. Você pode usar o compressor de PDF sem registro, sem login e sem informar e-mail.',
 
-		'faq.pdf.8.q': 'Posso comprimir PDF para 10MB?',
-		'faq.pdf.8.a': 'Em muitos casos, sim. Use primeiro o modo Equilibrado. Se o arquivo ainda ficar acima de 10MB, tente o modo Máximo e verifique se o conteúdo continua legível.',
+'faq.pdf.9.q': 'O Squishyfile adiciona marca d’água ao PDF comprimido?',
+'faq.pdf.9.a': 'Não. O arquivo comprimido é baixado sem marca d’água, pronto para enviar por e-mail, anexar em formulários ou compartilhar.',
 
-		'faq.pdf.9.q': 'Posso comprimir PDF protegido por senha?',
-		'faq.pdf.9.a': 'Sim, desde que você saiba a senha atual. A ferramenta pode remover a proteção antes da compressão, mas não quebra senhas desconhecidas.',
+'faq.pdf.10.q': 'Que tipos de PDF posso comprimir?',
+'faq.pdf.10.a': 'Você pode comprimir documentos, contratos, currículos, relatórios, apresentações, apostilas e PDFs com imagens ou páginas escaneadas.',
 
-		'faq.pdf.10.q': 'O arquivo comprimido fica salvo onde?',
-		'faq.pdf.10.a': 'Depois do processamento, você baixa o PDF comprimido diretamente para o seu dispositivo. O local exato depende das configurações de download do navegador.',
+'faq.pdf.11.q': 'Posso comprimir um PDF muito pesado?',
+'faq.pdf.11.a': 'Sim. Como o processamento é feito no próprio navegador, a ferramenta evita problemas comuns de upload em arquivos grandes. O desempenho depende da memória e da potência do seu dispositivo.',
 
-		'faq.pdf.11.q': 'Funciona no iPhone e no Android?',
-		'faq.pdf.11.a': 'Sim. Você pode usar o Squishyfile no navegador do iPhone ou do Android, sem instalar aplicativo.',
+'faq.pdf.12.q': 'Dá para reduzir PDF para enviar por e-mail?',
+'faq.pdf.12.a': 'Sim. O compressor ajuda a diminuir o tamanho do PDF para facilitar o envio por e-mail, WhatsApp, formulários online e plataformas com limite de upload.',
 
-		'faq.pdf.12.q': 'Por que meu PDF ficou quase do mesmo tamanho?',
-		'faq.pdf.12.a': 'Provavelmente o arquivo já estava otimizado, tinha poucas imagens ou era composto principalmente por texto e elementos vetoriais. Nesse caso, há menos espaço para reduzir sem alterar o conteúdo.',
+'faq.pdf.13.q': 'Qual é o melhor nível de compressão para PDF?',
+'faq.pdf.13.a': 'Para a maioria dos documentos digitais, o ideal é reduzir o tamanho mantendo boa legibilidade. Se o PDF for para impressão profissional, vale conferir o resultado antes de enviar.',
 
-		'faq.pdf.13.q': 'Quando devo usar o modo Equilibrado ou Máximo?',
-		'faq.pdf.13.a': 'Use o modo Equilibrado quando o PDF precisa continuar agradável de ler, como currículos, contratos, relatórios e documentos profissionais. Use o modo Máximo quando você precisa alcançar um limite específico de tamanho e pode aceitar uma redução maior na qualidade visual.',
+'faq.pdf.14.q': 'Comprimir PDF muda o conteúdo do documento?',
+'faq.pdf.14.a': 'Não. A compressão reduz o peso do arquivo, mas não altera o texto, a ordem das páginas ou o conteúdo principal do PDF.',
 
-		'faq.pdf.14.q': 'Funciona no Mac e no Windows?',
-		'faq.pdf.14.a': 'Sim. Como o Squishyfile roda no navegador, você pode usar a ferramenta em Windows, Mac, Linux, Chromebook, iPhone e Android sem instalar aplicativo, extensão ou programa pesado.',
+'faq.pdf.15.q': 'O que fazer se meu PDF ainda ficar grande depois da compressão?',
+'faq.pdf.15.a': 'PDFs com muitas imagens em alta resolução ou páginas escaneadas podem continuar pesados. Nesse caso, tente remover páginas desnecessárias, reduzir imagens na origem ou comprimir novamente a partir do arquivo original.',
 
 
 		'tab.compress': 'Comprimir Vídeo',
@@ -3659,42 +4003,42 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.note.privacy': '<strong>Seu arquivo não sai do seu dispositivo.</strong> O Squishyfile converte vídeo para MP3 dentro do navegador. Não há upload para servidor, não precisa criar conta e nada é enviado online. Depois do download, o arquivo é removido da memória.',
 
 		'faq.mp3.title': 'Perguntas frequentes',
+'faq.mp3.1.q': 'Este conversor de vídeo para MP3 é gratuito?',
+'faq.mp3.1.a': 'Sim. O conversor de vídeo para MP3 é totalmente gratuito. Você pode converter MP4, WebM, MOV, MKV, AVI e outros formatos para MP3 sem pagar nada, sem criar conta e sem instalar programas. Basta selecionar o vídeo salvo no seu dispositivo, aguardar a conversão e baixar o MP3.',
 
-		'faq.mp3.1.q': 'Posso converter MP4 para MP3 grátis?',
-		'faq.mp3.1.a': 'Sim. O Squishyfile permite converter MP4 para MP3 gratuitamente, direto no navegador, sem instalar programa e sem criar conta.',
+'faq.mp3.2.q': 'Como converter MP4 para MP3 online?',
+'faq.mp3.2.a': 'Para converter MP4 para MP3 online, selecione o arquivo MP4 salvo no seu celular ou computador, clique em converter e baixe o MP3 quando o processo terminar. Toda a conversão acontece no navegador, sem precisar instalar programas ou criar conta. O arquivo MP4 não é enviado para nenhum servidor.',
 
-		'faq.mp3.2.q': 'O vídeo é enviado para algum servidor?',
-		'faq.mp3.2.a': 'Não. A conversão acontece localmente no navegador, então o arquivo permanece no seu dispositivo e não é enviado para servidores.',
+'faq.mp3.3.q': 'Como extrair áudio de um vídeo online?',
+'faq.mp3.3.a': 'Para extrair áudio de vídeo online, selecione o arquivo de vídeo salvo no seu dispositivo. A ferramenta separa o áudio da imagem diretamente no navegador e gera um arquivo MP3 para download. O processo funciona com os formatos mais comuns: MP4, WebM, MOV, MKV e AVI. Não é necessário instalar nenhum programa.',
 
-		'faq.mp3.3.q': 'Quais formatos de vídeo são compatíveis?',
-		'faq.mp3.3.a': 'Você pode converter vídeos MP4, MOV, AVI, WebM e MKV para MP3. Esses são os formatos de vídeo mais comuns suportados pela ferramenta.',
+'faq.mp3.4.q': 'O vídeo é enviado para algum servidor durante a conversão?',
+'faq.mp3.4.a': 'Não. Todo o processamento acontece localmente no seu próprio navegador. O arquivo de vídeo nunca sai do seu dispositivo e não é enviado para nenhum servidor externo. Isso garante privacidade total para reuniões gravadas, aulas particulares, vídeos pessoais e qualquer outro conteúdo que você prefira manter no seu dispositivo.',
 
-		'faq.mp3.4.q': 'Consigo converter MOV para MP3?',
-		'faq.mp3.4.a': 'Sim. Você pode selecionar um vídeo MOV, inclusive gravado no iPhone, e extrair apenas o áudio em formato MP3.',
+'faq.mp3.5.q': 'Preciso criar conta ou instalar algum programa?',
+'faq.mp3.5.a': 'Não. A ferramenta funciona diretamente no navegador, sem cadastro, sem e-mail e sem instalação. Você acessa, seleciona o vídeo salvo no seu dispositivo, converte e baixa o MP3. Funciona assim no computador e no celular, nos sistemas Windows, macOS, Android e iOS.',
 
-		'faq.mp3.5.q': 'Dá para extrair áudio de vídeo online?',
-		'faq.mp3.5.a': 'Sim. O Squishyfile funciona como um extrator de áudio online: ele remove a parte visual do vídeo e salva somente o som em MP3.',
+'faq.mp3.6.q': 'Quais formatos de vídeo posso converter para MP3?',
+'faq.mp3.6.a': 'A ferramenta aceita os formatos de vídeo mais usados: MP4, WebM, MOV, MKV e AVI. MP4 é comum em celulares e gravações de tela. WebM aparece em gravações feitas no navegador. MOV é o formato padrão de vídeos gravados no iPhone. MKV e AVI são encontrados em arquivos de computador e coleções mais antigas.',
 
-		'faq.mp3.6.q': 'Qual qualidade de MP3 devo escolher?',
-		'faq.mp3.6.a': 'Para uso geral, 192 kbps é uma boa escolha. Use 128 kbps para arquivos menores ou 320 kbps se quiser áudio em qualidade mais alta.',
+'faq.mp3.7.q': 'Posso converter vídeo para MP3 no celular, sem instalar aplicativo?',
+'faq.mp3.7.a': 'Sim. Você pode converter vídeo para MP3 no celular usando o navegador, sem baixar nenhum aplicativo. Funciona no Android e no iPhone. Abra a ferramenta no Chrome, Safari ou qualquer navegador moderno, selecione o vídeo salvo no aparelho e baixe o MP3. Para vídeos muito longos ou pesados, usar um computador pode ser mais estável.',
 
-		'faq.mp3.7.q': 'O MP3 convertido tem marca d’água?',
-		'faq.mp3.7.a': 'Não. O arquivo MP3 baixado não recebe marca d’água, assinatura ou qualquer identificação do Squishyfile.',
+'faq.mp3.8.q': 'A conversão de vídeo para MP3 perde qualidade?',
+'faq.mp3.8.a': 'A qualidade do MP3 depende diretamente do áudio original do vídeo. Se o vídeo tem som claro e bom volume, o MP3 tende a ficar fácil de ouvir. MP3 é um formato comprimido, então ele não é totalmente sem perdas, mas para aulas gravadas, reuniões, narrações, entrevistas e uso diário, a qualidade costuma ser suficiente.',
 
-		'faq.mp3.8.q': 'Funciona no celular Android ou iPhone?',
-		'faq.mp3.8.a': 'Sim. Você pode converter vídeo para MP3 no Android, iPhone, tablet ou computador usando um navegador moderno. Para vídeos grandes, um computador costuma ser mais estável.',
+'faq.mp3.9.q': 'O arquivo MP3 fica menor do que o vídeo original?',
+'faq.mp3.9.a': 'Sim. Como o MP3 contém apenas áudio e o vídeo original contém imagem e som, o arquivo de áudio costuma ocupar muito menos espaço. Isso é útil para guardar reuniões gravadas, aulas e vídeos do celular sem manter o arquivo de vídeo completo. O tamanho final varia conforme a duração e a qualidade do áudio.',
 
-		'faq.mp3.9.q': 'Posso converter WebM, MKV ou AVI para MP3?',
-		'faq.mp3.9.a': 'Sim. Além de MP4, a ferramenta também permite converter WebM para MP3, MKV para MP3 e AVI para MP3 diretamente no navegador.',
+'faq.mp3.10.q': 'Esta ferramenta converte links do YouTube para MP3?',
+'faq.mp3.10.a': 'Não. Esta ferramenta não converte links do YouTube, Spotify, Instagram, TikTok ou qualquer outra plataforma online. Ela foi feita para converter arquivos de vídeo que já estão salvos no seu dispositivo, como vídeos gravados no celular, reuniões salvas, aulas exportadas e gravações de tela.',
 
-		'faq.mp3.10.q': 'Preciso instalar algum programa para converter vídeo em áudio?',
-		'faq.mp3.10.a': 'Não. Você pode converter vídeo para áudio sem programa, sem cadastro e sem download de software. Basta abrir a página, escolher o vídeo e baixar o MP3.',
+'faq.mp3.11.q': 'Posso converter vídeos de reunião, aula ou gravação de tela?',
+'faq.mp3.11.a': 'Sim. A ferramenta é ideal para extrair o áudio de reuniões online gravadas em MP4, aulas e palestras salvas no computador, gravações de tela com narração e vídeos exportados de plataformas de videoconferência. Como o vídeo é processado localmente no navegador, o conteúdo não é compartilhado com servidores externos.',
 
-		'faq.mp3.11.q': 'Posso extrair música ou som de um vídeo?',
-		'faq.mp3.11.a': 'Sim. Você pode extrair música, narração, gravações, aulas, trilhas sonoras ou qualquer som presente no vídeo e salvar como arquivo MP3.',
+'faq.mp3.12.q': 'O que fazer se o vídeo não converter para MP3?',
+'faq.mp3.12.a': 'Se a conversão não funcionar, verifique primeiro se o vídeo tem áudio reproduzindo o arquivo normalmente. Vídeos gravados sem microfone ou exportados sem faixa de áudio não têm som para extrair. Outros motivos comuns são arquivo corrompido, vídeo muito grande para o celular ou navegador desatualizado. Nesses casos, tente converter em um computador com Chrome ou Edge atualizados.',
 
-		'faq.mp3.12.q': 'O que acontece se eu fechar a aba durante a conversão?',
-		'faq.mp3.12.a': 'Se você fechar a aba antes do fim da conversão, o processo será interrompido. Mantenha a página aberta até o MP3 ficar pronto para download.',
 
 		// Video converter
 		'home.card.convert.title': 'Converter vídeo para MP4',
@@ -4488,22 +4832,46 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.benefit.online.desc": "Use o juntador de PDF no Mac, Windows, Linux, iPhone ou Android em um navegador moderno.",
 
 		"faq.pdfMerge.title": "Perguntas frequentes sobre juntar PDF",
-		"faq.pdfMerge.1.q": "Esta ferramenta para juntar PDF é gratuita?",
-		"faq.pdfMerge.1.a": "Sim. Você pode juntar PDFs online grátis sem criar conta, instalar software ou adicionar marca d’água.",
-		"faq.pdfMerge.2.q": "Meus arquivos PDF são enviados para um servidor?",
-		"faq.pdfMerge.2.a": "Não. A junção de PDF roda diretamente no navegador. Seus arquivos ficam no seu dispositivo e não são enviados para um servidor.",
-		"faq.pdfMerge.3.q": "Posso combinar vários PDFs em um só?",
-		"faq.pdfMerge.3.a": "Sim. Selecione dois ou mais PDFs, organize a ordem e combine tudo em um único documento PDF.",
-		"faq.pdfMerge.4.q": "Posso mudar a ordem antes de juntar os PDFs?",
-		"faq.pdfMerge.4.a": "Sim. Você pode reordenar os arquivos PDF selecionados antes de criar o PDF final.",
-		"faq.pdfMerge.5.q": "Preciso do Adobe Acrobat para juntar PDFs?",
-		"faq.pdfMerge.5.a": "Não. Você pode juntar PDFs online no navegador sem Adobe Acrobat ou aplicativo de desktop.",
-		"faq.pdfMerge.6.q": "Funciona no celular?",
-		"faq.pdfMerge.6.a": "Sim. A ferramenta funciona em navegadores modernos no iPhone e Android. PDFs grandes podem processar mais rápido em um desktop ou notebook.",
-		"faq.pdfMerge.7.q": "O PDF unido terá marca d’água?",
-		"faq.pdfMerge.7.a": "Não. O Squishyfile não adiciona marca d’água ao PDF unido.",
-		"faq.pdfMerge.8.q": "O que acontece se eu fechar a aba durante o processo?",
-		"faq.pdfMerge.8.a": "O processo será interrompido se você fechar a aba. Mantenha a página aberta até o PDF unido ficar pronto para baixar.",
+'faq.pdfMerge.1.q': 'Como mesclar arquivos PDF online?',
+'faq.pdfMerge.1.a': 'Selecione seus arquivos PDF no navegador, organize na ordem desejada e combine tudo em um único PDF. O processamento acontece localmente no seu dispositivo, sem enviar seus arquivos para o nosso servidor.',
+
+'faq.pdfMerge.2.q': 'Como juntar vários arquivos PDF em um só?',
+'faq.pdfMerge.2.a': 'Você pode juntar dois ou vários PDFs adicionando os arquivos à ferramenta, arrastando para ajustar a ordem e clicando para gerar um único arquivo PDF. Tudo é feito diretamente no navegador.',
+
+'faq.pdfMerge.3.q': 'O mesclador de PDF é grátis?',
+'faq.pdfMerge.3.a': 'Sim. Você pode mesclar PDF grátis pelo navegador, sem instalar programas e sem precisar criar uma conta. Basta escolher os arquivos e gerar o PDF final.',
+
+'faq.pdfMerge.4.q': 'Meus arquivos PDF são enviados para algum servidor?',
+'faq.pdfMerge.4.a': 'Não. Seus PDFs são processados localmente no seu navegador. Isso significa que os arquivos não são enviados para o nosso servidor, oferecendo mais privacidade para documentos pessoais, contratos, recibos e arquivos de trabalho.',
+
+'faq.pdfMerge.5.q': 'Posso mesclar PDF sem upload?',
+'faq.pdfMerge.5.a': 'Sim. Esta ferramenta foi criada para mesclar PDF sem upload. Os arquivos ficam no seu dispositivo durante o processo, e o PDF combinado é gerado diretamente no navegador.',
+
+'faq.pdfMerge.6.q': 'Qual é a diferença entre mesclar, juntar e combinar PDF?',
+'faq.pdfMerge.6.a': 'Na prática, mesclar PDF, juntar PDF e combinar PDF significam a mesma coisa: unir dois ou mais arquivos PDF em um único documento. Você também pode reorganizar a ordem dos arquivos antes de finalizar.',
+
+'faq.pdfMerge.7.q': 'Como combinar PDFs na ordem certa?',
+'faq.pdfMerge.7.a': 'Depois de selecionar os arquivos, arraste os PDFs para reorganizar a sequência. Coloque o primeiro documento no topo, ajuste os demais na ordem desejada e gere o PDF final combinado.',
+
+'faq.pdfMerge.8.q': 'Posso mesclar apenas dois arquivos PDF?',
+'faq.pdfMerge.8.a': 'Sim. Você pode mesclar dois arquivos PDF ou adicionar vários PDFs ao mesmo tempo. A ferramenta funciona tanto para combinações simples quanto para documentos com muitas partes.',
+
+'faq.pdfMerge.9.q': 'Funciona para mesclar PDF no celular?',
+'faq.pdfMerge.9.a': 'Sim. A ferramenta funciona no navegador do iPhone, Android, tablet ou computador. Como o processamento é local, você pode juntar arquivos PDF sem instalar aplicativo.',
+
+'faq.pdfMerge.10.q': 'Posso mesclar PDF no Windows, Mac ou Linux?',
+'faq.pdfMerge.10.a': 'Sim. Você pode mesclar PDF no Windows, Mac ou Linux usando apenas um navegador moderno. Não é necessário instalar Adobe Acrobat, extensões ou programas adicionais.',
+
+'faq.pdfMerge.11.q': 'Dá para mesclar PDF sem Adobe Acrobat?',
+'faq.pdfMerge.11.a': 'Sim. Você não precisa do Adobe Acrobat para combinar arquivos PDF. Nossa ferramenta permite juntar PDFs online diretamente no navegador, de forma simples e privada.',
+
+'faq.pdfMerge.12.q': 'Posso mesclar PDFs escaneados?',
+'faq.pdfMerge.12.a': 'Sim. Se os documentos escaneados já estiverem em formato PDF, você pode combiná-los em um único arquivo. Isso é útil para juntar contratos, comprovantes, formulários, recibos e páginas digitalizadas.',
+
+'faq.pdfMerge.13.q': 'É seguro usar esta ferramenta para combinar PDF online?',
+'faq.pdfMerge.13.a': 'Sim. A ferramenta é focada em privacidade: seus arquivos são processados no próprio navegador e não são enviados para o nosso servidor. Isso ajuda a manter seus documentos seguros enquanto você mescla PDFs online.',
+
+
 
 		"tab.pdfMerge": "Juntar PDF",
 
@@ -4532,6 +4900,43 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.status.loadingSample": "Carregando exemplos...",
 		"pdfMerge.error.sampleLoadFailed": "Falha ao carregar arquivos de exemplo.",
 		"pdfMerge.hint.dragToReorder": "Arraste para reordenar",
+
+		"home.eyebrow": "Ferramentas privadas no navegador",
+
+		"steps.title": "Como usar esta ferramenta",
+		"steps.1.title": "Envie seu arquivo",
+		"steps.1.desc": "Escolha um arquivo do seu dispositivo ou arraste e solte-o na área da ferramenta. Seu arquivo estará pronto para processamento em apenas alguns segundos.",
+
+		"steps.2.title": "Ajuste as configurações",
+		"steps.2.desc": "Escolha a opção de saída, o nível de qualidade, o tamanho desejado ou o formato de que você precisa. Você pode manter as configurações padrão para obter um resultado rápido.",
+
+		"steps.3.title": "Processar e baixar",
+		"steps.3.desc": "Inicie a ferramenta, aguarde o navegador concluir o processamento e baixe o arquivo finalizado diretamente para o seu dispositivo.",
+
+		"howto.toggle": "Saiba mais sobre esta ferramenta",
+		"howto.section.title": "Como esta ferramenta funciona",
+
+		"steps.bg.title": "Como criar um código de barras",
+
+		"steps.bg.1.title": "Insira o código",
+		"steps.bg.1.desc": "Digite ou cole o número, texto ou código de produto que deseja converter.",
+
+		"steps.bg.2.title": "Ajuste as configurações",
+		"steps.bg.2.desc": "Escolha o formato do código de barras e personalize opções como tamanho, texto do rótulo ou saída da imagem.",
+
+		"steps.bg.3.title": "Baixe o código de barras",
+		"steps.bg.3.desc": "Gere o código de barras, confira a prévia e salve o resultado no seu dispositivo.",
+
+		"steps.cc.title": "Como verificar seu texto",
+
+		"steps.cc.1.title": "Cole seu texto",
+		"steps.cc.1.desc": "Digite ou cole o texto que deseja contar na caixa de entrada.",
+
+		"steps.cc.2.title": "Confira os resultados",
+		"steps.cc.2.desc": "Veja caracteres, palavras, linhas, parágrafos ou limites de plataformas, dependendo da ferramenta.",
+
+		"steps.cc.3.title": "Edite ou copie",
+		"steps.cc.3.desc": "Ajuste o texto com base nos resultados e copie a versão final quando estiver pronta.",
 
 	},
 
@@ -4628,42 +5033,102 @@ export const translations: Record<string, Record<string, string>> = {
 
 		// ── Video FAQ ─────────────────────────────────────────────────────────────
 		'faq.video.title': 'คำถามที่พบบ่อย',
-		'faq.video.1.q': 'เครื่องมือลดขนาดไฟล์วิดีโอนี้ใช้ฟรีไหม?',
-		'faq.video.1.a': 'ใช่ คุณสามารถลดขนาดไฟล์วิดีโอและบีบอัดวิดีโอออนไลน์ได้ฟรี โดยไม่ต้องสมัครสมาชิก ไม่ต้องสร้างบัญชี และไม่ต้องติดตั้งโปรแกรม',
-		'faq.video.2.q': 'Squishyfile อัปโหลดวิดีโอของฉันขึ้นเซิร์ฟเวอร์หรือไม่?',
-		'faq.video.2.a': 'ไม่ วิดีโอถูกประมวลผลในเบราว์เซอร์ด้วย WebAssembly และ FFmpeg ไฟล์ของคุณจึงไม่จำเป็นต้องถูกอัปโหลดขึ้นเซิร์ฟเวอร์เพื่อบีบอัด',
-		'faq.video.3.q': 'บีบอัดวิดีโอ MP4 ได้ไหม?',
-		'faq.video.3.a': 'ได้ คุณสามารถบีบอัดวิดีโอ MP4 ให้มีขนาดเล็กลง และดาวน์โหลดไฟล์ที่เหมาะสำหรับส่งแชต แนบอีเมล อัปโหลดโซเชียล หรือเก็บไว้ประหยัดพื้นที่',
-		'faq.video.4.q': 'บีบอัดไฟล์ MOV จาก iPhone ได้ไหม?',
-		'faq.video.4.a': 'ได้ คุณสามารถเลือกวิดีโอ MOV ที่ถ่ายจาก iPhone แล้วบีบอัดให้เล็กลงได้ เหมาะสำหรับวิดีโอจากมือถือที่ไฟล์ใหญ่ ส่งยาก หรือกินพื้นที่เครื่องมากเกินไป',
-		'faq.video.5.q': 'ลดขนาดวิดีโอสำหรับส่งใน LINE ได้ไหม?',
-		'faq.video.5.a': 'ได้ หากส่งวิดีโอใน LINE ไม่ได้เพราะไฟล์ใหญ่เกินไป คุณสามารถบีบอัดวิดีโอให้มีขนาดเล็กลงก่อนส่ง เพื่อให้อัปโหลดง่ายขึ้น ใช้เน็ตน้อยลง และลดโอกาสส่งล้มเหลว',
-		'faq.video.6.q': 'บีบอัดวิดีโอให้ได้ขนาดไฟล์ที่ต้องการได้ไหม?',
-		'faq.video.6.a': 'ได้ คุณสามารถใช้ตัวเลือกขนาดไฟล์เป้าหมาย แล้วใส่ขนาดที่ต้องการเป็น MB เครื่องมือจะพยายามสร้างวิดีโอที่มีขนาดใกล้เคียงกับที่ตั้งไว้ พร้อมรักษาคุณภาพให้ดีที่สุดเท่าที่ทำได้',
-		'faq.video.7.q': 'ลดขนาดไฟล์วิดีโอโดยไม่เสียคุณภาพได้ไหม?',
-		'faq.video.7.a': 'การบีบอัดวิดีโอจะมีผลต่อไฟล์บางส่วนเสมอ แต่โหมดสมดุลและโหมดคุณภาพสูงออกแบบมาเพื่อลดขนาดไฟล์วิดีโอโดยยังคงคุณภาพให้ดูดีสำหรับการรับชมทั่วไป',
-		'faq.video.8.q': 'ใช้งานบน iPhone, Android, Mac และ Windows ได้ไหม?',
-		'faq.video.8.a': 'ได้ Squishyfile ทำงานผ่านเบราว์เซอร์ จึงสามารถใช้ได้บน iPhone, Android, Mac และ Windows โดยไฟล์ขนาดใหญ่มากหรือวิดีโอ 4K อาจประมวลผลได้เสถียรกว่าบนคอมพิวเตอร์',
+'faq.video.1.q': 'เครื่องมือลดขนาดไฟล์วิดีโอนี้ใช้ฟรีไหม?',
+'faq.video.1.a': 'ใช้ฟรี คุณสามารถบีบอัดวิดีโอออนไลน์ได้โดยไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำบนไฟล์วิดีโอที่ดาวน์โหลด',
+
+'faq.video.2.q': 'บีบอัดวิดีโอออนไลน์ด้วย Squishyfile ทำอย่างไร?',
+'faq.video.2.a': 'เพียงเลือกไฟล์วิดีโอจากอุปกรณ์ เลือกโหมดบีบอัดที่ต้องการ แล้วดาวน์โหลดไฟล์วิดีโอที่มีขนาดเล็กลงได้จากเบราว์เซอร์',
+
+'faq.video.3.q': 'เครื่องมือนี้ช่วยลดขนาดไฟล์วิดีโอได้จริงไหม?',
+'faq.video.3.a': 'ได้ เครื่องมือจะลดขนาดวิดีโอโดยปรับการบีบอัดให้เหมาะกับการใช้งาน เช่น ส่งแชต แนบอีเมล อัปโหลดโซเชียล หรือประหยัดพื้นที่ในเครื่อง',
+
+'faq.video.4.q': 'บีบอัดวิดีโอแล้วคุณภาพจะลดลงไหม?',
+'faq.video.4.a': 'การบีบอัดวิดีโออาจทำให้คุณภาพลดลงบ้าง โดยเฉพาะเมื่อเลือกให้ไฟล์เล็กมาก หากต้องการภาพชัดขึ้น ให้เริ่มจากโหมดสมดุลหรือโหมดคุณภาพสูง',
+
+'faq.video.5.q': 'รองรับไฟล์วิดีโอ MP4 ไหม?',
+'faq.video.5.a': 'รองรับ MP4 ซึ่งเป็นรูปแบบวิดีโอที่ใช้กันมากบนมือถือ คอมพิวเตอร์ แอปแชต และโซเชียลมีเดีย เหมาะสำหรับการลดขนาดก่อนส่งหรืออัปโหลด',
+
+'faq.video.6.q': 'ใช้บีบอัดวิดีโอจาก iPhone และ Android ได้ไหม?',
+'faq.video.6.a': 'ได้ คุณสามารถใช้เครื่องมือนี้ผ่าน Safari บน iPhone หรือ Chrome บน Android เพื่อเลือกวิดีโอจาก Photos, Gallery, Files หรือ Downloads ได้',
+
+'faq.video.7.q': 'ต้องติดตั้งโปรแกรมหรือแอปเพิ่มไหม?',
+'faq.video.7.a': 'ไม่ต้องติดตั้งโปรแกรมและไม่ต้องลงแอปเพิ่ม เครื่องมือทำงานผ่านเบราว์เซอร์บน Mac, Windows, iPhone และ Android',
+
+'faq.video.8.q': 'ต้องสมัครสมาชิกหรือ login ก่อนไหม?',
+'faq.video.8.a': 'ไม่ต้องสมัครสมาชิกและไม่ต้อง login คุณสามารถเปิดเครื่องมือ เลือกไฟล์วิดีโอ และเริ่มบีบอัดได้ทันที',
+
+'faq.video.9.q': 'ใช้ลดขนาดวิดีโอเพื่อส่ง LINE ได้ไหม?',
+'faq.video.9.a': 'ได้ หากวิดีโอมีขนาดใหญ่จนส่งใน LINE ได้ยาก คุณสามารถบีบอัดไฟล์ให้เล็กลงก่อนส่ง เพื่อให้อัปโหลดเร็วขึ้นและใช้เน็ตน้อยลง',
+
+'faq.video.10.q': 'ใช้ลดขนาดวิดีโอสำหรับอีเมลได้ไหม?',
+'faq.video.10.a': 'ได้ คุณสามารถบีบอัดวิดีโอให้เล็กลงก่อนแนบอีเมล โดยควรเลือกขนาดไฟล์ให้ต่ำกว่าขีดจำกัดของบริการอีเมลเล็กน้อย',
+
+'faq.video.11.q': 'ใช้กับวิดีโอสำหรับ Facebook, Instagram, TikTok หรือ Discord ได้ไหม?',
+'faq.video.11.a': 'ได้ การลดขนาดวิดีโอช่วยให้อัปโหลดหรือส่งต่อผ่าน Facebook, Instagram, TikTok, Discord และแพลตฟอร์มอื่นได้ง่ายขึ้น โดยเฉพาะเมื่ออินเทอร์เน็ตไม่เสถียร',
+
+'faq.video.12.q': 'วิดีโอถูกอัปโหลดขึ้นเซิร์ฟเวอร์หรือไม่?',
+'faq.video.12.a': 'Squishyfile ประมวลผลวิดีโอในเบราว์เซอร์ของคุณ ไฟล์วิดีโอไม่จำเป็นต้องถูกอัปโหลดขึ้นเซิร์ฟเวอร์เพื่อบีบอัด',
+
+'faq.video.13.q': 'เครื่องมือนี้เหมาะกับวิดีโอส่วนตัวหรือไฟล์งานไหม?',
+'faq.video.13.a': 'เหมาะ เพราะการบีบอัดทำงานในเบราว์เซอร์ จึงช่วยให้คุณควบคุมไฟล์ได้มากขึ้น เหมาะกับวิดีโอครอบครัว วิดีโอประชุม screen recording หรือไฟล์งานภายใน',
+
+'faq.video.14.q': 'ถ้าวิดีโอ 4K หรือไฟล์ใหญ่มาก ใช้ได้ไหม?',
+'faq.video.14.a': 'ใช้ได้ แต่ไฟล์วิดีโอขนาดใหญ่มากหรือวิดีโอ 4K อาจใช้เวลาประมวลผลนานและใช้ทรัพยากรเครื่องมาก หากใช้มือถือแล้วไม่เสถียร แนะนำให้ใช้คอมพิวเตอร์',
+
+'faq.video.15.q': 'ถ้าบีบอัดแล้วไฟล์ยังใหญ่เกินไปควรทำอย่างไร?',
+'faq.video.15.a': 'ให้ลองเลือกโหมดที่ลดขนาดไฟล์มากขึ้น กำหนดขนาดไฟล์เป้าหมาย ลดความละเอียด หรือตัดช่วงที่ไม่จำเป็นออกก่อนนำวิดีโอไปส่ง แชร์ หรืออัปโหลด',
+
+
 
 		// ── PDF FAQ (free, browser-based, privacy, quality, password, email) ──────────────────
 		'faq.pdf.title': 'คำถามที่พบบ่อย',
-		'faq.pdf.1.q': 'เครื่องมือบีบอัดไฟล์ PDF นี้ใช้ฟรีไหม?',
-		'faq.pdf.1.a': 'ใช่ เครื่องมือลดขนาดไฟล์ PDF ของ Squishyfile ใช้งานฟรี ไม่ต้องสมัครสมาชิก และไม่เพิ่มลายน้ำลงในไฟล์ PDF ที่บีบอัดแล้ว',
-		'faq.pdf.2.q': 'ต้องติดตั้งโปรแกรมบีบอัด PDF หรือไม่?',
-		'faq.pdf.2.a': 'ไม่ต้อง เครื่องมือนี้ทำงานบนเบราว์เซอร์ คุณสามารถบีบอัด PDF ได้โดยไม่ต้องติดตั้ง Adobe Acrobat แอปเดสก์ท็อป หรือแอปมือถือเพิ่มเติม',
-		'faq.pdf.3.q': 'ไฟล์ PDF ของฉันจะถูกอัปโหลดขึ้นเซิร์ฟเวอร์ไหม?',
-		'faq.pdf.3.a': 'ไม่ การบีบอัดเกิดขึ้นภายในเบราว์เซอร์ด้วย WebAssembly ไฟล์ PDF ของคุณจะไม่ถูกอัปโหลดขึ้นเซิร์ฟเวอร์เพื่อประมวลผล จึงเหมาะกับเอกสารส่วนตัว เรซูเม่ สัญญา และใบแจ้งหนี้',
-		'faq.pdf.4.q': 'ลดขนาดไฟล์ PDF ได้มากแค่ไหน?',
-		'faq.pdf.4.a': 'ขึ้นอยู่กับเนื้อหาในไฟล์ PDF เอกสารสแกน ไฟล์ที่มีรูปภาพจำนวนมาก หรือสไลด์ที่แปลงเป็น PDF มักลดขนาดได้มาก ส่วน PDF ที่เป็นข้อความล้วนหรือถูกบีบอัดมาแล้วอาจลดขนาดได้ไม่มาก',
-		'faq.pdf.5.q': 'การบีบอัด PDF จะทำให้คุณภาพลดลงไหม?',
-		'faq.pdf.5.a': 'การบีบอัดอาจปรับข้อมูลรูปภาพภายใน PDF ดังนั้นไฟล์ผลลัพธ์อาจไม่เหมือนต้นฉบับ 100% โหมดสมดุลจะช่วยลดขนาดไฟล์โดยยังรักษาข้อความและรูปภาพให้อ่านง่าย ส่วนโหมดบีบอัดสูงสุดจะทำให้ไฟล์เล็กกว่าแต่อาจลดความคมชัดของรูปภาพบางส่วน',
-		'faq.pdf.6.q': 'บีบอัด PDF ที่มีรหัสผ่านได้ไหม?',
-		'faq.pdf.6.a': 'ได้ หากคุณรู้รหัสผ่านปัจจุบัน ให้เลือกตัวเลือกปลดล็อกหรือลบรหัสผ่านก่อนบีบอัด ใส่รหัสผ่าน แล้วเครื่องมือจะช่วยปลดล็อกไฟล์ก่อนลดขนาด PDF',
-		'faq.pdf.7.q': 'บีบอัด PDF สำหรับส่งอีเมลหรืออัปโหลดสมัครงานได้ไหม?',
-		'faq.pdf.7.a': 'ได้ การลดขนาด PDF เหมาะสำหรับไฟล์แนบอีเมล เรซูเม่ เอกสารสมัครงาน และแบบฟอร์มออนไลน์ หากต้องการไฟล์ไม่เกิน 1MB หรือ 2MB ให้เริ่มจากโหมดสมดุลก่อน แล้วใช้โหมดบีบอัดสูงสุดหากไฟล์ยังใหญ่เกินไป',
-		'faq.pdf.8.q': 'ใช้เครื่องมือบีบอัด PDF นี้บน iPhone, Android, Mac หรือ Windows ได้ไหม?',
-		'faq.pdf.8.a': 'ได้ Squishyfile ใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone, Android, Mac, Windows, Linux และแท็บเล็ต เพียงเลือกไฟล์ PDF บีบอัด แล้วดาวน์โหลดไฟล์ที่ลดขนาดแล้วได้ทันที',
+'faq.pdf.1.q': 'เครื่องมือบีบอัด PDF นี้ใช้ฟรีไหม?',
+'faq.pdf.1.a': 'ใช่ คุณสามารถบีบอัดไฟล์ PDF ได้ฟรีผ่านเบราว์เซอร์ ไม่ต้องสมัครสมาชิก ไม่ต้องติดตั้งโปรแกรม และไม่เพิ่มลายน้ำในไฟล์ที่ดาวน์โหลด',
 
+'faq.pdf.2.q': 'บีบอัดไฟล์ PDF ออนไลน์ได้เลยไหม?',
+'faq.pdf.2.a': 'ได้ เพียงเปิดหน้าเครื่องมือ เลือกไฟล์ PDF แล้วเริ่มบีบอัดได้ทันที เหมาะสำหรับลดขนาดไฟล์ PDF ก่อนส่งอีเมล อัปโหลดเอกสาร หรือแชร์ไฟล์ออนไลน์',
+
+'faq.pdf.3.q': 'ต้องติดตั้งโปรแกรมย่อไฟล์ PDF หรือไม่?',
+'faq.pdf.3.a': 'ไม่ต้องติดตั้งโปรแกรมหรือส่วนขยายเพิ่มเติม Squishyfile ทำงานบนเบราว์เซอร์โดยตรง ใช้ได้ทั้งบนคอมพิวเตอร์ มือถือ และแท็บเล็ต',
+
+'faq.pdf.4.q': 'ต้องสมัครสมาชิกก่อนบีบอัด PDF ไหม?',
+'faq.pdf.4.a': 'ไม่ต้องสมัครสมาชิก ไม่ต้องเข้าสู่ระบบ และไม่ต้องกรอกข้อมูลส่วนตัว คุณสามารถเลือกไฟล์ PDF แล้วบีบอัดได้ทันที',
+
+'faq.pdf.5.q': 'ไฟล์ PDF ที่บีบอัดแล้วจะติดลายน้ำไหม?',
+'faq.pdf.5.a': 'ไม่ ไฟล์ PDF หลังบีบอัดจะไม่มีลายน้ำเพิ่ม เหมาะสำหรับเรซูเม่ เอกสารสมัครงาน ใบแจ้งหนี้ สัญญา และเอกสารที่ต้องส่งอย่างเป็นทางการ',
+
+'faq.pdf.6.q': 'ไฟล์ PDF ของฉันจะถูกอัปโหลดขึ้นเซิร์ฟเวอร์ไหม?',
+'faq.pdf.6.a': 'ไม่ ระหว่างการบีบอัด ไฟล์ PDF จะถูกประมวลผลบนเบราว์เซอร์ของคุณโดยตรงด้วย WebAssembly จึงช่วยลดความเสี่ยงในการส่งเอกสารสำคัญออกจากอุปกรณ์',
+
+'faq.pdf.7.q': 'บีบอัด PDF บนมือถือได้ไหม?',
+'faq.pdf.7.a': 'ได้ คุณสามารถใช้เครื่องมือนี้บน iPhone, Android, iPad หรือแท็บเล็ตผ่านเบราว์เซอร์ เช่น Safari, Chrome, Edge หรือ Firefox',
+
+'faq.pdf.8.q': 'ใช้บีบอัด PDF บน Windows หรือ Mac ได้ไหม?',
+'faq.pdf.8.a': 'ได้ เครื่องมือบีบอัด PDF ใช้ได้ทั้ง Windows, Mac และ Linux ผ่านเบราว์เซอร์ โดยไม่ต้องดาวน์โหลดซอฟต์แวร์แยกตามระบบปฏิบัติการ',
+
+'faq.pdf.9.q': 'ควรเลือกโหมดบีบอัด PDF แบบไหนดี?',
+'faq.pdf.9.a': 'หากต้องการลดขนาดไฟล์โดยยังอ่านง่าย ให้เริ่มจากโหมดสมดุลก่อน หากต้องการให้ไฟล์เล็กที่สุดหรือมีข้อจำกัดขนาดไฟล์ ให้เลือกโหมดบีบอัดสูงสุด',
+
+'faq.pdf.10.q': 'ลดขนาด PDF ให้เล็กลงโดยยังอ่านชัดได้ไหม?',
+'faq.pdf.10.a': 'ได้ในหลายกรณี โดยเฉพาะเอกสารทั่วไป ไฟล์สมัครงาน ใบแจ้งหนี้ หรือไฟล์ที่มีข้อความเป็นหลัก แนะนำให้ใช้โหมดสมดุลและตรวจสอบไฟล์หลังดาวน์โหลด',
+
+'faq.pdf.11.q': 'บีบอัด PDF แล้วคุณภาพจะลดลงไหม?',
+'faq.pdf.11.a': 'ผลลัพธ์ขึ้นอยู่กับไฟล์ต้นฉบับและระดับการบีบอัด หากไฟล์มีรูปภาพหรือเป็นเอกสารสแกน การบีบอัดสูงสุดอาจทำให้ภาพคมชัดน้อยลง จึงควรตรวจสอบไฟล์ก่อนส่งจริง',
+
+'faq.pdf.12.q': 'ใช้ลดขนาด PDF สำหรับสมัครงานได้ไหม?',
+'faq.pdf.12.a': 'ได้ เครื่องมือนี้เหมาะสำหรับลดขนาดเรซูเม่ CV พอร์ตโฟลิโอ และเอกสารสมัครงาน เพื่อให้อัปโหลดหรือส่งอีเมลได้ง่ายขึ้นโดยไม่เพิ่มลายน้ำ',
+
+'faq.pdf.13.q': 'ใช้บีบอัด PDF สำหรับส่งอีเมลได้ไหม?',
+'faq.pdf.13.a': 'ได้ การลดขนาดไฟล์ PDF ก่อนแนบอีเมลช่วยให้ส่งไฟล์ได้เร็วขึ้น ลดปัญหาไฟล์ใหญ่เกิน และทำให้ผู้รับเปิดหรือดาวน์โหลดเอกสารได้สะดวกขึ้น',
+
+'faq.pdf.14.q': 'ใช้กับไฟล์ PDF สแกนได้ไหม?',
+'faq.pdf.14.a': 'ได้ ไฟล์สแกนมักมีขนาดใหญ่เพราะแต่ละหน้าเป็นรูปภาพ การบีบอัด PDF ช่วยลดขนาดไฟล์ให้เล็กลงได้ โดยควรตรวจสอบข้อความ ลายเซ็น ตราประทับ หรือ QR code หลังบีบอัด',
+
+'faq.pdf.15.q': 'ทำไมบางไฟล์ PDF บีบอัดแล้วขนาดลดลงไม่มาก?',
+'faq.pdf.15.a': 'บางไฟล์อาจถูกบีบอัดมาแล้ว มีรูปภาพน้อย เป็นข้อความเป็นหลัก หรือมีข้อมูลภายในที่ลดได้จำกัด หากไฟล์ยังใหญ่เกินไป ให้ลองใช้โหมดบีบอัดสูงสุดหรือลบหน้าที่ไม่จำเป็นก่อนบีบอัด',
+
+
+		
 		'tab.compress': 'บีบอัดวิดีโอ',
 		'tab.pdf': 'บีบอัด PDF',
 		'drop.video': 'วางวิดีโอของคุณที่นี่',
@@ -4772,22 +5237,42 @@ export const translations: Record<string, Record<string, string>> = {
 		'mp3.note.privacy': '<strong>ไฟล์ของคุณไม่ออกจากอุปกรณ์</strong> Squishyfile แปลงวิดีโอเป็น MP3 ภายในเบราว์เซอร์ — ไม่อัปโหลดไปเซิร์ฟเวอร์ ไม่ต้องมีบัญชี ไฟล์จะถูกล้างจากหน่วยความจำหลังดาวน์โหลด',
 
 		'faq.mp3.title': 'คำถามที่พบบ่อย',
-		'faq.mp3.1.q': 'เครื่องมือแปลงวิดีโอเป็น MP3 นี้ใช้ฟรีไหม?',
-		'faq.mp3.1.a': 'ใช่ คุณสามารถแปลงวิดีโอเป็น MP3 ได้ฟรี โดยไม่ต้องสร้างบัญชีหรือติดตั้งโปรแกรม',
-		'faq.mp3.2.q': 'Squishyfile อัปโหลดวิดีโอของฉันหรือไม่?',
-		'faq.mp3.2.a': 'ไม่ การแปลงทำงานภายในเบราว์เซอร์ วิดีโอของคุณอยู่บนอุปกรณ์และไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์',
-		'faq.mp3.3.q': 'รองรับวิดีโอรูปแบบใดบ้าง?',
-		'faq.mp3.3.a': 'คุณสามารถเลือกไฟล์วิดีโอยอดนิยม เช่น MP4, MOV, AVI, WebM และ MKV แล้วส่งออกเป็นไฟล์เสียง MP3',
-		'faq.mp3.4.q': 'แปลงวิดีโอ MOV จาก iPhone เป็น MP3 ได้ไหม?',
-		'faq.mp3.4.a': 'ได้ คุณสามารถเลือกวิดีโอ MOV ที่ถ่ายจาก iPhone แล้วแยกเสียงออกมาเป็นไฟล์ MP3',
-		'faq.mp3.5.q': 'ควรเลือกคุณภาพ MP3 แบบไหน?',
-		'faq.mp3.5.a': '192 kbps เหมาะสำหรับวิดีโอส่วนใหญ่ เลือก 128 kbps หากต้องการไฟล์เล็กลง หรือ 320 kbps หากต้องการคุณภาพเสียงสูงกว่า',
-		'faq.mp3.6.q': 'ไฟล์ MP3 ที่ดาวน์โหลดจะมีลายน้ำไหม?',
-		'faq.mp3.6.a': 'ไม่มี ไฟล์ MP3 ที่ดาวน์โหลดเป็นไฟล์เสียงสะอาด ไม่มีลายน้ำ',
-		'faq.mp3.7.q': 'ใช้งานบนมือถือได้ไหม?',
-		'faq.mp3.7.a': 'ได้ ใช้งานได้บนเบราว์เซอร์มือถือสมัยใหม่ทั้ง iPhone และ Android แต่ไฟล์ขนาดใหญ่อาจประมวลผลได้ดีกว่าบนเดสก์ท็อปหรือแล็ปท็อป',
-		'faq.mp3.8.q': 'ถ้าปิดแท็บระหว่างแปลงไฟล์จะเกิดอะไรขึ้น?',
-		'faq.mp3.8.a': 'หากปิดแท็บระหว่างการแปลง กระบวนการจะหยุด กรุณาเปิดแท็บไว้จนกว่าไฟล์ MP3 จะพร้อมดาวน์โหลด',
+'faq.mp3.1.q': 'แปลงวิดีโอเป็น MP3 ฟรีได้ไหม?',
+'faq.mp3.1.a': 'ได้เลย ใช้ได้ฟรีทันทีผ่านเบราว์เซอร์ ไม่ต้องสมัครสมาชิกหรือติดตั้งโปรแกรมใดทั้งนั้น',
+
+'faq.mp3.2.q': 'ต้องติดตั้งโปรแกรมหรือแอปแปลงวิดีโอเป็น MP3 ไหม?',
+'faq.mp3.2.a': 'ไม่ต้อง เครื่องมือนี้ทำงานบนเบราว์เซอร์โดยตรง ทั้ง Chrome, Safari และ Edge ใช้ได้ทันทีบนคอมพิวเตอร์และมือถือ ไม่ต้องดาวน์โหลดหรือตั้งค่าอะไรทั้งสิ้น',
+
+'faq.mp3.3.q': 'แปลง MP4 เป็น MP3 ได้ไหม?',
+'faq.mp3.3.a': 'ได้ MP4 เป็นรูปแบบหลักที่รองรับ ไม่ว่าจะเป็นวิดีโอจากมือถือ ไฟล์ประชุม screen recording หรือคลาสเรียน ก็แปลงเสียงออกเป็น MP3 ได้เลย',
+
+'faq.mp3.4.q': 'รองรับไฟล์วิดีโอรูปแบบไหนบ้าง นอกจาก MP4?',
+'faq.mp3.4.a': 'รองรับหลายรูปแบบ ได้แก่ MP4, MOV (iPhone), WebM, MKV, AVI, WMV และ FLV ตราบใดที่ไฟล์มีเสียงอยู่ภายในและเปิดเล่นได้ปกติ',
+
+'faq.mp3.5.q': 'ไฟล์วิดีโอถูกอัปโหลดขึ้นเซิร์ฟเวอร์ไหมระหว่างแปลง?',
+'faq.mp3.5.a': 'ไม่ถูกอัปโหลด ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณทั้งหมด ไฟล์ไม่เคยออกจากอุปกรณ์ ข้อมูลส่วนตัวและเนื้อหาในวิดีโอจึงปลอดภัยอย่างสมบูรณ์',
+
+'faq.mp3.6.q': 'แปลงวิดีโอเป็น MP3 บนมือถือ iPhone หรือ Android ได้ไหม?',
+'faq.mp3.6.a': 'ได้ เปิด Safari บน iPhone หรือ Chrome บน Android แล้วเลือกไฟล์วิดีโอจากเครื่องได้เลย ระหว่างแปลงอย่าปิดแท็บหรือปล่อยให้หน้าจอล็อก เพื่อไม่ให้การแปลงหยุดกลางคัน',
+
+'faq.mp3.7.q': 'แยกเสียงออกจากวิดีโอต่างจากแปลงวิดีโอเป็น MP3 ไหม?',
+'faq.mp3.7.a': 'เป็นเรื่องเดียวกัน เครื่องมือนี้ดึงเสียงทั้งหมดที่อยู่ในวิดีโอออกมาบันทึกเป็นไฟล์ MP3 โดยไม่เก็บภาพวิดีโอไว้ เหมาะสำหรับฟังเสียงประชุม คลาสเรียน หรือเสียงพูดจากวิดีโอ',
+
+'faq.mp3.8.q': 'ใช้กับวิดีโอ YouTube หรือ TikTok ได้ไหม?',
+'faq.mp3.8.a': 'ไม่ได้ เครื่องมือนี้ใช้สำหรับไฟล์วิดีโอที่อยู่ในอุปกรณ์ของคุณเท่านั้น ไม่รองรับการวาง URL หรือลิงก์จากเว็บไซต์วิดีโอใด ๆ',
+
+'faq.mp3.9.q': 'คุณภาพเสียง MP3 ที่ได้ดีแค่ไหน?',
+'faq.mp3.9.a': 'คุณภาพขึ้นอยู่กับเสียงในวิดีโอต้นฉบับ หากต้นฉบับเสียงชัด ไฟล์ MP3 ที่ได้ก็ฟังได้ชัด การแปลงไม่ได้ปรับปรุงหรือลดคุณภาพเสียงโดยอัตโนมัติ',
+
+'faq.mp3.10.q': 'ทำไมแปลงวิดีโอเป็น MP3 แล้วไม่มีเสียง?',
+'faq.mp3.10.a': 'มักเกิดจากไฟล์วิดีโอต้นฉบับไม่มีเสียง เช่น screen recording ที่ไม่ได้เปิดไมโครโฟน ให้ลองเปิดไฟล์วิดีโอด้วยโปรแกรมเล่นวิดีโอก่อนเพื่อตรวจสอบว่ามีเสียงอยู่จริง',
+
+'faq.mp3.11.q': 'ใช้แปลงวิดีโอประชุมหรือคลาสเรียนเป็น MP3 ได้ไหม?',
+'faq.mp3.11.a': 'ได้ นี่คือกรณีใช้งานที่พบบ่อย ไม่ว่าจะเป็น Zoom, Google Meet, Teams หรือวิดีโอคลาสเรียนที่บันทึกไว้ในเครื่อง ก็แปลงเป็น MP3 เพื่อฟังย้อนหลังหรือประกอบการจดโน้ตได้สะดวก',
+
+'faq.mp3.12.q': 'ไฟล์ MP3 ที่ได้มีลายน้ำหรือข้อจำกัดการใช้งานไหม?',
+'faq.mp3.12.a': 'ไม่มี ไฟล์ MP3 ที่ได้เป็นไฟล์เสียงทั่วไป ไม่มีลายน้ำ ไม่มีขีดจำกัดเวลา และเปิดฟังได้บนแอปเพลงหรือ media player ทุกตัว',
+
 
 		'nav.tools': 'เครื่องมือ',
 		'tab.convert': 'แปลง',
@@ -5553,22 +6038,47 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.benefit.online.desc": "ใช้เครื่องมือรวม PDF ได้บน Mac, Windows, Linux, iPhone หรือ Android ผ่านเบราว์เซอร์สมัยใหม่",
 
 		"faq.pdfMerge.title": "คำถามที่พบบ่อยเกี่ยวกับการรวม PDF",
-		"faq.pdfMerge.1.q": "เครื่องมือรวม PDF นี้ฟรีไหม?",
-		"faq.pdfMerge.1.a": "ฟรี คุณสามารถรวมไฟล์ PDF ออนไลน์ได้โดยไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่มีลายน้ำ",
-		"faq.pdfMerge.2.q": "ไฟล์ PDF ของฉันจะถูกอัปโหลดไปยังเซิร์ฟเวอร์ไหม?",
-		"faq.pdfMerge.2.a": "ไม่ การรวม PDF ทำงานในเบราว์เซอร์ ไฟล์ของคุณจะอยู่บนอุปกรณ์ของคุณและไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์",
-		"faq.pdfMerge.3.q": "รวม PDF หลายไฟล์เป็นไฟล์เดียวได้ไหม?",
-		"faq.pdfMerge.3.a": "ได้ เลือกไฟล์ PDF อย่างน้อยสองไฟล์ จัดลำดับ แล้วรวมเป็นเอกสาร PDF ไฟล์เดียว",
-		"faq.pdfMerge.4.q": "จัดลำดับไฟล์ก่อนรวม PDF ได้ไหม?",
-		"faq.pdfMerge.4.a": "ได้ คุณสามารถจัดลำดับไฟล์ PDF ที่เลือกก่อนสร้างไฟล์ PDF สุดท้าย",
-		"faq.pdfMerge.5.q": "ต้องใช้ Adobe Acrobat เพื่อรวม PDF ไหม?",
-		"faq.pdfMerge.5.a": "ไม่ต้อง คุณสามารถรวมไฟล์ PDF ออนไลน์ในเบราว์เซอร์ได้โดยไม่ต้องใช้ Adobe Acrobat หรือแอปเดสก์ท็อป",
-		"faq.pdfMerge.6.q": "ใช้งานบนมือถือได้ไหม?",
-		"faq.pdfMerge.6.a": "ได้ เครื่องมือรวม PDF ใช้งานได้บนเบราว์เซอร์สมัยใหม่ทั้ง iPhone และ Android ไฟล์ PDF ขนาดใหญ่อาจทำงานได้เร็วกว่าในคอมพิวเตอร์",
-		"faq.pdfMerge.7.q": "ไฟล์ PDF ที่รวมแล้วจะมีลายน้ำไหม?",
-		"faq.pdfMerge.7.a": "ไม่มี Squishyfile จะไม่เพิ่มลายน้ำลงในไฟล์ PDF ที่รวมแล้ว",
-		"faq.pdfMerge.8.q": "ถ้าปิดแท็บระหว่างรวมไฟล์จะเกิดอะไรขึ้น?",
-		"faq.pdfMerge.8.a": "กระบวนการจะหยุดหากคุณปิดแท็บ กรุณาเปิดหน้านี้ไว้จนกว่าไฟล์ PDF ที่รวมแล้วจะพร้อมดาวน์โหลด",
+'faq.pdfMerge.1.q': 'รวมไฟล์ PDF ออนไลน์ทำอย่างไร?',
+'faq.pdfMerge.1.a': 'เลือกไฟล์ PDF ที่ต้องการรวมในเบราว์เซอร์ จัดเรียงลำดับไฟล์ตามต้องการ แล้วกดรวมเป็นไฟล์ PDF เดียว ไฟล์ของคุณจะถูกประมวลผลบนอุปกรณ์ของคุณโดยตรง และไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์',
+
+'faq.pdfMerge.2.q': 'เครื่องมือรวม PDF นี้ใช้ฟรีหรือไม่?',
+'faq.pdfMerge.2.a': 'ใช่ คุณสามารถรวม PDF ฟรีผ่านเบราว์เซอร์ได้ทันที ไม่ต้องติดตั้งโปรแกรม ไม่ต้องสมัครสมาชิก และไม่ต้องส่งไฟล์ขึ้นเซิร์ฟเวอร์',
+
+'faq.pdfMerge.3.q': 'สามารถรวม PDF หลายไฟล์เป็นไฟล์เดียวได้ไหม?',
+'faq.pdfMerge.3.a': 'ได้ คุณสามารถเลือก PDF หลายไฟล์ แล้วรวม PDF หลายไฟล์เป็นไฟล์เดียวได้ในไม่กี่ขั้นตอน เหมาะสำหรับรวมเอกสาร รายงาน ใบเสนอราคา หรือไฟล์งานหลายชุดเข้าด้วยกัน',
+
+'faq.pdfMerge.4.q': 'ไฟล์ PDF ของฉันจะถูกอัปโหลดหรือเก็บไว้หรือไม่?',
+'faq.pdfMerge.4.a': 'ไม่ ไฟล์ PDF จะถูกประมวลผลภายในเบราว์เซอร์ของคุณ ไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์ และเราไม่สามารถเข้าถึงหรือจัดเก็บไฟล์ของคุณได้',
+
+'faq.pdfMerge.5.q': 'รวม PDF แบบไม่ต้องอัปโหลดปลอดภัยแค่ไหน?',
+'faq.pdfMerge.5.a': 'ปลอดภัยมากกว่าเครื่องมือที่ต้องอัปโหลดไฟล์ เพราะการรวม PDF ทำงานบนอุปกรณ์ของคุณโดยตรง เหมาะกับเอกสารส่วนตัว เอกสารธุรกิจ สัญญา หรือไฟล์ที่มีข้อมูลสำคัญ',
+
+'faq.pdfMerge.6.q': 'สามารถจัดเรียงหน้า PDF หรือเปลี่ยนลำดับไฟล์ก่อนรวมได้ไหม?',
+'faq.pdfMerge.6.a': 'ได้ หลังจากเลือกไฟล์แล้ว คุณสามารถจัดเรียงลำดับ PDF ใหม่ก่อนรวมเป็นไฟล์เดียว เพื่อให้เอกสารสุดท้ายเรียงตามลำดับที่ต้องการ',
+
+'faq.pdfMerge.7.q': 'ต้องติดตั้ง Adobe Acrobat เพื่อรวม PDF หรือไม่?',
+'faq.pdfMerge.7.a': 'ไม่จำเป็น เครื่องมือนี้ช่วยให้คุณรวม PDF ไม่ใช้ Adobe Acrobat ได้โดยตรงบนเบราว์เซอร์ เหมาะสำหรับผู้ที่ต้องการวิธีรวม PDF ที่รวดเร็วและง่ายกว่า',
+
+'faq.pdfMerge.8.q': 'ใช้รวม PDF บน Mac หรือ Windows ได้ไหม?',
+'faq.pdfMerge.8.a': 'ได้ เครื่องมือรวม PDF ออนไลน์นี้ใช้ได้บน Mac, Windows และ Linux เพียงเปิดผ่านเบราว์เซอร์ เช่น Chrome, Safari, Edge หรือ Firefox',
+
+'faq.pdfMerge.9.q': 'ใช้รวม PDF บน iPhone หรือ Android ได้หรือไม่?',
+'faq.pdfMerge.9.a': 'ได้ คุณสามารถรวม PDF บน iPhone หรือ Android ผ่านเบราว์เซอร์มือถือได้ ไม่ต้องติดตั้งแอปเพิ่มเติม เพียงเลือกไฟล์ PDF แล้วรวมเป็นไฟล์เดียว',
+
+'faq.pdfMerge.10.q': 'รวมไฟล์ PDF 2 ไฟล์ได้ไหม?',
+'faq.pdfMerge.10.a': 'ได้ คุณสามารถรวมไฟล์ PDF 2 ไฟล์ หรือมากกว่านั้นเป็นเอกสารเดียวได้ เหมาะสำหรับการต่อไฟล์ PDF เพิ่มหน้าใน PDF หรือรวมเอกสารหลายส่วนเข้าด้วยกัน',
+
+'faq.pdfMerge.11.q': 'รวม PDF สแกนได้หรือไม่?',
+'faq.pdfMerge.11.a': 'ได้ หากไฟล์สแกนถูกบันทึกเป็น PDF แล้ว คุณสามารถนำมารวมกับไฟล์ PDF อื่นได้ทันที โดยคุณภาพของหน้าเอกสารจะยังคงอยู่ตามไฟล์ต้นฉบับ',
+
+'faq.pdfMerge.12.q': 'หลังรวม PDF แล้วไฟล์จะมีคุณภาพลดลงไหม?',
+'faq.pdfMerge.12.a': 'โดยทั่วไปการรวม PDF เป็นการนำหน้าเอกสารมาต่อกัน ไม่ใช่การบีบอัดไฟล์โดยตรง ดังนั้นคุณภาพของข้อความ รูปภาพ และหน้าเอกสารจะยังคงใกล้เคียงกับไฟล์ต้นฉบับ',
+
+'faq.pdfMerge.13.q': 'รวม PDF แล้วบีบอัดไฟล์ต่อได้ไหม?',
+'faq.pdfMerge.13.a': 'ได้ หลังจากรวม PDF เป็นไฟล์เดียวแล้ว คุณสามารถใช้เครื่องมือบีบอัด PDF เพื่อลดขนาดไฟล์ต่อได้ เหมาะสำหรับการส่งอีเมล อัปโหลดเอกสาร หรือแชร์ไฟล์ให้เร็วขึ้น',
+
+
+
 
 		"tab.pdfMerge": "รวมไฟล์ PDF",
 
@@ -5597,6 +6107,43 @@ export const translations: Record<string, Record<string, string>> = {
 		"pdfMerge.status.loadingSample": "กำลังโหลดตัวอย่าง...",
 		"pdfMerge.error.sampleLoadFailed": "ไม่สามารถโหลดไฟล์ตัวอย่างได้",
 		"pdfMerge.hint.dragToReorder": "ลากเพื่อจัดเรียงใหม่",
+
+		"home.eyebrow": "เครื่องมือเบราว์เซอร์แบบส่วนตัว",
+
+		"steps.title": "วิธีใช้เครื่องมือนี้",
+		"steps.1.title": "อัปโหลดไฟล์ของคุณ",
+		"steps.1.desc": "เลือกไฟล์จากอุปกรณ์ของคุณ หรือลากและวางไฟล์ลงในพื้นที่เครื่องมือ ไฟล์ของคุณจะพร้อมสำหรับการประมวลผลภายในไม่กี่วินาที",
+
+		"steps.2.title": "ปรับการตั้งค่า",
+		"steps.2.desc": "เลือกตัวเลือกผลลัพธ์ ระดับคุณภาพ ขนาดเป้าหมาย หรือรูปแบบที่คุณต้องการ คุณสามารถใช้การตั้งค่าเริ่มต้นเพื่อให้ได้ผลลัพธ์อย่างรวดเร็ว",
+
+		"steps.3.title": "ประมวลผลและดาวน์โหลด",
+		"steps.3.desc": "เริ่มใช้เครื่องมือ รอให้เบราว์เซอร์ประมวลผลเสร็จ จากนั้นดาวน์โหลดไฟล์ที่เสร็จแล้วไปยังอุปกรณ์ของคุณโดยตรง",
+
+		"howto.toggle": "เรียนรู้เพิ่มเติมเกี่ยวกับเครื่องมือนี้",
+		"howto.section.title": "เครื่องมือนี้ทำงานอย่างไร",
+
+		"steps.bg.title": "วิธีสร้างบาร์โค้ด",
+
+		"steps.bg.1.title": "ป้อนรหัส",
+		"steps.bg.1.desc": "พิมพ์หรือวางตัวเลข ข้อความ หรือรหัสสินค้าที่ต้องการแปลง",
+
+		"steps.bg.2.title": "ปรับการตั้งค่า",
+		"steps.bg.2.desc": "เลือกรูปแบบบาร์โค้ด และปรับตัวเลือก เช่น ขนาด ข้อความกำกับ หรือรูปแบบไฟล์ภาพ",
+
+		"steps.bg.3.title": "ดาวน์โหลดบาร์โค้ด",
+		"steps.bg.3.desc": "สร้างบาร์โค้ด ตรวจสอบตัวอย่าง แล้วบันทึกลงในอุปกรณ์ของคุณ",
+
+		"steps.cc.title": "วิธีตรวจสอบข้อความของคุณ",
+
+		"steps.cc.1.title": "วางข้อความ",
+		"steps.cc.1.desc": "พิมพ์หรือวางข้อความที่ต้องการนับลงในช่องป้อนข้อความ",
+
+		"steps.cc.2.title": "ดูผลลัพธ์",
+		"steps.cc.2.desc": "ตรวจสอบจำนวนอักขระ คำ บรรทัด ย่อหน้า หรือขีดจำกัดของแพลตฟอร์มตามแต่ละเครื่องมือ",
+
+		"steps.cc.3.title": "แก้ไขหรือคัดลอก",
+		"steps.cc.3.desc": "ปรับข้อความตามผลลัพธ์ จากนั้นคัดลอกเวอร์ชันสุดท้ายเมื่อพร้อม",
 
 	},
 };
