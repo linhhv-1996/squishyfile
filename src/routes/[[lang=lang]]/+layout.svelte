@@ -467,6 +467,7 @@
 			<a href={privacyHref}>{t('footer.privacy') || 'Privacy Policy'}</a> &nbsp;·&nbsp;
 			<a href={termsHref}>{t('footer.terms') || 'Terms of Service'}</a> &nbsp;·&nbsp;
 			<a href={contactHref}>{t('footer.contact') || 'Contact'}</a>
+			<a href="https://uploadless.app/">Free tool site</a>
 		</p>
 	</div>
 </footer>
